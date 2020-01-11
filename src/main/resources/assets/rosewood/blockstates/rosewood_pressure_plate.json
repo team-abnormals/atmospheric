@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "rosewood:block/rosewood_pressure_plate" },
+        "powered=true": { "model": "rosewood:block/rosewood_pressure_plate_down" }
+    }
+}

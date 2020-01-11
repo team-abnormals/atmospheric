@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_post",
+    "textures": {
+        "texture": "rosewood:block/rosewood_planks"
+    }
+}

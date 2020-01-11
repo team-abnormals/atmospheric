@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "rosewood:block/rosewood_door_bottom",
+        "top": "rosewood:block/rosewood_door_top"
+    }
+}

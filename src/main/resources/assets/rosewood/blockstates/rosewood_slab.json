@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "rosewood:block/rosewood_slab" },
+        "type=top": { "model": "rosewood:block/rosewood_slab_top" },
+        "type=double": { "model": "rosewood:block/rosewood_planks" }
+    }
+}

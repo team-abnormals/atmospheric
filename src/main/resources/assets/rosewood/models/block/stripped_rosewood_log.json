@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "rosewood:block/stripped_rosewood_log_top",
+        "side": "rosewood:block/stripped_rosewood_log"
+    }
+}
