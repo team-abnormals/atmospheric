@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_pressure_plate",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "rosewood:rosewood_planks"
+    }
+  },
+  "result": {
+    "item": "rosewood:rosewood_pressure_plate"
+  }
+}
