@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "top": "rosewood:block/shimmering_passionfruit_crate_top",
+        "bottom": "rosewood:block/shimmering_passionfruit_crate_bottom",
+        "side": "rosewood:block/shimmering_passionfruit_crate"
+    }
+}

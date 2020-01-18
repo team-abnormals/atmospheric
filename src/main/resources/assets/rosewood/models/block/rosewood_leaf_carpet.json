@@ -1,0 +1,6 @@
+{   
+    "parent": "rosewood:block/leaf_carpet",
+    "textures": {
+        "all": "rosewood:block/rosewood_leaves"
+    }
+}

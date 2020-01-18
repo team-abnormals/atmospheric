@@ -11,5 +11,24 @@
 	"block.rosewood.rosewood_door": "Rosewood Door",
 	"block.rosewood.rosewood_trapdoor": "Rosewood Trapdoor",
 	"block.rosewood.rosewood_fence": "Rosewood Fence",
-	"block.rosewood.rosewood_fence_gate": "Rosewood Fence Gate"
+	"block.rosewood.rosewood_fence_gate": "Rosewood Fence Gate",
+	"block.rosewood.rosewood_sapling": "Rosewood Sapling",
+	"block.rosewood.rosewood_leaves": "Rosewood Leaves",
+	
+	"block.rosewood.passion_vine": "Passion Vine",
+	"block.rosewood.monkey_brush": "Monkey Brush",
+	
+	"block.rosewood.rosewood_bookshelf": "Rosewood Bookshelf",
+	"block.rosewood.rosewood_vertical_slab": "Rosewood Vertical Slab",
+	"block.rosewood.vertical_rosewood_planks": "Vertical Rosewood Planks",
+	"block.rosewood.rosewood_ladder": "Rosewood Ladder",
+	"block.rosewood.rosewood_leaf_carpet": "Rosewood Leaf Carpet",
+	"block.rosewood.passionfruit_crate": "Passionfruit Crate",
+	"block.rosewood.shimmering_passionfruit_crate": "Shimmering Passionfruit Crate",
+	
+	"item.rosewood.rosewood_boat": "Rosewood Boat",
+	"item.rosewood.passionfruit": "Passionfruit",
+	"item.rosewood.shimmering_passionfruit": "Shimmering Passionfruit",
+	
+	"entity.rosewood.boat": "Boat"
 }

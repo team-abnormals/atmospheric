@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "rosewood:rosewood_slab"
+    }
+  },
+  "result": {
+    "item": "rosewood:rosewood_vertical_slab",
+    "count": 3
+  }
+}

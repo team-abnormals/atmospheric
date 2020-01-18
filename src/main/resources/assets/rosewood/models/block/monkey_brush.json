@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "particle": "rosewood:block/monkey_brush",
+        "cross": "rosewood:block/monkey_brush"
+    }
+}

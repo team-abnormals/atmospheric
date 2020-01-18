@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "rosewood:block/passion_vine" },
+        "facing=south": { "model": "rosewood:block/passion_vine", "y": 180 },
+        "facing=west":  { "model": "rosewood:block/passion_vine", "y": 270 },
+        "facing=east":  { "model": "rosewood:block/passion_vine", "y": 90 }
+    }
+}

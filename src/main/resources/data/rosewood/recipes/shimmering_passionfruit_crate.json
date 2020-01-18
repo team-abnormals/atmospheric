@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "rosewood:shimmering_passionfruit"
+    }
+  },
+  "result": {
+    "item": "rosewood:shimmering_passionfruit_crate",
+    "count": 1
+  }
+}

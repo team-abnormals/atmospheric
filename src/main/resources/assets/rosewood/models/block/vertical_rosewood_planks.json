@@ -1,0 +1,6 @@
+{
+    "parent": "rosewood:block/vertical_planks",
+    "textures": {
+        "all": "rosewood:block/rosewood_planks"
+    }
+}

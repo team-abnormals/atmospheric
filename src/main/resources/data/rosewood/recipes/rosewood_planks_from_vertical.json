@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "rosewood:vertical_rosewood_planks"
+    }
+  ],
+  "result": {
+    "item": "rosewood:rosewood_planks"
+  }
+}
