@@ -3,6 +3,7 @@ package com.bagel.rosewood.core;
 import com.bagel.rosewood.client.renderer.RosewoodBoatRenderer;
 import com.bagel.rosewood.common.entity.RosewoodBoatEntity;
 import com.bagel.rosewood.core.registry.RosewoodBlocks;
+import com.bagel.rosewood.core.registry.RosewoodCompostables;
 import com.bagel.rosewood.core.registry.RosewoodEntities;
 import com.bagel.rosewood.core.registry.RosewoodItems;
 import com.google.common.collect.Maps;
@@ -38,6 +39,7 @@ public class Rosewood
     
     private void setup(final FMLCommonSetupEvent event)
 	{
+    	RosewoodCompostables.registerCompostables();
 		registerStrippable(RosewoodBlocks.ROSEWOOD_LOG.get(), RosewoodBlocks.STRIPPED_ROSEWOOD_LOG.get());
         registerStrippable(RosewoodBlocks.ROSEWOOD.get(), RosewoodBlocks.STRIPPED_ROSEWOOD.get());
     }
