@@ -1,5 +1,4 @@
 {
-    "ambientocclusion": false,
     "textures": {
         "particle": "rosewood:block/passion_vine_stage_1",
         "vine": "rosewood:block/passion_vine_stage_1"
