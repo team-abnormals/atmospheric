@@ -85,9 +85,4 @@ public class RosewoodMountainsBiome extends Biome {
         
         
     }
-
-    @Override
-    public Biome getRiver() {
-        return Biomes.FLOWER_FOREST;
-    }
 }

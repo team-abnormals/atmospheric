@@ -23,9 +23,9 @@ import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.LakeChanceConfig;
 import net.minecraft.world.gen.placement.Placement;
 
-public class RosewoodPlainsBiome extends Biome {
+public class RosewoodPlateauBiome extends Biome {
     @SuppressWarnings("unchecked")
-	public RosewoodPlainsBiome(Builder builder) {
+	public RosewoodPlateauBiome(Builder builder) {
         super(builder);
         this.addStructure(Feature.JUNGLE_TEMPLE, IFeatureConfig.NO_FEATURE_CONFIG);
 
@@ -48,7 +48,7 @@ public class RosewoodPlainsBiome extends Biome {
         addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.SPRING_FEATURE, new LiquidsConfig(Fluids.WATER.getDefaultState()), Placement.COUNT_BIASED_RANGE, new CountRangeConfig(50, 8, 8, 256)));
         DefaultBiomeFeatures.addFreezeTopLayer(this);
         DefaultBiomeFeatures.addTaigaRocks(this);
-        addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(RosewoodFeatures.ROSEWOOD_TREE, IFeatureConfig.NO_FEATURE_CONFIG, Placement.COUNT_EXTRA_HEIGHTMAP, new AtSurfaceWithExtraConfig(0, 0.1F, 3)));
+        addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(RosewoodFeatures.ROSEWOOD_TREE, IFeatureConfig.NO_FEATURE_CONFIG, Placement.COUNT_EXTRA_HEIGHTMAP, new AtSurfaceWithExtraConfig(0, 0.1F, 20)));
         
         addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, Biome.createDecoratedFeature(Feature.FOSSIL, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_PASSTHROUGH, new ChanceConfig(64)));
         addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.JUNGLE_GROUND_BUSH, IFeatureConfig.NO_FEATURE_CONFIG, Placement.COUNT_EXTRA_HEIGHTMAP, new AtSurfaceWithExtraConfig(2, 0.1F, 1)));
@@ -73,10 +73,5 @@ public class RosewoodPlainsBiome extends Biome {
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.OCELOT, 2, 1, 1));
         
         
-    }
-
-    @Override
-    public Biome getRiver() {
-        return Biomes.FLOWER_FOREST;
     }
 }
