@@ -70,5 +70,5 @@ public class RosewoodBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_LEAF_CARPET 		= RegistryUtils.createBlock("rosewood_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ROSEWOOD_LEAVES.get())), ItemGroup.DECORATIONS);
 	
 	public static final RegistryObject<Block> PASSIONFRUIT_CRATE				= RegistryUtils.createBlock("passionfruit_crate", 				() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.PURPLE).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> SHIMMERING_PASSIONFRUIT_CRATE		= RegistryUtils.createBlock("shimmering_passionfruit_crate", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GOLD).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> SHIMMERING_PASSIONFRUIT_CRATE		= RegistryUtils.createBlock("shimmering_passionfruit_crate", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GOLD).lightValue(7).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 }

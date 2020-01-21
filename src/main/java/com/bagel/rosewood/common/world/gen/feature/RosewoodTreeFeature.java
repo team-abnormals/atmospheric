@@ -7,7 +7,6 @@ import java.util.function.Function;
 import com.bagel.rosewood.core.registry.RosewoodBlocks;
 import com.mojang.datafixers.Dynamic;
 
-import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
@@ -17,9 +16,6 @@ import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 
 public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
-	   private static final BlockState TRUNK = RosewoodBlocks.ROSEWOOD_LOG.get().getDefaultState();
-	   private static final BlockState LEAF = RosewoodBlocks.ROSEWOOD_LEAVES.get().getDefaultState();
-
 	   public RosewoodTreeFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i51443_1_, boolean p_i51443_2_) {
 	      super(p_i51443_1_, p_i51443_2_);
 	   }
@@ -155,12 +151,12 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 	   }
 
 	   private void func_208532_a(Set<BlockPos> p_208532_1_, IWorldWriter p_208532_2_, BlockPos p_208532_3_, MutableBoundingBox p_208532_4_) {
-	      this.setLogState(p_208532_1_, p_208532_2_, p_208532_3_, TRUNK, p_208532_4_);
+	      this.setLogState(p_208532_1_, p_208532_2_, p_208532_3_, RosewoodBlocks.ROSEWOOD_LOG.get().getDefaultState(), p_208532_4_);
 	   }
 
 	   private void placeLeafAt(Set<BlockPos> worldIn, IWorldGenerationReader pos, BlockPos p_175924_3_, MutableBoundingBox p_175924_4_) {
 	      if (isAirOrLeaves(pos, p_175924_3_)) {
-	         this.setLogState(worldIn, pos, p_175924_3_, LEAF, p_175924_4_);
+	         this.setLogState(worldIn, pos, p_175924_3_, RosewoodBlocks.ROSEWOOD_LEAVES.get().getDefaultState(), p_175924_4_);
 	      }
 
 	   }

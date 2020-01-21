@@ -2,6 +2,7 @@ package com.bagel.rosewood.core;
 
 import com.bagel.rosewood.client.renderer.RosewoodBoatRenderer;
 import com.bagel.rosewood.common.entity.RosewoodBoatEntity;
+import com.bagel.rosewood.core.registry.RosewoodBiomes;
 import com.bagel.rosewood.core.registry.RosewoodBlocks;
 import com.bagel.rosewood.core.registry.RosewoodCompostables;
 import com.bagel.rosewood.core.registry.RosewoodEntities;
@@ -32,13 +33,15 @@ public class Rosewood
         
         RosewoodBlocks.BLOCKS.register(modEventBus);
         RosewoodItems.ITEMS.register(modEventBus);
+    	RosewoodBiomes.BIOMES.register(modEventBus);
         RosewoodEntities.ENTITY_TYPES.register(modEventBus);
         
         MinecraftForge.EVENT_BUS.register(this);
     }
     
     private void setup(final FMLCommonSetupEvent event)
-	{
+	{    	
+        RosewoodBiomes.registerBiomesToDictionary();
     	RosewoodCompostables.registerCompostables();
 		registerStrippable(RosewoodBlocks.ROSEWOOD_LOG.get(), RosewoodBlocks.STRIPPED_ROSEWOOD_LOG.get());
         registerStrippable(RosewoodBlocks.ROSEWOOD.get(), RosewoodBlocks.STRIPPED_ROSEWOOD.get());

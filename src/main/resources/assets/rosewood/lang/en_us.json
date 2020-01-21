@@ -35,5 +35,9 @@
 	"item.rosewood.passionfruit": "Passionfruit",
 	"item.rosewood.shimmering_passionfruit": "Shimmering Passionfruit",
 	
-	"entity.rosewood.boat": "Boat"
+	"entity.rosewood.boat": "Boat",
+	
+	"biome.rosewood.rosewood_forest": "Rosewood Forest",
+	"biome.rosewood.rosewood_mountains": "Rosewood Mountains",
+	"biome.rosewood.rosewood_plateau": "Rosewood Plateau"
 }
