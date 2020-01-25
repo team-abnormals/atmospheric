@@ -354,7 +354,7 @@ public class RosewoodBoatEntity extends BoatEntity {
                         blockpos$pooledmutableblockpos.setPos(l1, k1, i2);
                         IFluidState ifluidstate = this.world.getFluidState(blockpos$pooledmutableblockpos);
                         if (ifluidstate.isTagged(FluidTags.WATER)) {
-                            f = Math.max(f, ifluidstate.func_215679_a(this.world, blockpos$pooledmutableblockpos));
+                            f = Math.max(f, ifluidstate.getActualHeight(this.world, blockpos$pooledmutableblockpos));
                         }
 
                         if (f >= 1.0F) {
@@ -429,7 +429,7 @@ public class RosewoodBoatEntity extends BoatEntity {
                         blockpos$pooledmutableblockpos.setPos(k1, l1, i2);
                         IFluidState ifluidstate = this.world.getFluidState(blockpos$pooledmutableblockpos);
                         if (ifluidstate.isTagged(FluidTags.WATER)) {
-                            float f = (float) l1 + ifluidstate.func_215679_a(this.world, blockpos$pooledmutableblockpos);
+                            float f = (float) l1 + ifluidstate.getActualHeight(this.world, blockpos$pooledmutableblockpos);
                             this.waterLevel = Math.max((double) f, this.waterLevel);
                             flag |= axisalignedbb.minY < (double) f;
                         }
@@ -459,7 +459,7 @@ public class RosewoodBoatEntity extends BoatEntity {
                     for (int i2 = i1; i2 < j1; ++i2) {
                         blockpos$pooledmutableblockpos.setPos(k1, l1, i2);
                         IFluidState ifluidstate = this.world.getFluidState(blockpos$pooledmutableblockpos);
-                        if (ifluidstate.isTagged(FluidTags.WATER) && d0 < (double) ((float) blockpos$pooledmutableblockpos.getY() + ifluidstate.func_215679_a(this.world, blockpos$pooledmutableblockpos))) {
+                        if (ifluidstate.isTagged(FluidTags.WATER) && d0 < (double) ((float) blockpos$pooledmutableblockpos.getY() + ifluidstate.getActualHeight(this.world, blockpos$pooledmutableblockpos))) {
                             if (!ifluidstate.isSource()) {
                                 return Status.UNDER_FLOWING_WATER;
                             }

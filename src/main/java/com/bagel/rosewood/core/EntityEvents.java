@@ -1,7 +1,6 @@
 package com.bagel.rosewood.core;
 
 import com.bagel.rosewood.core.registry.RosewoodEffects;
-
 import net.minecraft.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,7 +25,6 @@ public class EntityEvents {
 			if (event.getAmount() >= (amplifier + 1)) {
 				event.setAmount(event.getAmount() + (amplifier + 1));
 			}
-			
 		}
 	}
 }
