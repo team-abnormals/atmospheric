@@ -38,7 +38,7 @@ public class MonkeyBrushBlock extends FlowerBlock implements IGrowable, IPlantab
 	
 	public MonkeyBrushBlock(Effect effect, int effectDuration, Properties properties) {
 		super(effect, effectDuration, properties);
-	    this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.SOUTH));
+	    this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.UP));
 	}
 	
 	@Override

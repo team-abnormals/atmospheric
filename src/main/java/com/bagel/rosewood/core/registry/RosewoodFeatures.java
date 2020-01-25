@@ -23,9 +23,7 @@ public class RosewoodFeatures {
 	
     @SubscribeEvent
     public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
-        event.getRegistry().registerAll(MONKEY_BRUSH, PODZOL, ROSEWOOD_TREE
-        		
-        		);
+        event.getRegistry().registerAll(MONKEY_BRUSH, PODZOL, ROSEWOOD_TREE);
     }
 
 }

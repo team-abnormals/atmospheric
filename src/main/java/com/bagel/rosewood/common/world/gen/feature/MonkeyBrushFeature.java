@@ -19,5 +19,5 @@ public class MonkeyBrushFeature extends FlowersFeature {
 
 	   public BlockState getRandomFlower(Random random, BlockPos pos) {
 	      return random.nextFloat() > 0.6666667F ? RosewoodBlocks.MONKEY_BRUSH.get().getDefaultState() : Blocks.LILY_OF_THE_VALLEY.getDefaultState();
-	   }
+	   } //.getStateContainer().getValidStates().get(random.nextInt())
 	}
