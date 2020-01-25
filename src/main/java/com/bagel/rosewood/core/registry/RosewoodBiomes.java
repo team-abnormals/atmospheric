@@ -24,16 +24,16 @@ public class RosewoodBiomes {
     public static RegistryObject<Biome> ROSEWOOD_FOREST_PLATEAU = BIOMES.register("rosewood_forest_plateau", 	() -> new RosewoodForestBiome(new Biome.Builder().surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(1.5F).scale(0.025F).temperature(0.90F).downfall(0.8F).waterColor(4159204).waterFogColor(329011).parent("rosewood:rosewood_plateau")));
     
     public static void registerBiomesToDictionary() {
-        BiomeDictionary.addTypes(ROSEWOOD_FOREST.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(ROSEWOOD_FOREST.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.JUNGLE,  BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ROSEWOOD_FOREST.get(), 2));
         
-        BiomeDictionary.addTypes(ROSEWOOD_MOUNTAINS.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(ROSEWOOD_MOUNTAINS.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ROSEWOOD_MOUNTAINS.get(), 1));
         
-        BiomeDictionary.addTypes(ROSEWOOD_PLATEAU.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(ROSEWOOD_PLATEAU.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.OVERWORLD);
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ROSEWOOD_PLATEAU.get(), 2));
         
-        BiomeDictionary.addTypes(ROSEWOOD_FOREST_PLATEAU.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(ROSEWOOD_FOREST_PLATEAU.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.OVERWORLD);
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ROSEWOOD_FOREST_PLATEAU.get(), 1));
     }
 }
