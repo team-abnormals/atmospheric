@@ -5,6 +5,7 @@ import com.bagel.rosewood.common.entity.RosewoodBoatEntity;
 import com.bagel.rosewood.core.registry.RosewoodBiomes;
 import com.bagel.rosewood.core.registry.RosewoodBlocks;
 import com.bagel.rosewood.core.registry.RosewoodCompostables;
+import com.bagel.rosewood.core.registry.RosewoodEffects;
 import com.bagel.rosewood.core.registry.RosewoodEntities;
 import com.bagel.rosewood.core.registry.RosewoodItems;
 import com.google.common.collect.Maps;
@@ -35,6 +36,8 @@ public class Rosewood
         RosewoodItems.ITEMS.register(modEventBus);
     	RosewoodBiomes.BIOMES.register(modEventBus);
         RosewoodEntities.ENTITY_TYPES.register(modEventBus);
+        RosewoodEffects.EFFECTS.register(modEventBus);
+        RosewoodEffects.POTIONS.register(modEventBus);
         
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -43,6 +46,7 @@ public class Rosewood
 	{    	
         RosewoodBiomes.registerBiomesToDictionary();
     	RosewoodCompostables.registerCompostables();
+    	RosewoodEffects.registerBrewingRecipes();
 		registerStrippable(RosewoodBlocks.ROSEWOOD_LOG.get(), RosewoodBlocks.STRIPPED_ROSEWOOD_LOG.get());
         registerStrippable(RosewoodBlocks.ROSEWOOD.get(), RosewoodBlocks.STRIPPED_ROSEWOOD.get());
     }

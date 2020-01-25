@@ -37,6 +37,41 @@
 	
 	"entity.rosewood.boat": "Boat",
 	
+	"effect.rosewood.relief": "Relief",
+	"effect.rosewood.worsening": "Worsening",
+	
+	"item.minecraft.potion.effect.relief": "Potion of Relief",
+	"item.minecraft.potion.effect.relief_strong": "Potion of Relief",
+	"item.minecraft.potion.effect.relief_long": "Potion of Relief",
+	
+	"item.minecraft.splash_potion.effect.relief": "Splash Potion of Relief",
+	"item.minecraft.splash_potion.effect.relief_strong": "Splash Potion of Relief",
+	"item.minecraft.splash_potion.effect.relief_long": "Splash Potion of Relief",
+	
+	"item.minecraft.lingering_potion.effect.relief": "Lingering Potion of Relief",
+	"item.minecraft.lingering_potion.effect.relief_strong": "Lingering Potion of Relief",
+	"item.minecraft.lingering_potion.effect.relief_long": "Lingering Potion of Relief",
+	
+	"item.minecraft.tipped_arrow.effect.relief": "Arrow of Relief",
+	"item.minecraft.tipped_arrow.effect.relief_strong": "Arrow of Relief",
+	"item.minecraft.tipped_arrow.effect.relief_long": "Arrow of Relief",
+	
+	"item.minecraft.potion.effect.worsening": "Potion of Worsening",
+	"item.minecraft.potion.effect.worsening_strong": "Potion of Worsening",
+	"item.minecraft.potion.effect.worsening_long": "Potion of Worsening",
+	
+	"item.minecraft.splash_potion.effect.worsening": "Splash Potion of Worsening",
+	"item.minecraft.splash_potion.effect.worsening_strong": "Splash Potion of Worsening",
+	"item.minecraft.splash_potion.effect.worsening_long": "Splash Potion of Worsening",
+	
+	"item.minecraft.lingering_potion.effect.worsening": "Lingering Potion of Worsening",
+	"item.minecraft.lingering_potion.effect.worsening_strong": "Lingering Potion of Worsening",
+	"item.minecraft.lingering_potion.effect.worsening_long": "Lingering Potion of Worsening",
+	
+	"item.minecraft.tipped_arrow.effect.worsening": "Arrow of Worsening",
+	"item.minecraft.tipped_arrow.effect.worsening_strong": "Arrow of Worsening",
+	"item.minecraft.tipped_arrow.effect.worsening_long": "Arrow of Worsening",
+	
 	"biome.rosewood.rosewood_forest": "Rosewood Forest",
 	"biome.rosewood.rosewood_mountains": "Rosewood Mountains",
 	"biome.rosewood.rosewood_plateau": "Rosewood Plateau",
