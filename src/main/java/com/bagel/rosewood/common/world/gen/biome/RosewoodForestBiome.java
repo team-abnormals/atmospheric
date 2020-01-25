@@ -30,8 +30,6 @@ public class RosewoodForestBiome extends Biome {
     @SuppressWarnings("unchecked")
 	public RosewoodForestBiome(Builder builder) {
         super(builder);
-        this.addStructure(Feature.JUNGLE_TEMPLE, IFeatureConfig.NO_FEATURE_CONFIG);
-
         addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
         addStructure(Feature.STRONGHOLD, IFeatureConfig.NO_FEATURE_CONFIG);
         DefaultBiomeFeatures.addCarvers(this);

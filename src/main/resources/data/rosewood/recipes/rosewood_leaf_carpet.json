@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "rosewood:rosewood_leaves"
+    }
+  },
+  "result": {
+    "item": "rosewood:rosewood_leaf_carpet",
+    "count": 3
+  }
+} 

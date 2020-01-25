@@ -14,6 +14,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
@@ -30,7 +31,13 @@ public class BlockColorManager
 		blockColors.register((p_210225_0_, p_210225_1_, pos, p_210225_3_) ->
 		{
 			return p_210225_1_ != null && pos != null ? BiomeColors.getFoliageColor(p_210225_1_, pos) : FoliageColors.get(0.5D, 1.0D);
-		}, RosewoodBlocks.ROSEWOOD_LEAVES.get(), RosewoodBlocks.ROSEWOOD_LEAF_CARPET.get());
+		}, RosewoodBlocks.ROSEWOOD_LEAVES.get());
+		if(ModList.get().isLoaded("quark")) {
+			blockColors.register((p_210225_0_, p_210225_1_, pos, p_210225_3_) ->
+			{
+				return p_210225_1_ != null && pos != null ? BiomeColors.getFoliageColor(p_210225_1_, pos) : FoliageColors.get(0.5D, 1.0D);
+			}, RosewoodBlocks.ROSEWOOD_LEAF_CARPET.get());
+		}
 	}
 	
 	@SubscribeEvent
@@ -47,6 +54,9 @@ public class BlockColorManager
 			return blockColors.getColor(state, null, null, tintIndex);
 		};
 
-		itemColors.register(itemBlockColourHandler, RosewoodBlocks.ROSEWOOD_LEAVES.get(), RosewoodBlocks.ROSEWOOD_LEAF_CARPET.get());
+		itemColors.register(itemBlockColourHandler, RosewoodBlocks.ROSEWOOD_LEAVES.get());
+		if(ModList.get().isLoaded("quark")) {
+			itemColors.register(itemBlockColourHandler, RosewoodBlocks.ROSEWOOD_LEAF_CARPET.get());
+		}
 	}
 }
