@@ -1,5 +1,9 @@
 {
     "variants": {
-        "": { "model": "rosewood:block/monkey_brush" }
+        "facing=north": { "model": "rosewood:block/monkey_brush_wall" },
+        "facing=south": { "model": "rosewood:block/monkey_brush_wall", "y": 180 },
+        "facing=west":  { "model": "rosewood:block/monkey_brush_wall", "y": 270 },
+        "facing=east":  { "model": "rosewood:block/monkey_brush_wall", "y": 90 },
+        "facing=up": { "model": "rosewood:block/monkey_brush" }
     }
 }
