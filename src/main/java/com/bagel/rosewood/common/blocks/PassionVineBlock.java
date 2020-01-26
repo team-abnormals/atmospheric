@@ -88,8 +88,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	      if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
 	         return false;
 	      } else if (i == 5) {
-	         int j = 1 + worldIn.rand.nextInt(4);
-	         spawnAsEntity(worldIn, pos, new ItemStack(RosewoodItems.PASSIONFRUIT.get(), j));
+	         spawnAsEntity(worldIn, pos, new ItemStack(RosewoodItems.PASSIONFRUIT.get(), 1 + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(2)));
 	         worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 	         worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(2)), 2);
 	         return true;
