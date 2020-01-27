@@ -6,7 +6,7 @@ import net.minecraft.potion.EffectType;
 public class ReliefEffect extends Effect {
 
 	public ReliefEffect() {
-		super(EffectType.BENEFICIAL, 3110759);
+		super(EffectType.BENEFICIAL, 15494786);
 	}
 
 }

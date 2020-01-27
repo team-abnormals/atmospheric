@@ -6,7 +6,7 @@ import net.minecraft.potion.EffectType;
 public class WorseningEffect extends Effect {
 
 	public WorseningEffect() {
-		super(EffectType.HARMFUL, 15494786);
+		super(EffectType.HARMFUL, 3110759);
 	}
 
 }
