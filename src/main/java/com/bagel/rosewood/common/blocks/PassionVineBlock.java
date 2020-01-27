@@ -36,7 +36,7 @@ import net.minecraft.world.World;
 
 public class PassionVineBlock extends Block implements IGrowable {
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
-	public static final IntegerProperty AGE = BlockStateUtils.AGE_1_5; 
+	public static final IntegerProperty AGE = BlockStateUtils.AGE_0_4; 
 	   
 	protected static final VoxelShape EAST_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 1.0D, 16.0D, 16.0D);
 	protected static final VoxelShape WEST_AABB = Block.makeCuboidShape(15.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
@@ -66,7 +66,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
 	      super.tick(state, worldIn, pos, random);
 	      int i = state.get(AGE);
-	      if (i >= 2) {
+	      if (i >= 1) {
 	    	  if (worldIn.rand.nextInt(2) == 1 ) { 
 	    		  attemptGrowFruit(state, worldIn, pos, random);
 	    	  } else { 
@@ -81,12 +81,12 @@ public class PassionVineBlock extends Block implements IGrowable {
 		Direction direction = state.get(FACING);
 		BlockState hanging = worldIn.getBlockState(pos.offset(direction.getOpposite()));
 		if (hanging.getBlock().isIn(BlockTags.LOGS) || hanging.getBlock().isIn(BlockTags.LEAVES)) {
-			  if (i < 5 && worldIn.getLightSubtracted(pos.up(), 0) >= 5 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
+			  if (i < 4 && worldIn.getLightSubtracted(pos.up(), 0) >= 5 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 				  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)), 2);
 				  net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 			  }
 		  } else {
-			  if (i < 2 && worldIn.getLightSubtracted(pos.up(), 0) >= 5 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
+			  if (i < 1 && worldIn.getLightSubtracted(pos.up(), 0) >= 5 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 				  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)), 2);
 				  net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 			  }
@@ -105,16 +105,32 @@ public class PassionVineBlock extends Block implements IGrowable {
 	@SuppressWarnings("deprecation")
 	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 	      int i = state.get(AGE);
-	      boolean flag = i == 5;
-	      if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
-	         return false;
-	      } else if (i == 5) {
-	         spawnAsEntity(worldIn, pos, new ItemStack(RosewoodItems.PASSIONFRUIT.get(), 1 + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(3)));
-	         worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-	         worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(2)), 2);
-	         return true;
-	      } else {
-	         return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+	      boolean flag = i == 4;
+	      if (player.getHeldItem(handIn).getItem() != Items.SHEARS) {
+	    	  if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
+	    		  return false;
+	    	  } else if (i == 4) {
+	    		  spawnAsEntity(worldIn, pos, new ItemStack(RosewoodItems.PASSIONFRUIT.get(), 1 + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(3)));
+	    		  worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+	    		  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(1)), 2);
+	    		  return true;
+	      		} else {
+	      			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+	      		}
+	      	} else {
+	      		if (i != 1) {
+	      		if (i == 4) {
+	    		  spawnAsEntity(worldIn, pos, new ItemStack(RosewoodItems.PASSIONFRUIT.get(), 1 + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(3)));
+	    		  player.getHeldItem(handIn).damageItem(1, player, (p_213442_1_) -> {
+	                  p_213442_1_.sendBreakAnimation(handIn);
+	               });
+	      		}
+	    	  worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+	    	  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(state.get(AGE) - 1)), 2);
+		      return true;
+	      		} else {
+	      			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+	      		}
 	      }
 	   }
 	
@@ -177,9 +193,9 @@ public class PassionVineBlock extends Block implements IGrowable {
 		Direction direction = state.get(FACING);
 		BlockState hanging = worldIn.getBlockState(pos.offset(direction.getOpposite()));
 	    if (hanging.getBlock().isIn(BlockTags.LOGS) || hanging.getBlock().isIn(BlockTags.LEAVES)) {
-	    	return state.get(AGE) < 5;
+	    	return state.get(AGE) < 4;
 	    }
-	      return state.get(AGE) < 2;
+	      return state.get(AGE) < 1;
 	   }
 
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
@@ -187,7 +203,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	}
 
 	public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
-	    int i = Math.min(5, state.get(AGE) + 1);
+	    int i = Math.min(4, state.get(AGE) + 1);
 	    worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i)), 2);
 	}
 }
