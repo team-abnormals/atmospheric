@@ -1,7 +1,7 @@
 {
     "textures": {
-        "particle": "rosewood:block/passion_vine_stage_2",
-        "vine": "rosewood:block/passion_vine_stage_2"
+        "particle": "rosewood:block/passion_vine_top_stage3",
+        "vine": "rosewood:block/passion_vine_top_stage3"
     },
     "elements": [
         {   "from": [ 0, 0, 15.2 ],

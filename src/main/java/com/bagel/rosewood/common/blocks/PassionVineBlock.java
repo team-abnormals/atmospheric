@@ -17,6 +17,7 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.DirectionProperty;
+import net.minecraft.state.EnumProperty;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tags.BlockTags;
@@ -37,6 +38,7 @@ import net.minecraft.world.World;
 public class PassionVineBlock extends Block implements IGrowable {
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 	public static final IntegerProperty AGE = BlockStateUtils.AGE_0_4; 
+	public static final EnumProperty<PassionVineAttachment> ATTACHMENT = BlockStateUtils.PASSION_VINE_ATTACHMENT; 
 	   
 	protected static final VoxelShape EAST_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 1.0D, 16.0D, 16.0D);
 	protected static final VoxelShape WEST_AABB = Block.makeCuboidShape(15.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
@@ -65,6 +67,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	@SuppressWarnings("deprecation")
 	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
 	      super.tick(state, worldIn, pos, random);
+	      determineState(state, worldIn, pos);
 	      int i = state.get(AGE);
 	      if (i >= 1) {
 	    	  if (worldIn.rand.nextInt(2) == 1 ) { 
@@ -75,6 +78,27 @@ public class PassionVineBlock extends Block implements IGrowable {
 	    	  attemptGrowFruit(state, worldIn, pos, random);
 	      }
 	   }
+	
+	public void determineState(BlockState state, World world, BlockPos pos) {
+		BlockState below = world.getBlockState(pos.down());
+		BlockState above = world.getBlockState(pos.up());
+		
+		Boolean vineAbove = (above.getBlock() == state.getBlock());
+		Boolean vineBelow = (below.getBlock() == state.getBlock());		
+		
+		if (vineAbove) {
+			Boolean vineFacingAbove = above.getBlockState().get(FACING) == state.get(FACING);
+			if (vineFacingAbove) {
+				if (vineBelow) { world.setBlockState(pos, state.with(ATTACHMENT, PassionVineAttachment.MIDDLE)); } 
+				else { world.setBlockState(pos, state.with(ATTACHMENT, PassionVineAttachment.BOTTOM)); }
+			}
+		} else if (vineBelow) {
+			Boolean vineFacingBelow = below.getBlockState().get(FACING) == state.get(FACING);
+			if (vineFacingBelow) {
+				 { world.setBlockState(pos, state.with(ATTACHMENT, PassionVineAttachment.TOP)); } 
+			}
+		} else { world.setBlockState(pos, state.with(ATTACHMENT, PassionVineAttachment.NONE)); }
+	}
 	
 	public void attemptGrowFruit(BlockState state, World worldIn, BlockPos pos, Random random) {
 		int i = state.get(AGE);
@@ -104,6 +128,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	
 	@SuppressWarnings("deprecation")
 	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	    determineState(state, worldIn, pos);
 		int i = state.get(AGE);
 		boolean flag = i == 4;
 		if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
@@ -126,7 +151,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	}
 	
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-		builder.add(FACING, AGE);
+		builder.add(ATTACHMENT, AGE, FACING);
 	}
 	
 	private boolean canAttachTo(IBlockReader block, BlockPos pos, Direction direction) {
@@ -143,7 +168,8 @@ public class PassionVineBlock extends Block implements IGrowable {
 	   
 	   @SuppressWarnings("deprecation")
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		      if (!stateIn.isValidPosition(worldIn, currentPos)) {
+		   determineState(stateIn, worldIn.getWorld(), currentPos);
+		   if (!stateIn.isValidPosition(worldIn, currentPos)) {
 		         return Blocks.AIR.getDefaultState();
 		      } else {
 		         return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
@@ -194,6 +220,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	}
 
 	public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
+		determineState(state, worldIn, pos);
 	    int i = Math.min(4, state.get(AGE) + 1);
 	    worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i)), 2);
 	}
