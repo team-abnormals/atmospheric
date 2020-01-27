@@ -104,35 +104,26 @@ public class PassionVineBlock extends Block implements IGrowable {
 	
 	@SuppressWarnings("deprecation")
 	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-	      int i = state.get(AGE);
-	      boolean flag = i == 4;
-	      if (player.getHeldItem(handIn).getItem() != Items.SHEARS) {
-	    	  if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
-	    		  return false;
-	    	  } else if (i == 4) {
-	    		  spawnAsEntity(worldIn, pos, new ItemStack(RosewoodItems.PASSIONFRUIT.get(), 1 + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(3)));
-	    		  worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-	    		  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(1)), 2);
-	    		  return true;
-	      		} else {
-	      			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
-	      		}
-	      	} else {
-	      		if (i != 1) {
-	      		if (i == 4) {
-	    		  spawnAsEntity(worldIn, pos, new ItemStack(RosewoodItems.PASSIONFRUIT.get(), 1 + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(3)));
-	    		  player.getHeldItem(handIn).damageItem(1, player, (p_213442_1_) -> {
-	                  p_213442_1_.sendBreakAnimation(handIn);
-	               });
-	      		}
-	    	  worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-	    	  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(state.get(AGE) - 1)), 2);
-		      return true;
-	      		} else {
-	      			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
-	      		}
-	      }
-	   }
+		int i = state.get(AGE);
+		boolean flag = i == 4;
+		if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
+			return false;	
+		} else if (i == 4) {
+			spawnAsEntity(worldIn, pos, new ItemStack(RosewoodItems.PASSIONFRUIT.get(), 1 + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(3)));
+			worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+			worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(1)), 2);
+	    	return true;	
+		} else if (i == 1 && (player.getHeldItem(handIn).getItem() == Items.SHEARS)) {
+			player.getHeldItem(handIn).damageItem(1, player, (p_213442_1_) -> {
+	  	    p_213442_1_.sendBreakAnimation(handIn);
+	  	    });
+	  	    worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+	  	    worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(0)), 2);
+	  	    return true;    
+		} else {
+			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);	
+		}	
+	}
 	
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
 		builder.add(FACING, AGE);
