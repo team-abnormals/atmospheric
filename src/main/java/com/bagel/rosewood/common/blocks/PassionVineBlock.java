@@ -12,6 +12,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.IGrowable;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
@@ -28,6 +30,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
@@ -63,6 +66,13 @@ public class PassionVineBlock extends Block implements IGrowable {
 	public PassionVineBlock(Properties properties) {
 		super(properties);
 	}
+	
+	@Override public boolean isLadder(BlockState state, IWorldReader world, BlockPos pos, net.minecraft.entity.LivingEntity entity) { return true; }
+	/*public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+		for(LivingEntity entities : worldIn.getEntitiesWithinAABB(LivingEntity.class, state.getShape(worldIn, pos).getBoundingBox())) {
+			entities.setMotionMultiplier(state, new Vec3d(1.0D, (double)0.05F, 1.0D));
+		}
+	}*/
 	
 	@SuppressWarnings("deprecation")
 	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
@@ -154,14 +164,14 @@ public class PassionVineBlock extends Block implements IGrowable {
 		builder.add(ATTACHMENT, AGE, FACING);
 	}
 	
-	private boolean canAttachTo(IBlockReader block, BlockPos pos, Direction direction) {
+	public static boolean canAttachTo(IBlockReader block, BlockPos pos, Direction direction) {
 	      BlockState blockstate = block.getBlockState(pos);
 	      return !blockstate.canProvidePower() && blockstate.func_224755_d(block, pos, direction);
 	   }
 
 	   public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 	      Direction direction = state.get(FACING);
-	      return (this.canAttachTo(worldIn, pos.offset(direction.getOpposite()), direction) 
+	      return (PassionVineBlock.canAttachTo(worldIn, pos.offset(direction.getOpposite()), direction) 
 	    		  || (worldIn.getBlockState(pos.offset(Direction.UP)).getBlock() == RosewoodBlocks.PASSION_VINE.get() 
 	    		  && worldIn.getBlockState(pos.offset(Direction.UP)).get(FACING) == state.get(FACING)));
 	   }
