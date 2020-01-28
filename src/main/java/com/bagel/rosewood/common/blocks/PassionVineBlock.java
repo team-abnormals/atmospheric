@@ -12,8 +12,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.IGrowable;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
@@ -30,7 +28,6 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
@@ -217,12 +214,10 @@ public class PassionVineBlock extends Block implements IGrowable {
 	}
 	
 	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
-		Direction direction = state.get(FACING);
-		BlockState hanging = worldIn.getBlockState(pos.offset(direction.getOpposite()));
-	    if (hanging.getBlock().isIn(BlockTags.LOGS) || hanging.getBlock().isIn(BlockTags.LEAVES)) {
-	    	return state.get(AGE) < 4;
-	    }
-	      return state.get(AGE) < 1;
+		//Direction direction = state.get(FACING);
+		//BlockState hanging = worldIn.getBlockState(pos.offset(direction.getOpposite()));
+		return state.get(AGE) < 4;
+
 	   }
 
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
