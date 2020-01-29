@@ -76,21 +76,32 @@ public class PassionVineBlock extends Block implements IGrowable {
 	@SuppressWarnings("deprecation")
 	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
 	      super.tick(state, worldIn, pos, random);
+	      
 	      determineState(state, worldIn, pos);
 	      Direction direction = state.get(FACING);
 	      BlockState hanging = worldIn.getBlockState(pos.offset(direction.getOpposite()));
+	      int i = state.get(AGE);
+	      
+	      Boolean light = worldIn.getLightSubtracted(pos.up(), 0) >= 5;
+	      Boolean notOld = i < 4;
+	      Boolean canFlower = i >= 1;
+	      Boolean canFruit = notOld && light;
+	      Boolean randomNum = worldIn.rand.nextInt(2) == 1;
+	      
 	      if (hanging.getBlock() != Blocks.MAGMA_BLOCK) {
-	    	  int i = state.get(AGE);
-	    	  if (i >= 1) {
-	    		  if (worldIn.rand.nextInt(2) == 1 ) { 
-	    			  attemptGrowFruit(state, worldIn, pos, random);  
+	    	  
+	    	  if (canFlower) {
+	    		  if (canFruit) {
+	    			  if (randomNum) { attemptGrowFruit(state, worldIn, pos, random); 
+	    			  } else { attemptGrowDown(state, worldIn, pos, random); }  
 	    		  } else {
-	    			  attemptGrowDown(state, worldIn, pos, random); }
-	    		  } else {
-	    			  attemptGrowFruit(state, worldIn, pos, random);  
+	    			  attemptGrowDown(state, worldIn, pos, random);
 	    		  }
-	    	  }
+	    	  } else {
+	    		  if (canFruit) { attemptGrowFruit(state, worldIn, pos, random); }
+    		  }
 	      }
+	}
 	
 	public void determineState(BlockState state, World world, BlockPos pos) {
 		BlockState below = world.getBlockState(pos.down());
@@ -118,12 +129,12 @@ public class PassionVineBlock extends Block implements IGrowable {
 		Direction direction = state.get(FACING);
 		BlockState hanging = worldIn.getBlockState(pos.offset(direction.getOpposite()));
 		if (hanging.getBlock().isIn(BlockTags.LOGS) || hanging.getBlock().isIn(BlockTags.LEAVES)) {
-			  if (i < 4 && worldIn.getLightSubtracted(pos.up(), 0) >= 5 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
+			  if (i < 4 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 				  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)), 2);
 				  net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 			  }
 		  } else {
-			  if (i < 1 && worldIn.getLightSubtracted(pos.up(), 0) >= 5 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
+			  if (i < 1 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 				  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)), 2);
 				  net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 			  }
@@ -134,7 +145,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 		if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 			  BlockState below = worldIn.getBlockState(pos.down());
 			  if (below.getBlock() == Blocks.AIR) {
-				  worldIn.setBlockState(pos.down(), RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(AGE, Integer.valueOf(1)).with(FACING, state.get(FACING)));
+				  worldIn.setBlockState(pos.down(), RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(AGE, Integer.valueOf(0)).with(FACING, state.get(FACING)));
 			  }
 		  }
 	}
