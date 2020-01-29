@@ -13,6 +13,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.IGrowable;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
@@ -76,16 +77,20 @@ public class PassionVineBlock extends Block implements IGrowable {
 	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
 	      super.tick(state, worldIn, pos, random);
 	      determineState(state, worldIn, pos);
-	      int i = state.get(AGE);
-	      if (i >= 1) {
-	    	  if (worldIn.rand.nextInt(2) == 1 ) { 
-	    		  attemptGrowFruit(state, worldIn, pos, random);
-	    	  } else { 
-	    		  attemptGrowDown(state, worldIn, pos, random); }
-	      } else {
-	    	  attemptGrowFruit(state, worldIn, pos, random);
+	      Direction direction = state.get(FACING);
+	      BlockState hanging = worldIn.getBlockState(pos.offset(direction.getOpposite()));
+	      if (hanging.getBlock() != Blocks.MAGMA_BLOCK) {
+	    	  int i = state.get(AGE);
+	    	  if (i >= 1) {
+	    		  if (worldIn.rand.nextInt(2) == 1 ) { 
+	    			  attemptGrowFruit(state, worldIn, pos, random);  
+	    		  } else {
+	    			  attemptGrowDown(state, worldIn, pos, random); }
+	    		  } else {
+	    			  attemptGrowFruit(state, worldIn, pos, random);  
+	    		  }
+	    	  }
 	      }
-	   }
 	
 	public void determineState(BlockState state, World world, BlockPos pos) {
 		BlockState below = world.getBlockState(pos.down());
@@ -147,6 +152,11 @@ public class PassionVineBlock extends Block implements IGrowable {
 			worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(1)), 2);
 	    	return true;	
 		} else if (i == 1 && (player.getHeldItem(handIn).getItem() == Items.SHEARS)) {
+			Direction direction = hit.getFace();
+            Direction direction1 = direction.getAxis() == Direction.Axis.Y ? player.getHorizontalFacing().getOpposite() : direction;
+			ItemEntity itementity = new ItemEntity(worldIn, (double)pos.getX() + 0.5D + (double)direction1.getXOffset() * 0.65D, (double)pos.getY() + 0.1D, (double)pos.getZ() + 0.5D + (double)direction1.getZOffset() * 0.65D, new ItemStack(Items.WHITE_DYE, 1));
+            itementity.setMotion(0.05D * (double)direction1.getXOffset() + worldIn.rand.nextDouble() * 0.02D, 0.05D, 0.05D * (double)direction1.getZOffset() + worldIn.rand.nextDouble() * 0.02D);
+            worldIn.addEntity(itementity);
 			player.getHeldItem(handIn).damageItem(1, player, (p_213442_1_) -> {
 	  	    p_213442_1_.sendBreakAnimation(handIn);
 	  	    });
