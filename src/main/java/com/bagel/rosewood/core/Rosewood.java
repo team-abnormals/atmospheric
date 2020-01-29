@@ -3,15 +3,12 @@ package com.bagel.rosewood.core;
 import com.bagel.rosewood.client.renderer.RosewoodBoatRenderer;
 import com.bagel.rosewood.common.entity.RosewoodBoatEntity;
 import com.bagel.rosewood.core.registry.RosewoodBiomes;
+import com.bagel.rosewood.core.registry.RosewoodBlockData;
 import com.bagel.rosewood.core.registry.RosewoodBlocks;
-import com.bagel.rosewood.core.registry.RosewoodCompostables;
 import com.bagel.rosewood.core.registry.RosewoodEffects;
 import com.bagel.rosewood.core.registry.RosewoodEntities;
 import com.bagel.rosewood.core.registry.RosewoodItems;
-import com.google.common.collect.Maps;
-
-import net.minecraft.block.Block;
-import net.minecraft.item.AxeItem;
+import com.bagel.rosewood.core.util.ColorUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -45,19 +42,15 @@ public class Rosewood
     private void setup(final FMLCommonSetupEvent event)
 	{    	
         RosewoodBiomes.registerBiomesToDictionary();
-    	RosewoodCompostables.registerCompostables();
-    	RosewoodEffects.registerBrewingRecipes();
-		registerStrippable(RosewoodBlocks.ROSEWOOD_LOG.get(), RosewoodBlocks.STRIPPED_ROSEWOOD_LOG.get());
-        registerStrippable(RosewoodBlocks.ROSEWOOD.get(), RosewoodBlocks.STRIPPED_ROSEWOOD.get());
-    }
+    	RosewoodBlockData.registerCompostables();
+    	RosewoodBlockData.registerFlammables();
+    	RosewoodBlockData.registerStrippables();
+    	RosewoodEffects.registerBrewingRecipes();	
+	}
     
     private void clientSetup(final FMLClientSetupEvent event) 
     {
+    	ColorUtils.registerBlockColors();
     	RenderingRegistry.registerEntityRenderingHandler(RosewoodBoatEntity.class, RosewoodBoatRenderer::new);
-    }
-
-    public static void registerStrippable(Block log, Block stripped_log) {
-        AxeItem.BLOCK_STRIPPING_MAP = Maps.newHashMap(AxeItem.BLOCK_STRIPPING_MAP);
-        AxeItem.BLOCK_STRIPPING_MAP.put(log, stripped_log);
     }
 }

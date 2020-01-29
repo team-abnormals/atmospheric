@@ -3,6 +3,7 @@ package com.bagel.rosewood.core.registry;
 import com.bagel.rosewood.common.entity.RosewoodBoatEntity;
 import com.bagel.rosewood.common.items.RosewoodBoatItem;
 import com.bagel.rosewood.core.Rosewood;
+import com.bagel.rosewood.core.util.RegistryUtils;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;

@@ -7,6 +7,7 @@ import com.bagel.rosewood.common.blocks.RosewoodSaplingBlock;
 import com.bagel.rosewood.common.blocks.VerticalSlabBlock;
 import com.bagel.rosewood.common.world.gen.trees.RosewoodTree;
 import com.bagel.rosewood.core.Rosewood;
+import com.bagel.rosewood.core.util.RegistryUtils;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

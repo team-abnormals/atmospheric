@@ -1,8 +1,7 @@
-package com.bagel.rosewood.common.entity;
+package com.bagel.rosewood.core.registry;
 
 import com.bagel.rosewood.core.Rosewood;
-import com.bagel.rosewood.core.registry.RosewoodBlocks;
-import com.bagel.rosewood.core.registry.RosewoodItems;
+import com.bagel.rosewood.core.util.TradeUtils;
 
 import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraftforge.event.village.VillagerTradesEvent;
@@ -11,7 +10,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Rosewood.MODID)
-public class VillagerTrades {
+public class RosewoodTrades {
 	
 	@SubscribeEvent
 	public static void onWandererTradesEvent(WandererTradesEvent event) {

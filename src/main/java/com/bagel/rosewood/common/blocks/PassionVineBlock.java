@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.bagel.rosewood.core.registry.RosewoodBlocks;
 import com.bagel.rosewood.core.registry.RosewoodItems;
+import com.bagel.rosewood.core.util.StateUtils;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -37,8 +38,8 @@ import net.minecraft.world.World;
 
 public class PassionVineBlock extends Block implements IGrowable {
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
-	public static final IntegerProperty AGE = BlockStateUtils.AGE_0_4; 
-	public static final EnumProperty<PassionVineAttachment> ATTACHMENT = BlockStateUtils.PASSION_VINE_ATTACHMENT; 
+	public static final IntegerProperty AGE = StateUtils.AGE_0_4; 
+	public static final EnumProperty<PassionVineAttachment> ATTACHMENT = StateUtils.PASSION_VINE_ATTACHMENT; 
 	   
 	protected static final VoxelShape EAST_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 1.0D, 16.0D, 16.0D);
 	protected static final VoxelShape WEST_AABB = Block.makeCuboidShape(15.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);

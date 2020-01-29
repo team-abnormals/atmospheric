@@ -1,5 +1,6 @@
-package com.bagel.rosewood.core;
+package com.bagel.rosewood.core.util;
 
+import com.bagel.rosewood.core.Rosewood;
 import com.bagel.rosewood.core.registry.RosewoodEffects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
@@ -8,7 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Rosewood.MODID)
-public class EntityEvents {
+public class EntityUtils {
 	@SubscribeEvent
 	public static void onLivingHurt(LivingHurtEvent event) {
 		LivingEntity entity = event.getEntityLiving();
@@ -20,7 +21,7 @@ public class EntityEvents {
 				entity.getPersistentData().putFloat("IncomingDamage", event.getAmount());
 				entity.getPersistentData().putBoolean("Heal", true);
 			} else {
-				int amplifier = entity.getActivePotionEffect(RosewoodEffects.WORSENING.get()).getAmplifier();
+				int amplifier = entity.getActivePotionEffect(RosewoodEffects.RELIEF.get()).getAmplifier();
 				if (event.getAmount() >= (amplifier + 1)) {
 					event.setAmount(event.getAmount() + (amplifier + 1));
 				}
@@ -35,7 +36,7 @@ public class EntityEvents {
 					event.setAmount(event.getAmount() + (amplifier + 1));
 				}
 			} else {
-				int amplifier = entity.getActivePotionEffect(RosewoodEffects.RELIEF.get()).getAmplifier();
+				int amplifier = entity.getActivePotionEffect(RosewoodEffects.WORSENING.get()).getAmplifier();
 				entity.getPersistentData().putInt("PotionHealAmplifier", amplifier);
 				entity.getPersistentData().putFloat("IncomingDamage", event.getAmount());
 				entity.getPersistentData().putBoolean("Heal", true);

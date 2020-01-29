@@ -1,4 +1,4 @@
-package com.bagel.rosewood.common.entity;
+package com.bagel.rosewood.core.util;
 
 import java.util.Random;
 

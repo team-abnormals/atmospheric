@@ -1,5 +1,7 @@
-package com.bagel.rosewood.core.registry;
+package com.bagel.rosewood.core.util;
 
+import com.bagel.rosewood.core.registry.RosewoodBlocks;
+import com.bagel.rosewood.core.registry.RosewoodItems;
 import com.google.common.base.Supplier;
 
 import net.minecraft.block.Block;
