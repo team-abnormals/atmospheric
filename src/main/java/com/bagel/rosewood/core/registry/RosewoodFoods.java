@@ -9,4 +9,5 @@ import net.minecraftforge.fml.common.Mod;
 public class RosewoodFoods {
 	public static Food PASSIONFRUIT = new Food.Builder().hunger(2).saturation(0.3F).build();
 	public static Food SHIMMERING_PASSIONFRUIT = new Food.Builder().hunger(5).saturation(1.2F).build();
+	public static Food PASSIONFRUIT_TART = new Food.Builder().hunger(3).saturation(0.6F).build();
 }
