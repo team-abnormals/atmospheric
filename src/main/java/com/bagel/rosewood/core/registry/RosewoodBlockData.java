@@ -7,7 +7,7 @@ public class RosewoodBlockData {
 	public static void registerCompostables() {
 		DataUtils.registerCompostable(0.3F, RosewoodBlocks.ROSEWOOD_LEAVES.get());
 		DataUtils.registerCompostable(0.65F,RosewoodBlocks.MONKEY_BRUSH.get());
-		DataUtils.registerCompostable(0.5F, RosewoodBlocks.PASSION_VINE_BLOCK.get());
+		DataUtils.registerCompostable(0.5F, RosewoodBlocks.PASSION_VINE_BUNDLE.get());
 		DataUtils.registerCompostable(0.3F, RosewoodBlocks.ROSEWOOD_SAPLING.get());
 		DataUtils.registerCompostable(0.5F, RosewoodBlocks.PASSION_VINE.get());
 		DataUtils.registerCompostable(0.65F,RosewoodItems.PASSIONFRUIT.get());
@@ -16,8 +16,6 @@ public class RosewoodBlockData {
 			DataUtils.registerCompostable(0.3F, RosewoodBlocks.ROSEWOOD_LEAF_CARPET.get());
 			DataUtils.registerCompostable(1F, RosewoodBlocks.PASSIONFRUIT_CRATE.get());
 		}
-		
-		
 	}
 	
 	public static void registerStrippables() {
@@ -38,7 +36,7 @@ public class RosewoodBlockData {
 		DataUtils.registerFlammable(RosewoodBlocks.ROSEWOOD_FENCE_GATE.get(), 5, 20);
 
 		DataUtils.registerFlammable(RosewoodBlocks.PASSION_VINE.get(), 5, 60);
-		DataUtils.registerFlammable(RosewoodBlocks.PASSION_VINE_BLOCK.get(), 5, 60);
+		DataUtils.registerFlammable(RosewoodBlocks.PASSION_VINE_BUNDLE.get(), 5, 60);
 		
 		if(ModList.get().isLoaded("quark")) {
 			DataUtils.registerFlammable(RosewoodBlocks.VERTICAL_ROSEWOOD_PLANKS.get(), 5, 20);
@@ -47,7 +45,4 @@ public class RosewoodBlockData {
 			DataUtils.registerFlammable(RosewoodBlocks.ROSEWOOD_BOOKSHELF.get(), 5, 20);
 		}
 	}
-	
-
-	
 }

@@ -1,13 +1,13 @@
 {
     "parent": "block/block",
     "textures": {
-        "particle": "rosewood:block/passion_vine_block_side",
-        "down": "rosewood:block/passion_vine_block_bottom",
-        "up": "rosewood:block/passion_vine_block_top",
-        "north": "rosewood:block/passion_vine_block_side",
-        "east": "rosewood:block/passion_vine_block_side",
-        "south": "rosewood:block/passion_vine_block_side",
-        "west": "rosewood:block/passion_vine_block_side"
+        "particle": "rosewood:block/passion_vine_bundle_side",
+        "down": "rosewood:block/passion_vine_bundle_bottom",
+        "up": "rosewood:block/passion_vine_bundle_top",
+        "north": "rosewood:block/passion_vine_bundle_side",
+        "east": "rosewood:block/passion_vine_bundle_side",
+        "south": "rosewood:block/passion_vine_bundle_side",
+        "west": "rosewood:block/passion_vine_bundle_side"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

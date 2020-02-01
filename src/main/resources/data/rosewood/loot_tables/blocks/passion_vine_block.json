@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "rosewood:passion_vine_block"
+          "name": "rosewood:passion_vine_bundle"
         }
       ],
       "conditions": [

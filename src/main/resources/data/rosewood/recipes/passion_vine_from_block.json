@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "rosewood:passion_vine_block"
+      "item": "rosewood:passion_vine_bundle"
     }
   ],
   "result": {
