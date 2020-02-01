@@ -9,7 +9,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 
 public class PassionVineBundleBlock extends Block {
@@ -22,29 +26,43 @@ public class PassionVineBundleBlock extends Block {
 		entityIn.fall(fallDistance, 0.2F);	
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
-	public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		
-		int counter = 9;
+		
 		BlockPos nextPos = pos.offset(Direction.DOWN);
 		Block nextBlock = worldIn.getBlockState(nextPos).getBlock();
-		//Block nextSupporter = worldIn.getBlockState(nextPos.offset(player.getHorizontalFacing())).getBlock();
-		BlockState vine = RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, player.getHorizontalFacing().getOpposite());
+		int counter = 9;
 		
-		//counter = 8;
-		//worldIn.getPendingBlockTicks().scheduleTick(pos, RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, player.getHorizontalFacing().getOpposite()).getBlock(), 20); 
-		while (counter > 0) {
-			if (nextBlock == Blocks.AIR) {
-				worldIn.setBlockState(nextPos, vine);
-				counter = counter - 1;
-				nextPos = nextPos.offset(Direction.DOWN);
-				nextBlock = worldIn.getBlockState(nextPos).getBlock();
-			} else {
-				break;
+  	    worldIn.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_GRASS_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+
+		if (!worldIn.getBlockState(pos.offset(player.getHorizontalFacing())).getBlock().isAir(worldIn.getBlockState(pos.offset(player.getHorizontalFacing())))) {
+			BlockState vine = RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, player.getHorizontalFacing().getOpposite());
+			worldIn.setBlockState(pos, vine);
+			counter = 8;
+			while (counter > 0) {
+				if (nextBlock.isAir(worldIn.getBlockState(nextPos))) {
+					worldIn.setBlockState(nextPos, vine);
+					counter = counter - 1;
+					nextPos = nextPos.offset(Direction.DOWN);
+					nextBlock = worldIn.getBlockState(nextPos).getBlock();
+				} else {
+					break;
+				}
+			}
+			if (player.abilities.isCreativeMode == false) {
+				spawnAsEntity(worldIn, nextPos, new ItemStack(RosewoodBlocks.PASSION_VINE.get(), counter));
+			}
+			
+		} else {
+			worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
+			if (player.abilities.isCreativeMode == false) {
+				spawnAsEntity(worldIn, nextPos, new ItemStack(RosewoodBlocks.PASSION_VINE.get(), 9));
 			}
 		}
-		spawnAsEntity(worldIn, nextPos, new ItemStack(RosewoodBlocks.PASSION_VINE.get(), counter));
-		super.onBlockHarvested(worldIn, pos, state, player);
+		return true;	
+	
 	}
 }
 
