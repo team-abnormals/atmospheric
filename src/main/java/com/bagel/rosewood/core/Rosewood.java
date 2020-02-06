@@ -26,8 +26,8 @@ public class Rosewood
 
     public Rosewood() {
     	IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
+        modEventBus.addListener(this::setup);
+        modEventBus.addListener(this::clientSetup);
         
         RosewoodBlocks.BLOCKS.register(modEventBus);
         RosewoodItems.ITEMS.register(modEventBus);
