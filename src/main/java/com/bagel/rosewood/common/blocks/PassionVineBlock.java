@@ -18,6 +18,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.EnumProperty;
@@ -157,7 +158,13 @@ public class PassionVineBlock extends Block implements IGrowable {
 		if (player.getHeldItem(handIn).getItem() == Items.BLAZE_POWDER && state.get(GROWABLE)) {
 			worldIn.setBlockState(pos, state.with(GROWABLE, false));
 	        worldIn.playSound((double)((float)pos.getX() + 0.5F), (double)((float)pos.getY() + 0.5F), (double)((float)pos.getZ() + 0.5F), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F + rand.nextFloat(), rand.nextFloat() * 0.7F + 0.3F, false);
-			if (!player.abilities.isCreativeMode) {
+	        worldIn.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4D, (double)pos.getZ() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
+	        worldIn.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4D, (double)pos.getZ() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
+	        worldIn.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4D, (double)pos.getZ() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
+	        worldIn.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4D, (double)pos.getZ() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
+	        worldIn.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4D, (double)pos.getZ() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
+
+	        if (!player.abilities.isCreativeMode) {
 				player.getHeldItem(handIn).shrink(1);
 			}
 			return true;
