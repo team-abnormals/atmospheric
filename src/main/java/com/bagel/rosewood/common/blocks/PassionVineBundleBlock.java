@@ -17,7 +17,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
-import net.minecraft.util.Direction.Axis;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -44,8 +43,9 @@ public class PassionVineBundleBlock extends Block {
 	    Block nextBlock = worldIn.getBlockState(nextPos).getBlock();
 		int counter = 9;
 		Direction direction = player.getHorizontalFacing();
+		//Block blockreader = worldIn.getBlockState(pos.offset(direction)).getBlock();
 		if (!worldIn.getBlockState(pos.offset(direction)).getBlock().isAir(worldIn.getBlockState(pos.offset(direction))) 
-				//|| PassionVineBlock.canAttachTo(blockreader, pos.offset(player.getHorizontalFacing()), player.getHorizontalFacing())
+				&& RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite()).isValidPosition(worldIn, pos)
 				) {
 			BlockState vine = RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite());
 			worldIn.setBlockState(pos, vine);
@@ -62,7 +62,7 @@ public class PassionVineBundleBlock extends Block {
 			}
 			
 			if (player.abilities.isCreativeMode == false) {
-				spawnAsEntity(worldIn, nextPos, new ItemStack(RosewoodBlocks.PASSION_VINE.get(), counter));	
+				spawnAsEntity(worldIn, nextPos.offset(Direction.UP), new ItemStack(RosewoodBlocks.PASSION_VINE.get(), counter));	
 			}	
 		} else {
 			int k1 = 0;
@@ -77,7 +77,9 @@ public class PassionVineBundleBlock extends Block {
 				direction = Direction.NORTH;
 			}
 			k1 = k1 + 1;
-			if (!worldIn.getBlockState(pos.offset(direction)).getBlock().isAir(worldIn.getBlockState(pos.offset(direction)))) {
+			if (!worldIn.getBlockState(pos.offset(direction)).getBlock().isAir(worldIn.getBlockState(pos.offset(direction))) 
+					&& RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite()).isValidPosition(worldIn, pos)
+					) {
 				BlockState vine = RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite());
 				worldIn.setBlockState(pos, vine);
 				counter = 8;
@@ -92,13 +94,13 @@ public class PassionVineBundleBlock extends Block {
 					}	
 				}
 				if (player.abilities.isCreativeMode == false) {
-					spawnAsEntity(worldIn, nextPos, new ItemStack(RosewoodBlocks.PASSION_VINE.get(), counter));	
+					spawnAsEntity(worldIn, nextPos.offset(Direction.UP), new ItemStack(RosewoodBlocks.PASSION_VINE.get(), counter));	
 				}
 				break;
 			} else if (k1 >= 3){
 				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
 				if (player.abilities.isCreativeMode == false) {
-					spawnAsEntity(worldIn, nextPos, new ItemStack(RosewoodBlocks.PASSION_VINE.get(), 9));	
+					spawnAsEntity(worldIn, nextPos.offset(Direction.UP), new ItemStack(RosewoodBlocks.PASSION_VINE.get(), 9));	
 				}
 				break;
 			}
