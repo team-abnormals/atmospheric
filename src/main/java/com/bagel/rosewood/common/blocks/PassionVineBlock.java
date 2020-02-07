@@ -42,7 +42,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 	public static final IntegerProperty AGE = StateUtils.AGE_0_4; 
 	public static final BooleanProperty GROWABLE = StateUtils.GROWABLE; 
-	public static final EnumProperty<PassionVineAttachment> ATTACHMENT = StateUtils.PASSION_VINE_ATTACHMENT; 
+	public static final EnumProperty<PassionVineAttachment> ATTACHMENT = StateUtils.PASSION_VINE_ATTACHMENT;
 	   
 	protected static final VoxelShape EAST_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 1.0D, 16.0D, 16.0D);
 	protected static final VoxelShape WEST_AABB = Block.makeCuboidShape(15.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
@@ -150,17 +150,13 @@ public class PassionVineBlock extends Block implements IGrowable {
 	
 	@SuppressWarnings("deprecation")
 	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+		Random rand = new Random();
 	    determineState(state, worldIn, pos);
 		int i = state.get(AGE);
 		boolean flag = i == 4;
 		if (player.getHeldItem(handIn).getItem() == Items.BLAZE_POWDER && state.get(GROWABLE)) {
 			worldIn.setBlockState(pos, state.with(GROWABLE, false));
-			if (!player.abilities.isCreativeMode) {
-				player.getHeldItem(handIn).shrink(1);
-			}
-			return true;
-		} else if (player.getHeldItem(handIn).getItem() == Items.GLOWSTONE_DUST && state.get(GROWABLE) == false) {
-			worldIn.setBlockState(pos, state.with(GROWABLE, true));
+	        worldIn.playSound((double)((float)pos.getX() + 0.5F), (double)((float)pos.getY() + 0.5F), (double)((float)pos.getZ() + 0.5F), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F + rand.nextFloat(), rand.nextFloat() * 0.7F + 0.3F, false);
 			if (!player.abilities.isCreativeMode) {
 				player.getHeldItem(handIn).shrink(1);
 			}
