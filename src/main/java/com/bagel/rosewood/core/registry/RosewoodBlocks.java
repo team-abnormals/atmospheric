@@ -30,6 +30,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.potion.Effects;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -58,7 +59,7 @@ public class RosewoodBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_DOOR 			= RegistryUtils.createBlock("rosewood_door", 			() -> new DoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	
 	public static final RegistryObject<Block> PASSION_VINE 				= RegistryUtils.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= RegistryUtils.createBlock("passion_vine_bundle", 		() -> new PassionVineBundleBlock(Block.Properties.from(Blocks.DRIED_KELP_BLOCK)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= RegistryUtils.createBlock("passion_vine_bundle", 		() -> new PassionVineBundleBlock(Block.Properties.create(Material.LEAVES, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> MONKEY_BRUSH 				= RegistryUtils.createBlock("monkey_brush", 			() -> new MonkeyBrushBlock(Effects.ABSORPTION, 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
 	
