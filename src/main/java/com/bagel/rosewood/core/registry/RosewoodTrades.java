@@ -24,7 +24,6 @@ public class RosewoodTrades {
 		if(event.getType() == VillagerProfession.FARMER) {
 			event.getTrades().get(3).add(new TradeUtils.EmeraldsForItemsTrade(RosewoodItems.PASSIONFRUIT.get(), 8, 1, 12, 20));
 			event.getTrades().get(3).add(new TradeUtils.ItemsForEmeraldsTrade(RosewoodItems.PASSIONFRUIT_TART.get(), 4, 16, 4, 15));	
-			event.getTrades().get(5).add(new TradeUtils.ItemsForEmeraldsTrade(RosewoodItems.SHIMMERING_PASSIONFRUIT.get(), 3, 3, 5, 30));	
 		}
     }
 }
