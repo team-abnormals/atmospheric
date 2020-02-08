@@ -1,6 +1,8 @@
 package com.bagel.rosewood.core;
 
 import com.bagel.rosewood.client.renderer.RosewoodBoatRenderer;
+import com.bagel.rosewood.common.blocks.PassionVineBundleDispenseBehavior;
+import com.bagel.rosewood.common.blocks.PassionVineDispenseBehavior;
 import com.bagel.rosewood.common.entity.RosewoodBoatEntity;
 import com.bagel.rosewood.core.registry.RosewoodBiomes;
 import com.bagel.rosewood.core.registry.RosewoodBlockData;
@@ -9,6 +11,8 @@ import com.bagel.rosewood.core.registry.RosewoodEffects;
 import com.bagel.rosewood.core.registry.RosewoodEntities;
 import com.bagel.rosewood.core.registry.RosewoodItems;
 import com.bagel.rosewood.core.util.ColorUtils;
+
+import net.minecraft.block.DispenserBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -45,7 +49,9 @@ public class Rosewood
     	RosewoodBlockData.registerCompostables();
     	RosewoodBlockData.registerFlammables();
     	RosewoodBlockData.registerStrippables();
-    	RosewoodEffects.registerBrewingRecipes();	
+    	RosewoodEffects.registerBrewingRecipes();
+    	DispenserBlock.registerDispenseBehavior(RosewoodBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
+    	DispenserBlock.registerDispenseBehavior(RosewoodBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
 	}
     
     private void clientSetup(final FMLClientSetupEvent event) 

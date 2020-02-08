@@ -1,7 +1,7 @@
-package com.bagel.rosewood.core.util;
+package com.bagel.rosewood.core.registry;
 
 import com.bagel.rosewood.core.Rosewood;
-import com.bagel.rosewood.core.registry.RosewoodEffects;
+
 import net.minecraft.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -9,7 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Rosewood.MODID)
-public class EntityUtils {
+public class RosewoodEvents {
 	@SubscribeEvent
 	public static void onLivingHurt(LivingHurtEvent event) {
 		LivingEntity entity = event.getEntityLiving();
@@ -56,4 +56,33 @@ public class EntityUtils {
 			}
 		}
 	}
+	/*
+	@SuppressWarnings("deprecation")
+	@SubscribeEvent
+	public static void onPistonPush(PistonEvent.Post event) {
+		World worldIn = event.getWorld().getWorld();
+		
+		BlockPos pos = event.getPos();
+		Direction direction = event.getDirection();
+		
+		BlockPos nextPos = pos.offset(Direction.DOWN);
+	    Block nextBlock = worldIn.getBlockState(nextPos).getBlock();
+		int counter = 9;
+		
+			BlockState vine = RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite());
+			worldIn.setBlockState(pos, vine);
+			counter = 8;
+			while (counter > 0) {
+				if (nextBlock.isAir(worldIn.getBlockState(nextPos))) {
+					worldIn.setBlockState(nextPos, vine);
+					counter = counter - 1;
+					nextPos = nextPos.offset(Direction.DOWN);
+					nextBlock = worldIn.getBlockState(nextPos).getBlock();	
+				} else {
+					break;	
+				}	
+			}
+			Block.spawnAsEntity(worldIn, nextPos.offset(Direction.UP), new ItemStack(RosewoodBlocks.PASSION_VINE.get(), counter));	
+		
+	}*/
 }
