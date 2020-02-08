@@ -2,11 +2,12 @@ package com.bagel.rosewood.core.registry;
 
 import java.util.Random;
 
+import com.bagel.rosewood.common.entity.GoldenPassionfruitSeedEntity;
+import com.bagel.rosewood.common.entity.PassionfruitSeedEntity;
 import com.bagel.rosewood.core.Rosewood;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.SnowballEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
@@ -62,10 +63,10 @@ public class RosewoodEvents {
 				if (playerIn.world.getGameTime() % 3 == 0) {
 					//playSound((PlayerEntity)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_LLAMA_SPIT, this.getSoundCategory(), 1.0F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F);
 					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
-					SnowballEntity snowballentity = new SnowballEntity(worldIn, playerIn);
-					snowballentity.setItem(new ItemStack(RosewoodItems.PASSIONFRUIT_SEED.get()));
-					snowballentity.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3F, 1.0F);
-					worldIn.addEntity(snowballentity);    
+					GoldenPassionfruitSeedEntity passionseed = new GoldenPassionfruitSeedEntity(worldIn, playerIn);
+					passionseed.setItem(new ItemStack(RosewoodItems.PASSIONFRUIT_SEED.get()));
+					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3F, 1.0F);
+					worldIn.addEntity(passionseed);    
 				}	
 			}
 		} else if (event.getEntityLiving().isPotionActive(RosewoodFoods.SPITTING)) {
@@ -73,13 +74,13 @@ public class RosewoodEvents {
 			LivingEntity playerIn = event.getEntityLiving();
 			Random random = new Random();
 			if (!worldIn.isRemote) {
-				if (playerIn.world.getGameTime() % 6 == 0) {
+				if (playerIn.world.getGameTime() % 5 == 0) {
 					//playSound((PlayerEntity)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_LLAMA_SPIT, this.getSoundCategory(), 1.0F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F);
 					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
-					SnowballEntity snowballentity = new SnowballEntity(worldIn, playerIn);
-					snowballentity.setItem(new ItemStack(RosewoodItems.PASSIONFRUIT_SEED.get()));
-					snowballentity.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 2F, 1.0F);
-					worldIn.addEntity(snowballentity);    
+					PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(worldIn, playerIn);
+					passionseed.setItem(new ItemStack(RosewoodItems.PASSIONFRUIT_SEED.get()));
+					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 2F, 1.0F);
+					worldIn.addEntity(passionseed);    
 				}	
 			}
 		}
