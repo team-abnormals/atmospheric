@@ -1,5 +1,7 @@
 package com.bagel.rosewood.common.entity;
 
+import com.bagel.rosewood.core.registry.RosewoodDamageSources;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -10,7 +12,6 @@ import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.particles.ItemParticleData;
 import net.minecraft.particles.ParticleTypes;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
@@ -55,7 +56,7 @@ public class PassionfruitSeedEntity extends ProjectileItemEntity {
    protected void onImpact(RayTraceResult result) {
       if (result.getType() == RayTraceResult.Type.ENTITY) {
          Entity entity = ((EntityRayTraceResult)result).getEntity();
-         entity.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 1.5F);
+         entity.attackEntityFrom(RosewoodDamageSources.causeThrownDamage(this, this.getThrower()), 0.5F);
       }
 
       if (!this.world.isRemote) {
