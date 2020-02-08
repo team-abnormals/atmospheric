@@ -56,7 +56,7 @@ public class GoldenPassionfruitSeedEntity extends ProjectileItemEntity {
    protected void onImpact(RayTraceResult result) {
       if (result.getType() == RayTraceResult.Type.ENTITY) {
          Entity entity = ((EntityRayTraceResult)result).getEntity();
-         entity.attackEntityFrom(RosewoodDamageSources.causeThrownDamage(this, this.getThrower()), 1.5F);
+         entity.attackEntityFrom(RosewoodDamageSources.causeThrownDamage(this, this.getThrower()), 1.0F);
       }
 
       if (!this.world.isRemote) {
