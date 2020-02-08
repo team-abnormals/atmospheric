@@ -9,12 +9,16 @@ import com.bagel.rosewood.core.registry.RosewoodBlockData;
 import com.bagel.rosewood.core.registry.RosewoodBlocks;
 import com.bagel.rosewood.core.registry.RosewoodEffects;
 import com.bagel.rosewood.core.registry.RosewoodEntities;
+import com.bagel.rosewood.core.registry.RosewoodFoods;
 import com.bagel.rosewood.core.registry.RosewoodItems;
 import com.bagel.rosewood.core.util.ColorUtils;
 
 import net.minecraft.block.DispenserBlock;
+import net.minecraft.potion.Effect;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -23,6 +27,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("rosewood")
+@Mod.EventBusSubscriber(modid = "rosewood", bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Rosewood
 {
     //private static final Logger LOGGER = LogManager.getLogger();
@@ -58,5 +63,10 @@ public class Rosewood
     {
     	ColorUtils.registerBlockColors();
     	RenderingRegistry.registerEntityRenderingHandler(RosewoodBoatEntity.class, RosewoodBoatRenderer::new);
+    }
+    
+    @SubscribeEvent
+	public static void onRegisterEffects(RegistryEvent.Register<Effect> event) {
+    	event.getRegistry().registerAll(RosewoodFoods.SPITTING, RosewoodFoods.GOLDEN_SPITTING);
     }
 }

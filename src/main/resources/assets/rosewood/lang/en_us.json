@@ -33,6 +33,7 @@
 	
 	"item.rosewood.rosewood_boat": "Rosewood Boat",
 	"item.rosewood.passionfruit": "Passionfruit",
+	"item.rosewood.passionfruit_seed": "Passionfruit Seed",
 	"item.rosewood.shimmering_passionfruit": "Shimmering Passionfruit",
 	"item.rosewood.passionfruit_tart": "Passionfruit Tart",
 	"item.rosewood.passionfruit_sorbet": "Passionfruit Sorbet",
@@ -41,6 +42,8 @@
 	
 	"effect.rosewood.relief": "Relief",
 	"effect.rosewood.worsening": "Worsening",
+	"effect.rosewood.spitting": "Spitting",
+	"effect.rosewood.golden_spitting": "Golden Spitting",
 	
 	"item.minecraft.potion.effect.relief": "Potion of Relief",
 	"item.minecraft.potion.effect.relief_strong": "Potion of Relief",

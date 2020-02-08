@@ -24,9 +24,9 @@ public class RosewoodEffects {
     public static final RegistryObject<Potion> RELIEF_NORMAL  = POTIONS.register("relief", () -> new Potion(new EffectInstance(RELIEF.get(), 3600)));
 	public static final RegistryObject<Potion> RELIEF_STRONG  = POTIONS.register("relief_strong", () -> new Potion(new EffectInstance(RELIEF.get(), 1800, 1)));
 	public static final RegistryObject<Potion> RELIEF_LONG    = POTIONS.register("relief_long", () -> new Potion(new EffectInstance(RELIEF.get(), 9600)));
-	public static final RegistryObject<Potion> WORSENING_NORMAL      = POTIONS.register("worsening", () -> new Potion(new EffectInstance(WORSENING.get(), 3600)));
-	public static final RegistryObject<Potion> WORSENING_STRONG      = POTIONS.register("worsening_strong", () -> new Potion(new EffectInstance(WORSENING.get(), 1800, 1)));
-	public static final RegistryObject<Potion> WORSENING_LONG        = POTIONS.register("worsening_long", () -> new Potion(new EffectInstance(WORSENING.get(), 9600)));
+	public static final RegistryObject<Potion> WORSENING_NORMAL = POTIONS.register("worsening", () -> new Potion(new EffectInstance(WORSENING.get(), 3600)));
+	public static final RegistryObject<Potion> WORSENING_STRONG = POTIONS.register("worsening_strong", () -> new Potion(new EffectInstance(WORSENING.get(), 1800, 1)));
+	public static final RegistryObject<Potion> WORSENING_LONG   = POTIONS.register("worsening_long", () -> new Potion(new EffectInstance(WORSENING.get(), 9600)));
     
     public static void registerBrewingRecipes() {
 		PotionBrewing.addMix(Potions.AWKWARD, RosewoodItems.SHIMMERING_PASSIONFRUIT.get(), RELIEF_NORMAL.get());
@@ -36,5 +36,4 @@ public class RosewoodEffects {
 		PotionBrewing.addMix(WORSENING_NORMAL.get(), Items.GLOWSTONE_DUST, WORSENING_STRONG.get());
 		PotionBrewing.addMix(WORSENING_NORMAL.get(), Items.REDSTONE, WORSENING_LONG.get());
 	}
-
 }

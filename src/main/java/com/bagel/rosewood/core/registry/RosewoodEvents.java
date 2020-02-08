@@ -1,8 +1,16 @@
 package com.bagel.rosewood.core.registry;
 
+import java.util.Random;
+
 import com.bagel.rosewood.core.Rosewood;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.SnowballEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -40,6 +48,39 @@ public class RosewoodEvents {
 				entity.getPersistentData().putInt("PotionHealAmplifier", amplifier);
 				entity.getPersistentData().putFloat("IncomingDamage", event.getAmount());
 				entity.getPersistentData().putBoolean("Heal", true);
+			}
+		}
+	}
+	
+	@SubscribeEvent
+	public static void spittingTick(LivingUpdateEvent event) {
+		if (event.getEntityLiving().isPotionActive(RosewoodFoods.GOLDEN_SPITTING)) {
+			World worldIn = event.getEntityLiving().getEntityWorld();
+			LivingEntity playerIn = event.getEntityLiving();
+			Random random = new Random();
+			if (!worldIn.isRemote) {
+				if (playerIn.world.getGameTime() % 3 == 0) {
+					//playSound((PlayerEntity)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_LLAMA_SPIT, this.getSoundCategory(), 1.0F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F);
+					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
+					SnowballEntity snowballentity = new SnowballEntity(worldIn, playerIn);
+					snowballentity.setItem(new ItemStack(RosewoodItems.PASSIONFRUIT_SEED.get()));
+					snowballentity.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3F, 1.0F);
+					worldIn.addEntity(snowballentity);    
+				}	
+			}
+		} else if (event.getEntityLiving().isPotionActive(RosewoodFoods.SPITTING)) {
+			World worldIn = event.getEntityLiving().getEntityWorld();
+			LivingEntity playerIn = event.getEntityLiving();
+			Random random = new Random();
+			if (!worldIn.isRemote) {
+				if (playerIn.world.getGameTime() % 6 == 0) {
+					//playSound((PlayerEntity)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_LLAMA_SPIT, this.getSoundCategory(), 1.0F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F);
+					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
+					SnowballEntity snowballentity = new SnowballEntity(worldIn, playerIn);
+					snowballentity.setItem(new ItemStack(RosewoodItems.PASSIONFRUIT_SEED.get()));
+					snowballentity.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 2F, 1.0F);
+					worldIn.addEntity(snowballentity);    
+				}	
 			}
 		}
 	}
