@@ -27,7 +27,7 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 			MutableBoundingBox boundsIn) {
 
 		int branches = 2 + rand.nextInt(3);
-		int height = 4 + rand.nextInt(3) + rand.nextInt(3);
+		int height = 4 + rand.nextInt(2) + rand.nextInt(3) + rand.nextInt(3);
 		int bonusCanopies = rand.nextInt(3);
 
 		boolean flag = true;
@@ -69,12 +69,25 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 
 				int logX = position.getX();
 				int logZ = position.getZ();
+				boolean canopy = false;
 
 				for (int k1 = 0; k1 < height; ++k1) {
 					int logY = position.getY() + k1;
 					BlockPos blockpos = new BlockPos(logX, logY, logZ);
 					if (isAirOrLeaves(worldIn, blockpos)) {
 						this.placeLogAt(changedBlocks, worldIn, blockpos, boundsIn, Direction.UP);
+					}
+					if (rand.nextInt(6) == 0 && k1 > 3 && k1 < height && canopy == false) {
+						int leafSize = 1 + rand.nextInt(2);
+						for(int k3 = -leafSize; k3 <= leafSize; ++k3) {
+							for(int j4 = -leafSize; j4 <= leafSize; ++j4) {
+								if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
+									this.placeLeafAt(changedBlocks, worldIn, blockpos.add(k3, 0, j4), boundsIn);
+								}
+							}
+						}
+						canopy = true;
+						
 					}
 				}
 
@@ -95,27 +108,38 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 					int branchHeight = 0;
 					
 					for (int k4 = 0; k4 < turns; ++k4) {
-						branchLength = 1 + rand.nextInt(3);
-						branchHeight = 2 + rand.nextInt(3);
+						branchLength = 1 + rand.nextInt(2) + rand.nextInt(2);
+						branchHeight = 1 + rand.nextInt(3) + rand.nextInt(2);
 						createHorizontalLog(branchLength, changedBlocks, worldIn, currentPos, offset, boundsIn);
-						createVerticalLog(branchHeight, changedBlocks, worldIn, currentPos.offset(offset, branchLength), boundsIn);
+						createVerticalLog(branchHeight, changedBlocks, worldIn, currentPos.offset(offset, branchLength), boundsIn, rand);
 						currentPos = currentPos.offset(offset, branchLength).offset(Direction.UP, branchHeight);
 					}
 					
-					for(int k3 = -3; k3 <= 3; ++k3) {
-						for(int j4 = -3; j4 <= 3; ++j4) {
-							if (Math.abs(k3) != 3 || Math.abs(j4) != 3) {
+					int leafSize = 2 + rand.nextInt(2);
+					int leafSizeTop = 0;
+					if (leafSize == 2) {
+						leafSizeTop = leafSize - 1;
+					} else {
+						leafSizeTop = leafSize - 1 - rand.nextInt(2);
+					}
+					//first layer of leaves
+					for(int k3 = -leafSize; k3 <= leafSize; ++k3) {
+						for(int j4 = -leafSize; j4 <= leafSize; ++j4) {
+							if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
 								this.placeLeafAt(changedBlocks, worldIn, currentPos.add(k3, 0, j4), boundsIn);
 							}
 						}
 					}
 					
+					//second layer of leaves
 					currentPos = currentPos.offset(Direction.UP, 1);
-					for(int l3 = -1; l3 <= 1; ++l3) {
-			               for(int k4 = -1; k4 <= 1; ++k4) {
-			                  this.placeLeafAt(changedBlocks, worldIn, currentPos.add(l3, 0, k4), boundsIn);
-			               }
-			            }
+					for(int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
+						for(int j4 = -leafSizeTop; j4 <= leafSizeTop; ++j4) {
+							if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
+								this.placeLeafAt(changedBlocks, worldIn, currentPos.add(k3, 0, j4), boundsIn);
+							}
+						}
+					}
 
 					logX = position.getX();
 					logZ = position.getZ();
@@ -161,11 +185,12 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 			Set<BlockPos> changedBlocks, 
 			IWorldGenerationReader worldIn, 
 			BlockPos pos, 
-			MutableBoundingBox boundsIn) {
+			MutableBoundingBox boundsIn, Random rand) {
 		
 		int logX = pos.getX();
 		int logY = pos.getY();
 		int logZ = pos.getZ();
+		boolean canopy = false;
 		
 		for (int k1 = 0; k1 < branchHeight; ++k1) {
 			
@@ -174,6 +199,17 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 			BlockPos blockpos = new BlockPos(logX, logY, logZ);
 			if (isAirOrLeaves(worldIn, blockpos)) {
 				this.placeLogAt(changedBlocks, worldIn, blockpos, boundsIn, Direction.UP);	
+			}
+			if (rand.nextInt(6) == 0 && canopy == false) {
+				int leafSize = 1 + rand.nextInt(2);
+				for(int k3 = -leafSize; k3 <= leafSize; ++k3) {
+					for(int j4 = -leafSize; j4 <= leafSize; ++j4) {
+						if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
+							this.placeLeafAt(changedBlocks, worldIn, blockpos.add(k3, 0, j4), boundsIn);
+						}
+					}
+				}
+				canopy = true;
 			}
 		}
 	}

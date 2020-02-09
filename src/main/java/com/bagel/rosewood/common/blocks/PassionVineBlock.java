@@ -18,8 +18,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.IntegerProperty;
@@ -42,8 +40,6 @@ import net.minecraft.world.World;
 public class PassionVineBlock extends Block implements IGrowable {
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 	public static final IntegerProperty AGE = StateUtils.AGE_0_4; 
-	public static final BooleanProperty GROWABLE = StateUtils.GROWABLE; 
-	public static final BooleanProperty OUTSTRETCHED = StateUtils.OUTSTRETCHED; 
 	public static final EnumProperty<PassionVineAttachment> ATTACHMENT = StateUtils.PASSION_VINE_ATTACHMENT;
 	   
 	protected static final VoxelShape EAST_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 1.0D, 16.0D, 16.0D);
@@ -81,18 +77,16 @@ public class PassionVineBlock extends Block implements IGrowable {
 	    Boolean notOld = i < 4;
 	    Boolean canFlower = i >= 1;
 	    Boolean canFruit = notOld && light;
-	    Boolean canGrow = !state.get(OUTSTRETCHED);
 	    Boolean randomNum = worldIn.rand.nextInt(2) == 1;
 	      
-	    if (state.get(GROWABLE)) {
 	    	if (canFlower) {
 	    		if (canFruit) {
-	    			if (randomNum && canGrow) {
+	    			if (randomNum) {
 	    				attemptGrowDown(state, worldIn, pos, random); 
 	    				} else { 
 	    					attemptGrowFruit(state, worldIn, pos, random); 
 	    				}  
-	    			} else if (canGrow){
+	    			} else {
 	    				attemptGrowDown(state, worldIn, pos, random);	
 	    			}
 	    		} else {
@@ -100,7 +94,6 @@ public class PassionVineBlock extends Block implements IGrowable {
 	    				attemptGrowFruit(state, worldIn, pos, random); 
 	    			}	
 	    		}
-	    	}
 	    }
 	
 	public void determineState(BlockState state, World world, BlockPos pos) {
@@ -146,7 +139,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 		if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 			BlockState below = worldIn.getBlockState(pos.down());
 			if (below.getBlock() == Blocks.AIR) {
-				worldIn.setBlockState(pos.down(), RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(AGE, Integer.valueOf(0)).with(FACING, state.get(FACING)).with(OUTSTRETCHED, this.determineOutstretched(state, worldIn, pos, random)));	
+				worldIn.setBlockState(pos.down(), RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(AGE, Integer.valueOf(0)).with(FACING, state.get(FACING)));	
 			}	
 		}
 	}
@@ -172,24 +165,10 @@ public class PassionVineBlock extends Block implements IGrowable {
 	
 	@SuppressWarnings("deprecation")
 	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		Random rand = new Random();
-	    determineState(state, worldIn, pos);
+		determineState(state, worldIn, pos);
 		int i = state.get(AGE);
 		boolean flag = i == 4;
-		if (player.getHeldItem(handIn).getItem() == Items.BLAZE_POWDER && state.get(GROWABLE)) {
-			worldIn.setBlockState(pos, state.with(GROWABLE, false));
-	        worldIn.playSound((double)((float)pos.getX() + 0.5F), (double)((float)pos.getY() + 0.5F), (double)((float)pos.getZ() + 0.5F), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F + rand.nextFloat(), rand.nextFloat() * 0.7F + 0.3F, false);
-	        worldIn.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4D, (double)pos.getZ() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
-	        worldIn.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4D, (double)pos.getZ() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
-	        worldIn.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4D, (double)pos.getZ() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
-	        worldIn.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4D, (double)pos.getZ() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
-	        worldIn.addParticle(ParticleTypes.SMOKE, (double)pos.getX() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), (double)pos.getY() + 0.4D, (double)pos.getZ() + 0.25D + rand.nextDouble() / 2.0D * (double)(rand.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
-
-	        if (!player.abilities.isCreativeMode) {
-				player.getHeldItem(handIn).shrink(1);
-			}
-			return true;
-		} else if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
+		if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
 			return false;	
 		} else if (i == 4) {
 			spawnAsEntity(worldIn, pos, new ItemStack(RosewoodItems.PASSIONFRUIT.get(), 1 + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(3)));
@@ -214,7 +193,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	}
 	
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-		builder.add(ATTACHMENT, AGE, FACING, GROWABLE, OUTSTRETCHED);
+		builder.add(ATTACHMENT, AGE, FACING);
 	}
 	
 	public static boolean canAttachTo(IBlockReader block, BlockPos pos, Direction direction) {
@@ -254,13 +233,11 @@ public class PassionVineBlock extends Block implements IGrowable {
 		BlockState blockstate1 = this.getDefaultState();
 	    IWorldReader iworldreader = context.getWorld();
 	    BlockPos blockpos = context.getPos();
-	    Random rand = new Random();
-
 	    for(Direction direction : context.getNearestLookingDirections()) {
 	    	if (direction.getAxis().isHorizontal()) {
 	    		blockstate1 = blockstate1.with(FACING, direction.getOpposite());
 	            if (blockstate1.isValidPosition(iworldreader, blockpos)) {
-	            	return blockstate1.with(GROWABLE, true).with(OUTSTRETCHED, this.determineOutstretched(blockstate1, context.getWorld(), blockpos, rand));
+	            	return blockstate1;
 	            }
 	        }	
 	    }
