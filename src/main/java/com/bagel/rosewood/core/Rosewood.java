@@ -15,17 +15,18 @@ import com.bagel.rosewood.core.util.ColorUtils;
 
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.potion.Effect;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod("rosewood")
 @Mod.EventBusSubscriber(modid = "rosewood", bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Rosewood
@@ -35,8 +36,6 @@ public class Rosewood
 
     public Rosewood() {
     	IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        modEventBus.addListener(this::setup);
-        modEventBus.addListener(this::clientSetup);
         
         RosewoodBlocks.BLOCKS.register(modEventBus);
         RosewoodItems.ITEMS.register(modEventBus);
@@ -46,6 +45,11 @@ public class Rosewood
         RosewoodEffects.POTIONS.register(modEventBus);
         
         MinecraftForge.EVENT_BUS.register(this);
+        
+        modEventBus.addListener(this::setup);
+        DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
+        	modEventBus.addListener(this::clientSetup);
+        });
     }
     
     private void setup(final FMLCommonSetupEvent event)

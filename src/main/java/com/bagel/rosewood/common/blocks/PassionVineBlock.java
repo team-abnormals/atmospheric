@@ -43,6 +43,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 	public static final IntegerProperty AGE = StateUtils.AGE_0_4; 
 	public static final BooleanProperty GROWABLE = StateUtils.GROWABLE; 
+	public static final BooleanProperty OUTSTRETCHED = StateUtils.OUTSTRETCHED; 
 	public static final EnumProperty<PassionVineAttachment> ATTACHMENT = StateUtils.PASSION_VINE_ATTACHMENT;
 	   
 	protected static final VoxelShape EAST_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 1.0D, 16.0D, 16.0D);
@@ -80,17 +81,18 @@ public class PassionVineBlock extends Block implements IGrowable {
 	    Boolean notOld = i < 4;
 	    Boolean canFlower = i >= 1;
 	    Boolean canFruit = notOld && light;
+	    Boolean canGrow = !state.get(OUTSTRETCHED);
 	    Boolean randomNum = worldIn.rand.nextInt(2) == 1;
 	      
 	    if (state.get(GROWABLE)) {
 	    	if (canFlower) {
 	    		if (canFruit) {
-	    			if (randomNum) { 
-	    				attemptGrowFruit(state, worldIn, pos, random); 
+	    			if (randomNum && canGrow) {
+	    				attemptGrowDown(state, worldIn, pos, random); 
 	    				} else { 
-	    					attemptGrowDown(state, worldIn, pos, random); 
+	    					attemptGrowFruit(state, worldIn, pos, random); 
 	    				}  
-	    			} else { 
+	    			} else if (canGrow){
 	    				attemptGrowDown(state, worldIn, pos, random);	
 	    			}
 	    		} else {
@@ -144,9 +146,28 @@ public class PassionVineBlock extends Block implements IGrowable {
 		if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 			BlockState below = worldIn.getBlockState(pos.down());
 			if (below.getBlock() == Blocks.AIR) {
-				worldIn.setBlockState(pos.down(), RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(AGE, Integer.valueOf(0)).with(FACING, state.get(FACING)));	
+				worldIn.setBlockState(pos.down(), RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(AGE, Integer.valueOf(0)).with(FACING, state.get(FACING)).with(OUTSTRETCHED, this.determineOutstretched(state, worldIn, pos, random)));	
 			}	
 		}
+	}
+	
+	public boolean determineOutstretched(BlockState state, World worldIn, BlockPos pos, Random random) {
+		BlockPos blockPos = pos;
+		int counter = 0;
+		while (worldIn.getBlockState(blockPos).getBlock() == RosewoodBlocks.PASSION_VINE.get()) {
+			counter = counter + 1;
+			blockPos = blockPos.up();
+		}
+		if (counter >= 7) {
+			//if (random.nextInt(4) == 0) {
+				return true;
+			//} else {
+			//	return false;
+			//}
+		} else {
+			return false;
+		}
+		
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -193,7 +214,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	}
 	
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-		builder.add(ATTACHMENT, AGE, FACING, GROWABLE);
+		builder.add(ATTACHMENT, AGE, FACING, GROWABLE, OUTSTRETCHED);
 	}
 	
 	public static boolean canAttachTo(IBlockReader block, BlockPos pos, Direction direction) {
@@ -210,7 +231,10 @@ public class PassionVineBlock extends Block implements IGrowable {
 	   
 	@SuppressWarnings("deprecation")
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		determineState(stateIn, worldIn.getWorld(), currentPos);
+		//if (worldIn.isBlockLoaded(currentPos)) {
+			determineState(stateIn, worldIn.getWorld(), currentPos);
+		//}
+		
 		if (!stateIn.isValidPosition(worldIn, currentPos)) {
 			return Blocks.AIR.getDefaultState();
 		} else {
@@ -230,12 +254,13 @@ public class PassionVineBlock extends Block implements IGrowable {
 		BlockState blockstate1 = this.getDefaultState();
 	    IWorldReader iworldreader = context.getWorld();
 	    BlockPos blockpos = context.getPos();
+	    Random rand = new Random();
 
 	    for(Direction direction : context.getNearestLookingDirections()) {
 	    	if (direction.getAxis().isHorizontal()) {
 	    		blockstate1 = blockstate1.with(FACING, direction.getOpposite());
 	            if (blockstate1.isValidPosition(iworldreader, blockpos)) {
-	            	return blockstate1.with(GROWABLE, true);
+	            	return blockstate1.with(GROWABLE, true).with(OUTSTRETCHED, this.determineOutstretched(blockstate1, context.getWorld(), blockpos, rand));
 	            }
 	        }	
 	    }
