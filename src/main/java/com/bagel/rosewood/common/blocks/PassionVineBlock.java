@@ -70,14 +70,13 @@ public class PassionVineBlock extends Block implements IGrowable {
 	@SuppressWarnings("deprecation")
 	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
-		determineState(state, worldIn, pos);
 	    int i = state.get(AGE);
 	    
-	    Boolean light = worldIn.getLightSubtracted(pos.up(), 0) >= 5;
-	    Boolean notOld = i < 4;
-	    Boolean canFlower = i >= 1;
-	    Boolean canFruit = notOld && light;
-	    Boolean randomNum = worldIn.rand.nextInt(2) == 1;
+	    boolean light = worldIn.getLightSubtracted(pos.up(), 0) >= 5;
+	    boolean notOld = i < 4;
+	    boolean canFlower = i >= 1;
+	    boolean canFruit = notOld && light;
+	    boolean randomNum = worldIn.rand.nextInt(2) == 1;
 	      
 	    	if (canFlower) {
 	    		if (canFruit) {
@@ -96,26 +95,20 @@ public class PassionVineBlock extends Block implements IGrowable {
 	    		}
 	    }
 	
-	public void determineState(BlockState state, World world, BlockPos pos) {
+	public BlockState determineState(BlockState state, World world, BlockPos pos) {
 		BlockState below = world.getBlockState(pos.down());
 		BlockState above = world.getBlockState(pos.up());
-		Boolean vineAbove = (above.getBlock() == state.getBlock());
-		Boolean vineBelow = (below.getBlock() == state.getBlock());		
+		boolean vineAbove = (above.getBlock() == this && above.get(FACING) == state.get(FACING));
+		boolean vineBelow = (below.getBlock() == this && below.get(FACING) == state.get(FACING));		
 		
 		if (vineAbove) {
-			Boolean vineFacingAbove = above.getBlockState().get(FACING) == state.get(FACING);
-			if (vineFacingAbove) {
-				if (vineBelow) { world.setBlockState(pos, state.with(ATTACHMENT, PassionVineAttachment.MIDDLE)); } 
-				else { world.setBlockState(pos, state.with(ATTACHMENT, PassionVineAttachment.BOTTOM)); }
-			}	
-		} else if (vineBelow) {
-			Boolean vineFacingBelow = below.getBlockState().get(FACING) == state.get(FACING);
-			if (vineFacingBelow) {
-				world.setBlockState(pos, state.with(ATTACHMENT, PassionVineAttachment.TOP));  
-			}
-		} else { 
-			world.setBlockState(pos, state.with(ATTACHMENT, PassionVineAttachment.NONE)); 	
-		}	
+			BlockState attachmentType = vineBelow ? state.with(ATTACHMENT, PassionVineAttachment.MIDDLE) : state.with(ATTACHMENT, PassionVineAttachment.BOTTOM);
+			return attachmentType;
+		} else {
+			BlockState attachmentType = vineBelow ? state.with(ATTACHMENT, PassionVineAttachment.TOP) : state.with(ATTACHMENT, PassionVineAttachment.NONE);
+			return attachmentType;	    
+		}
+		
 	}
 	
 	public void attemptGrowFruit(BlockState state, World worldIn, BlockPos pos, Random random) {
@@ -144,28 +137,8 @@ public class PassionVineBlock extends Block implements IGrowable {
 		}
 	}
 	
-	public boolean determineOutstretched(BlockState state, World worldIn, BlockPos pos, Random random) {
-		BlockPos blockPos = pos;
-		int counter = 0;
-		while (worldIn.getBlockState(blockPos).getBlock() == RosewoodBlocks.PASSION_VINE.get()) {
-			counter = counter + 1;
-			blockPos = blockPos.up();
-		}
-		if (counter >= 7) {
-			//if (random.nextInt(4) == 0) {
-				return true;
-			//} else {
-			//	return false;
-			//}
-		} else {
-			return false;
-		}
-		
-	}
-	
 	@SuppressWarnings("deprecation")
 	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		determineState(state, worldIn, pos);
 		int i = state.get(AGE);
 		boolean flag = i == 4;
 		if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
@@ -208,15 +181,10 @@ public class PassionVineBlock extends Block implements IGrowable {
 	    		&& worldIn.getBlockState(pos.offset(Direction.UP)).get(FACING) == state.get(FACING)));    
 	}
 	   
-	@SuppressWarnings("deprecation")
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		//if (worldIn.isBlockLoaded(currentPos)) {
-			determineState(stateIn, worldIn.getWorld(), currentPos);
-		//}
-		
-		if (!stateIn.isValidPosition(worldIn, currentPos)) {
-			return Blocks.AIR.getDefaultState();
-		} else {
+	    if (!stateIn.isValidPosition(worldIn, currentPos)) {
+	        return Blocks.AIR.getDefaultState();
+	    } else {
 			return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 		}
 	}
@@ -259,7 +227,6 @@ public class PassionVineBlock extends Block implements IGrowable {
 	}
 
 	public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
-		determineState(state, worldIn, pos);
 	    int i = Math.min(4, state.get(AGE) + 1);
 	    worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i)), 2);
 	}
