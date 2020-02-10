@@ -59,7 +59,7 @@ public class RosewoodEvents {
 			World worldIn = event.getEntityLiving().getEntityWorld();
 			LivingEntity playerIn = event.getEntityLiving();
 			Random random = new Random();
-			if (!worldIn.isRemote) {
+			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
 				if (playerIn.world.getGameTime() % 3 == 0) {
 					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
 					GoldenPassionfruitSeedEntity passionseed = new GoldenPassionfruitSeedEntity(worldIn, playerIn);
@@ -72,7 +72,7 @@ public class RosewoodEvents {
 			World worldIn = event.getEntityLiving().getEntityWorld();
 			LivingEntity playerIn = event.getEntityLiving();
 			Random random = new Random();
-			if (!worldIn.isRemote) {
+			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
 				if (playerIn.world.getGameTime() % 5 == 0) {
 					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
 					PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(worldIn, playerIn);
