@@ -102,7 +102,11 @@ public class MonkeyBrushBlock extends FlowerBlock implements IGrowable, IPlantab
                 for(int y = 0; y < x / 16; ++y) {
                     newBlockPos = newBlockPos.add(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
                     if (state.isValidPosition(world, newBlockPos) && world.isAirBlock(newBlockPos)) {
-                        world.setBlockState(newBlockPos, state);
+                    	Direction randomD = Direction.random(random);
+        	        	while (randomD == Direction.DOWN || !state.with(MonkeyBrushBlock.FACING, randomD).isValidPosition(world, newBlockPos)) {
+        		        	randomD = Direction.random(random);
+        	        	}
+                        world.setBlockState(newBlockPos, state.with(FACING, randomD));
                         break label;
                     }
                 }
