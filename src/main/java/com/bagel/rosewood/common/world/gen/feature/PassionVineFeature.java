@@ -24,15 +24,27 @@ public class PassionVineFeature extends Feature<NoFeatureConfig> {
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
 
-			Direction direction = Direction.Plane.HORIZONTAL.random(rand);
-
-			BlockState blockstate = RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction);
+			
 			int i = 0;
 
-			for (int j = 0; j < 64; ++j) {
-				BlockPos blockpos = pos.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+			for (int j = 0; j < 128; ++j) {
+				
+				Direction direction = Direction.Plane.HORIZONTAL.random(rand);
+				BlockState blockstate = RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction).with(PassionVineBlock.AGE, rand.nextInt(2));
+				BlockPos blockpos = pos.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(2) - rand.nextInt(2), rand.nextInt(6) - rand.nextInt(6));
+				
+				int lengthA = 3 + rand.nextInt(2) + rand.nextInt(2) + rand.nextInt(2) + rand.nextInt(2) - rand.nextInt(3);
+				
 				if (worldIn.isAirBlock(blockpos) && blockpos.getY() < 255 && blockstate.isValidPosition(worldIn, blockpos)) {
 					worldIn.setBlockState(blockpos, blockstate, 6);
+					for (int length = 0; length < lengthA; ++length) {
+						blockpos = blockpos.down();
+						if (worldIn.isAirBlock(blockpos) && blockpos.getY() < 255 && blockstate.isValidPosition(worldIn, blockpos)) {
+							worldIn.setBlockState(blockpos, blockstate.with(PassionVineBlock.AGE, rand.nextInt(2)), 6);
+						} else {
+							break;
+						}
+					}
 					++i;
 				}
 			}

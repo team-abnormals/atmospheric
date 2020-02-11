@@ -171,14 +171,18 @@ public class PassionVineBlock extends Block implements IGrowable {
 	
 	public static boolean canAttachTo(IBlockReader block, BlockPos pos, Direction direction) {
 		BlockState blockstate = block.getBlockState(pos);
-	    return !blockstate.canProvidePower() && blockstate.func_224755_d(block, pos, direction);    
+	    return blockstate.func_224755_d(block, pos, direction);    
 	}
 
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		Direction direction = state.get(FACING);
-	    return (PassionVineBlock.canAttachTo(worldIn, pos.offset(direction.getOpposite()), direction) 
-	    		|| (worldIn.getBlockState(pos.offset(Direction.UP)).getBlock() == RosewoodBlocks.PASSION_VINE.get() 
-	    		&& worldIn.getBlockState(pos.offset(Direction.UP)).get(FACING) == state.get(FACING)));    
+		if (PassionVineBlock.canAttachTo(worldIn, pos.offset(direction.getOpposite()), direction) 
+				|| (worldIn.getBlockState(pos.up()).getBlock() == RosewoodBlocks.PASSION_VINE.get() 
+	    		&& worldIn.getBlockState(pos.up()).get(FACING) == state.get(FACING))) {
+			return true;
+		}
+		return false;
+	    
 	}
 	   
 	@SuppressWarnings("deprecation")
