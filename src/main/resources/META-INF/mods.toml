@@ -6,17 +6,14 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 modId="rosewood" #mandatory
 version="${file.jarVersion}" #mandatory
 displayName="Rosewood" #mandatory
-updateJSONURL="http://myurl.me/" #optional
-displayURL="http://example.com/" #optional
+# updateJSONURL="http://myurl.me/" #optional
+# displayURL="http://example.com/" #optional
 logoFile="rosewood.png" #optional
-credits="Thanks for this example mod goes to Java" #optional
-authors="Love, Cheese and small house plants" #optional
+# credits="Thanks for this example mod goes to Java" #optional
+authors="five & bageldotjpg" #optional
 description='''
-This is a long form description of the mod. You can write whatever you want here
-
-Have some lorem ipsum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis lacinia magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sagittis luctus odio eu tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque volutpat ligula eget lacus auctor sagittis. In hac habitasse platea dictumst. Nunc gravida elit vitae sem vehicula efficitur. Donec mattis ipsum et arcu lobortis, eleifend sagittis sem rutrum. Cras pharetra quam eget posuere fermentum. Sed id tincidunt justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Adds a unique biome, with a new wood type and new plants.
+Part of Five & Bagel's Biome Mods series.
 '''
 
 [[dependencies.rosewood]] #optional

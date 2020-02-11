@@ -15,7 +15,7 @@ apply plugin: 'maven-publish'
 
 version = '1.0'
 group = 'com.bagel.rosewood' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'rosewood'
+archivesBaseName = 'rosewood-1.14.4'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
