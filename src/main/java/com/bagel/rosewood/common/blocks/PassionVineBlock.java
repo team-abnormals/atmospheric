@@ -181,6 +181,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	    		&& worldIn.getBlockState(pos.offset(Direction.UP)).get(FACING) == state.get(FACING)));    
 	}
 	   
+	@SuppressWarnings("deprecation")
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
 	    if (!stateIn.isValidPosition(worldIn, currentPos)) {
 	        return Blocks.AIR.getDefaultState();

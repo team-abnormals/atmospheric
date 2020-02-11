@@ -62,7 +62,7 @@ public class RosewoodEvents {
 			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
 				if (playerIn.world.getGameTime() % 3 == 0) {
 					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
-					GoldenPassionfruitSeedEntity passionseed = new GoldenPassionfruitSeedEntity(worldIn, playerIn);
+					GoldenPassionfruitSeedEntity passionseed = new GoldenPassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(RosewoodFoods.GOLDEN_SPITTING).getAmplifier());
 					passionseed.setItem(new ItemStack(RosewoodItems.PASSIONFRUIT_SEED.get()));
 					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3F, 1.0F);
 					worldIn.addEntity(passionseed);    
@@ -75,7 +75,7 @@ public class RosewoodEvents {
 			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
 				if (playerIn.world.getGameTime() % 5 == 0) {
 					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
-					PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(worldIn, playerIn);
+					PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(RosewoodFoods.SPITTING).getAmplifier());
 					passionseed.setItem(new ItemStack(RosewoodItems.PASSIONFRUIT_SEED.get()));
 					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 2F, 1.0F);
 					worldIn.addEntity(passionseed);    

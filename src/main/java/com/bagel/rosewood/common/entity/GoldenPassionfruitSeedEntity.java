@@ -19,16 +19,22 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class GoldenPassionfruitSeedEntity extends ProjectileItemEntity {
-   public GoldenPassionfruitSeedEntity(EntityType<? extends GoldenPassionfruitSeedEntity> p_i50159_1_, World p_i50159_2_) {
+	private final int amplifier;
+	
+   public GoldenPassionfruitSeedEntity(EntityType<? extends GoldenPassionfruitSeedEntity> p_i50159_1_, World p_i50159_2_, int amplifier) {
       super(p_i50159_1_, p_i50159_2_);
+      this.amplifier = amplifier;
+      
    }
 
-   public GoldenPassionfruitSeedEntity(World worldIn, LivingEntity throwerIn) {
+   public GoldenPassionfruitSeedEntity(World worldIn, LivingEntity throwerIn, int amplifier) {
       super(EntityType.SNOWBALL, throwerIn, worldIn);
+      this.amplifier = amplifier;
    }
 
-   public GoldenPassionfruitSeedEntity(World worldIn, double x, double y, double z) {
+   public GoldenPassionfruitSeedEntity(World worldIn, double x, double y, double z, int amplifier) {
       super(EntityType.SNOWBALL, x, y, z, worldIn);
+      this.amplifier = amplifier;
    }
 
    protected Item getDefaultItem() {
@@ -56,7 +62,7 @@ public class GoldenPassionfruitSeedEntity extends ProjectileItemEntity {
    protected void onImpact(RayTraceResult result) {
       if (result.getType() == RayTraceResult.Type.ENTITY) {
          Entity entity = ((EntityRayTraceResult)result).getEntity();
-         entity.attackEntityFrom(RosewoodDamageSources.causeThrownDamage(this, this.getThrower()), 1.0F);
+         entity.attackEntityFrom(RosewoodDamageSources.causeThrownDamage(this, this.getThrower()), 1.0F + amplifier * 1/2);
       }
 
       if (!this.world.isRemote) {
