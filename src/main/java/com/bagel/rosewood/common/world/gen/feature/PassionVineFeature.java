@@ -33,7 +33,7 @@ public class PassionVineFeature extends Feature<NoFeatureConfig> {
 				BlockState blockstate = RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction).with(PassionVineBlock.AGE, rand.nextInt(2));
 				BlockPos blockpos = pos.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(2) - rand.nextInt(2), rand.nextInt(6) - rand.nextInt(6));
 				
-				int lengthA = 3 + rand.nextInt(2) + rand.nextInt(2) + rand.nextInt(2) + rand.nextInt(2) - rand.nextInt(3);
+				int lengthA = 3 + rand.nextInt(2) + rand.nextInt(2) + rand.nextInt(2) - rand.nextInt(3);
 				
 				if (worldIn.isAirBlock(blockpos) && blockpos.getY() < 255 && blockstate.isValidPosition(worldIn, blockpos)) {
 					worldIn.setBlockState(blockpos, blockstate, 6);
