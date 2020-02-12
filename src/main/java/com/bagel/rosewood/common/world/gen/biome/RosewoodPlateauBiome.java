@@ -31,6 +31,7 @@ public class RosewoodPlateauBiome extends Biome {
         
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
+        DefaultBiomeFeatures.addTaigaLargeFerns(this);
         RosewoodBiomeFeatures.addForestTrees(this, 0, 20);
         RosewoodBiomeFeatures.addDoublePlants(this);
         RosewoodBiomeFeatures.addFlowers(this);

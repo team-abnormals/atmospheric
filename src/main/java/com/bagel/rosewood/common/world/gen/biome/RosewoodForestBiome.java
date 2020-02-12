@@ -31,6 +31,7 @@ public class RosewoodForestBiome extends Biome {
         
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
+        DefaultBiomeFeatures.addTaigaLargeFerns(this);
         RosewoodBiomeFeatures.addForestTrees(this, 10, 1);
         RosewoodBiomeFeatures.addDoublePlants(this);
         RosewoodBiomeFeatures.addFlowers(this);

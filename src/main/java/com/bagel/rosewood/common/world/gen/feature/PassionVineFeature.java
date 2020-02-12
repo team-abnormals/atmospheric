@@ -27,11 +27,11 @@ public class PassionVineFeature extends Feature<NoFeatureConfig> {
 			
 			int i = 0;
 
-			for (int j = 0; j < 128; ++j) {
+			for (int j = 0; j < 400; ++j) {
 				
 				Direction direction = Direction.Plane.HORIZONTAL.random(rand);
 				BlockState blockstate = RosewoodBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction).with(PassionVineBlock.AGE, rand.nextInt(2));
-				BlockPos blockpos = pos.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(2) - rand.nextInt(2), rand.nextInt(6) - rand.nextInt(6));
+				BlockPos blockpos = pos.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 				
 				int lengthA = 3 + rand.nextInt(2) + rand.nextInt(2) + rand.nextInt(2) - rand.nextInt(3);
 				
