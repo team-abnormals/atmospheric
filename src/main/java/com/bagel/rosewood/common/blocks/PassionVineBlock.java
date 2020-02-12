@@ -19,7 +19,6 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.DirectionProperty;
-import net.minecraft.state.EnumProperty;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tags.BlockTags;
@@ -40,7 +39,7 @@ import net.minecraft.world.World;
 public class PassionVineBlock extends Block implements IGrowable {
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 	public static final IntegerProperty AGE = StateUtils.AGE_0_4; 
-	public static final EnumProperty<PassionVineAttachment> ATTACHMENT = StateUtils.PASSION_VINE_ATTACHMENT;
+	//public static final EnumProperty<PassionVineAttachment> ATTACHMENT = StateUtils.PASSION_VINE_ATTACHMENT;
 	   
 	protected static final VoxelShape EAST_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 1.0D, 16.0D, 16.0D);
 	protected static final VoxelShape WEST_AABB = Block.makeCuboidShape(15.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
@@ -95,6 +94,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	    		}
 	    }
 	
+	/*
 	public BlockState determineState(BlockState state, World world, BlockPos pos) {
 		BlockState below = world.getBlockState(pos.down());
 		BlockState above = world.getBlockState(pos.up());
@@ -110,6 +110,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 		}
 		
 	}
+	*/
 	
 	public void attemptGrowFruit(BlockState state, World worldIn, BlockPos pos, Random random) {
 		int i = state.get(AGE);
@@ -166,7 +167,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	}
 	
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-		builder.add(ATTACHMENT, AGE, FACING);
+		builder.add(AGE, FACING);
 	}
 	
 	public static boolean canAttachTo(IBlockReader block, BlockPos pos, Direction direction) {
