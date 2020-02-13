@@ -1,0 +1,6 @@
+{
+    "parent": "block/template_wall_post",
+    "textures": {
+        "wall": "atmospheric:block/cut_saffron_travertine"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "atmospheric:block/cut_ivory_travertine_bottom",
+        "top": "atmospheric:block/cut_ivory_travertine_top",
+        "side": "atmospheric:block/ivory_travertine_slab"
+    }
+}

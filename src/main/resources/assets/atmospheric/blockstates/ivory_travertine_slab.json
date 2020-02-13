@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "atmospheric:block/ivory_travertine_slab" },
+        "type=top": { "model": "atmospheric:block/ivory_travertine_slab_top" },
+        "type=double": { "model": "atmospheric:block/ivory_travertine_slab_full" }
+    }
+}

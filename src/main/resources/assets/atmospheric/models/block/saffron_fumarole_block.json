@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "atmospheric:block/saffron_fumarole_block"
+    }
+}

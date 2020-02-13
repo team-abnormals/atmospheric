@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "atmospheric:block/cut_persimmon_travertine_bottom",
+        "top": "atmospheric:block/cut_persimmon_travertine_top",
+        "side": "atmospheric:block/persimmon_travertine_slab"
+    }
+}

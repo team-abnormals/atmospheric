@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "atmospheric:block/ivory_travertine_top",
+        "side": "atmospheric:block/ivory_travertine_side"
+    }
+}

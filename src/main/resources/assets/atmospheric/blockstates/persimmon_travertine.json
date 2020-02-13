@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":    { "model": "atmospheric:block/persimmon_travertine" },
+        "axis=z":     { "model": "atmospheric:block/persimmon_travertine", "x": 90 },
+        "axis=x":     { "model": "atmospheric:block/persimmon_travertine", "x": 90, "y": 90 }
+    }
+}

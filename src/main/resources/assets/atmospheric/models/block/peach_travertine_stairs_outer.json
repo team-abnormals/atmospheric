@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "atmospheric:block/cut_peach_travertine_bottom",
+    "top": "atmospheric:block/cut_peach_travertine_top",
+    "side": "atmospheric:block/cut_peach_travertine"
+  }
+}

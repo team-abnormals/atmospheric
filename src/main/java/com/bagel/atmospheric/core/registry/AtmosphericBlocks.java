@@ -8,6 +8,7 @@ import com.bagel.atmospheric.common.blocks.RosewoodSaplingBlock;
 import com.bagel.atmospheric.common.blocks.VerticalSlabBlock;
 import com.bagel.atmospheric.common.world.gen.trees.RosewoodTree;
 import com.bagel.atmospheric.core.Atmospheric;
+import com.bagel.atmospheric.core.util.PropertyUtils;
 import com.bagel.atmospheric.core.util.RegistryUtils;
 
 import net.minecraft.block.Block;
@@ -19,12 +20,14 @@ import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.LadderBlock;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
+import net.minecraft.block.MagmaBlock;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.TrapDoorBlock;
+import net.minecraft.block.WallBlock;
 import net.minecraft.block.WoodButtonBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -75,4 +78,47 @@ public class AtmosphericBlocks {
 	
 	public static final RegistryObject<Block> PASSIONFRUIT_CRATE				= RegistryUtils.createBlockCompat("quark", "passionfruit_crate", 				() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.PURPLE).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> SHIMMERING_PASSIONFRUIT_CRATE		= RegistryUtils.createBlockCompat("quark", "shimmering_passionfruit_crate", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GOLD).lightValue(7).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public static final RegistryObject<Block> IVORY_TRAVERTINE 		= RegistryUtils.createBlock("ivory_travertine", 	() -> new RotatedPillarBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE 		= RegistryUtils.createBlock("peach_travertine", 	() -> new RotatedPillarBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE 	= RegistryUtils.createBlock("persimmon_travertine", () -> new RotatedPillarBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE 	= RegistryUtils.createBlock("saffron_travertine", 	() -> new RotatedPillarBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	
+	public static final RegistryObject<Block> CHISELED_IVORY_TRAVERTINE 	= RegistryUtils.createBlock("chiseled_ivory_travertine", 		() -> new Block(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CHISELED_PEACH_TRAVERTINE 	= RegistryUtils.createBlock("chiseled_peach_travertine", 		() -> new Block(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CHISELED_PERSIMMON_TRAVERTINE = RegistryUtils.createBlock("chiseled_persimmon_travertine", 	() -> new Block(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CHISELED_SAFFRON_TRAVERTINE 	= RegistryUtils.createBlock("chiseled_saffron_travertine", 		() -> new Block(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	
+	public static final RegistryObject<Block> CUT_IVORY_TRAVERTINE 		= RegistryUtils.createBlock("cut_ivory_travertine", 	() -> new Block(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CUT_PEACH_TRAVERTINE 		= RegistryUtils.createBlock("cut_peach_travertine", 	() -> new Block(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CUT_PERSIMMON_TRAVERTINE 	= RegistryUtils.createBlock("cut_persimmon_travertine", () -> new Block(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CUT_SAFFRON_TRAVERTINE 	= RegistryUtils.createBlock("cut_saffron_travertine", 	() -> new Block(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+
+	public static final RegistryObject<Block> IVORY_TRAVERTINE_STAIRS 		= RegistryUtils.createBlock("ivory_travertine_stairs", 		() -> new StairsBlock(IVORY_TRAVERTINE.get().getDefaultState(),PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE_STAIRS 		= RegistryUtils.createBlock("peach_travertine_stairs", 		() -> new StairsBlock(PEACH_TRAVERTINE.get().getDefaultState(), PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_STAIRS 	= RegistryUtils.createBlock("persimmon_travertine_stairs", 	() -> new StairsBlock(PERSIMMON_TRAVERTINE.get().getDefaultState(), PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_STAIRS 	= RegistryUtils.createBlock("saffron_travertine_stairs", 	() -> new StairsBlock(SAFFRON_TRAVERTINE.get().getDefaultState(), PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	
+	public static final RegistryObject<Block> IVORY_TRAVERTINE_SLAB 	= RegistryUtils.createBlock("ivory_travertine_slab", 	() -> new SlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE_SLAB 	= RegistryUtils.createBlock("peach_travertine_slab", 	() -> new SlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_SLAB = RegistryUtils.createBlock("persimmon_travertine_slab",() -> new SlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_SLAB 	= RegistryUtils.createBlock("saffron_travertine_slab",	() -> new SlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	
+	public static final RegistryObject<Block> IVORY_TRAVERTINE_WALL 	= RegistryUtils.createBlock("ivory_travertine_wall", 	() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE_WALL 	= RegistryUtils.createBlock("peach_travertine_wall", 	() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_WALL	= RegistryUtils.createBlock("persimmon_travertine_wall",() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_WALL 	= RegistryUtils.createBlock("saffron_travertine_wall", 	() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	
+	public static final RegistryObject<Block> IVORY_FUMAROLE_BLOCK 		= RegistryUtils.createBlock("ivory_fumarole_block", 	() -> new MagmaBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_FUMAROLE_BLOCK 		= RegistryUtils.createBlock("peach_fumarole_block", 	() -> new MagmaBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_FUMAROLE_BLOCK 	= RegistryUtils.createBlock("persimmon_fumarole_block",() -> new MagmaBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_FUMAROLE_BLOCK 	= RegistryUtils.createBlock("saffron_fumarole_block", 	() -> new MagmaBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	
+	//quark compatability
+	public static final RegistryObject<Block> IVORY_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "ivory_travertine_vertical_slab", 		() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "peach_travertine_vertical_slab", 		() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "persimmon_travertine_vertical_slab", 	() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "saffron_travertine_vertical_slab", 	() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 }

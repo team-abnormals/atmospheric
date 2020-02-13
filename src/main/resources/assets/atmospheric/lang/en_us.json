@@ -88,5 +88,54 @@
 	"advancements.husbandry.spit_passionfruit.description": "Spit passion seeds by consuming a passionfruit",
 	
 	"advancements.husbandry.eat_sorbet.title": "Putting on the Pounds",
-	"advancements.husbandry.eat_sorbet.description": "Gain Slowness V from a Passionfruit Sorbet"
+	"advancements.husbandry.eat_sorbet.description": "Gain Slowness V from a Passionfruit Sorbet",
+
+	"block.atmospheric.ivory_travertine": "Ivory Travertine",
+	"block.atmospheric.peach_travertine": "Peach Travertine",	
+	"block.atmospheric.persimmon_travertine": "Persimmon Travertine",
+	"block.atmospheric.saffron_travertine": "Saffron Travertine",	
+	
+	"block.atmospheric.chiseled_ivory_travertine": "Chiseled Ivory Travertine",
+	"block.atmospheric.chiseled_peach_travertine": "Chiseled Peach Travertine",	
+	"block.atmospheric.chiseled_persimmon_travertine": "Chiseled Persimmon Travertine",
+	"block.atmospheric.chiseled_saffron_travertine": "Chiseled Saffron Travertine",	
+	
+	"block.atmospheric.cut_ivory_travertine": "Cut Ivory Travertine",
+	"block.atmospheric.cut_peach_travertine": "Cut Peach Travertine",	
+	"block.atmospheric.cut_persimmon_travertine": "Cut Persimmon Travertine",
+	"block.atmospheric.cut_saffron_travertine": "Cut Saffron Travertine",	
+	
+	"block.atmospheric.ivory_travertine_stairs": "Ivory Travertine Stairs",
+	"block.atmospheric.peach_travertine_stairs": "Peach Travertine Stairs",	
+	"block.atmospheric.persimmon_travertine_stairs": "Persimmon Travertine Stairs",
+	"block.atmospheric.saffron_travertine_stairs": "Saffron Travertine Stairs",	
+	
+	"block.atmospheric.ivory_travertine_slab": "Ivory Travertine Slab",
+	"block.atmospheric.peach_travertine_slab": "Peach Travertine Slab",	
+	"block.atmospheric.persimmon_travertine_slab": "Persimmon Travertine Slab",
+	"block.atmospheric.saffron_travertine_slab": "Saffron Travertine Slab",	
+	
+	"block.atmospheric.ivory_travertine_wall": "Ivory Travertine Wall",
+	"block.atmospheric.peach_travertine_wall": "Peach Travertine Wall",	
+	"block.atmospheric.persimmon_travertine_wall": "Persimmon Travertine Wall",
+	"block.atmospheric.saffron_travertine_wall": "Saffron Travertine Wall",	
+	
+	"block.atmospheric.ivory_fumarole_block": "Ivory Fumarole Block",
+	"block.atmospheric.peach_fumarole_block": "Peach Fumarole Block",	
+	"block.atmospheric.persimmon_fumarole_block": "Persimmon Fumarole Block",
+	"block.atmospheric.saffron_fumarole_block": "Saffron Fumarole Block",	
+	
+	"block.atmospheric.ivory_travertine_vertical_slab": "Ivory Travertine Vertical Slab",
+	"block.atmospheric.peach_travertine_vertical_slab": "Peach Travertine Vertical Slab",	
+	"block.atmospheric.persimmon_travertine_vertical_slab": "Persimmon Travertine Vertical Slab",
+	"block.atmospheric.saffron_travertine_vertical_slab": "Saffron Travertine Vertical Slab",	
+	
+	"item.atmospheric.spring_water": "Spring Water",
+	"item.atmospheric.combustive_tonic": "Combustive Tonic",
+	"item.atmospheric.charged_tonic": "Charged Tonic",
+
+	"biome.atmospheric.hot_springs": "Hot Springs",
+	
+	"death.attack.fumarole": "%1$s tried to hug a geyser but was rejected",
+	"death.attack.fumarole.player": "%1$s tried to hug a geyser whilst trying to escape %2$s"
 }
