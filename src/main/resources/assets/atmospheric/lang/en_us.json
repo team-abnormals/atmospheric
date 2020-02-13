@@ -184,6 +184,11 @@
 	"block.atmospheric.humid_sandstone_vertical_slab": "Humid Sandstone Vertical Slab",
 	"block.atmospheric.cut_humid_sandstone_vertical_slab": "Cut Humid Sandstone Vertical Slab",
 	"block.atmospheric.smooth_humid_sandstone_vertical_slab": "Smooth Humid Sandstone Vertical Slab",
+	"block.atmospheric.humid_sandstone_brick_vertical_slab": "Humid Sandstone Brick Vertical Slab",
+	"block.atmospheric.humid_sandstone_bricks": "Humid Sandstone Bricks",
+	"block.atmospheric.humid_sandstone_brick_stairs": "Humid Sandstone Brick Stairs",
+	"block.atmospheric.humid_sandstone_brick_slab": "Humid Sandstone Brick Slab",
+	"block.atmospheric.humid_sandstone_brick_wall": "Humid Sandstone Brick Wall",	
 	
 	"item.atmospheric.dune_boat": "Dune Boat",
   
