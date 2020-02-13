@@ -4,7 +4,7 @@ import com.bagel.atmospheric.common.world.gen.feature.DirectionalFlowersFeature;
 import com.bagel.atmospheric.common.world.gen.feature.PassionVineFeature;
 import com.bagel.atmospheric.common.world.gen.feature.PodzolFeature;
 import com.bagel.atmospheric.common.world.gen.feature.RosewoodTreeFeature;
-import com.bagel.atmospheric.core.AtmosphericExpansion;
+import com.bagel.atmospheric.core.Atmospheric;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.feature.Feature;
@@ -15,7 +15,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = AtmosphericExpansion.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @SuppressWarnings("rawtypes")
 public class AtmosphericFeatures {
 	

@@ -2,7 +2,7 @@ package com.bagel.atmospheric.core.registry;
 
 import com.bagel.atmospheric.common.entity.RosewoodBoatEntity;
 import com.bagel.atmospheric.common.items.RosewoodBoatItem;
-import com.bagel.atmospheric.core.AtmosphericExpansion;
+import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.util.RegistryUtils;
 
 import net.minecraft.item.Item;
@@ -14,7 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class AtmosphericItems {
-	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, AtmosphericExpansion.MODID);
+	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Atmospheric.MODID);
 	
 	public static RegistryObject<Item> PASSIONFRUIT = RegistryUtils.createItem("passionfruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT).group(ItemGroup.FOOD)));
 	public static RegistryObject<Item> SHIMMERING_PASSIONFRUIT = RegistryUtils.createItem("shimmering_passionfruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.SHIMMERING_PASSIONFRUIT).group(ItemGroup.FOOD)));

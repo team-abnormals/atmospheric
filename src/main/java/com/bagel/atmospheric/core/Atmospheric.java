@@ -29,12 +29,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod("atmospheric")
 @Mod.EventBusSubscriber(modid = "atmospheric", bus = Mod.EventBusSubscriber.Bus.MOD)
-public class AtmosphericExpansion
+public class Atmospheric
 {
     //private static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "atmospheric";
 
-    public AtmosphericExpansion() {
+    public Atmospheric() {
     	IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         
         AtmosphericBlocks.BLOCKS.register(modEventBus);

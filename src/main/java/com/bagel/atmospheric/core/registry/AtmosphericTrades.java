@@ -1,6 +1,6 @@
 package com.bagel.atmospheric.core.registry;
 
-import com.bagel.atmospheric.core.AtmosphericExpansion;
+import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.util.TradeUtils;
 
 import net.minecraft.entity.merchant.villager.VillagerProfession;
@@ -9,7 +9,7 @@ import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = AtmosphericExpansion.MODID)
+@Mod.EventBusSubscriber(modid = Atmospheric.MODID)
 public class AtmosphericTrades {
 	
 	@SubscribeEvent

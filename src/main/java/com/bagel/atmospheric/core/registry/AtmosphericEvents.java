@@ -4,7 +4,7 @@ import java.util.Random;
 
 import com.bagel.atmospheric.common.entity.GoldenPassionfruitSeedEntity;
 import com.bagel.atmospheric.common.entity.PassionfruitSeedEntity;
-import com.bagel.atmospheric.core.AtmosphericExpansion;
+import com.bagel.atmospheric.core.Atmospheric;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,7 +17,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = AtmosphericExpansion.MODID)
+@Mod.EventBusSubscriber(modid = Atmospheric.MODID)
 public class AtmosphericEvents {
 	@SubscribeEvent
 	public static void onLivingHurt(LivingHurtEvent event) {

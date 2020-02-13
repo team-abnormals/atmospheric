@@ -5,7 +5,7 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 [[mods]] #mandatory
 modId="atmospheric" #mandatory
 version="${file.jarVersion}" #mandatory
-displayName="Atmospheric Expansion" #mandatory
+displayName="Atmospheric" #mandatory
 # updateJSONURL="http://myurl.me/" #optional
 # displayURL="http://example.com/" #optional
 logoFile="rosewood.png" #optional
@@ -16,7 +16,7 @@ Adds a unique biome, with a new wood type and new plants.
 Part of Five & Bagel's Biome Mods series.
 '''
 
-[[dependencies.rosewood]] #optional
+[[dependencies.atmospheric]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -28,7 +28,7 @@ Part of Five & Bagel's Biome Mods series.
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 
-[[dependencies.rosewood]]
+[[dependencies.atmospheric]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.14.4]"

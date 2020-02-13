@@ -3,7 +3,7 @@ package com.bagel.atmospheric.core.registry;
 import com.bagel.atmospheric.common.world.gen.biome.RosewoodForestBiome;
 import com.bagel.atmospheric.common.world.gen.biome.RosewoodMountainsBiome;
 import com.bagel.atmospheric.common.world.gen.biome.RosewoodPlateauBiome;
-import com.bagel.atmospheric.core.AtmosphericExpansion;
+import com.bagel.atmospheric.core.Atmospheric;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
@@ -16,7 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod.EventBusSubscriber(modid = "atmospheric", bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericBiomes {
-	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, AtmosphericExpansion.MODID);
+	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, Atmospheric.MODID);
 	
     public static RegistryObject<Biome> ROSEWOOD_FOREST = BIOMES.register("rosewood_forest", 			
     		() -> new RosewoodForestBiome(new Biome.Builder()

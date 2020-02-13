@@ -2,7 +2,7 @@ package com.bagel.atmospheric.core.registry;
 
 import com.bagel.atmospheric.common.effects.GoldenSpittingEffect;
 import com.bagel.atmospheric.common.effects.SpittingEffect;
-import com.bagel.atmospheric.core.AtmosphericExpansion;
+import com.bagel.atmospheric.core.Atmospheric;
 
 import net.minecraft.item.Food;
 import net.minecraft.potion.Effect;
@@ -10,7 +10,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = AtmosphericExpansion.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericFoods {
 
 	public static Effect SPITTING = new SpittingEffect().setRegistryName("spitting");

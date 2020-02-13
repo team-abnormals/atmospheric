@@ -7,7 +7,7 @@ import com.bagel.atmospheric.common.blocks.PassionVineBundleBlock;
 import com.bagel.atmospheric.common.blocks.RosewoodSaplingBlock;
 import com.bagel.atmospheric.common.blocks.VerticalSlabBlock;
 import com.bagel.atmospheric.common.world.gen.trees.RosewoodTree;
-import com.bagel.atmospheric.core.AtmosphericExpansion;
+import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.util.RegistryUtils;
 
 import net.minecraft.block.Block;
@@ -37,9 +37,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @SuppressWarnings("deprecation")
-@Mod.EventBusSubscriber(modid = AtmosphericExpansion.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericBlocks {
-	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, AtmosphericExpansion.MODID);
+	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Atmospheric.MODID);
 	
 	//blocks
 	public static final RegistryObject<Block> ROSEWOOD_PLANKS 			= RegistryUtils.createBlock("rosewood_planks", 			() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);

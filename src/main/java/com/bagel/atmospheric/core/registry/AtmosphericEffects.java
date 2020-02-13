@@ -2,7 +2,7 @@ package com.bagel.atmospheric.core.registry;
 
 import com.bagel.atmospheric.common.effects.ReliefEffect;
 import com.bagel.atmospheric.common.effects.WorseningEffect;
-import com.bagel.atmospheric.core.AtmosphericExpansion;
+import com.bagel.atmospheric.core.Atmospheric;
 
 import net.minecraft.item.Items;
 import net.minecraft.potion.Effect;
@@ -15,8 +15,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class AtmosphericEffects {
-	public static final DeferredRegister<Effect> EFFECTS = new DeferredRegister<>(ForgeRegistries.POTIONS, AtmosphericExpansion.MODID);
-	public static final DeferredRegister<Potion> POTIONS = new DeferredRegister<>(ForgeRegistries.POTION_TYPES, AtmosphericExpansion.MODID);
+	public static final DeferredRegister<Effect> EFFECTS = new DeferredRegister<>(ForgeRegistries.POTIONS, Atmospheric.MODID);
+	public static final DeferredRegister<Potion> POTIONS = new DeferredRegister<>(ForgeRegistries.POTION_TYPES, Atmospheric.MODID);
 	
     public static RegistryObject<Effect> RELIEF = EFFECTS.register("relief", () -> new ReliefEffect());
     public static RegistryObject<Effect> WORSENING = EFFECTS.register("worsening", () -> new WorseningEffect());

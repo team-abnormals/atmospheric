@@ -2,7 +2,7 @@ package com.bagel.atmospheric.client.renderer;
 
 import com.bagel.atmospheric.client.model.RosewoodBoatModel;
 import com.bagel.atmospheric.common.entity.RosewoodBoatEntity;
-import com.bagel.atmospheric.core.AtmosphericExpansion;
+import com.bagel.atmospheric.core.Atmospheric;
 import com.mojang.blaze3d.platform.GlStateManager;
 
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -15,7 +15,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class RosewoodBoatRenderer extends EntityRenderer<RosewoodBoatEntity> {
     private static final ResourceLocation[] BOAT_TEXTURES = new ResourceLocation[] {
-    	new ResourceLocation(AtmosphericExpansion.MODID, "textures/entity/boat/rosewood_boat.png"),
+    	new ResourceLocation(Atmospheric.MODID, "textures/entity/boat/rosewood_boat.png"),
     };
     protected final RosewoodBoatModel model = new RosewoodBoatModel();
 
