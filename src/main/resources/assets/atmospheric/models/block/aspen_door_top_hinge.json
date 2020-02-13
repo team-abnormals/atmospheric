@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "atmospheric:block/aspen_door_bottom",
+        "top": "atmospheric:block/aspen_door_top"
+    }
+}

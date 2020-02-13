@@ -1,0 +1,8 @@
+{
+    "parent": "block/ladder",
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "atmospheric:block/dune_ladder",
+        "texture": "atmospheric:block/dune_ladder"
+    }
+}

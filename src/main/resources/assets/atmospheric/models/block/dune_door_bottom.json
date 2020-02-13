@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "atmospheric:block/dune_door_bottom",
+        "top": "atmospheric:block/dune_door_top"
+    }
+}

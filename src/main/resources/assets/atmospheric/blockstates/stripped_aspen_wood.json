@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":    { "model": "atmospheric:block/stripped_aspen_wood" },
+        "axis=z":     { "model": "atmospheric:block/stripped_aspen_wood", "x": 90 },
+        "axis=x":     { "model": "atmospheric:block/stripped_aspen_wood", "x": 90, "y": 90 }
+    }
+}

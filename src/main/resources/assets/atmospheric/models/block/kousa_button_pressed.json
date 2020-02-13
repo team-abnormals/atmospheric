@@ -1,0 +1,6 @@
+{
+    "parent": "block/button_pressed",
+    "textures": {
+        "texture": "atmospheric:block/kousa_planks"
+    }
+}

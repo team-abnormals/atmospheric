@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "atmospheric:block/kousa_planks",
+        "top": "atmospheric:block/kousa_planks",
+        "side": "atmospheric:block/kousa_planks"
+    }
+}
