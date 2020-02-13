@@ -1,0 +1,8 @@
+{
+    "parent": "atmospheric:block/vertical_slab",
+    "textures": {
+        "side": "atmospheric:block/rosewood_planks",
+        "top": "atmospheric:block/rosewood_planks",
+        "bottom": "atmospheric:block/rosewood_planks"
+    }
+}

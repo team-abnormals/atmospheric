@@ -1,8 +1,0 @@
-{
-    "parent": "block/ladder",
-    "ambientocclusion": false,
-    "textures": {
-        "particle": "rosewood:block/rosewood_ladder",
-        "texture": "rosewood:block/rosewood_ladder"
-    }
-}

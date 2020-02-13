@@ -1,0 +1,92 @@
+{
+	"block.atmospheric.rosewood_log": "Rosewood Log",
+	"block.atmospheric.rosewood": "Rosewood",
+	"block.atmospheric.stripped_rosewood_log": "Stripped Rosewood Log",
+	"block.atmospheric.stripped_rosewood": "Stripped Rosewood",
+	"block.atmospheric.rosewood_planks": "Rosewood Planks",
+	"block.atmospheric.rosewood_stairs": "Rosewood Stairs",
+	"block.atmospheric.rosewood_slab": "Rosewood Slab",
+	"block.atmospheric.rosewood_pressure_plate": "Rosewood Pressure Plate",
+	"block.atmospheric.rosewood_button": "Rosewood Button",
+	"block.atmospheric.rosewood_door": "Rosewood Door",
+	"block.atmospheric.rosewood_trapdoor": "Rosewood Trapdoor",
+	"block.atmospheric.rosewood_fence": "Rosewood Fence",
+	"block.atmospheric.rosewood_fence_gate": "Rosewood Fence Gate",
+	"block.atmospheric.rosewood_sapling": "Rosewood Sapling",
+	"block.atmospheric.rosewood_leaves": "Rosewood Leaves",
+	
+	"block.atmospheric.passion_vine": "Passion Vine",
+	"block.atmospheric.passion_vine_bundle": "Passion Vine Bundle",	
+	
+	"block.atmospheric.monkey_brush": "Monkey Brush",
+	
+	"block.atmospheric.potted_monkey_brush": "Potted Monkey Brush",
+	"block.atmospheric.potted_rosewood_sapling": "Potted Rosewood Sapling",
+	
+	"block.atmospheric.rosewood_bookshelf": "Rosewood Bookshelf",
+	"block.atmospheric.rosewood_vertical_slab": "Rosewood Vertical Slab",
+	"block.atmospheric.vertical_rosewood_planks": "Vertical Rosewood Planks",
+	"block.atmospheric.rosewood_ladder": "Rosewood Ladder",
+	"block.atmospheric.rosewood_leaf_carpet": "Rosewood Leaf Carpet",
+	"block.atmospheric.passionfruit_crate": "Passionfruit Crate",
+	"block.atmospheric.shimmering_passionfruit_crate": "Shimmering Passionfruit Crate",
+	
+	"item.atmospheric.rosewood_boat": "Rosewood Boat",
+	"item.atmospheric.passionfruit": "Passionfruit",
+	"item.atmospheric.passionfruit_seed": "Passionfruit Seed",
+	"item.atmospheric.shimmering_passionfruit": "Shimmering Passionfruit",
+	"item.atmospheric.passionfruit_tart": "Passionfruit Tart",
+	"item.atmospheric.passionfruit_sorbet": "Passionfruit Sorbet",
+	
+	"entity.atmospheric.boat": "Boat",
+	
+	"effect.atmospheric.relief": "Relief",
+	"effect.atmospheric.worsening": "Worsening",
+	"effect.atmospheric.spitting": "Spitting",
+	"effect.atmospheric.golden_spitting": "Golden Spitting",
+	
+	"item.minecraft.potion.effect.relief": "Potion of Relief",
+	"item.minecraft.potion.effect.relief_strong": "Potion of Relief",
+	"item.minecraft.potion.effect.relief_long": "Potion of Relief",
+	
+	"item.minecraft.splash_potion.effect.relief": "Splash Potion of Relief",
+	"item.minecraft.splash_potion.effect.relief_strong": "Splash Potion of Relief",
+	"item.minecraft.splash_potion.effect.relief_long": "Splash Potion of Relief",
+	
+	"item.minecraft.lingering_potion.effect.relief": "Lingering Potion of Relief",
+	"item.minecraft.lingering_potion.effect.relief_strong": "Lingering Potion of Relief",
+	"item.minecraft.lingering_potion.effect.relief_long": "Lingering Potion of Relief",
+	
+	"item.minecraft.tipped_arrow.effect.relief": "Arrow of Relief",
+	"item.minecraft.tipped_arrow.effect.relief_strong": "Arrow of Relief",
+	"item.minecraft.tipped_arrow.effect.relief_long": "Arrow of Relief",
+	
+	"item.minecraft.potion.effect.worsening": "Potion of Worsening",
+	"item.minecraft.potion.effect.worsening_strong": "Potion of Worsening",
+	"item.minecraft.potion.effect.worsening_long": "Potion of Worsening",
+	
+	"item.minecraft.splash_potion.effect.worsening": "Splash Potion of Worsening",
+	"item.minecraft.splash_potion.effect.worsening_strong": "Splash Potion of Worsening",
+	"item.minecraft.splash_potion.effect.worsening_long": "Splash Potion of Worsening",
+	
+	"item.minecraft.lingering_potion.effect.worsening": "Lingering Potion of Worsening",
+	"item.minecraft.lingering_potion.effect.worsening_strong": "Lingering Potion of Worsening",
+	"item.minecraft.lingering_potion.effect.worsening_long": "Lingering Potion of Worsening",
+	
+	"item.minecraft.tipped_arrow.effect.worsening": "Arrow of Worsening",
+	"item.minecraft.tipped_arrow.effect.worsening_strong": "Arrow of Worsening",
+	"item.minecraft.tipped_arrow.effect.worsening_long": "Arrow of Worsening",
+	
+	"biome.atmospheric.rosewood_forest": "Rosewood Forest",
+	"biome.atmospheric.rosewood_mountains": "Rosewood Mountains",
+	"biome.atmospheric.rosewood_plateau": "Rosewood Plateau",
+	"biome.atmospheric.rosewood_forest_plateau": "Rosewood Forest Plateau",
+	
+	"death.attack.passion": "%1$s was passionately barraged to death by %2$s's seeds",
+	
+	"advancements.husbandry.spit_passionfruit.title": "Spit-take",
+	"advancements.husbandry.spit_passionfruit.description": "Spit passion seeds by consuming a passionfruit",
+	
+	"advancements.husbandry.eat_sorbet.title": "Putting on the Pounds",
+	"advancements.husbandry.eat_sorbet.description": "Gain Slowness V from a Passionfruit Sorbet"
+}

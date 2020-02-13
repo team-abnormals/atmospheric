@@ -1,8 +1,0 @@
-{
-    "parent": "block/cube_bottom_top",
-    "textures": {
-        "top": "rosewood:block/passionfruit_crate_top",
-        "bottom": "rosewood:block/passionfruit_crate_bottom",
-        "side": "rosewood:block/passionfruit_crate"
-    }
-}

@@ -3,9 +3,9 @@ loaderVersion="[28,)" #mandatory (28 is current forge version)
 issueTrackerURL="http://my.issue.tracker/" #optional
 
 [[mods]] #mandatory
-modId="rosewood" #mandatory
+modId="atmospheric" #mandatory
 version="${file.jarVersion}" #mandatory
-displayName="Rosewood" #mandatory
+displayName="Atmospheric Expansion" #mandatory
 # updateJSONURL="http://myurl.me/" #optional
 # displayURL="http://example.com/" #optional
 logoFile="rosewood.png" #optional

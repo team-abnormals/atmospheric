@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "rosewood:rosewood_pressure_plate"
+    "atmospheric:rosewood_pressure_plate"
   ]
 }

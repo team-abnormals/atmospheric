@@ -1,6 +1,0 @@
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "rosewood:item/passionfruit_sorbet"
-    }
-}

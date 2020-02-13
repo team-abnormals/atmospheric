@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:passion_vine_bundle"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:passion_vine",
+    "count": 9
+  }
+}

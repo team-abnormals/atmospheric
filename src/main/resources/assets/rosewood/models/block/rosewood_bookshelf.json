@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "rosewood:block/rosewood_planks",
-        "side": "rosewood:block/rosewood_bookshelf"
-    }
-}

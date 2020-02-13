@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":    { "model": "rosewood:block/stripped_rosewood" },
-        "axis=z":     { "model": "rosewood:block/stripped_rosewood", "x": 90 },
-        "axis=x":     { "model": "rosewood:block/stripped_rosewood", "x": 90, "y": 90 }
-    }
-}

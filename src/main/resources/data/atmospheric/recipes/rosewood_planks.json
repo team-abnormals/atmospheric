@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "atmospheric:rosewood_logs"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:rosewood_planks",
+    "count": 4
+  }
+}

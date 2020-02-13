@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:shimmering_passionfruit_crate"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:shimmering_passionfruit",
+    "count": 9
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_inventory",
+    "textures": {
+        "texture": "atmospheric:block/rosewood_planks"
+    }
+}

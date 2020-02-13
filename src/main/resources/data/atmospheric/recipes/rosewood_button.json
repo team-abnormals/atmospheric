@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "atmospheric:rosewood_planks"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:rosewood_button"
+  }
+}

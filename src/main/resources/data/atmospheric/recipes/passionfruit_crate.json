@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:passionfruit"
+    }
+  },
+  "result": {
+    "item": "atmospheric:passionfruit_crate",
+    "count": 1
+  }
+}

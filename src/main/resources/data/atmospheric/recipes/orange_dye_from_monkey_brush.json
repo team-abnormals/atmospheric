@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:monkey_brush"
+    }
+  ],
+  "result": {
+    "item": "minecraft:orange_dye"
+  }
+}

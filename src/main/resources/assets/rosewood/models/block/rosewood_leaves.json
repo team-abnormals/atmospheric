@@ -1,6 +1,0 @@
-{
-    "parent": "block/leaves",
-    "textures": {
-        "all": "rosewood:block/rosewood_leaves"
-    }
-}
