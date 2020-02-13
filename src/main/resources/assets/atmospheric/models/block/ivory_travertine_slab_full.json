@@ -1,6 +1,7 @@
 {
     "parent": "block/cube_bottom_top",
     "textures": {
+    	"particle": "atmospheric:block/ivory_travertine_slab",
         "bottom": "atmospheric:block/cut_ivory_travertine_bottom",
         "top": "atmospheric:block/cut_ivory_travertine_top",
         "side": "atmospheric:block/ivory_travertine_slab"
