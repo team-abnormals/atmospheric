@@ -22,18 +22,15 @@ public class RosewoodPlateauBiome extends Biome {
         DefaultBiomeFeatures.addStoneVariants(this);
         DefaultBiomeFeatures.addOres(this);
         DefaultBiomeFeatures.addExtraEmeraldOre(this);
-        DefaultBiomeFeatures.addFossils(this);
         DefaultBiomeFeatures.addSedimentDisks(this);
         
         AtmosphericBiomeFeatures.addWater(this);
-        AtmosphericBiomeFeatures.addPodzol(this);
         DefaultBiomeFeatures.addTaigaRocks(this);
         
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addForestTrees(this, 0, 20);
-        AtmosphericBiomeFeatures.addDoublePlants(this);
+        AtmosphericBiomeFeatures.addPlateauTrees(this, 0, 8);
         AtmosphericBiomeFeatures.addFlowers(this);
         AtmosphericBiomeFeatures.addFoliage(this);
         
