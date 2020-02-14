@@ -13,8 +13,20 @@ public class AtmosphericBlockData {
 		DataUtils.registerCompostable(0.5F, AtmosphericBlocks.PASSION_VINE.get());
 		DataUtils.registerCompostable(0.65F,AtmosphericItems.PASSIONFRUIT.get());
 		
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.DUNE_LEAVES.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.DUNE_SAPLING.get());
+		
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_LEAVES.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_SAPLING.get());
+		
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ASPEN_LEAVES.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ASPEN_SAPLING.get());
+		
 		if(ModList.get().isLoaded("quark")) {
 			DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get());
+			DataUtils.registerCompostable(0.3F, AtmosphericBlocks.DUNE_LEAF_CARPET.get());
+			DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_LEAF_CARPET.get());
+			DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ASPEN_LEAF_CARPET.get());
 			DataUtils.registerCompostable(1F, AtmosphericBlocks.PASSIONFRUIT_CRATE.get());
 		}
 	}
@@ -22,6 +34,15 @@ public class AtmosphericBlockData {
 	public static void registerStrippables() {
 		DataUtils.registerStrippable(AtmosphericBlocks.ROSEWOOD_LOG.get(), AtmosphericBlocks.STRIPPED_ROSEWOOD_LOG.get());
 		DataUtils.registerStrippable(AtmosphericBlocks.ROSEWOOD.get(), AtmosphericBlocks.STRIPPED_ROSEWOOD.get());
+		
+		DataUtils.registerStrippable(AtmosphericBlocks.DUNE_LOG.get(), AtmosphericBlocks.STRIPPED_DUNE_LOG.get());
+		DataUtils.registerStrippable(AtmosphericBlocks.DUNE_WOOD.get(), AtmosphericBlocks.STRIPPED_DUNE_WOOD.get());
+		
+		DataUtils.registerStrippable(AtmosphericBlocks.KOUSA_LOG.get(), AtmosphericBlocks.STRIPPED_KOUSA_LOG.get());
+		DataUtils.registerStrippable(AtmosphericBlocks.KOUSA_WOOD.get(), AtmosphericBlocks.STRIPPED_KOUSA_WOOD.get());
+		
+		DataUtils.registerStrippable(AtmosphericBlocks.ASPEN_LOG.get(), AtmosphericBlocks.STRIPPED_ASPEN_LOG.get());
+		DataUtils.registerStrippable(AtmosphericBlocks.ASPEN_WOOD.get(), AtmosphericBlocks.STRIPPED_ASPEN_WOOD.get());
 	}
 	
 	public static void registerFlammables() {
@@ -39,11 +60,59 @@ public class AtmosphericBlockData {
 		DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE.get(), 5, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE_BUNDLE.get(), 5, 60);
 		
+		DataUtils.registerFlammable(AtmosphericBlocks.DUNE_LEAVES.get(), 30, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.DUNE_LOG.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.DUNE_WOOD.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_DUNE_LOG.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_DUNE_WOOD.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.DUNE_PLANKS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.DUNE_SLAB.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.DUNE_STAIRS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.DUNE_FENCE.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.DUNE_FENCE_GATE.get(), 5, 20);
+		
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_LEAVES.get(), 30, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_LOG.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_WOOD.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_KOUSA_LOG.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_KOUSA_WOOD.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_PLANKS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_SLAB.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_STAIRS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_FENCE.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_FENCE_GATE.get(), 5, 20);
+		
+		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_LEAVES.get(), 30, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_LOG.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_WOOD.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_ASPEN_LOG.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_ASPEN_WOOD.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_PLANKS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_SLAB.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_STAIRS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_FENCE.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_FENCE_GATE.get(), 5, 20);
+		
 		if(ModList.get().isLoaded("quark")) {
 			DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_ROSEWOOD_PLANKS.get(), 5, 20);
 			DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get(), 30, 60);
 			DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_VERTICAL_SLAB.get(), 5, 20);
 			DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_BOOKSHELF.get(), 5, 20);
+		
+			DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_DUNE_PLANKS.get(), 5, 20);
+			DataUtils.registerFlammable(AtmosphericBlocks.DUNE_LEAF_CARPET.get(), 30, 60);
+			DataUtils.registerFlammable(AtmosphericBlocks.DUNE_VERTICAL_SLAB.get(), 5, 20);
+			DataUtils.registerFlammable(AtmosphericBlocks.DUNE_BOOKSHELF.get(), 5, 20);
+			
+			DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_KOUSA_PLANKS.get(), 5, 20);
+			DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_LEAF_CARPET.get(), 30, 60);
+			DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_VERTICAL_SLAB.get(), 5, 20);
+			DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_BOOKSHELF.get(), 5, 20);
+			
+			DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_ASPEN_PLANKS.get(), 5, 20);
+			DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_LEAF_CARPET.get(), 30, 60);
+			DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_VERTICAL_SLAB.get(), 5, 20);
+			DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_BOOKSHELF.get(), 5, 20);
 		}
 	}
 }
