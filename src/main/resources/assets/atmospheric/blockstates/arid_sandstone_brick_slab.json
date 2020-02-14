@@ -2,6 +2,6 @@
     "variants": {
         "type=bottom": { "model": "atmospheric:block/arid_sandstone_brick_slab" },
         "type=top": { "model": "atmospheric:block/arid_sandstone_brick_slab_top" },
-        "type=double": { "model": "atmospheric:block/arid_sandstone_brick" }
+        "type=double": { "model": "atmospheric:block/arid_sandstone_bricks" }
     }
 }

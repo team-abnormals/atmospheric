@@ -118,10 +118,10 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> SAFFRON_FUMAROLE_BLOCK 	= RegistryUtils.createBlock("saffron_fumarole_block", 	() -> new MagmaBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	
 	//quark compatability
-	public static final RegistryObject<Block> IVORY_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "ivory_travertine_vertical_slab", 		() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PEACH_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "peach_travertine_vertical_slab", 		() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "persimmon_travertine_vertical_slab", 	() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "saffron_travertine_vertical_slab", 	() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	//public static final RegistryObject<Block> IVORY_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "ivory_travertine_vertical_slab", 		() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	//public static final RegistryObject<Block> PEACH_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "peach_travertine_vertical_slab", 		() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	//public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "persimmon_travertine_vertical_slab", 	() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	//public static final RegistryObject<Block> SAFFRON_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "saffron_travertine_vertical_slab", 	() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -170,7 +170,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> CUT_ARID_SANDSTONE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "cut_arid_sandstone_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);	
 	
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICKS 	    = RegistryUtils.createBlockCompat("quark", "arid_sandstone_bricks", 	    () -> new Block(Block.Properties.from(Blocks.SANDSTONE)), ItemGroup.BUILDING_BLOCKS);	
-	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_SLAB 	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_slab", 	() -> new Block(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);	
+	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_SLAB 	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_slab", 	() -> new SlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);	
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_STAIRS	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_stairs", 	() -> new StairsBlock(ARID_SANDSTONE.get().getDefaultState(), Block.Properties.from(Blocks.SANDSTONE_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_WALL  	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_wall", 	() -> new WallBlock(Block.Properties.from(Blocks.SANDSTONE_WALL)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_VERTICAL_SLAB  = RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);			
