@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericEntities;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
 
@@ -49,14 +50,14 @@ import net.minecraftforge.fml.network.FMLPlayMessages;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 @SuppressWarnings("deprecation")
-public class RosewoodBoatEntity extends BoatEntity {
-	private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.createKey(RosewoodBoatEntity.class, DataSerializers.VARINT);
-	private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.createKey(RosewoodBoatEntity.class, DataSerializers.VARINT);
-	private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.createKey(RosewoodBoatEntity.class, DataSerializers.FLOAT);
-	private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.createKey(RosewoodBoatEntity.class, DataSerializers.VARINT);
-	private static final DataParameter<Boolean> field_199704_e = EntityDataManager.createKey(RosewoodBoatEntity.class, DataSerializers.BOOLEAN);
-	private static final DataParameter<Boolean> field_199705_f = EntityDataManager.createKey(RosewoodBoatEntity.class, DataSerializers.BOOLEAN);
-	private static final DataParameter<Integer> ROCKING_TICKS = EntityDataManager.createKey(RosewoodBoatEntity.class, DataSerializers.VARINT);
+public class AtmosphericBoatEntity extends BoatEntity {
+	private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.createKey(AtmosphericBoatEntity.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.createKey(AtmosphericBoatEntity.class, DataSerializers.VARINT);
+	private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.createKey(AtmosphericBoatEntity.class, DataSerializers.FLOAT);
+	private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.createKey(AtmosphericBoatEntity.class, DataSerializers.VARINT);
+	private static final DataParameter<Boolean> field_199704_e = EntityDataManager.createKey(AtmosphericBoatEntity.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> field_199705_f = EntityDataManager.createKey(AtmosphericBoatEntity.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Integer> ROCKING_TICKS = EntityDataManager.createKey(AtmosphericBoatEntity.class, DataSerializers.VARINT);
 	private final float[] paddlePositions = new float[2];
 	private float momentum;
 	private float outOfControlTicks;
@@ -76,12 +77,12 @@ public class RosewoodBoatEntity extends BoatEntity {
 	private float rockingAngle;
 	private float prevRockingAngle;
 	
-	public RosewoodBoatEntity(EntityType<? extends BoatEntity> type, World world) {
+	public AtmosphericBoatEntity(EntityType<? extends BoatEntity> type, World world) {
 		super(type, world);
 		this.preventEntitySpawning = true;
 	}
 		
-	public RosewoodBoatEntity(World worldIn, double x, double y, double z) {
+	public AtmosphericBoatEntity(World worldIn, double x, double y, double z) {
 		this(AtmosphericEntities.BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vec3d.ZERO);
@@ -90,7 +91,7 @@ public class RosewoodBoatEntity extends BoatEntity {
 		this.prevPosZ = z;
 	}
 
-	public RosewoodBoatEntity(FMLPlayMessages.SpawnEntity spawnEntity, World world) {
+	public AtmosphericBoatEntity(FMLPlayMessages.SpawnEntity spawnEntity, World world) {
 		this(AtmosphericEntities.BOAT.get(), world);
 	}
 	
@@ -153,6 +154,12 @@ public class RosewoodBoatEntity extends BoatEntity {
 			case ROSEWOOD:
 			default:
 				return AtmosphericItems.ROSEWOOD_BOAT.get();
+			case DUNE:
+				return AtmosphericItems.DUNE_BOAT.get();
+			case KOUSA:
+				return AtmosphericItems.KOUSA_BOAT.get();
+			case ASPEN:
+				return AtmosphericItems.ASPEN_BOAT.get();
 		}
 	}
 	
@@ -614,7 +621,7 @@ public class RosewoodBoatEntity extends BoatEntity {
         if (!this.isPassenger()) {
             if (onGroundIn) {
                 if (this.fallDistance > 3.0F) {
-                    if (this.status != RosewoodBoatEntity.Status.ON_LAND) {
+                    if (this.status != AtmosphericBoatEntity.Status.ON_LAND) {
                         this.fallDistance = 0.0F;
                         return;
                     }
@@ -731,8 +738,11 @@ public class RosewoodBoatEntity extends BoatEntity {
 	}
 	
 	public enum Type {
-		ROSEWOOD(com.bagel.atmospheric.core.registry.AtmosphericBlocks.ROSEWOOD_PLANKS.get(), "rosewood");
-
+		ROSEWOOD(AtmosphericBlocks.ROSEWOOD_PLANKS.get(), "rosewood"),
+		DUNE(AtmosphericBlocks.DUNE_PLANKS.get(), "dune"),
+		KOUSA(AtmosphericBlocks.KOUSA_PLANKS.get(), "kousa"),
+		ASPEN(AtmosphericBlocks.ASPEN_PLANKS.get(), "aspen");
+		
 		private final String name;
 		private final Block block;
 

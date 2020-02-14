@@ -13,5 +13,16 @@
   "result": {
     "item": "atmospheric:shimmering_passionfruit_crate",
     "count": 1
-  }
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        }
+      ]
+    }
+  ]
 }

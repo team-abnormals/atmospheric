@@ -2,7 +2,7 @@ package com.bagel.atmospheric.core.registry;
 
 import java.util.function.BiFunction;
 
-import com.bagel.atmospheric.common.entity.RosewoodBoatEntity;
+import com.bagel.atmospheric.common.entity.AtmosphericBoatEntity;
 import com.bagel.atmospheric.core.Atmospheric;
 
 import net.minecraft.entity.Entity;
@@ -21,7 +21,7 @@ public class AtmosphericEntities
 {
 	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.ENTITIES, Atmospheric.MODID);
 	
-	public static final RegistryObject<EntityType<RosewoodBoatEntity>> BOAT = ENTITY_TYPES.register("boat", () -> createEntity(RosewoodBoatEntity::new, RosewoodBoatEntity::new, EntityClassification.MISC, "boat", 1.375F, 0.5625F));
+	public static final RegistryObject<EntityType<AtmosphericBoatEntity>> BOAT = ENTITY_TYPES.register("boat", () -> createEntity(AtmosphericBoatEntity::new, AtmosphericBoatEntity::new, EntityClassification.MISC, "boat", 1.375F, 0.5625F));
 	
     private static <T extends Entity> EntityType<T> createEntity(EntityType.IFactory<T> factory, BiFunction<FMLPlayMessages.SpawnEntity, World, T> clientFactory, EntityClassification entityClassification, String name, float width, float height) {
 		ResourceLocation location = new ResourceLocation(Atmospheric.MODID, name);

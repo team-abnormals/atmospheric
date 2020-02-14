@@ -11,5 +11,20 @@
   "result": {
     "item": "atmospheric:rosewood_leaf_carpet",
     "count": 3
-  }
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "leaf_carpet"
+        }
+      ]
+    }
+  ]
 } 

@@ -3,7 +3,7 @@ package com.bagel.atmospheric.common.items;
 import java.util.List;
 import java.util.function.Predicate;
 
-import com.bagel.atmospheric.common.entity.RosewoodBoatEntity;
+import com.bagel.atmospheric.common.entity.AtmosphericBoatEntity;
 
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.DefaultDispenseItemBehavior;
@@ -26,11 +26,11 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class RosewoodBoatItem extends Item {
+public class AtmosphericBoatItem extends Item {
 	private static final Predicate<Entity> field_219989_a = EntityPredicates.NOT_SPECTATING.and(Entity::canBeCollidedWith);
-    private final RosewoodBoatEntity.Type type;
+    private final AtmosphericBoatEntity.Type type;
 
-    public RosewoodBoatItem(RosewoodBoatEntity.Type typeIn, Item.Properties properties) {
+    public AtmosphericBoatItem(AtmosphericBoatEntity.Type typeIn, Item.Properties properties) {
         super(properties);
         this.type = typeIn;
         DispenserBlock.registerDispenseBehavior(this, new DispenserBoatBehavior(typeIn));
@@ -61,7 +61,7 @@ public class RosewoodBoatItem extends Item {
             }
 
             if (raytraceresult.getType() == RayTraceResult.Type.BLOCK) {
-            	RosewoodBoatEntity boatentity = new RosewoodBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
+            	AtmosphericBoatEntity boatentity = new AtmosphericBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
                 boatentity.setBoatModel(this.type);
                 boatentity.rotationYaw = playerIn.rotationYaw;
                 if (!worldIn.isCollisionBoxesEmpty(boatentity, boatentity.getBoundingBox().grow(-0.1D))) {
@@ -86,9 +86,9 @@ public class RosewoodBoatItem extends Item {
     
     static class DispenserBoatBehavior extends DefaultDispenseItemBehavior {
     	private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
-    	private final RosewoodBoatEntity.Type type;
+    	private final AtmosphericBoatEntity.Type type;
 
-    	public DispenserBoatBehavior(RosewoodBoatEntity.Type type) {
+    	public DispenserBoatBehavior(AtmosphericBoatEntity.Type type) {
     		this.type = type;
     	}
 
@@ -109,7 +109,7 @@ public class RosewoodBoatItem extends Item {
     			}
     			adjustY = 0d;
     		}
-    		RosewoodBoatEntity boat = new RosewoodBoatEntity(world, x, y + adjustY, z);
+    		AtmosphericBoatEntity boat = new AtmosphericBoatEntity(world, x, y + adjustY, z);
     		boat.setBoatModel(this.type);
     		boat.rotationYaw = direction.getHorizontalAngle();
     		world.addEntity(boat);

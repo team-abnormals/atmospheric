@@ -1,9 +1,9 @@
 package com.bagel.atmospheric.core;
 
-import com.bagel.atmospheric.client.renderer.RosewoodBoatRenderer;
+import com.bagel.atmospheric.client.renderer.AtmosphericBoatRenderer;
 import com.bagel.atmospheric.common.blocks.PassionVineBundleDispenseBehavior;
 import com.bagel.atmospheric.common.blocks.PassionVineDispenseBehavior;
-import com.bagel.atmospheric.common.entity.RosewoodBoatEntity;
+import com.bagel.atmospheric.common.entity.AtmosphericBoatEntity;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlockData;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
@@ -66,7 +66,7 @@ public class Atmospheric
     private void clientSetup(final FMLClientSetupEvent event) 
     {
     	ColorUtils.registerBlockColors();
-    	RenderingRegistry.registerEntityRenderingHandler(RosewoodBoatEntity.class, RosewoodBoatRenderer::new);
+    	RenderingRegistry.registerEntityRenderingHandler(AtmosphericBoatEntity.class, AtmosphericBoatRenderer::new);
     }
     
     @SubscribeEvent

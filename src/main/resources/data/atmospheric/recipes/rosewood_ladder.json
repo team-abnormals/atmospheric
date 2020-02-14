@@ -16,5 +16,20 @@
   "result": {
     "item": "atmospheric:rosewood_ladder",
     "count": 3
-  }
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "variant_ladders"
+        }
+      ]
+    }
+  ]
 }

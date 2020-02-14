@@ -15,5 +15,20 @@
   },
   "result": {
     "item": "atmospheric:rosewood_bookshelf"
-  }
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "variant_bookshelves"
+        }
+      ]
+    }
+  ]
 }

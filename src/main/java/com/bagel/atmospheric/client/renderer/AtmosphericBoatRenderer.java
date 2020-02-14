@@ -1,7 +1,7 @@
 package com.bagel.atmospheric.client.renderer;
 
-import com.bagel.atmospheric.client.model.RosewoodBoatModel;
-import com.bagel.atmospheric.common.entity.RosewoodBoatEntity;
+import com.bagel.atmospheric.client.model.AtmosphericBoatModel;
+import com.bagel.atmospheric.common.entity.AtmosphericBoatEntity;
 import com.bagel.atmospheric.core.Atmospheric;
 import com.mojang.blaze3d.platform.GlStateManager;
 
@@ -13,19 +13,22 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class RosewoodBoatRenderer extends EntityRenderer<RosewoodBoatEntity> {
+public class AtmosphericBoatRenderer extends EntityRenderer<AtmosphericBoatEntity> {
     private static final ResourceLocation[] BOAT_TEXTURES = new ResourceLocation[] {
     	new ResourceLocation(Atmospheric.MODID, "textures/entity/boat/rosewood_boat.png"),
+    	new ResourceLocation(Atmospheric.MODID, "textures/entity/boat/dune_boat.png"),
+    	new ResourceLocation(Atmospheric.MODID, "textures/entity/boat/kousa_boat.png"),
+    	new ResourceLocation(Atmospheric.MODID, "textures/entity/boat/aspen_boat.png"),
     };
-    protected final RosewoodBoatModel model = new RosewoodBoatModel();
+    protected final AtmosphericBoatModel model = new AtmosphericBoatModel();
 
-    public RosewoodBoatRenderer(EntityRendererManager renderManagerIn) {
+    public AtmosphericBoatRenderer(EntityRendererManager renderManagerIn) {
         super(renderManagerIn);
         this.shadowSize = 0.8F;
     }
 
     @Override
-    public void doRender(RosewoodBoatEntity entity, double x, double y, double z, float entityYaw, float partialTicks) {
+    public void doRender(AtmosphericBoatEntity entity, double x, double y, double z, float entityYaw, float partialTicks) {
         GlStateManager.pushMatrix();
         this.setupTranslation(x, y, z);
         this.setupRotation(entity, entityYaw, partialTicks);
@@ -45,7 +48,7 @@ public class RosewoodBoatRenderer extends EntityRenderer<RosewoodBoatEntity> {
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
     }
 
-    public void setupRotation(RosewoodBoatEntity entityIn, float entityYaw, float partialTicks) {
+    public void setupRotation(AtmosphericBoatEntity entityIn, float entityYaw, float partialTicks) {
         GlStateManager.rotatef(180.0F - entityYaw, 0.0F, 1.0F, 0.0F);
         float f = (float)entityIn.getTimeSinceHit() - partialTicks;
         float f1 = entityIn.getDamageTaken() - partialTicks;
@@ -70,7 +73,7 @@ public class RosewoodBoatRenderer extends EntityRenderer<RosewoodBoatEntity> {
     }
 
     @Override
-    protected ResourceLocation getEntityTexture(RosewoodBoatEntity entity) {
+    protected ResourceLocation getEntityTexture(AtmosphericBoatEntity entity) {
         return BOAT_TEXTURES[entity.getBoatModel().ordinal()];
     }
 
@@ -80,7 +83,7 @@ public class RosewoodBoatRenderer extends EntityRenderer<RosewoodBoatEntity> {
     }
 
     @Override
-    public void renderMultipass(RosewoodBoatEntity entityIn, double x, double y, double z, float entityYaw, float partialTicks) {
+    public void renderMultipass(AtmosphericBoatEntity entityIn, double x, double y, double z, float entityYaw, float partialTicks) {
         GlStateManager.pushMatrix();
         this.setupTranslation(x, y, z);
         this.setupRotation(entityIn, entityYaw, partialTicks);

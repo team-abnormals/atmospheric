@@ -33,8 +33,12 @@ public class RegistryUtils {
 			RegistryObject<B> block = AtmosphericBlocks.BLOCKS.register(name, supplier);
 			AtmosphericItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().group(itemGroup)));
 			return block;
+		} else {
+			RegistryObject<B> block = AtmosphericBlocks.BLOCKS.register(name, supplier);
+			AtmosphericItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().group(null)));
+			return block;
 		}
-		return null;
+		
     }
 
     public static <B extends Block> RegistryObject<B> createBlockNoItem(String name, Supplier<? extends B> supplier) {

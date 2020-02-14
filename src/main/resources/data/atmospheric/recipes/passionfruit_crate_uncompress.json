@@ -8,5 +8,16 @@
   "result": {
     "item": "atmospheric:passionfruit",
     "count": 9
-  }
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        }
+      ]
+    }
+  ]
 }

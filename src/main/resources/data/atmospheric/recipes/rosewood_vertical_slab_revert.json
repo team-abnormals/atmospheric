@@ -1,18 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#",
-    "#",
     "#"
   ],
   "key": {
     "#": {
-      "item": "atmospheric:rosewood_planks"
+      "item": "atmospheric:rosewood_vertical_slab"
     }
   },
   "result": {
-    "item": "atmospheric:vertical_rosewood_planks",
-    "count": 3
+    "item": "atmospheric:rosewood_slab",
+    "count": 1
   },
   "conditions": [
     {
@@ -24,7 +22,7 @@
         },
         {
         	"type": "quark:flag",
-        	"flag": "vertical_planks"
+        	"flag": "vertical_slabs"
         }
       ]
     }

@@ -1,6 +1,6 @@
 package com.bagel.atmospheric.client.model;
 
-import com.bagel.atmospheric.common.entity.RosewoodBoatEntity;
+import com.bagel.atmospheric.common.entity.AtmosphericBoatEntity;
 import com.mojang.blaze3d.platform.GlStateManager;
 
 import net.minecraft.client.renderer.entity.model.EntityModel;
@@ -11,12 +11,12 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class RosewoodBoatModel extends EntityModel<RosewoodBoatEntity> {
+public class AtmosphericBoatModel extends EntityModel<AtmosphericBoatEntity> {
    private final RendererModel[] field_78103_a = new RendererModel[5];
    private final RendererModel[] paddles = new RendererModel[2];
    private final RendererModel noWater;
 
-   public RosewoodBoatModel() {
+   public AtmosphericBoatModel() {
       this.field_78103_a[0] = (new RendererModel(this, 0, 0)).setTextureSize(128, 64);
       this.field_78103_a[1] = (new RendererModel(this, 0, 19)).setTextureSize(128, 64);
       this.field_78103_a[2] = (new RendererModel(this, 0, 27)).setTextureSize(128, 64);
@@ -49,7 +49,7 @@ public class RosewoodBoatModel extends EntityModel<RosewoodBoatEntity> {
       this.noWater.rotateAngleX = ((float)Math.PI / 2F);
    }
 
-   public void render(RosewoodBoatEntity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+   public void render(AtmosphericBoatEntity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
       GlStateManager.rotatef(90.0F, 0.0F, 1.0F, 0.0F);
       this.setRotationAngles(entityIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
 
@@ -75,7 +75,7 @@ public class RosewoodBoatModel extends EntityModel<RosewoodBoatEntity> {
       return renderermodel;
    }
 
-   protected void renderPaddle(RosewoodBoatEntity boat, int paddle, float scale, float limbSwing) {
+   protected void renderPaddle(AtmosphericBoatEntity boat, int paddle, float scale, float limbSwing) {
       float f = boat.getRowingTime(paddle, limbSwing);
       RendererModel renderermodel = this.paddles[paddle];
       renderermodel.rotateAngleX = (float)MathHelper.clampedLerp((double)(-(float)Math.PI / 3F), (double)-0.2617994F, (double)((MathHelper.sin(-f) + 1.0F) / 2.0F));
