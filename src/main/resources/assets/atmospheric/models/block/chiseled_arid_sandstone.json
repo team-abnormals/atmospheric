@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "atmospheric:block/arid_sandstone_top",
+        "side": "atmospheric:block/chiseled_arid_sandstone"
+    }
+}

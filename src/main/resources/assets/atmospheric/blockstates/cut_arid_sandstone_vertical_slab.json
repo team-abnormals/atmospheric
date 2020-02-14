@@ -1,0 +1,10 @@
+
+{
+    "variants": {
+ 	"type=north": { "model": "atmospheric:block/cut_arid_sandstone_vertical_slab", "y": 0, "uvlock": true },
+ 	"type=south": { "model": "atmospheric:block/cut_arid_sandstone_vertical_slab", "y": 180, "uvlock": true },
+  	"type=east": { "model": "atmospheric:block/cut_arid_sandstone_vertical_slab", "y": 90, "uvlock": true },
+ 	"type=west": { "model": "atmospheric:block/cut_arid_sandstone_vertical_slab", "y": 270, "uvlock": true },
+        "type=double": { "model": "atmospheric:block/cut_arid_sandstone" }
+    }
+}
