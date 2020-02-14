@@ -1,7 +1,10 @@
 {
   "replace": false,
   "values": [
-    "atmospheric:rosewood_slab"
+    "atmospheric:arid_sandstone_slab",
+    "atmospheric:smooth_arid_sandstone_slab",
+    "atmospheric:cut_arid_sandstone_slab",
+    "atmospheric:arid_sandstone_brick_slab",
     "atmospheric:ivory_travertine_slab",
     "atmospheric:peach_travertine_slab",
     "atmospheric:persimmon_travertine_slab",

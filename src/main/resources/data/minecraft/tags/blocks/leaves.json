@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "atmospheric:rosewood_leaves"
+    "atmospheric:rosewood_leaves",
+    "atmospheric:dune_leaves",
+    "atmospheric:kousa_leaves",
+    "atmospheric:aspen_leaves"	
   ]
 }

@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "atmospheric:rosewood_stairs"
+    "atmospheric:rosewood_stairs",
+    "atmospheric:dune_stairs",
+    "atmospheric:kousa_stairs",
+    "atmospheric:aspen_stairs"	
   ]
 }

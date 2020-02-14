@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "atmospheric:rosewood_pressure_plate"
+    "atmospheric:rosewood_pressure_plate",
+    "atmospheric:dune_pressure_plate",
+    "atmospheric:kousa_pressure_plate",
+    "atmospheric:aspen_pressure_plate"	
   ]
 }

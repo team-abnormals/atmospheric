@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:dune_log",
+    "atmospheric:dune_wood",
+    "atmospheric:stripped_dune_log",
+    "atmospheric:stripped_dune_wood"
+  ]
+}

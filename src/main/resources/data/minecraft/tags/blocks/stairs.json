@@ -1,7 +1,9 @@
-{
+e{
   "replace": false,
   "values": [
-    "atmospheric:rosewood_stairs",
+    "atmospheric:arid_sandstone_stairs",
+    "atmospheric:smooth_arid_sandstone_stairs",
+    "atmospheric:arid_sandstone_brick_stairs",
     "atmospheric:ivory_travertine_stairs",
     "atmospheric:peach_travertine_stairs",
     "atmospheric:persimmon_travertine_stairs",

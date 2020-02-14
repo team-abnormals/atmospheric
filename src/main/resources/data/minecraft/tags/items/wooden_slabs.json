@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "atmospheric:rosewood_slab"
+    "atmospheric:rosewood_slab",
+    "atmospheric:dune_slab",
+    "atmospheric:kousa_slab",
+    "atmospheric:aspen_slab"	
   ]
 }

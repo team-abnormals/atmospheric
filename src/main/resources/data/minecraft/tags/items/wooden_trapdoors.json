@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "atmospheric:rosewood_trapdoor"
+    "atmospheric:rosewood_trapdoor",
+    "atmospheric:dune_trapdoor",
+    "atmospheric:kousa_trapdoor",
+    "atmospheric:aspen_trapdoor"	
   ]
 }

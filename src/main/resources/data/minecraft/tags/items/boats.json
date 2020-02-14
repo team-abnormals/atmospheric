@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "atmospheric:rosewood_boat"
+    "atmospheric:rosewood_boat",
+    "atmospheric:dune_boat",
+    "atmospheric:kousa_boat",
+    "atmospheric:aspen_boat"   
   ]
 }
