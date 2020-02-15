@@ -1,4 +1,6 @@
-package com.bagel.atmospheric.common.world.biome;
+package com.bagel.atmospheric.common.world.biome.rosewood;
+
+import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -9,8 +11,8 @@ import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 
-public class RosewoodPlateauBiome extends Biome {
-    public RosewoodPlateauBiome(Builder builder) {
+public class RosewoodForestBiome extends Biome {
+    public RosewoodForestBiome(Builder builder) {
         super(builder);
         
         addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
@@ -25,12 +27,14 @@ public class RosewoodPlateauBiome extends Biome {
         DefaultBiomeFeatures.addSedimentDisks(this);
         
         AtmosphericBiomeFeatures.addWater(this);
+        AtmosphericBiomeFeatures.addPodzol(this);
         DefaultBiomeFeatures.addTaigaRocks(this);
         
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addPlateauTrees(this, 0, 8);
+        AtmosphericBiomeFeatures.addRosewoodForestTrees(this, 10, 1);
+        AtmosphericBiomeFeatures.addDoublePlants(this);
         AtmosphericBiomeFeatures.addFlowers(this);
         AtmosphericBiomeFeatures.addFoliage(this);
         

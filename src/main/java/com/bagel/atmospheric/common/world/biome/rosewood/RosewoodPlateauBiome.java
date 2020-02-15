@@ -1,4 +1,6 @@
-package com.bagel.atmospheric.common.world.biome;
+package com.bagel.atmospheric.common.world.biome.rosewood;
+
+import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -9,8 +11,8 @@ import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 
-public class RosewoodMountainsBiome extends Biome {
-    public RosewoodMountainsBiome(Builder builder) {
+public class RosewoodPlateauBiome extends Biome {
+    public RosewoodPlateauBiome(Builder builder) {
         super(builder);
         
         addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
@@ -25,14 +27,12 @@ public class RosewoodMountainsBiome extends Biome {
         DefaultBiomeFeatures.addSedimentDisks(this);
         
         AtmosphericBiomeFeatures.addWater(this);
-        AtmosphericBiomeFeatures.addPodzol(this);
         DefaultBiomeFeatures.addTaigaRocks(this);
         
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addForestTrees(this, 13, 1);
-        AtmosphericBiomeFeatures.addDoublePlants(this);
+        AtmosphericBiomeFeatures.addRosewoodPlateauTrees(this, 0, 8);
         AtmosphericBiomeFeatures.addFlowers(this);
         AtmosphericBiomeFeatures.addFoliage(this);
         
@@ -52,6 +52,6 @@ public class RosewoodMountainsBiome extends Biome {
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.CREEPER, 100, 4, 4));
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.SLIME, 100, 4, 4));
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
-        addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.WITCH, 5, 1, 1));      
+        addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.WITCH, 5, 1, 1));
     }
 }

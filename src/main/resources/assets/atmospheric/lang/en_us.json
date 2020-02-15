@@ -191,6 +191,9 @@
 	"block.atmospheric.arid_sandstone_brick_wall": "Arid Sandstone Brick Wall",	
 	
 	"item.atmospheric.yucca_boat": "Yucca Boat",
+	
+	"biome.atmospheric.sandy_dunes": "Sandy Dunes",
+	"biome.atmospheric.rocky_dunes": "Rocky Dunes",
   
   "_comment": "START OF THE KOUSA SECTION",
   

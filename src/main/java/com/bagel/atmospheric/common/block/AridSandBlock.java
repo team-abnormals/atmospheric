@@ -43,7 +43,7 @@ public class AridSandBlock extends FallingBlock {
                         || (blockReader.getBlockState(pos.south()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.south()).has(BlockStateProperties.WATERLOGGED)));
             }
             case Plains: {
-            	return false;
+            	return true;
             }
 		case Cave:
 			return false;

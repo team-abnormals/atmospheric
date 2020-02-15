@@ -1,4 +1,6 @@
-package com.bagel.atmospheric.common.world.biome;
+package com.bagel.atmospheric.common.world.biome.rosewood;
+
+import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -9,8 +11,8 @@ import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 
-public class RosewoodForestBiome extends Biome {
-    public RosewoodForestBiome(Builder builder) {
+public class RosewoodMountainsBiome extends Biome {
+    public RosewoodMountainsBiome(Builder builder) {
         super(builder);
         
         addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
@@ -31,7 +33,7 @@ public class RosewoodForestBiome extends Biome {
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addForestTrees(this, 10, 1);
+        AtmosphericBiomeFeatures.addRosewoodForestTrees(this, 13, 1);
         AtmosphericBiomeFeatures.addDoublePlants(this);
         AtmosphericBiomeFeatures.addFlowers(this);
         AtmosphericBiomeFeatures.addFoliage(this);
@@ -52,6 +54,6 @@ public class RosewoodForestBiome extends Biome {
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.CREEPER, 100, 4, 4));
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.SLIME, 100, 4, 4));
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
-        addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.WITCH, 5, 1, 1));
+        addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.WITCH, 5, 1, 1));      
     }
 }
