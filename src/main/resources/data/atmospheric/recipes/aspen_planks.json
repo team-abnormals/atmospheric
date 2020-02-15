@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "atmospheric:aspen_logs"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:aspen_planks",
+    "count": 4
+  }
+}

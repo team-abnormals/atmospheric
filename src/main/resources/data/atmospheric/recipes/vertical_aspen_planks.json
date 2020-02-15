@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:aspen_planks"
+    }
+  },
+  "result": {
+    "item": "atmospheric:vertical_aspen_planks",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "vertical_planks"
+        }
+      ]
+    }
+  ]
+}

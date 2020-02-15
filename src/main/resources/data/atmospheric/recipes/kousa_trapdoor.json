@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_trapdoor",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:kousa_planks"
+    }
+  },
+  "result": {
+    "item": "atmospheric:kousa_trapdoor",
+    "count": 2
+  }
+}

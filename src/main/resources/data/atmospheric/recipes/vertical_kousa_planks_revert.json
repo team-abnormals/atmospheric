@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:vertical_kousa_planks"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:kousa_planks"
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "vertical_planks"
+        }
+      ]
+    }
+  ]
+}s

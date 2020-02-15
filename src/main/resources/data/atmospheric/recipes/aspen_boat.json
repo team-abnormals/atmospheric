@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "boat",
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:aspen_planks"
+    }
+  },
+  "result": {
+    "item": "atmospheric:aspen_boat"
+  }
+}

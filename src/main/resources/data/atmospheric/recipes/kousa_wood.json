@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:kousa_log"
+    }
+  },
+  "result": {
+    "item": "atmospheric:kousa_wood",
+    "count": 3
+  }
+}
