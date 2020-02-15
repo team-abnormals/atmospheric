@@ -92,7 +92,7 @@
 	"advancements.husbandry.eat_sorbet.title": "Putting on the Pounds",
 	"advancements.husbandry.eat_sorbet.description": "Gain Slowness V from a Passionfruit Sorbet",
 
-  "_comment": "START OF THE SPRINGS SECTION",
+  "_comment2": "START OF THE SPRINGS SECTION",
 
 	"block.atmospheric.ivory_travertine": "Ivory Travertine",
 	"block.atmospheric.peach_travertine": "Peach Travertine",	
@@ -143,7 +143,7 @@
 	"death.attack.fumarole": "%1$s tried to hug a geyser but was rejected",
 	"death.attack.fumarole.player": "%1$s tried to hug a geyser whilst trying to escape %2$s",
 	
-  "_comment": "START OF THE DUNES SECTION",
+  "_comment3": "START OF THE DUNES SECTION",
   
 	"block.atmospheric.yucca_log": "Yucca Log",
 	"block.atmospheric.yucca_wood": "Yucca Wood",
@@ -195,7 +195,7 @@
 	"biome.atmospheric.sandy_dunes": "Sandy Dunes",
 	"biome.atmospheric.rocky_dunes": "Rocky Dunes",
   
-  "_comment": "START OF THE KOUSA SECTION",
+  "_comment4": "START OF THE KOUSA SECTION",
   
 	"block.atmospheric.kousa_log": "Kousa Log",
 	"block.atmospheric.kousa_wood": "Kousa Wood",
@@ -223,9 +223,9 @@
 	
 	"item.atmospheric.kousa_boat": "Kousa Boat",
   
-  "_comment": "START OF THE ASPEN SECTION",
+  "_comment5": "START OF THE ASPEN SECTION",
   
-	"block.atmospheric.crustose": "Crustose Dirt",
+	"block.atmospheric.crustose": "Crustose",
   
 	"block.atmospheric.aspen_log": "Aspen Log",
 	"block.atmospheric.aspen_wood": "Aspen Wood",
@@ -253,5 +253,5 @@
 	
 	"item.atmospheric.aspen_boat": "Aspen Boat",
  
-  "_comment": "END"
+  "_comment6": "END"
 }
