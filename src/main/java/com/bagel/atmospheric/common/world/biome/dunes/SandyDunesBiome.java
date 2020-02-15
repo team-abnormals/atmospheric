@@ -25,10 +25,9 @@ public final class SandyDunesBiome extends Biome {
 		DefaultBiomeFeatures.addSedimentDisks(this);
 		AtmosphericBiomeFeatures.addFossils(this);
 
-		DefaultBiomeFeatures.addSparseGrass(this);
 		DefaultBiomeFeatures.addDeadBushes(this);
 		DefaultBiomeFeatures.addMushrooms(this);
-		AtmosphericBiomeFeatures.addYuccaTrees(this);
+		AtmosphericBiomeFeatures.addSparseYuccaTrees(this);
 
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 
