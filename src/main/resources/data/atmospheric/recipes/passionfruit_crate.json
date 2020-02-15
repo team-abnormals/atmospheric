@@ -21,6 +21,10 @@
         {
           "type": "forge:mod_loaded",
           "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "apple_crate"
         }
       ]
     }
