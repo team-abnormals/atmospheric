@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingaridient": {
+    "item": "atmospheric:arid_sandstone"
+  },
+  "result": "atmospheric:cut_arid_sandstone",
+  "count": 1
+}

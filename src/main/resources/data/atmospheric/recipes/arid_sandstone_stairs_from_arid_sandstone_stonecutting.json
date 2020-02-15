@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingaridient": {
+    "item": "atmospheric:arid_sandstone"
+  },
+  "result": "atmospheric:arid_sandstone_stairs",
+  "count": 1
+}

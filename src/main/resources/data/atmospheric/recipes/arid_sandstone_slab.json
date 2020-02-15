@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "atmospheric:arid_sandstone"
+      },
+      {
+        "item": "atmospheric:chiseled_arid_sandstone"
+      }
+    ]
+  },
+  "result": {
+    "item": "atmospheric:arid_sandstone_slab",
+    "count": 6
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "atmospheric:arid_sandstone_bricks"
+      },
+      {
+        "item": "atmospheric:chiseled_arid_sandstone_bricks"
+      },
+      {
+        "item": "atmospheric:cut_arid_sandstone_bricks"
+      }
+    ]
+  },
+  "result": {
+    "item": "atmospheric:arid_sandstone_brick_stairs",
+    "count": 4
+  }
+}
