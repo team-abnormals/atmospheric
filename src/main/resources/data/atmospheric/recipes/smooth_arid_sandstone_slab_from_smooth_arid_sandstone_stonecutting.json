@@ -1,6 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingaridient": {
+  "ingredient": {
     "item": "atmospheric:smooth_arid_sandstone"
   },
   "result": "atmospheric:smooth_arid_sandstone_slab",

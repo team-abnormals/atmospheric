@@ -1,6 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingaridient": {
+  "ingredient": {
     "item": "atmospheric:arid_sandstone"
   },
   "result": "atmospheric:arid_sandstone_stairs",

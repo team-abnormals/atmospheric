@@ -21,5 +21,20 @@
   "result": {
     "item": "atmospheric:arid_sandstone_brick_stairs",
     "count": 4
-  }
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "sandstone_bricks"
+        }
+      ]
+    }
+  ]
 }

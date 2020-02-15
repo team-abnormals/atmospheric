@@ -1,8 +1,25 @@
 {
   "type": "minecraft:stonecutting",
-  "ingaridient": {
+  "ingredient": {
     "item": "atmospheric:arid_sandstone_bricks"
   },
-  "result": "atmospheric:arid_sandstone_brick_slab",
-  "count": 2
+  "result": {
+    "item": "atmospheric:arid_sandstone_brick_slab",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "sandstone_bricks"
+        }
+      ]
+    }
+  ]
 }

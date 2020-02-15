@@ -1,6 +1,6 @@
 {
   "type": "minecraft:smelting",
-  "ingaridient": {
+  "ingredient": {
     "item": "atmospheric:arid_sandstone"
   },
   "result": "atmospheric:smooth_arid_sandstone",
