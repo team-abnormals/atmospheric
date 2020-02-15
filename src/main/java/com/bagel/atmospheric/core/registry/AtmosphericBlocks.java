@@ -66,7 +66,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_BUTTON 			= RegistryUtils.createBlock("rosewood_button", 			() -> new WoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> ROSEWOOD_DOOR 			= RegistryUtils.createBlock("rosewood_door", 			() -> new DoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	
-	public static final RegistryObject<Block> PASSION_VINE 				= RegistryUtils.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> PASSION_VINE 				= RegistryUtils.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= RegistryUtils.createBlock("passion_vine_bundle", 		() -> new PassionVineBundleBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> MONKEY_BRUSH 				= RegistryUtils.createBlock("monkey_brush", 			() -> new MonkeyBrushBlock(Effects.ABSORPTION, 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
