@@ -1,8 +1,8 @@
 package com.bagel.atmospheric.core;
 
 import com.bagel.atmospheric.client.renderer.AtmosphericBoatRenderer;
-import com.bagel.atmospheric.common.blocks.PassionVineBundleDispenseBehavior;
-import com.bagel.atmospheric.common.blocks.PassionVineDispenseBehavior;
+import com.bagel.atmospheric.common.block.PassionVineBundleDispenseBehavior;
+import com.bagel.atmospheric.common.block.PassionVineDispenseBehavior;
 import com.bagel.atmospheric.common.entity.AtmosphericBoatEntity;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlockData;

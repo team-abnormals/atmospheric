@@ -1,7 +1,7 @@
 package com.bagel.atmospheric.core.registry;
 
-import com.bagel.atmospheric.common.effects.GoldenSpittingEffect;
-import com.bagel.atmospheric.common.effects.SpittingEffect;
+import com.bagel.atmospheric.common.potion.GoldenSpittingEffect;
+import com.bagel.atmospheric.common.potion.SpittingEffect;
 import com.bagel.atmospheric.core.Atmospheric;
 
 import net.minecraft.item.Food;

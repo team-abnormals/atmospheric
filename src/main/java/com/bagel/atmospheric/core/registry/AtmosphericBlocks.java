@@ -1,13 +1,17 @@
 package com.bagel.atmospheric.core.registry;
 
-import com.bagel.atmospheric.common.blocks.LeafCarpetBlock;
-import com.bagel.atmospheric.common.blocks.MonkeyBrushBlock;
-import com.bagel.atmospheric.common.blocks.PassionVineBlock;
-import com.bagel.atmospheric.common.blocks.PassionVineBundleBlock;
-import com.bagel.atmospheric.common.blocks.RosewoodSaplingBlock;
-import com.bagel.atmospheric.common.blocks.VerticalSlabBlock;
-import com.bagel.atmospheric.common.blocks.AridSandBlock;
-import com.bagel.atmospheric.common.world.gen.trees.RosewoodTree;
+import com.bagel.atmospheric.common.block.AridSandBlock;
+import com.bagel.atmospheric.common.block.AtmosphericSaplingBlock;
+import com.bagel.atmospheric.common.block.LeafCarpetBlock;
+import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
+import com.bagel.atmospheric.common.block.PassionVineBlock;
+import com.bagel.atmospheric.common.block.PassionVineBundleBlock;
+import com.bagel.atmospheric.common.block.VerticalSlabBlock;
+import com.bagel.atmospheric.common.block.YuccaSaplingBlock;
+import com.bagel.atmospheric.common.block.trees.AspenTree;
+import com.bagel.atmospheric.common.block.trees.KousaTree;
+import com.bagel.atmospheric.common.block.trees.RosewoodTree;
+import com.bagel.atmospheric.common.block.trees.YuccaTree;
 import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.util.PropertyUtils;
 import com.bagel.atmospheric.core.util.RegistryUtils;
@@ -47,7 +51,7 @@ public class AtmosphericBlocks {
 	
 	//blocks
 	public static final RegistryObject<Block> ROSEWOOD_PLANKS 			= RegistryUtils.createBlock("rosewood_planks", 			() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ROSEWOOD_SAPLING 			= RegistryUtils.createBlock("rosewood_sapling", 		() -> new RosewoodSaplingBlock(new RosewoodTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ROSEWOOD_SAPLING 			= RegistryUtils.createBlock("rosewood_sapling", 		() -> new AtmosphericSaplingBlock(new RosewoodTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ROSEWOOD_LOG 				= RegistryUtils.createBlock("rosewood_log", 			() -> new LogBlock(null, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_ROSEWOOD_LOG 	= RegistryUtils.createBlock("stripped_rosewood_log", 	() -> new LogBlock(null, Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD 					= RegistryUtils.createBlock("rosewood", 				() -> new RotatedPillarBlock(Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
@@ -126,24 +130,6 @@ public class AtmosphericBlocks {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	//blocks
-	public static final RegistryObject<Block> YUCCA_PLANKS 			= RegistryUtils.createBlock("yucca_planks", 			() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_SAPLING 			= RegistryUtils.createBlock("yucca_sapling", 		() -> new RosewoodSaplingBlock(new RosewoodTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> YUCCA_LOG 				= RegistryUtils.createBlock("yucca_log", 			() -> new LogBlock(null, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> STRIPPED_YUCCA_LOG 	= RegistryUtils.createBlock("stripped_yucca_log", 	() -> new LogBlock(null, Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_WOOD 			= RegistryUtils.createBlock("yucca_wood",            () -> new RotatedPillarBlock(Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> STRIPPED_YUCCA_WOOD	= RegistryUtils.createBlock("stripped_yucca_wood",   () -> new RotatedPillarBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_LEAVES 			= RegistryUtils.createBlock("yucca_leaves", 			() -> new LeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> YUCCA_SLAB 			= RegistryUtils.createBlock("yucca_slab", 			() -> new SlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_STAIRS 			= RegistryUtils.createBlock("yucca_stairs", 			() -> new StairsBlock(YUCCA_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_PRESSURE_PLATE 	= RegistryUtils.createBlock("yucca_pressure_plate", 	() -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> YUCCA_FENCE 			= RegistryUtils.createBlock("yucca_fence", 			() -> new FenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> YUCCA_TRAPDOOR 		= RegistryUtils.createBlock("yucca_trapdoor", 		() -> new TrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> YUCCA_FENCE_GATE 		= RegistryUtils.createBlock("yucca_fence_gate", 		() -> new FenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> YUCCA_BUTTON 			= RegistryUtils.createBlock("yucca_button", 			() -> new WoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> YUCCA_DOOR 			= RegistryUtils.createBlock("yucca_door", 			() -> new DoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
-	
-	public static final RegistryObject<Block> POTTED_YUCCA_SAPLING	= RegistryUtils.createBlockNoItem("potted_yucca_sapling",	() -> new FlowerPotBlock(YUCCA_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
-	
 	public static final RegistryObject<Block> ARID_SAND 					= RegistryUtils.createBlock("arid_sand", 					() -> new AridSandBlock(14406560, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ARID_SANDSTONE 				= RegistryUtils.createBlock("arid_sandstone", 				() -> new Block(Block.Properties.from(Blocks.SANDSTONE)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ARID_SANDSTONE_SLAB 			= RegistryUtils.createBlock("arid_sandstone_slab", 			() -> new SlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
@@ -159,13 +145,25 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> CHISELED_ARID_SANDSTONE 		= RegistryUtils.createBlock("chiseled_arid_sandstone", 		() -> new Block(Block.Properties.from(Blocks.CHISELED_SANDSTONE)), ItemGroup.BUILDING_BLOCKS);
 
-	//quark compatability
-	public static final RegistryObject<Block> VERTICAL_YUCCA_PLANKS 	= RegistryUtils.createBlockCompat("quark", "vertical_yucca_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "yucca_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_BOOKSHELF 		= RegistryUtils.createBlockCompat("quark", "yucca_bookshelf", 		() -> new Block(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_LADDER 			= RegistryUtils.createBlockCompat("quark", "yucca_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> YUCCA_LEAF_CARPET 		= RegistryUtils.createBlockCompat("quark", "yucca_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(YUCCA_LEAVES.get())), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_PLANKS 			= RegistryUtils.createBlock("yucca_planks", 			() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> YUCCA_SAPLING 		= RegistryUtils.createBlock("yucca_sapling", 		() -> new YuccaSaplingBlock(new YuccaTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_LOG 			= RegistryUtils.createBlock("yucca_log", 			() -> new LogBlock(null, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> STRIPPED_YUCCA_LOG 	= RegistryUtils.createBlock("stripped_yucca_log", 	() -> new LogBlock(null, Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> YUCCA_WOOD 			= RegistryUtils.createBlock("yucca_wood",            () -> new RotatedPillarBlock(Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> STRIPPED_YUCCA_WOOD	= RegistryUtils.createBlock("stripped_yucca_wood",   () -> new RotatedPillarBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> YUCCA_LEAVES 			= RegistryUtils.createBlock("yucca_leaves", 			() -> new LeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_SLAB 			= RegistryUtils.createBlock("yucca_slab", 			() -> new SlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> YUCCA_STAIRS 			= RegistryUtils.createBlock("yucca_stairs", 			() -> new StairsBlock(YUCCA_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> YUCCA_PRESSURE_PLATE 	= RegistryUtils.createBlock("yucca_pressure_plate", 	() -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> YUCCA_FENCE 			= RegistryUtils.createBlock("yucca_fence", 			() -> new FenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_TRAPDOOR 		= RegistryUtils.createBlock("yucca_trapdoor", 		() -> new TrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> YUCCA_FENCE_GATE 		= RegistryUtils.createBlock("yucca_fence_gate", 		() -> new FenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> YUCCA_BUTTON 			= RegistryUtils.createBlock("yucca_button", 			() -> new WoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> YUCCA_DOOR 			= RegistryUtils.createBlock("yucca_door", 			() -> new DoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	
+	public static final RegistryObject<Block> POTTED_YUCCA_SAPLING	= RegistryUtils.createBlockNoItem("potted_yucca_sapling",	() -> new FlowerPotBlock(YUCCA_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
+	
+	//quark compatability
 	public static final RegistryObject<Block> ARID_SANDSTONE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);		
 	public static final RegistryObject<Block> CUT_ARID_SANDSTONE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "cut_arid_sandstone_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);	
 	
@@ -175,23 +173,29 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_WALL  	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_wall", 	() -> new WallBlock(Block.Properties.from(Blocks.SANDSTONE_WALL)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_VERTICAL_SLAB  = RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);			
 	
+	public static final RegistryObject<Block> VERTICAL_YUCCA_PLANKS 	= RegistryUtils.createBlockCompat("quark", "vertical_yucca_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> YUCCA_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "yucca_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> YUCCA_BOOKSHELF 		= RegistryUtils.createBlockCompat("quark", "yucca_bookshelf", 		() -> new Block(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> YUCCA_LADDER 			= RegistryUtils.createBlockCompat("quark", "yucca_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_LEAF_CARPET 		= RegistryUtils.createBlockCompat("quark", "yucca_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(YUCCA_LEAVES.get())), ItemGroup.DECORATIONS);
+
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	//blocks
-	public static final RegistryObject<Block> KOUSA_PLANKS 			= RegistryUtils.createBlock("kousa_planks", 			() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_SAPLING 		= RegistryUtils.createBlock("kousa_sapling", 		() -> new RosewoodSaplingBlock(new RosewoodTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_PLANKS 			= RegistryUtils.createBlock("kousa_planks", 		() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_SAPLING 		= RegistryUtils.createBlock("kousa_sapling", 		() -> new AtmosphericSaplingBlock(new KousaTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> KOUSA_LOG 			= RegistryUtils.createBlock("kousa_log", 			() -> new LogBlock(null, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_KOUSA_LOG 	= RegistryUtils.createBlock("stripped_kousa_log", 	() -> new LogBlock(null, Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_WOOD 			= RegistryUtils.createBlock("kousa_wood",            () -> new RotatedPillarBlock(Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> STRIPPED_KOUSA_WOOD	= RegistryUtils.createBlock("stripped_kousa_wood",   () -> new RotatedPillarBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LEAVES 			= RegistryUtils.createBlock("kousa_leaves", 			() -> new LeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_WOOD 			= RegistryUtils.createBlock("kousa_wood",           () -> new RotatedPillarBlock(Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> STRIPPED_KOUSA_WOOD	= RegistryUtils.createBlock("stripped_kousa_wood",  () -> new RotatedPillarBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_LEAVES 			= RegistryUtils.createBlock("kousa_leaves", 		() -> new LeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> KOUSA_SLAB 			= RegistryUtils.createBlock("kousa_slab", 			() -> new SlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_STAIRS 			= RegistryUtils.createBlock("kousa_stairs", 			() -> new StairsBlock(KOUSA_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_PRESSURE_PLATE 	= RegistryUtils.createBlock("kousa_pressure_plate", 	() -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> KOUSA_STAIRS 			= RegistryUtils.createBlock("kousa_stairs", 		() -> new StairsBlock(KOUSA_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_PRESSURE_PLATE 	= RegistryUtils.createBlock("kousa_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> KOUSA_FENCE 			= RegistryUtils.createBlock("kousa_fence", 			() -> new FenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> KOUSA_TRAPDOOR 		= RegistryUtils.createBlock("kousa_trapdoor", 		() -> new TrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> KOUSA_FENCE_GATE 		= RegistryUtils.createBlock("kousa_fence_gate", 		() -> new FenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> KOUSA_BUTTON 			= RegistryUtils.createBlock("kousa_button", 			() -> new WoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> KOUSA_FENCE_GATE 		= RegistryUtils.createBlock("kousa_fence_gate", 	() -> new FenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> KOUSA_BUTTON 			= RegistryUtils.createBlock("kousa_button", 		() -> new WoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> KOUSA_DOOR 			= RegistryUtils.createBlock("kousa_door", 			() -> new DoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	
 	public static final RegistryObject<Block> POTTED_KOUSA_SAPLING	= RegistryUtils.createBlockNoItem("potted_kousa_sapling",	() -> new FlowerPotBlock(KOUSA_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
@@ -206,20 +210,20 @@ public class AtmosphericBlocks {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	//blocks
-	public static final RegistryObject<Block> ASPEN_PLANKS 			= RegistryUtils.createBlock("aspen_planks", 			() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ASPEN_SAPLING 		= RegistryUtils.createBlock("aspen_sapling", 		() -> new RosewoodSaplingBlock(new RosewoodTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ASPEN_PLANKS 			= RegistryUtils.createBlock("aspen_planks", 		() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ASPEN_SAPLING 		= RegistryUtils.createBlock("aspen_sapling", 		() -> new AtmosphericSaplingBlock(new AspenTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_LOG 			= RegistryUtils.createBlock("aspen_log", 			() -> new LogBlock(null, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_ASPEN_LOG 	= RegistryUtils.createBlock("stripped_aspen_log", 	() -> new LogBlock(null, Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ASPEN_WOOD 			= RegistryUtils.createBlock("aspen_wood",            () -> new RotatedPillarBlock(Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> STRIPPED_ASPEN_WOOD	= RegistryUtils.createBlock("stripped_aspen_wood",   () -> new RotatedPillarBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ASPEN_LEAVES 			= RegistryUtils.createBlock("aspen_leaves", 			() -> new LeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ASPEN_WOOD 			= RegistryUtils.createBlock("aspen_wood",           () -> new RotatedPillarBlock(Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> STRIPPED_ASPEN_WOOD	= RegistryUtils.createBlock("stripped_aspen_wood",  () -> new RotatedPillarBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ASPEN_LEAVES 			= RegistryUtils.createBlock("aspen_leaves", 		() -> new LeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_SLAB 			= RegistryUtils.createBlock("aspen_slab", 			() -> new SlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ASPEN_STAIRS 			= RegistryUtils.createBlock("aspen_stairs", 			() -> new StairsBlock(ASPEN_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ASPEN_PRESSURE_PLATE 	= RegistryUtils.createBlock("aspen_pressure_plate", 	() -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> ASPEN_STAIRS 			= RegistryUtils.createBlock("aspen_stairs", 		() -> new StairsBlock(ASPEN_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ASPEN_PRESSURE_PLATE 	= RegistryUtils.createBlock("aspen_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> ASPEN_FENCE 			= RegistryUtils.createBlock("aspen_fence", 			() -> new FenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_TRAPDOOR 		= RegistryUtils.createBlock("aspen_trapdoor", 		() -> new TrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> ASPEN_FENCE_GATE 		= RegistryUtils.createBlock("aspen_fence_gate", 		() -> new FenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> ASPEN_BUTTON 			= RegistryUtils.createBlock("aspen_button", 			() -> new WoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> ASPEN_FENCE_GATE 		= RegistryUtils.createBlock("aspen_fence_gate", 	() -> new FenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> ASPEN_BUTTON 			= RegistryUtils.createBlock("aspen_button", 		() -> new WoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> ASPEN_DOOR 			= RegistryUtils.createBlock("aspen_door", 			() -> new DoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	
 	public static final RegistryObject<Block> POTTED_ASPEN_SAPLING	= RegistryUtils.createBlockNoItem("potted_aspen_sapling",	() -> new FlowerPotBlock(ASPEN_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));

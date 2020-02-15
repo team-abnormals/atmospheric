@@ -1,7 +1,7 @@
 package com.bagel.atmospheric.core.registry;
 
-import com.bagel.atmospheric.common.effects.ReliefEffect;
-import com.bagel.atmospheric.common.effects.WorseningEffect;
+import com.bagel.atmospheric.common.potion.ReliefEffect;
+import com.bagel.atmospheric.common.potion.WorseningEffect;
 import com.bagel.atmospheric.core.Atmospheric;
 
 import net.minecraft.item.Items;

@@ -1,6 +1,6 @@
 package com.bagel.atmospheric.core.util;
 
-import com.bagel.atmospheric.common.blocks.PassionVineAttachment;
+import com.bagel.atmospheric.common.block.PassionVineAttachment;
 
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.EnumProperty;

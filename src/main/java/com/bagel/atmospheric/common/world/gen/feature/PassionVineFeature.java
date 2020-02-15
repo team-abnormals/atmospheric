@@ -3,7 +3,7 @@ package com.bagel.atmospheric.common.world.gen.feature;
 import java.util.Random;
 import java.util.function.Function;
 
-import com.bagel.atmospheric.common.blocks.PassionVineBlock;
+import com.bagel.atmospheric.common.block.PassionVineBlock;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.datafixers.Dynamic;
 

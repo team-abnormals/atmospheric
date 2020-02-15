@@ -1,8 +1,8 @@
 package com.bagel.atmospheric.core.registry;
 
-import com.bagel.atmospheric.common.world.gen.biome.RosewoodForestBiome;
-import com.bagel.atmospheric.common.world.gen.biome.RosewoodMountainsBiome;
-import com.bagel.atmospheric.common.world.gen.biome.RosewoodPlateauBiome;
+import com.bagel.atmospheric.common.world.biome.RosewoodForestBiome;
+import com.bagel.atmospheric.common.world.biome.RosewoodMountainsBiome;
+import com.bagel.atmospheric.common.world.biome.RosewoodPlateauBiome;
 import com.bagel.atmospheric.core.Atmospheric;
 
 import net.minecraft.world.biome.Biome;
