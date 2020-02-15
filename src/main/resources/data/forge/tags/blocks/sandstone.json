@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:arid_sandstone",
+    "atmospheric:cut_arid_sandstone",
+    "atmospheric:chiseled_arid_sandstone",
+    "atmospheric:smooth_arid_sandstone"
+  ]
+}
