@@ -222,6 +222,8 @@
   
   "_comment": "START OF THE ASPEN SECTION",
   
+	"block.atmospheric.crustose": "Crustose Dirt",
+  
 	"block.atmospheric.aspen_log": "Aspen Log",
 	"block.atmospheric.aspen_wood": "Aspen Wood",
 	"block.atmospheric.stripped_aspen_log": "Stripped Aspen Log",

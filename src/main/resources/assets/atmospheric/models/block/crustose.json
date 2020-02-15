@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "block/dirt",
+        "top": "atmospheric:block/crustose_top",
+        "side": "atmospheric:block/crustose_side"
+    }
+}
