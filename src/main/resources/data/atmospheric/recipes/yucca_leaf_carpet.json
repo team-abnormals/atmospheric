@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:yucca_leaves"
+    }
+  },
+  "result": {
+    "item": "atmospheric:yucca_leaf_carpet",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "leaf_carpet"
+        }
+      ]
+    }
+  ]
+} 

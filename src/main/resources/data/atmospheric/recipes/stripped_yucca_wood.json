@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:stripped_yucca_log"
+    }
+  },
+  "result": {
+    "item": "atmospheric:stripped_yucca_wood",
+    "count": 3
+  }
+}

@@ -23,7 +23,7 @@ public class AtmosphericItems {
 	public static RegistryObject<Item> PASSIONFRUIT_SEED = RegistryUtils.createItem("passionfruit_seed", () -> new Item(new Item.Properties()));
 
 	public static RegistryObject<Item> ROSEWOOD_BOAT = RegistryUtils.createItem("rosewood_boat", () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.ROSEWOOD, new Item.Properties().group(ItemGroup.TRANSPORTATION)));
-	public static RegistryObject<Item> DUNE_BOAT = RegistryUtils.createItem("dune_boat", () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.DUNE, new Item.Properties().group(ItemGroup.TRANSPORTATION)));
+	public static RegistryObject<Item> YUCCA_BOAT = RegistryUtils.createItem("yucca_boat", () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.YUCCA, new Item.Properties().group(ItemGroup.TRANSPORTATION)));
 	public static RegistryObject<Item> KOUSA_BOAT = RegistryUtils.createItem("kousa_boat", () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.KOUSA, new Item.Properties().group(ItemGroup.TRANSPORTATION)));
 	public static RegistryObject<Item> ASPEN_BOAT = RegistryUtils.createItem("aspen_boat", () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.ASPEN, new Item.Properties().group(ItemGroup.TRANSPORTATION)));
 

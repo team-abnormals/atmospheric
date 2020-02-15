@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "atmospheric:yucca_logs"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:yucca_planks",
+    "count": 4
+  }
+}

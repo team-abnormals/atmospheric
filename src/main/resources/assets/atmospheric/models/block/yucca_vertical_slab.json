@@ -1,0 +1,8 @@
+{
+    "parent": "atmospheric:block/vertical_slab",
+    "textures": {
+        "side": "atmospheric:block/yucca_planks",
+        "top": "atmospheric:block/yucca_planks",
+        "bottom": "atmospheric:block/yucca_planks"
+    }
+}

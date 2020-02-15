@@ -16,7 +16,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class AtmosphericBoatRenderer extends EntityRenderer<AtmosphericBoatEntity> {
     private static final ResourceLocation[] BOAT_TEXTURES = new ResourceLocation[] {
     	new ResourceLocation(Atmospheric.MODID, "textures/entity/boat/rosewood_boat.png"),
-    	new ResourceLocation(Atmospheric.MODID, "textures/entity/boat/dune_boat.png"),
+    	new ResourceLocation(Atmospheric.MODID, "textures/entity/boat/yucca_boat.png"),
     	new ResourceLocation(Atmospheric.MODID, "textures/entity/boat/kousa_boat.png"),
     	new ResourceLocation(Atmospheric.MODID, "textures/entity/boat/aspen_boat.png"),
     };

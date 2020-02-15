@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":    { "model": "atmospheric:block/dune_wood" },
-        "axis=z":     { "model": "atmospheric:block/dune_wood", "x": 90 },
-        "axis=x":     { "model": "atmospheric:block/dune_wood", "x": 90, "y": 90 }
-    }
-}

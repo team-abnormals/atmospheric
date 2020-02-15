@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "atmospheric:block/dune_ladder" },
-        "facing=east":  { "model": "atmospheric:block/dune_ladder", "y": 90 },
-        "facing=south": { "model": "atmospheric:block/dune_ladder", "y": 180 },
-        "facing=west":  { "model": "atmospheric:block/dune_ladder", "y": 270 }
-    }
-}

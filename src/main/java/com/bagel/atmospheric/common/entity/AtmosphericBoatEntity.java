@@ -154,8 +154,8 @@ public class AtmosphericBoatEntity extends BoatEntity {
 			case ROSEWOOD:
 			default:
 				return AtmosphericItems.ROSEWOOD_BOAT.get();
-			case DUNE:
-				return AtmosphericItems.DUNE_BOAT.get();
+			case YUCCA:
+				return AtmosphericItems.YUCCA_BOAT.get();
 			case KOUSA:
 				return AtmosphericItems.KOUSA_BOAT.get();
 			case ASPEN:
@@ -739,7 +739,7 @@ public class AtmosphericBoatEntity extends BoatEntity {
 	
 	public enum Type {
 		ROSEWOOD(AtmosphericBlocks.ROSEWOOD_PLANKS.get(), "rosewood"),
-		DUNE(AtmosphericBlocks.DUNE_PLANKS.get(), "dune"),
+		YUCCA(AtmosphericBlocks.YUCCA_PLANKS.get(), "yucca"),
 		KOUSA(AtmosphericBlocks.KOUSA_PLANKS.get(), "kousa"),
 		ASPEN(AtmosphericBlocks.ASPEN_PLANKS.get(), "aspen");
 		
