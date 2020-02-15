@@ -29,7 +29,6 @@ public class AridSandBlock extends FallingBlock {
     public boolean canSustainPlant(BlockState state, IBlockReader blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
         final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
         final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
-
         switch (plantType) {
             case Desert: {
                 return true;

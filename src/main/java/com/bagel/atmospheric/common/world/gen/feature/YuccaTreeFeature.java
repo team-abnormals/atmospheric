@@ -11,10 +11,12 @@ import com.google.common.collect.Lists;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.LogBlock;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.MutableBoundingBox;
+import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
@@ -208,7 +210,7 @@ public class YuccaTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 	   }
 
 	   private int checkLocation(Set<BlockPos> p_208528_1_, IWorldGenerationReader p_208528_2_, BlockPos p_208528_3_, int p_208528_4_, MutableBoundingBox p_208528_5_) {
-	      if (!isSoilOrFarm(p_208528_2_, p_208528_3_.down(), getSapling())) {
+	      if (!isBamboo(p_208528_2_, p_208528_3_.down(), getSapling())) {
 	         return -1;
 	      } else {
 	         int i = this.makeLimb(p_208528_1_, p_208528_2_, p_208528_3_, p_208528_3_.up(p_208528_4_ - 1), false, p_208528_5_);
@@ -219,6 +221,18 @@ public class YuccaTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 	         }
 	      }
 	   }
+	   
+	   protected static boolean isBamboo(IWorldGenerationBaseReader reader, BlockPos pos, net.minecraftforge.common.IPlantable sapling) {
+		      if (!(reader instanceof net.minecraft.world.IBlockReader) || sapling == null)
+		         return isBambooPlantable(reader, pos);
+		      return reader.hasBlockState(pos, state -> state.canSustainPlant((net.minecraft.world.IBlockReader)reader, pos, Direction.UP, sapling));
+		   }
+	   
+	   protected static boolean isBambooPlantable(IWorldGenerationBaseReader worldIn, BlockPos pos) {
+		      return worldIn.hasBlockState(pos, (p_214579_0_) -> {
+		         return p_214579_0_.isIn(BlockTags.BAMBOO_PLANTABLE_ON);
+		      });
+		   }
 
 	   static class FoliageCoordinates extends BlockPos {
 	      private final int branchBase;
