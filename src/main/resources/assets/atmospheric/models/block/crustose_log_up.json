@@ -1,0 +1,24 @@
+{
+    "parent": "block/cube",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "atmospheric:block/crustose_log_up",
+		"1": "atmospheric:block/crustose_top",
+		"2": "atmospheric:block/aspen_log_top",
+		"5": "atmospheric:block/crustose_log_up"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#5"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#5"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#5"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#5"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	]
+}

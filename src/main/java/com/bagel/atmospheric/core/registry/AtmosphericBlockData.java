@@ -40,6 +40,7 @@ public class AtmosphericBlockData {
 		
 		DataUtils.registerStrippable(AtmosphericBlocks.ASPEN_LOG.get(), AtmosphericBlocks.STRIPPED_ASPEN_LOG.get());
 		DataUtils.registerStrippable(AtmosphericBlocks.ASPEN_WOOD.get(), AtmosphericBlocks.STRIPPED_ASPEN_WOOD.get());
+		DataUtils.registerStrippable(AtmosphericBlocks.CRUSTOSE_LOG.get(), AtmosphericBlocks.ASPEN_LOG.get());
 	}
 	
 	public static void registerFlammables() {

@@ -212,7 +212,8 @@ public class AtmosphericBlocks {
 	
 	//blocks
 	public static final RegistryObject<Block> CRUSTOSE 			    = RegistryUtils.createBlock("crustose", 		    () -> new Block(Block.Properties.from(Blocks.DIRT)), ItemGroup.BUILDING_BLOCKS);	
-	
+	public static final RegistryObject<Block> CRUSTOSE_LOG 			= RegistryUtils.createBlock("crustose_log", 		() -> new LogBlock(null, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+
 	public static final RegistryObject<Block> ASPEN_PLANKS 			= RegistryUtils.createBlock("aspen_planks", 		() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_SAPLING 		= RegistryUtils.createBlock("aspen_sapling", 		() -> new AtmosphericSaplingBlock(new AspenTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_LOG 			= RegistryUtils.createBlock("aspen_log", 			() -> new LogBlock(null, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
