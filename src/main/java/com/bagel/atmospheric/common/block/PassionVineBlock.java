@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
+import com.bagel.atmospheric.core.registry.AtmosphericTags;
 import com.bagel.atmospheric.core.util.StateUtils;
 
 import net.minecraft.block.Block;
@@ -21,7 +22,6 @@ import net.minecraft.item.Items;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -116,7 +116,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 		int i = state.get(AGE);
 		Direction direction = state.get(FACING);
 		BlockState hanging = worldIn.getBlockState(pos.offset(direction.getOpposite()));
-		if (hanging.getBlock().isIn(BlockTags.LOGS) || hanging.getBlock().isIn(BlockTags.LEAVES)) {
+		if (hanging.getBlock().isIn(AtmosphericTags.PASSION_VINE_GROWABLE_ON)) {
 			if (i < 4 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 				worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)), 2);
 				net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);	
