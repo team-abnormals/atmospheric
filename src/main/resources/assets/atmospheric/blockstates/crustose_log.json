@@ -1,7 +1,7 @@
 {
     "variants": {
         "axis=y":    { "model": "atmospheric:block/crustose_log_up" },
-        "axis=z":     { "model": "atmospheric:block/crustose_log_side"},
-        "axis=x":     { "model": "atmospheric:block/crustose_log_side", "y": 90 }
+        "axis=z":     { "model": "atmospheric:block/crustose_log_side" },
+        "axis=x":     { "model": "atmospheric:block/crustose_log_side_z" }
     }
 }
