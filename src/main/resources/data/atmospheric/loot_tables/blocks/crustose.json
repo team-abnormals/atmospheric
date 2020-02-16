@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "minecraft:crustose"
+              "name": "atmospheric:crustose"
             },
             {
               "type": "minecraft:item",

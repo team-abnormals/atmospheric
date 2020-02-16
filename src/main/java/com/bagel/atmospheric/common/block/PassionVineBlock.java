@@ -170,20 +170,19 @@ public class PassionVineBlock extends Block implements IGrowable {
 		builder.add(AGE, FACING);
 	}
 	
-	public static boolean canAttachTo(IBlockReader block, BlockPos pos, Direction direction) {
-		BlockState blockstate = block.getBlockState(pos);
-	    return blockstate.func_224755_d(block, pos, direction);    
-	}
-
+	private boolean canAttachTo(IBlockReader p_196471_1_, BlockPos p_196471_2_, Direction p_196471_3_) {
+	      BlockState blockstate = p_196471_1_.getBlockState(p_196471_2_);
+	      return !blockstate.canProvidePower() && blockstate.func_224755_d(p_196471_1_, p_196471_2_, p_196471_3_);
+	   }
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		Direction direction = state.get(FACING);
-		if (PassionVineBlock.canAttachTo(worldIn, pos.offset(direction.getOpposite()), direction) 
+		if (this.canAttachTo(worldIn, pos.offset(direction.getOpposite()), direction) 
 				|| (worldIn.getBlockState(pos.up()).getBlock() == AtmosphericBlocks.PASSION_VINE.get() 
 	    		&& worldIn.getBlockState(pos.up()).get(FACING) == state.get(FACING))) {
 			return true;
+		} else {
+			return false;
 		}
-		return false;
-	    
 	}
 	   
 	@SuppressWarnings("deprecation")

@@ -166,6 +166,7 @@ public class AtmosphericBlocks {
 	//quark compatability
 	public static final RegistryObject<Block> ARID_SANDSTONE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);		
 	public static final RegistryObject<Block> CUT_ARID_SANDSTONE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "cut_arid_sandstone_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);	
+	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "smooth_arid_sandstone_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);	
 	
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICKS 	    = RegistryUtils.createBlockCompat("quark", "arid_sandstone_bricks", 	    () -> new Block(Block.Properties.from(Blocks.SANDSTONE)), ItemGroup.BUILDING_BLOCKS);	
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_SLAB 	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_slab", 	() -> new SlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);	
