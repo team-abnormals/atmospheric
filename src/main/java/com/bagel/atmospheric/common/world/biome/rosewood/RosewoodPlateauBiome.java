@@ -26,7 +26,8 @@ public class RosewoodPlateauBiome extends Biome {
         DefaultBiomeFeatures.addExtraEmeraldOre(this);
         DefaultBiomeFeatures.addSedimentDisks(this);
         
-        AtmosphericBiomeFeatures.addWater(this);
+        DefaultBiomeFeatures.addLakes(this);
+        DefaultBiomeFeatures.addSprings(this);
         DefaultBiomeFeatures.addTaigaRocks(this);
         
         DefaultBiomeFeatures.addMushrooms(this);

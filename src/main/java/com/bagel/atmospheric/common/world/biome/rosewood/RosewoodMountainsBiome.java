@@ -26,7 +26,8 @@ public class RosewoodMountainsBiome extends Biome {
         DefaultBiomeFeatures.addExtraEmeraldOre(this);
         DefaultBiomeFeatures.addSedimentDisks(this);
         
-        AtmosphericBiomeFeatures.addWater(this);
+        DefaultBiomeFeatures.addLakes(this);
+        DefaultBiomeFeatures.addSprings(this);
         AtmosphericBiomeFeatures.addPodzol(this);
         DefaultBiomeFeatures.addTaigaRocks(this);
         
