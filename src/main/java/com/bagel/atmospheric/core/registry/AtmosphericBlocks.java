@@ -2,6 +2,8 @@ package com.bagel.atmospheric.core.registry;
 
 import com.bagel.atmospheric.common.block.AridSandBlock;
 import com.bagel.atmospheric.common.block.AtmosphericSaplingBlock;
+import com.bagel.atmospheric.common.block.CrustoseBlock;
+import com.bagel.atmospheric.common.block.CrustoseLogBlock;
 import com.bagel.atmospheric.common.block.LeafCarpetBlock;
 import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
 import com.bagel.atmospheric.common.block.PassionVineBlock;
@@ -211,8 +213,8 @@ public class AtmosphericBlocks {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	//blocks
-	public static final RegistryObject<Block> CRUSTOSE 			    = RegistryUtils.createBlock("crustose", 		    () -> new Block(Block.Properties.from(Blocks.DIRT)), ItemGroup.BUILDING_BLOCKS);	
-	public static final RegistryObject<Block> CRUSTOSE_LOG 			= RegistryUtils.createBlock("crustose_log", 		() -> new LogBlock(null, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CRUSTOSE 			    = RegistryUtils.createBlock("crustose", 		    () -> new CrustoseBlock(Block.Properties.from(Blocks.DIRT).tickRandomly()), ItemGroup.BUILDING_BLOCKS);	
+	public static final RegistryObject<Block> CRUSTOSE_LOG 			= RegistryUtils.createBlock("crustose_log", 		() -> new CrustoseLogBlock(null, Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
 
 	public static final RegistryObject<Block> ASPEN_PLANKS 			= RegistryUtils.createBlock("aspen_planks", 		() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_SAPLING 		= RegistryUtils.createBlock("aspen_sapling", 		() -> new AtmosphericSaplingBlock(new AspenTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
