@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "atmospheric:yucca_flower"
+      "item": "atmospheric:tall_yucca_flower"
     }
   ],
   "result": {
     "item": "minecraft:light_gray_dye",
-    "count": 1
+    "count": 2
   }
 }
