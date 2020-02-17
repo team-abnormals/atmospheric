@@ -204,8 +204,10 @@
 	"item.atmospheric.yucca_fruit": "Yucca Fruit",
 	"item.atmospheric.roasted_yucca_fruit": "Roasted Yucca Fruit",
 	
-	"biome.atmospheric.sandy_dunes": "Sandy Dunes",
+	"biome.atmospheric.dunes": "Dunes",
 	"biome.atmospheric.rocky_dunes": "Rocky Dunes",
+	"biome.atmospheric.petrified_dunes": "Petrified Dunes",
+	"biome.atmospheric.flourishing_dunes": "Fluorishing Dunes",
 	
 	"death.attack.yuccaSapling": "%1$s was sliced by a yucca sapling",
 	"death.attack.yuccaSapling.player": "%1$s was sliced by a yucca sapling whilst trying to escape %2$s",

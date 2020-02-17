@@ -12,18 +12,18 @@ import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class RosewoodForestBiome extends Biome {
-    public RosewoodForestBiome() {
+public class RosewoodForestPlateauBiome extends Biome {
+    public RosewoodForestPlateauBiome() {
         super(new Biome.Builder()
 				.surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
 				.precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST)
-				.depth(0.1F)
-				.scale(0.2F)
+				.depth(1.5F)
+				.scale(0.025F)
 				.temperature(0.90F)
 				.downfall(0.8F)
 				.waterColor(4159204)
 				.waterFogColor(329011)
-				.parent(null));
+				.parent("atmospheric:rosewood_plateau"));
         
         addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
         addStructure(Feature.STRONGHOLD, IFeatureConfig.NO_FEATURE_CONFIG);

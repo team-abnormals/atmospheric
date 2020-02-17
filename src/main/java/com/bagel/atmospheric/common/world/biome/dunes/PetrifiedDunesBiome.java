@@ -16,8 +16,8 @@ import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 @SuppressWarnings("unchecked")
-public final class RockyDunesBiome extends Biome {
-	public RockyDunesBiome() {
+public final class PetrifiedDunesBiome extends Biome {
+	public PetrifiedDunesBiome() {
 		super((new Biome.Builder()
 			.surfaceBuilder(AtmosphericFeatures.DUNES, new SurfaceBuilderConfig(
 				AtmosphericBlocks.ARID_SAND.get().getDefaultState(), 
@@ -43,13 +43,11 @@ public final class RockyDunesBiome extends Biome {
 		DefaultBiomeFeatures.addStoneVariants(this);
 		DefaultBiomeFeatures.addOres(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
-		AtmosphericBiomeFeatures.addDuneRocks(this);
 		AtmosphericBiomeFeatures.addFossils(this);
 
-		DefaultBiomeFeatures.addSparseGrass(this);
 		DefaultBiomeFeatures.addDeadBushes(this);
 		DefaultBiomeFeatures.addMushrooms(this);
-		AtmosphericBiomeFeatures.addYuccaTrees(this);
+		AtmosphericBiomeFeatures.addSparseYuccaTrees(this);
 
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 

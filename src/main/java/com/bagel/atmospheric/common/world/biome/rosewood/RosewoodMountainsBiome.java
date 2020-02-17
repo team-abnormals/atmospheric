@@ -10,10 +10,20 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class RosewoodMountainsBiome extends Biome {
-    public RosewoodMountainsBiome(Builder builder) {
-        super(builder);
+    public RosewoodMountainsBiome() {
+        super(new Biome.Builder()
+				.surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
+				.precipitation(Biome.RainType.RAIN)
+				.category(Biome.Category.FOREST)
+				.depth(0.2825F).scale(1.225F)
+				.temperature(0.90F)
+				.downfall(0.8F)
+				.waterColor(4159204)
+				.waterFogColor(329011)
+				.parent("atmospheric:rosewood_forest"));
         
         addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
         addStructure(Feature.STRONGHOLD, IFeatureConfig.NO_FEATURE_CONFIG);
