@@ -63,7 +63,7 @@ public class AtmosphericEvents {
 				if (playerIn.world.getGameTime() % 3 == 0) {
 					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
 					GoldenPassionfruitSeedEntity passionseed = new GoldenPassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(AtmosphericFoods.GOLDEN_SPITTING).getAmplifier());
-					passionseed.setItem(new ItemStack(AtmosphericItems.PASSIONFRUIT_SEED.get()));
+					passionseed.setItem(new ItemStack(AtmosphericItems.SHIMMERING_PASSIONFRUIT_SEED.get()));
 					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3F, 1.0F);
 					worldIn.addEntity(passionseed);    
 				}	
