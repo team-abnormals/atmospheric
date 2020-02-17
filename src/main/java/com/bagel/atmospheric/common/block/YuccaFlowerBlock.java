@@ -9,6 +9,7 @@ import com.bagel.atmospheric.core.registry.AtmosphericDamageSources;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
@@ -32,7 +33,7 @@ public class YuccaFlowerBlock extends FlowerBlock implements IGrowable {
 	
 	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		Block block = state.getBlock();
-		return block.isIn(BlockTags.BAMBOO_PLANTABLE_ON) || block == AtmosphericBlocks.YUCCA_LEAVES.get();
+		return block.isIn(BlockTags.BAMBOO_PLANTABLE_ON) || block == AtmosphericBlocks.YUCCA_LEAVES.get() || block == Blocks.CACTUS;
 	}
 	
 	@Override
