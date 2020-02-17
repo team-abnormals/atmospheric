@@ -33,7 +33,6 @@ public class RosewoodForestBiome extends Biome {
         
         DefaultBiomeFeatures.addStoneVariants(this);
         DefaultBiomeFeatures.addOres(this);
-        DefaultBiomeFeatures.addExtraEmeraldOre(this);
         DefaultBiomeFeatures.addSedimentDisks(this);
         
         DefaultBiomeFeatures.addLakes(this);

@@ -7,6 +7,7 @@ import com.bagel.atmospheric.core.registry.AtmosphericDamageSources;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -26,7 +27,7 @@ public class YuccaFlowerDoubleBlock extends DoublePlantBlock {
 	
 	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		Block block = state.getBlock();
-		return block.isIn(BlockTags.BAMBOO_PLANTABLE_ON) || block == AtmosphericBlocks.YUCCA_LEAVES.get();
+		return block.isIn(BlockTags.BAMBOO_PLANTABLE_ON) || block == AtmosphericBlocks.YUCCA_LEAVES.get() || block == Blocks.CACTUS;
 	}
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {

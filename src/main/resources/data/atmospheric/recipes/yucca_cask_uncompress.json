@@ -19,7 +19,7 @@
         },
         {
         	"type": "quark:flag",
-        	"flag": "apple_crate"
+        	"flag": "potato_crate"
         }
       ]
     }

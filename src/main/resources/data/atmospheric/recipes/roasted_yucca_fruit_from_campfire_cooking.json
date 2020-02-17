@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "atmospheric:yucca_fruit"
+  },
+  "result": "atmospheric:roasted_yucca_fruit",
+  "experience": 0.35,
+  "cookingtime": 600
+}
