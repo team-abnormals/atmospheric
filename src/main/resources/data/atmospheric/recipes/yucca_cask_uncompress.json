@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:yucca_cask"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:yucca_fruit",
+    "count": 9
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "apple_crate"
+        }
+      ]
+    }
+  ]
+}

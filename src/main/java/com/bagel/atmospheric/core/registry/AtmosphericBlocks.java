@@ -115,10 +115,10 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_SLAB = RegistryUtils.createBlock("persimmon_travertine_slab",() -> new SlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_SLAB 	= RegistryUtils.createBlock("saffron_travertine_slab",	() -> new SlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	
-	public static final RegistryObject<Block> IVORY_TRAVERTINE_WALL 	= RegistryUtils.createBlock("ivory_travertine_wall", 	() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PEACH_TRAVERTINE_WALL 	= RegistryUtils.createBlock("peach_travertine_wall", 	() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_WALL	= RegistryUtils.createBlock("persimmon_travertine_wall",() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_WALL 	= RegistryUtils.createBlock("saffron_travertine_wall", 	() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> IVORY_TRAVERTINE_WALL 	= RegistryUtils.createBlock("ivory_travertine_wall", 	() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE_WALL 	= RegistryUtils.createBlock("peach_travertine_wall", 	() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_WALL	= RegistryUtils.createBlock("persimmon_travertine_wall",() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_WALL 	= RegistryUtils.createBlock("saffron_travertine_wall", 	() -> new WallBlock(PropertyUtils.TRAVERTINE), ItemGroup.DECORATIONS);
 	
 	public static final RegistryObject<Block> IVORY_FUMAROLE_BLOCK 		= RegistryUtils.createBlock("ivory_fumarole_block", 	() -> new MagmaBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> PEACH_FUMAROLE_BLOCK 		= RegistryUtils.createBlock("peach_fumarole_block", 	() -> new MagmaBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
@@ -138,7 +138,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ARID_SANDSTONE 				= RegistryUtils.createBlock("arid_sandstone", 				() -> new Block(Block.Properties.from(Blocks.SANDSTONE)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ARID_SANDSTONE_SLAB 			= RegistryUtils.createBlock("arid_sandstone_slab", 			() -> new SlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ARID_SANDSTONE_STAIRS 		= RegistryUtils.createBlock("arid_sandstone_stairs", 		() -> new StairsBlock(ARID_SANDSTONE.get().getDefaultState(), Block.Properties.from(Blocks.SANDSTONE_STAIRS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ARID_SANDSTONE_WALL 			= RegistryUtils.createBlock("arid_sandstone_wall", 			() -> new WallBlock(Block.Properties.from(Blocks.SANDSTONE_WALL)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ARID_SANDSTONE_WALL 			= RegistryUtils.createBlock("arid_sandstone_wall", 			() -> new WallBlock(Block.Properties.from(Blocks.SANDSTONE_WALL)), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE 		= RegistryUtils.createBlock("smooth_arid_sandstone", 		() -> new Block(Block.Properties.from(Blocks.SMOOTH_SANDSTONE)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE_SLAB 	= RegistryUtils.createBlock("smooth_arid_sandstone_slab", 	() -> new SlabBlock(Block.Properties.from(Blocks.SMOOTH_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
@@ -178,7 +178,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICKS 	    = RegistryUtils.createBlockCompat("quark", "arid_sandstone_bricks", 	    () -> new Block(Block.Properties.from(Blocks.SANDSTONE)), ItemGroup.BUILDING_BLOCKS);	
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_SLAB 	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_slab", 	() -> new SlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);	
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_STAIRS	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_stairs", 	() -> new StairsBlock(ARID_SANDSTONE.get().getDefaultState(), Block.Properties.from(Blocks.SANDSTONE_STAIRS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_WALL  	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_wall", 	() -> new WallBlock(Block.Properties.from(Blocks.SANDSTONE_WALL)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_WALL  	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_wall", 	() -> new WallBlock(Block.Properties.from(Blocks.SANDSTONE_WALL)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ARID_SANDSTONE_BRICK_VERTICAL_SLAB  = RegistryUtils.createBlockCompat("quark", "arid_sandstone_brick_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);			
 	
 	public static final RegistryObject<Block> VERTICAL_YUCCA_PLANKS 	= RegistryUtils.createBlockCompat("quark", "vertical_yucca_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
@@ -186,6 +186,9 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_BOOKSHELF 		= RegistryUtils.createBlockCompat("quark", "yucca_bookshelf", 		() -> new Block(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_LADDER 			= RegistryUtils.createBlockCompat("quark", "yucca_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> YUCCA_LEAF_CARPET 		= RegistryUtils.createBlockCompat("quark", "yucca_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(YUCCA_LEAVES.get())), ItemGroup.DECORATIONS);
+	
+	public static final RegistryObject<Block> YUCCA_CASK				= RegistryUtils.createBlockCompat("quark", "yucca_cask", 				() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ROASTED_YUCCA_CASK		= RegistryUtils.createBlockCompat("quark", "roasted_yucca_cask", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
