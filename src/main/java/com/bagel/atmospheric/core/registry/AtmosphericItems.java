@@ -22,6 +22,9 @@ public class AtmosphericItems {
 	public static RegistryObject<Item> PASSIONFRUIT_SORBET 		= RegistryUtils.createItem("passionfruit_sorbet", () -> new SoupItem(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT_SORBET).maxStackSize(1).containerItem(Items.BOWL).group(ItemGroup.FOOD)));
 	public static RegistryObject<Item> PASSIONFRUIT_SEED 		= RegistryUtils.createItem("passionfruit_seed", () -> new Item(new Item.Properties()));
 
+	public static RegistryObject<Item> YUCCA_FRUIT				= RegistryUtils.createItem("yucca_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.YUCCA_FRUIT).group(ItemGroup.FOOD)));
+	public static RegistryObject<Item> ROASTED_YUCCA_FRUIT		= RegistryUtils.createItem("roasted_yucca_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.ROASTED_YUCCA_FRUIT).group(ItemGroup.FOOD)));
+	
 	public static RegistryObject<Item> ROSEWOOD_BOAT = RegistryUtils.createItem("rosewood_boat", () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.ROSEWOOD, new Item.Properties().maxStackSize(1).group(ItemGroup.TRANSPORTATION)));
 	public static RegistryObject<Item> YUCCA_BOAT 	 = RegistryUtils.createItem("yucca_boat", 	 () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.YUCCA, 	new Item.Properties().maxStackSize(1).group(ItemGroup.TRANSPORTATION)));
 	public static RegistryObject<Item> KOUSA_BOAT 	 = RegistryUtils.createItem("kousa_boat", 	 () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.KOUSA, 	new Item.Properties().maxStackSize(1).group(ItemGroup.TRANSPORTATION)));
