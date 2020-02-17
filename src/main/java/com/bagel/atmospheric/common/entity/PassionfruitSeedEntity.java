@@ -62,7 +62,7 @@ public class PassionfruitSeedEntity extends ProjectileItemEntity {
    protected void onImpact(RayTraceResult result) {
       if (result.getType() == RayTraceResult.Type.ENTITY) {
          Entity entity = ((EntityRayTraceResult)result).getEntity();
-         entity.attackEntityFrom(AtmosphericDamageSources.causeThrownDamage(this, this.getThrower()), 0.5F + amplifier * 1/2);
+         entity.attackEntityFrom(AtmosphericDamageSources.causePassionfruitSeedDamage(this, this.getThrower()), 0.5F + amplifier * 1/2);
       }
 
       if (!this.world.isRemote) {

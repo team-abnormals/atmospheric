@@ -9,6 +9,8 @@ import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
 import com.bagel.atmospheric.common.block.PassionVineBlock;
 import com.bagel.atmospheric.common.block.PassionVineBundleBlock;
 import com.bagel.atmospheric.common.block.VerticalSlabBlock;
+import com.bagel.atmospheric.common.block.YuccaFlowerBlock;
+import com.bagel.atmospheric.common.block.YuccaFlowerDoubleBlock;
 import com.bagel.atmospheric.common.block.YuccaSaplingBlock;
 import com.bagel.atmospheric.common.block.trees.AspenTree;
 import com.bagel.atmospheric.common.block.trees.KousaTree;
@@ -165,6 +167,9 @@ public class AtmosphericBlocks {
 	
 	public static final RegistryObject<Block> POTTED_YUCCA_SAPLING	= RegistryUtils.createBlockNoItem("potted_yucca_sapling",	() -> new FlowerPotBlock(YUCCA_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	
+	public static final RegistryObject<Block> YUCCA_FLOWER 		= RegistryUtils.createBlock("yucca_flower", 	 () -> new YuccaFlowerBlock(Effects.BAD_OMEN, 6, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> TALL_YUCCA_FLOWER = RegistryUtils.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(Block.Properties.from(Blocks.PEONY)), ItemGroup.DECORATIONS);
+
 	//quark compatability
 	public static final RegistryObject<Block> ARID_SANDSTONE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);		
 	public static final RegistryObject<Block> CUT_ARID_SANDSTONE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "cut_arid_sandstone_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);	

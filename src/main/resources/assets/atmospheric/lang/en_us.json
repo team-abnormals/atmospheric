@@ -84,7 +84,8 @@
 	"biome.atmospheric.rosewood_plateau": "Rosewood Plateau",
 	"biome.atmospheric.rosewood_forest_plateau": "Rosewood Forest Plateau",
 	
-	"death.attack.passion": "%1$s was passionately barraged to death by %2$s's seeds",
+	"death.attack.passionfruitSeed": "%1$s was barraged to death by %2$s's seeds",
+	"death.attack.shimmeringPassionfruitSeed": "%1$s was passionately barraged to death by %2$s's seeds",
 	
 	"advancements.husbandry.spit_passionfruit.title": "Spit-take",
 	"advancements.husbandry.spit_passionfruit.description": "Spit passion seeds by consuming a passionfruit",
@@ -206,12 +207,12 @@
 	"biome.atmospheric.sandy_dunes": "Sandy Dunes",
 	"biome.atmospheric.rocky_dunes": "Rocky Dunes",
 	
-	"death.attack.yuccasapling": "%1$s was sliced by a yucca sapling",
-	"death.attack.yuccasapling.player": "%1$s was sliced by a yucca sapling whilst trying to escape %2$s",
-	"death.attack.yuccaflower": "%1$s was sliced by a yucca flower",
-	"death.attack.yuccaflower.player": "%1$s was sliced by a yucca flower whilst trying to escape %2$s",
-	"death.attack.yuccabranch": "%1$s was sliced by a yucca branch",
-	"death.attack.yuccabranch.player": "%1$s was sliced by a yucca branch whilst trying to escape %2$s",
+	"death.attack.yuccaSapling": "%1$s was sliced by a yucca sapling",
+	"death.attack.yuccaSapling.player": "%1$s was sliced by a yucca sapling whilst trying to escape %2$s",
+	"death.attack.yuccaFlower": "%1$s was sliced by a yucca flower",
+	"death.attack.yuccaFlower.player": "%1$s was sliced by a yucca flower whilst trying to escape %2$s",
+	"death.attack.yuccaBranch": "%1$s was sliced by a yucca branch",
+	"death.attack.yuccaBranch.player": "%1$s was sliced by a yucca branch whilst trying to escape %2$s",
   
   "_comment4": "START OF THE KOUSA SECTION",
   

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=lower": { "model": "atmospheric:block/tall_yucca_flower_bottom" },
+        "half=upper":    { "model": "atmospheric:block/tall_yucca_flower_top" }
+    }
+}
