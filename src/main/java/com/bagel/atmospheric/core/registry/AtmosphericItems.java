@@ -2,6 +2,7 @@ package com.bagel.atmospheric.core.registry;
 
 import com.bagel.atmospheric.common.entity.AtmosphericBoatEntity;
 import com.bagel.atmospheric.common.item.AtmosphericBoatItem;
+import com.bagel.atmospheric.common.item.YuccaJuiceItem;
 import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.util.RegistryUtils;
 
@@ -28,6 +29,7 @@ public class AtmosphericItems {
 	public static RegistryObject<Item> YUCCA_FRUIT				= RegistryUtils.createItem("yucca_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.YUCCA_FRUIT).group(ItemGroup.FOOD)));
 	public static RegistryObject<Item> ROASTED_YUCCA_FRUIT		= RegistryUtils.createItem("roasted_yucca_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.ROASTED_YUCCA_FRUIT).group(ItemGroup.FOOD)));
 	public static RegistryObject<Item> YUCCA_GATEAU				= RegistryUtils.createItem("yucca_gateau", () -> new BlockItem(AtmosphericBlocks.YUCCA_GATEAU.get(), new Item.Properties().maxStackSize(1).group(ItemGroup.FOOD)));
+	public static RegistryObject<Item> YUCCA_JUICE				= RegistryUtils.createItem("yucca_juice", () -> new YuccaJuiceItem(new Item.Properties().containerItem(Items.GLASS_BOTTLE).food(AtmosphericFoods.YUCCA_JUICE).maxStackSize(16).group(ItemGroup.FOOD)));
 
 	public static RegistryObject<Item> ROSEWOOD_BOAT = RegistryUtils.createItem("rosewood_boat", () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.ROSEWOOD, new Item.Properties().maxStackSize(1).group(ItemGroup.TRANSPORTATION)));
 	public static RegistryObject<Item> YUCCA_BOAT 	 = RegistryUtils.createItem("yucca_boat", 	 () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.YUCCA, 	new Item.Properties().maxStackSize(1).group(ItemGroup.TRANSPORTATION)));

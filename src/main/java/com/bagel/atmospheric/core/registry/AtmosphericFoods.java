@@ -23,4 +23,5 @@ public class AtmosphericFoods {
 	
 	public static Food YUCCA_FRUIT = new Food.Builder().hunger(3).saturation(0.6F).effect(new EffectInstance(Effects.POISON, 145, 0), 1.0F).build();
 	public static Food ROASTED_YUCCA_FRUIT = new Food.Builder().hunger(6).saturation(0.6F).build();
+	public static Food YUCCA_JUICE = new Food.Builder().hunger(3).saturation(0.6F).effect(new EffectInstance(Effects.WEAKNESS, 65, 2), 1.0F).build();
 }
