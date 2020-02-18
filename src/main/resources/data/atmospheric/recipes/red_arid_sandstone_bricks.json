@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:red_arid_sand"
+    }
+  },
+  "result": {
+    "item": "atmospheric:red_arid_sandstone_bricks"
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "sandstone_bricks"
+        }
+      ]
+    }
+  ]
+}

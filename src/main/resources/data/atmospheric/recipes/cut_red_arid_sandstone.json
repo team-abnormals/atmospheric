@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:red_arid_sandstone"
+    }
+  },
+  "result": {
+    "item": "atmospheric:cut_red_arid_sandstone",
+    "count": 4
+  }
+}

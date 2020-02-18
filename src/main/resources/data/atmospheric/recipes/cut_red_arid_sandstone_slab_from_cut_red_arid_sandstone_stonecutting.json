@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "atmospheric:cut_red_arid_sandstone"
+  },
+  "result": "atmospheric:cut_red_arid_sandstone_slab",
+  "count": 2
+}
