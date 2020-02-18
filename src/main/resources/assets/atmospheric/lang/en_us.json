@@ -181,6 +181,10 @@
 	"block.atmospheric.roasted_yucca_cask": "Roasted Yucca Cask",
 	"block.atmospheric.yucca_gateau": "Yucca Gateau",
 	
+	"block.atmospheric.barrel_cactus": "Barrel Cactus",
+	"block.atmospheric.aloe": "Aloe",
+	"block.atmospheric.aloe_bundle": "Aloe Bundle",
+	"block.atmospheric.gilia": "Gilia",
 	
 	"block.atmospheric.arid_sand": "Arid Sand",
 	"block.atmospheric.arid_sandstone": "Arid Sandstone",
@@ -227,6 +231,11 @@
 	"item.atmospheric.yucca_boat": "Yucca Boat",
 	"item.atmospheric.yucca_fruit": "Yucca Fruit",
 	"item.atmospheric.roasted_yucca_fruit": "Roasted Yucca Fruit",
+	"item.atmospheric.yucca_juice": "Yucca Juice",
+	
+	"item.atmospheric.aloe_kernels": "Aloe Kernels",
+	"item.atmospheric.aloe_leaves": "Aloe Leaves",
+	"item.atmospheric.aloe_gel_bottle": "Aloe Gel Bottle",
 	
 	"biome.atmospheric.dunes": "Dunes",
 	"biome.atmospheric.rocky_dunes": "Rocky Dunes",
