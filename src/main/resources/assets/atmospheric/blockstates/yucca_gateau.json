@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "bites=0": { "model": "atmospheric:block/yucca_gateau" },
+        "bites=1": { "model": "atmospheric:block/yucca_gateau_slice1" },
+        "bites=2": { "model": "atmospheric:block/yucca_gateau_slice2" },
+        "bites=3": { "model": "atmospheric:block/yucca_gateau_slice3" },
+        "bites=4": { "model": "atmospheric:block/yucca_gateau_slice4" },
+        "bites=5": { "model": "atmospheric:block/yucca_gateau_slice5" },
+        "bites=6": { "model": "atmospheric:block/yucca_gateau_slice6" },
+        "bites=7": { "model": "atmospheric:block/yucca_gateau_slice7" },
+        "bites=8": { "model": "atmospheric:block/yucca_gateau_slice8" },
+        "bites=9": { "model": "atmospheric:block/yucca_gateau_slice9" }
+    }
+}
