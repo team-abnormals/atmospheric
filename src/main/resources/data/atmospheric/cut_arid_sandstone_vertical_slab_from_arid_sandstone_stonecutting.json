@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "atmospheric:arid_sandstone"
+  },
+  "result": {
+    "item": "atmospheric:cut_arid_sandstone_vertical_slab",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "vertical_slabs"
+        }
+      ]
+    }
+  ]
+}
