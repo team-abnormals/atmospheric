@@ -21,7 +21,7 @@ public class AtmosphericFoods {
 	public static Food PASSIONFRUIT_TART = new Food.Builder().hunger(4).saturation(0.6F).build();
 	public static Food PASSIONFRUIT_SORBET = new Food.Builder().hunger(15).saturation(0.5F).effect(new EffectInstance(Effects.SLOWNESS, 300, 4, false, false), 1.0F).build();
 	
-	public static Food YUCCA_FRUIT = new Food.Builder().hunger(3).saturation(0.6F).effect(new EffectInstance(Effects.POISON, 145, 0), 1.0F).build();
+	public static Food YUCCA_FRUIT = new Food.Builder().hunger(1).saturation(0.3F).build();
 	public static Food ROASTED_YUCCA_FRUIT = new Food.Builder().hunger(6).saturation(0.6F).build();
-	public static Food YUCCA_JUICE = new Food.Builder().hunger(3).saturation(0.6F).effect(new EffectInstance(Effects.WEAKNESS, 65, 2), 1.0F).build();
+	public static Food YUCCA_JUICE = new Food.Builder().hunger(3).saturation(0.6F).effect(new EffectInstance(Effects.SLOWNESS, 65, 2), 1.0F).build();
 }
