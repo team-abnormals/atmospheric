@@ -4,6 +4,10 @@
     "atmospheric:arid_sandstone",
     "atmospheric:cut_arid_sandstone",
     "atmospheric:chiseled_arid_sandstone",
-    "atmospheric:smooth_arid_sandstone"
+    "atmospheric:smooth_arid_sandstone",
+    "atmospheric:red_arid_sandstone",
+    "atmospheric:cut_red_arid_sandstone",
+    "atmospheric:chiseled_red_arid_sandstone",
+    "atmospheric:smooth_red_arid_sandstone"
   ]
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "atmospheric:monkey_brush"
+    "atmospheric:monkey_brush",
+    "atmospheric:yucca_flower"
   ]
 }
