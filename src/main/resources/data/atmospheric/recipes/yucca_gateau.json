@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RXR",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "X": {
+      "item": "atmospheric:yucca_flower"
+    },
+    "R": {
+      "item": "atmospheric:roasted_yucca_fruit"
+    }
+  },
+  "result": {
+    "item": "atmospheric:yucca_gateau",
+    "count": 1
+  }
+}
