@@ -3,6 +3,8 @@
   "values": [
     "atmospheric:arid_sandstone_wall",
     "atmospheric:arid_sandstone_brick_wall",
+    "atmospheric:red_arid_sandstone_wall",
+    "atmospheric:red_arid_sandstone_brick_wall",
     "atmospheric:ivory_travertine_wall",
     "atmospheric:peach_travertine_wall",
     "atmospheric:persimmon_travertine_wall",

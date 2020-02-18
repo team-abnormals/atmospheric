@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:cut_red_arid_sandstone_vertical_slab"
+    }
+  },
+  "result": {
+    "item": "atmospheric:cut_red_arid_sandstone_slab",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "vertical_slabs"
+        }
+      ]
+    }
+  ]
+}

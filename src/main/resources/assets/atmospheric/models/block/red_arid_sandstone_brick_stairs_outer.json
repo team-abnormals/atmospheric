@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "atmospheric:block/red_arid_sandstone_bricks",
+        "top": "atmospheric:block/red_arid_sandstone_bricks",
+        "side": "atmospheric:block/red_arid_sandstone_bricks"
+    }
+}
