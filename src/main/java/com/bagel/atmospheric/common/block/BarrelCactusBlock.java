@@ -10,6 +10,7 @@ import com.bagel.atmospheric.core.registry.AtmosphericDamageSources;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.IGrowable;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
@@ -20,8 +21,8 @@ import net.minecraft.potion.Effects;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -57,7 +58,7 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
           worldIn.destroyBlock(pos, true);
        } else {
     	   int j = state.get(AGE);
-    	   if(worldIn.getBlockState(pos.down()).getBlock() == AtmosphericBlocks.ARID_SAND.get() && j < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, true)) {
+    	   if(worldIn.getBlockState(pos.down()).getBlock() == AtmosphericBlocks.ARID_SAND.get() && j < this.getMaxAge(worldIn, pos) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, true)) {
     		 	  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(j + 1)));
     	   } 
     	   net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
@@ -72,6 +73,23 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
 		   net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);	
 	   }	
 	}
+   
+   public int getMaxAge(World worldIn, BlockPos pos) {
+	   for(Direction direction : Direction.Plane.HORIZONTAL) {
+		   BlockState blockstate =  worldIn.getBlockState(pos.offset(direction));
+	       Block block = blockstate.getBlock();  
+	       Material material = blockstate.getMaterial();
+	       Block cactus = AtmosphericBlocks.BARREL_CACTUS.get();
+	       if (block == cactus) {
+	    	   if (blockstate.get(AGE) == 3) {
+	    		   return 2;   
+	    	   }
+	       } else if (material.isSolid()) {
+	           return 2;
+	       }
+	   }
+	   return 3;
+   }
 
    public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
       return COLLISION_BY_AGE[state.get(AGE)];
