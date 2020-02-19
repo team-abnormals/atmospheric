@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "RXR",
-    "###"
+    "RYR",
+    "#X#"
   ],
   "key": {
     "#": {
@@ -13,6 +13,9 @@
     },
     "R": {
       "item": "atmospheric:roasted_yucca_fruit"
+    },
+    "Y": {
+      "item": "atmospheric:aloe_gel_bottle"
     }
   },
   "result": {

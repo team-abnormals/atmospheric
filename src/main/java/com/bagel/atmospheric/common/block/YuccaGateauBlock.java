@@ -5,7 +5,9 @@ import com.bagel.atmospheric.core.util.StateUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
@@ -22,9 +24,9 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
-public class YuccaGateauBlock extends Block {
+public class YuccaGateauBlock extends HorizontalBlock {
 	   public static final IntegerProperty BITES = StateUtils.BITES_0_9;
-	   protected static final VoxelShape[] SHAPES = new VoxelShape[]{
+	   protected static final VoxelShape[] NORTH_SHAPES = new VoxelShape[]{
 			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), 
 			   Block.makeCuboidShape(4.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), 
 			   Block.makeCuboidShape(5.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), 
@@ -35,6 +37,42 @@ public class YuccaGateauBlock extends Block {
 			   Block.makeCuboidShape(10.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), 
 			   Block.makeCuboidShape(11.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), 
 			   Block.makeCuboidShape(12.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)};
+	   
+	   protected static final VoxelShape[] EAST_SHAPES = new VoxelShape[]{
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 4.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 5.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 6.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 7.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 8.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 9.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 10.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 11.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 12.0D, 13.0D, 6.0D, 13.0D)};
+	   
+	   protected static final VoxelShape[] SOUTH_SHAPES = new VoxelShape[]{
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 12.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 11.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 10.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 9.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 8.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 7.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 6.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 5.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 4.0D, 6.0D, 13.0D)};
+
+	   protected static final VoxelShape[] WEST_SHAPES = new VoxelShape[]{
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 12.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 11.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 10.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 9.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 8.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 7.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 6.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 5.0D), 
+			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 4.0D)};
 
 	   public YuccaGateauBlock(Block.Properties properties) {
 	      super(properties);
@@ -42,7 +80,17 @@ public class YuccaGateauBlock extends Block {
 	   }
 
 	   public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-	      return SHAPES[state.get(BITES)];
+	      switch(state.get(HORIZONTAL_FACING)) {
+			case NORTH:
+				default:
+					return NORTH_SHAPES[state.get(BITES)];	
+			case EAST:
+				return EAST_SHAPES[state.get(BITES)];	
+			case SOUTH:
+				return SOUTH_SHAPES[state.get(BITES)];	
+			case WEST:
+				return WEST_SHAPES[state.get(BITES)];	
+			}	
 	   }
 
 	   public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
@@ -81,7 +129,7 @@ public class YuccaGateauBlock extends Block {
 	   }
 
 	   protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-	      builder.add(BITES);
+	      builder.add(BITES, HORIZONTAL_FACING);
 	   }
 
 	   public int getComparatorInputOverride(BlockState blockState, World worldIn, BlockPos pos) {
@@ -94,5 +142,9 @@ public class YuccaGateauBlock extends Block {
 
 	   public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
 	      return false;
+	   }
+	   
+	   public BlockState getStateForPlacement(BlockItemUseContext context) {
+		   return this.getDefaultState().with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite());   
 	   }
 	}

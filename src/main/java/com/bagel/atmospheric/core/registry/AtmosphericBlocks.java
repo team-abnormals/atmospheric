@@ -6,6 +6,7 @@ import com.bagel.atmospheric.common.block.BarrelCactusBlock;
 import com.bagel.atmospheric.common.block.BookshelfBlock;
 import com.bagel.atmospheric.common.block.CrustoseBlock;
 import com.bagel.atmospheric.common.block.CrustoseLogBlock;
+import com.bagel.atmospheric.common.block.GiliaBlock;
 import com.bagel.atmospheric.common.block.LeafCarpetBlock;
 import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
 import com.bagel.atmospheric.common.block.PassionVineBlock;
@@ -189,6 +190,9 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_FLOWER 			= RegistryUtils.createBlock("yucca_flower", 	 () -> new YuccaFlowerBlock(Effects.BAD_OMEN, 6, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_YUCCA_FLOWER	= RegistryUtils.createBlockNoItem("potted_yucca_flower",	() -> new FlowerPotBlock(YUCCA_FLOWER.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> TALL_YUCCA_FLOWER 	= RegistryUtils.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
+	
+	public static final RegistryObject<Block> GILIA 		= RegistryUtils.createBlock("gilia", 	 () -> new GiliaBlock(Effects.SPEED, 9, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> POTTED_GILIA	= RegistryUtils.createBlockNoItem("potted_gilia",	() -> new FlowerPotBlock(GILIA.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	
 	public static final RegistryObject<Block> ALOE_BUNDLE 			= RegistryUtils.createBlock("aloe_bundle", 	 () -> new RotatedPillarBlock(Block.Properties.from(Blocks.DRIED_KELP_BLOCK)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> BARREL_CACTUS 		= RegistryUtils.createBlock("barrel_cactus", 	 () -> new BarrelCactusBlock(Block.Properties.from(Blocks.CACTUS).tickRandomly()), ItemGroup.DECORATIONS);

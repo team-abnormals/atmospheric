@@ -5,10 +5,10 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
+import com.bagel.atmospheric.core.registry.AtmosphericDamageSources;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -105,7 +105,7 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
     	  LivingEntity living = (LivingEntity) entityIn;
     	  living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, true, true));
       }
-      entityIn.attackEntityFrom(DamageSource.CACTUS, 0.5F * state.get(AGE));
+      entityIn.attackEntityFrom(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.get(AGE));
    }
 
    public BlockRenderLayer getRenderLayer() {
