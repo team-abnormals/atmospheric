@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atmospheric:barrel_cactus_bundle"
+          "name": "atmospheric:barrel_cactus_batch"
         }
       ],
       "conditions": [

@@ -40,7 +40,7 @@ public class AtmosphericBlockData {
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.PASSIONFRUIT_CRATE.get());
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.YUCCA_CASK.get());
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.ROASTED_YUCCA_CASK.get());
-		DataUtils.registerCompostable(1F, AtmosphericBlocks.BARREL_CACTUS_BUNDLE.get());
+		DataUtils.registerCompostable(1F, AtmosphericBlocks.BARREL_CACTUS_BATCH.get());
 	}
 	
 	public static void registerStrippables() {

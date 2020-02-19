@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":    { "model": "atmospheric:block/barrel_cactus_batch" },
+        "axis=z":     { "model": "atmospheric:block/barrel_cactus_batch", "x": 90 },
+        "axis=x":     { "model": "atmospheric:block/barrel_cactus_batch", "x": 90, "y": 90 }
+    }
+}

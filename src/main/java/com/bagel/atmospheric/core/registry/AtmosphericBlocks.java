@@ -227,7 +227,7 @@ public class AtmosphericBlocks {
 	
 	public static final RegistryObject<Block> YUCCA_CASK			= RegistryUtils.createBlockCompat("quark", "yucca_cask", 			() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ROASTED_YUCCA_CASK	= RegistryUtils.createBlockCompat("quark", "roasted_yucca_cask", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> BARREL_CACTUS_BUNDLE	= RegistryUtils.createBlockCompat("quark", "barrel_cactus_bundle", 	() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(0.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> BARREL_CACTUS_BATCH	= RegistryUtils.createBlockCompat("quark", "barrel_cactus_batch", 	() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(0.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "atmospheric:block/barrel_cactus_batch_top",
+        "side": "atmospheric:block/barrel_cactus_batch_side"
+    }
+}
