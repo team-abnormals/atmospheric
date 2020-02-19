@@ -251,6 +251,8 @@
 	"death.attack.yuccaFlower.player": "%1$s was sliced by a yucca flower whilst trying to escape %2$s",
 	"death.attack.yuccaBranch": "%1$s was sliced by a yucca branch",
 	"death.attack.yuccaBranch.player": "%1$s was sliced by a yucca branch whilst trying to escape %2$s",
+	"death.attack.barrelCactus": "%1$s ran into a barrel cactus",
+	"death.attack.barrelCactus.player": "%1$s ran into a barrel cactus whilst trying to escape %2$s",
   
   "_comment4": "START OF THE KOUSA SECTION",
   
