@@ -31,6 +31,10 @@ public class AtmosphericItems {
 	public static RegistryObject<Item> YUCCA_GATEAU				= RegistryUtils.createItem("yucca_gateau", () -> new BlockItem(AtmosphericBlocks.YUCCA_GATEAU.get(), new Item.Properties().maxStackSize(1).group(ItemGroup.FOOD)));
 	public static RegistryObject<Item> YUCCA_JUICE				= RegistryUtils.createItem("yucca_juice", () -> new YuccaJuiceItem(new Item.Properties().containerItem(Items.GLASS_BOTTLE).food(AtmosphericFoods.YUCCA_JUICE).maxStackSize(16).group(ItemGroup.FOOD)));
 
+	public static RegistryObject<Item> ALOE_KERNELS		= RegistryUtils.createItem("aloe_kernels", () -> new Item(new Item.Properties().group(ItemGroup.MISC)));
+	public static RegistryObject<Item> ALOE_LEAVES		= RegistryUtils.createItem("aloe_leaves", () -> new Item(new Item.Properties().group(ItemGroup.MISC)));
+	public static RegistryObject<Item> ALOE_GEL_BOTTLE	= RegistryUtils.createItem("aloe_gel_bottle", () -> new YuccaJuiceItem(new Item.Properties().containerItem(Items.GLASS_BOTTLE).food(AtmosphericFoods.YUCCA_JUICE).maxStackSize(16).group(ItemGroup.FOOD)));
+	
 	public static RegistryObject<Item> ROSEWOOD_BOAT = RegistryUtils.createItem("rosewood_boat", () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.ROSEWOOD, new Item.Properties().maxStackSize(1).group(ItemGroup.TRANSPORTATION)));
 	public static RegistryObject<Item> YUCCA_BOAT 	 = RegistryUtils.createItem("yucca_boat", 	 () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.YUCCA, 	new Item.Properties().maxStackSize(1).group(ItemGroup.TRANSPORTATION)));
 	public static RegistryObject<Item> KOUSA_BOAT 	 = RegistryUtils.createItem("kousa_boat", 	 () -> new AtmosphericBoatItem(AtmosphericBoatEntity.Type.KOUSA, 	new Item.Properties().maxStackSize(1).group(ItemGroup.TRANSPORTATION)));

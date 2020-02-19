@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":    { "model": "atmospheric:block/aloe_bundle" },
+        "axis=z":     { "model": "atmospheric:block/aloe_bundle", "x": 90 },
+        "axis=x":     { "model": "atmospheric:block/aloe_bundle", "x": 90, "y": 90 }
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:barrel_cactus_bundle"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:barrel_cactus",
+    "count": 9
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "cactus_bundle"
+        }
+      ]
+    }
+  ]
+}

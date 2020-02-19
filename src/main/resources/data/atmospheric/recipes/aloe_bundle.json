@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:aloe_leaves"
+    }
+  },
+  "result": {
+    "item": "atmospheric:aloe_bundle",
+    "count": 1
+  }
+}

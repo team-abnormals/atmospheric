@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_column",
     "textures": {
-        "end": "atmospheric:block/aloe_bundle",
-        "side": "atmospheric:block/aloe_bundle"
+        "end": "atmospheric:block/aloe_bundle_top",
+        "side": "atmospheric:block/aloe_bundle_side"
     }
 }

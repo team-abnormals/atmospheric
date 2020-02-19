@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:aloe_bundle"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:aloe_leaves",
+    "count": 9
+  }
+}
