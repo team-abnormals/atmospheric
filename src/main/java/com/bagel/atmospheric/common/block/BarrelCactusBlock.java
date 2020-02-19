@@ -8,9 +8,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.pathfinding.PathType;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -94,7 +97,11 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
    }
 
    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-      entityIn.attackEntityFrom(DamageSource.CACTUS, 1.0F);
+      if (entityIn.isLiving()) {
+    	  LivingEntity living = (LivingEntity) entityIn;
+    	  living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 60)));
+      }
+      entityIn.attackEntityFrom(DamageSource.CACTUS, 0.5F * state.get(AGE));
    }
 
    public BlockRenderLayer getRenderLayer() {
@@ -130,6 +137,6 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
 	}
 
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
-		return state.get(AGE) < 3;
+		return true;
 	}
 }

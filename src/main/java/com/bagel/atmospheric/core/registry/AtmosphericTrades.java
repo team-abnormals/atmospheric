@@ -18,6 +18,7 @@ public class AtmosphericTrades {
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.PASSION_VINE.get(), 4, 1, 8, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ARID_SAND.get(), 1, 4, 8, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.YUCCA_FLOWER.get(), 1, 1, 8, 1));
+		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.BARREL_CACTUS.get(), 3, 1, 8, 1));
 		
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ROSEWOOD_SAPLING.get(), 5, 1, 8, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.YUCCA_SAPLING.get(), 5, 1, 8, 1));
