@@ -4,8 +4,11 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -54,7 +57,7 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
           worldIn.destroyBlock(pos, true);
        } else {
     	   int j = state.get(AGE);
-    	   if(j < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, true)) {
+    	   if(worldIn.getBlockState(pos.down()).getBlock() == AtmosphericBlocks.ARID_SAND.get() && j < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, true)) {
     		 	  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(j + 1)));
     	   } 
     	   net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
@@ -90,16 +93,17 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
 
       return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
    }
-
+   
    public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
       BlockState soil = worldIn.getBlockState(pos.down());
-      return soil.canSustainPlant(worldIn, pos.down(), Direction.UP, this) && !worldIn.getBlockState(pos.up()).getMaterial().isLiquid();
+      boolean dune = soil.getBlock() == AtmosphericBlocks.ARID_SAND.get() || soil.getBlock() == AtmosphericBlocks.RED_ARID_SAND.get();
+      return dune && !worldIn.getBlockState(pos.up()).getMaterial().isLiquid();
    }
 
    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
       if (entityIn.isLiving()) {
     	  LivingEntity living = (LivingEntity) entityIn;
-    	  living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, true, false));
+    	  living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, true, true));
       }
       entityIn.attackEntityFrom(DamageSource.CACTUS, 0.5F * state.get(AGE));
    }
@@ -133,10 +137,10 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
    }
    
    public boolean canGrow(IBlockReader world, BlockPos pos, BlockState state, boolean isClient) {
-		return true;
+		return state.get(AGE) < 3;
 	}
 
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
-		return true;
+		return state.get(AGE) < 3;
 	}
 }
