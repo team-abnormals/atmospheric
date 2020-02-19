@@ -1,0 +1,24 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"bottom": "atmospheric:block/barrel_cactus_stage2_bottom",
+		"particle": "atmospheric:block/barrel_cactus_stage2_side",
+		"side": "atmospheric:block/barrel_cactus_stage2_side",
+		"top": "atmospheric:block/barrel_cactus_stage2_top"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 2],
+			"to": [14, 12, 14],
+			"faces": {
+				"north": {"uv": [2, 4, 14, 16], "texture": "#side"},
+				"east": {"uv": [2, 4, 14, 16], "texture": "#side"},
+				"south": {"uv": [2, 4, 14, 16], "texture": "#side"},
+				"west": {"uv": [2, 4, 14, 16], "texture": "#side"},
+				"up": {"uv": [2, 2, 14, 14], "texture": "#top"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#bottom"}
+			}
+		}
+	]
+}

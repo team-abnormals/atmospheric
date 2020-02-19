@@ -2,6 +2,7 @@ package com.bagel.atmospheric.core.registry;
 
 import com.bagel.atmospheric.common.block.AridSandBlock;
 import com.bagel.atmospheric.common.block.AtmosphericSaplingBlock;
+import com.bagel.atmospheric.common.block.BarrelCactusBlock;
 import com.bagel.atmospheric.common.block.BookshelfBlock;
 import com.bagel.atmospheric.common.block.CrustoseBlock;
 import com.bagel.atmospheric.common.block.CrustoseLogBlock;
@@ -183,10 +184,15 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_DOOR 			= RegistryUtils.createBlock("yucca_door", 			() -> new DoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	
 	public static final RegistryObject<Block> POTTED_YUCCA_SAPLING	= RegistryUtils.createBlockNoItem("potted_yucca_sapling",	() -> new FlowerPotBlock(YUCCA_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
-	
+
 	public static final RegistryObject<Block> YUCCA_GATEAU 		= RegistryUtils.createBlockNoItem("yucca_gateau", 	 () -> new YuccaGateauBlock(Block.Properties.from(Blocks.CAKE)));
-	public static final RegistryObject<Block> YUCCA_FLOWER 		= RegistryUtils.createBlock("yucca_flower", 	 () -> new YuccaFlowerBlock(Effects.BAD_OMEN, 6, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> TALL_YUCCA_FLOWER = RegistryUtils.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
+	
+	public static final RegistryObject<Block> YUCCA_FLOWER 			= RegistryUtils.createBlock("yucca_flower", 	 () -> new YuccaFlowerBlock(Effects.BAD_OMEN, 6, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> POTTED_YUCCA_FLOWER	= RegistryUtils.createBlockNoItem("potted_yucca_flower",	() -> new FlowerPotBlock(YUCCA_FLOWER.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
+	public static final RegistryObject<Block> TALL_YUCCA_FLOWER 	= RegistryUtils.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
+	
+	public static final RegistryObject<Block> BARREL_CACTUS 		= RegistryUtils.createBlock("barrel_cactus", 	 () -> new BarrelCactusBlock(Block.Properties.from(Blocks.CACTUS).tickRandomly()), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> POTTED_BARREL_CACTUS	= RegistryUtils.createBlockNoItem("potted_barrel_cactus",	() -> new FlowerPotBlock(BARREL_CACTUS.get(), Block.Properties.from(Blocks.POTTED_CACTUS)));
 
 	//quark compatability
 	public static final RegistryObject<Block> ARID_SANDSTONE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "arid_sandstone_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);		

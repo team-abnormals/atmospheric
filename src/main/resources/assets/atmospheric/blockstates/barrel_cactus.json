@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "age=0": { "model": "atmospheric:block/barrel_cactus_stage0" },
+        "age=1": { "model": "atmospheric:block/barrel_cactus_stage1" },
+        "age=2": { "model": "atmospheric:block/barrel_cactus_stage2" },
+        "age=3": { "model": "atmospheric:block/barrel_cactus_stage3" }
+    }
+}
