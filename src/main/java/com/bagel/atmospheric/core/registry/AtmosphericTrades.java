@@ -17,7 +17,10 @@ public class AtmosphericTrades {
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.MONKEY_BRUSH.get(), 1, 1, 6, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.PASSION_VINE.get(), 4, 1, 8, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ARID_SAND.get(), 1, 4, 8, 1));
+		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.RED_ARID_SAND.get(), 1, 4, 6, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.YUCCA_FLOWER.get(), 1, 1, 8, 1));
+		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.GILIA.get(), 1, 1, 12, 1));
+		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.ALOE_KERNELS.get(), 1, 1, 12, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.BARREL_CACTUS.get(), 3, 1, 8, 1));
 		
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ROSEWOOD_SAPLING.get(), 5, 1, 8, 1));
@@ -29,8 +32,11 @@ public class AtmosphericTrades {
 	@SubscribeEvent
 	public static void onVillagerTradesEvent(VillagerTradesEvent event) {
 		if(event.getType() == VillagerProfession.FARMER) {
-			event.getTrades().get(3).add(new TradeUtils.EmeraldsForItemsTrade(AtmosphericItems.PASSIONFRUIT.get(), 8, 1, 12, 20));
+			event.getTrades().get(3).add(new TradeUtils.EmeraldsForItemsTrade(AtmosphericItems.PASSIONFRUIT.get(), 8, 1, 12, 10));
 			event.getTrades().get(3).add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.PASSIONFRUIT_TART.get(), 4, 16, 4, 15));	
+			event.getTrades().get(2).add(new TradeUtils.EmeraldsForItemsTrade(AtmosphericItems.ALOE_LEAVES.get(), 4, 1, 16, 15));
+			event.getTrades().get(2).add(new TradeUtils.EmeraldsForItemsTrade(AtmosphericItems.YUCCA_FRUIT.get(), 3, 1, 12, 10));
+			event.getTrades().get(2).add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.YUCCA_GATEAU.get(), 1, 12, 1, 10));	
 		}
     }
 }

@@ -20,6 +20,12 @@ public class AtmosphericBlockData {
 		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.TALL_YUCCA_FLOWER.get());
 		DataUtils.registerCompostable(0.5F, AtmosphericBlocks.BARREL_CACTUS.get());
 		
+		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.GILIA.get());
+		
+		DataUtils.registerCompostable(0.3F, AtmosphericItems.ALOE_KERNELS.get());
+		DataUtils.registerCompostable(0.65F, AtmosphericItems.ALOE_LEAVES.get());
+		DataUtils.registerCompostable(1F,    AtmosphericBlocks.ALOE_BUNDLE.get());
+		
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_LEAVES.get());
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_SAPLING.get());
 		
@@ -34,6 +40,7 @@ public class AtmosphericBlockData {
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.PASSIONFRUIT_CRATE.get());
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.YUCCA_CASK.get());
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.ROASTED_YUCCA_CASK.get());
+		DataUtils.registerCompostable(1F, AtmosphericBlocks.BARREL_CACTUS_BUNDLE.get());
 	}
 	
 	public static void registerStrippables() {
