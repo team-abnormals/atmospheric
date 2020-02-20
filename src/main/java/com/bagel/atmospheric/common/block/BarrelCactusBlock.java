@@ -21,7 +21,6 @@ import net.minecraft.potion.Effects;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -68,7 +67,7 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
    @Override
    public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
 	   int i = state.get(AGE);
-	   if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(3) == 0)) {
+	   if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, true)) {
 		   worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)));
 		   net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);	
 	   }	

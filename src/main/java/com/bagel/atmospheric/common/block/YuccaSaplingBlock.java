@@ -3,6 +3,7 @@ package com.bagel.atmospheric.common.block;
 import javax.annotation.Nullable;
 
 import com.bagel.atmospheric.core.registry.AtmosphericDamageSources;
+import com.bagel.atmospheric.core.registry.AtmosphericTags;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SaplingBlock;
@@ -11,7 +12,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.pathfinding.PathNodeType;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
@@ -25,7 +25,7 @@ public class YuccaSaplingBlock extends SaplingBlock implements net.minecraftforg
 	
 	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		return worldIn.getBlockState(pos.down()).isIn(BlockTags.BAMBOO_PLANTABLE_ON);
+		return worldIn.getBlockState(pos.down()).isIn(AtmosphericTags.YUCCA_PLANTABLE_ON);
 	}
 	
 	@Override

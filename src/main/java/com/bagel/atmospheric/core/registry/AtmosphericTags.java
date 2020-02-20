@@ -9,5 +9,5 @@ import net.minecraft.util.ResourceLocation;
 
 public class AtmosphericTags {
 	public static final Tag<Block> PASSION_VINE_GROWABLE_ON = new BlockTags.Wrapper(new ResourceLocation(Atmospheric.MODID, "passion_vine_growable_on"));
-	public static final Tag<Block> ROSEWOOD_LOGS = new BlockTags.Wrapper(new ResourceLocation(Atmospheric.MODID, "rosewood_logs"));
+	public static final Tag<Block> YUCCA_PLANTABLE_ON = new BlockTags.Wrapper(new ResourceLocation(Atmospheric.MODID, "yucca_plantable_on"));
 }

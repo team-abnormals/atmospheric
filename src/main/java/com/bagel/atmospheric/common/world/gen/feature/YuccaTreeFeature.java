@@ -7,11 +7,11 @@ import java.util.Set;
 import java.util.function.Function;
 
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
+import com.bagel.atmospheric.core.registry.AtmosphericTags;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.LogBlock;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -210,7 +210,7 @@ public class YuccaTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 	   }
 
 	   private int checkLocation(Set<BlockPos> p_208528_1_, IWorldGenerationReader p_208528_2_, BlockPos p_208528_3_, int p_208528_4_, MutableBoundingBox p_208528_5_) {
-	      if (!isBamboo(p_208528_2_, p_208528_3_.down(), getSapling())) {
+	      if (!isBamboo(p_208528_2_, p_208528_3_.down(), getYuccaSapling())) {
 	         return -1;
 	      } else {
 	         int i = this.makeLimb(p_208528_1_, p_208528_2_, p_208528_3_, p_208528_3_.up(p_208528_4_ - 1), false, p_208528_5_);
@@ -230,7 +230,7 @@ public class YuccaTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 	   
 	   protected static boolean isBambooPlantable(IWorldGenerationBaseReader worldIn, BlockPos pos) {
 		      return worldIn.hasBlockState(pos, (p_214579_0_) -> {
-		         return p_214579_0_.isIn(BlockTags.BAMBOO_PLANTABLE_ON);
+		         return p_214579_0_.isIn(AtmosphericTags.YUCCA_PLANTABLE_ON);
 		      });
 		   }
 
@@ -246,4 +246,7 @@ public class YuccaTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 	         return this.branchBase;
 	      }
 	   }
+	   protected net.minecraftforge.common.IPlantable getYuccaSapling() {
+		      return (net.minecraftforge.common.IPlantable)AtmosphericBlocks.YUCCA_SAPLING.get();
+		   }
 	}
