@@ -67,7 +67,7 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
    @Override
    public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
 	   int i = state.get(AGE);
-	   if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, true)) {
+	   if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(3) == 0)) {
 		   worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)));
 		   net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);	
 	   }	
