@@ -118,11 +118,11 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
    }
 
    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-      if (entityIn.isLiving()) {
-    	  LivingEntity living = (LivingEntity) entityIn;
-    	  living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, true, true));
-      }
-      entityIn.attackEntityFrom(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.get(AGE));
+	   if (entityIn instanceof LivingEntity) {
+		   LivingEntity living = (LivingEntity) entityIn;
+		   living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, true, true));
+	   }
+	   entityIn.attackEntityFrom(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.get(AGE));
    }
 
    public BlockRenderLayer getRenderLayer() {
