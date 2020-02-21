@@ -67,28 +67,28 @@ public class AtmosphericBiomes {
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(DUNES.get(), 1));
+        //BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(DUNES.get(), 1));
         BiomeDictionary.addTypes(DUNES.get(), 
         		BiomeDictionary.Type.DRY, 
         		BiomeDictionary.Type.HOT, 
         		BiomeDictionary.Type.WASTELAND,
         		BiomeDictionary.Type.OVERWORLD);
         
-        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(ROCKY_DUNES.get(), 1));
+        //BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(ROCKY_DUNES.get(), 1));
         BiomeDictionary.addTypes(ROCKY_DUNES.get(), 
         		BiomeDictionary.Type.DRY, 
         		BiomeDictionary.Type.HOT,
         		BiomeDictionary.Type.WASTELAND,
         		BiomeDictionary.Type.OVERWORLD);
         
-        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(PETRIFIED_DUNES.get(), 1));
+        //BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(PETRIFIED_DUNES.get(), 1));
         BiomeDictionary.addTypes(PETRIFIED_DUNES.get(), 
         		BiomeDictionary.Type.DRY, 
         		BiomeDictionary.Type.HOT, 
         		BiomeDictionary.Type.WASTELAND,
         		BiomeDictionary.Type.OVERWORLD);
         
-        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(FLOURISHING_DUNES.get(), 1));
+        //BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(FLOURISHING_DUNES.get(), 1));
         BiomeDictionary.addTypes(FLOURISHING_DUNES.get(), 
         		BiomeDictionary.Type.DRY, 
         		BiomeDictionary.Type.HOT, 
