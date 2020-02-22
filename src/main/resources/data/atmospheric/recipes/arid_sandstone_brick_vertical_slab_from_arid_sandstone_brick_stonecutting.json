@@ -3,10 +3,8 @@
   "ingredient": {
     "item": "atmospheric:arid_sandstone_bricks"
   },
-  "result": {
-    "item": "atmospheric:arid_sandstone_brick_vertical_slab",
-    "count": 2
-  },
+  "result": "atmospheric:arid_sandstone_vertical_slab",
+  "count": 2,
   "conditions": [
     {
       "type": "forge:and",

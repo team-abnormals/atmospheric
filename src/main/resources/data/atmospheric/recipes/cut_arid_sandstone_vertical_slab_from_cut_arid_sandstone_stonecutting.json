@@ -3,10 +3,8 @@
   "ingredient": {
     "item": "atmospheric:cut_arid_sandstone"
   },
-  "result": {
-    "item": "atmospheric:cut_arid_sandstone_vertical_slab",
-    "count": 2
-  },
+  "result": "atmospheric:cut_arid_sandstone_vertical_slab",
+  "count": 2,
   "conditions": [
     {
       "type": "forge:and",

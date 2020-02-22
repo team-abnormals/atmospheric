@@ -9,12 +9,6 @@
     "#": [
       {
         "item": "atmospheric:arid_sandstone_bricks"
-      },
-      {
-        "item": "atmospheric:chiseled_arid_sandstone_bricks"
-      },
-      {
-        "item": "atmospheric:cut_arid_sandstone_bricks"
       }
     ]
   },
