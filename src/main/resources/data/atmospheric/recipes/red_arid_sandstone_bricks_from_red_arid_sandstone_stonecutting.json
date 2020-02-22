@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "atmospheric:red_arid_sandstone"
+  },
+  "result": "atmospheric:red_arid_sandstone_bricks",
+  "count": 1,
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "sandstone_bricks"
+        }
+      ]
+    }
+  ]
+}
