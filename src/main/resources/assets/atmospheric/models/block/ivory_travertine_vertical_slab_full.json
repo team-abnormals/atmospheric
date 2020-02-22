@@ -4,8 +4,8 @@
         "particle": "atmospheric:block/ivory_travertine_vertical_slab",
         "down": "atmospheric:block/ivory_travertine_vertical_slab_side",
         "up": "atmospheric:block/ivory_travertine_vertical_slab_side",
-        "north": "atmospheric:block/cut_ivory_travertine_top",
-        "south": "atmospheric:block/cut_ivory_travertine_bottom",
+        "north": "atmospheric:block/ivory_travertine_vertical_slab_top",
+        "south": "atmospheric:block/ivory_travertine_vertical_slab_bottom",
         "west": "atmospheric:block/ivory_travertine_vertical_slab",
         "east": "atmospheric:block/ivory_travertine_vertical_slab"
     }

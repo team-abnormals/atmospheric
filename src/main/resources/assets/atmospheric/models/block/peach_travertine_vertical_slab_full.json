@@ -4,8 +4,8 @@
         "particle": "atmospheric:block/peach_travertine_vertical_slab",
         "down": "atmospheric:block/peach_travertine_vertical_slab_side",
         "up": "atmospheric:block/peach_travertine_vertical_slab_side",
-        "north": "atmospheric:block/cut_peach_travertine_top",
-        "south": "atmospheric:block/cut_peach_travertine_bottom",
+        "north": "atmospheric:block/peach_travertine_vertical_slab_top",
+        "south": "atmospheric:block/peach_travertine_vertical_slab_bottom",
         "west": "atmospheric:block/peach_travertine_vertical_slab",
         "east": "atmospheric:block/peach_travertine_vertical_slab"
     }

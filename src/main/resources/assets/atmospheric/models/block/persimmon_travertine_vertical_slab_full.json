@@ -4,8 +4,8 @@
         "particle": "atmospheric:block/persimmon_travertine_vertical_slab",
         "down": "atmospheric:block/persimmon_travertine_vertical_slab_side",
         "up": "atmospheric:block/persimmon_travertine_vertical_slab_side",
-        "north": "atmospheric:block/cut_persimmon_travertine_top",
-        "south": "atmospheric:block/cut_persimmon_travertine_bottom",
+        "north": "atmospheric:block/persimmon_travertine_vertical_slab_top",
+        "south": "atmospheric:block/persimmon_travertine_vertical_slab_bottom",
         "west": "atmospheric:block/persimmon_travertine_vertical_slab",
         "east": "atmospheric:block/persimmon_travertine_vertical_slab"
     }
