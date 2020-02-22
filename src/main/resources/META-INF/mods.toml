@@ -13,7 +13,7 @@ logoFile="rosewood.png" #optional
 authors="five & bageldotjpg" #optional
 description='''
 Adds a unique biome, with a new wood type and new plants.
-Part of Five & Bagel's Biome Mods series.
+There will continue to be more biomes over time!
 '''
 
 [[dependencies.atmospheric]] #optional
