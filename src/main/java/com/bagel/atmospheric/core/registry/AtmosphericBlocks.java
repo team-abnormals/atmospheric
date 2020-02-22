@@ -87,7 +87,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> VERTICAL_ROSEWOOD_PLANKS 	= RegistryUtils.createBlockCompat("quark", "vertical_rosewood_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "rosewood_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_BOOKSHELF 		= RegistryUtils.createBlockCompat("quark", "rosewood_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ROSEWOOD_LADDER 			= RegistryUtils.createBlockCompat("quark", "rosewood_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ROSEWOOD_LADDER 			= RegistryUtils.createBlockCompat("quark", "rosewood_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ROSEWOOD_LEAF_CARPET 		= RegistryUtils.createBlockCompat("quark", "rosewood_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ROSEWOOD_LEAVES.get())), ItemGroup.DECORATIONS);
 	
 	public static final RegistryObject<Block> PASSIONFRUIT_CRATE				= RegistryUtils.createBlockCompat("quark", "passionfruit_crate", 				() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.PURPLE).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
@@ -226,7 +226,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> VERTICAL_YUCCA_PLANKS = RegistryUtils.createBlockCompat("quark", "vertical_yucca_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "yucca_vertical_slab", 		() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_BOOKSHELF 		= RegistryUtils.createBlockCompat("quark", "yucca_bookshelf", 			() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_LADDER 			= RegistryUtils.createBlockCompat("quark", "yucca_ladder", 				() -> new LadderBlock(Block.Properties.from(Blocks.LADDER)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_LADDER 			= RegistryUtils.createBlockCompat("quark", "yucca_ladder", 				() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
+	
 	public static final RegistryObject<Block> YUCCA_LEAF_CARPET 	= RegistryUtils.createBlockCompat("quark", "yucca_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(YUCCA_LEAVES.get())), ItemGroup.DECORATIONS);
 	
 	public static final RegistryObject<Block> YUCCA_CASK			= RegistryUtils.createBlockCompat("quark", "yucca_cask", 			() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
@@ -258,7 +259,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> VERTICAL_KOUSA_PLANKS = RegistryUtils.createBlockCompat("quark", "vertical_kousa_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "kousa_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_BOOKSHELF 		= RegistryUtils.createBlockCompat("quark", "kousa_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LADDER 			= RegistryUtils.createBlockCompat("quark", "kousa_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_LADDER 			= RegistryUtils.createBlockCompat("quark", "kousa_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> KOUSA_LEAF_CARPET 	= RegistryUtils.createBlockCompat("quark", "kousa_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(KOUSA_LEAVES.get())), ItemGroup.DECORATIONS);
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -289,6 +290,6 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> VERTICAL_ASPEN_PLANKS = RegistryUtils.createBlockCompat("quark", "vertical_aspen_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "aspen_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_BOOKSHELF 		= RegistryUtils.createBlockCompat("quark", "aspen_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ASPEN_LADDER 			= RegistryUtils.createBlockCompat("quark", "aspen_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ASPEN_LADDER 			= RegistryUtils.createBlockCompat("quark", "aspen_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_LEAF_CARPET 	= RegistryUtils.createBlockCompat("quark", "aspen_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ASPEN_LEAVES.get())), ItemGroup.DECORATIONS);
 }
