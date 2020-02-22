@@ -2,10 +2,10 @@
     "parent": "block/cube",
     "textures": {
         "particle": "atmospheric:block/saffron_travertine_vertical_slab",
-        "down": "atmospheric:block/saffron_travertine_vertical_slab_side",
-        "up": "atmospheric:block/saffron_travertine_vertical_slab_side",
-        "north": "atmospheric:block/saffron_travertine_vertical_slab_top",
-        "south": "atmospheric:block/saffron_travertine_vertical_slab_bottom",
+        "down": "atmospheric:block/saffron_travertine_vertical_slab_bottom",
+        "up": "atmospheric:block/saffron_travertine_vertical_slab_top",
+        "north": "atmospheric:block/cut_saffron_travertine",
+        "south": "atmospheric:block/cut_saffron_travertine",
         "west": "atmospheric:block/saffron_travertine_vertical_slab",
         "east": "atmospheric:block/saffron_travertine_vertical_slab"
     }
