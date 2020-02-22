@@ -1,5 +1,7 @@
-package com.bagel.atmospheric.core.registry;
+package com.bagel.atmospheric.core.data;
 
+import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
+import com.bagel.atmospheric.core.registry.AtmosphericItems;
 import com.bagel.atmospheric.core.util.DataUtils;
 
 public class AtmosphericBlockData {

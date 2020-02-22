@@ -1,4 +1,4 @@
-package com.bagel.atmospheric.common.block;
+package com.bagel.atmospheric.common.data;
 
 import net.minecraft.util.IStringSerializable;
 

@@ -1,6 +1,6 @@
 package com.bagel.atmospheric.common.block;
 
-import com.bagel.atmospheric.core.util.StateUtils;
+import com.bagel.atmospheric.core.data.AtmosphericBlockStates;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -25,7 +25,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 public class YuccaGateauBlock extends HorizontalBlock {
-	   public static final IntegerProperty BITES = StateUtils.BITES_0_9;
+	   public static final IntegerProperty BITES = AtmosphericBlockStates.BITES_0_9;
 	   protected static final VoxelShape[] NORTH_SHAPES = new VoxelShape[]{
 			   Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), 
 			   Block.makeCuboidShape(4.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), 

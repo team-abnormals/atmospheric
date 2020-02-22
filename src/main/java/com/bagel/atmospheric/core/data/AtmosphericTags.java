@@ -1,4 +1,4 @@
-package com.bagel.atmospheric.core.registry;
+package com.bagel.atmospheric.core.data;
 
 import com.bagel.atmospheric.core.Atmospheric;
 

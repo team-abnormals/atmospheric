@@ -1,10 +1,13 @@
-package com.bagel.atmospheric.core.registry;
+package com.bagel.atmospheric.core.data;
 
 import java.util.Random;
 
 import com.bagel.atmospheric.common.entity.GoldenPassionfruitSeedEntity;
 import com.bagel.atmospheric.common.entity.PassionfruitSeedEntity;
 import com.bagel.atmospheric.core.Atmospheric;
+import com.bagel.atmospheric.core.registry.AtmosphericEffects;
+import com.bagel.atmospheric.core.registry.AtmosphericFoods;
+import com.bagel.atmospheric.core.registry.AtmosphericItems;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

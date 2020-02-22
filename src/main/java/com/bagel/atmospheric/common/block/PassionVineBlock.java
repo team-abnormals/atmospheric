@@ -4,10 +4,10 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.bagel.atmospheric.core.data.AtmosphericTags;
+import com.bagel.atmospheric.core.data.AtmosphericBlockStates;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
-import com.bagel.atmospheric.core.registry.AtmosphericTags;
-import com.bagel.atmospheric.core.util.StateUtils;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -38,7 +38,7 @@ import net.minecraft.world.World;
 
 public class PassionVineBlock extends Block implements IGrowable {
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
-	public static final IntegerProperty AGE = StateUtils.AGE_0_4; 
+	public static final IntegerProperty AGE = AtmosphericBlockStates.AGE_0_4; 
 	//public static final EnumProperty<PassionVineAttachment> ATTACHMENT = StateUtils.PASSION_VINE_ATTACHMENT;
 	   
 	protected static final VoxelShape EAST_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 1.0D, 16.0D, 16.0D);

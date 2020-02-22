@@ -4,9 +4,9 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.bagel.atmospheric.core.data.AtmosphericDamageSources;
+import com.bagel.atmospheric.core.data.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
-import com.bagel.atmospheric.core.registry.AtmosphericDamageSources;
-import com.bagel.atmospheric.core.registry.AtmosphericTags;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

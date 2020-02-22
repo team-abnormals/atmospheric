@@ -6,8 +6,8 @@ import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
 
+import com.bagel.atmospheric.core.data.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
-import com.bagel.atmospheric.core.registry.AtmosphericTags;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.Dynamic;
 

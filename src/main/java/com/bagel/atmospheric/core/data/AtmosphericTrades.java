@@ -1,6 +1,8 @@
-package com.bagel.atmospheric.core.registry;
+package com.bagel.atmospheric.core.data;
 
 import com.bagel.atmospheric.core.Atmospheric;
+import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
+import com.bagel.atmospheric.core.registry.AtmosphericItems;
 import com.bagel.atmospheric.core.util.TradeUtils;
 
 import net.minecraft.entity.merchant.villager.VillagerProfession;

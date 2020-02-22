@@ -1,5 +1,6 @@
-package com.bagel.atmospheric.common.block;
+package com.bagel.atmospheric.common.data;
 
+import com.bagel.atmospheric.common.block.PassionVineBlock;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 
 import net.minecraft.block.Block;
@@ -14,37 +15,23 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class PassionVineBundleDispenseBehavior extends OptionalDispenseBehavior {
+public class PassionVineDispenseBehavior extends OptionalDispenseBehavior {
 	@SuppressWarnings("deprecation")
 	protected ItemStack dispenseStack(IBlockSource source, ItemStack stack) {
 		this.successful = false;
 		Item item = stack.getItem();
 		if (item instanceof BlockItem) {
+			
 			Direction direction = source.getBlockState().get(DispenserBlock.FACING);
 			World worldIn = source.getWorld().getWorld();
 			BlockPos pos = source.getBlockPos().offset(direction);
 			
-			BlockPos nextPos = pos.offset(Direction.DOWN);
-	 	    Block nextBlock = worldIn.getBlockState(nextPos).getBlock();
-	 		int counter = 9;
 	 		if (direction != Direction.UP && direction != Direction.DOWN && worldIn.getBlockState(pos).getBlock().isAir(worldIn.getBlockState(pos))) {
-	 		BlockState vine = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction);
-	 		worldIn.setBlockState(pos, vine);
-	 		counter = 8;
-	 		while (counter > 0) {
-	 			if (nextBlock.isAir(worldIn.getBlockState(nextPos))) {
-	 				worldIn.setBlockState(nextPos, vine);
-	 				counter = counter - 1;
-	 				nextPos = nextPos.offset(Direction.DOWN);
-	 				nextBlock = worldIn.getBlockState(nextPos).getBlock();
-	 			} else {
-	 				break;	
-	 			}
-	 			
+	 			BlockState vine = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction);
+	 			worldIn.setBlockState(pos, vine);
+	 		} else {
+	 			Block.spawnAsEntity(worldIn, pos.offset(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), 1));
 	 		}
-	 		}
-	 		Block.spawnAsEntity(worldIn, nextPos.offset(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), counter));
-	 		
 	 		stack.shrink(1);
 	 		this.successful = true;	
 		}

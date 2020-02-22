@@ -2,8 +2,8 @@ package com.bagel.atmospheric.common.block;
 
 import javax.annotation.Nullable;
 
-import com.bagel.atmospheric.core.registry.AtmosphericDamageSources;
-import com.bagel.atmospheric.core.registry.AtmosphericTags;
+import com.bagel.atmospheric.core.data.AtmosphericDamageSources;
+import com.bagel.atmospheric.core.data.AtmosphericTags;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SaplingBlock;

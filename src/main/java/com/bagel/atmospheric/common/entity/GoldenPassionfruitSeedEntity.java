@@ -1,6 +1,6 @@
 package com.bagel.atmospheric.common.entity;
 
-import com.bagel.atmospheric.core.registry.AtmosphericDamageSources;
+import com.bagel.atmospheric.core.data.AtmosphericDamageSources;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
