@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:aloe_leaves"
+    },
+    {
+      "item": "atmospheric:aloe_leaves"
+    },
+    {
+      "item": "atmospheric:aloe_leaves"
+    },
+    {
+      "item": "atmospheric:aloe_leaves"
+    },
+    {
+      "item": "atmospheric:aloe_leaves"
+    },
+    {
+      "item": "atmospheric:aloe_leaves"
+    },
+    {
+      "item": "atmospheric:aloe_leaves"
+    },
+    {
+      "item": "atmospheric:aloe_leaves"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:aloe_gel_bottle",
+    "count": 1
+  }
+}
