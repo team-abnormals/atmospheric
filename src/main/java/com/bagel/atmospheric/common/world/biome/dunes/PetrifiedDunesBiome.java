@@ -14,6 +14,8 @@ import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 @SuppressWarnings("unchecked")
 public final class PetrifiedDunesBiome extends Biome {
@@ -63,4 +65,10 @@ public final class PetrifiedDunesBiome extends Biome {
 		this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIE_VILLAGER, 1, 1, 1));
 		this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.HUSK, 80, 4, 4));
 	}
+	
+	@OnlyIn(Dist.CLIENT)
+	@Override
+	   public int getSkyColorByTemp(float currentTemperature) {
+	      return 14988944;
+	   }
 }
