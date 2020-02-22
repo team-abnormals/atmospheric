@@ -126,10 +126,10 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_WALL	= RegistryUtils.createBlock("persimmon_travertine_wall",() -> new WallBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_WALL 	= RegistryUtils.createBlock("saffron_travertine_wall", 	() -> new WallBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.DECORATIONS);
 	
-	public static final RegistryObject<Block> IVORY_FUMAROLE_BLOCK 		= RegistryUtils.createBlock("ivory_fumarole_block", 	() -> new MagmaBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PEACH_FUMAROLE_BLOCK 		= RegistryUtils.createBlock("peach_fumarole_block", 	() -> new MagmaBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PERSIMMON_FUMAROLE_BLOCK 	= RegistryUtils.createBlock("persimmon_fumarole_block",() -> new MagmaBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SAFFRON_FUMAROLE_BLOCK 	= RegistryUtils.createBlock("saffron_fumarole_block", 	() -> new MagmaBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> IVORY_FUMAROLE_BLOCK 		= RegistryUtils.createBlock("ivory_fumarole_block", 	() -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_FUMAROLE_BLOCK 		= RegistryUtils.createBlock("peach_fumarole_block", 	() -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_FUMAROLE_BLOCK 	= RegistryUtils.createBlock("persimmon_fumarole_block", () -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_FUMAROLE_BLOCK 	= RegistryUtils.createBlock("saffron_fumarole_block", 	() -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
 	
 	//quark compatability
 	public static final RegistryObject<Block> IVORY_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "ivory_travertine_vertical_slab", 		() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);

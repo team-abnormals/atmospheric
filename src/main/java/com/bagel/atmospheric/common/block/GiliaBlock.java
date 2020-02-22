@@ -14,8 +14,14 @@ public class GiliaBlock extends FlowerBlock  {
 		super(effect, effectDuration, properties);
 	}
 	
+	@Override
 	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		Block block = state.getBlock();
 		return block.isIn(BlockTags.BAMBOO_PLANTABLE_ON);
+	}
+	
+	@Override
+	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
+		return net.minecraftforge.common.PlantType.Desert;	
 	}
 }
