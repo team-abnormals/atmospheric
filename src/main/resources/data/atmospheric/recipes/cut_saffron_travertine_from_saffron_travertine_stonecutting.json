@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "atmospheric:saffron_travertine"
+  },
+  "result": "atmospheric:cut_saffron_travertine",
+  "count": 1
+}

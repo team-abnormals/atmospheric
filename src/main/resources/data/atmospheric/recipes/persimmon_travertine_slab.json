@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:cut_persimmon_travertine"
+    }
+  },
+  "result": {
+    "item": "atmospheric:persimmon_travertine_slab",
+    "count": 6
+  }
+}

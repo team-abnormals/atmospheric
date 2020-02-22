@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:cut_peach_travertine"
+    }
+  },
+  "result": {
+    "item": "atmospheric:peach_travertine_stairs",
+    "count": 4
+  }
+}

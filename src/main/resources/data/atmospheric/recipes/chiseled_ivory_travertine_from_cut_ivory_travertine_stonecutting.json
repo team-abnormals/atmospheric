@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "atmospheric:cut_ivory_travertine"
+  },
+  "result": "atmospheric:chiseled_ivory_travertine",
+  "count": 1
+}

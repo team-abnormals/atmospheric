@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "atmospheric:peach_travertine"
+  },
+  "result": "atmospheric:peach_travertine_stairs",
+  "count": 1
+}

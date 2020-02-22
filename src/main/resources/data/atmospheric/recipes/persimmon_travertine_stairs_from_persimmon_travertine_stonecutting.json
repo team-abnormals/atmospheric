@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "atmospheric:persimmon_travertine"
+  },
+  "result": "atmospheric:persimmon_travertine_stairs",
+  "count": 1
+}

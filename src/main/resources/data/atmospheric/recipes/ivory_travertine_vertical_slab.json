@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:ivory_travertine_slab"
+    }
+  },
+  "result": {
+    "item": "atmospheric:ivory_travertine_vertical_slab",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+        	"type": "quark:flag",
+        	"flag": "vertical_slabs"
+        }
+      ]
+    }
+  ]
+}
