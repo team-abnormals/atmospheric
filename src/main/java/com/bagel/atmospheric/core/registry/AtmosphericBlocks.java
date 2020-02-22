@@ -6,6 +6,7 @@ import com.bagel.atmospheric.common.block.BarrelCactusBlock;
 import com.bagel.atmospheric.common.block.BookshelfBlock;
 import com.bagel.atmospheric.common.block.CrustoseBlock;
 import com.bagel.atmospheric.common.block.CrustoseLogBlock;
+import com.bagel.atmospheric.common.block.DirectionalVerticalSlabBlock;
 import com.bagel.atmospheric.common.block.GiliaBlock;
 import com.bagel.atmospheric.common.block.LeafCarpetBlock;
 import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
@@ -131,10 +132,10 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> SAFFRON_FUMAROLE_BLOCK 	= RegistryUtils.createBlock("saffron_fumarole_block", 	() -> new MagmaBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	
 	//quark compatability
-	//public static final RegistryObject<Block> IVORY_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "ivory_travertine_vertical_slab", 		() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	//public static final RegistryObject<Block> PEACH_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "peach_travertine_vertical_slab", 		() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	//public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "persimmon_travertine_vertical_slab", 	() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	//public static final RegistryObject<Block> SAFFRON_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "saffron_travertine_vertical_slab", 	() -> new VerticalSlabBlock(PropertyUtils.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> IVORY_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "ivory_travertine_vertical_slab", 		() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "peach_travertine_vertical_slab", 		() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_VERTICAL_SLAB 	= RegistryUtils.createBlockCompat("quark", "persimmon_travertine_vertical_slab", 	() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_VERTICAL_SLAB 		= RegistryUtils.createBlockCompat("quark", "saffron_travertine_vertical_slab", 		() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	

@@ -1,0 +1,11 @@
+{
+    "parent": "atmospheric:block/vertical_travertine_slab",
+    "textures": {
+        "down": "atmospheric:block/saffron_travertine_vertical_slab_side",
+        "up": "atmospheric:block/saffron_travertine_vertical_slab_side",
+        "north": "atmospheric:block/cut_saffron_travertine_top",
+        "south": "atmospheric:block/cut_saffron_travertine_bottom",
+        "west": "atmospheric:block/saffron_travertine_vertical_slab",
+        "east": "atmospheric:block/saffron_travertine_vertical_slab"
+    }
+}

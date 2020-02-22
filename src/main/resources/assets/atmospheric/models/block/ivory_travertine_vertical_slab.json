@@ -1,8 +1,8 @@
 {
     "parent": "atmospheric:block/vertical_travertine_slab",
     "textures": {
-        "down": "atmospheric:block/ivory_travertine_vertical_slab",
-        "up": "atmospheric:block/ivory_travertine_vertical_slab",
+        "down": "atmospheric:block/ivory_travertine_vertical_slab_side",
+        "up": "atmospheric:block/ivory_travertine_vertical_slab_side",
         "north": "atmospheric:block/cut_ivory_travertine_top",
         "south": "atmospheric:block/cut_ivory_travertine_bottom",
         "west": "atmospheric:block/ivory_travertine_vertical_slab",

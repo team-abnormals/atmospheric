@@ -1,10 +1,13 @@
 
 {
     "variants": {
- 	"type=north": { "model": "atmospheric:block/ivory_travertine_vertical_slab", "y": 0, "uvlock": false },
- 	"type=south": { "model": "atmospheric:block/ivory_travertine_vertical_slab", "y": 180, "uvlock": false},
-  	"type=east": { "model": "atmospheric:block/ivory_travertine_vertical_slab", "y": 90, "uvlock": false },
- 	"type=west": { "model": "atmospheric:block/ivory_travertine_vertical_slab", "y": 270, "uvlock": false },
-        "type=double": { "model": "atmospheric:block/ivory_travertine_vertical_slab_full", "uvlock": false }
+ 	"type=half,facing=north": { "model": "atmospheric:block/ivory_travertine_vertical_slab", "y": 0},
+ 	"type=half,facing=south": { "model": "atmospheric:block/ivory_travertine_vertical_slab", "y": 180},
+  	"type=half,facing=east": { "model": "atmospheric:block/ivory_travertine_vertical_slab", "y": 90},
+ 	"type=half,facing=west": { "model": "atmospheric:block/ivory_travertine_vertical_slab", "y": 270},
+    "type=double,facing=north": { "model": "atmospheric:block/ivory_travertine_vertical_slab_full", "y": 0},
+ 	"type=double,facing=south": { "model": "atmospheric:block/ivory_travertine_vertical_slab_full", "y": 180},
+  	"type=double,facing=east": { "model": "atmospheric:block/ivory_travertine_vertical_slab_full", "y": 90},
+ 	"type=double,facing=west": { "model": "atmospheric:block/ivory_travertine_vertical_slab_full", "y": 270}
     }
 }
