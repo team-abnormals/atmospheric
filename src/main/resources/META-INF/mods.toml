@@ -1,31 +1,23 @@
 modLoader="javafml" #mandatory
 loaderVersion="[28,)" #mandatory (28 is current forge version)
-issueTrackerURL="http://my.issue.tracker/" #optional
-
-[[mods]] #mandatory
-modId="atmospheric" #mandatory
-version="${file.jarVersion}" #mandatory
-displayName="Atmospheric" #mandatory
-# updateJSONURL="http://myurl.me/" #optional
-# displayURL="http://example.com/" #optional
-logoFile="rosewood.png" #optional
-# credits="Thanks for this example mod goes to Java" #optional
+logoFile="rosewood.png"
 authors="five & bageldotjpg" #optional
+credits="Thanks for this example mod goes to Java"
+
+[[mods]]
+modId="atmospheric"
+version="${file.jarVersion}"
+displayName="Atmospheric"
 description='''
 Adds a unique biome, with a new wood type and new plants.
 There will continue to be more biomes over time!
 '''
 
-[[dependencies.atmospheric]] #optional
-    # the modid of the dependency
-    modId="forge" #mandatory
-    # Does this dependency have to exist - if not, ordering below must be specified
-    mandatory=true #mandatory
-    # The version range of the dependency
-    versionRange="[28,)" #mandatory
-    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+[[dependencies.atmospheric]]
+    modId="forge"
+    mandatory=true
+    versionRange="[28,)"
     ordering="NONE"
-    # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 
 [[dependencies.atmospheric]]
