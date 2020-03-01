@@ -64,7 +64,7 @@ public class AtmosphericEvents {
 			Random random = new Random();
 			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
 				if (playerIn.world.getGameTime() % 3 == 0) {
-					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
+					worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
 					GoldenPassionfruitSeedEntity passionseed = new GoldenPassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(AtmosphericFoods.GOLDEN_SPITTING).getAmplifier());
 					passionseed.setItem(new ItemStack(AtmosphericItems.SHIMMERING_PASSIONFRUIT_SEED.get()));
 					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3F, 1.0F);
@@ -77,7 +77,7 @@ public class AtmosphericEvents {
 			Random random = new Random();
 			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
 				if (playerIn.world.getGameTime() % 5 == 0) {
-					worldIn.playSound((PlayerEntity)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
+					worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
 					PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(AtmosphericFoods.SPITTING).getAmplifier());
 					passionseed.setItem(new ItemStack(AtmosphericItems.PASSIONFRUIT_SEED.get()));
 					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1F, 1.0F);

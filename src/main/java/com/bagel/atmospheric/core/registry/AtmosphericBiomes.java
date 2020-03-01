@@ -32,6 +32,7 @@ public class AtmosphericBiomes {
 	public static RegistryObject<Biome> PETRIFIED_DUNES 	= BIOMES.register("petrified_dunes",	() -> new PetrifiedDunesBiome());
 	public static RegistryObject<Biome> FLOURISHING_DUNES	= BIOMES.register("flourishing_dunes",	() -> new FlourishingDunesBiome());
     
+	/*
     public static void registerBiomesToDictionary() {
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ROSEWOOD_FOREST.get(),1));
         BiomeDictionary.addTypes(ROSEWOOD_FOREST.get(), 
@@ -94,5 +95,5 @@ public class AtmosphericBiomes {
         		BiomeDictionary.Type.HOT, 
         		BiomeDictionary.Type.LUSH,
         		BiomeDictionary.Type.OVERWORLD);
-    }
+    }*/
 }

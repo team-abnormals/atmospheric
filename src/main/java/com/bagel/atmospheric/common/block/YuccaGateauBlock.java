@@ -13,6 +13,7 @@ import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -93,18 +94,22 @@ public class YuccaGateauBlock extends HorizontalBlock {
 			}	
 	   }
 
-	   public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-	      if (!worldIn.isRemote) {
-	         return this.eatCake(worldIn, pos, state, player);
-	      } else {
-	         ItemStack itemstack = player.getHeldItem(handIn);
-	         return this.eatCake(worldIn, pos, state, player) || itemstack.isEmpty();
-	      }
+	   public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult p_225533_6_) {
+		   if (worldIn.isRemote) {
+			   ItemStack itemstack = player.getHeldItem(handIn);
+			   if (this.eatCake(worldIn, pos, state, player) == ActionResultType.SUCCESS) {
+				   return ActionResultType.SUCCESS;
+			   }
+			   if (itemstack.isEmpty()) {
+				   return ActionResultType.CONSUME;
+			   }
+		   }
+		   return this.eatCake(worldIn, pos, state, player);
 	   }
 
-	   private boolean eatCake(IWorld worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+	   private ActionResultType eatCake(IWorld worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
 	      if (!player.canEat(false)) {
-	         return false;
+	         return ActionResultType.PASS;
 	      } else {
 	         player.addStat(Stats.EAT_CAKE_SLICE);
 	         player.getFoodStats().addStats(1, 0.0F);
@@ -115,7 +120,7 @@ public class YuccaGateauBlock extends HorizontalBlock {
 	            worldIn.removeBlock(pos, false);
 	         }
 
-	         return true;
+	         return ActionResultType.SUCCESS;
 	      }
 	   }
 

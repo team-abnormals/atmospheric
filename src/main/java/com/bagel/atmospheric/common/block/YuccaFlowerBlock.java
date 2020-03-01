@@ -24,6 +24,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class YuccaFlowerBlock extends FlowerBlock implements IGrowable {
 
@@ -37,7 +38,7 @@ public class YuccaFlowerBlock extends FlowerBlock implements IGrowable {
 	}
 	
 	@Override
-	public void grow(World world, Random rand, BlockPos pos, BlockState state) {
+	public void grow(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
 		if(AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState().isValidPosition(world, pos) && (world.isAirBlock(pos.up()))) {
 			this.placeAt(world, pos, 2);
 		}
@@ -58,11 +59,11 @@ public class YuccaFlowerBlock extends FlowerBlock implements IGrowable {
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity) {
-			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.posX || entityIn.lastTickPosZ != entityIn.posZ)) {
-				double d0 = Math.abs(entityIn.posX - entityIn.lastTickPosX);
-				double d1 = Math.abs(entityIn.posZ - entityIn.lastTickPosZ);
+			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.getPosX() || entityIn.lastTickPosZ != entityIn.getPosZ())) {
+				double d0 = Math.abs(entityIn.getPosX() - entityIn.lastTickPosX);
+				double d1 = Math.abs(entityIn.getPosZ() - entityIn.lastTickPosZ);
 	            if (d0 >= (double)0.003F || d1 >= (double)0.003F) {
-	            	if (!entityIn.isSneaking()) {
+	            	if (!entityIn.isCrouching()) {
 	            		entityIn.addVelocity(MathHelper.sin((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.075F, 0.025F, -MathHelper.cos((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.075F);
 	            	}
 	            	entityIn.attackEntityFrom(AtmosphericDamageSources.YUCCA_FLOWER, 1.0F);	

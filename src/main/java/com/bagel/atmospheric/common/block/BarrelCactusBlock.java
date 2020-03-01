@@ -21,7 +21,6 @@ import net.minecraft.potion.Effects;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -30,6 +29,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class BarrelCactusBlock extends Block implements net.minecraftforge.common.IPlantable, IGrowable {
    public static final IntegerProperty AGE = BlockStateProperties.AGE_0_3;
@@ -65,7 +65,7 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
    }
    
    @Override
-   public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
+   public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
 	   int i = state.get(AGE);
 	   if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(3) == 0)) {
 		   worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)));
@@ -98,10 +98,6 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
       return SHAPE_BY_AGE[state.get(AGE)];
    }
 
-   public boolean isSolid(BlockState state) {
-      return true;
-   }
-
    @SuppressWarnings("deprecation")
    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
       if (!stateIn.isValidPosition(worldIn, currentPos)) {
@@ -124,11 +120,7 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
 	   }
 	   entityIn.attackEntityFrom(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.get(AGE));
    }
-
-   public BlockRenderLayer getRenderLayer() {
-      return BlockRenderLayer.CUTOUT;
-   }
-
+   
    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
       builder.add(AGE);
    }

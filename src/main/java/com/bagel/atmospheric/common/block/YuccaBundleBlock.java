@@ -9,6 +9,7 @@ import net.minecraft.entity.item.FallingBlockEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class YuccaBundleBlock extends FallingBlock {
 
@@ -17,7 +18,7 @@ public class YuccaBundleBlock extends FallingBlock {
 	}
 
 	@Override
-	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		Material up = worldIn.getBlockState(pos.offset(Direction.UP)).getMaterial();
 		/*Material north = worldIn.getBlockState(pos.offset(Direction.NORTH)).getMaterial();
 		* Material east = worldIn.getBlockState(pos.offset(Direction.EAST)).getMaterial();

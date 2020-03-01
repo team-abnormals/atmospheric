@@ -39,7 +39,7 @@ public class Atmospheric
         
         AtmosphericBlocks.BLOCKS.register(modEventBus);
         AtmosphericItems.ITEMS.register(modEventBus);
-    	AtmosphericBiomes.BIOMES.register(modEventBus);
+    	//AtmosphericBiomes.BIOMES.register(modEventBus);
         AtmosphericEntities.ENTITY_TYPES.register(modEventBus);
         AtmosphericEffects.EFFECTS.register(modEventBus);
         AtmosphericEffects.POTIONS.register(modEventBus);
@@ -54,7 +54,7 @@ public class Atmospheric
     
     private void setup(final FMLCommonSetupEvent event)
 	{    	
-        AtmosphericBiomes.registerBiomesToDictionary();
+        //AtmosphericBiomes.registerBiomesToDictionary();
     	AtmosphericBlockData.registerCompostables();
     	AtmosphericBlockData.registerFlammables();
     	AtmosphericBlockData.registerStrippables();
@@ -66,7 +66,8 @@ public class Atmospheric
     private void clientSetup(final FMLClientSetupEvent event) 
     {
     	AtmosphericColors.registerBlockColors();
-    	RenderingRegistry.registerEntityRenderingHandler(AtmosphericBoatEntity.class, AtmosphericBoatRenderer::new);
+    	AtmosphericBlockData.setupRenderLayer();
+    	//RenderingRegistry.registerEntityRenderingHandler(AtmosphericBoatEntity.class, AtmosphericBoatRenderer::new);
     }
     
     @SubscribeEvent

@@ -11,6 +11,7 @@ import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@SuppressWarnings("deprecation")
 public class AtmosphericFoods {
 
 	public static Effect SPITTING = new SpittingEffect().setRegistryName("spitting");

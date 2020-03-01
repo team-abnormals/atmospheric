@@ -27,6 +27,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IPlantable;
 
 public class MonkeyBrushBlock extends FlowerBlock implements IGrowable, IPlantable {
@@ -94,7 +95,7 @@ public class MonkeyBrushBlock extends FlowerBlock implements IGrowable, IPlantab
         return true;
     }
 	
-	public void grow(World world, Random random, BlockPos blockPos, BlockState state) {
+	public void grow(ServerWorld world, Random random, BlockPos blockPos, BlockState state) {
             label:
             for(int x = 0; x < 64; ++x) {
                 BlockPos newBlockPos = blockPos;

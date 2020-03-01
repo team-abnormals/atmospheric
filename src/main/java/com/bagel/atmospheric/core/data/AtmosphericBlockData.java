@@ -3,6 +3,10 @@ package com.bagel.atmospheric.core.data;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
 import com.bagel.atmospheric.core.util.DataUtils;
+import com.bagel.buzzierbees.core.registry.AtmosphericBlocks;
+
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 
 public class AtmosphericBlockData {
 	public static void registerCompostables() {
@@ -132,5 +136,39 @@ public class AtmosphericBlockData {
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_LEAF_CARPET.get(), 30, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_VERTICAL_SLAB.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_BOOKSHELF.get(), 5, 20);
+	}
+	
+	public static void setupRenderLayer()
+	{
+		//Doors and Trapdoors
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LEAVES.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_LEAVES.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_LEAVES.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_LEAVES.get(),RenderType.getCutout());
+
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LEAF_CARPET.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_LEAF_CARPET.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_LEAF_CARPET.get(),RenderType.getCutout());
+		
+		//Flowers
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.MONKEY_BRUSH.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.GILIA.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.PASSION_VINE.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_FLOWER.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_SAPLING.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_SAPLING.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_SAPLING.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_SAPLING.get(),RenderType.getCutoutMipped());
+		
+		//Potted Flowers
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_MONKEY_BRUSH.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_FLOWER.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_GILIA.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_ASPEN_SAPLING.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_KOUSA_SAPLING.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_ROSEWOOD_SAPLING.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_SAPLING.get(),RenderType.getCutoutMipped());
 	}
 }

@@ -53,7 +53,7 @@ public class GoldenPassionfruitSeedEntity extends ProjectileItemEntity {
          IParticleData iparticledata = this.makeParticle();
 
          for(int i = 0; i < 8; ++i) {
-            this.world.addParticle(iparticledata, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+            this.world.addParticle(iparticledata, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0D, 0.0D, 0.0D);
          }
       }
 

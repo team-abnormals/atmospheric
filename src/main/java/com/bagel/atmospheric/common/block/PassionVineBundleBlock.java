@@ -28,7 +28,7 @@ public class PassionVineBundleBlock extends Block {
 	}
 	
 	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
-		entityIn.fall(fallDistance, rand.nextFloat());	
+		entityIn.onLivingFall(fallDistance, rand.nextFloat());	
 	}
 	
 	@SuppressWarnings("deprecation")

@@ -35,11 +35,11 @@ public class YuccaSaplingBlock extends SaplingBlock implements net.minecraftforg
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity) {
-			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.posX || entityIn.lastTickPosZ != entityIn.posZ)) {
-				double d0 = Math.abs(entityIn.posX - entityIn.lastTickPosX);
-				double d1 = Math.abs(entityIn.posZ - entityIn.lastTickPosZ);
+			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.getPosX() || entityIn.lastTickPosZ != entityIn.getPosZ())) {
+				double d0 = Math.abs(entityIn.getPosX() - entityIn.lastTickPosX);
+				double d1 = Math.abs(entityIn.getPosZ() - entityIn.lastTickPosZ);
 	            if (d0 >= (double)0.003F || d1 >= (double)0.003F) {
-	            	if (!entityIn.isSneaking()) {
+	            	if (!entityIn.isCrouching()) {
 		            	entityIn.addVelocity(MathHelper.sin((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.05F, 0.005F, -MathHelper.cos((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.05F);
 	            	}
 	            	entityIn.attackEntityFrom(AtmosphericDamageSources.YUCCA_SAPLING, 1.0F);	

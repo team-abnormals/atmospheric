@@ -4,8 +4,8 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.bagel.atmospheric.core.data.AtmosphericTags;
 import com.bagel.atmospheric.core.data.AtmosphericBlockStates;
+import com.bagel.atmospheric.core.data.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
 
@@ -22,7 +22,7 @@ import net.minecraft.item.Items;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
-import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
@@ -35,6 +35,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class PassionVineBlock extends Block implements IGrowable {
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
@@ -67,7 +68,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	@Override public boolean isLadder(BlockState state, IWorldReader world, BlockPos pos, net.minecraft.entity.LivingEntity entity) { return true; }
 	
 	@SuppressWarnings("deprecation")
-	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
 	    int i = state.get(AGE);
 	    
@@ -139,16 +140,16 @@ public class PassionVineBlock extends Block implements IGrowable {
 	}
 	
 	@SuppressWarnings("deprecation")
-	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		int i = state.get(AGE);
 		boolean flag = i == 4;
 		if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
-			return false;	
+			return ActionResultType.PASS;	
 		} else if (i == 4) {
 			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.PASSIONFRUIT.get(), 1 + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(2) + worldIn.rand.nextInt(3)));
 			worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 			worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(1)), 2);
-	    	return true;	
+	    	return ActionResultType.SUCCESS;	
 		} else if (i == 1 && (player.getHeldItem(handIn).getItem() == Items.SHEARS)) {
 			Direction direction = hit.getFace();
             Direction direction1 = direction.getAxis() == Direction.Axis.Y ? player.getHorizontalFacing().getOpposite() : direction;
@@ -160,7 +161,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	  	    });
 	  	    worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 	  	    worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(0)), 2);
-	  	    return true;    
+	  	    return ActionResultType.SUCCESS;    
 		} else {
 			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);	
 		}	
@@ -172,7 +173,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	
 	private boolean canAttachTo(IBlockReader p_196471_1_, BlockPos p_196471_2_, Direction p_196471_3_) {
 	      BlockState blockstate = p_196471_1_.getBlockState(p_196471_2_);
-	      return !blockstate.canProvidePower() && blockstate.func_224755_d(p_196471_1_, p_196471_2_, p_196471_3_);
+	      return !blockstate.canProvidePower() && blockstate.isSolidSide(p_196471_1_, p_196471_2_, p_196471_3_);
 	   }
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		Direction direction = state.get(FACING);
@@ -218,11 +219,6 @@ public class PassionVineBlock extends Block implements IGrowable {
 	    return null;    
 	}
 	
-	@Override
-    public BlockRenderLayer getRenderLayer() {
-		return BlockRenderLayer.CUTOUT;
-	}
-	
 	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		return state.get(AGE) < 4;	
 	}
@@ -231,7 +227,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 		return true;
 	}
 
-	public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
+	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
 	    int i = Math.min(4, state.get(AGE) + 1);
 	    worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i)), 2);
 	}

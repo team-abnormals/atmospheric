@@ -37,7 +37,7 @@ public class AtmosphericFeatures {
 	
 	public static final SurfaceBuilder DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig::deserialize).setRegistryName("dunes_builder");
 	
-    @SubscribeEvent
+    /*@SubscribeEvent
     public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
         event.getRegistry().registerAll(
         		PODZOL, OAK_BUSH,
@@ -48,6 +48,6 @@ public class AtmosphericFeatures {
     @SubscribeEvent
     public static void registerSurfaceBuilders(RegistryEvent.Register<SurfaceBuilder<?>> event) {
         event.getRegistry().register(DUNES);
-    }
+    }*/
 
 }

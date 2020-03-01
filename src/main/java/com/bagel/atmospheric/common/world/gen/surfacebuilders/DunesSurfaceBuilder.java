@@ -27,7 +27,7 @@ public class DunesSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 	   protected void buildSurface(Random random, IChunk chunkIn, Biome biomeIn, int x, int z, int startHeight, double noise, BlockState defaultBlock, BlockState defaultFluid, BlockState top, BlockState middle, BlockState bottom, int sealevel) {
 	      BlockState blockstate = top;
 	      BlockState blockstate1 = middle;
-	      BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
+	      BlockPos.Mutable blockpos$mutableblockpos = new BlockPos.Mutable();
 	      int i = -1;
 	      int j = (int)(noise / 3.0D + 3.0D + random.nextDouble() * 0.25D);
 	      int k = x & 15;
@@ -49,7 +49,7 @@ public class DunesSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 	               }
 
 	               if (i1 < sealevel && (blockstate == null || blockstate.isAir())) {
-	                  if (biomeIn.func_225486_c(blockpos$mutableblockpos.setPos(x, i1, z)) < 0.15F) {
+	                  if (biomeIn.getTemperature(blockpos$mutableblockpos.setPos(x, i1, z)) < 0.15F) {
 	                     blockstate = Blocks.ICE.getDefaultState();
 	                  } else {
 	                     blockstate = defaultFluid;

@@ -48,7 +48,7 @@ public class DirectionalVerticalSlabBlock extends Block implements IWaterLoggabl
 	}
 	
 	@Override
-	public boolean func_220074_n(BlockState state) {
+	public boolean isTransparent(BlockState state) {
 		return state.get(TYPE) != VerticalSlabType.DOUBLE;
 	}
 	
