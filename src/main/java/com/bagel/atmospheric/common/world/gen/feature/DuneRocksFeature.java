@@ -28,7 +28,7 @@ public class DuneRocksFeature extends Feature<BlockBlobConfig> {
 	               }
 
 	               Block block = worldIn.getBlockState(pos.down()).getBlock();
-	               if (block != AtmosphericBlocks.ARID_SAND.get() && !Block.isRock(block)) {
+	               if (block != AtmosphericBlocks.ARID_SAND.get() && isStone(block)) {
 	                  break label50;
 	               }
 	            }

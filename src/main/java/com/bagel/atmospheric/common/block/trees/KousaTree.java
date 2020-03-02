@@ -4,15 +4,16 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.bagel.atmospheric.common.world.gen.feature.KousaTreeFeature;
+import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 
 import net.minecraft.block.trees.Tree;
-import net.minecraft.world.gen.feature.AbstractTreeFeature;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 public class KousaTree extends Tree {
-	   @Nullable
-	   protected AbstractTreeFeature<NoFeatureConfig> getTreeFeature(Random random) {
-	      return new KousaTreeFeature(NoFeatureConfig::deserialize, true);
-	   }
+	@Nullable
+	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
+		return Feature.FANCY_TREE.withConfiguration(AtmosphericBiomeFeatures.KOUSA_TREE_CONFIG);
 	}
+}

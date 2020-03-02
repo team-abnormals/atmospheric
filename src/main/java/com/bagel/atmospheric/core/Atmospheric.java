@@ -1,9 +1,7 @@
 package com.bagel.atmospheric.core;
 
-import com.bagel.atmospheric.client.renderer.AtmosphericBoatRenderer;
 import com.bagel.atmospheric.common.data.PassionVineBundleDispenseBehavior;
 import com.bagel.atmospheric.common.data.PassionVineDispenseBehavior;
-import com.bagel.atmospheric.common.entity.AtmosphericBoatEntity;
 import com.bagel.atmospheric.core.data.AtmosphericBlockData;
 import com.bagel.atmospheric.core.data.AtmosphericColors;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
@@ -21,7 +19,6 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -39,7 +36,7 @@ public class Atmospheric
         
         AtmosphericBlocks.BLOCKS.register(modEventBus);
         AtmosphericItems.ITEMS.register(modEventBus);
-    	//AtmosphericBiomes.BIOMES.register(modEventBus);
+    	AtmosphericBiomes.BIOMES.register(modEventBus);
         AtmosphericEntities.ENTITY_TYPES.register(modEventBus);
         AtmosphericEffects.EFFECTS.register(modEventBus);
         AtmosphericEffects.POTIONS.register(modEventBus);
@@ -54,7 +51,7 @@ public class Atmospheric
     
     private void setup(final FMLCommonSetupEvent event)
 	{    	
-        //AtmosphericBiomes.registerBiomesToDictionary();
+        AtmosphericBiomes.registerBiomesToDictionary();
     	AtmosphericBlockData.registerCompostables();
     	AtmosphericBlockData.registerFlammables();
     	AtmosphericBlockData.registerStrippables();

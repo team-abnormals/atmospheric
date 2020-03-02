@@ -18,7 +18,7 @@ import net.minecraft.world.gen.feature.NoFeatureConfig;
 
 public class DirectionalFlowersFeature extends Feature<NoFeatureConfig> {
 	   public DirectionalFlowersFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i49876_1_) {
-	      super(p_i49876_1_, false);
+	      super(p_i49876_1_);
 	   }
 
 	   public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand, BlockPos pos, NoFeatureConfig config) {

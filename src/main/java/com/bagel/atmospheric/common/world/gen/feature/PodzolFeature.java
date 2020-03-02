@@ -6,7 +6,6 @@ import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.ChunkGenerator;
@@ -23,7 +22,7 @@ public class PodzolFeature extends Feature<ProbabilityConfig> {
 
 	   public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand, BlockPos pos, ProbabilityConfig config) {
 	      int i = 0;
-	      BlockPos.MutableBlockPos blockpos$mutableblockpos1 = new BlockPos.MutableBlockPos(pos);
+	      BlockPos.Mutable blockpos$mutableblockpos1 = new BlockPos.Mutable(pos);
 	            if (rand.nextFloat() < config.probability) {
 	               int k = rand.nextInt(4) + 1;
 	               for(int l = pos.getX() - k; l <= pos.getX() + k; ++l) {
@@ -32,7 +31,7 @@ public class PodzolFeature extends Feature<ProbabilityConfig> {
 	                     int k1 = i1 - pos.getZ();
 	                     if (j1 * j1 + k1 * k1 <= k * k) {
 	                        blockpos$mutableblockpos1.setPos(l, worldIn.getHeight(Heightmap.Type.WORLD_SURFACE, l, i1) - 1, i1);
-	                        if (worldIn.getBlockState(blockpos$mutableblockpos1).getBlock().isIn(BlockTags.DIRT_LIKE)) {
+	                        if (isDirt(worldIn.getBlockState(blockpos$mutableblockpos1).getBlock())) {
 	                           worldIn.setBlockState(blockpos$mutableblockpos1, Blocks.PODZOL.getDefaultState(), 2);
 	                        }
 	                     }

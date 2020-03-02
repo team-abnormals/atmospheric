@@ -3,7 +3,6 @@ package com.bagel.atmospheric.core.data;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
 import com.bagel.atmospheric.core.util.DataUtils;
-import com.bagel.buzzierbees.core.registry.AtmosphericBlocks;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;

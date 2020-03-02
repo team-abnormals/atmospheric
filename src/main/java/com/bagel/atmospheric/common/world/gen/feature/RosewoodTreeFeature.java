@@ -8,23 +8,27 @@ import java.util.function.Function;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.datafixers.Dynamic;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.block.LogBlock;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IWorldWriter;
+import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 @SuppressWarnings("unused")
-public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
-	public RosewoodTreeFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i51443_1_, boolean p_i51443_2_) {
-		super(p_i51443_1_, p_i51443_2_);
+public class RosewoodTreeFeature extends AbstractTreeFeature<TreeFeatureConfig> {
+	public RosewoodTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> p_i51443_1_, boolean p_i51443_2_) {
+		super(p_i51443_1_);
 	}
 
-	public boolean place(Set<BlockPos> changedBlocks, IWorldGenerationReader worldIn, Random rand, BlockPos position,
-			MutableBoundingBox boundsIn) {
+	   public boolean func_225557_a_(IWorldGenerationReader worldIn, Random rand, BlockPos position, Set<BlockPos> p_225557_4_, Set<BlockPos> changedBlocks, MutableBoundingBox boundsIn, TreeFeatureConfig p_225557_7_) {
+
 
 		int branches = 2 + rand.nextInt(3);
 		int height = 4 + rand.nextInt(2) + rand.nextInt(3) + rand.nextInt(3);
@@ -32,19 +36,18 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 
 		boolean flag = true;
 
-		int i = height;// rand.nextInt(3) + rand.nextInt(3) + 5;
-		if (position.getY() >= 1 && position.getY() + i + 1 <= worldIn.getMaxHeight()) {
-			for (int j = position.getY(); j <= position.getY() + 1 + i; ++j) {
+		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getMaxHeight()) {
+			for (int j = position.getY(); j <= position.getY() + 1 + height; ++j) {
 				int k = 1;
 				if (j == position.getY()) {
 					k = 0;
 				}
 
-				if (j >= position.getY() + 1 + i - 2) {
+				if (j >= position.getY() + 1 + height - 2) {
 					k = 2;
 				}
 
-				BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
+				BlockPos.Mutable blockpos$mutableblockpos = new BlockPos.Mutable();
 
 				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
@@ -61,7 +64,7 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 
 			if (!flag) {
 				return false;
-			} else if (isSoil(worldIn, position.down(), getSapling()) && position.getY() < worldIn.getMaxHeight() - branches - 1) {
+			} else if (isSoil(worldIn, position.down(), (net.minecraftforge.common.IPlantable)AtmosphericBlocks.ROSEWOOD_SAPLING.get()) && position.getY() < worldIn.getMaxHeight() - branches - 1) {
 				//base log
 				this.setDirtAt(worldIn, position.down(), position);
 
@@ -74,7 +77,7 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 				for (int k1 = 0; k1 < height; ++k1) {
 					int logY = position.getY() + k1;
 					BlockPos blockpos = new BlockPos(logX, logY, logZ);
-					if (isAirOrLeaves(worldIn, blockpos)) {
+					if (isAirOrLeavesOrSapling(worldIn, blockpos)) {
 						this.placeLogAt(changedBlocks, worldIn, blockpos, boundsIn, Direction.UP);
 					}
 					if (rand.nextInt(6) == 0 && k1 > 3 && k1 < height && canopy == false) {
@@ -229,4 +232,25 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
 		}
 
 	}
+	
+	protected final void setLogState(Set<BlockPos> changedBlocks, IWorldWriter worldIn, BlockPos pos, BlockState p_208520_4_, MutableBoundingBox p_208520_5_) {
+	      this.func_208521_b(worldIn, pos, p_208520_4_);
+	      p_208520_5_.expandTo(new MutableBoundingBox(pos, pos));
+	      if (BlockTags.LOGS.contains(p_208520_4_.getBlock())) {
+	         changedBlocks.add(pos.toImmutable());
+	      }
+	   }
+	
+	private void func_208521_b(IWorldWriter p_208521_1_, BlockPos p_208521_2_, BlockState p_208521_3_) {
+		p_208521_1_.setBlockState(p_208521_2_, p_208521_3_, 18);
+	   }
+	
+	@SuppressWarnings("deprecation")
+	public static boolean isAirOrLeavesOrSapling(IWorldGenerationBaseReader worldIn, BlockPos pos) {
+	      if (worldIn instanceof net.minecraft.world.IWorldReader) // FORGE: Redirect to state method when possible
+	         return worldIn.hasBlockState(pos, state -> state.canBeReplacedByLeaves((net.minecraft.world.IWorldReader)worldIn, pos));
+	      return worldIn.hasBlockState(pos, (p_227223_0_) -> {
+	         return p_227223_0_.isAir() || p_227223_0_.isIn(BlockTags.LEAVES) || p_227223_0_ == AtmosphericBlocks.ROSEWOOD_SAPLING.get().getDefaultState();
+	      });
+	   }
 }

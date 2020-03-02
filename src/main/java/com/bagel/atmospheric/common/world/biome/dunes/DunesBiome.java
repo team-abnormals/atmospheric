@@ -35,9 +35,9 @@ public final class DunesBiome extends Biome {
 			.waterFogColor(329011)
 			.parent(null)));
 		
-		this.addStructure(Feature.DESERT_PYRAMID, IFeatureConfig.NO_FEATURE_CONFIG);
-		this.addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
-		this.addStructure(Feature.STRONGHOLD, IFeatureConfig.NO_FEATURE_CONFIG);
+		this.addStructure(Feature.DESERT_PYRAMID.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+		this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
+	    this.addStructure(Feature.STRONGHOLD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 		DefaultBiomeFeatures.addCarvers(this);
 		DefaultBiomeFeatures.addStructures(this);
 		DefaultBiomeFeatures.addMonsterRooms(this);
@@ -68,7 +68,7 @@ public final class DunesBiome extends Biome {
 	
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	   public int getSkyColorByTemp(float currentTemperature) {
+	   public int getSkyColor() {
 	      return 14988944;
 	   }
 }

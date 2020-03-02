@@ -18,7 +18,7 @@ import net.minecraft.world.gen.feature.NoFeatureConfig;
 
 public class PassionVineFeature extends Feature<NoFeatureConfig> {
 	public PassionVineFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i49876_1_) {
-		super(p_i49876_1_, false);
+		super(p_i49876_1_);
 	}
 
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
