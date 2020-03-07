@@ -18,28 +18,9 @@
   "rewards": {
     "experience": 100
   },
-  "criteria": {
-    "spitting": {
-      "trigger": "minecraft:effects_changed",
-      "conditions": {
-        "effects": {
-          "atmospheric:spitting": {} 
-        }
-      }
-    },
-    "golden_spitting": {
-      "trigger": "minecraft:effects_changed",
-      "conditions": {
-        "effects": {
-          "atmospheric:golden_spitting": {} 
-        }
-      }
-    }
-  },
-  "requirements": [
-    [
-      "spitting",
-      "golden_spitting"
-    ]
-  ]
+	"criteria": {
+		"spit_passionfruit": {
+			"trigger": "atmospheric:spit_passionfruit"
+		}
+	}
 }

@@ -19,10 +19,11 @@ import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 @SuppressWarnings("unused")
-public class RosewoodTreeFeature extends AbstractTreeFeature<TreeFeatureConfig> {
+public class RosewoodTreeFeature extends TreeFeature {
 	public RosewoodTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> p_i51443_1_, boolean p_i51443_2_) {
 		super(p_i51443_1_);
 	}
@@ -73,6 +74,7 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<TreeFeatureConfig> 
 				int logX = position.getX();
 				int logZ = position.getZ();
 				boolean canopy = false;
+				BlockPos sapling = position;
 
 				for (int k1 = 0; k1 < height; ++k1) {
 					int logY = position.getY() + k1;
@@ -93,6 +95,7 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<TreeFeatureConfig> 
 						
 					}
 				}
+				
 
 				//branches
 				ArrayList<String> directions = new ArrayList<String>();
@@ -149,6 +152,7 @@ public class RosewoodTreeFeature extends AbstractTreeFeature<TreeFeatureConfig> 
 					
 
 				}
+				
 
 				return true;
 			} else {

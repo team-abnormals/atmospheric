@@ -1,10 +1,12 @@
 package com.bagel.atmospheric.common.entity;
 
 import com.bagel.atmospheric.core.data.AtmosphericDamageSources;
+import com.bagel.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -63,6 +65,12 @@ public class GoldenPassionfruitSeedEntity extends ProjectileItemEntity {
       if (result.getType() == RayTraceResult.Type.ENTITY) {
          Entity entity = ((EntityRayTraceResult)result).getEntity();
          entity.attackEntityFrom(AtmosphericDamageSources.causeShimmeringPassionfruitSeedDamage(this, this.getThrower()), 1.5F + amplifier * 1/2);
+         if (entity instanceof LivingEntity) {
+  			ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) this.getThrower();
+  			if(!entity.getEntityWorld().isRemote()) {
+  				AtmosphericCriteriaTriggers.SPIT_PASSIONFRUIT.trigger(serverplayerentity); 
+  			}
+  		}
       }
 
       if (!this.world.isRemote) {
