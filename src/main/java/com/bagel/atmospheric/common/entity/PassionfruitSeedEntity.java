@@ -1,10 +1,12 @@
 package com.bagel.atmospheric.common.entity;
 
 import com.bagel.atmospheric.core.data.AtmosphericDamageSources;
+import com.bagel.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -21,10 +23,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class PassionfruitSeedEntity extends ProjectileItemEntity {
 	private final int amplifier;
 	
-   public PassionfruitSeedEntity(EntityType<? extends PassionfruitSeedEntity> p_i50159_1_, World p_i50159_2_, int amplifier) {
-      super(p_i50159_1_, p_i50159_2_);
-      this.amplifier = amplifier;
-      
+   public PassionfruitSeedEntity(EntityType<? extends PassionfruitSeedEntity> type, World world, int amplifier) {
+      super(type, world);
+      this.amplifier = amplifier;      
    }
 
    public PassionfruitSeedEntity(World worldIn, LivingEntity throwerIn, int amplifier) {
@@ -63,6 +64,12 @@ public class PassionfruitSeedEntity extends ProjectileItemEntity {
       if (result.getType() == RayTraceResult.Type.ENTITY) {
          Entity entity = ((EntityRayTraceResult)result).getEntity();
          entity.attackEntityFrom(AtmosphericDamageSources.causePassionfruitSeedDamage(this, this.getThrower()), 0.5F + amplifier * 1/2);
+         if (entity instanceof LivingEntity) {
+ 			ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) this.getThrower();
+ 			if(!entity.getEntityWorld().isRemote()) {
+ 				AtmosphericCriteriaTriggers.SPIT_PASSIONFRUIT.trigger(serverplayerentity); 
+ 			}
+ 		}
       }
 
       if (!this.world.isRemote) {
