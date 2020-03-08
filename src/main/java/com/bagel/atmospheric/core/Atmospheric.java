@@ -64,7 +64,7 @@ public class Atmospheric
     {
     	AtmosphericColors.registerBlockColors();
     	AtmosphericBlockData.setupRenderLayer();
-    	//RenderingRegistry.registerEntityRenderingHandler(AtmosphericBoatEntity.class, AtmosphericBoatRenderer::new);
+    	AtmosphericEntities.registerRendering();
     }
     
     @SubscribeEvent

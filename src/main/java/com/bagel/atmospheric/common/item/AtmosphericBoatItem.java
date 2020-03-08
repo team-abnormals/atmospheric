@@ -62,7 +62,7 @@ public class AtmosphericBoatItem extends Item {
 
             if (raytraceresult.getType() == RayTraceResult.Type.BLOCK) {
             	AtmosphericBoatEntity boatentity = new AtmosphericBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
-                boatentity.setBoatModel(this.type);
+                boatentity.setBoatType(this.type);
                 boatentity.rotationYaw = playerIn.rotationYaw;
                 if (!worldIn.func_226665_a__(boatentity, boatentity.getBoundingBox().grow(-0.1D))) {
                     return new ActionResult<>(ActionResultType.FAIL, itemstack);
@@ -110,7 +110,7 @@ public class AtmosphericBoatItem extends Item {
     			adjustY = 0d;
     		}
     		AtmosphericBoatEntity boat = new AtmosphericBoatEntity(world, x, y + adjustY, z);
-    		boat.setBoatModel(this.type);
+    		boat.setBoatType(this.type);
     		boat.rotationYaw = direction.getHorizontalAngle();
     		world.addEntity(boat);
     		stack.shrink(1);
