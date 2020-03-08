@@ -9,6 +9,7 @@ import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.LogBlock;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
@@ -28,9 +29,8 @@ public class RosewoodTreeFeature extends TreeFeature {
 		super(p_i51443_1_);
 	}
 
-	   public boolean func_225557_a_(IWorldGenerationReader worldIn, Random rand, BlockPos position, Set<BlockPos> p_225557_4_, Set<BlockPos> changedBlocks, MutableBoundingBox boundsIn, TreeFeatureConfig p_225557_7_) {
-
-
+	   public boolean func_225557_a_(IWorldGenerationReader worldIn, Random rand, BlockPos position, Set<BlockPos> logsPlaced, Set<BlockPos> leavesPlaced, MutableBoundingBox boundsIn, TreeFeatureConfig p_225557_7_) {
+	   
 		int branches = 2 + rand.nextInt(3);
 		int height = 4 + rand.nextInt(2) + rand.nextInt(3) + rand.nextInt(3);
 		int bonusCanopies = rand.nextInt(3);
@@ -80,14 +80,14 @@ public class RosewoodTreeFeature extends TreeFeature {
 					int logY = position.getY() + k1;
 					BlockPos blockpos = new BlockPos(logX, logY, logZ);
 					if (isAirOrLeavesOrSapling(worldIn, blockpos)) {
-						this.placeLogAt(changedBlocks, worldIn, blockpos, boundsIn, Direction.UP);
+						this.placeLogAt(logsPlaced, worldIn, blockpos, boundsIn, Direction.UP);
 					}
 					if (rand.nextInt(6) == 0 && k1 > 3 && k1 < height && canopy == false) {
 						int leafSize = 1 + rand.nextInt(2);
 						for(int k3 = -leafSize; k3 <= leafSize; ++k3) {
 							for(int j4 = -leafSize; j4 <= leafSize; ++j4) {
 								if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-									this.placeLeafAt(changedBlocks, worldIn, blockpos.add(k3, 0, j4), boundsIn);
+									this.placeLeafAt(leavesPlaced, worldIn, blockpos.add(k3, 0, j4), boundsIn);
 								}
 							}
 						}
@@ -116,8 +116,8 @@ public class RosewoodTreeFeature extends TreeFeature {
 					for (int k4 = 0; k4 < turns; ++k4) {
 						branchLength = 1 + rand.nextInt(2) + rand.nextInt(2);
 						branchHeight = 1 + rand.nextInt(3) + rand.nextInt(2);
-						createHorizontalLog(branchLength, changedBlocks, worldIn, currentPos, offset, boundsIn);
-						createVerticalLog(branchHeight, changedBlocks, worldIn, currentPos.offset(offset, branchLength), boundsIn, rand);
+						createHorizontalLog(branchLength, leavesPlaced, worldIn, currentPos, offset, boundsIn);
+						createVerticalLog(branchHeight, leavesPlaced, worldIn, currentPos.offset(offset, branchLength), boundsIn, rand);
 						currentPos = currentPos.offset(offset, branchLength).offset(Direction.UP, branchHeight);
 					}
 					
@@ -132,7 +132,7 @@ public class RosewoodTreeFeature extends TreeFeature {
 					for(int k3 = -leafSize; k3 <= leafSize; ++k3) {
 						for(int j4 = -leafSize; j4 <= leafSize; ++j4) {
 							if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-								this.placeLeafAt(changedBlocks, worldIn, currentPos.add(k3, 0, j4), boundsIn);
+								this.placeLeafAt(leavesPlaced, worldIn, currentPos.add(k3, 0, j4), boundsIn);
 							}
 						}
 					}
@@ -142,7 +142,7 @@ public class RosewoodTreeFeature extends TreeFeature {
 					for(int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
 						for(int j4 = -leafSizeTop; j4 <= leafSizeTop; ++j4) {
 							if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
-								this.placeLeafAt(changedBlocks, worldIn, currentPos.add(k3, 0, j4), boundsIn);
+								this.placeLeafAt(leavesPlaced, worldIn, currentPos.add(k3, 0, j4), boundsIn);
 							}
 						}
 					}
