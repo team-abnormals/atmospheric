@@ -6,13 +6,7 @@ import com.bagel.atmospheric.common.data.PassionVineDispenseBehavior;
 import com.bagel.atmospheric.common.entity.AtmosphericBoatEntity;
 import com.bagel.atmospheric.core.data.AtmosphericBlockData;
 import com.bagel.atmospheric.core.data.AtmosphericColors;
-import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
-import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
-import com.bagel.atmospheric.core.registry.AtmosphericEffects;
-import com.bagel.atmospheric.core.registry.AtmosphericEntities;
-import com.bagel.atmospheric.core.registry.AtmosphericFoods;
-import com.bagel.atmospheric.core.registry.AtmosphericItems;
-
+import com.bagel.atmospheric.core.registry.*;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.potion.Effect;
 import net.minecraftforge.api.distmarker.Dist;
