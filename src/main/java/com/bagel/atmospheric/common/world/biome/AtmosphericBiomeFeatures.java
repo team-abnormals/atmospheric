@@ -24,7 +24,6 @@ import net.minecraft.world.gen.placement.LakeChanceConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.TopSolidWithNoiseConfig;
 
-@SuppressWarnings("unchecked")
 public class AtmosphericBiomeFeatures {
 	
 	public static void addDoublePlants(Biome biomeIn) {

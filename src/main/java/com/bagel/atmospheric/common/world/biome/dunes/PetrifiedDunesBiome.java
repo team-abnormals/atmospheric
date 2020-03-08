@@ -18,7 +18,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.ModList;
 
-@SuppressWarnings("unchecked")
 public final class PetrifiedDunesBiome extends Biome {
 	public PetrifiedDunesBiome() {
 		super((new Biome.Builder()

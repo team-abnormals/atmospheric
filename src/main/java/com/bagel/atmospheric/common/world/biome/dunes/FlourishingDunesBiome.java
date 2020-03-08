@@ -19,7 +19,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.ModList;
 
-@SuppressWarnings("unchecked")
 public final class FlourishingDunesBiome extends Biome {
 	public FlourishingDunesBiome() {
 		super((new Biome.Builder()
