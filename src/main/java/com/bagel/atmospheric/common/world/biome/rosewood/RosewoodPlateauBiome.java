@@ -1,7 +1,7 @@
 package com.bagel.atmospheric.common.world.biome.rosewood;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
-
+import com.bagel.atmospheric.modsupport.EntombedEcosystems;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
@@ -11,6 +11,7 @@ import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraftforge.fml.ModList;
 
 public class RosewoodPlateauBiome extends Biome {
     public RosewoodPlateauBiome() {
@@ -48,7 +49,9 @@ public class RosewoodPlateauBiome extends Biome {
         AtmosphericBiomeFeatures.addFoliage(this);
         
         DefaultBiomeFeatures.addFreezeTopLayer(this);
-        
+        if (ModList.get().isLoaded("entombedecosystems")) {
+            EntombedEcosystems.EEFeatureAdder.EEaddRosewoodPlateauTrees(this, 0, 8);
+        }
         addSpawn(EntityClassification.CREATURE, new SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
         addSpawn(EntityClassification.CREATURE, new SpawnListEntry(EntityType.PIG, 10, 4, 4));
         addSpawn(EntityClassification.CREATURE, new SpawnListEntry(EntityType.CHICKEN, 10, 4, 4));
