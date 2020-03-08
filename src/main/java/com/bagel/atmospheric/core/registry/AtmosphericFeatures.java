@@ -1,20 +1,10 @@
 package com.bagel.atmospheric.core.registry;
 
-import com.bagel.atmospheric.common.world.gen.feature.DirectionalFlowersFeature;
-import com.bagel.atmospheric.common.world.gen.feature.DuneRocksFeature;
-import com.bagel.atmospheric.common.world.gen.feature.PassionVineFeature;
-import com.bagel.atmospheric.common.world.gen.feature.PodzolFeature;
-import com.bagel.atmospheric.common.world.gen.feature.RosewoodTreeFeature;
-import com.bagel.atmospheric.common.world.gen.feature.YuccaTreeFeature;
+import com.bagel.atmospheric.common.world.gen.feature.*;
 import com.bagel.atmospheric.common.world.gen.surfacebuilders.DunesSurfaceBuilder;
 import com.bagel.atmospheric.core.Atmospheric;
-
 import net.minecraft.block.Blocks;
-import net.minecraft.world.gen.feature.BlockBlobConfig;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
-import net.minecraft.world.gen.feature.ProbabilityConfig;
-import net.minecraft.world.gen.feature.ShrubFeature;
+import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.event.RegistryEvent;
@@ -24,30 +14,34 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @SuppressWarnings("rawtypes")
 public class AtmosphericFeatures {
-	
-	public static final Feature PODZOL = new PodzolFeature(ProbabilityConfig::deserialize).setRegistryName("podzol");
-	public static final Feature OAK_BUSH = new ShrubFeature(NoFeatureConfig::deserialize, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LEAVES.getDefaultState()).setRegistryName("oak_bush");
-	
-	public static final Feature MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize).setRegistryName("monkey_brush");
-	public static final Feature ROSEWOOD_TREE = new RosewoodTreeFeature(NoFeatureConfig::deserialize, false).setRegistryName("rosewood_tree");
-	public static final Feature PASSION_VINE = new PassionVineFeature(NoFeatureConfig::deserialize).setRegistryName("passion_vine");
-	
-	public static final Feature DUNE_ROCKS = new DuneRocksFeature(BlockBlobConfig::deserialize).setRegistryName("dune_rocks");
-	public static final Feature YUCCA_TREE = new YuccaTreeFeature(NoFeatureConfig::deserialize, false).setRegistryName("yucca_tree");
-	
-	public static final SurfaceBuilder DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig::deserialize).setRegistryName("dunes_builder");
+
+	public static final Feature<ProbabilityConfig> PODZOL = new PodzolFeature(ProbabilityConfig::deserialize);
+	public static final AbstractTreeFeature<NoFeatureConfig> OAK_BUSH = new ShrubFeature(NoFeatureConfig::deserialize, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LEAVES.getDefaultState());
+	public static final Feature<NoFeatureConfig> MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize);
+	public static final AbstractTreeFeature<NoFeatureConfig> ROSEWOOD_TREE = new RosewoodTreeFeature(NoFeatureConfig::deserialize, false);
+	public static final Feature<NoFeatureConfig> PASSION_VINE = new PassionVineFeature(NoFeatureConfig::deserialize);
+	public static final Feature<BlockBlobConfig> DUNE_ROCKS = new DuneRocksFeature(BlockBlobConfig::deserialize);
+	public static final AbstractTreeFeature<NoFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(NoFeatureConfig::deserialize, false);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	
     @SubscribeEvent
     public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
-        event.getRegistry().registerAll(
-        		PODZOL, OAK_BUSH,
-        		MONKEY_BRUSH, ROSEWOOD_TREE, PASSION_VINE,
-        		DUNE_ROCKS, YUCCA_TREE);
+		event.getRegistry().registerAll(
+				PODZOL.setRegistryName("podzol"),
+				OAK_BUSH.setRegistryName("oak_bush"),
+				MONKEY_BRUSH.setRegistryName("monkey_brush"),
+				ROSEWOOD_TREE.setRegistryName("rosewood_tree"),
+				PASSION_VINE.setRegistryName("passion_vine"),
+				DUNE_ROCKS.setRegistryName("dune_rocks"),
+				YUCCA_TREE.setRegistryName("yucca_tree")
+		);
     }
     
     @SubscribeEvent
     public static void registerSurfaceBuilders(RegistryEvent.Register<SurfaceBuilder<?>> event) {
-        event.getRegistry().register(DUNES);
+        event.getRegistry().register(
+        		DUNES.setRegistryName("dunes_builder")
+		);
     }
 
 }

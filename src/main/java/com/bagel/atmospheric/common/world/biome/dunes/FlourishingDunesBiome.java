@@ -4,6 +4,7 @@ import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 
+import com.bagel.atmospheric.modsupport.EntombedEcosystems;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -16,6 +17,7 @@ import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.fml.ModList;
 
 @SuppressWarnings("unchecked")
 public final class FlourishingDunesBiome extends Biome {
@@ -50,8 +52,10 @@ public final class FlourishingDunesBiome extends Biome {
 		DefaultBiomeFeatures.addDeadBushes(this);
 		DefaultBiomeFeatures.addMushrooms(this);
 		AtmosphericBiomeFeatures.addSparseYuccaTrees(this);
-
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
+		if (ModList.get().isLoaded("entombedecosystems")) {
+			EntombedEcosystems.EEFeatureAdder.EEaddSparseYuccaTrees(this);
+		}
 
 		this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.RABBIT, 4, 2, 3));
 		this.addSpawn(EntityClassification.AMBIENT, new Biome.SpawnListEntry(EntityType.BAT, 10, 8, 8));
