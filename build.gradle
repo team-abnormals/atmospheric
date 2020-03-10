@@ -15,7 +15,7 @@ apply plugin: 'maven-publish'
 
 version = '1.2'
 group = 'com.bagel.atmospheric' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'Atmospheric-1.15.2-v'
+archivesBaseName = 'atmospheric-1.15.2'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
