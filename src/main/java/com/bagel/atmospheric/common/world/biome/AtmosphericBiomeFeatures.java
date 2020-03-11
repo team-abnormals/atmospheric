@@ -27,7 +27,6 @@ import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.TopSolidWithNoiseConfig;
 import net.minecraft.world.gen.treedecorator.AlterGroundTreeDecorator;
 
-@SuppressWarnings("unchecked")
 public class AtmosphericBiomeFeatures {
 	public static BlockState ROSEWOOD_LOG 	= AtmosphericBlocks.ROSEWOOD_LOG.get().getDefaultState();
 	public static BlockState ROSEWOOD_LEAVES= AtmosphericBlocks.ROSEWOOD_LEAVES.get().getDefaultState();

@@ -17,7 +17,6 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-@SuppressWarnings("unchecked")
 public final class RockyDunesBiome extends Biome {
 	public RockyDunesBiome() {
 		super((new Biome.Builder()
