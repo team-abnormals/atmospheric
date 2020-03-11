@@ -1,13 +1,10 @@
 package com.bagel.atmospheric.common.entity;
 
 import java.util.List;
-
 import javax.annotation.Nullable;
-
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericEntities;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LilyPadBlock;
@@ -198,10 +195,10 @@ public class AtmosphericBoatEntity extends Entity {
          return AtmosphericItems.ROSEWOOD_BOAT.get();
       case YUCCA:
          return AtmosphericItems.YUCCA_BOAT.get();
+      case KOUSA:
+          return AtmosphericItems.KOUSA_BOAT.get();
       case ASPEN:
          return AtmosphericItems.ASPEN_BOAT.get();
-      case KOUSA:
-         return AtmosphericItems.KOUSA_BOAT.get();
       }
    }
 
@@ -823,8 +820,8 @@ public class AtmosphericBoatEntity extends Entity {
    public static enum Type {
       ROSEWOOD(AtmosphericBlocks.ROSEWOOD_PLANKS.get(), "rosewood"),
       YUCCA(AtmosphericBlocks.YUCCA_PLANKS.get(), "yucca"),
-      ASPEN(AtmosphericBlocks.ASPEN_PLANKS.get(), "aspen"),
-      KOUSA(AtmosphericBlocks.KOUSA_PLANKS.get(), "kousa");
+      KOUSA(AtmosphericBlocks.KOUSA_PLANKS.get(), "kousa"),
+      ASPEN(AtmosphericBlocks.ASPEN_PLANKS.get(), "aspen");
 
       private final String name;
       private final Block block;
