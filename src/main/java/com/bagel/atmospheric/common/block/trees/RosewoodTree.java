@@ -12,7 +12,6 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 public class RosewoodTree extends Tree {
-	@SuppressWarnings("unchecked")
 	@Nullable
 	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
 		return AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(AtmosphericBiomeFeatures.ROSEWOOD_TREE_CONFIG);
