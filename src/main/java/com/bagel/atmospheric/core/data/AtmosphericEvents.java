@@ -6,7 +6,6 @@ import com.bagel.atmospheric.common.entity.GoldenPassionfruitSeedEntity;
 import com.bagel.atmospheric.common.entity.PassionfruitSeedEntity;
 import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
-import com.bagel.atmospheric.core.registry.AtmosphericFoods;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
 
 import net.minecraft.entity.LivingEntity;
@@ -26,14 +25,14 @@ public class AtmosphericEvents {
 	public static void onLivingHurt(LivingHurtEvent event) {
 		LivingEntity entity = event.getEntityLiving();
 		
-		if (entity.isPotionActive(AtmosphericEffects.RELIEF.get())) {
+		if (entity.isPotionActive(AtmosphericEffects.RELIEF)) {
 			if (entity.isEntityUndead() == false) {
-				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.RELIEF.get()).getAmplifier();
+				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.RELIEF).getAmplifier();
 				entity.getPersistentData().putInt("PotionHealAmplifier", amplifier);
 				entity.getPersistentData().putFloat("IncomingDamage", event.getAmount());
 				entity.getPersistentData().putBoolean("Heal", true);
 			} else {
-				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.RELIEF.get()).getAmplifier();
+				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.RELIEF).getAmplifier();
 				if (event.getAmount() >= (amplifier + 1)) {
 					event.setAmount(event.getAmount() + (amplifier + 1));
 				}
@@ -41,14 +40,14 @@ public class AtmosphericEvents {
 			
 		}
 		
-		if (entity.isPotionActive(AtmosphericEffects.WORSENING.get())) {
+		if (entity.isPotionActive(AtmosphericEffects.WORSENING)) {
 			if (entity.isEntityUndead() == false) {
-				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.WORSENING.get()).getAmplifier();
+				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.WORSENING).getAmplifier();
 				if (event.getAmount() >= (amplifier + 1)) {
 					event.setAmount(event.getAmount() + (amplifier + 1));
 				}
 			} else {
-				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.WORSENING.get()).getAmplifier();
+				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.WORSENING).getAmplifier();
 				entity.getPersistentData().putInt("PotionHealAmplifier", amplifier);
 				entity.getPersistentData().putFloat("IncomingDamage", event.getAmount());
 				entity.getPersistentData().putBoolean("Heal", true);
@@ -58,27 +57,27 @@ public class AtmosphericEvents {
 	
 	@SubscribeEvent
 	public static void spittingTick(LivingUpdateEvent event) {
-		if (event.getEntityLiving().isPotionActive(AtmosphericFoods.GOLDEN_SPITTING)) {
+		if (event.getEntityLiving().isPotionActive(AtmosphericEffects.GOLDEN_SPITTING)) {
 			World worldIn = event.getEntityLiving().getEntityWorld();
 			LivingEntity playerIn = event.getEntityLiving();
 			Random random = new Random();
 			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
 				if (playerIn.world.getGameTime() % 3 == 0) {
 					worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
-					GoldenPassionfruitSeedEntity passionseed = new GoldenPassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(AtmosphericFoods.GOLDEN_SPITTING).getAmplifier());
+					GoldenPassionfruitSeedEntity passionseed = new GoldenPassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(AtmosphericEffects.GOLDEN_SPITTING).getAmplifier());
 					passionseed.setItem(new ItemStack(AtmosphericItems.SHIMMERING_PASSIONFRUIT_SEED.get()));
 					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3F, 1.0F);
 					worldIn.addEntity(passionseed);    
 				}	
 			}
-		} else if (event.getEntityLiving().isPotionActive(AtmosphericFoods.SPITTING)) {
+		} else if (event.getEntityLiving().isPotionActive(AtmosphericEffects.SPITTING)) {
 			World worldIn = event.getEntityLiving().getEntityWorld();
 			LivingEntity playerIn = event.getEntityLiving();
 			Random random = new Random();
 			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
 				if (playerIn.world.getGameTime() % 5 == 0) {
 					worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
-					PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(AtmosphericFoods.SPITTING).getAmplifier());
+					PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(AtmosphericEffects.SPITTING).getAmplifier());
 					passionseed.setItem(new ItemStack(AtmosphericItems.PASSIONFRUIT_SEED.get()));
 					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1F, 1.0F);
 					worldIn.addEntity(passionseed);    

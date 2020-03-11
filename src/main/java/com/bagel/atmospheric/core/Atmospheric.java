@@ -8,7 +8,6 @@ import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
 import com.bagel.atmospheric.core.registry.AtmosphericEntities;
-import com.bagel.atmospheric.core.registry.AtmosphericFoods;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
 
 import net.minecraft.block.DispenserBlock;
@@ -69,6 +68,10 @@ public class Atmospheric
     
     @SubscribeEvent
 	public static void onRegisterEffects(RegistryEvent.Register<Effect> event) {
-    	event.getRegistry().registerAll(AtmosphericFoods.SPITTING, AtmosphericFoods.GOLDEN_SPITTING);
+    	event.getRegistry().registerAll(
+    			AtmosphericEffects.RELIEF, 
+    			AtmosphericEffects.WORSENING,
+    			AtmosphericEffects.SPITTING, 
+    			AtmosphericEffects.GOLDEN_SPITTING);
     }
 }

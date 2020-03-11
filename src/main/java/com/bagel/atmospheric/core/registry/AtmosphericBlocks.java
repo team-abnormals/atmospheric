@@ -79,7 +79,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> PASSION_VINE 				= RegistryUtils.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= RegistryUtils.createBlock("passion_vine_bundle", 		() -> new PassionVineBundleBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
 
-	public static final RegistryObject<Block> MONKEY_BRUSH 				= RegistryUtils.createBlock("monkey_brush", 			() -> new MonkeyBrushBlock(Effects.ABSORPTION, 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> MONKEY_BRUSH 				= RegistryUtils.createBlock("monkey_brush", 			() -> new MonkeyBrushBlock(AtmosphericEffects.RELIEF, 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
 	
 	public static final RegistryObject<Block> POTTED_MONKEY_BRUSH		= RegistryUtils.createBlockNoItem("potted_monkey_brush",		() -> new FlowerPotBlock(MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_ROSEWOOD_SAPLING	= RegistryUtils.createBlockNoItem("potted_rosewood_sapling",	() -> new FlowerPotBlock(ROSEWOOD_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));

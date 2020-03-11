@@ -1,6 +1,8 @@
 package com.bagel.atmospheric.core.registry;
 
+import com.bagel.atmospheric.common.potion.GoldenSpittingEffect;
 import com.bagel.atmospheric.common.potion.ReliefEffect;
+import com.bagel.atmospheric.common.potion.SpittingEffect;
 import com.bagel.atmospheric.common.potion.WorseningEffect;
 import com.bagel.atmospheric.core.Atmospheric;
 
@@ -18,15 +20,17 @@ public class AtmosphericEffects {
 	public static final DeferredRegister<Effect> EFFECTS = new DeferredRegister<>(ForgeRegistries.POTIONS, Atmospheric.MODID);
 	public static final DeferredRegister<Potion> POTIONS = new DeferredRegister<>(ForgeRegistries.POTION_TYPES, Atmospheric.MODID);
 	
-    public static RegistryObject<Effect> RELIEF = EFFECTS.register("relief", () -> new ReliefEffect());
-    public static RegistryObject<Effect> WORSENING = EFFECTS.register("worsening", () -> new WorseningEffect());
+	public static Effect RELIEF = new ReliefEffect().setRegistryName("relief");
+	public static Effect WORSENING = new WorseningEffect().setRegistryName("worsening");
+    public static Effect SPITTING = new SpittingEffect().setRegistryName("spitting");
+    public static Effect GOLDEN_SPITTING = new GoldenSpittingEffect().setRegistryName("golden_spitting");
     
-    public static final RegistryObject<Potion> RELIEF_NORMAL  = POTIONS.register("relief", () -> new Potion(new EffectInstance(RELIEF.get(), 3600)));
-	public static final RegistryObject<Potion> RELIEF_STRONG  = POTIONS.register("relief_strong", () -> new Potion(new EffectInstance(RELIEF.get(), 1800, 1)));
-	public static final RegistryObject<Potion> RELIEF_LONG    = POTIONS.register("relief_long", () -> new Potion(new EffectInstance(RELIEF.get(), 9600)));
-	public static final RegistryObject<Potion> WORSENING_NORMAL = POTIONS.register("worsening", () -> new Potion(new EffectInstance(WORSENING.get(), 3600)));
-	public static final RegistryObject<Potion> WORSENING_STRONG = POTIONS.register("worsening_strong", () -> new Potion(new EffectInstance(WORSENING.get(), 1800, 1)));
-	public static final RegistryObject<Potion> WORSENING_LONG   = POTIONS.register("worsening_long", () -> new Potion(new EffectInstance(WORSENING.get(), 9600)));
+    public static final RegistryObject<Potion> RELIEF_NORMAL  = POTIONS.register("relief", () -> new Potion(new EffectInstance(RELIEF, 3600)));
+	public static final RegistryObject<Potion> RELIEF_STRONG  = POTIONS.register("relief_strong", () -> new Potion(new EffectInstance(RELIEF, 1800, 1)));
+	public static final RegistryObject<Potion> RELIEF_LONG    = POTIONS.register("relief_long", () -> new Potion(new EffectInstance(RELIEF, 9600)));
+	public static final RegistryObject<Potion> WORSENING_NORMAL = POTIONS.register("worsening", () -> new Potion(new EffectInstance(WORSENING, 3600)));
+	public static final RegistryObject<Potion> WORSENING_STRONG = POTIONS.register("worsening_strong", () -> new Potion(new EffectInstance(WORSENING, 1800, 1)));
+	public static final RegistryObject<Potion> WORSENING_LONG   = POTIONS.register("worsening_long", () -> new Potion(new EffectInstance(WORSENING, 9600)));
     
     public static void registerBrewingRecipes() {
 		PotionBrewing.addMix(Potions.AWKWARD, AtmosphericItems.SHIMMERING_PASSIONFRUIT.get(), RELIEF_NORMAL.get());
