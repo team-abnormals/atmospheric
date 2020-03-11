@@ -48,7 +48,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 @SuppressWarnings("deprecation")
-public class AtmosphericBoatEntity extends Entity {
+public class AtmosphericBoatEntity extends BoatEntity {
    private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.createKey(AtmosphericBoatEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.createKey(AtmosphericBoatEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.createKey(AtmosphericBoatEntity.class, DataSerializers.FLOAT);
@@ -72,8 +72,8 @@ public class AtmosphericBoatEntity extends Entity {
    private boolean backInputDown;
    private double waterLevel;
    private float boatGlide;
-   private AtmosphericBoatEntity.Status status;
-   private AtmosphericBoatEntity.Status previousStatus;
+   private BoatEntity.Status status;
+   private BoatEntity.Status previousStatus;
    private double lastYd;
    private boolean rocking;
    private boolean field_203060_aN;
@@ -188,6 +188,7 @@ public class AtmosphericBoatEntity extends Entity {
 
    }
    
+   @Override
    public Item getItemBoat() {
       switch(this.getBoatModel()) {
       case ROSEWOOD:
@@ -235,7 +236,7 @@ public class AtmosphericBoatEntity extends Entity {
    public void tick() {
       this.previousStatus = this.status;
       this.status = this.getBoatStatus();
-      if (this.status != AtmosphericBoatEntity.Status.UNDER_WATER && this.status != AtmosphericBoatEntity.Status.UNDER_FLOWING_WATER) {
+      if (this.status != BoatEntity.Status.UNDER_WATER && this.status != BoatEntity.Status.UNDER_FLOWING_WATER) {
          this.outOfControlTicks = 0.0F;
       } else {
          ++this.outOfControlTicks;
@@ -253,7 +254,12 @@ public class AtmosphericBoatEntity extends Entity {
          this.setDamageTaken(this.getDamageTaken() - 1.0F);
       }
 
-      super.tick();
+      if (!this.world.isRemote) {
+          this.setFlag(6, this.isGlowing());
+      }
+
+      this.baseTick();
+      
       this.tickLerp();
       if (this.canPassengerSteer()) {
          if (this.getPassengers().isEmpty() || !(this.getPassengers().get(0) instanceof PlayerEntity)) {
@@ -348,7 +354,7 @@ public class AtmosphericBoatEntity extends Entity {
       }
 
    }
-
+   @Override
    @Nullable
    protected SoundEvent getPaddleSound() {
       switch(this.getBoatStatus()) {
@@ -364,6 +370,7 @@ public class AtmosphericBoatEntity extends Entity {
       }
    }
    
+   @Override
    protected void tickLerp() {
       if (this.canPassengerSteer()) {
          this.lerpSteps = 0;
@@ -382,35 +389,36 @@ public class AtmosphericBoatEntity extends Entity {
          this.setRotation(this.rotationYaw, this.rotationPitch);
       }
    }
-   
+   @Override
    public void setPaddleState(boolean left, boolean right) {
       this.dataManager.set(field_199704_e, left);
       this.dataManager.set(field_199705_f, right);
    }
    
+   @Override
    @OnlyIn(Dist.CLIENT)
    public float getRowingTime(int side, float limbSwing) {
       return this.getPaddleState(side) ? (float)MathHelper.clampedLerp((double)this.paddlePositions[side] - (double)((float)Math.PI / 8F), (double)this.paddlePositions[side], (double)limbSwing) : 0.0F;
    }
 
-   private AtmosphericBoatEntity.Status getBoatStatus() {
-      AtmosphericBoatEntity.Status boatentity$status = this.getUnderwaterStatus();
+   private BoatEntity.Status getBoatStatus() {
+      BoatEntity.Status boatentity$status = this.getUnderwaterStatus();
       if (boatentity$status != null) {
          this.waterLevel = this.getBoundingBox().maxY;
          return boatentity$status;
       } else if (this.checkInWater()) {
-         return AtmosphericBoatEntity.Status.IN_WATER;
+         return BoatEntity.Status.IN_WATER;
       } else {
          float f = this.getBoatGlide();
          if (f > 0.0F) {
             this.boatGlide = f;
-            return AtmosphericBoatEntity.Status.ON_LAND;
+            return BoatEntity.Status.ON_LAND;
          } else {
-            return AtmosphericBoatEntity.Status.IN_AIR;
+            return BoatEntity.Status.IN_AIR;
          }
       }
    }
-   
+   @Override
    public float getWaterLevelAbove() {
       AxisAlignedBB axisalignedbb = this.getBoundingBox();
       int i = MathHelper.floor(axisalignedbb.minX);
@@ -449,7 +457,7 @@ public class AtmosphericBoatEntity extends Entity {
          return f1;
       }
    }
-
+   @Override
    public float getBoatGlide() {
       AxisAlignedBB axisalignedbb = this.getBoundingBox();
       AxisAlignedBB axisalignedbb1 = new AxisAlignedBB(axisalignedbb.minX, axisalignedbb.minY - 0.001D, axisalignedbb.minZ, axisalignedbb.maxX, axisalignedbb.minY, axisalignedbb.maxZ);
@@ -520,7 +528,7 @@ public class AtmosphericBoatEntity extends Entity {
     * Decides whether the boat is currently underwater.
     */
    @Nullable
-   private AtmosphericBoatEntity.Status getUnderwaterStatus() {
+   private BoatEntity.Status getUnderwaterStatus() {
       AxisAlignedBB axisalignedbb = this.getBoundingBox();
       double d0 = axisalignedbb.maxY + 0.001D;
       int i = MathHelper.floor(axisalignedbb.minX);
@@ -539,7 +547,7 @@ public class AtmosphericBoatEntity extends Entity {
                   IFluidState ifluidstate = this.world.getFluidState(blockpos$pooledmutable);
                   if (ifluidstate.isTagged(FluidTags.WATER) && d0 < (double)((float)blockpos$pooledmutable.getY() + ifluidstate.getActualHeight(this.world, blockpos$pooledmutable))) {
                      if (!ifluidstate.isSource()) {
-                    	 AtmosphericBoatEntity.Status boatentity$status = AtmosphericBoatEntity.Status.UNDER_FLOWING_WATER;
+                    	 BoatEntity.Status boatentity$status = BoatEntity.Status.UNDER_FLOWING_WATER;
                         return boatentity$status;
                      }
 
@@ -550,32 +558,32 @@ public class AtmosphericBoatEntity extends Entity {
          }
       }
 
-      return flag ? AtmosphericBoatEntity.Status.UNDER_WATER : null;
+      return flag ? BoatEntity.Status.UNDER_WATER : null;
    }
    
    private void updateMotion() {
       double d1 = this.hasNoGravity() ? 0.0D : (double)-0.04F;
       double d2 = 0.0D;
       this.momentum = 0.05F;
-      if (this.previousStatus == AtmosphericBoatEntity.Status.IN_AIR && this.status != AtmosphericBoatEntity.Status.IN_AIR && this.status != AtmosphericBoatEntity.Status.ON_LAND) {
+      if (this.previousStatus == BoatEntity.Status.IN_AIR && this.status != BoatEntity.Status.IN_AIR && this.status != BoatEntity.Status.ON_LAND) {
          this.waterLevel = this.getPosYHeight(1.0D);
          this.setPosition(this.getPosX(), (double)(this.getWaterLevelAbove() - this.getHeight()) + 0.101D, this.getPosZ());
          this.setMotion(this.getMotion().mul(1.0D, 0.0D, 1.0D));
          this.lastYd = 0.0D;
-         this.status = AtmosphericBoatEntity.Status.IN_WATER;
+         this.status = BoatEntity.Status.IN_WATER;
       } else {
-         if (this.status == AtmosphericBoatEntity.Status.IN_WATER) {
+         if (this.status == BoatEntity.Status.IN_WATER) {
             d2 = (this.waterLevel - this.getPosY()) / (double)this.getHeight();
             this.momentum = 0.9F;
-         } else if (this.status == AtmosphericBoatEntity.Status.UNDER_FLOWING_WATER) {
+         } else if (this.status == BoatEntity.Status.UNDER_FLOWING_WATER) {
             d1 = -7.0E-4D;
             this.momentum = 0.9F;
-         } else if (this.status == AtmosphericBoatEntity.Status.UNDER_WATER) {
+         } else if (this.status == BoatEntity.Status.UNDER_WATER) {
             d2 = (double)0.01F;
             this.momentum = 0.45F;
-         } else if (this.status == AtmosphericBoatEntity.Status.IN_AIR) {
+         } else if (this.status == BoatEntity.Status.IN_AIR) {
             this.momentum = 0.9F;
-         } else if (this.status == AtmosphericBoatEntity.Status.ON_LAND) {
+         } else if (this.status == BoatEntity.Status.ON_LAND) {
             this.momentum = this.boatGlide;
             if (this.getControllingPassenger() instanceof PlayerEntity) {
                this.boatGlide /= 2.0F;
@@ -652,7 +660,7 @@ public class AtmosphericBoatEntity extends Entity {
 
       }
    }
-
+   @Override
    protected void applyYawToEntity(Entity entityToUpdate) {
       entityToUpdate.setRenderYawOffset(this.rotationYaw);
       float f = MathHelper.wrapDegrees(entityToUpdate.rotationYaw - this.rotationYaw);
@@ -693,7 +701,7 @@ public class AtmosphericBoatEntity extends Entity {
       if (!this.isPassenger()) {
          if (onGroundIn) {
             if (this.fallDistance > 3.0F) {
-               if (this.status != AtmosphericBoatEntity.Status.ON_LAND) {
+               if (this.status != BoatEntity.Status.ON_LAND) {
                   this.fallDistance = 0.0F;
                   return;
                }
@@ -720,27 +728,27 @@ public class AtmosphericBoatEntity extends Entity {
 
       }
    }
-   
+   @Override
    public boolean getPaddleState(int side) {
       return this.dataManager.<Boolean>get(side == 0 ? field_199704_e : field_199705_f) && this.getControllingPassenger() != null;
    }
 
-   
+   @Override
    public void setDamageTaken(float damageTaken) {
       this.dataManager.set(DAMAGE_TAKEN, damageTaken);
    }
 
-   
+   @Override
    public float getDamageTaken() {
       return this.dataManager.get(DAMAGE_TAKEN);
    }
 
-   
+   @Override
    public void setTimeSinceHit(int timeSinceHit) {
       this.dataManager.set(TIME_SINCE_HIT, timeSinceHit);
    }
 
-   
+   @Override
    public int getTimeSinceHit() {
       return this.dataManager.get(TIME_SINCE_HIT);
    }
@@ -752,21 +760,22 @@ public class AtmosphericBoatEntity extends Entity {
    private int getRockingTicks() {
       return this.dataManager.get(ROCKING_TICKS);
    }
-   
+   @Override
    @OnlyIn(Dist.CLIENT)
    public float getRockingAngle(float partialTicks) {
       return MathHelper.lerp(partialTicks, this.prevRockingAngle, this.rockingAngle);
    }
 
-   
+   @Override
    public void setForwardDirection(int forwardDirection) {
       this.dataManager.set(FORWARD_DIRECTION, forwardDirection);
    }
 
-   
+   @Override
    public int getForwardDirection() {
       return this.dataManager.get(FORWARD_DIRECTION);
    }
+   
    public void setBoatType(AtmosphericBoatEntity.Type boatType) {
       this.dataManager.set(BOAT_TYPE, boatType.ordinal());
    }
@@ -790,7 +799,7 @@ public class AtmosphericBoatEntity extends Entity {
       List<Entity> list = this.getPassengers();
       return list.isEmpty() ? null : list.get(0);
    }
-
+   @Override
    @OnlyIn(Dist.CLIENT)
    public void updateInputs(boolean p_184442_1_, boolean p_184442_2_, boolean p_184442_3_, boolean p_184442_4_) {
       this.leftInputDown = p_184442_1_;
