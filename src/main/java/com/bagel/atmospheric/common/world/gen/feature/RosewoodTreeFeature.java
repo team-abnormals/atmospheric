@@ -10,6 +10,7 @@ import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
@@ -231,7 +232,7 @@ public class RosewoodTreeFeature extends TreeFeature {
 	private void placeLeafAt(Set<BlockPos> worldIn, IWorldGenerationReader pos, BlockPos p_175924_3_,
 			MutableBoundingBox boundsIn) {
 		if (isAirOrLeaves(pos, p_175924_3_)) {
-			this.setLogState(worldIn, pos, p_175924_3_, AtmosphericBlocks.ROSEWOOD_LEAVES.get().getDefaultState(),
+			this.setLogState(worldIn, pos, p_175924_3_, AtmosphericBlocks.ROSEWOOD_LEAVES.get().getDefaultState().with(LeavesBlock.DISTANCE, 1),
 					boundsIn);
 		}
 

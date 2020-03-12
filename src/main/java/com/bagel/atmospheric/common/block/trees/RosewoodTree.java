@@ -12,8 +12,9 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 public class RosewoodTree extends Tree {
+	
 	@Nullable
-	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
-		return AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(AtmosphericBiomeFeatures.ROSEWOOD_TREE_CONFIG);
+	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean beehive) {
+		return AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(beehive ? AtmosphericBiomeFeatures.ROSEWOOD_TREE_MORE_BEEHIVES_CONFIG : AtmosphericBiomeFeatures.ROSEWOOD_TREE_CONFIG);
 	}
 }
