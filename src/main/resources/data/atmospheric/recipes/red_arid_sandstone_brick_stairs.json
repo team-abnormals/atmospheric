@@ -23,10 +23,6 @@
         {
           "type": "forge:mod_loaded",
           "modid": "quark"
-        },
-        {
-        	"type": "quark:flag",
-        	"flag": "sandstone_bricks"
         }
       ]
     }
