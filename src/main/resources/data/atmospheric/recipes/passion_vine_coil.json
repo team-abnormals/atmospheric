@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:passion_vine"
+    }
+  },
+  "result": {
+    "item": "atmospheric:passion_vine_coil",
+    "count": 1
+  }
+}

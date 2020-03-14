@@ -2,6 +2,7 @@ package com.bagel.atmospheric.core.registry;
 
 import com.bagel.atmospheric.common.entity.AtmosphericBoatEntity;
 import com.bagel.atmospheric.common.item.AtmosphericBoatItem;
+import com.bagel.atmospheric.common.item.PassionVineCoilItem;
 import com.bagel.atmospheric.common.item.YuccaJuiceItem;
 import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.util.RegistryUtils;
@@ -22,6 +23,7 @@ public class AtmosphericItems {
 	public static RegistryObject<Item> SHIMMERING_PASSIONFRUIT 	= RegistryUtils.createItem("shimmering_passionfruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.SHIMMERING_PASSIONFRUIT).group(ItemGroup.FOOD)));
 	public static RegistryObject<Item> PASSIONFRUIT_TART 		= RegistryUtils.createItem("passionfruit_tart", () -> new Item(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT_TART).group(ItemGroup.FOOD)));
 	public static RegistryObject<Item> PASSIONFRUIT_SORBET 		= RegistryUtils.createItem("passionfruit_sorbet", () -> new SoupItem(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT_SORBET).maxStackSize(1).containerItem(Items.BOWL).group(ItemGroup.FOOD)));
+	public static RegistryObject<Item> PASSION_VINE_COIL		= RegistryUtils.createItem("passion_vine_coil", () -> new PassionVineCoilItem(new Item.Properties().maxStackSize(16).group(ItemGroup.MISC)));
 	
 	public static RegistryObject<Item> PASSIONFRUIT_SEED 			= RegistryUtils.createItem("passionfruit_seed", () -> new Item(new Item.Properties()));
 	public static RegistryObject<Item> SHIMMERING_PASSIONFRUIT_SEED = RegistryUtils.createItem("shimmering_passionfruit_seed", () -> new Item(new Item.Properties()));
