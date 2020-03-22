@@ -66,4 +66,9 @@ public class RosewoodMountainsBiome extends Biome {
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.WITCH, 5, 1, 1));      
     }
+    
+    @Override
+    public boolean isMutation() {
+    	return true;
+    }
 }

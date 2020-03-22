@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.datafixers.Dynamic;
 
@@ -16,6 +17,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IWorldWriter;
 import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
@@ -23,12 +25,14 @@ import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 @SuppressWarnings("unused")
-public class RosewoodTreeFeature extends TreeFeature {
+public class MonkeyBrushTreeFeature extends TreeFeature {
 	private final Supplier<BlockState> ROSEWOOD_LOG = () -> AtmosphericBlocks.ROSEWOOD_LOG.get().getDefaultState();
 	private final Supplier<BlockState> ROSEWOOD_LEAVES = () -> AtmosphericBlocks.ROSEWOOD_LEAVES.get().getDefaultState().with(LeavesBlock.DISTANCE, 1);
+	int temp;
 	
-	public RosewoodTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> p_i51443_1_, boolean p_i51443_2_) {
+	public MonkeyBrushTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> p_i51443_1_, boolean p_i51443_2_, int temperature) {
 		super(p_i51443_1_);
+		temp = temperature;
 	}
 
 	public boolean func_225557_a_(IWorldGenerationReader worldIn, Random rand, BlockPos position, Set<BlockPos> logsPlaced, Set<BlockPos> leavesPlaced, MutableBoundingBox boundsIn, TreeFeatureConfig config) {
@@ -37,6 +41,13 @@ public class RosewoodTreeFeature extends TreeFeature {
 		int bonusCanopies = rand.nextInt(3);
 		boolean flag = true;
 
+		BlockState monkeyBrush = AtmosphericBlocks.HOT_MONKEY_BRUSH.get().getDefaultState();
+		if (temp == 3) {
+			monkeyBrush = AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().getDefaultState();
+		} else if (temp == 1) {
+			monkeyBrush = AtmosphericBlocks.WARM_MONKEY_BRUSH.get().getDefaultState();
+		}
+	      
 		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getMaxHeight()) {
 			for (int j = position.getY(); j <= position.getY() + 1 + height; ++j) {
 				int k = 1;
@@ -144,6 +155,21 @@ public class RosewoodTreeFeature extends TreeFeature {
 					logX = position.getX();
 					logZ = position.getZ();
 				}
+				
+				BlockPos startPos = position.up(height);
+
+                for(BlockPos blockpos3 : BlockPos.getAllInBoxMutable(startPos.getX() - 15, startPos.getY() - 15, startPos.getZ() - 15, startPos.getX() + 15, startPos.getY() + 15, startPos.getZ() + 15)) {
+                	IWorldReader world = (IWorldReader)worldIn;
+                	if(isAir(worldIn, blockpos3) && rand.nextInt(1) == 0) {
+                		Direction randomD = Direction.random(rand);
+                		while (randomD == Direction.DOWN) {
+                			randomD = Direction.random(rand);
+                		}
+                		if (monkeyBrush.with(MonkeyBrushBlock.FACING, randomD).isValidPosition(world, blockpos3) && world.getBlockState(blockpos3.offset(randomD.getOpposite())).getBlock() == ROSEWOOD_LOG) {
+                			setLogState(logsPlaced, worldIn, blockpos3, monkeyBrush.with(MonkeyBrushBlock.FACING, randomD), boundsIn);
+                		}
+                    }
+                }
 				return true;
 			} else {
 				return false;
