@@ -22,6 +22,7 @@ import net.minecraft.item.Items;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -173,8 +174,10 @@ public class PassionVineBlock extends Block implements IGrowable {
 	
 	private boolean canAttachTo(IBlockReader p_196471_1_, BlockPos p_196471_2_, Direction p_196471_3_) {
 	      BlockState blockstate = p_196471_1_.getBlockState(p_196471_2_);
-	      return !blockstate.canProvidePower() && blockstate.isSolidSide(p_196471_1_, p_196471_2_, p_196471_3_);
+	      return !blockstate.canProvidePower() && (blockstate.isSolidSide(p_196471_1_, p_196471_2_, p_196471_3_) || blockstate.isIn(BlockTags.LEAVES));
 	   }
+	
+	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		Direction direction = state.get(FACING);
 		if (this.canAttachTo(worldIn, pos.offset(direction.getOpposite()), direction) 

@@ -30,8 +30,9 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.common.IPlantable;
 
-public class BarrelCactusBlock extends Block implements net.minecraftforge.common.IPlantable, IGrowable {
+public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
    public static final IntegerProperty AGE = BlockStateProperties.AGE_0_3;
    
    private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
@@ -51,7 +52,7 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
       this.setDefaultState(this.getDefaultState().with(AGE, Integer.valueOf(0)));
    }
 
-   public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+   public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 	   if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent growing cactus from loading unloaded chunks with block update
 	   if (!state.isValidPosition(worldIn, pos)) {
           worldIn.destroyBlock(pos, true);
@@ -99,6 +100,7 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
    }
 
    @SuppressWarnings("deprecation")
+   @Override
    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
       if (!stateIn.isValidPosition(worldIn, currentPos)) {
          worldIn.getPendingBlockTicks().scheduleTick(currentPos, this, 1);
@@ -107,6 +109,7 @@ public class BarrelCactusBlock extends Block implements net.minecraftforge.commo
       return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
    }
    
+   @Override
    public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
       BlockState soil = worldIn.getBlockState(pos.down());
       boolean dune = soil.getBlock() == AtmosphericBlocks.ARID_SAND.get() || soil.getBlock() == AtmosphericBlocks.RED_ARID_SAND.get();
