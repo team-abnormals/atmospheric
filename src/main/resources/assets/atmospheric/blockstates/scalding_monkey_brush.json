@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=down": { "model": "atmospheric:block/scalding_monkey_brush_upside_down" },
+        "facing=north": { "model": "atmospheric:block/scalding_monkey_brush_wall" },
+        "facing=south": { "model": "atmospheric:block/scalding_monkey_brush_wall", "y": 180 },
+        "facing=west":  { "model": "atmospheric:block/scalding_monkey_brush_wall", "y": 270 },
+        "facing=east":  { "model": "atmospheric:block/scalding_monkey_brush_wall", "y": 90 },
+        "facing=up": { "model": "atmospheric:block/scalding_monkey_brush" }
+    }
+}

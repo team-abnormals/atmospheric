@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:scalding_monkey_brush"
+    }
+  ],
+  "result": {
+    "item": "minecraft:red_dye"
+  }
+}

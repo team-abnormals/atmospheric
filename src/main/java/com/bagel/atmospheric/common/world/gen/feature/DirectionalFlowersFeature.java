@@ -2,7 +2,6 @@ package com.bagel.atmospheric.common.world.gen.feature;
 
 import java.util.Random;
 import java.util.function.Function;
-
 import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.datafixers.Dynamic;
@@ -17,12 +16,19 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 
 public class DirectionalFlowersFeature extends Feature<NoFeatureConfig> {
-	   public DirectionalFlowersFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i49876_1_) {
+	int temp;
+	   public DirectionalFlowersFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i49876_1_, int temperature) {
 	      super(p_i49876_1_);
+	      temp = temperature;
 	   }
 
 	   public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand, BlockPos pos, NoFeatureConfig config) {
-	      BlockState blockstate = AtmosphericBlocks.MONKEY_BRUSH.get().getDefaultState();
+	      BlockState blockstate = AtmosphericBlocks.HOT_MONKEY_BRUSH.get().getDefaultState();
+	      if (temp == 3) {
+	    	  blockstate = AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().getDefaultState();
+	      } else if (temp == 1) {
+	    	  blockstate = AtmosphericBlocks.WARM_MONKEY_BRUSH.get().getDefaultState();
+	      }
 	      int i = 0;
 
 	      for(int j = 0; j < 64; ++j) {
@@ -32,7 +38,7 @@ public class DirectionalFlowersFeature extends Feature<NoFeatureConfig> {
 	        	while (randomD == Direction.DOWN || !blockstate.with(MonkeyBrushBlock.FACING, randomD).isValidPosition(worldIn, blockpos)) {
 		        	randomD = Direction.random(rand);
 	        	}
-	        	BlockState blockstate2 = AtmosphericBlocks.MONKEY_BRUSH.get().getDefaultState().with(MonkeyBrushBlock.FACING, randomD);
+	        	BlockState blockstate2 = blockstate.with(MonkeyBrushBlock.FACING, randomD);
 	            worldIn.setBlockState(blockpos, blockstate2, 2);
 	            ++i;
 	         }

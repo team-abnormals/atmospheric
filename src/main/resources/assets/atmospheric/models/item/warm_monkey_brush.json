@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "atmospheric:block/hot_monkey_brush"
+        "layer0": "atmospheric:block/warm_monkey_brush"
     }
 }

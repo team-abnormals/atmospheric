@@ -16,7 +16,9 @@ public class AtmosphericTrades {
 	
 	@SubscribeEvent
 	public static void onWandererTradesEvent(WandererTradesEvent event) {
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.MONKEY_BRUSH.get(), 1, 1, 6, 1));
+		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.WARM_MONKEY_BRUSH.get(), 1, 1, 6, 1));
+		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.HOT_MONKEY_BRUSH.get(), 1, 1, 6, 1));
+		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get(), 1, 1, 6, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.PASSION_VINE.get(), 4, 1, 8, 1));
 		//event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ARID_SAND.get(), 1, 8, 8, 1));
 		//event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.RED_ARID_SAND.get(), 1, 4, 6, 1));

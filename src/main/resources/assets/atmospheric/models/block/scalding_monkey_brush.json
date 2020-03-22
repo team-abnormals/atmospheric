@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "particle": "atmospheric:block/scalding_monkey_brush",
+        "cross": "atmospheric:block/scalding_monkey_brush"
+    }
+}

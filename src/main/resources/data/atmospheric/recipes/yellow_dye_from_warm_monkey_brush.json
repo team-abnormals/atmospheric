@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:warm_monkey_brush"
+    }
+  ],
+  "result": {
+    "item": "minecraft:yellow_dye"
+  }
+}

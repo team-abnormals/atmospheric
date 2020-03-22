@@ -10,7 +10,9 @@ import net.minecraft.client.renderer.RenderTypeLookup;
 public class AtmosphericBlockData {
 	public static void registerCompostables() {
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_LEAVES.get());
-		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.MONKEY_BRUSH.get());
+		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
+		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
+		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get());
 		DataUtils.registerCompostable(0.5F, AtmosphericBlocks.PASSION_VINE_BUNDLE.get());
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_SAPLING.get());
 		DataUtils.registerCompostable(0.5F, AtmosphericBlocks.PASSION_VINE.get());
@@ -151,7 +153,9 @@ public class AtmosphericBlockData {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_LEAF_CARPET.get(),RenderType.getCutout());
 		
 		//Flowers
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.MONKEY_BRUSH.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.WARM_MONKEY_BRUSH.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.HOT_MONKEY_BRUSH.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get(),RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.GILIA.get(),RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.PASSION_VINE.get(),RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_FLOWER.get(),RenderType.getCutoutMipped());
@@ -162,7 +166,9 @@ public class AtmosphericBlockData {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_SAPLING.get(),RenderType.getCutoutMipped());
 		
 		//Potted Flowers
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_MONKEY_BRUSH.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_WARM_MONKEY_BRUSH.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_HOT_MONKEY_BRUSH.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_SCALDING_MONKEY_BRUSH.get(),RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_FLOWER.get(),RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_GILIA.get(),RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_ASPEN_SAPLING.get(),RenderType.getCutoutMipped());
