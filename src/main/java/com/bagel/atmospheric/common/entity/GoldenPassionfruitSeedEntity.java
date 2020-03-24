@@ -65,7 +65,7 @@ public class GoldenPassionfruitSeedEntity extends ProjectileItemEntity {
       if (result.getType() == RayTraceResult.Type.ENTITY) {
          Entity entity = ((EntityRayTraceResult)result).getEntity();
          entity.attackEntityFrom(AtmosphericDamageSources.causeShimmeringPassionfruitSeedDamage(this, this.getThrower()), 1.5F + amplifier * 1/2);
-         if (entity instanceof ServerPlayerEntity) {
+         if (this.getThrower() instanceof ServerPlayerEntity) {
   			ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) this.getThrower();
   			if(!entity.getEntityWorld().isRemote()) {
   				AtmosphericCriteriaTriggers.SPIT_PASSIONFRUIT.trigger(serverplayerentity); 
