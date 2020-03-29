@@ -38,7 +38,6 @@
 	"item.atmospheric.passionfruit": "Passionfruit",
 	"item.atmospheric.passionfruit_seed": "Passionfruit Seed",
 	"item.atmospheric.shimmering_passionfruit": "Shimmering Passionfruit",
-	"item.atmospheric.shimmering_passionfruit_seed": "Shimmering Passionfruit Seed",
 	"item.atmospheric.passionfruit_tart": "Passionfruit Tart",
 	"item.atmospheric.passionfruit_sorbet": "Passionfruit Sorbet",
 	"item.atmospheric.passion_vine_coil": "Passion Vine Coil",
@@ -48,7 +47,6 @@
 	"effect.atmospheric.relief": "Relief",
 	"effect.atmospheric.worsening": "Worsening",
 	"effect.atmospheric.spitting": "Spitting",
-	"effect.atmospheric.golden_spitting": "Golden Spitting",
 	
 	"item.minecraft.potion.effect.relief": "Potion of Relief",
 	"item.minecraft.potion.effect.relief_strong": "Potion of Relief",

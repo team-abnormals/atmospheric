@@ -26,7 +26,6 @@ public class AtmosphericItems {
 	public static RegistryObject<Item> PASSION_VINE_COIL		= RegistryUtils.createItem("passion_vine_coil", () -> new PassionVineCoilItem(new Item.Properties().maxStackSize(16).group(ItemGroup.MISC)));
 	
 	public static RegistryObject<Item> PASSIONFRUIT_SEED 			= RegistryUtils.createItem("passionfruit_seed", () -> new Item(new Item.Properties()));
-	public static RegistryObject<Item> SHIMMERING_PASSIONFRUIT_SEED = RegistryUtils.createItem("shimmering_passionfruit_seed", () -> new Item(new Item.Properties()));
 
 	public static RegistryObject<Item> YUCCA_FRUIT				= RegistryUtils.createItem("yucca_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.YUCCA_FRUIT).group(ItemGroup.FOOD)));
 	public static RegistryObject<Item> ROASTED_YUCCA_FRUIT		= RegistryUtils.createItem("roasted_yucca_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.ROASTED_YUCCA_FRUIT).group(ItemGroup.FOOD)));

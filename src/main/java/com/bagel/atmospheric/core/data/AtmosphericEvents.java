@@ -2,7 +2,6 @@ package com.bagel.atmospheric.core.data;
 
 import java.util.Random;
 
-import com.bagel.atmospheric.common.entity.GoldenPassionfruitSeedEntity;
 import com.bagel.atmospheric.common.entity.PassionfruitSeedEntity;
 import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
@@ -57,29 +56,17 @@ public class AtmosphericEvents {
 	
 	@SubscribeEvent
 	public static void spittingTick(LivingUpdateEvent event) {
-		if (event.getEntityLiving().isPotionActive(AtmosphericEffects.GOLDEN_SPITTING)) {
+		if (event.getEntityLiving().isPotionActive(AtmosphericEffects.SPITTING)) {
 			World worldIn = event.getEntityLiving().getEntityWorld();
 			LivingEntity playerIn = event.getEntityLiving();
+			int amplifier = playerIn.getActivePotionEffect(AtmosphericEffects.SPITTING).getAmplifier();
 			Random random = new Random();
 			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
-				if (playerIn.world.getGameTime() % 3 == 0) {
+				if (playerIn.world.getGameTime() % (6 / (amplifier+1)) == 0) {
 					worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
-					GoldenPassionfruitSeedEntity passionseed = new GoldenPassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(AtmosphericEffects.GOLDEN_SPITTING).getAmplifier());
-					passionseed.setItem(new ItemStack(AtmosphericItems.SHIMMERING_PASSIONFRUIT_SEED.get()));
-					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3F, 1.0F);
-					worldIn.addEntity(passionseed);    
-				}	
-			}
-		} else if (event.getEntityLiving().isPotionActive(AtmosphericEffects.SPITTING)) {
-			World worldIn = event.getEntityLiving().getEntityWorld();
-			LivingEntity playerIn = event.getEntityLiving();
-			Random random = new Random();
-			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
-				if (playerIn.world.getGameTime() % 5 == 0) {
-					worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
-					PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(worldIn, playerIn, playerIn.getActivePotionEffect(AtmosphericEffects.SPITTING).getAmplifier());
+					PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(worldIn, playerIn, amplifier);
 					passionseed.setItem(new ItemStack(AtmosphericItems.PASSIONFRUIT_SEED.get()));
-					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1F, 1.0F);
+					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, amplifier + 1, 1.0F);
 					worldIn.addEntity(passionseed);    
 				}	
 			}

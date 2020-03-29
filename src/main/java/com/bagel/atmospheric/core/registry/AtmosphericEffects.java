@@ -1,6 +1,5 @@
 package com.bagel.atmospheric.core.registry;
 
-import com.bagel.atmospheric.common.potion.GoldenSpittingEffect;
 import com.bagel.atmospheric.common.potion.ReliefEffect;
 import com.bagel.atmospheric.common.potion.SpittingEffect;
 import com.bagel.atmospheric.common.potion.WorseningEffect;
@@ -23,7 +22,6 @@ public class AtmosphericEffects {
 	public static Effect RELIEF = new ReliefEffect().setRegistryName("relief");
 	public static Effect WORSENING = new WorseningEffect().setRegistryName("worsening");
     public static Effect SPITTING = new SpittingEffect().setRegistryName("spitting");
-    public static Effect GOLDEN_SPITTING = new GoldenSpittingEffect().setRegistryName("golden_spitting");
     
     public static final RegistryObject<Potion> RELIEF_NORMAL  = POTIONS.register("relief", () -> new Potion(new EffectInstance(RELIEF, 3600)));
 	public static final RegistryObject<Potion> RELIEF_STRONG  = POTIONS.register("relief_strong", () -> new Potion(new EffectInstance(RELIEF, 1800, 1)));

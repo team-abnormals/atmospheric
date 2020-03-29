@@ -71,7 +71,6 @@ public class Atmospheric
     	event.getRegistry().registerAll(
     			AtmosphericEffects.RELIEF, 
     			AtmosphericEffects.WORSENING,
-    			AtmosphericEffects.SPITTING, 
-    			AtmosphericEffects.GOLDEN_SPITTING);
+    			AtmosphericEffects.SPITTING);
     }
 }
