@@ -38,12 +38,6 @@ public class AtmosphericBiomeFeatures {
 	public static BlockState KOUSA_LOG 		= AtmosphericBlocks.KOUSA_LOG.get().getDefaultState();
 	public static BlockState KOUSA_LEAVES 	= AtmosphericBlocks.KOUSA_LEAVES.get().getDefaultState();
 
-	public static final HugeTreeFeatureConfig MEGA_ASPEN_TREE_CONFIG = (
-			new HugeTreeFeatureConfig.Builder(
-					new SimpleBlockStateProvider(ASPEN_LOG), 
-					new SimpleBlockStateProvider(ASPEN_LEAVES))).baseHeight(13).func_227283_b_(15).func_227284_c_(13).func_227282_a_(ImmutableList.of(
-							new AlterGroundTreeDecorator(new SimpleBlockStateProvider(Blocks.PODZOL.getDefaultState())))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ASPEN_SAPLING.get()).build();
-	
 	public static final TreeFeatureConfig KOUSA_TREE_CONFIG = (
 			new TreeFeatureConfig.Builder(
 					new SimpleBlockStateProvider(
@@ -94,10 +88,10 @@ public class AtmosphericBiomeFeatures {
 					new SimpleBlockStateProvider(ASPEN_LEAVES), 
 					new SpruceFoliagePlacer(2, 1))).baseHeight(6).heightRandA(3).trunkHeight(1).trunkHeightRandom(1).trunkTopOffsetRandom(2).ignoreVines().setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ASPEN_SAPLING.get()).build();
 
-	public static final HugeTreeFeatureConfig MEGA_ASPEN_PINE_TREE_CONFIG = (
+	public static final HugeTreeFeatureConfig MEGA_ASPEN_TREE_CONFIG = (
 			new HugeTreeFeatureConfig.Builder(
 					new SimpleBlockStateProvider(ASPEN_LOG), 
-					new SimpleBlockStateProvider(ASPEN_LEAVES))).baseHeight(13).func_227283_b_(15).func_227284_c_(3).func_227282_a_(ImmutableList.of(
+					new SimpleBlockStateProvider(ASPEN_LEAVES))).baseHeight(13).heightInterval(15).crownHeight(3).decorators(ImmutableList.of(
 							new AlterGroundTreeDecorator(new SimpleBlockStateProvider(Blocks.PODZOL.getDefaultState())))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ASPEN_SAPLING.get()).build();
 
 	

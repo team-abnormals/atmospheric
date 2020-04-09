@@ -23,7 +23,7 @@ public class RosewoodMountainsBiome extends Biome {
 				.downfall(0.8F)
 				.waterColor(4159204)
 				.waterFogColor(329011)
-				.parent("atmospheric:rosewood_forest"));
+				.parent(null));
         
         this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
         this.addStructure(Feature.STRONGHOLD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));

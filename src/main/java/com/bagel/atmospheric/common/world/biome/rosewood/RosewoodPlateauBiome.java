@@ -24,7 +24,7 @@ public class RosewoodPlateauBiome extends Biome {
 				.downfall(0.8F)
 				.waterColor(4159204)
 				.waterFogColor(329011)
-				.parent("atmospheric:rosewood_forest"));
+				.parent(null));
         
         this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
         this.addStructure(Feature.STRONGHOLD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
@@ -43,7 +43,7 @@ public class RosewoodPlateauBiome extends Biome {
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addRosewoodPlateauTrees(this, 0, 8);
+        AtmosphericBiomeFeatures.addRosewoodPlateauTrees(this, 0, 4);
         AtmosphericBiomeFeatures.addFlowers(this);
         AtmosphericBiomeFeatures.addFoliage(this);
         
