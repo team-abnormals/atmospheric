@@ -8,7 +8,6 @@ import com.bagel.atmospheric.core.data.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.data.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
@@ -23,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -32,9 +32,11 @@ public class YuccaFlowerBlock extends FlowerBlock implements IGrowable {
 		super(effect, effectDuration, properties);
 	}
 	
-	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		Block block = state.getBlock();
-		return block.isIn(AtmosphericTags.YUCCA_PLANTABLE_ON) || block == AtmosphericBlocks.YUCCA_LEAVES.get() || block == Blocks.CACTUS;
+	
+	@Override
+	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
+		BlockState state2 = worldIn.getBlockState(pos.down());
+		return state2.isIn(AtmosphericTags.YUCCA_PLANTABLE_ON) || state2.getBlock() == AtmosphericBlocks.YUCCA_LEAVES.get() || state2.getBlock() == Blocks.CACTUS;
 	}
 	
 	@Override
