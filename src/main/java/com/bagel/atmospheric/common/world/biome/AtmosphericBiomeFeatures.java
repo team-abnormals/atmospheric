@@ -161,7 +161,7 @@ public class AtmosphericBiomeFeatures {
 		allBlocksToCarve.add(AtmosphericBlocks.ARID_SAND.get());
 		allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
 		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SAND.get());
-		allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
+		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
 		
 		for (Carving carverStage : GenerationStage.Carving.values())
 		{
