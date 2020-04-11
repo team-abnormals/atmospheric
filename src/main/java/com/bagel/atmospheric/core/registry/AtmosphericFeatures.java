@@ -7,6 +7,7 @@ import com.bagel.atmospheric.common.world.gen.feature.PassionVineFeature;
 import com.bagel.atmospheric.common.world.gen.feature.PodzolFeature;
 import com.bagel.atmospheric.common.world.gen.feature.RosewoodTreeFeature;
 import com.bagel.atmospheric.common.world.gen.surfacebuilders.DunesSurfaceBuilder;
+import com.bagel.atmospheric.common.world.gen.surfacebuilders.WaveyDunesSurfaceBuilder;
 import com.bagel.atmospheric.core.Atmospheric;
 
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
@@ -45,7 +46,8 @@ public class AtmosphericFeatures {
 	public static final Feature<TreeFeatureConfig> YUCCA_TREE = new FancyTreeFeature(TreeFeatureConfig::func_227338_a_);
 	
 	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig::deserialize);
-	
+	public static final SurfaceBuilder<SurfaceBuilderConfig> WAVEY_DUNES = new WaveyDunesSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+
     @SubscribeEvent
     public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
         event.getRegistry().registerAll(

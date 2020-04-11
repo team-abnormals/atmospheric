@@ -1,16 +1,23 @@
 package com.bagel.atmospheric.common.world.biome;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 import com.google.common.collect.ImmutableList;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.GenerationStage.Carving;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.BlockBlobConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
@@ -146,5 +153,23 @@ public class AtmosphericBiomeFeatures {
 	
 	public static void addSparseYuccaTrees(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_TREE.withConfiguration(YUCCA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1))));
+	}
+	
+	public static void addCarvables() {
+		Set<Block> allBlocksToCarve = new HashSet<Block>();
+		
+		allBlocksToCarve.add(AtmosphericBlocks.ARID_SAND.get());
+		allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
+		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SAND.get());
+		allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
+		
+		for (Carving carverStage : GenerationStage.Carving.values())
+		{
+		    for (ConfiguredCarver<?> carver : AtmosphericBiomes.DUNES.get().getCarvers(carverStage))
+		    {
+		        allBlocksToCarve.addAll(carver.carver.carvableBlocks);
+		        carver.carver.carvableBlocks = allBlocksToCarve;
+		    }
+		}
 	}
 }

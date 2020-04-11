@@ -20,7 +20,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public final class FlourishingDunesBiome extends Biome {
 	public FlourishingDunesBiome() {
 		super((new Biome.Builder()
-			.surfaceBuilder(AtmosphericFeatures.DUNES, new SurfaceBuilderConfig(
+			.surfaceBuilder(AtmosphericFeatures.WAVEY_DUNES, new SurfaceBuilderConfig(
 				AtmosphericBlocks.ARID_SAND.get().getDefaultState(), 
 				AtmosphericBlocks.ARID_SAND.get().getDefaultState(), 
 				Blocks.GRAVEL.getDefaultState()))

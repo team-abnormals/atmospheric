@@ -2,6 +2,7 @@ package com.bagel.atmospheric.core;
 
 import com.bagel.atmospheric.common.data.PassionVineBundleDispenseBehavior;
 import com.bagel.atmospheric.common.data.PassionVineDispenseBehavior;
+import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.bagel.atmospheric.core.data.AtmosphericBlockData;
 import com.bagel.atmospheric.core.data.AtmosphericColors;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
@@ -50,6 +51,7 @@ public class Atmospheric
     
     private void setup(final FMLCommonSetupEvent event)
 	{    	
+    	AtmosphericBiomeFeatures.addCarvables();
         AtmosphericBiomes.registerBiomesToDictionary();
     	AtmosphericBlockData.registerCompostables();
     	AtmosphericBlockData.registerFlammables();

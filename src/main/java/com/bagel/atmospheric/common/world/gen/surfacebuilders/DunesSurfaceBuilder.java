@@ -72,12 +72,16 @@ public class DunesSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 	               --i;
 	               chunkIn.setBlockState(blockpos$mutableblockpos, blockstate1, false);
 	               if (i == 0 && blockstate1.getBlock() == AtmosphericBlocks.ARID_SAND.get() && j > 1) {
-	                  i = random.nextInt(4) + Math.max(0, i1 - 63);
-	                  blockstate1 = blockstate1.getBlock() == Blocks.SAND ? Blocks.SANDSTONE.getDefaultState() : AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState();
+	                   i = random.nextInt(4) + Math.max(0, i1 - 63);
+	                   blockstate1 = blockstate1.getBlock() == AtmosphericBlocks.RED_ARID_SAND.get() ? AtmosphericBlocks.RED_ARID_SANDSTONE.get().getDefaultState() : AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState();
+	               }
+	               if (i == 0 && blockstate1.getBlock() == AtmosphericBlocks.RED_ARID_SAND.get() && j > 1) {
+	                   i = random.nextInt(4) + Math.max(0, i1 - 63);
+	                   blockstate1 = blockstate1.getBlock() == AtmosphericBlocks.ARID_SAND.get() ? AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState() : AtmosphericBlocks.RED_ARID_SANDSTONE.get().getDefaultState();
 	               }
 	            }
 	         }
 	      }
-
+	      
 	   }
 	}
