@@ -17,6 +17,7 @@ import com.bagel.atmospheric.common.block.YuccaBundleBlock;
 import com.bagel.atmospheric.common.block.YuccaFlowerBlock;
 import com.bagel.atmospheric.common.block.YuccaFlowerDoubleBlock;
 import com.bagel.atmospheric.common.block.YuccaGateauBlock;
+import com.bagel.atmospheric.common.block.YuccaLeafCarpetBlock;
 import com.bagel.atmospheric.common.block.YuccaLeavesBlock;
 import com.bagel.atmospheric.common.block.YuccaSaplingBlock;
 import com.bagel.atmospheric.common.block.trees.AspenTree;
@@ -235,7 +236,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_BOOKSHELF 		= RegistryUtils.createBlockCompat("quark", "yucca_bookshelf", 			() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_LADDER 			= RegistryUtils.createBlockCompat("quark", "yucca_ladder", 				() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	
-	public static final RegistryObject<Block> YUCCA_LEAF_CARPET 	= RegistryUtils.createBlockCompat("quark", "yucca_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(YUCCA_LEAVES.get())), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_LEAF_CARPET 	= RegistryUtils.createBlockCompat("quark", "yucca_leaf_carpet", 	() -> new YuccaLeafCarpetBlock(Block.Properties.from(YUCCA_LEAVES.get())), ItemGroup.DECORATIONS);
 	
 	public static final RegistryObject<Block> YUCCA_CASK			= RegistryUtils.createBlockCompat("quark", "yucca_cask", 			() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ROASTED_YUCCA_CASK	= RegistryUtils.createBlockCompat("quark", "roasted_yucca_cask", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
