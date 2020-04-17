@@ -10,9 +10,12 @@ import net.minecraft.block.Blocks;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.lighting.LightEngine;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.PlantType;
 
 public class CrustoseBlock extends Block {
 
@@ -33,6 +36,19 @@ public class CrustoseBlock extends Block {
 		return func_220257_b(state, world, pos)
 				&& !world.getFluidState(blockpos).isTagged(FluidTags.WATER);
 	}
+	
+	@Override
+    public boolean canSustainPlant(BlockState state, IBlockReader blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
+        final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
+        final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
+        switch (plantType) {
+            case Plains: {
+            	return true;
+            }
+		default:
+			return false;
+        }
+    }
 
 	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
 		if (!worldIn.isRemote) {

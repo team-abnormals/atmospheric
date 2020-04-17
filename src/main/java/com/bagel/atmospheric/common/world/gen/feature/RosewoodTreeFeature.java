@@ -76,7 +76,7 @@ public class RosewoodTreeFeature extends TreeFeature {
 				for (int k1 = 0; k1 < height; ++k1) {
 					int logY = position.getY() + k1;
 					BlockPos blockpos = new BlockPos(logX, logY, logZ);
-					if (isAirOrLeavesOrSapling(worldIn, blockpos)) {
+					if (isAirOrLeaves(worldIn, blockpos)) {
 						this.placeLogAt(logsPlaced, worldIn, blockpos, boundsIn, Direction.UP);
 					}
 					if (rand.nextInt(6) == 0 && k1 > 3 && k1 < height && canopy == false) {
@@ -211,40 +211,25 @@ public class RosewoodTreeFeature extends TreeFeature {
 		}
 	}
 
-	private void placeLogAt(Set<BlockPos> changedBlocks, IWorldWriter worldIn, BlockPos pos,
-			MutableBoundingBox boundsIn, Direction direction) {
-		this.setLogState(changedBlocks, worldIn, pos,
-				ROSEWOOD_LOG.get().with(LogBlock.AXIS, direction.getAxis()),
-				boundsIn);
+	private void placeLogAt(Set<BlockPos> changedBlocks, IWorldWriter worldIn, BlockPos pos, MutableBoundingBox boundsIn, Direction direction) {
+		this.setLogState(changedBlocks, worldIn, pos, ROSEWOOD_LOG.get().with(LogBlock.AXIS, direction.getAxis()), boundsIn);
 	}
 
-	private void placeLeafAt(Set<BlockPos> worldIn, IWorldGenerationReader pos, BlockPos p_175924_3_,
-			MutableBoundingBox boundsIn) {
-		if (isAirOrLeaves(pos, p_175924_3_)) {
-			this.setLogState(worldIn, pos, p_175924_3_, ROSEWOOD_LEAVES.get(),
-					boundsIn);
+	private void placeLeafAt(Set<BlockPos> changedBlocks, IWorldGenerationReader world, BlockPos pos, MutableBoundingBox boundsIn) {
+		if (isAirOrLeaves(world, pos)) { 
+			this.setLogState(changedBlocks, world, pos, ROSEWOOD_LEAVES.get(), boundsIn);
 		}
-
 	}
 	
-	protected final void setLogState(Set<BlockPos> changedBlocks, IWorldWriter worldIn, BlockPos pos, BlockState p_208520_4_, MutableBoundingBox p_208520_5_) {
-	      this.func_208521_b(worldIn, pos, p_208520_4_);
-	      p_208520_5_.expandTo(new MutableBoundingBox(pos, pos));
-	      if (BlockTags.LOGS.contains(p_208520_4_.getBlock())) {
-	         changedBlocks.add(pos.toImmutable());
-	      }
-	   }
+	protected final void setLogState(Set<BlockPos> changedBlocks, IWorldWriter worldIn, BlockPos pos, BlockState state, MutableBoundingBox boundsIn) {
+		worldIn.setBlockState(pos, state, 18);
+		boundsIn.expandTo(new MutableBoundingBox(pos, pos));
+		if (BlockTags.LOGS.contains(state.getBlock())) {
+			changedBlocks.add(pos.toImmutable());
+		}
+	}
 	
 	private void func_208521_b(IWorldWriter p_208521_1_, BlockPos p_208521_2_, BlockState p_208521_3_) {
 		p_208521_1_.setBlockState(p_208521_2_, p_208521_3_, 18);
-	   }
-	
-	@SuppressWarnings("deprecation")
-	public static boolean isAirOrLeavesOrSapling(IWorldGenerationBaseReader worldIn, BlockPos pos) {
-	      if (worldIn instanceof net.minecraft.world.IWorldReader) // FORGE: Redirect to state method when possible
-	         return worldIn.hasBlockState(pos, state -> state.canBeReplacedByLeaves((net.minecraft.world.IWorldReader)worldIn, pos));
-	      return worldIn.hasBlockState(pos, (p_227223_0_) -> {
-	         return p_227223_0_.isAir() || p_227223_0_.isIn(BlockTags.LEAVES) || p_227223_0_ == AtmosphericBlocks.ROSEWOOD_SAPLING.get().getDefaultState();
-	      });
-	   }
+	}
 }

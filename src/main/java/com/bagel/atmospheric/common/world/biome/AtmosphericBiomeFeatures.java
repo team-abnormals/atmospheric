@@ -10,7 +10,6 @@ import com.google.common.collect.ImmutableList;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
@@ -45,49 +44,35 @@ public class AtmosphericBiomeFeatures {
 	public static BlockState KOUSA_LOG 		= AtmosphericBlocks.KOUSA_LOG.get().getDefaultState();
 	public static BlockState KOUSA_LEAVES 	= AtmosphericBlocks.KOUSA_LEAVES.get().getDefaultState();
 
+	public static BlockState CRUSTOSE 	= AtmosphericBlocks.CRUSTOSE.get().getDefaultState();
+
 	public static final TreeFeatureConfig KOUSA_TREE_CONFIG = (
 			new TreeFeatureConfig.Builder(
-					new SimpleBlockStateProvider(
-							AtmosphericBiomeFeatures.KOUSA_LOG), 
-					new SimpleBlockStateProvider(
-							AtmosphericBiomeFeatures.KOUSA_LEAVES), 
+					new SimpleBlockStateProvider(KOUSA_LOG), new SimpleBlockStateProvider(KOUSA_LEAVES), 
 					new BlobFoliagePlacer(0, 0))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.KOUSA_SAPLING.get()).build();
 	
 	public static final TreeFeatureConfig YUCCA_TREE_CONFIG = (
 			new TreeFeatureConfig.Builder(
-					new SimpleBlockStateProvider(
-							AtmosphericBiomeFeatures.YUCCA_LOG), 
-					new SimpleBlockStateProvider(
-							AtmosphericBiomeFeatures.YUCCA_LEAVES), 
+					new SimpleBlockStateProvider(YUCCA_LOG), new SimpleBlockStateProvider(YUCCA_LEAVES), 
 					new BlobFoliagePlacer(0, 0))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.YUCCA_SAPLING.get()).build();
 	
 	public static final TreeFeatureConfig ROSEWOOD_TREE_CONFIG = (
 			new TreeFeatureConfig.Builder(
 					new SimpleBlockStateProvider(ROSEWOOD_LOG), 
 					new SimpleBlockStateProvider(ROSEWOOD_LEAVES), 
-					new BlobFoliagePlacer(2, 0)))
-			.setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ROSEWOOD_SAPLING.get())
-			.build();
+					new BlobFoliagePlacer(2, 0))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ROSEWOOD_SAPLING.get()).build();
 	
 	public static final TreeFeatureConfig ROSEWOOD_TREE_BEEHIVES_CONFIG = (
 			new TreeFeatureConfig.Builder(
 					new SimpleBlockStateProvider(ROSEWOOD_LOG), 
 					new SimpleBlockStateProvider(ROSEWOOD_LEAVES), 
-					new BlobFoliagePlacer(2, 0)))
-			.decorators(ImmutableList.of(new BeehiveTreeDecorator(0.002F)))
-			.setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ROSEWOOD_SAPLING.get())
-			.build();
+					new BlobFoliagePlacer(2, 0))).decorators(ImmutableList.of(new BeehiveTreeDecorator(0.002F))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ROSEWOOD_SAPLING.get()).build();
 
 	public static final TreeFeatureConfig ROSEWOOD_TREE_MORE_BEEHIVES_CONFIG = (
 			new TreeFeatureConfig.Builder(
-					new SimpleBlockStateProvider(
-							AtmosphericBiomeFeatures.ROSEWOOD_LOG), 
-					new SimpleBlockStateProvider(
-							AtmosphericBiomeFeatures.ROSEWOOD_LEAVES), 
-					new BlobFoliagePlacer(0, 0)))
-			.decorators(ImmutableList.of(new BeehiveTreeDecorator(0.05F)))
-			.setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ROSEWOOD_SAPLING.get())
-			.build();
+					new SimpleBlockStateProvider(ROSEWOOD_LOG), 
+					new SimpleBlockStateProvider(ROSEWOOD_LEAVES), 
+					new BlobFoliagePlacer(0, 0))).decorators(ImmutableList.of(new BeehiveTreeDecorator(0.05F))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ROSEWOOD_SAPLING.get()).build();
 	
 	public static final TreeFeatureConfig ASPEN_TREE_CONFIG = (
 			new TreeFeatureConfig.Builder(
@@ -99,7 +84,7 @@ public class AtmosphericBiomeFeatures {
 			new HugeTreeFeatureConfig.Builder(
 					new SimpleBlockStateProvider(ASPEN_LOG), 
 					new SimpleBlockStateProvider(ASPEN_LEAVES))).baseHeight(13).heightInterval(15).crownHeight(3).decorators(ImmutableList.of(
-							new AlterGroundTreeDecorator(new SimpleBlockStateProvider(Blocks.PODZOL.getDefaultState())))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ASPEN_SAPLING.get()).build();
+							new AlterGroundTreeDecorator(new SimpleBlockStateProvider(CRUSTOSE)))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.ASPEN_SAPLING.get()).build();
 
 	
 	public static void addDoublePlants(Biome biomeIn) {
