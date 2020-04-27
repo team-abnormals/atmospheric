@@ -1,0 +1,1 @@
+{"type":"corail_woodcutter:woodcutting","ingredient":{"item":"atmospheric:rosewood_planks"},"result":"atmospheric:rosewood_door","count":1,"conditions":[{"type":"forge:mod_loaded","modid":"corail_woodcutter"}]}

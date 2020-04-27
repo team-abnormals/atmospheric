@@ -1,0 +1,1 @@
+{"type":"minecraft:impossible","ingredient":{"tag":"atmospheric:rosewood_logs"},"result":"atmospheric:rosewood_sign","count":4,"conditions":[{"type":"forge:mod_loaded","modid":"corail_woodcutter"}]}

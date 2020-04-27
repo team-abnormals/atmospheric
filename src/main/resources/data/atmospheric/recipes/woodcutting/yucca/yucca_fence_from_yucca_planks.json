@@ -1,0 +1,1 @@
+{"type":"corail_woodcutter:woodcutting","ingredient":{"item":"atmospheric:yucca_planks"},"result":"atmospheric:yucca_fence","count":1,"conditions":[{"type":"forge:mod_loaded","modid":"corail_woodcutter"}]}

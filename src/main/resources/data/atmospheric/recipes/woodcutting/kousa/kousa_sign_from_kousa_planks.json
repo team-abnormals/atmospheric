@@ -1,0 +1,1 @@
+{"type":"minecraft:impossible","ingredient":{"item":"atmospheric:kousa_planks"},"result":"atmospheric:kousa_sign","count":1,"conditions":[{"type":"forge:mod_loaded","modid":"corail_woodcutter"}]}

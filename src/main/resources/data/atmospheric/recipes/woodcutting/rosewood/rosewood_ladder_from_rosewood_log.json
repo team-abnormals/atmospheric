@@ -1,0 +1,1 @@
+{"type":"corail_woodcutter:woodcutting","ingredient":{"tag":"atmospheric:rosewood_logs"},"result":"atmospheric:rosewood_ladder","count":4,"conditions":[{"type":"forge:mod_loaded","modid":"corail_woodcutter"}]}
