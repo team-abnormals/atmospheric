@@ -8,8 +8,7 @@ import com.bagel.atmospheric.core.data.AtmosphericColors;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
-import com.bagel.atmospheric.core.registry.AtmosphericEntities;
-import com.bagel.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.potion.Effect;
@@ -28,16 +27,16 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod.EventBusSubscriber(modid = "atmospheric", bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Atmospheric
 {
-    //private static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "atmospheric";
+	public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MODID);
 
     public Atmospheric() {
     	IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         
-        AtmosphericBlocks.BLOCKS.register(modEventBus);
-        AtmosphericItems.ITEMS.register(modEventBus);
+    	REGISTRY_HELPER.getDeferredItemRegister().register(modEventBus);
+    	REGISTRY_HELPER.getDeferredBlockRegister().register(modEventBus);
+    	
     	AtmosphericBiomes.BIOMES.register(modEventBus);
-        AtmosphericEntities.ENTITY_TYPES.register(modEventBus);
         AtmosphericEffects.EFFECTS.register(modEventBus);
         AtmosphericEffects.POTIONS.register(modEventBus);
         
@@ -55,7 +54,6 @@ public class Atmospheric
         AtmosphericBiomes.registerBiomesToDictionary();
     	AtmosphericBlockData.registerCompostables();
     	AtmosphericBlockData.registerFlammables();
-    	AtmosphericBlockData.registerStrippables();
     	AtmosphericEffects.registerBrewingRecipes();
     	DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
     	DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
@@ -65,7 +63,6 @@ public class Atmospheric
     {
     	AtmosphericColors.registerBlockColors();
     	AtmosphericBlockData.setupRenderLayer();
-    	AtmosphericEntities.registerRendering();
     }
     
     @SubscribeEvent

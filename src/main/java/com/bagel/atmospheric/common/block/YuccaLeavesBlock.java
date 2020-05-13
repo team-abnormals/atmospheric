@@ -1,9 +1,9 @@
 package com.bagel.atmospheric.common.block;
 
 import com.bagel.atmospheric.core.data.AtmosphericDamageSources;
+import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsLeavesBlock;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.LeavesBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +14,7 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class YuccaLeavesBlock extends LeavesBlock {
+public class YuccaLeavesBlock extends AbnormalsLeavesBlock {
     private static final VoxelShape HITBOX = makeCuboidShape(1.0F, 1.0F, 1.0F, 15.0F, 15.0F, 15.0F);
 
 	public YuccaLeavesBlock(Properties properties) {

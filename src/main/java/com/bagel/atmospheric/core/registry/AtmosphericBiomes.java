@@ -22,15 +22,15 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class AtmosphericBiomes {
 	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, Atmospheric.MODID);
 	
-    public static RegistryObject<Biome> ROSEWOOD_FOREST 		= BIOMES.register("rosewood_forest", () -> new RosewoodForestBiome());
-    public static RegistryObject<Biome> ROSEWOOD_MOUNTAINS 		= BIOMES.register("rosewood_mountains", () -> new RosewoodMountainsBiome());
-    public static RegistryObject<Biome> ROSEWOOD_PLATEAU 		= BIOMES.register("rosewood_plateau", () -> new RosewoodPlateauBiome());
-    public static RegistryObject<Biome> ROSEWOOD_FOREST_PLATEAU = BIOMES.register("rosewood_forest_plateau", () -> new RosewoodForestPlateauBiome());
+    public static final RegistryObject<Biome> ROSEWOOD_FOREST 			= BIOMES.register("rosewood_forest", () -> new RosewoodForestBiome());
+    public static final RegistryObject<Biome> ROSEWOOD_MOUNTAINS 		= BIOMES.register("rosewood_mountains", () -> new RosewoodMountainsBiome());
+    public static final RegistryObject<Biome> ROSEWOOD_PLATEAU 			= BIOMES.register("rosewood_plateau", () -> new RosewoodPlateauBiome());
+    public static final RegistryObject<Biome> ROSEWOOD_FOREST_PLATEAU 	= BIOMES.register("rosewood_forest_plateau", () -> new RosewoodForestPlateauBiome());
     
-	public static RegistryObject<Biome> DUNES 				= BIOMES.register("dunes", 				() -> new DunesBiome());
-    public static RegistryObject<Biome> ROCKY_DUNES 		= BIOMES.register("rocky_dunes",		() -> new RockyDunesBiome());
-	public static RegistryObject<Biome> PETRIFIED_DUNES 	= BIOMES.register("petrified_dunes",	() -> new PetrifiedDunesBiome());
-	public static RegistryObject<Biome> FLOURISHING_DUNES	= BIOMES.register("flourishing_dunes",	() -> new FlourishingDunesBiome());
+	public static final RegistryObject<Biome> DUNES 			= BIOMES.register("dunes", 				() -> new DunesBiome());
+    public static final RegistryObject<Biome> ROCKY_DUNES 		= BIOMES.register("rocky_dunes",		() -> new RockyDunesBiome());
+	public static final RegistryObject<Biome> PETRIFIED_DUNES 	= BIOMES.register("petrified_dunes",	() -> new PetrifiedDunesBiome());
+	public static final RegistryObject<Biome> FLOURISHING_DUNES	= BIOMES.register("flourishing_dunes",	() -> new FlourishingDunesBiome());
     
     public static void registerBiomesToDictionary() {
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ROSEWOOD_FOREST.get(), 2));

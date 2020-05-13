@@ -2,7 +2,7 @@ package com.bagel.atmospheric.core.data;
 
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
-import com.bagel.atmospheric.core.util.DataUtils;
+import com.teamabnormals.abnormals_core.core.utils.DataUtils;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -48,21 +48,6 @@ public class AtmosphericBlockData {
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.YUCCA_CASK.get());
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.ROASTED_YUCCA_CASK.get());
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.BARREL_CACTUS_BATCH.get());
-	}
-	
-	public static void registerStrippables() {
-		DataUtils.registerStrippable(AtmosphericBlocks.ROSEWOOD_LOG.get(), AtmosphericBlocks.STRIPPED_ROSEWOOD_LOG.get());
-		DataUtils.registerStrippable(AtmosphericBlocks.ROSEWOOD.get(), AtmosphericBlocks.STRIPPED_ROSEWOOD.get());
-		
-		DataUtils.registerStrippable(AtmosphericBlocks.YUCCA_LOG.get(), AtmosphericBlocks.STRIPPED_YUCCA_LOG.get());
-		DataUtils.registerStrippable(AtmosphericBlocks.YUCCA_WOOD.get(), AtmosphericBlocks.STRIPPED_YUCCA_WOOD.get());
-		
-		DataUtils.registerStrippable(AtmosphericBlocks.KOUSA_LOG.get(), AtmosphericBlocks.STRIPPED_KOUSA_LOG.get());
-		DataUtils.registerStrippable(AtmosphericBlocks.KOUSA_WOOD.get(), AtmosphericBlocks.STRIPPED_KOUSA_WOOD.get());
-		
-		DataUtils.registerStrippable(AtmosphericBlocks.ASPEN_LOG.get(), AtmosphericBlocks.STRIPPED_ASPEN_LOG.get());
-		DataUtils.registerStrippable(AtmosphericBlocks.ASPEN_WOOD.get(), AtmosphericBlocks.STRIPPED_ASPEN_WOOD.get());
-		DataUtils.registerStrippable(AtmosphericBlocks.CRUSTOSE_LOG.get(), AtmosphericBlocks.ASPEN_LOG.get());
 	}
 	
 	public static void registerFlammables() {

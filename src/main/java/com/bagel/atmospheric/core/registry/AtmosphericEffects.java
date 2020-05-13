@@ -12,16 +12,18 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionBrewing;
 import net.minecraft.potion.Potions;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+@Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericEffects {
 	public static final DeferredRegister<Effect> EFFECTS = new DeferredRegister<>(ForgeRegistries.POTIONS, Atmospheric.MODID);
 	public static final DeferredRegister<Potion> POTIONS = new DeferredRegister<>(ForgeRegistries.POTION_TYPES, Atmospheric.MODID);
 	
-	public static Effect RELIEF = new ReliefEffect().setRegistryName("relief");
-	public static Effect WORSENING = new WorseningEffect().setRegistryName("worsening");
-    public static Effect SPITTING = new SpittingEffect().setRegistryName("spitting");
+	public static final Effect RELIEF = new ReliefEffect().setRegistryName("relief");
+	public static final Effect WORSENING = new WorseningEffect().setRegistryName("worsening");
+    public static final Effect SPITTING = new SpittingEffect().setRegistryName("spitting");
     
     public static final RegistryObject<Potion> RELIEF_NORMAL  = POTIONS.register("relief", () -> new Potion(new EffectInstance(RELIEF, 3600)));
 	public static final RegistryObject<Potion> RELIEF_STRONG  = POTIONS.register("relief_strong", () -> new Potion(new EffectInstance(RELIEF, 1800, 1)));

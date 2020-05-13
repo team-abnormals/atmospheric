@@ -16,6 +16,7 @@
 	"block.atmospheric.rosewood_fence_gate": "Rosewood Fence Gate",
 	"block.atmospheric.rosewood_sapling": "Rosewood Sapling",
 	"block.atmospheric.rosewood_leaves": "Rosewood Leaves",
+	"block.atmospheric.rosewood_sign": "Rosewood Sign",
 	
 	"block.atmospheric.passion_vine": "Passion Vine",
 	"block.atmospheric.passion_vine_bundle": "Passion Vine Bundle",	
@@ -41,8 +42,6 @@
 	"item.atmospheric.passionfruit_tart": "Passionfruit Tart",
 	"item.atmospheric.passionfruit_sorbet": "Passionfruit Sorbet",
 	"item.atmospheric.passion_vine_coil": "Passion Vine Coil",
-	
-	"entity.atmospheric.boat": "Boat",
 	
 	"effect.atmospheric.relief": "Relief",
 	"effect.atmospheric.worsening": "Worsening",
@@ -162,6 +161,7 @@
 	"block.atmospheric.yucca_fence_gate": "Yucca Fence Gate",
 	"block.atmospheric.yucca_sapling": "Yucca Sapling",
 	"block.atmospheric.yucca_leaves": "Yucca Leaves",
+	"block.atmospheric.yucca_sign": "Yucca Sign",
 	
 	"block.atmospheric.yucca_flower": "Yucca Flower",
 	"block.atmospheric.tall_yucca_flower": "Tall Yucca Flower",
@@ -273,6 +273,7 @@
 	"block.atmospheric.kousa_fence_gate": "Kousa Fence Gate",
 	"block.atmospheric.kousa_sapling": "Kousa Sapling",
 	"block.atmospheric.kousa_leaves": "Kousa Leaves",
+	"block.atmospheric.kousa_sign": "Kousa Sign",
 	
 	"block.atmospheric.potted_kousa_sapling": "Potted Kousa Sapling",
 	
@@ -304,6 +305,7 @@
 	"block.atmospheric.aspen_fence_gate": "Aspen Fence Gate",
 	"block.atmospheric.aspen_sapling": "Aspen Sapling",
 	"block.atmospheric.aspen_leaves": "Aspen Leaves",
+	"block.atmospheric.aspen_sign": "Aspen Sign",
 	
 	"block.atmospheric.potted_aspen_sapling": "Potted Aspen Sapling",
 	

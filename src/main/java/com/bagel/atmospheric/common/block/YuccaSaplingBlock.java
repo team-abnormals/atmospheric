@@ -4,9 +4,9 @@ import javax.annotation.Nullable;
 
 import com.bagel.atmospheric.core.data.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.data.AtmosphericTags;
+import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsSaplingBlock;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -18,7 +18,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
-public class YuccaSaplingBlock extends SaplingBlock implements net.minecraftforge.common.IPlantable {
+public class YuccaSaplingBlock extends AbnormalsSaplingBlock implements net.minecraftforge.common.IPlantable {
 	public YuccaSaplingBlock(Tree tree, Properties properties) {
         super(tree, properties);
     }
