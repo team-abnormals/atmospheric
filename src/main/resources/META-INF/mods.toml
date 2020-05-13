@@ -23,6 +23,6 @@ There will continue to be more biomes over time!
 [[dependencies.atmospheric]]
     modId="abnormals_core"
     mandatory=true
-    versionRange="[1.0.0,)"
+    versionRange="[1.0.1,)"
     ordering="AFTER"
     side="BOTH"
