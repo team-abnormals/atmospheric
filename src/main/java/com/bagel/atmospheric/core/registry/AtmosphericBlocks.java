@@ -60,7 +60,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.potion.Effects;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
@@ -70,11 +69,6 @@ import net.minecraftforge.fml.common.Mod;
 public class AtmosphericBlocks {
 
 	public static final RegistryHelper HELPER = Atmospheric.REGISTRY_HELPER;	
-	
-	private static final ResourceLocation ROSEWOOD_SIGN_TEXTURE = new ResourceLocation(Atmospheric.MODID, "textures/entity/signs/rosewood.png");
-	private static final ResourceLocation YUCCA_SIGN_TEXTURE = new ResourceLocation(Atmospheric.MODID, "textures/entity/signs/yucca.png");
-	private static final ResourceLocation KOUSA_SIGN_TEXTURE = new ResourceLocation(Atmospheric.MODID, "textures/entity/signs/kousa.png");
-	private static final ResourceLocation ASPEN_SIGN_TEXTURE = new ResourceLocation(Atmospheric.MODID, "textures/entity/signs/aspen.png");
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -93,7 +87,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_FENCE_GATE 		= HELPER.createBlock("rosewood_fence_gate", 	() -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> ROSEWOOD_BUTTON 			= HELPER.createBlock("rosewood_button", 		() -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> ROSEWOOD_DOOR 			= HELPER.createBlock("rosewood_door", 			() -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
-	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> ROSEWOOD_SIGNS = HELPER.createSignBlock("rosewood", MaterialColor.PINK, ROSEWOOD_SIGN_TEXTURE);
+	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> ROSEWOOD_SIGNS = HELPER.createSignBlock("rosewood", MaterialColor.PINK);
 
 	public static final RegistryObject<Block> PASSION_VINE 				= HELPER.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= HELPER.createBlock("passion_vine_bundle", 	() -> new PassionVineBundleBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
@@ -202,7 +196,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_FENCE_GATE 		= HELPER.createBlock("yucca_fence_gate", 	() -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> YUCCA_BUTTON 			= HELPER.createBlock("yucca_button", 		() -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> YUCCA_DOOR 			= HELPER.createBlock("yucca_door", 			() -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
-	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> YUCCA_SIGNS = HELPER.createSignBlock("yucca", MaterialColor.ORANGE_TERRACOTTA, YUCCA_SIGN_TEXTURE);
+	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> YUCCA_SIGNS = HELPER.createSignBlock("yucca", MaterialColor.ORANGE_TERRACOTTA);
 
 	public static final RegistryObject<Block> YUCCA_SAPLING 		= HELPER.createBlock("yucca_sapling", 		() -> new YuccaSaplingBlock(new YuccaTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_YUCCA_SAPLING	= HELPER.createBlockNoItem("potted_yucca_sapling",	() -> new FlowerPotBlock(YUCCA_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
@@ -270,7 +264,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> KOUSA_BUTTON 			= HELPER.createBlock("kousa_button", 		() -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> KOUSA_DOOR 			= HELPER.createBlock("kousa_door", 			() -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> POTTED_KOUSA_SAPLING	= HELPER.createBlockNoItem("potted_kousa_sapling",	() -> new FlowerPotBlock(KOUSA_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
-	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> KOUSA_SIGNS = HELPER.createSignBlock("kousa", MaterialColor.GREEN, KOUSA_SIGN_TEXTURE);
+	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> KOUSA_SIGNS = HELPER.createSignBlock("kousa", MaterialColor.GREEN);
 
 	public static final RegistryObject<Block> VERTICAL_KOUSA_PLANKS = HELPER.createCompatBlock("quark", "vertical_kousa_planks",() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "kousa_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
@@ -299,7 +293,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_BUTTON 			= HELPER.createBlock("aspen_button", 		() -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> ASPEN_DOOR 			= HELPER.createBlock("aspen_door", 			() -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> POTTED_ASPEN_SAPLING	= HELPER.createBlockNoItem("potted_aspen_sapling",	() -> new FlowerPotBlock(ASPEN_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
-	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> ASPEN_SIGNS = HELPER.createSignBlock("aspen", MaterialColor.YELLOW, ASPEN_SIGN_TEXTURE);
+	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> ASPEN_SIGNS = HELPER.createSignBlock("aspen", MaterialColor.YELLOW);
 
 	public static final RegistryObject<Block> VERTICAL_ASPEN_PLANKS = HELPER.createCompatBlock("quark", "vertical_aspen_planks",() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "aspen_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
