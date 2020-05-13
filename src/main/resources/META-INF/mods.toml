@@ -1,8 +1,8 @@
 modLoader="javafml" #mandatory
 loaderVersion="[31,)" #mandatory (31 is current forge version)
-logoFile="rosewood.png"
+logoFile="logo.png"
 authors="five & bageldotjpg" #optional
-credits="Thanks for this example mod goes to Java"
+credits="Jackson for CurseForge page & Logo"
 
 [[mods]]
 modId="atmospheric"
