@@ -16,6 +16,7 @@
 	"block.atmospheric.rosewood_fence_gate": "Puerta de valla de palisandro",
 	"block.atmospheric.rosewood_sapling": "Brote de palisandro",
 	"block.atmospheric.rosewood_leaves": "Hojas de palisandro",
+	"block.atmospheric.rosewood_sign": "Cartel de palisandro",
 	
 	"block.atmospheric.passion_vine": "Enredadera pasionaria",
 	"block.atmospheric.passion_vine_bundle": "Montón de enredaderas pasionarias",	
@@ -41,8 +42,6 @@
 	"item.atmospheric.passionfruit_tart": "Tartita de fruta de la pasión",
 	"item.atmospheric.passionfruit_sorbet": "Sorbete de fruta de la pasión",
 	"item.atmospheric.passion_vine_coil": "Rollo de enredadera pasionaria",
-	
-	"entity.atmospheric.boat": "Bote",
 	
 	"effect.atmospheric.relief": "Alivio",
 	"effect.atmospheric.worsening": "Degradación",
@@ -162,6 +161,7 @@
 	"block.atmospheric.yucca_fence_gate": "Puerta de valla de yuca",
 	"block.atmospheric.yucca_sapling": "Brote de yuca",
 	"block.atmospheric.yucca_leaves": "Hojas de yuca",
+	"block.atmospheric.yucca_sign": "Cartel de yuca",
 	
 	"block.atmospheric.yucca_flower": "Flor de yuca",
 	"block.atmospheric.tall_yucca_flower": "Flor de yuca alta",
@@ -251,6 +251,8 @@
 	"death.attack.yuccaFlower.player": "%1$s fue rebanado/a por una flor de yuca tratando de escapar de %2$s",
 	"death.attack.yuccaBranch": "%1$s fue rebanado/a por un ramo de yuca",
 	"death.attack.yuccaBranch.player": "%1$s fue rebanado/a por un ramo de yuca tratando de escapar de %2$s",
+	"death.attack.yuccaLeaves": "%1$s fue rebanado por hojas de yuca",
+	"death.attack.yuccaLeaves.player": "%1$s fue rebanado por hojas de yuca tratando de escapar de %2$s",
 	"death.attack.barrelCactus": "%1$s se dio con un cactus barril",
 	"death.attack.barrelCactus.player": "%1$s se dio con un cactus barril tratando de escapar de %2$s",
   
@@ -271,6 +273,7 @@
 	"block.atmospheric.kousa_fence_gate": "Puerta de valla de kousa",
 	"block.atmospheric.kousa_sapling": "Brote de kousa",
 	"block.atmospheric.kousa_leaves": "Hojas de kousa",
+	"block.atmospheric.kousa_sign": "Cartel de kousa",
 	
 	"block.atmospheric.potted_kousa_sapling": "Maceta con brote de kousa",
 	
@@ -302,6 +305,7 @@
 	"block.atmospheric.aspen_fence_gate": "Puerta de valla de álamo temblón",
 	"block.atmospheric.aspen_sapling": "Brote de álamo temblón",
 	"block.atmospheric.aspen_leaves": "Hojas de álamo temblón",
+	"block.atmospheric.aspen_sign": "Cartel de álamo temblón",
 	
 	"block.atmospheric.potted_aspen_sapling": "Maceta con brote de álamo temblón",
 	
