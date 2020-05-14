@@ -7,14 +7,14 @@
   ],
   "key": {
     "#": {
-      "item": "atmospheric:aspen_planks"
+      "item": "atmospheric:yucca_planks"
     },
     "X": {
-      "item": "minecraft:stick"
+      "tag": "forge:rods/wooden"
     }
   },
   "result": {
-    "item": "atmospheric:aspen_sign",
+    "item": "atmospheric:yucca_sign",
     "count": 3
   }
 }

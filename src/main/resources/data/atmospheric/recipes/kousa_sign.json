@@ -7,14 +7,14 @@
   ],
   "key": {
     "#": {
-      "item": "atmospheric:rosewood_planks"
+      "item": "atmospheric:kousa_planks"
     },
     "X": {
-      "item": "minecraft:stick"
+      "tag": "forge:rods/wooden"
     }
   },
   "result": {
-    "item": "atmospheric:rosewood_sign",
+    "item": "atmospheric:kousa_sign",
     "count": 3
   }
 }
