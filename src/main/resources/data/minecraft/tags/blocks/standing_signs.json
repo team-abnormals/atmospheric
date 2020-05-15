@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:rosewood_sign",
+    "atmospheric:yucca_sign",
+    "atmospheric:kousa_sign",
+    "atmospheric:aspen_sign"
+  ]
+}
