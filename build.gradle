@@ -16,9 +16,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.2.1'
+version = 'v1.3.0'
 group = 'com.bagel.atmospheric' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'atmospheric-1.15.2'
+archivesBaseName = 'Atmospheric-1.15.2'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
