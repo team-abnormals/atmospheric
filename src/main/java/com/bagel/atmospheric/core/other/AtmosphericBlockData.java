@@ -10,11 +10,13 @@ import net.minecraft.client.renderer.RenderTypeLookup;
 public class AtmosphericBlockData {
 	public static void registerCompostables() {
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_LEAVES.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_SAPLING.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get());
+		
 		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
 		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
 		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get());
 		DataUtils.registerCompostable(0.5F, AtmosphericBlocks.PASSION_VINE_BUNDLE.get());
-		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_SAPLING.get());
 		DataUtils.registerCompostable(0.5F, AtmosphericBlocks.PASSION_VINE.get());
 		
 		DataUtils.registerCompostable(0.65F,AtmosphericItems.PASSIONFRUIT.get());
@@ -23,6 +25,8 @@ public class AtmosphericBlockData {
 		
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.YUCCA_LEAVES.get());
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.YUCCA_SAPLING.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.YUCCA_LEAF_CARPET.get());
+
 		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.YUCCA_FLOWER.get());
 		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.TALL_YUCCA_FLOWER.get());
 		DataUtils.registerCompostable(0.5F, AtmosphericBlocks.BARREL_CACTUS.get());
@@ -35,15 +39,16 @@ public class AtmosphericBlockData {
 		
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_LEAVES.get());
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_SAPLING.get());
-		
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_LEAF_CARPET.get());
+
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ASPEN_LEAVES.get());
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ASPEN_SAPLING.get());
-		
-		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get());
-		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.YUCCA_LEAF_CARPET.get());
-		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_LEAF_CARPET.get());
 		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ASPEN_LEAF_CARPET.get());
 		
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.GRIMWOOD_LEAVES.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.GRIMWOOD_SAPLING.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.GRIMWOOD_LEAF_CARPET.get());
+
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.PASSIONFRUIT_CRATE.get());
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.YUCCA_CASK.get());
 		DataUtils.registerCompostable(1F, AtmosphericBlocks.ROASTED_YUCCA_CASK.get());
@@ -61,6 +66,10 @@ public class AtmosphericBlockData {
 		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_STAIRS.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_FENCE.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_FENCE_GATE.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_ROSEWOOD_PLANKS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get(), 30, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_VERTICAL_SLAB.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_BOOKSHELF.get(), 5, 20);
 
 		DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE.get(), 5, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE_BUNDLE.get(), 5, 60);
@@ -75,6 +84,10 @@ public class AtmosphericBlockData {
 		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_STAIRS.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_FENCE.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_FENCE_GATE.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_YUCCA_PLANKS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_LEAF_CARPET.get(), 30, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_VERTICAL_SLAB.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_BOOKSHELF.get(), 5, 20);
 		
 		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_FLOWER.get(), 5, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(), 5, 60);
@@ -90,6 +103,10 @@ public class AtmosphericBlockData {
 		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_STAIRS.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_FENCE.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_FENCE_GATE.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_KOUSA_PLANKS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_LEAF_CARPET.get(), 30, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_VERTICAL_SLAB.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_BOOKSHELF.get(), 5, 20);
 		
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_LEAVES.get(), 30, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_LOG.get(), 5, 5);
@@ -101,47 +118,59 @@ public class AtmosphericBlockData {
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_STAIRS.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_FENCE.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_FENCE_GATE.get(), 5, 20);
-		
-		
-		DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_ROSEWOOD_PLANKS.get(), 5, 20);
-		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get(), 30, 60);
-		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_VERTICAL_SLAB.get(), 5, 20);
-		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_BOOKSHELF.get(), 5, 20);
-		
-		DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_YUCCA_PLANKS.get(), 5, 20);
-		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_LEAF_CARPET.get(), 30, 60);
-		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_VERTICAL_SLAB.get(), 5, 20);
-		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_BOOKSHELF.get(), 5, 20);
-			
-		DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_KOUSA_PLANKS.get(), 5, 20);
-		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_LEAF_CARPET.get(), 30, 60);
-		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_VERTICAL_SLAB.get(), 5, 20);
-		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_BOOKSHELF.get(), 5, 20);
-			
 		DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_ASPEN_PLANKS.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_LEAF_CARPET.get(), 30, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_VERTICAL_SLAB.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_BOOKSHELF.get(), 5, 20);
+		
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_LEAVES.get(), 30, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_LOG.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_GRIMWOOD_LOG.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_GRIMWOOD.get(), 5, 5);
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_PLANKS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_SLAB.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_STAIRS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_FENCE.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_FENCE_GATE.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_GRIMWOOD_PLANKS.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_LEAF_CARPET.get(), 30, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_VERTICAL_SLAB.get(), 5, 20);
+		DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_BOOKSHELF.get(), 5, 20);
 	}
 	
 	public static void setupRenderLayer()
 	{
-		//Doors and Trapdoors
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LEAVES.get(),RenderType.getCutoutMipped());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_LEAVES.get(),RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_LEAVES.get(),RenderType.getCutoutMipped());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_LEAVES.get(),RenderType.getCutoutMipped());
-
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LEAF_CARPET.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_LEAF_CARPET.get(),RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_LEAF_CARPET.get(),RenderType.getCutout());
-		
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LADDER.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_LADDER.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_SAPLING.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_ROSEWOOD_SAPLING.get(),RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_LADDER.get(),RenderType.getCutout());
+
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_LEAVES.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_LEAF_CARPET.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_SAPLING.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_SAPLING.get(),RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_LADDER.get(),RenderType.getCutout());
+
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_LEAVES.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_SAPLING.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_LEAF_CARPET.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_KOUSA_SAPLING.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_LADDER.get(),RenderType.getCutout());
 		
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LEAVES.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LEAF_CARPET.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_SAPLING.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_ASPEN_SAPLING.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LADDER.get(),RenderType.getCutout());
+		
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.GRIMWOOD_LEAVES.get(),RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.GRIMWOOD_LEAF_CARPET.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.GRIMWOOD_SAPLING.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_GRIMWOOD_SAPLING.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.GRIMWOOD_LADDER.get(),RenderType.getCutout());
+
 		//Flowers
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.WARM_MONKEY_BRUSH.get(),RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.HOT_MONKEY_BRUSH.get(),RenderType.getCutout());
@@ -150,10 +179,6 @@ public class AtmosphericBlockData {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.PASSION_VINE.get(),RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_FLOWER.get(),RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_SAPLING.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.KOUSA_SAPLING.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_SAPLING.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_SAPLING.get(),RenderType.getCutout());
 		
 		//Potted Flowers
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_WARM_MONKEY_BRUSH.get(),RenderType.getCutout());
@@ -161,9 +186,5 @@ public class AtmosphericBlockData {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_SCALDING_MONKEY_BRUSH.get(),RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_FLOWER.get(),RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_GILIA.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_ASPEN_SAPLING.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_KOUSA_SAPLING.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_ROSEWOOD_SAPLING.get(),RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_SAPLING.get(),RenderType.getCutout());
 	}
 }

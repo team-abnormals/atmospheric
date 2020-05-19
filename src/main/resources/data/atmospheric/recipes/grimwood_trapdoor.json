@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_trapdoor",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:grimwood_planks"
+    }
+  },
+  "result": {
+    "item": "atmospheric:grimwood_trapdoor",
+    "count": 2
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/ladder",
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "atmospheric:block/grimwood_ladder",
+        "texture": "atmospheric:block/grimwood_ladder"
+    }
+}

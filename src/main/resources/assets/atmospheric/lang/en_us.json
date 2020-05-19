@@ -316,6 +316,34 @@
 	"block.atmospheric.aspen_leaf_carpet": "Aspen Leaf Carpet",
 	
 	"item.atmospheric.aspen_boat": "Aspen Boat",
+	
+  "_comment6": "START OF THE GRIMWOOD SECTION",
+
+	"block.atmospheric.grimwood_log": "Grimwood Log",
+	"block.atmospheric.grimwood": "Grimwood",
+	"block.atmospheric.stripped_grimwood_log": "Stripped Grimwood Log",
+	"block.atmospheric.stripped_grimwood": "Stripped Grimwood",
+	"block.atmospheric.grimwood_planks": "Grimwood Planks",
+	"block.atmospheric.grimwood_stairs": "Grimwood Stairs",
+	"block.atmospheric.grimwood_slab": "Grimwood Slab",
+	"block.atmospheric.grimwood_pressure_plate": "Grimwood Pressure Plate",
+	"block.atmospheric.grimwood_button": "Grimwood Button",
+	"block.atmospheric.grimwood_door": "Grimwood Door",
+	"block.atmospheric.grimwood_trapdoor": "Grimwood Trapdoor",
+	"block.atmospheric.grimwood_fence": "Grimwood Fence",
+	"block.atmospheric.grimwood_fence_gate": "Grimwood Fence Gate",
+	"block.atmospheric.grimwood_sapling": "Grimwood Sapling",
+	"block.atmospheric.grimwood_leaves": "Grimwood Leaves",
+	"block.atmospheric.grimwood_sign": "Grimwood Sign",
+	"block.atmospheric.potted_grimwood_sapling": "Potted Grimwood Sapling",
+	
+	"block.atmospheric.grimwood_bookshelf": "Grimwood Bookshelf",
+	"block.atmospheric.grimwood_vertical_slab": "Grimwood Vertical Slab",
+	"block.atmospheric.vertical_grimwood_planks": "Vertical Grimwood Planks",
+	"block.atmospheric.grimwood_ladder": "Grimwood Ladder",
+	"block.atmospheric.grimwood_leaf_carpet": "Grimwood Leaf Carpet",
+	
+	"item.atmospheric.grimwood_boat": "Grimwood Boat",
  
-  "_comment6": "END"
+  "_comment7": "END"
 }

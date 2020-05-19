@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "atmospheric:block/grimwood_pressure_plate" },
+        "powered=true": { "model": "atmospheric:block/grimwood_pressure_plate_down" }
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:vertical_grimwood_planks"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:grimwood_planks"
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        }
+      ]
+    }
+  ]
+}

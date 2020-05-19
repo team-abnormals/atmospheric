@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:grimwood_planks"
+    },
+    "X": {
+      "item": "minecraft:book"
+    }
+  },
+  "result": {
+    "item": "atmospheric:grimwood_bookshelf"
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        }
+      ]
+    }
+  ]
+}

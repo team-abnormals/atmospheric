@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:grimwood_log",
+    "atmospheric:grimwood",
+    "atmospheric:stripped_grimwood_log",
+    "atmospheric:stripped_grimwood"
+  ]
+}

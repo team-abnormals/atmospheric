@@ -5,9 +5,11 @@
     "atmospheric:yucca_planks",
     "atmospheric:kousa_planks",
     "atmospheric:aspen_planks",
+    "atmospheric:grimwood_planks",
     "atmospheric:vertical_rosewood_planks",
     "atmospheric:vertical_yucca_planks",
     "atmospheric:vertical_kousa_planks",
-    "atmospheric:vertical_aspen_planks"
+    "atmospheric:vertical_aspen_planks",
+    "atmospheric:vertical_grimwood_planks"
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "boat",
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:grimwood_planks"
+    }
+  },
+  "result": {
+    "item": "atmospheric:grimwood_boat"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "atmospheric:block/grimwood_planks",
+        "side": "atmospheric:block/grimwood_bookshelf"
+    }
+}

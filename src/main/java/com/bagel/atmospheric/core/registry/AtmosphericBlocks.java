@@ -300,4 +300,30 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_BOOKSHELF 		= HELPER.createCompatBlock("quark", "aspen_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_LADDER 			= HELPER.createCompatBlock("quark", "aspen_ladder", 		() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_LEAF_CARPET 	= HELPER.createCompatBlock("quark", "aspen_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ASPEN_LEAVES.get())), ItemGroup.DECORATIONS);
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public static final RegistryObject<Block> GRIMWOOD_PLANKS 			= HELPER.createBlock("grimwood_planks", 		() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD_SAPLING 			= HELPER.createBlock("grimwood_sapling", 		() -> new AbnormalsSaplingBlock(new RosewoodTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> STRIPPED_GRIMWOOD_LOG 	= HELPER.createBlock("stripped_grimwood_log", 	() -> new StrippedLogBlock(Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD_LOG 				= HELPER.createBlock("grimwood_log", 			() -> new AbnormalsLogBlock(STRIPPED_GRIMWOOD_LOG, MaterialColor.BROWN, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> STRIPPED_GRIMWOOD 		= HELPER.createBlock("stripped_grimwood", 		() -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD 					= HELPER.createBlock("grimwood", 				() -> new WoodBlock(STRIPPED_GRIMWOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD_LEAVES 			= HELPER.createBlock("grimwood_leaves", 		() -> new AbnormalsLeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> GRIMWOOD_SLAB 			= HELPER.createBlock("grimwood_slab", 			() -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD_STAIRS 			= HELPER.createBlock("grimwood_stairs", 		() -> new WoodStairsBlock(GRIMWOOD_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD_PRESSURE_PLATE 	= HELPER.createBlock("grimwood_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> GRIMWOOD_FENCE 			= HELPER.createBlock("grimwood_fence", 			() -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> GRIMWOOD_TRAPDOOR 		= HELPER.createBlock("grimwood_trapdoor", 		() -> new WoodTrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> GRIMWOOD_FENCE_GATE 		= HELPER.createBlock("grimwood_fence_gate", 	() -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> GRIMWOOD_BUTTON 			= HELPER.createBlock("grimwood_button", 		() -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> GRIMWOOD_DOOR 			= HELPER.createBlock("grimwood_door", 			() -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
+	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> GRIMWOOD_SIGNS = HELPER.createSignBlock("grimwood", MaterialColor.PINK);
+	public static final RegistryObject<Block> POTTED_GRIMWOOD_SAPLING	= HELPER.createBlockNoItem("potted_grimwood_sapling",			() -> new FlowerPotBlock(GRIMWOOD_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
+
+	public static final RegistryObject<Block> VERTICAL_GRIMWOOD_PLANKS 	= HELPER.createCompatBlock("quark", "vertical_grimwood_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "grimwood_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD_BOOKSHELF 		= HELPER.createCompatBlock("quark", "grimwood_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD_LADDER 			= HELPER.createCompatBlock("quark", "grimwood_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> GRIMWOOD_LEAF_CARPET 		= HELPER.createCompatBlock("quark", "grimwood_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(GRIMWOOD_LEAVES.get())), ItemGroup.DECORATIONS);
 }

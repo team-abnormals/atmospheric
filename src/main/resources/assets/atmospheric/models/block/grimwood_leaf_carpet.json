@@ -1,0 +1,6 @@
+{   
+    "parent": "atmospheric:block/leaf_carpet",
+    "textures": {
+        "all": "atmospheric:block/grimwood_leaves"
+    }
+}

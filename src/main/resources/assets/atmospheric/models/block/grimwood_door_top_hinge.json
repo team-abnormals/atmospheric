@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "atmospheric:block/grimwood_door_bottom",
+        "top": "atmospheric:block/grimwood_door_top"
+    }
+}
