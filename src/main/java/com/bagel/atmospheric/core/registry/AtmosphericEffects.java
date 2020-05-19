@@ -24,6 +24,7 @@ public class AtmosphericEffects {
 	public static final Effect RELIEF = new ReliefEffect().setRegistryName("relief");
 	public static final Effect WORSENING = new WorseningEffect().setRegistryName("worsening");
     public static final Effect SPITTING = new SpittingEffect().setRegistryName("spitting");
+    public static final Effect PERSISTENCE = new ReliefEffect().setRegistryName("persistence");
     
     public static final RegistryObject<Potion> RELIEF_NORMAL  = POTIONS.register("relief", () -> new Potion(new EffectInstance(RELIEF, 3600)));
 	public static final RegistryObject<Potion> RELIEF_STRONG  = POTIONS.register("relief_strong", () -> new Potion(new EffectInstance(RELIEF, 1800, 1)));

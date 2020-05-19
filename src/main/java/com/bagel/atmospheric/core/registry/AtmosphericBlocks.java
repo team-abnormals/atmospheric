@@ -20,7 +20,7 @@ import com.bagel.atmospheric.common.block.trees.KousaTree;
 import com.bagel.atmospheric.common.block.trees.RosewoodTree;
 import com.bagel.atmospheric.common.block.trees.YuccaTree;
 import com.bagel.atmospheric.core.Atmospheric;
-import com.bagel.atmospheric.core.data.AtmosphericProperties;
+import com.bagel.atmospheric.core.other.AtmosphericProperties;
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.abnormals_core.common.blocks.AbnormalsStairsBlock;
 import com.teamabnormals.abnormals_core.common.blocks.BookshelfBlock;

@@ -1,4 +1,4 @@
-package com.bagel.atmospheric.core.data;
+package com.bagel.atmospheric.core.other;
 
 import javax.annotation.Nullable;
 

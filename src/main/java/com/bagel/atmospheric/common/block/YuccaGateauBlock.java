@@ -1,6 +1,6 @@
 package com.bagel.atmospheric.common.block;
 
-import com.bagel.atmospheric.core.data.AtmosphericBlockStates;
+import com.bagel.atmospheric.core.other.AtmosphericBlockStates;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

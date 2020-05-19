@@ -3,8 +3,8 @@ package com.bagel.atmospheric.core;
 import com.bagel.atmospheric.common.data.PassionVineBundleDispenseBehavior;
 import com.bagel.atmospheric.common.data.PassionVineDispenseBehavior;
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
-import com.bagel.atmospheric.core.data.AtmosphericBlockData;
-import com.bagel.atmospheric.core.data.AtmosphericColors;
+import com.bagel.atmospheric.core.other.AtmosphericBlockData;
+import com.bagel.atmospheric.core.other.AtmosphericColors;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
@@ -70,6 +70,7 @@ public class Atmospheric
     	event.getRegistry().registerAll(
     			AtmosphericEffects.RELIEF, 
     			AtmosphericEffects.WORSENING,
-    			AtmosphericEffects.SPITTING);
+    			AtmosphericEffects.SPITTING,
+    			AtmosphericEffects.PERSISTENCE);
     }
 }

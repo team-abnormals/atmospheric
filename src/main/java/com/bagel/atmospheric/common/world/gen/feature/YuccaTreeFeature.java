@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import com.bagel.atmospheric.core.data.AtmosphericTags;
+import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.datafixers.Dynamic;
 

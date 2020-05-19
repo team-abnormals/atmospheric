@@ -1,6 +1,6 @@
 package com.bagel.atmospheric.common.block;
 
-import com.bagel.atmospheric.core.data.AtmosphericDamageSources;
+import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsLeavesBlock;
 
 import net.minecraft.block.BlockState;
