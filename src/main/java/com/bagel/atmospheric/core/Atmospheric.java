@@ -11,9 +11,12 @@ import com.bagel.atmospheric.core.registry.AtmosphericEffects;
 import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 
 import net.minecraft.block.DispenserBlock;
+import net.minecraft.potion.Effect;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -60,5 +63,14 @@ public class Atmospheric
     {
     	AtmosphericColors.registerBlockColors();
     	AtmosphericBlockData.setupRenderLayer();
+    }
+    
+    @SubscribeEvent
+	public static void onRegisterEffects(RegistryEvent.Register<Effect> event) {
+    	event.getRegistry().registerAll(
+    			AtmosphericEffects.RELIEF, 
+    			AtmosphericEffects.WORSENING,
+    			AtmosphericEffects.SPITTING,
+    			AtmosphericEffects.PERSISTENCE);
     }
 }
