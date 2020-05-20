@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atmospheric:yucca_sign."
+          "name": "atmospheric:yucca_sign"
         }
       ],
       "conditions": [

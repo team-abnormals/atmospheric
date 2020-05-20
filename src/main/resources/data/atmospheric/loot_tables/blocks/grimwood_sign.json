@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atmospheric:grimwood_sign."
+          "name": "atmospheric:grimwood_sign"
         }
       ],
       "conditions": [

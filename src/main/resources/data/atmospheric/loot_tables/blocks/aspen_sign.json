@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atmospheric:aspen_sign."
+          "name": "atmospheric:aspen_sign"
         }
       ],
       "conditions": [

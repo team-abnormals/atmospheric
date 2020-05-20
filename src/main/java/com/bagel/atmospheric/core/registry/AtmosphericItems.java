@@ -38,5 +38,5 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> YUCCA_BOAT 	= HELPER.createBoatItem("yucca", AtmosphericBlocks.YUCCA_PLANKS);
 	public static final RegistryObject<Item> KOUSA_BOAT 	= HELPER.createBoatItem("kousa", AtmosphericBlocks.KOUSA_PLANKS);
 	public static final RegistryObject<Item> ASPEN_BOAT 	= HELPER.createBoatItem("aspen", AtmosphericBlocks.ASPEN_PLANKS);
-
+	public static final RegistryObject<Item> GRIMWOOD_BOAT 	= HELPER.createBoatItem("grimwood", AtmosphericBlocks.GRIMWOOD_PLANKS);
 }

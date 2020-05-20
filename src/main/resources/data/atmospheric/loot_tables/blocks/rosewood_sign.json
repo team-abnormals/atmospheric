@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atmospheric:rosewood_sign."
+          "name": "atmospheric:rosewood_sign"
         }
       ],
       "conditions": [
