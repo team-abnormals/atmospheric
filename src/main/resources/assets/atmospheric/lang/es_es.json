@@ -316,6 +316,34 @@
 	"block.atmospheric.aspen_leaf_carpet": "Alfombra de hojas de álamo temblón",
 	
 	"item.atmospheric.aspen_boat": "Barca de álamo temblón",
+
+  "_comment6": "START OF THE GRIMWOOD SECTION",
+
+	"block.atmospheric.grimwood_log": "Tronco siniestro",
+	"block.atmospheric.grimwood": "Tronco siniestro",
+	"block.atmospheric.stripped_grimwood_log": "Tronco siniestro sin corteza",
+	"block.atmospheric.stripped_grimwood": "Tronco siniestro sin corteza",
+	"block.atmospheric.grimwood_planks": "Madera siniestra",
+	"block.atmospheric.grimwood_stairs": "Escaleras siniestras",
+	"block.atmospheric.grimwood_slab": "Losa siniestra",
+	"block.atmospheric.grimwood_pressure_plate": "Placa de presión siniestra",
+	"block.atmospheric.grimwood_button": "Botón siniestro",
+	"block.atmospheric.grimwood_door": "Puerta siniestra",
+	"block.atmospheric.grimwood_trapdoor": "Trampilla siniestra",
+	"block.atmospheric.grimwood_fence": "Valla siniestra",
+	"block.atmospheric.grimwood_fence_gate": "Puerta de valla siniestro",
+	"block.atmospheric.grimwood_sapling": "Brote siniestro",
+	"block.atmospheric.grimwood_leaves": "Hojas siniestras",
+	"block.atmospheric.grimwood_sign": "Cartel siniestro",
+	"block.atmospheric.potted_grimwood_sapling": "Maceta con brote siniestro",
+
+	"block.atmospheric.grimwood_bookshelf": "Librería siniestra",
+	"block.atmospheric.grimwood_vertical_slab": "Losa vertical siniestra",
+	"block.atmospheric.vertical_grimwood_planks": "Madera vertical siniestra",
+	"block.atmospheric.grimwood_ladder": "Escalera de mano siniestra",
+	"block.atmospheric.grimwood_leaf_carpet": "Alfombra de hojas siniestras",
+
+	"item.atmospheric.grimwood_boat": "Barca siniestra"
  
-  "_comment6": "END"
+  "_comment7": "END"
 }
