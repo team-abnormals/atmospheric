@@ -24,14 +24,14 @@ public class AtmosphericEvents {
 	public static void onLivingHurt(LivingHurtEvent event) {
 		LivingEntity entity = event.getEntityLiving();
 		
-		if (entity.isPotionActive(AtmosphericEffects.RELIEF)) {
+		if (entity.isPotionActive(AtmosphericEffects.RELIEF.get())) {
 			if (entity.isEntityUndead() == false) {
-				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.RELIEF).getAmplifier();
+				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.RELIEF.get()).getAmplifier();
 				entity.getPersistentData().putInt("PotionHealAmplifier", amplifier);
 				entity.getPersistentData().putFloat("IncomingDamage", event.getAmount());
 				entity.getPersistentData().putBoolean("Heal", true);
 			} else {
-				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.RELIEF).getAmplifier();
+				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.RELIEF.get()).getAmplifier();
 				if (event.getAmount() >= (amplifier + 1)) {
 					event.setAmount(event.getAmount() + (amplifier + 1));
 				}
@@ -39,14 +39,14 @@ public class AtmosphericEvents {
 			
 		}
 		
-		if (entity.isPotionActive(AtmosphericEffects.WORSENING)) {
+		if (entity.isPotionActive(AtmosphericEffects.WORSENING.get())) {
 			if (entity.isEntityUndead() == false) {
-				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.WORSENING).getAmplifier();
+				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.WORSENING.get()).getAmplifier();
 				if (event.getAmount() >= (amplifier + 1)) {
 					event.setAmount(event.getAmount() + (amplifier + 1));
 				}
 			} else {
-				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.WORSENING).getAmplifier();
+				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.WORSENING.get()).getAmplifier();
 				entity.getPersistentData().putInt("PotionHealAmplifier", amplifier);
 				entity.getPersistentData().putFloat("IncomingDamage", event.getAmount());
 				entity.getPersistentData().putBoolean("Heal", true);
@@ -56,10 +56,10 @@ public class AtmosphericEvents {
 	
 	@SubscribeEvent
 	public static void spittingTick(LivingUpdateEvent event) {
-		if (event.getEntityLiving().isPotionActive(AtmosphericEffects.SPITTING)) {
+		if (event.getEntityLiving().isPotionActive(AtmosphericEffects.SPITTING.get())) {
 			World worldIn = event.getEntityLiving().getEntityWorld();
 			LivingEntity playerIn = event.getEntityLiving();
-			int amplifier = playerIn.getActivePotionEffect(AtmosphericEffects.SPITTING).getAmplifier();
+			int amplifier = playerIn.getActivePotionEffect(AtmosphericEffects.SPITTING.get()).getAmplifier();
 			Random random = new Random();
 			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
 				if (playerIn.world.getGameTime() % (6 / (amplifier+1)) == 0) {

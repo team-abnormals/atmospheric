@@ -91,9 +91,9 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> PASSION_VINE 				= HELPER.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= HELPER.createBlock("passion_vine_bundle", 	() -> new PassionVineBundleBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> WARM_MONKEY_BRUSH			= HELPER.createBlock("warm_monkey_brush", 		() -> new MonkeyBrushBlock(AtmosphericEffects.RELIEF, 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> HOT_MONKEY_BRUSH 			= HELPER.createBlock("monkey_brush", 			() -> new MonkeyBrushBlock(AtmosphericEffects.RELIEF, 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH		= HELPER.createBlock("scalding_monkey_brush", 	() -> new MonkeyBrushBlock(AtmosphericEffects.RELIEF, 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> WARM_MONKEY_BRUSH			= HELPER.createBlock("warm_monkey_brush", 		() -> new MonkeyBrushBlock(AtmosphericEffects.RELIEF.get(), 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> HOT_MONKEY_BRUSH 			= HELPER.createBlock("monkey_brush", 			() -> new MonkeyBrushBlock(AtmosphericEffects.RELIEF.get(), 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH		= HELPER.createBlock("scalding_monkey_brush", 	() -> new MonkeyBrushBlock(AtmosphericEffects.RELIEF.get(), 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> POTTED_WARM_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_warm_monkey_brush",		() -> new FlowerPotBlock(WARM_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_HOT_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_monkey_brush",			() -> new FlowerPotBlock(HOT_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
