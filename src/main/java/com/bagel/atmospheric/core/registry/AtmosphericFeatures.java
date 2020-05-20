@@ -57,27 +57,25 @@ public class AtmosphericFeatures {
     @SubscribeEvent
     public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
         event.getRegistry().registerAll(
-        		PODZOL.setRegistryName("podzol"), 
-        		OAK_BUSH.setRegistryName("oak_bush"),
-        		WARM_MONKEY_BRUSH.setRegistryName("warm_monkey_brush"), 
-        		HOT_MONKEY_BRUSH.setRegistryName("hot_monkey_brush"), 
-        		SCALDING_MONKEY_BRUSH.setRegistryName("scalding_monkey_brush"), 
+        		PODZOL.setRegistryName(Atmospheric.MODID, "podzol"), 
+        		OAK_BUSH.setRegistryName(Atmospheric.MODID, "oak_bush"),
+        		WARM_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "warm_monkey_brush"), 
+        		HOT_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "hot_monkey_brush"), 
+        		SCALDING_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "scalding_monkey_brush"), 
         		
         		ROSEWOOD_TREE.setRegistryName("rosewood_tree"), 
-//        		WARM_MONKEY_BRUSH_TREE.setRegistryName("warm_monkey_brush_tree"), 
-//        		HOT_MONKEY_BRUSH_TREE.setRegistryName("hot_monkey_brush_tree"), 
-//        		SCALDING_MONKEY_BRUSH_TREE.setRegistryName("scalding_monkey_brush_tree"), 
         		
-        		PASSION_VINE.setRegistryName("passion_vine"),
-        		DUNE_ROCKS.setRegistryName("dune_rocks"), 
-        		YUCCA_TREE.setRegistryName("yucca_tree")
+        		PASSION_VINE.setRegistryName(Atmospheric.MODID, "passion_vine"),
+        		DUNE_ROCKS.setRegistryName(Atmospheric.MODID, "dune_rocks"), 
+        		YUCCA_TREE.setRegistryName(Atmospheric.MODID, "yucca_tree")
         		);
     }
     
     @SubscribeEvent
     public static void registerSurfaceBuilders(RegistryEvent.Register<SurfaceBuilder<?>> event) {
-        event.getRegistry().register(
-        		DUNES.setRegistryName("dunes_builder")
+        event.getRegistry().registerAll(
+        		DUNES.setRegistryName(Atmospheric.MODID, "dunes_builder"),
+        		WAVEY_DUNES.setRegistryName(Atmospheric.MODID, "wavey_dunes")
         		);
     }
 
