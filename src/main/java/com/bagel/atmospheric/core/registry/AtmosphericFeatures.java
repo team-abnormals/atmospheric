@@ -43,10 +43,6 @@ public class AtmosphericFeatures {
 	public static final Feature<TreeFeatureConfig> ASPEN_TREE = new TreeFeature(TreeFeatureConfig::func_227338_a_);
 	public static final Feature<HugeTreeFeatureConfig> MEGA_ASPEN_TREE = new MegaPineTree(HugeTreeFeatureConfig::deserializeSpruce);
 
-//	public static final Feature<TreeFeatureConfig> WARM_MONKEY_BRUSH_TREE = new MonkeyBrushTreeFeature(TreeFeatureConfig::func_227338_a_, false, 1);
-//	public static final Feature<TreeFeatureConfig> HOT_MONKEY_BRUSH_TREE = new MonkeyBrushTreeFeature(TreeFeatureConfig::func_227338_a_, false, 2);
-//	public static final Feature<TreeFeatureConfig> SCALDING_MONKEY_BRUSH_TREE = new MonkeyBrushTreeFeature(TreeFeatureConfig::func_227338_a_, false, 3);
-//	
 	public static final Feature<NoFeatureConfig> PASSION_VINE = new PassionVineFeature(NoFeatureConfig::deserialize);
 	
 	public static final Feature<BlockBlobConfig> DUNE_ROCKS = new DuneRocksFeature(BlockBlobConfig::deserialize);
