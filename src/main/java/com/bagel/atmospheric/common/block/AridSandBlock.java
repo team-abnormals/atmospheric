@@ -6,6 +6,7 @@ import net.minecraft.block.FallingBlock;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -37,6 +38,11 @@ public class AridSandBlock extends FallingBlock {
     @Override
     public int getDustColor(BlockState state) {
         return this.color;
+    }
+    
+    @Override
+    public BlockState getStateForPlacement(BlockItemUseContext context) {
+    	return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing());
     }
 
 	@Override
