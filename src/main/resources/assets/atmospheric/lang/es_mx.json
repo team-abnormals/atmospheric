@@ -30,7 +30,7 @@
 	"block.atmospheric.rosewood_bookshelf": "Estante de libros de palisandro",
 	"block.atmospheric.rosewood_vertical_slab": "Losa vertical de palisandro",
 	"block.atmospheric.vertical_rosewood_planks": "Madera vertical de palisandro",
-	"block.atmospheric.rosewood_ladder": "Escalera de palisandro",
+	"block.atmospheric.rosewood_ladder": "Escalera de mano de palisandro",
 	"block.atmospheric.rosewood_leaf_carpet": "Alfombra de hojas de palisandro",
 	"block.atmospheric.passionfruit_crate": "Cajón de frutas de la pasión",
 	"block.atmospheric.shimmering_passionfruit_crate": "Cajón de frutas de la pasión relucientes",
@@ -177,7 +177,7 @@
 	"block.atmospheric.yucca_bookshelf": "Estante de libros de yuca",
 	"block.atmospheric.yucca_vertical_slab": "Losa vertical de yuca",
 	"block.atmospheric.vertical_yucca_planks": "Madera vertical de yuca",
-	"block.atmospheric.yucca_ladder": "Escalera de yuca",
+	"block.atmospheric.yucca_ladder": "Escalera de mano de yuca",
 	"block.atmospheric.yucca_leaf_carpet": "Alfombra de hojas de yuca",
 	"block.atmospheric.yucca_cask": "Barrica de yuca",
 	"block.atmospheric.roasted_yucca_cask": "Barrica de yuca asada",
@@ -280,7 +280,7 @@
 	"block.atmospheric.kousa_bookshelf": "Estante de libros de kousa",
 	"block.atmospheric.kousa_vertical_slab": "Losa vertical de kousa",
 	"block.atmospheric.vertical_kousa_planks": "Madera vertical de kousa",
-	"block.atmospheric.kousa_ladder": "Escalera de kousa",
+	"block.atmospheric.kousa_ladder": "Escalera de mano de kousa",
 	"block.atmospheric.kousa_leaf_carpet": "Alfombra de hojas de kousa",
 	
 	"item.atmospheric.kousa_boat": "Bote de kousa",
@@ -312,10 +312,38 @@
 	"block.atmospheric.aspen_bookshelf": "Estante de libros de álamo temblón",
 	"block.atmospheric.aspen_vertical_slab": "Losa vertical de álamo temblón",
 	"block.atmospheric.vertical_aspen_planks": "Madera de álamo temblón",
-	"block.atmospheric.aspen_ladder": "Escalera de álamo temblón",
+	"block.atmospheric.aspen_ladder": "Escalera de mano de álamo temblón",
 	"block.atmospheric.aspen_leaf_carpet": "Alfombra de hojas de álamo temblón",
 	
 	"item.atmospheric.aspen_boat": "Bote de álamo temblón",
+
+  "_comment6": "START OF THE GRIMWOOD SECTION",
+
+	"block.atmospheric.grimwood_log": "Tronco siniestro",
+	"block.atmospheric.grimwood": "Tronco siniestro",
+	"block.atmospheric.stripped_grimwood_log": "Tronco siniestro sin corteza",
+	"block.atmospheric.stripped_grimwood": "Tronco siniestro sin corteza",
+	"block.atmospheric.grimwood_planks": "Madera siniestra",
+	"block.atmospheric.grimwood_stairs": "Escaleras siniestras",
+	"block.atmospheric.grimwood_slab": "Losa siniestra",
+	"block.atmospheric.grimwood_pressure_plate": "Placa de presión siniestra",
+	"block.atmospheric.grimwood_button": "Botón siniestro",
+	"block.atmospheric.grimwood_door": "Puerta siniestra",
+	"block.atmospheric.grimwood_trapdoor": "Trampilla siniestra",
+	"block.atmospheric.grimwood_fence": "Valla siniestra",
+	"block.atmospheric.grimwood_fence_gate": "Puerta de valla siniestro",
+	"block.atmospheric.grimwood_sapling": "Retoño siniestro",
+	"block.atmospheric.grimwood_leaves": "Hojas siniestras",
+	"block.atmospheric.grimwood_sign": "Letrero siniestro",
+	"block.atmospheric.potted_grimwood_sapling": "Maceta con retoño siniestro",
+
+	"block.atmospheric.grimwood_bookshelf": "Estante de libros siniestra",
+	"block.atmospheric.grimwood_vertical_slab": "Losa vertical siniestra",
+	"block.atmospheric.vertical_grimwood_planks": "Madera vertical siniestra",
+	"block.atmospheric.grimwood_ladder": "Escalera de mano siniestra",
+	"block.atmospheric.grimwood_leaf_carpet": "Alfombra de hojas siniestras",
+
+	"item.atmospheric.grimwood_boat": "Bote siniestro"
  
-  "_comment6": "END"
+  "_comment7": "END"
 }
