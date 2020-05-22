@@ -22,7 +22,7 @@ public class RosewoodForestPlateauBiome extends Biome {
 				.temperature(0.90F)
 				.downfall(0.8F)
 				.waterColor(5959129)
-				.waterFogColor(329011)
+				.waterFogColor(206651)
 				.parent(null));
         
         this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
