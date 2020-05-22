@@ -21,7 +21,7 @@ public class RosewoodMountainsBiome extends Biome {
 				.depth(0.2825F).scale(1.225F)
 				.temperature(0.90F)
 				.downfall(0.8F)
-				.waterColor(4159204)
+				.waterColor(5959129)
 				.waterFogColor(329011)
 				.parent(null));
         
