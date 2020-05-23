@@ -48,6 +48,7 @@ public class RosewoodForestBiome extends Biome {
         AtmosphericBiomeFeatures.addDoublePlants(this);
         AtmosphericBiomeFeatures.addFlowers(this);
         AtmosphericBiomeFeatures.addFoliage(this);
+        AtmosphericBiomeFeatures.addWaterFoliage(this);
         
         DefaultBiomeFeatures.addFreezeTopLayer(this);
         
