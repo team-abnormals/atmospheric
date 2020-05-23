@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "snapped=false":    { "model": "atmospheric:block/yucca_branch" },
+        "snapped=true":     { "model": "atmospheric:block/yucca_branch_snapped" }
+    }
+}

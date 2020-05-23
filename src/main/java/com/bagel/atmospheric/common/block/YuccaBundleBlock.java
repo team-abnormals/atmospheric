@@ -2,11 +2,11 @@ package com.bagel.atmospheric.common.block;
 
 import java.util.Random;
 
+import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FallingBlock;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.FallingBlockEntity;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -19,13 +19,8 @@ public class YuccaBundleBlock extends FallingBlock {
 
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
-		Material up = worldIn.getBlockState(pos.offset(Direction.UP)).getMaterial();
-		/*Material north = worldIn.getBlockState(pos.offset(Direction.NORTH)).getMaterial();
-		* Material east = worldIn.getBlockState(pos.offset(Direction.EAST)).getMaterial();
-		* Material south = worldIn.getBlockState(pos.offset(Direction.SOUTH)).getMaterial();
-		* Material west = worldIn.getBlockState(pos.offset(Direction.WEST)).getMaterial();*/
-		
-		boolean solidBlocks = up.isSolid(); //|| north.isSolid() || east.isSolid() || south.isSolid() || west.isSolid();
+		BlockState up = worldIn.getBlockState(pos.up());
+		boolean solidBlocks = up.isSolid() || (up.getBlock() == AtmosphericBlocks.YUCCA_BRANCH.get() && !up.get(YuccaBranchBlock.SNAPPED)); //|| north.isSolid() || east.isSolid() || south.isSolid() || west.isSolid();
 		
 		if (!solidBlocks && !worldIn.isRemote) {
 			this.checkFallable(worldIn, pos);

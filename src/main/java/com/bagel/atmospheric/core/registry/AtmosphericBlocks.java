@@ -8,6 +8,7 @@ import com.bagel.atmospheric.common.block.GiliaBlock;
 import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
 import com.bagel.atmospheric.common.block.PassionVineBlock;
 import com.bagel.atmospheric.common.block.PassionVineBundleBlock;
+import com.bagel.atmospheric.common.block.YuccaBranchBlock;
 import com.bagel.atmospheric.common.block.YuccaBundleBlock;
 import com.bagel.atmospheric.common.block.YuccaFlowerBlock;
 import com.bagel.atmospheric.common.block.YuccaFlowerDoubleBlock;
@@ -201,6 +202,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_SAPLING 		= HELPER.createBlock("yucca_sapling", 		() -> new YuccaSaplingBlock(new YuccaTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_YUCCA_SAPLING	= HELPER.createBlockNoItem("potted_yucca_sapling",	() -> new FlowerPotBlock(YUCCA_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 
+	public static final RegistryObject<Block> YUCCA_BRANCH 			= HELPER.createBlock("yucca_branch", 		() -> new YuccaBranchBlock(Block.Properties.from(Blocks.MELON_STEM).sound(SoundType.CROP).tickRandomly()), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> YUCCA_BUNDLE 			= HELPER.createBlock("yucca_bundle", 	 	() -> new YuccaBundleBlock(Block.Properties.from(Blocks.MELON).tickRandomly()), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ROASTED_YUCCA_BUNDLE	= HELPER.createBlock("roasted_yucca_bundle",() -> new YuccaBundleBlock(Block.Properties.from(Blocks.MELON).tickRandomly()), ItemGroup.DECORATIONS);
 
