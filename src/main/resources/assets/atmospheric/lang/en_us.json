@@ -240,6 +240,8 @@
 	"item.atmospheric.aloe_leaves": "Aloe Leaves",
 	"item.atmospheric.aloe_gel_bottle": "Aloe Gel Bottle",
 	
+	"effect.atmospheric.persistence": "Persistence",
+	
 	"biome.atmospheric.dunes": "Dunes",
 	"biome.atmospheric.rocky_dunes": "Rocky Dunes",
 	"biome.atmospheric.petrified_dunes": "Petrified Dunes",
@@ -317,7 +319,7 @@
 	
 	"item.atmospheric.aspen_boat": "Aspen Boat",
 	
-  "_comment6": "START OF THE GRIMWOOD SECTION",
+  "_comment6": "START OF THE SHADED WOODS SECTION",
 
 	"block.atmospheric.grimwood_log": "Grimwood Log",
 	"block.atmospheric.grimwood": "Grimwood",

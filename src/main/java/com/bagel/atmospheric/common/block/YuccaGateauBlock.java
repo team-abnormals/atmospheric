@@ -1,6 +1,7 @@
 package com.bagel.atmospheric.common.block;
 
 import com.bagel.atmospheric.core.other.AtmosphericBlockStates;
+import com.bagel.atmospheric.core.registry.AtmosphericEffects;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -10,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathType;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.stats.Stats;
@@ -113,6 +115,7 @@ public class YuccaGateauBlock extends HorizontalBlock {
 	      } else {
 	         player.addStat(Stats.EAT_CAKE_SLICE);
 	         player.getFoodStats().addStats(1, 0.0F);
+	         player.addPotionEffect(new EffectInstance(AtmosphericEffects.PERSISTENCE, 320, 0));
 	         int i = state.get(BITES);
 	         if (i < 9) {
 	            worldIn.setBlockState(pos, state.with(BITES, Integer.valueOf(i + 1)), 3);

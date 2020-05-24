@@ -1,10 +1,13 @@
 package com.bagel.atmospheric.core.registry;
 
+import com.bagel.atmospheric.common.potion.PersistenceEffect;
 import com.bagel.atmospheric.common.potion.ReliefEffect;
 import com.bagel.atmospheric.common.potion.SpittingEffect;
 import com.bagel.atmospheric.common.potion.WorseningEffect;
 import com.bagel.atmospheric.core.Atmospheric;
 
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
@@ -24,7 +27,7 @@ public class AtmosphericEffects {
 	public static final Effect RELIEF = new ReliefEffect().setRegistryName("relief");
 	public static final Effect WORSENING = new WorseningEffect().setRegistryName("worsening");
     public static final Effect SPITTING = new SpittingEffect().setRegistryName("spitting");
-    public static final Effect PERSISTENCE = new ReliefEffect().setRegistryName("persistence");
+    public static final Effect PERSISTENCE = new PersistenceEffect().addAttributesModifier(SharedMonsterAttributes.MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890", (double)0F, AttributeModifier.Operation.MULTIPLY_TOTAL).setRegistryName("persistence");
     
     public static final RegistryObject<Potion> RELIEF_NORMAL  = POTIONS.register("relief", () -> new Potion(new EffectInstance(RELIEF, 3600)));
 	public static final RegistryObject<Potion> RELIEF_STRONG  = POTIONS.register("relief_strong", () -> new Potion(new EffectInstance(RELIEF, 1800, 1)));

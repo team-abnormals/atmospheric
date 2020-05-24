@@ -56,11 +56,12 @@ public class AtmosphericEvents {
 	
 	@SubscribeEvent
 	public static void spittingTick(LivingUpdateEvent event) {
+		World worldIn = event.getEntityLiving().getEntityWorld();
+		LivingEntity playerIn = event.getEntityLiving();
+		Random random = new Random();
+		
 		if (event.getEntityLiving().isPotionActive(AtmosphericEffects.SPITTING)) {
-			World worldIn = event.getEntityLiving().getEntityWorld();
-			LivingEntity playerIn = event.getEntityLiving();
 			int amplifier = playerIn.getActivePotionEffect(AtmosphericEffects.SPITTING).getAmplifier();
-			Random random = new Random();
 			if (!worldIn.isRemote && playerIn.getHealth() > 0) {
 				if (playerIn.world.getGameTime() % (6 / (amplifier+1)) == 0) {
 					worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
@@ -69,6 +70,13 @@ public class AtmosphericEvents {
 					passionseed.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, amplifier + 1, 1.0F);
 					worldIn.addEntity(passionseed);    
 				}	
+			}
+		}
+		
+		if (event.getEntityLiving().isPotionActive(AtmosphericEffects.PERSISTENCE)) {
+			int amplifier = playerIn.getActivePotionEffect(AtmosphericEffects.PERSISTENCE).getAmplifier();
+			if (playerIn instanceof PlayerEntity) {
+				AtmosphericEffects.PERSISTENCE.applyAttributesModifiersToEntity(playerIn, event.getEntityLiving().getAttributes(), amplifier);
 			}
 		}
 	}
