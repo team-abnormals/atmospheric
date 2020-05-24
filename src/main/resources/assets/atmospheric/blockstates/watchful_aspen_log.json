@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":    { "model": "atmospheric:block/watchful_aspen_log" },
+        "axis=z":     { "model": "atmospheric:block/watchful_aspen_log", "x": 90 },
+        "axis=x":     { "model": "atmospheric:block/watchful_aspen_log", "x": 90, "y": 90 }
+    }
+}
