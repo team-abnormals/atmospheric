@@ -205,11 +205,11 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROASTED_YUCCA_BUNDLE	= HELPER.createBlock("roasted_yucca_bundle",() -> new YuccaBundleBlock(Block.Properties.from(Blocks.MELON).tickRandomly()), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> YUCCA_GATEAU 			= HELPER.createBlockNoItem("yucca_gateau", 	() -> new YuccaGateauBlock(Block.Properties.from(Blocks.CAKE)));
-	public static final RegistryObject<Block> YUCCA_FLOWER 			= HELPER.createBlock("yucca_flower", 	 	() -> new YuccaFlowerBlock(Effects.BAD_OMEN, 6, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_FLOWER 			= HELPER.createBlock("yucca_flower", 	 	() -> new YuccaFlowerBlock(AtmosphericEffects.PERSISTENCE, 15, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_YUCCA_FLOWER	= HELPER.createBlockNoItem("potted_yucca_flower",	() -> new FlowerPotBlock(YUCCA_FLOWER.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> TALL_YUCCA_FLOWER 	= HELPER.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
 	
-	public static final RegistryObject<Block> GILIA 		= HELPER.createBlock("gilia", () -> new GiliaBlock(Effects.SPEED, 9, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> GILIA 		= HELPER.createBlock("gilia", () -> new GiliaBlock(Effects.SLOW_FALLING, 9, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_GILIA	= HELPER.createBlockNoItem("potted_gilia",	() -> new FlowerPotBlock(GILIA.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	
 	public static final RegistryObject<Block> ALOE_BUNDLE 			= HELPER.createBlock("aloe_bundle", 	 () -> new RotatedPillarBlock(Block.Properties.from(Blocks.DRIED_KELP_BLOCK)), ItemGroup.DECORATIONS);
