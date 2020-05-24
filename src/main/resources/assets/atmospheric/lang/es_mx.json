@@ -239,6 +239,8 @@
 	"item.atmospheric.aloe_kernels": "Semillas de áloe",
 	"item.atmospheric.aloe_leaves": "Hojas de áloe",
 	"item.atmospheric.aloe_gel_bottle": "Frasco de gel de áloe",
+
+	"effect.atmospheric.persistence": "Perseverancia",
 	
 	"biome.atmospheric.dunes": "Dunas",
 	"biome.atmospheric.rocky_dunes": "Dunas rocosas",
@@ -294,6 +296,8 @@
 	"block.atmospheric.aspen_wood": "Tronco de álamo temblón",
 	"block.atmospheric.stripped_aspen_log": "Tronco de álamo temblón sin corteza",
 	"block.atmospheric.stripped_aspen_wood": "Madera de álamo temblón sin corteza",
+	"block.atmospheric.watchful_aspen_log": "Tronco de álamo temblón vigilante",
+	"block.atmospheric.watchful_aspen_wood": "Madera de álamo temblón vigilante",
 	"block.atmospheric.aspen_planks": "Madera de álamo temblón",
 	"block.atmospheric.aspen_stairs": "Escaleras de álamo temblón",
 	"block.atmospheric.aspen_slab": "Losa de álamo temblón",
@@ -317,7 +321,7 @@
 	
 	"item.atmospheric.aspen_boat": "Bote de álamo temblón",
 
-  "_comment6": "START OF THE GRIMWOOD SECTION",
+  "_comment6": "START OF THE SHADED WOODS SECTION",
 
 	"block.atmospheric.grimwood_log": "Tronco siniestro",
 	"block.atmospheric.grimwood": "Tronco siniestro",
