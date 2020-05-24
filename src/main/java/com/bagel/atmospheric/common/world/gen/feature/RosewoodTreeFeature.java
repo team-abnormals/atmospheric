@@ -35,7 +35,7 @@ public class RosewoodTreeFeature extends TreeFeature {
 	}
 
 	public boolean func_225557_a_(IWorldGenerationReader worldIn, Random rand, BlockPos position, Set<BlockPos> logsPlaced, Set<BlockPos> leavesPlaced, MutableBoundingBox boundsIn, TreeFeatureConfig config) {
-		if (rand.nextInt(100) == 0) {
+		if (rand.nextInt(250) == 0) {
 			if (rand.nextInt(2) == 0) brushes.add(AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
 			if (rand.nextInt(3) == 0) brushes.add(AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
 			if (rand.nextInt(4) == 0) brushes.add(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get());
@@ -160,7 +160,7 @@ public class RosewoodTreeFeature extends TreeFeature {
 				if (!brushes.isEmpty()) {
 					for (BlockPos pos : logsPlaced) {
 						for(Direction direction2 : Direction.values()) {
-							if (isAir(worldIn, pos.offset(direction2)) && rand.nextInt(3) != 0) {
+							if (isAir(worldIn, pos.offset(direction2)) && rand.nextInt(3) == 0) {
 								worldIn.setBlockState(pos.offset(direction2), brushes.get(rand.nextInt(brushes.size())).getDefaultState().with(MonkeyBrushBlock.FACING, direction2), 18);
 							}
 						}

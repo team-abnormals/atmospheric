@@ -119,7 +119,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 	   if (entityIn instanceof LivingEntity) {
 		   LivingEntity living = (LivingEntity) entityIn;
-		   living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, true, true));
+		   living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, true, false));
 	   }
 	   entityIn.attackEntityFrom(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.get(AGE));
    }

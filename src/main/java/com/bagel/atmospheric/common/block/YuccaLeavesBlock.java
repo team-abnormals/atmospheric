@@ -47,7 +47,7 @@ public class YuccaLeavesBlock extends AbnormalsLeavesBlock {
 	            	if (!entityIn.isCrouching()) {
 		            	entityIn.addVelocity(MathHelper.sin((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.05F, 0.005F, -MathHelper.cos((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.25F);
 	            	}
-	            	entityIn.attackEntityFrom(AtmosphericDamageSources.YUCCA_BRANCH, 1.0F);	
+	            	entityIn.attackEntityFrom(AtmosphericDamageSources.YUCCA_LEAVES, 1.0F);	
 	            }
 			}
 		}	

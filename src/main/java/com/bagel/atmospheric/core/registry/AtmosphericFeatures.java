@@ -3,7 +3,6 @@ package com.bagel.atmospheric.core.registry;
 import com.bagel.atmospheric.common.world.gen.feature.DirectionalFlowersFeature;
 import com.bagel.atmospheric.common.world.gen.feature.DuneRocksFeature;
 import com.bagel.atmospheric.common.world.gen.feature.PassionVineFeature;
-import com.bagel.atmospheric.common.world.gen.feature.PetrifiedYuccaTreeFeature;
 import com.bagel.atmospheric.common.world.gen.feature.PodzolFeature;
 import com.bagel.atmospheric.common.world.gen.feature.RosewoodTreeFeature;
 import com.bagel.atmospheric.common.world.gen.feature.YuccaTreeFeature;
@@ -39,8 +38,11 @@ public class AtmosphericFeatures {
 	public static final Feature<NoFeatureConfig> SCALDING_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize, 3);
 	
 	public static final Feature<TreeFeatureConfig> ROSEWOOD_TREE = new RosewoodTreeFeature(TreeFeatureConfig::func_227338_a_);
-	public static final Feature<TreeFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(TreeFeatureConfig::func_227338_a_);
-	public static final Feature<TreeFeatureConfig> PETRIFIED_YUCCA_TREE = new PetrifiedYuccaTreeFeature(TreeFeatureConfig::func_227338_a_);
+	
+	public static final Feature<TreeFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(TreeFeatureConfig::func_227338_a_, false, false);
+	public static final Feature<TreeFeatureConfig> PETRIFIED_YUCCA_TREE = new YuccaTreeFeature(TreeFeatureConfig::func_227338_a_, false, true);
+	public static final Feature<TreeFeatureConfig> YUCCA_TREE_PATCH = new YuccaTreeFeature(TreeFeatureConfig::func_227338_a_, true, false);
+	
 	public static final Feature<TreeFeatureConfig> KOUSA_TREE = new FancyTreeFeature(TreeFeatureConfig::func_227338_a_);
 	public static final Feature<TreeFeatureConfig> ASPEN_TREE = new TreeFeature(TreeFeatureConfig::func_227338_a_);
 	public static final Feature<HugeTreeFeatureConfig> MEGA_ASPEN_TREE = new MegaPineTree(HugeTreeFeatureConfig::deserializeSpruce);
@@ -57,6 +59,7 @@ public class AtmosphericFeatures {
         event.getRegistry().registerAll(
         		PODZOL.setRegistryName(Atmospheric.MODID, "podzol"), 
         		OAK_BUSH.setRegistryName(Atmospheric.MODID, "oak_bush"),
+        		
         		WARM_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "warm_monkey_brush"), 
         		HOT_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "hot_monkey_brush"), 
         		SCALDING_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "scalding_monkey_brush"), 
@@ -65,7 +68,10 @@ public class AtmosphericFeatures {
         		
         		PASSION_VINE.setRegistryName(Atmospheric.MODID, "passion_vine"),
         		DUNE_ROCKS.setRegistryName(Atmospheric.MODID, "dune_rocks"), 
-        		YUCCA_TREE.setRegistryName(Atmospheric.MODID, "yucca_tree")
+        		
+        		YUCCA_TREE.setRegistryName(Atmospheric.MODID, "yucca_tree"),
+        		PETRIFIED_YUCCA_TREE.setRegistryName(Atmospheric.MODID, "petrified_yucca_tree"),
+        		YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "yucca_tree_patch")
         		);
     }
     

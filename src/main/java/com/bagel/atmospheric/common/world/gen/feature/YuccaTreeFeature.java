@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import com.bagel.atmospheric.common.block.YuccaFlowerDoubleBlock;
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
@@ -16,10 +17,12 @@ import com.teamabnormals.abnormals_core.core.library.api.IAddToBiomes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IWorldWriter;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.Category;
@@ -30,13 +33,28 @@ import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
-	private final Supplier<BlockState> YUCCA_LOG = () -> AtmosphericBlocks.YUCCA_LOG.get().getDefaultState();
-	private final Supplier<BlockState> YUCCA_LEAVES = () -> AtmosphericBlocks.YUCCA_LEAVES.get().getDefaultState().with(LeavesBlock.DISTANCE, 1);
-	private final Supplier<BlockState> YUCCA_FLOWER = () -> AtmosphericBlocks.YUCCA_FLOWER.get().getDefaultState();
-	private final Supplier<BlockState> YUCCA_BRANCH = () -> AtmosphericBlocks.YUCCA_BRANCH.get().getDefaultState();
+	private boolean patch;
+	private boolean petrified;
 	
-	public YuccaTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> config) {
+	private Supplier<BlockState> YUCCA_LOG = () -> AtmosphericBlocks.YUCCA_LOG.get().getDefaultState();
+	private Supplier<BlockState> YUCCA_LEAVES = () -> AtmosphericBlocks.YUCCA_LEAVES.get().getDefaultState().with(LeavesBlock.DISTANCE, 1);
+	private Supplier<BlockState> YUCCA_FLOWER = () -> AtmosphericBlocks.YUCCA_FLOWER.get().getDefaultState();
+	private Supplier<BlockState> YUCCA_BRANCH = () -> AtmosphericBlocks.YUCCA_BRANCH.get().getDefaultState();
+	
+	private Supplier<BlockState> TALL_YUCCA_FLOWER_TOP = () -> AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState().with(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.UPPER);
+	private Supplier<BlockState> TALL_YUCCA_FLOWER_BOTTOM = () -> AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState().with(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.LOWER);
+	
+	public YuccaTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> config, boolean patch, boolean petrified) {
 		super(config);
+		this.patch = patch;
+		this.petrified = petrified;
+		
+		if (petrified) {
+			YUCCA_LOG = () -> AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState();
+			YUCCA_LEAVES = () -> AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState();
+			YUCCA_FLOWER = () -> AtmosphericBlocks.ARID_SANDSTONE_WALL.get().getDefaultState();
+			YUCCA_BRANCH = () -> AtmosphericBlocks.ARID_SANDSTONE_WALL.get().getDefaultState();
+		}
 	}
 
 	public boolean func_225557_a_(IWorldGenerationReader worldIn, Random rand, BlockPos position, Set<BlockPos> logsPlaced, Set<BlockPos> leavesPlaced, MutableBoundingBox boundsIn, TreeFeatureConfig config) {
@@ -77,29 +95,36 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 				}
 				
 				logY = position.getY() + height - 1;
-				
-				boolean flower = rand.nextInt(5) == 0; 
-				
+								
 				BlockPos newPos = this.createYuccaBranch(height, logsPlaced, worldIn, position, Direction.NORTH, boundsIn, rand);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.up(), boundsIn, rand, flower, false);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos, boundsIn, rand, flower, true);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.down(), boundsIn, rand, flower, false);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.up(), boundsIn, rand, false);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos, boundsIn, rand, true);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.down(), boundsIn, rand, false);
 
 				newPos = this.createYuccaBranch(height, logsPlaced, worldIn, position, Direction.EAST, boundsIn, rand);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.up(), boundsIn, rand, flower, false);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos, boundsIn, rand, flower, true);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.down(), boundsIn, rand, flower, false);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.up(), boundsIn, rand, false);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos, boundsIn, rand, true);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.down(), boundsIn, rand, false);
 
 				newPos = this.createYuccaBranch(height, logsPlaced, worldIn, position, Direction.SOUTH, boundsIn, rand);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.up(), boundsIn, rand, flower, false);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos, boundsIn, rand, flower, true);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.down(), boundsIn, rand, flower, false);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.up(), boundsIn, rand, false);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos, boundsIn, rand, true);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.down(), boundsIn, rand, false);
 
 				newPos = this.createYuccaBranch(height, logsPlaced, worldIn, position, Direction.WEST, boundsIn, rand);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.up(), boundsIn, rand, flower, false);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos, boundsIn, rand, flower, true);
-				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.down(), boundsIn, rand, flower, false);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.up(), boundsIn, rand, false);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos, boundsIn, rand, true);
+				this.createYuccaLeaves(leavesPlaced, worldIn, newPos.down(), boundsIn, rand, false);
 
+				if (patch) {
+					for(int j = 0; j < 64; ++j) {
+						BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+						if (isAir(worldIn, blockpos) && blockpos.getY() < 255 && YUCCA_FLOWER.get().isValidPosition((IWorldReader)worldIn, blockpos)) {
+				            placeFlowerAt(leavesPlaced, worldIn, blockpos, boundsIn, rand);
+						}
+					}
+				}
+				
 				return true;
 			} else {
 				return false;
@@ -109,17 +134,17 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 		}
 	}
 	
-	private void createYuccaLeaves(Set<BlockPos> leavesPlaced, IWorldGenerationReader worldIn, BlockPos newPos, MutableBoundingBox boundsIn, Random rand, boolean flower, boolean square) {
+	private void createYuccaLeaves(Set<BlockPos> leavesPlaced, IWorldGenerationReader worldIn, BlockPos newPos, MutableBoundingBox boundsIn, Random rand, boolean square) {
 		int leafSize = 1;
 		for(int k3 = -leafSize; k3 <= leafSize; ++k3) {
 			for(int j4 = -leafSize; j4 <= leafSize; ++j4) {
 				if (square) {
-					this.placeLeafAt(leavesPlaced, worldIn, newPos.add(k3, 0, j4), boundsIn, rand, flower);
+					this.placeLeafAt(leavesPlaced, worldIn, newPos.add(k3, 0, j4), boundsIn, rand);
 				} else {
 					if ((Math.abs(k3) != leafSize || Math.abs(j4) != leafSize)) {
-						this.placeLeafAt(leavesPlaced, worldIn, newPos.add(k3, 0, j4), boundsIn, rand, flower);
+						this.placeLeafAt(leavesPlaced, worldIn, newPos.add(k3, 0, j4), boundsIn, rand);
 					} else if (rand.nextInt(4) == 0) { 
-						this.placeLeafAt(leavesPlaced, worldIn, newPos.add(k3, 0, j4), boundsIn, rand, flower); 
+						this.placeLeafAt(leavesPlaced, worldIn, newPos.add(k3, 0, j4), boundsIn, rand); 
 					}
 				}
 			}
@@ -175,25 +200,39 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 	}
 
 	private void placeLogAt(Set<BlockPos> changedBlocks, IWorldWriter worldIn, BlockPos pos, MutableBoundingBox boundsIn, Direction direction, boolean bundle) {
-		this.setLogState(changedBlocks, worldIn, pos, YUCCA_LOG.get().with(LogBlock.AXIS, direction.getAxis()), boundsIn);
+		BlockState logState = this.petrified ? YUCCA_LOG.get() : YUCCA_LOG.get().with(LogBlock.AXIS, direction.getAxis());
+		this.setLogState(changedBlocks, worldIn, pos, logState, boundsIn);
 		if (bundle) {
 			this.setLogState(changedBlocks, worldIn, pos.down(), YUCCA_BRANCH.get(), boundsIn);
 		}
 	}
 
-	private void placeLeafAt(Set<BlockPos> changedBlocks, IWorldGenerationReader world, BlockPos pos, MutableBoundingBox boundsIn, Random rand, boolean leaves) {
+	private void placeLeafAt(Set<BlockPos> changedBlocks, IWorldGenerationReader world, BlockPos pos, MutableBoundingBox boundsIn, Random rand) {
 		if (isAirOrLeaves(world, pos)) { 
 			this.setLogState(changedBlocks, world, pos, YUCCA_LEAVES.get(), boundsIn);
 		}
-		if (isAir(world, pos.up()) && rand.nextInt(6) == 0 && leaves) { 
-			this.setLogState(changedBlocks, world, pos.up(), YUCCA_FLOWER.get(), boundsIn);
+		if (rand.nextInt(8) == 0 && !this.petrified) { 
+			placeFlowerAt(changedBlocks, world, pos.up(), boundsIn, rand);
+		}
+	}
+	
+	private void placeFlowerAt(Set<BlockPos> changedBlocks, IWorldGenerationReader world, BlockPos pos, MutableBoundingBox boundsIn, Random rand) {
+		if (isAir(world, pos)) {
+			if (!isAir(world, pos.up())) {
+				this.setLogState(changedBlocks, world, pos, YUCCA_FLOWER.get(), boundsIn);
+			} else if (rand.nextInt(4) == 0) {
+				this.setLogState(changedBlocks, world, pos, TALL_YUCCA_FLOWER_BOTTOM.get(), boundsIn);
+				this.setLogState(changedBlocks, world, pos.up(), TALL_YUCCA_FLOWER_TOP.get(), boundsIn);
+			} else {
+				this.setLogState(changedBlocks, world, pos, YUCCA_FLOWER.get(), boundsIn);
+			}
 		}
 	}
 	
 	protected final void setLogState(Set<BlockPos> changedBlocks, IWorldWriter worldIn, BlockPos pos, BlockState state, MutableBoundingBox boundsIn) {
 		worldIn.setBlockState(pos, state, 18);
 		boundsIn.expandTo(new MutableBoundingBox(pos, pos));
-		if (BlockTags.LOGS.contains(state.getBlock())) {
+		if (!this.petrified && BlockTags.LOGS.contains(state.getBlock())) {
 			changedBlocks.add(pos.toImmutable());
 		}
 	}
