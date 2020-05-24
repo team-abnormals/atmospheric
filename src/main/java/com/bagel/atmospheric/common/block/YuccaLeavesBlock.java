@@ -10,9 +10,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class YuccaLeavesBlock extends AbnormalsLeavesBlock {
     private static final VoxelShape HITBOX = makeCuboidShape(1.0F, 1.0F, 1.0F, 15.0F, 15.0F, 15.0F);
@@ -20,22 +21,23 @@ public class YuccaLeavesBlock extends AbnormalsLeavesBlock {
 	public YuccaLeavesBlock(Properties properties) {
 		super(properties);
 	}
-	
-	@Override
-	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-	     return VoxelShapes.fullCube();
-	}
-	
-	@Override
-	public VoxelShape getRaytraceShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		return VoxelShapes.fullCube();
-	}
-	
+
 	@Override
 	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 	      return HITBOX;
 	}
-
+	
+	@Override
+	public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		return 1;
+	}
+	
+	@Deprecated
+	@OnlyIn(Dist.CLIENT)
+	public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		return 0.2F;
+	}
+		
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity) {
 			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.getPosX() || entityIn.lastTickPosZ != entityIn.getPosZ())) {
