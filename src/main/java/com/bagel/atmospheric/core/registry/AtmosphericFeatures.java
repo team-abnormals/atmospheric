@@ -37,7 +37,7 @@ public class AtmosphericFeatures {
 	public static final Feature<NoFeatureConfig> HOT_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize, 2);
 	public static final Feature<NoFeatureConfig> SCALDING_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize, 3);
 	
-	public static final Feature<TreeFeatureConfig> ROSEWOOD_TREE = new RosewoodTreeFeature(TreeFeatureConfig::func_227338_a_, false);
+	public static final Feature<TreeFeatureConfig> ROSEWOOD_TREE = new RosewoodTreeFeature(TreeFeatureConfig::func_227338_a_);
 	public static final Feature<TreeFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(TreeFeatureConfig::func_227338_a_, false);
 	public static final Feature<TreeFeatureConfig> KOUSA_TREE = new FancyTreeFeature(TreeFeatureConfig::func_227338_a_);
 	public static final Feature<TreeFeatureConfig> ASPEN_TREE = new TreeFeature(TreeFeatureConfig::func_227338_a_);
