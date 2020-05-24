@@ -34,7 +34,6 @@ public final class PetrifiedDunesBiome extends Biome {
 			.waterFogColor(329011)
 			.parent(null)));
 		
-		this.addStructure(Feature.DESERT_PYRAMID.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 		this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
 	    this.addStructure(Feature.STRONGHOLD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 		DefaultBiomeFeatures.addCarvers(this);
@@ -48,7 +47,7 @@ public final class PetrifiedDunesBiome extends Biome {
 
 		DefaultBiomeFeatures.addDeadBushes(this);
 		DefaultBiomeFeatures.addMushrooms(this);
-		AtmosphericBiomeFeatures.addSparseYuccaTrees(this);
+		AtmosphericBiomeFeatures.addPetrifiedYuccaTrees(this);
 
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 

@@ -35,7 +35,6 @@ public final class DunesBiome extends Biome {
 			.waterFogColor(329011)
 			.parent(null)));
 		
-		this.addStructure(Feature.DESERT_PYRAMID.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 		this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
 	    this.addStructure(Feature.STRONGHOLD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 		DefaultBiomeFeatures.addCarvers(this);
@@ -74,7 +73,7 @@ public final class DunesBiome extends Biome {
 	
 	@Override
 	public Biome getHill(net.minecraft.world.gen.INoiseRandom rand) {
-    	int chance = rand.random(3);
-		return chance == 0 ? AtmosphericBiomes.ROCKY_DUNES.get() : (chance ==  1 ? AtmosphericBiomes.PETRIFIED_DUNES.get() : AtmosphericBiomes.FLOURISHING_DUNES.get());
+    	int chance = rand.random(5);
+		return chance > 1 ? AtmosphericBiomes.ROCKY_DUNES.get() : (chance ==  1 ? AtmosphericBiomes.PETRIFIED_DUNES.get() : AtmosphericBiomes.FLOURISHING_DUNES.get());
 	}
 }

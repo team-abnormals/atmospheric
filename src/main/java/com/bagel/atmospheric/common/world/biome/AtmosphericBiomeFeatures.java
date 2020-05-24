@@ -137,8 +137,20 @@ public class AtmosphericBiomeFeatures {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_TREE.withConfiguration(YUCCA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.05F, 3))));
 	}
 	
+	public static void addPetrifiedYuccaTrees(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.PETRIFIED_YUCCA_TREE.withConfiguration(YUCCA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.5F, 2))));
+	}
+	
 	public static void addSparseYuccaTrees(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_TREE.withConfiguration(YUCCA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1))));
+	}
+	
+	public static void addDesertYucca(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_TREE.withConfiguration(YUCCA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.0025F, 1))));
+	}
+	
+	public static void addBadlandsYucca(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_TREE.withConfiguration(YUCCA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.5F, 2))));
 	}
 	
 	public static void addWaterFoliage(Biome biomeIn) {

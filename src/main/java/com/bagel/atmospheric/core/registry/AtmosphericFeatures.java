@@ -3,6 +3,7 @@ package com.bagel.atmospheric.core.registry;
 import com.bagel.atmospheric.common.world.gen.feature.DirectionalFlowersFeature;
 import com.bagel.atmospheric.common.world.gen.feature.DuneRocksFeature;
 import com.bagel.atmospheric.common.world.gen.feature.PassionVineFeature;
+import com.bagel.atmospheric.common.world.gen.feature.PetrifiedYuccaTreeFeature;
 import com.bagel.atmospheric.common.world.gen.feature.PodzolFeature;
 import com.bagel.atmospheric.common.world.gen.feature.RosewoodTreeFeature;
 import com.bagel.atmospheric.common.world.gen.feature.YuccaTreeFeature;
@@ -38,7 +39,8 @@ public class AtmosphericFeatures {
 	public static final Feature<NoFeatureConfig> SCALDING_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize, 3);
 	
 	public static final Feature<TreeFeatureConfig> ROSEWOOD_TREE = new RosewoodTreeFeature(TreeFeatureConfig::func_227338_a_);
-	public static final Feature<TreeFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(TreeFeatureConfig::func_227338_a_, false);
+	public static final Feature<TreeFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(TreeFeatureConfig::func_227338_a_);
+	public static final Feature<TreeFeatureConfig> PETRIFIED_YUCCA_TREE = new PetrifiedYuccaTreeFeature(TreeFeatureConfig::func_227338_a_);
 	public static final Feature<TreeFeatureConfig> KOUSA_TREE = new FancyTreeFeature(TreeFeatureConfig::func_227338_a_);
 	public static final Feature<TreeFeatureConfig> ASPEN_TREE = new TreeFeature(TreeFeatureConfig::func_227338_a_);
 	public static final Feature<HugeTreeFeatureConfig> MEGA_ASPEN_TREE = new MegaPineTree(HugeTreeFeatureConfig::deserializeSpruce);

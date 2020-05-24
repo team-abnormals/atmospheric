@@ -2,40 +2,31 @@ package com.bagel.atmospheric.common.world.gen.feature;
 
 import java.util.Random;
 import java.util.Set;
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
-import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.datafixers.Dynamic;
-import com.teamabnormals.abnormals_core.core.library.api.IAddToBiomes;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.LogBlock;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IWorldWriter;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.Category;
-import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
-public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
-	private final Supplier<BlockState> YUCCA_LOG = () -> AtmosphericBlocks.YUCCA_LOG.get().getDefaultState();
-	private final Supplier<BlockState> YUCCA_LEAVES = () -> AtmosphericBlocks.YUCCA_LEAVES.get().getDefaultState().with(LeavesBlock.DISTANCE, 1);
-	private final Supplier<BlockState> YUCCA_FLOWER = () -> AtmosphericBlocks.YUCCA_FLOWER.get().getDefaultState();
-	private final Supplier<BlockState> YUCCA_BRANCH = () -> AtmosphericBlocks.YUCCA_BRANCH.get().getDefaultState();
+public class PetrifiedYuccaTreeFeature extends TreeFeature {
+	private Supplier<BlockState> YUCCA_LOG = () -> AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState();
+	private Supplier<BlockState> YUCCA_LEAVES = () -> AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState();
+	private Supplier<BlockState> YUCCA_FLOWER = () -> AtmosphericBlocks.ARID_SANDSTONE_WALL.get().getDefaultState();
+	private Supplier<BlockState> YUCCA_BRANCH = () -> AtmosphericBlocks.ARID_SANDSTONE_WALL.get().getDefaultState();
 	
-	public YuccaTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> config) {
+	public PetrifiedYuccaTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> config) {
 		super(config);
 	}
 
@@ -175,7 +166,7 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 	}
 
 	private void placeLogAt(Set<BlockPos> changedBlocks, IWorldWriter worldIn, BlockPos pos, MutableBoundingBox boundsIn, Direction direction, boolean bundle) {
-		this.setLogState(changedBlocks, worldIn, pos, YUCCA_LOG.get().with(LogBlock.AXIS, direction.getAxis()), boundsIn);
+		this.setLogState(changedBlocks, worldIn, pos, YUCCA_LOG.get(), boundsIn);
 		if (bundle) {
 			this.setLogState(changedBlocks, worldIn, pos.down(), YUCCA_BRANCH.get(), boundsIn);
 		}
@@ -206,16 +197,5 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 		return worldIn.hasBlockState(pos, (block) -> {
 			return block.isIn(BlockTags.SAND);
 		});
-	}
-
-	@Override
-	public Consumer<Biome> processBiomeAddition() {
-		return biome -> {
-			if(biome == Biomes.MODIFIED_WOODED_BADLANDS_PLATEAU || biome == Biomes.WOODED_BADLANDS_PLATEAU) {
-				AtmosphericBiomeFeatures.addBadlandsYucca(biome);
-			} else if(biome.getCategory() == Category.DESERT && biome.getRegistryName().getNamespace() != Atmospheric.MODID) {
-				AtmosphericBiomeFeatures.addDesertYucca(biome);
-			}
-		};
 	}
 }
