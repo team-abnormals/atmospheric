@@ -26,7 +26,7 @@ public final class FlourishingDunesBiome extends Biome {
 				Blocks.GRAVEL.getDefaultState()))
 			.precipitation(Biome.RainType.NONE)
 			.category(Biome.Category.DESERT)
-			.depth(0.35F)
+			.depth(0.42F)
 			.scale(0.25F)
 			.temperature(2.0F)
 			.downfall(0.0F)

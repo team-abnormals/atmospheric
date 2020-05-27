@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "particle": "atmospheric:block/aloe_vera_stage3",
+        "cross": "atmospheric:block/aloe_vera_stage3"
+    }
+}

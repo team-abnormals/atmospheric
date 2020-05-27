@@ -25,7 +25,6 @@ public class PersistenceEffect extends Effect {
 	public void applyAttributesModifiersToEntity(LivingEntity entity, AbstractAttributeMap attributeMapIn, int amplifier) {
 		if (entity instanceof PlayerEntity) {
 			int amount = 20 - ((PlayerEntity) entity).getFoodStats().getFoodLevel();
-			System.out.println(amount);
 			for(Entry<IAttribute, AttributeModifier> entry : this.getAttributeModifierMap().entrySet()) {
 				IAttributeInstance iattributeinstance = attributeMapIn.getAttributeInstance(entry.getKey());
 				if (iattributeinstance != null) {
@@ -36,5 +35,16 @@ public class PersistenceEffect extends Effect {
 				}
 			}
 		}
+	}
+	
+	public void performEffect(LivingEntity entity, int amplifier) {
+		if (entity instanceof PlayerEntity) {
+			this.applyAttributesModifiersToEntity(entity, entity.getAttributes(), amplifier);
+		}
+	}
+	
+	@Override
+	public boolean isReady(int duration, int amplifier) {
+		return true;
 	}
 }

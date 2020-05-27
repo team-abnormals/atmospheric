@@ -1,5 +1,7 @@
 package com.bagel.atmospheric.core.registry;
 
+import com.bagel.atmospheric.common.block.AloeGelBlock;
+import com.bagel.atmospheric.common.block.AloeVeraBlock;
 import com.bagel.atmospheric.common.block.AridSandBlock;
 import com.bagel.atmospheric.common.block.BarrelCactusBlock;
 import com.bagel.atmospheric.common.block.CrustoseBlock;
@@ -8,6 +10,7 @@ import com.bagel.atmospheric.common.block.GiliaBlock;
 import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
 import com.bagel.atmospheric.common.block.PassionVineBlock;
 import com.bagel.atmospheric.common.block.PassionVineBundleBlock;
+import com.bagel.atmospheric.common.block.TallAloeVeraBlock;
 import com.bagel.atmospheric.common.block.YuccaBranchBlock;
 import com.bagel.atmospheric.common.block.YuccaBundleBlock;
 import com.bagel.atmospheric.common.block.YuccaFlowerBlock;
@@ -214,7 +217,10 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> GILIA 		= HELPER.createBlock("gilia", () -> new GiliaBlock(Effects.SLOW_FALLING, 9, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_GILIA	= HELPER.createBlockNoItem("potted_gilia",	() -> new FlowerPotBlock(GILIA.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	
+	public static final RegistryObject<Block> ALOE_VERA	 			= HELPER.createBlockNoItem("aloe_vera", 	 () -> new AloeVeraBlock(Block.Properties.from(Blocks.GRASS)));
+	public static final RegistryObject<Block> TALL_ALOE_VERA	 	= HELPER.createBlockNoItem("tall_aloe_vera", () -> new TallAloeVeraBlock(Block.Properties.from(Blocks.GRASS)));
 	public static final RegistryObject<Block> ALOE_BUNDLE 			= HELPER.createBlock("aloe_bundle", 	 () -> new RotatedPillarBlock(Block.Properties.from(Blocks.DRIED_KELP_BLOCK)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ALOE_GEL_BLOCK		= HELPER.createBlock("aloe_gel_block", 	 () -> new AloeGelBlock(Block.Properties.from(Blocks.SLIME_BLOCK)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> BARREL_CACTUS 		= HELPER.createBlock("barrel_cactus", 	 () -> new BarrelCactusBlock(Block.Properties.from(Blocks.CACTUS).tickRandomly()), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_BARREL_CACTUS	= HELPER.createBlockNoItem("potted_barrel_cactus",	() -> new FlowerPotBlock(BARREL_CACTUS.get(), Block.Properties.from(Blocks.POTTED_CACTUS)));
 

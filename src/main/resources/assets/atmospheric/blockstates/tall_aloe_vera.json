@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "half=upper,age=6":    { "model": "atmospheric:block/aloe_vera_stage6_top" },
+        "half=upper,age=7":    { "model": "atmospheric:block/aloe_vera_stage7_top" },
+        "half=upper,age=8":    { "model": "atmospheric:block/aloe_vera_stage8_top" },
+        "half=lower,age=6":    { "model": "atmospheric:block/aloe_vera_stage6_bottom" },
+        "half=lower,age=7":    { "model": "atmospheric:block/aloe_vera_stage7_bottom" },
+        "half=lower,age=8":    { "model": "atmospheric:block/aloe_vera_stage8_bottom" }
+    }
+}

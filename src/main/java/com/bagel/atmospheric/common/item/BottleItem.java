@@ -13,8 +13,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
-public class YuccaJuiceItem extends Item {
-   public YuccaJuiceItem(Item.Properties properties) {
+public class BottleItem extends Item {
+   public BottleItem(Item.Properties properties) {
       super(properties);
    }
 

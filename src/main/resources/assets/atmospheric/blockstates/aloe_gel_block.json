@@ -1,0 +1,6 @@
+{
+    "variants": {
+ 		"wet=false": { "model": "atmospheric:block/aloe_gel_block"},
+ 		"wet=true": { "model": "atmospheric:block/aloe_gel_block_wet"}
+    }
+}

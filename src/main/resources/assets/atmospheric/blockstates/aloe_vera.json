@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "age=0":    { "model": "atmospheric:block/aloe_vera_stage0" },
+        "age=1":    { "model": "atmospheric:block/aloe_vera_stage1" },
+        "age=2":    { "model": "atmospheric:block/aloe_vera_stage2" },
+        "age=3":    { "model": "atmospheric:block/aloe_vera_stage3" },
+        "age=4":    { "model": "atmospheric:block/aloe_vera_stage4" },
+        "age=5":    { "model": "atmospheric:block/aloe_vera_stage5" }
+    }
+}

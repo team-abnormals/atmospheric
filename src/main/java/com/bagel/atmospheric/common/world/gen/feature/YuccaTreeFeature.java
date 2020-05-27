@@ -48,17 +48,28 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 		super(config);
 		this.patch = patch;
 		this.petrified = petrified;
-		
-		if (petrified) {
-			YUCCA_LOG = () -> AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState();
-			YUCCA_LEAVES = () -> AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState();
-			YUCCA_FLOWER = () -> AtmosphericBlocks.ARID_SANDSTONE_WALL.get().getDefaultState();
-			YUCCA_BRANCH = () -> AtmosphericBlocks.ARID_SANDSTONE_WALL.get().getDefaultState();
-		}
 	}
 
 	public boolean func_225557_a_(IWorldGenerationReader worldIn, Random rand, BlockPos position, Set<BlockPos> logsPlaced, Set<BlockPos> leavesPlaced, MutableBoundingBox boundsIn, TreeFeatureConfig config) {
+		
+		if (petrified) {			
+			Supplier<BlockState> newBlock = () -> AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState();
+			Supplier<BlockState> newBlockWall = () -> AtmosphericBlocks.ARID_SANDSTONE_WALL.get().getDefaultState();
+			
+			if (rand.nextInt(4) == 0) {
+				newBlock = () -> AtmosphericBlocks.RED_ARID_SANDSTONE.get().getDefaultState();
+				newBlockWall = () -> AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get().getDefaultState();
+			}
+			
+			YUCCA_LOG = newBlock;
+			YUCCA_LEAVES = newBlock;
+			YUCCA_FLOWER = newBlockWall;
+			YUCCA_BRANCH = newBlockWall;
+		}
+		
 		int height = 4 + rand.nextInt(2) + rand.nextInt(2);
+		int reduction = 2 + rand.nextInt(3);
+		if (this.petrified) height -= reduction;
 		boolean flag = true;
 
 		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getMaxHeight()) {
@@ -81,7 +92,10 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 			} else if (isYucca(worldIn, position.down(), config.getSapling()) && position.getY() < worldIn.getMaxHeight()) {
 				//base log
 				if (!isSand(worldIn, position.down())) this.setDirtAt(worldIn, position.down(), position);
-
+				for (int ja = 0; ja < reduction; ++ja) {
+					if (this.petrified) this.placeLogAt(logsPlaced, worldIn, position.down(ja), boundsIn, Direction.UP, false);
+				}
+				
 				int logX = position.getX();
 				int logZ = position.getZ();
 				int logY = position.getY();
@@ -162,7 +176,7 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 
 		for (int i = 0; i < length; i++) {
 			blockpos = new BlockPos(logX, logY, logZ);
-			if (!anyBundle && rand.nextInt(16) == 0) {
+			if (!anyBundle && rand.nextInt(32) == 0) {
 				bundle = true; 
 				anyBundle = true;
 			} else {
@@ -219,12 +233,12 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 	private void placeFlowerAt(Set<BlockPos> changedBlocks, IWorldGenerationReader world, BlockPos pos, MutableBoundingBox boundsIn, Random rand) {
 		if (isAir(world, pos)) {
 			if (!isAir(world, pos.up())) {
-				this.setLogState(changedBlocks, world, pos, YUCCA_FLOWER.get(), boundsIn);
+				if (!petrified) this.setLogState(changedBlocks, world, pos, YUCCA_FLOWER.get(), boundsIn);
 			} else if (rand.nextInt(4) == 0) {
 				this.setLogState(changedBlocks, world, pos, TALL_YUCCA_FLOWER_BOTTOM.get(), boundsIn);
 				this.setLogState(changedBlocks, world, pos.up(), TALL_YUCCA_FLOWER_TOP.get(), boundsIn);
 			} else {
-				this.setLogState(changedBlocks, world, pos, YUCCA_FLOWER.get(), boundsIn);
+				if (!petrified) this.setLogState(changedBlocks, world, pos, YUCCA_FLOWER.get(), boundsIn);
 			}
 		}
 	}

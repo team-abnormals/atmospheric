@@ -185,8 +185,10 @@
 	
 	"block.atmospheric.barrel_cactus": "Barrel Cactus",
 	"block.atmospheric.barrel_cactus_batch": "Barrel Cactus Batch",
-	"block.atmospheric.aloe": "Aloe",
+	"block.atmospheric.aloe_vera": "Aloe Vera",
+	"block.atmospheric.tall_aloe_vera": "Tall Aloe Vera",
 	"block.atmospheric.aloe_bundle": "Aloe Bundle",
+	"block.atmospheric.aloe_gel_block": "Aloe Gel Block",
 	"block.atmospheric.gilia": "Gilia",
 	
 	"block.atmospheric.arid_sand": "Arid Sand",
@@ -241,6 +243,7 @@
 	"item.atmospheric.aloe_gel_bottle": "Aloe Gel Bottle",
 	
 	"effect.atmospheric.persistence": "Persistence",
+	"effect.atmospheric.gelled": "Gelled",
 	
 	"biome.atmospheric.dunes": "Dunes",
 	"biome.atmospheric.rocky_dunes": "Rocky Dunes",
@@ -257,6 +260,8 @@
 	"death.attack.yuccaLeaves.player": "%1$s was sliced by yucca leaves whilst trying to escape %2$s",
 	"death.attack.barrelCactus": "%1$s ran into a barrel cactus",
 	"death.attack.barrelCactus.player": "%1$s ran into a barrel cactus whilst trying to escape %2$s",
+	"death.attack.aloeLeaves": "%1$s was pricked by aloe leaves",
+	"death.attack.aloeLeaves.player": "%1$s pricked by aloe leaves whilst trying to escape %2$s",
   
   "_comment4": "START OF THE KOUSA SECTION",
   

@@ -180,6 +180,10 @@ public class AtmosphericBlockData {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_FLOWER.get(),RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(),RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_BRANCH.get(),RenderType.getCutout());
+		
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ALOE_VERA.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.TALL_ALOE_VERA.get(),RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ALOE_GEL_BLOCK.get(),RenderType.getTranslucent());
 
 		//Potted Flowers
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_WARM_MONKEY_BRUSH.get(),RenderType.getCutout());

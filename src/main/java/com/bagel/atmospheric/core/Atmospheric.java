@@ -71,6 +71,7 @@ public class Atmospheric
     			AtmosphericEffects.RELIEF, 
     			AtmosphericEffects.WORSENING,
     			AtmosphericEffects.SPITTING,
-    			AtmosphericEffects.PERSISTENCE);
+    			AtmosphericEffects.PERSISTENCE,
+    			AtmosphericEffects.GELLED);
     }
 }

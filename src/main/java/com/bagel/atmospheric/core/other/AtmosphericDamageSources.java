@@ -12,6 +12,7 @@ public class AtmosphericDamageSources {
 	public static final DamageSource YUCCA_BRANCH = new DamageSource("yuccaBranch");
 	public static final DamageSource YUCCA_LEAVES = new DamageSource("yuccaLeaves");
 	public static final DamageSource BARREL_CACTUS = new DamageSource("barrelCactus");
+	public static final DamageSource ALOE_LEAVES = new DamageSource("aloeLeaves");
 	
 	public static DamageSource causePassionfruitSeedDamage(Entity source, @Nullable Entity indirectEntityIn) {
 	      return (new IndirectEntityDamageSource("passionfruitSeed", source, indirectEntityIn)).setProjectile();
