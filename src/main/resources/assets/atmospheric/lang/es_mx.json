@@ -19,7 +19,7 @@
 	"block.atmospheric.rosewood_sign": "Letrero de palisandro",
 	
 	"block.atmospheric.passion_vine": "Enredadera pasionaria",
-	"block.atmospheric.passion_vine_bundle": "Montón de enredaderas pasionarias",	
+	"block.atmospheric.passion_vine_bundle": "Paquete de enredaderas pasionarias",	
 	
 	"block.atmospheric.warm_monkey_brush": "Cepillo de mono cálido",
 	"block.atmospheric.monkey_brush": "Cepillo de mono caliente",
@@ -166,8 +166,8 @@
 	"block.atmospheric.yucca_flower": "Flor de yuca",
 	"block.atmospheric.tall_yucca_flower": "Flor de yuca alta",
 	"block.atmospheric.yucca_branch": "Ramo de yuca",	
-	"block.atmospheric.yucca_bundle": "Montón de yucas",	
-	"block.atmospheric.roasted_yucca_bundle": "Montón de yucas asadas",	
+	"block.atmospheric.yucca_bundle": "Paquete de yucas",	
+	"block.atmospheric.roasted_yucca_bundle": "Paquete de yucas asadas",	
 	
 	"block.atmospheric.potted_yucca_sapling": "Maceta con retoño de yuca",
 	"block.atmospheric.potted_yucca_flower": "Maceta con flor de yuca",
@@ -185,8 +185,10 @@
 	
 	"block.atmospheric.barrel_cactus": "Cactus barril",
 	"block.atmospheric.barrel_cactus_batch": "Lote de cactus barril",
-	"block.atmospheric.aloe_vera": "Áloe",
-	"block.atmospheric.aloe_bundle": "Montón de áloes",
+	"block.atmospheric.aloe_vera": "Aloe vera",
+	"block.atmospheric.tall_aloe_vera": "Aloe vera alta",
+	"block.atmospheric.aloe_bundle": "Paquete de hojas de aloe",
+	"block.atmospheric.aloe_gel_block": "Bloque de gel de aloe",
 	"block.atmospheric.gilia": "Gilia",
 	
 	"block.atmospheric.arid_sand": "Arena árida",
@@ -236,11 +238,12 @@
 	"item.atmospheric.roasted_yucca_fruit": "Fruto de yuca asado",
 	"item.atmospheric.yucca_juice": "Jugo de yuca",
 	
-	"item.atmospheric.aloe_kernels": "Semillas de áloe",
-	"item.atmospheric.aloe_leaves": "Hojas de áloe",
-	"item.atmospheric.aloe_gel_bottle": "Frasco de gel de áloe",
+	"item.atmospheric.aloe_kernels": "Semillas de aloe",
+	"item.atmospheric.aloe_leaves": "Hojas de aloe",
+	"item.atmospheric.aloe_gel_bottle": "Frasco de gel de aloe",
 
 	"effect.atmospheric.persistence": "Perseverancia",
+	"effect.atmospheric.gelled": "Gelificación",
 	
 	"biome.atmospheric.dunes": "Dunas",
 	"biome.atmospheric.rocky_dunes": "Dunas rocosas",
@@ -257,6 +260,8 @@
 	"death.attack.yuccaLeaves.player": "%1$s fue rebanado por hojas de yuca mientras escapaba de %2$s",
 	"death.attack.barrelCactus": "%1$s caminó cerca de un cactus barril",
 	"death.attack.barrelCactus.player": "%1$s caminó cerca de un cactus barril mientras escapaba de %2$s",
+	"death.attack.aloeLeaves": "%1$s se pinchó con hojas de aloe",
+	"death.attack.aloeLeaves.player": "%1$s se pinchó con hojas de aloe mientras escapaba de %2$s",
   
   "_comment4": "START OF THE KOUSA SECTION",
   
