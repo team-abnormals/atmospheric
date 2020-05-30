@@ -8,23 +8,21 @@ import com.bagel.atmospheric.core.other.AtmosphericColors;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
+import com.bagel.atmospheric.core.registry.AtmosphericParticles;
 import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 
 import net.minecraft.block.DispenserBlock;
-import net.minecraft.potion.Effect;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod("atmospheric")
-@Mod.EventBusSubscriber(modid = "atmospheric", bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod(Atmospheric.MODID)
+@Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Atmospheric
 {
     public static final String MODID = "atmospheric";
@@ -37,6 +35,7 @@ public class Atmospheric
     	REGISTRY_HELPER.getDeferredBlockRegister().register(modEventBus);
     	
     	AtmosphericBiomes.BIOMES.register(modEventBus);
+    	AtmosphericParticles.PARTICLES.register(modEventBus);
         AtmosphericEffects.EFFECTS.register(modEventBus);
         AtmosphericEffects.POTIONS.register(modEventBus);
         
@@ -63,15 +62,5 @@ public class Atmospheric
     {
     	AtmosphericColors.registerBlockColors();
     	AtmosphericBlockData.setupRenderLayer();
-    }
-    
-    @SubscribeEvent
-	public static void onRegisterEffects(RegistryEvent.Register<Effect> event) {
-    	event.getRegistry().registerAll(
-    			AtmosphericEffects.RELIEF, 
-    			AtmosphericEffects.WORSENING,
-    			AtmosphericEffects.SPITTING,
-    			AtmosphericEffects.PERSISTENCE,
-    			AtmosphericEffects.GELLED);
     }
 }

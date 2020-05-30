@@ -31,7 +31,6 @@ public class PersistenceEffect extends Effect {
 					AttributeModifier attributemodifier = entry.getValue();
 					iattributeinstance.removeModifier(attributemodifier);
 					iattributeinstance.applyModifier(new AttributeModifier(attributemodifier.getID(), this.getName() + " " + amplifier, amount * this.getAttributeModifierAmount(amplifier, attributemodifier), attributemodifier.getOperation()));
-					System.out.println(amount * this.getAttributeModifierAmount(amplifier, attributemodifier));
 				}
 			}
 		}

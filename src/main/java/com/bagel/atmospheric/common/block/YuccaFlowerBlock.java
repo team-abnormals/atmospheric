@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
+import com.google.common.base.Supplier;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -17,6 +18,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.potion.Effect;
+import net.minecraft.potion.Effects;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -27,11 +29,16 @@ import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
 public class YuccaFlowerBlock extends FlowerBlock implements IGrowable {
-
-	public YuccaFlowerBlock(Effect effect, int effectDuration, Properties properties) {
-		super(effect, effectDuration, properties);
+	private final Supplier<Effect> stewEffect;
+	
+	public YuccaFlowerBlock(Supplier<Effect> effect, int effectDuration, Properties properties) {
+		super(Effects.BLINDNESS, effectDuration, properties);
+		this.stewEffect = effect;
 	}
 	
+	public Effect getStewEffect() {
+		return this.stewEffect.get();
+	}
 	
 	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {

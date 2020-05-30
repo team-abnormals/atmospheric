@@ -1,5 +1,7 @@
 package com.bagel.atmospheric.common.block;
 
+import javax.annotation.Nullable;
+
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
 
 import net.minecraft.block.Block;
@@ -8,7 +10,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BreakableBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.state.BooleanProperty;
@@ -78,13 +82,19 @@ public class AloeGelBlock extends BreakableBlock {
 		return false;
 	}
 	
+	@Nullable
+    @Override
+    public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
+        return  PathNodeType.DAMAGE_OTHER;
+    }
+	
 	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
 		if (!state.get(WET)) {
 			entity.setMotionMultiplier(state, new Vec3d(0.25D, 0.25D, 0.25D));
 			if (entity instanceof LivingEntity) {
 				LivingEntity living = (LivingEntity) entity;
 				living.addPotionEffect(new EffectInstance(Effects.POISON, 150, 0, true, true));
-				living.addPotionEffect(new EffectInstance(AtmosphericEffects.GELLED, 150, 0, true, false, true));
+				living.addPotionEffect(new EffectInstance(AtmosphericEffects.GELLED.get(), 330, 0, true, false, true));
 			}
 		}
 	}

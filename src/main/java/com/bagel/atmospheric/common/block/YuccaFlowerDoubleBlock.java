@@ -6,6 +6,7 @@ import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DoublePlantBlock;
@@ -16,11 +17,15 @@ import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 public class YuccaFlowerDoubleBlock extends DoublePlantBlock {
+	public static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 
 	public YuccaFlowerDoubleBlock(Properties properties) {
 		super(properties);
@@ -55,4 +60,9 @@ public class YuccaFlowerDoubleBlock extends DoublePlantBlock {
     public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
         return  PathNodeType.DAMAGE_CACTUS;
     }
+	
+	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+		Vec3d vec3d = state.getOffset(worldIn, pos);
+        return SHAPE.withOffset(vec3d.x, vec3d.y, vec3d.z);
+	}
 }

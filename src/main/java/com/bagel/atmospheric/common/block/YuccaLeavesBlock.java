@@ -1,11 +1,15 @@
 package com.bagel.atmospheric.common.block;
 
+import javax.annotation.Nullable;
+
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsLeavesBlock;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -37,6 +41,12 @@ public class YuccaLeavesBlock extends AbnormalsLeavesBlock {
 	public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		return 0.2F;
 	}
+	
+	@Nullable
+    @Override
+    public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
+        return  PathNodeType.DAMAGE_CACTUS;
+    }
 		
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity) {

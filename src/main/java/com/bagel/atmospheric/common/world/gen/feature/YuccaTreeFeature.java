@@ -222,7 +222,7 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 	}
 
 	private void placeLeafAt(Set<BlockPos> changedBlocks, IWorldGenerationReader world, BlockPos pos, MutableBoundingBox boundsIn, Random rand) {
-		if (isAirOrLeaves(world, pos)) { 
+		if (isAirOrLeaves(world, pos) && !this.petrified) { 
 			this.setLogState(changedBlocks, world, pos, YUCCA_LEAVES.get(), boundsIn);
 		}
 		if (rand.nextInt(8) == 0 && !this.petrified) { 
@@ -233,12 +233,12 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 	private void placeFlowerAt(Set<BlockPos> changedBlocks, IWorldGenerationReader world, BlockPos pos, MutableBoundingBox boundsIn, Random rand) {
 		if (isAir(world, pos)) {
 			if (!isAir(world, pos.up())) {
-				if (!petrified) this.setLogState(changedBlocks, world, pos, YUCCA_FLOWER.get(), boundsIn);
+				this.setLogState(changedBlocks, world, pos, YUCCA_FLOWER.get(), boundsIn);
 			} else if (rand.nextInt(4) == 0) {
 				this.setLogState(changedBlocks, world, pos, TALL_YUCCA_FLOWER_BOTTOM.get(), boundsIn);
 				this.setLogState(changedBlocks, world, pos.up(), TALL_YUCCA_FLOWER_TOP.get(), boundsIn);
 			} else {
-				if (!petrified) this.setLogState(changedBlocks, world, pos, YUCCA_FLOWER.get(), boundsIn);
+				this.setLogState(changedBlocks, world, pos, YUCCA_FLOWER.get(), boundsIn);
 			}
 		}
 	}
