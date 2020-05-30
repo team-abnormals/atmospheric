@@ -1,4 +1,4 @@
-package com.bagel.atmospheric.core.registry;
+package com.bagel.atmospheric.core.other;
 
 import com.bagel.atmospheric.core.Atmospheric;
 import com.teamabnormals.abnormals_core.common.advancement.EmptyTrigger;

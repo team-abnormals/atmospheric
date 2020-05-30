@@ -102,7 +102,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> POTTED_WARM_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_warm_monkey_brush",		() -> new FlowerPotBlock(WARM_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_HOT_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_monkey_brush",			() -> new FlowerPotBlock(HOT_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_SCALDING_MONKEY_BRUSH	= HELPER.createBlockNoItem("potted_scalding_monkey_brush",	() -> new FlowerPotBlock(SCALDING_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
-	public static final RegistryObject<Block> POTTED_ROSEWOOD_SAPLING	= HELPER.createBlockNoItem("potted_rosewood_sapling",			() -> new FlowerPotBlock(ROSEWOOD_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
+	public static final RegistryObject<Block> POTTED_ROSEWOOD_SAPLING		= HELPER.createBlockNoItem("potted_rosewood_sapling",		() -> new FlowerPotBlock(ROSEWOOD_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 
 	public static final RegistryObject<Block> VERTICAL_ROSEWOOD_PLANKS 	= HELPER.createCompatBlock("quark", "vertical_rosewood_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "rosewood_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);

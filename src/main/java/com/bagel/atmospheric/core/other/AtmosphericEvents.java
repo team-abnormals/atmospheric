@@ -20,7 +20,7 @@ public class AtmosphericEvents {
 		if (event.getEntityLiving().isPotionActive(AtmosphericEffects.GELLED.get())) {
 			int amplifier = entity.getActivePotionEffect(AtmosphericEffects.GELLED.get()).getAmplifier();
 			if (event.getSource().isFireDamage()) {
-				event.setAmount(event.getAmount() / amplifier + 2);
+				event.setAmount(event.getAmount() / (amplifier + 2));
 			}
 		}
 		

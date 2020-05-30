@@ -1,7 +1,7 @@
 package com.bagel.atmospheric.common.entity;
 
+import com.bagel.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
-import com.bagel.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

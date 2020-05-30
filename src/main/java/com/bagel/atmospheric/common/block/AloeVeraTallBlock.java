@@ -83,13 +83,13 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 			
 			for (int i = 0; i < 3; i++) {
 				double offsetX = rand.nextFloat() * 0.6F;
-				double offsetZ = rand.nextFloat() * 0.6F;
+				double offsetZ = rand.nextFloat() * 0.45F;
 				
 				double x = pos.getX() + 0.5D + offsetX;
-				double y = pos.getY() + (rand.nextFloat() * 0.0025F);
-				double z = pos.getZ() + 0.5D + offsetZ;
+				double y = pos.getY() + 0.5D + (rand.nextFloat() * 0.05F);
+				double z = pos.getZ() + 0.65D + offsetZ;
 				
-				if (state.get(HALF) == DoubleBlockHalf.UPPER && worldIn.isRemote && worldIn.getGameTime() % (9 / (state.get(AGE) - 5))  == 0) worldIn.addParticle(AtmosphericParticles.ALOE_BLOSSOM.get(), x, y, z, 0.02D, 0.005D, 0.02D);
+				if (state.get(HALF) == DoubleBlockHalf.UPPER && worldIn.isRemote && worldIn.getGameTime() % (9 / (state.get(AGE) - 5))  == 0) worldIn.addParticle(AtmosphericParticles.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
 			}
 			
 			if (!worldIn.isRemote && state.get(AGE) > 3 && Math.random() <= 0.4 && state.get(HALF) == DoubleBlockHalf.LOWER) {
@@ -103,19 +103,20 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 	@Override
 	public void animateTick(BlockState state, World worldIn, BlockPos pos, Random rand) {
 		double offsetX = rand.nextFloat() * 0.6F;
-		double offsetZ = rand.nextFloat() * 0.6F;
+		double offsetZ = rand.nextFloat() * 0.45F;
 		
 		double x = pos.getX() + 0.5D + offsetX;
-		double y = pos.getY() + (rand.nextFloat() * 0.0025F);
-		double z = pos.getZ() + 0.5D + offsetZ;
+		double y = pos.getY() + 0.5D + (rand.nextFloat() * 0.05F);
+		double z = pos.getZ() + 0.65D + offsetZ;
 		
-		if (state.get(HALF) == DoubleBlockHalf.UPPER && worldIn.isRemote && worldIn.getGameTime() % (6 / (state.get(AGE) - 5)) == 0) worldIn.addParticle(AtmosphericParticles.ALOE_BLOSSOM.get(), x, y, z, 0.015D, 0.005D, 0.015D);
+		if (state.get(HALF) == DoubleBlockHalf.UPPER && worldIn.isRemote && worldIn.getGameTime() % (6 / (state.get(AGE) - 5)) == 0) worldIn.addParticle(AtmosphericParticles.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
 	}
 
 	@Override
 	@SuppressWarnings("deprecation")
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		int i = state.get(AGE);
+		int age = state.get(AGE);
+		Random rand = new Random();
 
 		if (player.getHeldItem(handIn).getItem() == Items.SHEARS) {
 						
@@ -123,22 +124,32 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 			worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 			worldIn.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_SLIME_BLOCK_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 			
+			for (int i = 0; i < (50 + rand.nextInt(50)); i++) {
+				double offsetX = rand.nextFloat();
+				double offsetZ = rand.nextFloat();
+				
+				double x = pos.getX() + offsetX;
+				double y = pos.getY() + 0.5D + (rand.nextFloat());
+				double z = pos.getZ() + 0.15D + offsetZ;
+				
+				if (worldIn.isRemote) worldIn.addParticle(AtmosphericParticles.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
+			}
+			
 			if (state.get(HALF) == DoubleBlockHalf.LOWER) {
 				worldIn.setBlockState(pos, AtmosphericBlocks.ALOE_VERA.get().getDefaultState().with(AloeVeraBlock.AGE, 2), 32);
 				worldIn.setBlockState(pos.up(), Blocks.AIR.getDefaultState(), 32);
 				
 				spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), new Random().nextInt(5) + 3));
-				spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_KERNELS.get(), i - 5));
-				spawnAsEntity(worldIn, pos, new ItemStack(Items.YELLOW_DYE, i - 5));
+				spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_KERNELS.get(), age - 5));
+				spawnAsEntity(worldIn, pos, new ItemStack(Items.YELLOW_DYE, age - 5));
 				
 			} else {
 				worldIn.setBlockState(pos.down(), AtmosphericBlocks.ALOE_VERA.get().getDefaultState().with(AloeVeraBlock.AGE, 5), 32);
 				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 32);
 				
-				spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_KERNELS.get(), i - 5));
-				spawnAsEntity(worldIn, pos, new ItemStack(Items.YELLOW_DYE, i - 5));
+				spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_KERNELS.get(), age - 5));
+				spawnAsEntity(worldIn, pos, new ItemStack(Items.YELLOW_DYE, age - 5));
 			}
-			
 			
 			return ActionResultType.SUCCESS;
 		} else  {
@@ -173,8 +184,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 		super.tick(state, worldIn, pos, random);
 		if (state.get(HALF) == DoubleBlockHalf.LOWER) {
 			boolean flag = worldIn.getBlockState(pos.down()).getBlock() == AtmosphericBlocks.RED_ARID_SAND.get();
-			int chance = flag ? 8 : 12;
-	        if (state.get(AGE) < 8 && worldIn.getLightSubtracted(pos.up(), 0) >= 12 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(chance) == 0)) {
+	        if (!flag && state.get(AGE) < 8 && worldIn.getLightSubtracted(pos.up(), 0) >= 12 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(12) == 0)) {
         		worldIn.setBlockState(pos, state.with(AGE, state.get(AGE) + 1));
         		worldIn.setBlockState(pos.up(), state.with(HALF, DoubleBlockHalf.UPPER).with(AGE, state.get(AGE) + 1));
 	            net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);

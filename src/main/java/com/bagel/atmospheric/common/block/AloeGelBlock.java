@@ -93,8 +93,8 @@ public class AloeGelBlock extends BreakableBlock {
 			entity.setMotionMultiplier(state, new Vec3d(0.25D, 0.25D, 0.25D));
 			if (entity instanceof LivingEntity) {
 				LivingEntity living = (LivingEntity) entity;
-				living.addPotionEffect(new EffectInstance(Effects.POISON, 150, 0, true, true));
-				living.addPotionEffect(new EffectInstance(AtmosphericEffects.GELLED.get(), 330, 0, true, false, true));
+				living.addPotionEffect(new EffectInstance(Effects.POISON, 150, 0, false, true, true));
+				living.addPotionEffect(new EffectInstance(AtmosphericEffects.GELLED.get(), 330, 0, false, false, true));
 			}
 		}
 	}

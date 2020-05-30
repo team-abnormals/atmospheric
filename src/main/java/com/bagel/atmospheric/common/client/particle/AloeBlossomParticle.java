@@ -15,15 +15,15 @@ public class AloeBlossomParticle extends SpriteTexturedParticle {
 	protected final IAnimatedSprite animatedSprite;
 	private float angle;
 	
-	public AloeBlossomParticle(IAnimatedSprite animatedSprite, World world, double posX, double posY, double posZ, double motionX, double motionY, double motionZ, boolean isShort) {
+	public AloeBlossomParticle(IAnimatedSprite animatedSprite, World world, double posX, double posY, double posZ, double motionX, double motionY, double motionZ) {
 		super(world, posX, posY, posZ, motionX, motionY, motionZ);
 		this.motionX = motionX;
-		this.motionY = isShort ? motionY + (rand.nextDouble() * 0.05D + 0.055F) : motionY + (rand.nextDouble() * 0.05D + 0.075F);
+		this.motionY = motionY + (rand.nextDouble() * 0.05D);
 		this.motionZ = motionZ;
 		this.angle = (float) Math.random() * ((float) Math.PI * 2F);
 		this.animatedSprite = animatedSprite;
-		this.maxAge = isShort ? rand.nextInt(30) + 30 : rand.nextInt(50) + 50;
-		this.particleScale = isShort ? 0.1F * (this.rand.nextFloat() * 0.5F + 0.5F) * 2.0F : 0.2F * (this.rand.nextFloat() * 0.5F + 0.5F) * 2.0F;
+		this.maxAge = rand.nextInt(75) + 75;
+		this.particleScale = 0.2F * (this.rand.nextFloat() * 0.5F + 0.5F) * 2.0F;
 		this.selectSpriteWithAge(animatedSprite);
 	}
 	
@@ -76,20 +76,7 @@ public class AloeBlossomParticle extends SpriteTexturedParticle {
 
 		@Override
 		public Particle makeParticle(BasicParticleType type, World world, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-			return new AloeBlossomParticle(this.animatedSprite, world, x, y, z, xSpeed, ySpeed, zSpeed, false);
-		}
-	}
-	
-	public static class ShortFactory implements IParticleFactory<BasicParticleType> {
-		private IAnimatedSprite animatedSprite;
-
-		public ShortFactory(IAnimatedSprite animatedSprite) {
-			this.animatedSprite = animatedSprite;
-		}
-
-		@Override
-		public Particle makeParticle(BasicParticleType type, World world, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-			return new AloeBlossomParticle(this.animatedSprite, world, x, y, z, xSpeed, ySpeed, zSpeed, true);
+			return new AloeBlossomParticle(this.animatedSprite, world, x, y, z, xSpeed, ySpeed, zSpeed);
 		}
 	}
 }

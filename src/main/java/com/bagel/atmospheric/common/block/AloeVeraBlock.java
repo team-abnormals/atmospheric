@@ -148,7 +148,7 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
         if (worldIn.getLightSubtracted(pos.up(), 0) >= 12 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(chance) == 0)) {
         	if (state.get(AGE) < 5) {
         		worldIn.setBlockState(pos, state.with(AGE, state.get(AGE) + 1));
-        	} else {
+        	} else if (!flag) {
         		AloeVeraTallBlock tallAloe = (AloeVeraTallBlock)(AtmosphericBlocks.TALL_ALOE_VERA.get());
                 if (tallAloe.getDefaultState().isValidPosition(worldIn, pos) && worldIn.isAirBlock(pos.up())) {
                 	tallAloe.placeAt(worldIn, pos, 2);
