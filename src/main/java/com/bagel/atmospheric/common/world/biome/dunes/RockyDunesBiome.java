@@ -1,6 +1,7 @@
 package com.bagel.atmospheric.common.world.biome.dunes;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
+import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 
@@ -70,7 +71,13 @@ public final class RockyDunesBiome extends Biome {
 	
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	   public int getSkyColor() {
-	      return 14988944;
-	   }
+	public int getSkyColor() {
+		return 14988944;
+	}
+	
+	
+	@Override
+	public Biome getHill(net.minecraft.world.gen.INoiseRandom rand) {
+		return rand.random(5) > 1 ? AtmosphericBiomes.ROCKY_DUNES_HILLS.get() : AtmosphericBiomes.PETRIFIED_DUNES.get();
+	}
 }

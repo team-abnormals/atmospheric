@@ -29,7 +29,7 @@ public final class FlourishingDunesBiome extends Biome {
 			.depth(0.45F)
 			.scale(0.15F)
 			.temperature(2.0F)
-			.downfall(0.0F)
+			.downfall(0.1F)
 			.waterColor(4159204)
 			.waterFogColor(329011)
 			.parent(null)));

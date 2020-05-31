@@ -1,7 +1,6 @@
 package com.bagel.atmospheric.common.world.biome.dunes;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
-import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 
@@ -18,8 +17,8 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public final class DunesBiome extends Biome {
-	public DunesBiome() {
+public final class RockyDunesHillsBiome extends Biome {
+	public RockyDunesHillsBiome() {
 		super((new Biome.Builder()
 			.surfaceBuilder(AtmosphericFeatures.WAVEY_DUNES, new SurfaceBuilderConfig(
 				AtmosphericBlocks.ARID_SAND.get().getDefaultState(), 
@@ -28,7 +27,7 @@ public final class DunesBiome extends Biome {
 			.precipitation(Biome.RainType.NONE)
 			.category(Biome.Category.DESERT)
 			.depth(0.45F)
-			.scale(0.2F)
+			.scale(0.45F)
 			.temperature(2.0F)
 			.downfall(0.0F)
 			.waterColor(4159204)
@@ -46,14 +45,14 @@ public final class DunesBiome extends Biome {
 		DefaultBiomeFeatures.addSedimentDisks(this);
 		AtmosphericBiomeFeatures.addFossils(this);
 		DefaultBiomeFeatures.addMushrooms(this);
-
-		AtmosphericBiomeFeatures.addDeadBushes(this, 2);
-		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.25F, 1, false);
-		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 2);
-		AtmosphericBiomeFeatures.addAloeVera(this, 2);
-		AtmosphericBiomeFeatures.addYuccaFlower(this, 2);
-		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 2);
 		
+		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 5);
+		AtmosphericBiomeFeatures.addDuneRocks(this, 2, 3);
+		AtmosphericBiomeFeatures.addDeadBushes(this, 4);
+		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.1F, 1, false);
+		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 1);
+		AtmosphericBiomeFeatures.addAloeVera(this, 1);
+
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 
 		this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.RABBIT, 4, 2, 3));
@@ -73,10 +72,5 @@ public final class DunesBiome extends Biome {
 	@Override
 	public int getSkyColor() {
 		return 14988944;
-	}
-	
-	@Override
-	public Biome getHill(net.minecraft.world.gen.INoiseRandom rand) {
-		return rand.random(5) > 1 ? AtmosphericBiomes.DUNES_HILLS.get() : AtmosphericBiomes.FLOURISHING_DUNES.get();
 	}
 }

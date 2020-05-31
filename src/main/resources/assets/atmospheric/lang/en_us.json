@@ -247,9 +247,11 @@
 	
 	"biome.atmospheric.dunes": "Dunes",
 	"biome.atmospheric.dunes_hills": "Dunes Hills",
+	"biome.atmospheric.flourishing_dunes": "Flourishing Dunes",
+	
 	"biome.atmospheric.rocky_dunes": "Rocky Dunes",
+	"biome.atmospheric.rocky_dunes_hills": "Rocky Dunes Hills",
 	"biome.atmospheric.petrified_dunes": "Petrified Dunes",
-	"biome.atmospheric.flourishing_dunes": "Fluorishing Dunes",
 	
 	"death.attack.yuccaSapling": "%1$s was sliced by a yucca sapling",
 	"death.attack.yuccaSapling.player": "%1$s was sliced by a yucca sapling whilst trying to escape %2$s",

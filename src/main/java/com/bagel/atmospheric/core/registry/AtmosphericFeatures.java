@@ -114,11 +114,11 @@ public class AtmosphericFeatures {
         }
         
         if (biome == Biomes.MODIFIED_WOODED_BADLANDS_PLATEAU || biome == Biomes.WOODED_BADLANDS_PLATEAU) {
-            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.15F, 1, false);
+            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.25F, 1, false);
         }
         
         if (biome == Biomes.SHATTERED_SAVANNA || biome == Biomes.SHATTERED_SAVANNA_PLATEAU) {
-            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.1F, 1, false);
+            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.15F, 1, false);
         }
     }
 }
