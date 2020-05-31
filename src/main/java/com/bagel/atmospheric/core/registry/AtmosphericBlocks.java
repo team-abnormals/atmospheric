@@ -114,49 +114,49 @@ public class AtmosphericBlocks {
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public static final RegistryObject<Block> IVORY_TRAVERTINE 		= HELPER.createBlock("ivory_travertine", 	() -> new RotatedPillarBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PEACH_TRAVERTINE 		= HELPER.createBlock("peach_travertine", 	() -> new RotatedPillarBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE 	= HELPER.createBlock("persimmon_travertine", () -> new RotatedPillarBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SAFFRON_TRAVERTINE 	= HELPER.createBlock("saffron_travertine", 	() -> new RotatedPillarBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> IVORY_TRAVERTINE 		= HELPER.createBlock("ivory_travertine", 	() -> new RotatedPillarBlock(AtmosphericProperties.IVORY_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE 		= HELPER.createBlock("peach_travertine", 	() -> new RotatedPillarBlock(AtmosphericProperties.PEACH_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE 	= HELPER.createBlock("persimmon_travertine", () -> new RotatedPillarBlock(AtmosphericProperties.PERSIMMON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE 	= HELPER.createBlock("saffron_travertine", 	() -> new RotatedPillarBlock(AtmosphericProperties.SAFFRON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	
-	public static final RegistryObject<Block> CHISELED_IVORY_TRAVERTINE 	= HELPER.createBlock("chiseled_ivory_travertine", 		() -> new Block(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CHISELED_PEACH_TRAVERTINE 	= HELPER.createBlock("chiseled_peach_travertine", 		() -> new Block(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CHISELED_PERSIMMON_TRAVERTINE = HELPER.createBlock("chiseled_persimmon_travertine", 	() -> new Block(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CHISELED_SAFFRON_TRAVERTINE 	= HELPER.createBlock("chiseled_saffron_travertine", 	() -> new Block(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CHISELED_IVORY_TRAVERTINE 	= HELPER.createBlock("chiseled_ivory_travertine", 		() -> new Block(AtmosphericProperties.IVORY_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CHISELED_PEACH_TRAVERTINE 	= HELPER.createBlock("chiseled_peach_travertine", 		() -> new Block(AtmosphericProperties.PEACH_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CHISELED_PERSIMMON_TRAVERTINE = HELPER.createBlock("chiseled_persimmon_travertine", 	() -> new Block(AtmosphericProperties.PERSIMMON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CHISELED_SAFFRON_TRAVERTINE 	= HELPER.createBlock("chiseled_saffron_travertine", 	() -> new Block(AtmosphericProperties.SAFFRON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	
-	public static final RegistryObject<Block> CUT_IVORY_TRAVERTINE 		= HELPER.createBlock("cut_ivory_travertine", 	() -> new Block(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CUT_PEACH_TRAVERTINE 		= HELPER.createBlock("cut_peach_travertine", 	() -> new Block(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CUT_PERSIMMON_TRAVERTINE 	= HELPER.createBlock("cut_persimmon_travertine", () -> new Block(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CUT_SAFFRON_TRAVERTINE 	= HELPER.createBlock("cut_saffron_travertine", 	() -> new Block(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CUT_IVORY_TRAVERTINE 		= HELPER.createBlock("cut_ivory_travertine", 	() -> new Block(AtmosphericProperties.IVORY_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CUT_PEACH_TRAVERTINE 		= HELPER.createBlock("cut_peach_travertine", 	() -> new Block(AtmosphericProperties.PEACH_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CUT_PERSIMMON_TRAVERTINE 	= HELPER.createBlock("cut_persimmon_travertine", () -> new Block(AtmosphericProperties.PERSIMMON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CUT_SAFFRON_TRAVERTINE 	= HELPER.createBlock("cut_saffron_travertine", 	() -> new Block(AtmosphericProperties.SAFFRON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 
-	public static final RegistryObject<Block> IVORY_TRAVERTINE_STAIRS 		= HELPER.createBlock("ivory_travertine_stairs", 	() -> new AbnormalsStairsBlock(IVORY_TRAVERTINE.get().getDefaultState(),AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PEACH_TRAVERTINE_STAIRS 		= HELPER.createBlock("peach_travertine_stairs", 	() -> new AbnormalsStairsBlock(PEACH_TRAVERTINE.get().getDefaultState(), AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_STAIRS 	= HELPER.createBlock("persimmon_travertine_stairs", () -> new AbnormalsStairsBlock(PERSIMMON_TRAVERTINE.get().getDefaultState(), AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_STAIRS 	= HELPER.createBlock("saffron_travertine_stairs", 	() -> new AbnormalsStairsBlock(SAFFRON_TRAVERTINE.get().getDefaultState(), AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> IVORY_TRAVERTINE_STAIRS 		= HELPER.createBlock("ivory_travertine_stairs", 	() -> new AbnormalsStairsBlock(IVORY_TRAVERTINE.get().getDefaultState(),AtmosphericProperties.IVORY_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE_STAIRS 		= HELPER.createBlock("peach_travertine_stairs", 	() -> new AbnormalsStairsBlock(PEACH_TRAVERTINE.get().getDefaultState(), AtmosphericProperties.PEACH_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_STAIRS 	= HELPER.createBlock("persimmon_travertine_stairs", () -> new AbnormalsStairsBlock(PERSIMMON_TRAVERTINE.get().getDefaultState(), AtmosphericProperties.PERSIMMON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_STAIRS 	= HELPER.createBlock("saffron_travertine_stairs", 	() -> new AbnormalsStairsBlock(SAFFRON_TRAVERTINE.get().getDefaultState(), AtmosphericProperties.SAFFRON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	
-	public static final RegistryObject<Block> IVORY_TRAVERTINE_SLAB 	= HELPER.createBlock("ivory_travertine_slab", 	() -> new SlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PEACH_TRAVERTINE_SLAB 	= HELPER.createBlock("peach_travertine_slab", 	() -> new SlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_SLAB = HELPER.createBlock("persimmon_travertine_slab",() -> new SlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_SLAB 	= HELPER.createBlock("saffron_travertine_slab",	() -> new SlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> IVORY_TRAVERTINE_SLAB 	= HELPER.createBlock("ivory_travertine_slab", 	() -> new SlabBlock(AtmosphericProperties.IVORY_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE_SLAB 	= HELPER.createBlock("peach_travertine_slab", 	() -> new SlabBlock(AtmosphericProperties.PEACH_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_SLAB = HELPER.createBlock("persimmon_travertine_slab",() -> new SlabBlock(AtmosphericProperties.PERSIMMON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_SLAB 	= HELPER.createBlock("saffron_travertine_slab",	() -> new SlabBlock(AtmosphericProperties.SAFFRON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	
-	public static final RegistryObject<Block> IVORY_TRAVERTINE_WALL 	= HELPER.createBlock("ivory_travertine_wall", 	() -> new WallBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> PEACH_TRAVERTINE_WALL 	= HELPER.createBlock("peach_travertine_wall", 	() -> new WallBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_WALL	= HELPER.createBlock("persimmon_travertine_wall",() -> new WallBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_WALL 	= HELPER.createBlock("saffron_travertine_wall", () -> new WallBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> IVORY_TRAVERTINE_WALL 	= HELPER.createBlock("ivory_travertine_wall", 	() -> new WallBlock(AtmosphericProperties.IVORY_TRAVERTINE), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE_WALL 	= HELPER.createBlock("peach_travertine_wall", 	() -> new WallBlock(AtmosphericProperties.PEACH_TRAVERTINE), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_WALL	= HELPER.createBlock("persimmon_travertine_wall",() -> new WallBlock(AtmosphericProperties.PERSIMMON_TRAVERTINE), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_WALL 	= HELPER.createBlock("saffron_travertine_wall", () -> new WallBlock(AtmosphericProperties.SAFFRON_TRAVERTINE), ItemGroup.DECORATIONS);
 	
 	public static final RegistryObject<Block> IVORY_FUMAROLE_BLOCK 		= HELPER.createBlock("ivory_fumarole_block", 	() -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> PEACH_FUMAROLE_BLOCK 		= HELPER.createBlock("peach_fumarole_block", 	() -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> PERSIMMON_FUMAROLE_BLOCK 	= HELPER.createBlock("persimmon_fumarole_block", () -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SAFFRON_FUMAROLE_BLOCK 	= HELPER.createBlock("saffron_fumarole_block", 	() -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
 	
-	public static final RegistryObject<Block> IVORY_TRAVERTINE_VERTICAL_SLAB 		= HELPER.createCompatBlock("quark", "ivory_travertine_vertical_slab", 		() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PEACH_TRAVERTINE_VERTICAL_SLAB 		= HELPER.createCompatBlock("quark", "peach_travertine_vertical_slab", 		() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "persimmon_travertine_vertical_slab", 	() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_VERTICAL_SLAB 		= HELPER.createCompatBlock("quark", "saffron_travertine_vertical_slab", 	() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> IVORY_TRAVERTINE_VERTICAL_SLAB 		= HELPER.createCompatBlock("quark", "ivory_travertine_vertical_slab", 		() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.IVORY_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PEACH_TRAVERTINE_VERTICAL_SLAB 		= HELPER.createCompatBlock("quark", "peach_travertine_vertical_slab", 		() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.PEACH_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "persimmon_travertine_vertical_slab", 	() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.PERSIMMON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_VERTICAL_SLAB 		= HELPER.createCompatBlock("quark", "saffron_travertine_vertical_slab", 	() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.SAFFRON_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public static final RegistryObject<Block> ARID_SAND 					= HELPER.createBlock("arid_sand", 					() -> new AridSandBlock(14406560, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ARID_SAND 					= HELPER.createBlock("arid_sand", 					() -> new AridSandBlock(14406560, AtmosphericProperties.ARID_SAND), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ARID_SANDSTONE 				= HELPER.createBlock("arid_sandstone", 				() -> new Block(Block.Properties.from(Blocks.SANDSTONE)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ARID_SANDSTONE_SLAB 			= HELPER.createBlock("arid_sandstone_slab", 		() -> new SlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ARID_SANDSTONE_STAIRS 		= HELPER.createBlock("arid_sandstone_stairs", 		() -> new AbnormalsStairsBlock(ARID_SANDSTONE.get().getDefaultState(), Block.Properties.from(Blocks.SANDSTONE_STAIRS)), ItemGroup.BUILDING_BLOCKS);
@@ -171,7 +171,7 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> CHISELED_ARID_SANDSTONE 		= HELPER.createBlock("chiseled_arid_sandstone", 	() -> new Block(Block.Properties.from(Blocks.CHISELED_SANDSTONE)), ItemGroup.BUILDING_BLOCKS);
 	
-	public static final RegistryObject<Block> RED_ARID_SAND 					= HELPER.createBlock("red_arid_sand", 					() -> new AridSandBlock(14406560, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> RED_ARID_SAND 					= HELPER.createBlock("red_arid_sand", 					() -> new AridSandBlock(14406560, AtmosphericProperties.RED_ARID_SAND), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> RED_ARID_SANDSTONE 				= HELPER.createBlock("red_arid_sandstone", 				() -> new Block(Block.Properties.from(Blocks.SANDSTONE)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> RED_ARID_SANDSTONE_SLAB 			= HELPER.createBlock("red_arid_sandstone_slab", 		() -> new SlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> RED_ARID_SANDSTONE_STAIRS 		= HELPER.createBlock("red_arid_sandstone_stairs", 		() -> new AbnormalsStairsBlock(RED_ARID_SANDSTONE.get().getDefaultState(), Block.Properties.from(Blocks.SANDSTONE_STAIRS)), ItemGroup.BUILDING_BLOCKS);
