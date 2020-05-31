@@ -1,5 +1,6 @@
 package com.bagel.atmospheric.core.registry;
 
+import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.bagel.atmospheric.common.world.gen.feature.AloeVeraFeature;
 import com.bagel.atmospheric.common.world.gen.feature.BabyYuccaTreeFeature;
 import com.bagel.atmospheric.common.world.gen.feature.BarrelCactusFeature;
@@ -15,6 +16,8 @@ import com.bagel.atmospheric.common.world.gen.surfacebuilders.DunesSurfaceBuilde
 import com.bagel.atmospheric.common.world.gen.surfacebuilders.WaveyDunesSurfaceBuilder;
 import com.bagel.atmospheric.core.Atmospheric;
 
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.BlockBlobConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
@@ -32,6 +35,7 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericFeatures {
@@ -99,5 +103,22 @@ public class AtmosphericFeatures {
         		WAVEY_DUNES.setRegistryName(Atmospheric.MODID, "wavey_dunes")
         		);
     }
+    
+    public static void generateFeatures() {
+        ForgeRegistries.BIOMES.getValues().forEach(AtmosphericFeatures::generate);
+    }
 
+    public static void generate(Biome biome) {
+        if (biome == Biomes.DESERT || biome == Biomes.DESERT_HILLS) {
+            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.005F, 1, false);
+        }
+        
+        if (biome == Biomes.MODIFIED_WOODED_BADLANDS_PLATEAU || biome == Biomes.WOODED_BADLANDS_PLATEAU) {
+            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.1F, 1, false);
+        }
+        
+        if (biome == Biomes.SHATTERED_SAVANNA || biome == Biomes.SHATTERED_SAVANNA_PLATEAU) {
+            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.15F, 1, false);
+        }
+    }
 }

@@ -8,6 +8,7 @@ import com.bagel.atmospheric.core.other.AtmosphericColors;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
+import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 import com.bagel.atmospheric.core.registry.AtmosphericParticles;
 import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 
@@ -48,7 +49,8 @@ public class Atmospheric
     }
     
     private void setup(final FMLCommonSetupEvent event)
-	{    	
+	{   
+    	AtmosphericFeatures.generateFeatures();
     	AtmosphericBiomeFeatures.addCarvables();
         AtmosphericBiomes.registerBiomesToDictionary();
     	AtmosphericBlockData.registerCompostables();
