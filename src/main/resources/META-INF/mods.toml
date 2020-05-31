@@ -9,9 +9,9 @@ modId="atmospheric"
 version="${file.jarVersion}"
 displayName="Atmospheric"
 description='''
-Adds a unique biome, with a new wood type and new plants.
-There will continue to be more biomes over time!
-'''
+Adds two unique biome types with several variants.
+Also introduces several new types of blocks, foliage, and plants!
+There will continue to be more biomes over time!'''
 
 [[dependencies.atmospheric]]
     modId="forge"

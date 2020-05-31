@@ -16,7 +16,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = 'v1.3.0'
+version = '1.4.0'
 group = 'com.bagel.atmospheric' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'Atmospheric-1.15.2'
 
