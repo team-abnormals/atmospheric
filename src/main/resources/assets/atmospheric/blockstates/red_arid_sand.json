@@ -1,8 +1,5 @@
 {
     "variants": {
- 		"facing=north": { "model": "atmospheric:block/red_arid_sand", "y": 0},
- 		"facing=south": { "model": "atmospheric:block/red_arid_sand", "y": 180},
-  		"facing=east": { "model": "atmospheric:block/red_arid_sand", "y": 90},
- 		"facing=west": { "model": "atmospheric:block/red_arid_sand", "y": 270}
+ 		"": { "model": "atmospheric:block/red_arid_sand"}
     }
 }

@@ -44,9 +44,9 @@ public class RosewoodPlateauBiome extends Biome {
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
         AtmosphericBiomeFeatures.addRosewoodPlateauTrees(this, 0, 4);
-        AtmosphericBiomeFeatures.addFlowers(this);
-        AtmosphericBiomeFeatures.addFoliage(this);
-        AtmosphericBiomeFeatures.addWaterFoliage(this);
+        AtmosphericBiomeFeatures.addRainforestFlowers(this);
+        AtmosphericBiomeFeatures.addRainforestFoliage(this);
+        AtmosphericBiomeFeatures.addRainforestWaterFoliage(this);
         
         DefaultBiomeFeatures.addFreezeTopLayer(this);
         

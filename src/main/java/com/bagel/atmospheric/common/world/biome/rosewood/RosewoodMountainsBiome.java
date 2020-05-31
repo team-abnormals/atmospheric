@@ -44,10 +44,10 @@ public class RosewoodMountainsBiome extends Biome {
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
         AtmosphericBiomeFeatures.addRosewoodForestTrees(this, 13, 1);
-        AtmosphericBiomeFeatures.addDoublePlants(this);
-        AtmosphericBiomeFeatures.addFlowers(this);
-        AtmosphericBiomeFeatures.addFoliage(this);
-        AtmosphericBiomeFeatures.addWaterFoliage(this);
+        AtmosphericBiomeFeatures.addRainforestDoublePlants(this);
+        AtmosphericBiomeFeatures.addRainforestFlowers(this);
+        AtmosphericBiomeFeatures.addRainforestFoliage(this);
+        AtmosphericBiomeFeatures.addRainforestWaterFoliage(this);
         
         DefaultBiomeFeatures.addFreezeTopLayer(this);
         

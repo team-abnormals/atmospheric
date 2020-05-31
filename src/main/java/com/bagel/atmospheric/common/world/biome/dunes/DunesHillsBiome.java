@@ -17,8 +17,8 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public final class FlourishingDunesBiome extends Biome {
-	public FlourishingDunesBiome() {
+public final class DunesHillsBiome extends Biome {
+	public DunesHillsBiome() {
 		super((new Biome.Builder()
 			.surfaceBuilder(AtmosphericFeatures.WAVEY_DUNES, new SurfaceBuilderConfig(
 				AtmosphericBlocks.ARID_SAND.get().getDefaultState(), 
@@ -27,7 +27,7 @@ public final class FlourishingDunesBiome extends Biome {
 			.precipitation(Biome.RainType.NONE)
 			.category(Biome.Category.DESERT)
 			.depth(0.45F)
-			.scale(0.15F)
+			.scale(0.2F)
 			.temperature(2.0F)
 			.downfall(0.0F)
 			.waterColor(4159204)
@@ -44,16 +44,13 @@ public final class FlourishingDunesBiome extends Biome {
 		DefaultBiomeFeatures.addOres(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
 		AtmosphericBiomeFeatures.addFossils(this);
-		AtmosphericBiomeFeatures.addDuneGrassPatches(this);
-
-		DefaultBiomeFeatures.addDeadBushes(this);
 		DefaultBiomeFeatures.addMushrooms(this);
-		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.15F, 1, false);
-		AtmosphericBiomeFeatures.addBabyYuccaTrees(this, 2, 0.05F, 1);
-		AtmosphericBiomeFeatures.addGilias(this, 2);
+		
+		DefaultBiomeFeatures.addDeadBushes(this);
+		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.1F, 1, false);
+		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 1);
 		AtmosphericBiomeFeatures.addAloeVera(this, 2);
-		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.5F, 2);
-		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 3);
+		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 2);
 
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 
@@ -72,7 +69,7 @@ public final class FlourishingDunesBiome extends Biome {
 	
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	   public int getSkyColor() {
-	      return 14988944;
-	   }
+	public int getSkyColor() {
+		return 14988944;
+	}
 }

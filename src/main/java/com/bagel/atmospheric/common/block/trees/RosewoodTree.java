@@ -4,7 +4,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
+import com.bagel.atmospheric.common.world.biome.AtmosphericFeatureConfigs;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 
 import net.minecraft.block.trees.Tree;
@@ -15,6 +15,6 @@ public class RosewoodTree extends Tree {
 	
 	@Nullable
 	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean beehive) {
-		return AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(beehive ? AtmosphericBiomeFeatures.ROSEWOOD_TREE_MORE_BEEHIVES_CONFIG : AtmosphericBiomeFeatures.ROSEWOOD_TREE_CONFIG);
+		return AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(beehive ? AtmosphericFeatureConfigs.ROSEWOOD_TREE_MORE_BEEHIVES_CONFIG : AtmosphericFeatureConfigs.ROSEWOOD_TREE_CONFIG);
 	}
 }

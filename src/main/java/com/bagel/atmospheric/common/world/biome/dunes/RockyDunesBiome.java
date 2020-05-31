@@ -26,8 +26,8 @@ public final class RockyDunesBiome extends Biome {
 				Blocks.GRAVEL.getDefaultState()))
 			.precipitation(Biome.RainType.NONE)
 			.category(Biome.Category.DESERT)
-			.depth(0.42F)
-			.scale(0.25F)
+			.depth(0.45F)
+			.scale(0.3F)
 			.temperature(2.0F)
 			.downfall(0.0F)
 			.waterColor(4159204)
@@ -43,13 +43,17 @@ public final class RockyDunesBiome extends Biome {
 		DefaultBiomeFeatures.addStoneVariants(this);
 		DefaultBiomeFeatures.addOres(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
-		AtmosphericBiomeFeatures.addDuneRocks(this);
+		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 2);
+		AtmosphericBiomeFeatures.addDuneRocks(this, 2, 3);
 		AtmosphericBiomeFeatures.addFossils(this);
 
-		DefaultBiomeFeatures.addSparseGrass(this);
 		DefaultBiomeFeatures.addDeadBushes(this);
 		DefaultBiomeFeatures.addMushrooms(this);
-		AtmosphericBiomeFeatures.addYuccaTrees(this);
+		
+		AtmosphericBiomeFeatures.addDeadBushes(this);
+		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.1F, 1, false);
+		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 1);
+		AtmosphericBiomeFeatures.addAloeVera(this, 2);
 
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 

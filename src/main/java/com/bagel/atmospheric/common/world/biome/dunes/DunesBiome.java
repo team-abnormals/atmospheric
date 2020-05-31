@@ -27,8 +27,8 @@ public final class DunesBiome extends Biome {
 				Blocks.GRAVEL.getDefaultState()))
 			.precipitation(Biome.RainType.NONE)
 			.category(Biome.Category.DESERT)
-			.depth(0.42F)
-			.scale(0.15F)
+			.depth(0.45F)
+			.scale(0.1F)
 			.temperature(2.0F)
 			.downfall(0.0F)
 			.waterColor(4159204)
@@ -45,10 +45,12 @@ public final class DunesBiome extends Biome {
 		DefaultBiomeFeatures.addOres(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
 		AtmosphericBiomeFeatures.addFossils(this);
-
-		DefaultBiomeFeatures.addDeadBushes(this);
 		DefaultBiomeFeatures.addMushrooms(this);
-		AtmosphericBiomeFeatures.addSparseYuccaTrees(this);
+
+		AtmosphericBiomeFeatures.addDeadBushes(this);
+		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.1F, 1, false);
+		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 1);
+		AtmosphericBiomeFeatures.addAloeVera(this, 2);
 
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 
@@ -74,6 +76,6 @@ public final class DunesBiome extends Biome {
 	@Override
 	public Biome getHill(net.minecraft.world.gen.INoiseRandom rand) {
     	int chance = rand.random(5);
-		return chance > 1 ? AtmosphericBiomes.ROCKY_DUNES.get() : (chance ==  1 ? AtmosphericBiomes.PETRIFIED_DUNES.get() : AtmosphericBiomes.FLOURISHING_DUNES.get());
+		return chance > 1 ? (rand.random(2) == 1 ? AtmosphericBiomes.ROCKY_DUNES.get() : AtmosphericBiomes.DUNES_HILLS.get()) : (chance ==  1 ? AtmosphericBiomes.PETRIFIED_DUNES.get() : AtmosphericBiomes.FLOURISHING_DUNES.get());
 	}
 }

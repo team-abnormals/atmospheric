@@ -1,6 +1,7 @@
 package com.bagel.atmospheric.core.registry;
 
 import com.bagel.atmospheric.common.world.biome.dunes.DunesBiome;
+import com.bagel.atmospheric.common.world.biome.dunes.DunesHillsBiome;
 import com.bagel.atmospheric.common.world.biome.dunes.FlourishingDunesBiome;
 import com.bagel.atmospheric.common.world.biome.dunes.PetrifiedDunesBiome;
 import com.bagel.atmospheric.common.world.biome.dunes.RockyDunesBiome;
@@ -28,6 +29,7 @@ public class AtmosphericBiomes {
     public static final RegistryObject<Biome> ROSEWOOD_FOREST_PLATEAU 	= BIOMES.register("rosewood_forest_plateau", () -> new RosewoodForestPlateauBiome());
     
 	public static final RegistryObject<Biome> DUNES 			= BIOMES.register("dunes", 				() -> new DunesBiome());
+	public static final RegistryObject<Biome> DUNES_HILLS		= BIOMES.register("dunes_hills",		() -> new DunesHillsBiome());
     public static final RegistryObject<Biome> ROCKY_DUNES 		= BIOMES.register("rocky_dunes",		() -> new RockyDunesBiome());
 	public static final RegistryObject<Biome> PETRIFIED_DUNES 	= BIOMES.register("petrified_dunes",	() -> new PetrifiedDunesBiome());
 	public static final RegistryObject<Biome> FLOURISHING_DUNES	= BIOMES.register("flourishing_dunes",	() -> new FlourishingDunesBiome());
@@ -66,6 +68,12 @@ public class AtmosphericBiomes {
         
         BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(DUNES.get(), 3));
         BiomeDictionary.addTypes(DUNES.get(), 
+        		BiomeDictionary.Type.DRY, 
+        		BiomeDictionary.Type.HOT, 
+        		BiomeDictionary.Type.WASTELAND,
+        		BiomeDictionary.Type.OVERWORLD);
+        
+        BiomeDictionary.addTypes(DUNES_HILLS.get(), 
         		BiomeDictionary.Type.DRY, 
         		BiomeDictionary.Type.HOT, 
         		BiomeDictionary.Type.WASTELAND,
