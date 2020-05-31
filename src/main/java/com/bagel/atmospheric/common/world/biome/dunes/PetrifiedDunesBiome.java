@@ -45,7 +45,7 @@ public final class PetrifiedDunesBiome extends Biome {
 		DefaultBiomeFeatures.addSedimentDisks(this);
 		AtmosphericBiomeFeatures.addFossils(this);
 		
-		DefaultBiomeFeatures.addDeadBushes(this);
+		AtmosphericBiomeFeatures.addDeadBushes(this, 5);
 		DefaultBiomeFeatures.addMushrooms(this);
 		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.5F, 2, true);
 		AtmosphericBiomeFeatures.addSurfaceFossils(this);

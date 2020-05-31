@@ -46,11 +46,12 @@ public final class DunesHillsBiome extends Biome {
 		AtmosphericBiomeFeatures.addFossils(this);
 		DefaultBiomeFeatures.addMushrooms(this);
 		
-		DefaultBiomeFeatures.addDeadBushes(this);
+		AtmosphericBiomeFeatures.addDeadBushes(this, 3);
 		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.1F, 1, false);
-		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 1);
+		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 2);
 		AtmosphericBiomeFeatures.addAloeVera(this, 2);
-		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 2);
+		AtmosphericBiomeFeatures.addYuccaFlower(this, 2);
+		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 3);
 
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 

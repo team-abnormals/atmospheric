@@ -28,7 +28,7 @@ public final class DunesBiome extends Biome {
 			.precipitation(Biome.RainType.NONE)
 			.category(Biome.Category.DESERT)
 			.depth(0.45F)
-			.scale(0.1F)
+			.scale(0.2F)
 			.temperature(2.0F)
 			.downfall(0.0F)
 			.waterColor(4159204)
@@ -47,11 +47,13 @@ public final class DunesBiome extends Biome {
 		AtmosphericBiomeFeatures.addFossils(this);
 		DefaultBiomeFeatures.addMushrooms(this);
 
-		AtmosphericBiomeFeatures.addDeadBushes(this);
-		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.1F, 1, false);
-		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 1);
+		AtmosphericBiomeFeatures.addDeadBushes(this, 2);
+		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.25F, 1, false);
+		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 2);
 		AtmosphericBiomeFeatures.addAloeVera(this, 2);
-
+		AtmosphericBiomeFeatures.addYuccaFlower(this, 2);
+		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 2);
+		
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 
 		this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.RABBIT, 4, 2, 3));

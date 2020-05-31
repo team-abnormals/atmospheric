@@ -9,6 +9,7 @@ import com.bagel.atmospheric.common.world.gen.feature.PassionVineFeature;
 import com.bagel.atmospheric.common.world.gen.feature.PodzolFeature;
 import com.bagel.atmospheric.common.world.gen.feature.RosewoodTreeFeature;
 import com.bagel.atmospheric.common.world.gen.feature.SurfaceFossilFeature;
+import com.bagel.atmospheric.common.world.gen.feature.YuccaFlowerFeature;
 import com.bagel.atmospheric.common.world.gen.feature.YuccaTreeFeature;
 import com.bagel.atmospheric.common.world.gen.surfacebuilders.DunesSurfaceBuilder;
 import com.bagel.atmospheric.common.world.gen.surfacebuilders.WaveyDunesSurfaceBuilder;
@@ -58,6 +59,7 @@ public class AtmosphericFeatures {
 	public static final Feature<NoFeatureConfig> PASSION_VINE = new PassionVineFeature(NoFeatureConfig::deserialize);
 	public static final Feature<BlockClusterFeatureConfig> BARREL_CACTUS = new BarrelCactusFeature(BlockClusterFeatureConfig::deserialize);
 	public static final Feature<BlockClusterFeatureConfig> ALOE_VERA = new AloeVeraFeature(BlockClusterFeatureConfig::deserialize);
+	public static final Feature<BlockClusterFeatureConfig> YUCCA_FLOWER = new YuccaFlowerFeature(BlockClusterFeatureConfig::deserialize);
 
 	public static final Feature<BlockBlobConfig> DUNE_ROCKS = new DuneRocksFeature(BlockBlobConfig::deserialize);
 	
@@ -78,6 +80,7 @@ public class AtmosphericFeatures {
         		PASSION_VINE.setRegistryName(Atmospheric.MODID, "passion_vine"),
         		BARREL_CACTUS.setRegistryName(Atmospheric.MODID, "barrel_cactus"),
         		ALOE_VERA.setRegistryName(Atmospheric.MODID, "aloe_vera"),
+        		YUCCA_FLOWER.setRegistryName(Atmospheric.MODID, "yucca_flower"),
         		
         		ROSEWOOD_TREE.setRegistryName(Atmospheric.MODID, "rosewood_tree"), 
 

@@ -30,11 +30,13 @@ public class AtmosphericFeatureConfigs {
 	public static BlockState BARREL_CACTUS 	= AtmosphericBlocks.BARREL_CACTUS.get().getDefaultState();
 	public static BlockState CRUSTOSE 	= AtmosphericBlocks.CRUSTOSE.get().getDefaultState();
 	public static BlockState ALOE_VERA 	= AtmosphericBlocks.ALOE_VERA.get().getDefaultState();
+	public static BlockState YUCCA_FLOWER	= AtmosphericBlocks.YUCCA_FLOWER.get().getDefaultState();
 
 	public static final BlockClusterFeatureConfig MELON_PATCH_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.MELON.getDefaultState()), new SimpleBlockPlacer())).tries(64).whitelist(ImmutableSet.of(AtmosphericBlocks.RED_ARID_SAND.get())).func_227317_b_().build();
 	public static final BlockClusterFeatureConfig GILIA_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(GILIA), new SimpleBlockPlacer())).tries(64).build();
 	public static final BlockClusterFeatureConfig BARREL_CACTUS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BARREL_CACTUS), new SimpleBlockPlacer())).tries(64).build();
 	public static final BlockClusterFeatureConfig ALOE_VERA_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ALOE_VERA), new SimpleBlockPlacer())).tries(64).build();
+	public static final BlockClusterFeatureConfig YUCCA_FLOWER_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(YUCCA_FLOWER), new SimpleBlockPlacer())).tries(64).build();
 
 	public static final TreeFeatureConfig KOUSA_TREE_CONFIG = (
 			new TreeFeatureConfig.Builder(

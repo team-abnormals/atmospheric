@@ -53,6 +53,10 @@ public class AtmosphericBiomeFeatures {
 	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ALOE_VERA.withConfiguration(AtmosphericFeatureConfigs.ALOE_VERA_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(freq))));
 	}
 	
+	public static void addYuccaFlower(Biome biomeIn, int freq) {
+	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_FLOWER.withConfiguration(AtmosphericFeatureConfigs.YUCCA_FLOWER_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(freq))));
+	}
+	
 	public static void addBarrelCactus(Biome biomeIn, int count, float extraChance, int extraCount) {
 	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.BARREL_CACTUS.withConfiguration(AtmosphericFeatureConfigs.BARREL_CACTUS_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
 	}
@@ -67,8 +71,8 @@ public class AtmosphericBiomeFeatures {
         biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.PASSION_VINE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
 	}
 	
-	public static void addDeadBushes(Biome biomeIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.DEAD_BUSH_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
+	public static void addDeadBushes(Biome biomeIn, int freq) {
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.DEAD_BUSH_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(freq))));
 	}
 	
 	public static void addRosewoodForestTrees (Biome biomeIn, int count, int extraCountIn) {
