@@ -20,5 +20,11 @@
 				"down": {"uv": [2, 2, 14, 14], "texture": "#bottom"}
 			}
 		}
-	]
+	],
+	"display": {
+		"head": {
+			"translation": [0, 2.5, 0],
+			"scale": [1.25, 1.25, 1.25]
+		}
+	}
 }

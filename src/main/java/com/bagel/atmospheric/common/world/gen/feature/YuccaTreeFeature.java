@@ -169,7 +169,7 @@ public class YuccaTreeFeature extends TreeFeature {
 
 		for (int i = 0; i < length; i++) {
 			blockpos = new BlockPos(logX, logY, logZ);
-			if (!anyBundle && rand.nextInt(32) == 0) {
+			if (!anyBundle && rand.nextInt(20) == 0) {
 				bundle = true; 
 				anyBundle = true;
 			} else {

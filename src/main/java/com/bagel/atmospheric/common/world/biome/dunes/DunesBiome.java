@@ -28,7 +28,7 @@ public final class DunesBiome extends Biome {
 			.precipitation(Biome.RainType.NONE)
 			.category(Biome.Category.DESERT)
 			.depth(0.45F)
-			.scale(0.2F)
+			.scale(0.15F)
 			.temperature(2.0F)
 			.downfall(0.0F)
 			.waterColor(4159204)
