@@ -92,7 +92,7 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable {
 		if (!state.isValidPosition(worldIn, pos)) {
 			worldIn.destroyBlock(pos, true);
 		} else {
-			if(state.get(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, true) && worldIn.getBlockState(pos.down()).isAir()) {
+			if(state.get(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0) && worldIn.getBlockState(pos.down()).isAir()) {
 				worldIn.setBlockState(pos, state.with(SNAPPED, false));
 				worldIn.setBlockState(pos.down(), AtmosphericBlocks.YUCCA_BUNDLE.get().getDefaultState());
 			} 

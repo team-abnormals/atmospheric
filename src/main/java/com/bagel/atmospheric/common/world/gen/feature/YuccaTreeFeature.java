@@ -132,6 +132,15 @@ public class YuccaTreeFeature extends TreeFeature {
 					}
 				}
 				
+				if (petrified && rand.nextInt(12) == 0) {
+					for(int j = 0; j < 12; ++j) {
+						BlockPos blockpos = position.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
+						if (isAir(worldIn, blockpos) && blockpos.getY() < 255 && isSand(worldIn, blockpos.down())) {
+							this.setLogState(leavesPlaced, worldIn, blockpos, AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get().getDefaultState(), boundsIn);
+						}
+					}
+				}
+				
 				return true;
 			} else {
 				return false;
