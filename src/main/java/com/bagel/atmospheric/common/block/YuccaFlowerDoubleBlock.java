@@ -13,6 +13,7 @@ import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.math.BlockPos;
@@ -41,7 +42,7 @@ public class YuccaFlowerDoubleBlock extends DoublePlantBlock {
 	}
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-		if (entityIn instanceof LivingEntity) {
+		if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {
 			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.getPosX() || entityIn.lastTickPosZ != entityIn.getPosZ())) {
 				double d0 = Math.abs(entityIn.getPosX() - entityIn.lastTickPosX);
 				double d1 = Math.abs(entityIn.getPosZ() - entityIn.lastTickPosZ);

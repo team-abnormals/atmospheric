@@ -14,6 +14,7 @@ import net.minecraft.block.BushBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Items;
 import net.minecraft.state.BooleanProperty;
@@ -115,7 +116,7 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable {
 	}
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-		if (entityIn instanceof LivingEntity) {
+		if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {
 			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.getPosX() || entityIn.lastTickPosZ != entityIn.getPosZ())) {
 				double d0 = Math.abs(entityIn.getPosX() - entityIn.lastTickPosX);
 				double d1 = Math.abs(entityIn.getPosZ() - entityIn.lastTickPosZ);

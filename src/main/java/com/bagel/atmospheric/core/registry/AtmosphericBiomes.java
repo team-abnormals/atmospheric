@@ -56,7 +56,6 @@ public class AtmosphericBiomes {
         		BiomeDictionary.Type.RARE, 
         		BiomeDictionary.Type.JUNGLE, 
         		BiomeDictionary.Type.PLATEAU, 
-        		BiomeDictionary.Type.PLAINS, 
         		BiomeDictionary.Type.OVERWORLD);
        
         BiomeDictionary.addTypes(ROSEWOOD_FOREST_PLATEAU.get(), 
@@ -64,7 +63,6 @@ public class AtmosphericBiomes {
         		BiomeDictionary.Type.JUNGLE, 
         		BiomeDictionary.Type.FOREST, 
         		BiomeDictionary.Type.PLATEAU, 
-        		BiomeDictionary.Type.PLAINS, 
         		BiomeDictionary.Type.OVERWORLD);
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
