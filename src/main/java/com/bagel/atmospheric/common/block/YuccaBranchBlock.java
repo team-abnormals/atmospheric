@@ -2,7 +2,6 @@ package com.bagel.atmospheric.common.block;
 
 import java.util.Random;
 
-import com.bagel.atmospheric.core.other.AtmosphericBlockStates;
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
@@ -38,7 +37,7 @@ import net.minecraft.world.server.ServerWorld;
 public class YuccaBranchBlock extends BushBlock implements IGrowable {
 	protected static final VoxelShape SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 16.0D, 11.0D);
 	protected static final VoxelShape SHAPE_SNAPPED = Block.makeCuboidShape(5.0D, 6.0D, 5.0D, 11.0D, 16.0D, 11.0D);
-	public static final BooleanProperty SNAPPED = AtmosphericBlockStates.SNAPPED;
+	public static final BooleanProperty SNAPPED = BooleanProperty.create("snapped");
 
 	public YuccaBranchBlock(Properties properties) {
 		super(properties);
