@@ -37,9 +37,10 @@ public class BarrelCactusFeature extends Feature<BlockClusterFeatureConfig> {
 	   for(int j = 0; j < config.tryCount; ++j) {
 		   blockpos$mutable.setPos(blockpos).move(rand.nextInt(config.xSpread + 1) - rand.nextInt(config.xSpread + 1), rand.nextInt(config.ySpread + 1) - rand.nextInt(config.ySpread + 1), rand.nextInt(config.zSpread + 1) - rand.nextInt(config.zSpread + 1));
 		   BlockPos blockpos1 = blockpos$mutable.down();
+		   blockstate = blockstate.with(BarrelCactusBlock.AGE, rand.nextInt(4));
 		   BlockState blockstate1 = worldIn.getBlockState(blockpos1);
 		   if ((worldIn.isAirBlock(blockpos$mutable) || config.isReplaceable && worldIn.getBlockState(blockpos$mutable).getMaterial().isReplaceable()) && blockstate.isValidPosition(worldIn, blockpos$mutable) && (config.whitelist.isEmpty() || config.whitelist.contains(blockstate1.getBlock())) && blockstate1.getBlock() != AtmosphericBlocks.ARID_SAND.get() && !config.blacklist.contains(blockstate1) && (!config.requiresWater || worldIn.getFluidState(blockpos1.west()).isTagged(FluidTags.WATER) || worldIn.getFluidState(blockpos1.east()).isTagged(FluidTags.WATER) || worldIn.getFluidState(blockpos1.north()).isTagged(FluidTags.WATER) || worldIn.getFluidState(blockpos1.south()).isTagged(FluidTags.WATER))) {
-			   config.blockPlacer.func_225567_a_(worldIn, blockpos$mutable, blockstate.with(BarrelCactusBlock.AGE, rand.nextInt(4) ), rand);
+			   config.blockPlacer.func_225567_a_(worldIn, blockpos$mutable, blockstate, rand);
 			   ++i;
 		   }
 	   }  

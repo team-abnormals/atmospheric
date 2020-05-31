@@ -4,6 +4,7 @@ import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.bagel.atmospheric.common.world.gen.feature.AloeVeraFeature;
 import com.bagel.atmospheric.common.world.gen.feature.BabyYuccaTreeFeature;
 import com.bagel.atmospheric.common.world.gen.feature.BarrelCactusFeature;
+import com.bagel.atmospheric.common.world.gen.feature.CoarseDirtPatchFeature;
 import com.bagel.atmospheric.common.world.gen.feature.DirectionalFlowersFeature;
 import com.bagel.atmospheric.common.world.gen.feature.DuneRocksFeature;
 import com.bagel.atmospheric.common.world.gen.feature.PassionVineFeature;
@@ -28,6 +29,7 @@ import net.minecraft.world.gen.feature.MegaPineTree;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraft.world.gen.feature.ShrubFeature;
+import net.minecraft.world.gen.feature.SphereReplaceConfig;
 import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
@@ -43,7 +45,8 @@ public class AtmosphericFeatures {
 	public static final Feature<ProbabilityConfig> PODZOL = new PodzolFeature(ProbabilityConfig::deserialize);
 	public static final Feature<NoFeatureConfig> SURFACE_FOSSIL = new SurfaceFossilFeature(NoFeatureConfig::deserialize);
 	public static final Feature<BaseTreeFeatureConfig> OAK_BUSH = new ShrubFeature(BaseTreeFeatureConfig::deserialize);
-	
+	public static final Feature<SphereReplaceConfig> COARSE_DIRT_PATCH = new CoarseDirtPatchFeature(SphereReplaceConfig::deserialize);
+
 	public static final Feature<NoFeatureConfig> WARM_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize, 1);
 	public static final Feature<NoFeatureConfig> HOT_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize, 2);
 	public static final Feature<NoFeatureConfig> SCALDING_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize, 3);
@@ -77,6 +80,7 @@ public class AtmosphericFeatures {
         		OAK_BUSH.setRegistryName(Atmospheric.MODID, "oak_bush"),
         		DUNE_ROCKS.setRegistryName(Atmospheric.MODID, "dune_rocks"), 
         		SURFACE_FOSSIL.setRegistryName(Atmospheric.MODID, "surface_fossil"), 
+        		COARSE_DIRT_PATCH.setRegistryName(Atmospheric.MODID, "coarse_dirt_patch"), 
 
         		WARM_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "warm_monkey_brush"), 
         		HOT_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "hot_monkey_brush"), 

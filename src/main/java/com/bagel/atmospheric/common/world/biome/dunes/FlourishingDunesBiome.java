@@ -47,14 +47,15 @@ public final class FlourishingDunesBiome extends Biome {
 		AtmosphericBiomeFeatures.addDuneGrassPatches(this);
 
 		AtmosphericBiomeFeatures.addDeadBushes(this, 4);
+		AtmosphericBiomeFeatures.addMelons(this);
 		DefaultBiomeFeatures.addMushrooms(this);
 		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.25F, 1, false);
 		AtmosphericBiomeFeatures.addBabyYuccaTrees(this, 2, 0.05F, 1);
-		AtmosphericBiomeFeatures.addGilias(this, 5);
+		AtmosphericBiomeFeatures.addGilias(this, 6);
 		AtmosphericBiomeFeatures.addAloeVera(this, 6);
-		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.5F, 3);
+		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.5F, 4);
 		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 3);
-		AtmosphericBiomeFeatures.addYuccaFlower(this, 3);
+		AtmosphericBiomeFeatures.addYuccaFlower(this, 5);
 
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 
@@ -73,7 +74,7 @@ public final class FlourishingDunesBiome extends Biome {
 	
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	   public int getSkyColor() {
-	      return 14988944;
-	   }
+	public int getSkyColor() {
+		return 14988944;
+	}
 }
