@@ -14,7 +14,7 @@ public class GelledEffect extends Effect {
 		int timer = entity.getFireTimer() - ((amplifier + 1) * 40);
 		entity.setFireTimer(timer < 0 ? 0 : timer);
 		if (entity.getHealth() < entity.getMaxHealth()) {
-			entity.heal(0.8F);
+			entity.heal(0.5F);
 		}
 	}
 	

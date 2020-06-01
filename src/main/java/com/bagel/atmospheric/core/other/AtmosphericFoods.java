@@ -21,5 +21,5 @@ public class AtmosphericFoods {
 	public static final Food YUCCA_JUICE = new Food.Builder().hunger(3).saturation(0.7F).effect(() -> new EffectInstance(AtmosphericEffects.PERSISTENCE.get(), 1080, 0, false, false, true), 1.0F).build();
 	
 	public static final Food ALOE_LEAVES = new Food.Builder().hunger(2).saturation(0.1F).setAlwaysEdible().effect(() -> new EffectInstance(AtmosphericEffects.GELLED.get(), 280, 0, false, false), 1.0F).build();
-	public static final Food ALOE_GEL = new Food.Builder().hunger(3).saturation(0.2F).setAlwaysEdible().effect(() -> new EffectInstance(AtmosphericEffects.GELLED.get(), 960, 0, false, false, true), 1.0F).build();
+	public static final Food ALOE_GEL = new Food.Builder().hunger(3).saturation(0.2F).setAlwaysEdible().effect(() -> new EffectInstance(AtmosphericEffects.GELLED.get(), 2800, 0, false, false, true), 1.0F).build();
 }
