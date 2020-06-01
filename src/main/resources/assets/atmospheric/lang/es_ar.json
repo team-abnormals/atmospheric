@@ -246,9 +246,12 @@
 	"effect.atmospheric.gelled": "Gelificación",
 	
 	"biome.atmospheric.dunes": "Dunas",
-	"biome.atmospheric.rocky_dunes": "Dunas rocosas",
-	"biome.atmospheric.petrified_dunes": "Dunas petrificadas",
+	"biome.atmospheric.dunes_hills": "Colinas de dunas",
 	"biome.atmospheric.flourishing_dunes": "Dunas florecientes",
+
+	"biome.atmospheric.rocky_dunes": "Dunas rocosas",
+	"biome.atmospheric.rocky_dunes_hills": "Colinas de dunas rocosas",
+	"biome.atmospheric.petrified_dunes": "Dunas petrificadas",
 	
 	"death.attack.yuccaSapling": "%1$s fue rebanado/a por un brote de yuca",
 	"death.attack.yuccaSapling.player": "%1$s fue rebanado/a por un brote de yuca tratando de escapar de %2$s",
@@ -296,6 +299,7 @@
   
 	"block.atmospheric.crustose": "Costra",
 	"block.atmospheric.crustose_log": "Tronco costroso",
+	"block.atmospheric.crustose_wood": "Leño costroso",
   
 	"block.atmospheric.aspen_log": "Tronco de álamo",
 	"block.atmospheric.aspen_wood": "Leño de álamo",
