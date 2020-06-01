@@ -22,7 +22,7 @@ public class RosewoodPlateauBiome extends Biome {
 				.scale(0.025F)
 				.temperature(0.90F)
 				.downfall(0.8F)
-				.waterColor(5959129)
+				.waterColor(6675400)
 				.waterFogColor(206651)
 				.parent(null));
         
