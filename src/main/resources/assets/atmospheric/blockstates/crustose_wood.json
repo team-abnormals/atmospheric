@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":    { "model": "atmospheric:block/crustose_wood_up" },
+        "axis=z":     { "model": "atmospheric:block/crustose_wood_side_z" },
+        "axis=x":     { "model": "atmospheric:block/crustose_wood_side_x" }
+    }
+}

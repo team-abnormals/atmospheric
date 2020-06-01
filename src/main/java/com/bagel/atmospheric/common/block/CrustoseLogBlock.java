@@ -3,10 +3,12 @@ package com.bagel.atmospheric.common.block;
 import java.util.Random;
 
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
+import com.google.common.base.Supplier;
+import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsLogBlock;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.LogBlock;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
@@ -15,10 +17,10 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.lighting.LightEngine;
 
-public class CrustoseLogBlock extends LogBlock {
+public class CrustoseLogBlock extends AbnormalsLogBlock {
 
-	public CrustoseLogBlock(MaterialColor color, Properties properties) {
-		super(color, properties);
+	public CrustoseLogBlock(Supplier<Block> block, MaterialColor color, Properties properties) {
+		super(block, color, properties);
 	}
 
 	private static boolean func_220257_b(BlockState state, IWorldReader world, BlockPos pos) {

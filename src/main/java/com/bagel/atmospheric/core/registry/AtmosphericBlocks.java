@@ -282,9 +282,6 @@ public class AtmosphericBlocks {
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public static final RegistryObject<Block> CRUSTOSE 			    = HELPER.createBlock("crustose", 		    () -> new CrustoseBlock(Block.Properties.from(Blocks.DIRT).tickRandomly()), ItemGroup.BUILDING_BLOCKS);	
-	public static final RegistryObject<Block> CRUSTOSE_LOG 			= HELPER.createBlock("crustose_log", 		() -> new CrustoseLogBlock(MaterialColor.GOLD, Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
-
 	public static final RegistryObject<Block> ASPEN_PLANKS 			= HELPER.createBlock("aspen_planks", 		() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_SAPLING 		= HELPER.createBlock("aspen_sapling", 		() -> new AbnormalsSaplingBlock(new AspenTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_ASPEN_LOG 	= HELPER.createBlock("stripped_aspen_log", 	() -> new StrippedLogBlock(Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
@@ -311,6 +308,10 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_LADDER 			= HELPER.createCompatBlock("quark", "aspen_ladder", 		() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_LEAF_CARPET 	= HELPER.createCompatBlock("quark", "aspen_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ASPEN_LEAVES.get())), ItemGroup.DECORATIONS);
 	
+	public static final RegistryObject<Block> CRUSTOSE 			    = HELPER.createBlock("crustose", 		    () -> new CrustoseBlock(Block.Properties.from(Blocks.DIRT).tickRandomly()), ItemGroup.BUILDING_BLOCKS);	
+	public static final RegistryObject<Block> CRUSTOSE_LOG 			= HELPER.createBlock("crustose_log", 		() -> new CrustoseLogBlock(() -> ASPEN_LOG.get(), MaterialColor.GOLD, Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CRUSTOSE_WOOD 		= HELPER.createBlock("crustose_wood", 		() -> new CrustoseLogBlock(() -> ASPEN_WOOD.get(), MaterialColor.GOLD, Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
+
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public static final RegistryObject<Block> GRIMWOOD_PLANKS 			= HELPER.createBlock("grimwood_planks", 		() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
