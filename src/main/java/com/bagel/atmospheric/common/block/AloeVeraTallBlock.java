@@ -17,6 +17,7 @@ import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -78,7 +79,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity) {
-			entityIn.setMotionMultiplier(state, new Vec3d((double)0.8F, 0.75D, (double)0.8F));
+			if (!(entityIn instanceof BeeEntity)) entityIn.setMotionMultiplier(state, new Vec3d((double)0.8F, 0.75D, (double)0.8F));
 			Random rand = new Random();
 			
 			for (int i = 0; i < 3; i++) {
@@ -92,7 +93,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 				if (state.get(HALF) == DoubleBlockHalf.UPPER && worldIn.isRemote && worldIn.getGameTime() % (9 / (state.get(AGE) - 5))  == 0) worldIn.addParticle(AtmosphericParticles.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
 			}
 			
-			if (!worldIn.isRemote && state.get(AGE) > 3 && Math.random() <= 0.4 && state.get(HALF) == DoubleBlockHalf.LOWER) {
+			if (!worldIn.isRemote && state.get(AGE) > 3 && Math.random() <= 0.4 && state.get(HALF) == DoubleBlockHalf.LOWER && !(entityIn instanceof BeeEntity)) {
 				entityIn.setMotionMultiplier(state, new Vec3d((double)0.2F, 0.2D, (double)0.2F));
 				entityIn.attackEntityFrom(AtmosphericDamageSources.ALOE_LEAVES, 1.0F);
 			}		

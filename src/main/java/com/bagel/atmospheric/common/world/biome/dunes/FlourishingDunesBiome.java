@@ -49,7 +49,7 @@ public final class FlourishingDunesBiome extends Biome {
 		AtmosphericBiomeFeatures.addDeadBushes(this, 4);
 		AtmosphericBiomeFeatures.addMelons(this);
 		DefaultBiomeFeatures.addMushrooms(this);
-		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.25F, 1, false);
+		AtmosphericBiomeFeatures.addBeehiveYuccaTrees(this, 0, 0.25F, 1);
 		AtmosphericBiomeFeatures.addBabyYuccaTrees(this, 2, 0.05F, 1);
 		AtmosphericBiomeFeatures.addGilias(this, 6);
 		AtmosphericBiomeFeatures.addAloeVera(this, 6);

@@ -43,6 +43,11 @@ public class AtmosphericFeatureConfigs {
 					new SimpleBlockStateProvider(KOUSA_LOG), new SimpleBlockStateProvider(KOUSA_LEAVES), 
 					new BlobFoliagePlacer(0, 0))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.KOUSA_SAPLING.get()).build();
 	
+	public static final TreeFeatureConfig FLOURISHING_KOUSA_TREE_CONFIG = (
+			new TreeFeatureConfig.Builder(
+					new SimpleBlockStateProvider(KOUSA_LOG), new SimpleBlockStateProvider(KOUSA_LEAVES), 
+					new BlobFoliagePlacer(0, 0))).decorators(ImmutableList.of(new BeehiveTreeDecorator(0.05F))).setSapling((net.minecraftforge.common.IPlantable)AtmosphericBlocks.KOUSA_SAPLING.get()).build();
+	
 	public static final TreeFeatureConfig YUCCA_TREE_CONFIG = (
 			new TreeFeatureConfig.Builder(
 					new SimpleBlockStateProvider(YUCCA_LOG), new SimpleBlockStateProvider(YUCCA_LEAVES), 

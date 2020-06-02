@@ -60,6 +60,12 @@ public class AloeGelBlock extends BreakableBlock {
 		return !state.get(WET);
 	}
 	
+	
+	@Override
+	public boolean isSlimeBlock(BlockState state) {
+		return !state.get(WET);
+	}
+	
 	public boolean canStickTo(BlockState state, BlockState other)
     {
         if (other.getBlock() == Blocks.SLIME_BLOCK) return false;

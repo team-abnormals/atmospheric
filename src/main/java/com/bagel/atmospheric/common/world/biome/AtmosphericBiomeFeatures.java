@@ -106,6 +106,10 @@ public class AtmosphericBiomeFeatures {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, feature.withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
 	}
 	
+	public static void addBeehiveYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount) {
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_TREE_PATCH.withConfiguration(AtmosphericFeatureConfigs.FLOURISHING_KOUSA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
+	}
+	
 	public static void addBabyYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount) {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.BABY_YUCCA_TREE_PATCH.withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
 	}

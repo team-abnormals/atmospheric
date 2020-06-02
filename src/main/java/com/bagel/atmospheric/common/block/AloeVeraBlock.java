@@ -15,6 +15,7 @@ import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -89,7 +90,7 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	}
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-		if (entityIn instanceof LivingEntity) {			
+		if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {			
 			double chance = 0.1;
 			
 			if (state.get(AGE) == 3) chance = 0.1;
