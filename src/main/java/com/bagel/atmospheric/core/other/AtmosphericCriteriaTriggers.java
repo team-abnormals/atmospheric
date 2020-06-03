@@ -12,7 +12,6 @@ public class AtmosphericCriteriaTriggers {
 	public static final EmptyTrigger SPIT_PASSIONFRUIT = CriteriaTriggers.register(new EmptyTrigger(prefix("spit_passionfruit")));
 	
 	public static final EmptyTrigger FINISH_GATEAU = CriteriaTriggers.register(new EmptyTrigger(prefix("finish_gateau")));
-	public static final EmptyTrigger USE_PERSISTENCE = CriteriaTriggers.register(new EmptyTrigger(prefix("use_persistence")));
 	public static final EmptyTrigger PUT_OUT_FIRE = CriteriaTriggers.register(new EmptyTrigger(prefix("put_out_fire")));
 	
 	public static final EmptyTrigger BARREL_CACTUS_PRICK = CriteriaTriggers.register(new EmptyTrigger(prefix("barrel_cactus_prick")));
