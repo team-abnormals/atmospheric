@@ -20,18 +20,22 @@ public class AtmosphericConfig {
 			builder.comment("Common configurations for Atmospheric")
 			.push("common");	
 			
+			builder.comment("Values for biome frequencies; lower = more rare. (Requires restart)")
+			.push("biomeWeights");
+			
 			rosewoodForestWeight = builder
-				.comment("The weight/frequency of Rosewood Forests; Default: 2")
+				.comment("The frequency of Rosewood Forests; Default: 2")
 				.define("rosewoodForestWeight", 2);
 			
 			dunesWeight = builder
-				.comment("The weight/frequency of Dunes; Default: 5")
+				.comment("The frequency of Dunes; Default: 5")
 				.define("dunesWeight", 5);
 			
 			rockyDunesWeight = builder
-					.comment("The weight/frequency of Rocky Dunes; Default: 4")
+					.comment("The frequency of Rocky Dunes; Default: 4")
 					.define("rockyDunesWeight", 4);
 
+			builder.pop();
 			builder.pop();
 		}
 	}
