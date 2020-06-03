@@ -2,6 +2,7 @@ package com.bagel.atmospheric.common.block;
 
 import java.util.Random;
 
+import com.bagel.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
@@ -16,6 +17,7 @@ import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Items;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
@@ -125,6 +127,12 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable {
 	            		entityIn.addVelocity(MathHelper.sin((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.125F, 0.075F, -MathHelper.cos((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.125F);
 	            	}
 	            	entityIn.attackEntityFrom(AtmosphericDamageSources.YUCCA_BRANCH, 1.0F);	
+	            	if (entityIn instanceof ServerPlayerEntity) {
+	            		ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
+	            		if(!entityIn.getEntityWorld().isRemote() && !serverplayerentity.isCreative()) {
+	            			AtmosphericCriteriaTriggers.YUCCA_BRANCH_PRICK.trigger(serverplayerentity); 
+	            		}
+	            	}
 	            }
 			}
 		} else if (entityIn instanceof IProjectile && !state.get(SNAPPED)) {

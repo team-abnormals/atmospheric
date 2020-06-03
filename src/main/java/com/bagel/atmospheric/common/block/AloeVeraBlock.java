@@ -4,6 +4,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.bagel.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericItems;
@@ -17,6 +18,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.pathfinding.PathNodeType;
@@ -100,6 +102,12 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 			if (!worldIn.isRemote && state.get(AGE) > 2 && Math.random() <= chance) {
 				entityIn.setMotionMultiplier(state, new Vec3d((double)0.2F, 0.2D, (double)0.2F));
 				entityIn.attackEntityFrom(AtmosphericDamageSources.ALOE_LEAVES, 1.0F);
+				if (entityIn instanceof ServerPlayerEntity) {
+            		ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
+            		if(!entityIn.getEntityWorld().isRemote() && !serverplayerentity.isCreative()) {
+            			AtmosphericCriteriaTriggers.ALOE_VERA_PRICK.trigger(serverplayerentity); 
+            		}
+            	}
 			}		
 		}
 	}

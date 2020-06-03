@@ -89,9 +89,6 @@
 	
 	"advancements.husbandry.spit_passionfruit.title": "Spit-take",
 	"advancements.husbandry.spit_passionfruit.description": "Hit an enemy with passion seeds from a passionfruit",
-	
-	"advancements.husbandry.eat_sorbet.title": "Putting on the Pounds",
-	"advancements.husbandry.eat_sorbet.description": "Gain Slowness V from a Passionfruit Sorbet",
 
   "_comment2": "START OF THE SPRINGS SECTION",
 
@@ -265,6 +262,18 @@
 	"death.attack.barrelCactus.player": "%1$s ran into a barrel cactus whilst trying to escape %2$s",
 	"death.attack.aloeLeaves": "%1$s was pricked by aloe leaves",
 	"death.attack.aloeLeaves.player": "%1$s pricked by aloe leaves whilst trying to escape %2$s",
+	
+	"advancements.husbandry.finish_gateau.title": "Let them eat... cake?",
+	"advancements.husbandry.finish_gateau.description": "Eat the last slice of Yucca Gateau",
+	
+	"advancements.adventure.dunes_pricks.title": "Sliced and Diced",
+	"advancements.adventure.dunes_pricks.description": "Get pricked by all natural Dunes damage sources",
+	
+	"advancements.husbandry.put_out_fire.title": "Burn Victim",
+	"advancements.husbandry.put_out_fire.description": "Save yourself from burning using Aloe Leaves",
+	
+	"advancements.husbandry.use_persistence.title": "The Fast and the Furious",
+	"advancements.husbandry.use_persistence.description": "Use Persistence while having low hunger",
   
   "_comment4": "START OF THE KOUSA SECTION",
   

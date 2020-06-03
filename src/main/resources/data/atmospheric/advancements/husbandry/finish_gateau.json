@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:husbandry/plant_seed",
+  "display": {
+    "icon": {
+      "item": "atmospheric:yucca_gateau"
+    },
+    "title": {
+      "translate": "advancements.husbandry.finish_gateau.title"
+    },
+    "description": {
+      "translate": "advancements.husbandry.finish_gateau.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 100
+  },
+	"criteria": {
+		"finish_gateau": {
+			"trigger": "atmospheric:finish_gateau"
+		}
+	}
+}

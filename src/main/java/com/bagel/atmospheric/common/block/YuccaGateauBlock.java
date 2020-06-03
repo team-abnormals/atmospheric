@@ -1,5 +1,6 @@
 package com.bagel.atmospheric.common.block;
 
+import com.bagel.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
 
 import net.minecraft.block.Block;
@@ -7,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathType;
@@ -109,21 +111,26 @@ public class YuccaGateauBlock extends HorizontalBlock {
 	   }
 
 	   private ActionResultType eatCake(IWorld worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
-	      if (!player.canEat(false)) {
-	         return ActionResultType.PASS;
-	      } else {
-	         player.addStat(Stats.EAT_CAKE_SLICE);
-	         player.getFoodStats().addStats(1, 0.0F);
-	         player.addPotionEffect(new EffectInstance(AtmosphericEffects.PERSISTENCE.get(), 320, 0, true, false, true));
-	         int i = state.get(BITES);
-	         if (i < 9) {
-	            worldIn.setBlockState(pos, state.with(BITES, Integer.valueOf(i + 1)), 3);
-	         } else {
-	            worldIn.removeBlock(pos, false);
-	         }
-
-	         return ActionResultType.SUCCESS;
-	      }
+		   if (!player.canEat(false)) {
+			   return ActionResultType.PASS;
+		   } else {
+			   player.addStat(Stats.EAT_CAKE_SLICE);
+			   player.getFoodStats().addStats(1, 0.0F);
+			   player.addPotionEffect(new EffectInstance(AtmosphericEffects.PERSISTENCE.get(), 320, 0, true, false, true));
+			   int i = state.get(BITES);
+			   if (i < 9) {
+				   worldIn.setBlockState(pos, state.with(BITES, Integer.valueOf(i + 1)), 3);
+			   } else {
+				   if (player instanceof ServerPlayerEntity) {
+					   ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) player;
+					   if(!player.getEntityWorld().isRemote() && !serverplayerentity.isCreative()) {
+						   AtmosphericCriteriaTriggers.FINISH_GATEAU.trigger(serverplayerentity); 
+					   }
+				   }
+				   worldIn.removeBlock(pos, false);
+			   }	   
+			   return ActionResultType.SUCCESS;
+		   }
 	   }
 
 	   @SuppressWarnings("deprecation")

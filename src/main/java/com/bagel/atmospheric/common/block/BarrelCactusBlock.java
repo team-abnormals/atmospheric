@@ -4,6 +4,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.bagel.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 
@@ -14,6 +15,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.potion.EffectInstance;
@@ -122,6 +124,12 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 		   living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, false, false, true));
 	   }
 	   entityIn.attackEntityFrom(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.get(AGE));
+	   if (entityIn instanceof ServerPlayerEntity) {
+		   ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
+		   if(!entityIn.getEntityWorld().isRemote() && !serverplayerentity.isCreative()) {
+			   AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.trigger(serverplayerentity); 
+		   }
+	   }
    }
    
    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
