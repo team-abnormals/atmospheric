@@ -11,7 +11,7 @@ import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodForestPlateauBi
 import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodMountainsBiome;
 import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodPlateauBiome;
 import com.bagel.atmospheric.core.Atmospheric;
-import com.bagel.atmospheric.core.config.AtmosphericConfig;
+import com.bagel.atmospheric.core.other.AtmosphericConfig;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;

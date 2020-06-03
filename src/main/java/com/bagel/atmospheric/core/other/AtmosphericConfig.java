@@ -1,4 +1,4 @@
-package com.bagel.atmospheric.core.config;
+package com.bagel.atmospheric.core.other;
 
 import org.apache.commons.lang3.tuple.Pair;
 
