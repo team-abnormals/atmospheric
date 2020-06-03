@@ -12,6 +12,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BushBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -126,6 +127,8 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable {
 	            	entityIn.attackEntityFrom(AtmosphericDamageSources.YUCCA_BRANCH, 1.0F);	
 	            }
 			}
-		}	
+		} else if (entityIn instanceof IProjectile && !state.get(SNAPPED)) {
+			worldIn.setBlockState(pos, state.with(SNAPPED, true));
+		}
 	}
 }
