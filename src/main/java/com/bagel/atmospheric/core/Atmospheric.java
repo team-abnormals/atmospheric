@@ -3,6 +3,7 @@ package com.bagel.atmospheric.core;
 import com.bagel.atmospheric.common.data.PassionVineBundleDispenseBehavior;
 import com.bagel.atmospheric.common.data.PassionVineDispenseBehavior;
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
+import com.bagel.atmospheric.core.config.AtmosphericConfig;
 import com.bagel.atmospheric.core.other.AtmosphericBlockData;
 import com.bagel.atmospheric.core.other.AtmosphericColors;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
@@ -17,7 +18,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -42,10 +45,19 @@ public class Atmospheric
         
         MinecraftForge.EVENT_BUS.register(this);
         
+        modEventBus.addListener((ModConfig.ModConfigEvent event) -> {
+			final ModConfig config = event.getConfig();
+			if(config.getSpec() == AtmosphericConfig.COMMON_SPEC) {
+				AtmosphericConfig.ValuesHolder.updateCommonValuesFromConfig(config);
+			}
+		});
+        
         modEventBus.addListener(this::setup);
         DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
         	modEventBus.addListener(this::clientSetup);
         });
+        
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
     }
     
     private void setup(final FMLCommonSetupEvent event)

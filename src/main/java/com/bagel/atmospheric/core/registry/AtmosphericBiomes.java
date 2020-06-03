@@ -11,6 +11,7 @@ import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodForestPlateauBi
 import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodMountainsBiome;
 import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodPlateauBiome;
 import com.bagel.atmospheric.core.Atmospheric;
+import com.bagel.atmospheric.core.config.AtmosphericConfig;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
@@ -38,71 +39,24 @@ public class AtmosphericBiomes {
 	public static final RegistryObject<Biome> PETRIFIED_DUNES 	= BIOMES.register("petrified_dunes",	() -> new PetrifiedDunesBiome());
     
     public static void registerBiomesToDictionary() {
-        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ROSEWOOD_FOREST.get(), 2));
-        BiomeDictionary.addTypes(ROSEWOOD_FOREST.get(), 
-        		BiomeDictionary.Type.RARE, 
-        		BiomeDictionary.Type.JUNGLE,  
-        		BiomeDictionary.Type.FOREST, 
-        		BiomeDictionary.Type.OVERWORLD);
+    	
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ROSEWOOD_FOREST.get(), AtmosphericConfig.ValuesHolder.getRosewoodForestWeight()));
+
+        BiomeDictionary.addTypes(ROSEWOOD_FOREST.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(ROSEWOOD_MOUNTAINS.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(ROSEWOOD_PLATEAU.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(ROSEWOOD_FOREST_PLATEAU.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
         
-        BiomeDictionary.addTypes(ROSEWOOD_MOUNTAINS.get(), 
-        		BiomeDictionary.Type.RARE, 
-        		BiomeDictionary.Type.JUNGLE, 
-        		BiomeDictionary.Type.FOREST, 
-        		BiomeDictionary.Type.MOUNTAIN, 
-        		BiomeDictionary.Type.OVERWORLD);
-       
-        BiomeDictionary.addTypes(ROSEWOOD_PLATEAU.get(), 
-        		BiomeDictionary.Type.RARE, 
-        		BiomeDictionary.Type.JUNGLE, 
-        		BiomeDictionary.Type.PLATEAU, 
-        		BiomeDictionary.Type.OVERWORLD);
-       
-        BiomeDictionary.addTypes(ROSEWOOD_FOREST_PLATEAU.get(), 
-        		BiomeDictionary.Type.RARE, 
-        		BiomeDictionary.Type.JUNGLE, 
-        		BiomeDictionary.Type.FOREST, 
-        		BiomeDictionary.Type.PLATEAU, 
-        		BiomeDictionary.Type.OVERWORLD);
+        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(DUNES.get(), AtmosphericConfig.ValuesHolder.getDunesWeight()));
         
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        BiomeDictionary.addTypes(DUNES.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(DUNES_HILLS.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(FLOURISHING_DUNES.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.LUSH,BiomeDictionary.Type.OVERWORLD);
         
-        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(DUNES.get(), 5));
-        BiomeDictionary.addTypes(DUNES.get(), 
-        		BiomeDictionary.Type.DRY, 
-        		BiomeDictionary.Type.HOT, 
-        		BiomeDictionary.Type.WASTELAND,
-        		BiomeDictionary.Type.OVERWORLD);
+        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(ROCKY_DUNES.get(), AtmosphericConfig.ValuesHolder.getRockyDunesWeight()));
         
-        BiomeDictionary.addTypes(DUNES_HILLS.get(), 
-        		BiomeDictionary.Type.DRY, 
-        		BiomeDictionary.Type.HOT, 
-        		BiomeDictionary.Type.WASTELAND,
-        		BiomeDictionary.Type.OVERWORLD);
-        
-        BiomeDictionary.addTypes(FLOURISHING_DUNES.get(), 
-        		BiomeDictionary.Type.DRY, 
-        		BiomeDictionary.Type.HOT, 
-        		BiomeDictionary.Type.LUSH,
-        		BiomeDictionary.Type.OVERWORLD);
-        
-        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(ROCKY_DUNES.get(), 4));
-        BiomeDictionary.addTypes(ROCKY_DUNES.get(), 
-        		BiomeDictionary.Type.DRY, 
-        		BiomeDictionary.Type.HOT,
-        		BiomeDictionary.Type.WASTELAND,
-        		BiomeDictionary.Type.OVERWORLD);
-        
-        BiomeDictionary.addTypes(ROCKY_DUNES_HILLS.get(), 
-        		BiomeDictionary.Type.DRY, 
-        		BiomeDictionary.Type.HOT, 
-        		BiomeDictionary.Type.WASTELAND,
-        		BiomeDictionary.Type.OVERWORLD);
-        
-        BiomeDictionary.addTypes(PETRIFIED_DUNES.get(), 
-        		BiomeDictionary.Type.DRY, 
-        		BiomeDictionary.Type.HOT, 
-        		BiomeDictionary.Type.WASTELAND,
-        		BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(ROCKY_DUNES.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(ROCKY_DUNES_HILLS.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(PETRIFIED_DUNES.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.OVERWORLD);
     }
 }

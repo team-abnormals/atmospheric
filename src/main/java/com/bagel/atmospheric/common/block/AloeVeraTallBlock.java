@@ -108,6 +108,11 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 		}
 	}
 	
+	@Override
+	public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
+		return new ItemStack(AtmosphericItems.ALOE_KERNELS.get());
+	}
+	
 	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void animateTick(BlockState state, World worldIn, BlockPos pos, Random rand) {
