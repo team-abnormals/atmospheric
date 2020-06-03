@@ -4,7 +4,6 @@ import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
@@ -76,19 +75,12 @@ public class AtmosphericEvents {
 	}
 	
 	@SubscribeEvent
-	public static void aloePoison(PotionEvent.PotionAddedEvent event) {
+	public static void addPotion(PotionEvent.PotionAddedEvent event) {
+		
+		// GELLED //
 		LivingEntity entity = event.getEntityLiving();
 		if (entity.isPotionActive(AtmosphericEffects.GELLED.get()) && event.getPotionEffect().getPotion() == AtmosphericEffects.GELLED.get()) {
 			entity.addPotionEffect(new EffectInstance(Effects.POISON, 160, 0));
-		}
-		
-		if(event.getPotionEffect().getPotion() == AtmosphericEffects.PERSISTENCE.get()) {
-			if (entity instanceof ServerPlayerEntity) {
-				ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entity;
-				if (serverplayerentity.getFoodStats().getFoodLevel() < 8 && !entity.getEntityWorld().isRemote()) {
-					AtmosphericCriteriaTriggers.USE_PERSISTENCE.trigger(serverplayerentity); 
-				}
-			}
 		}
 	}
 }
