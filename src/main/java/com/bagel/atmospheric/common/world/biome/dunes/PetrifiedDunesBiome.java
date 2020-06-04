@@ -26,8 +26,8 @@ public final class PetrifiedDunesBiome extends Biome {
 				Blocks.GRAVEL.getDefaultState()))
 			.precipitation(Biome.RainType.NONE)
 			.category(Biome.Category.DESERT)
-			.depth(0.42F)
-			.scale(0.25F)
+			.depth(0.45F)
+			.scale(0.2F)
 			.temperature(2.0F)
 			.downfall(0.0F)
 			.waterColor(4159204)
@@ -44,11 +44,14 @@ public final class PetrifiedDunesBiome extends Biome {
 		DefaultBiomeFeatures.addOres(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
 		AtmosphericBiomeFeatures.addFossils(this);
-
-		DefaultBiomeFeatures.addDeadBushes(this);
+		
+		AtmosphericBiomeFeatures.addDeadBushes(this, 5);
 		DefaultBiomeFeatures.addMushrooms(this);
-		AtmosphericBiomeFeatures.addPetrifiedYuccaTrees(this);
-
+		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.5F, 2, true);
+		AtmosphericBiomeFeatures.addSurfaceFossils(this);
+		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 2);
+		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.1F, 1);
+		
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 
 		this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.RABBIT, 4, 2, 3));

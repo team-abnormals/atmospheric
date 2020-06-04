@@ -2,17 +2,13 @@ package com.bagel.atmospheric.common.world.gen.feature;
 
 import java.util.Random;
 import java.util.Set;
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 import com.bagel.atmospheric.common.block.YuccaFlowerDoubleBlock;
-import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
-import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.datafixers.Dynamic;
-import com.teamabnormals.abnormals_core.core.library.api.IAddToBiomes;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
@@ -24,15 +20,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IWorldWriter;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.Category;
-import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
-public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
+public class YuccaTreeFeature extends TreeFeature {
 	private boolean patch;
 	private boolean petrified;
 	
@@ -139,6 +132,15 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 					}
 				}
 				
+				if (petrified && rand.nextInt(12) == 0) {
+					for(int j = 0; j < 12; ++j) {
+						BlockPos blockpos = position.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
+						if (isAir(worldIn, blockpos) && blockpos.getY() < 255 && isSand(worldIn, blockpos.down())) {
+							this.setLogState(leavesPlaced, worldIn, blockpos, AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get().getDefaultState(), boundsIn);
+						}
+					}
+				}
+				
 				return true;
 			} else {
 				return false;
@@ -176,7 +178,7 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 
 		for (int i = 0; i < length; i++) {
 			blockpos = new BlockPos(logX, logY, logZ);
-			if (!anyBundle && rand.nextInt(32) == 0) {
+			if (!anyBundle && rand.nextInt(16) == 0) {
 				bundle = true; 
 				anyBundle = true;
 			} else {
@@ -216,7 +218,7 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 	private void placeLogAt(Set<BlockPos> changedBlocks, IWorldWriter worldIn, BlockPos pos, MutableBoundingBox boundsIn, Direction direction, boolean bundle) {
 		BlockState logState = this.petrified ? YUCCA_LOG.get() : YUCCA_LOG.get().with(LogBlock.AXIS, direction.getAxis());
 		this.setLogState(changedBlocks, worldIn, pos, logState, boundsIn);
-		if (bundle) {
+		if (bundle && !this.petrified) {
 			this.setLogState(changedBlocks, worldIn, pos.down(), YUCCA_BRANCH.get(), boundsIn);
 		}
 	}
@@ -259,16 +261,5 @@ public class YuccaTreeFeature extends TreeFeature implements IAddToBiomes {
 		return worldIn.hasBlockState(pos, (block) -> {
 			return block.isIn(BlockTags.SAND);
 		});
-	}
-
-	@Override
-	public Consumer<Biome> processBiomeAddition() {
-		return biome -> {
-			if(biome == Biomes.MODIFIED_WOODED_BADLANDS_PLATEAU || biome == Biomes.WOODED_BADLANDS_PLATEAU) {
-				AtmosphericBiomeFeatures.addBadlandsYucca(biome);
-			} else if(biome.getCategory() == Category.DESERT && biome.getRegistryName().getNamespace() != Atmospheric.MODID) {
-				AtmosphericBiomeFeatures.addDesertYucca(biome);
-			}
-		};
 	}
 }

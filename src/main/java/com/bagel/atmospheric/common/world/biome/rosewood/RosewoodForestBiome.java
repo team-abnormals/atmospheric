@@ -22,7 +22,7 @@ public class RosewoodForestBiome extends Biome {
 				.scale(0.2F)
 				.temperature(0.90F)
 				.downfall(0.8F)
-				.waterColor(5959129)
+				.waterColor(6675400)
 				.waterFogColor(206651)
 				.parent(null));
         
@@ -45,10 +45,10 @@ public class RosewoodForestBiome extends Biome {
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
         AtmosphericBiomeFeatures.addRosewoodForestTrees(this, 10, 1);
-        AtmosphericBiomeFeatures.addDoublePlants(this);
-        AtmosphericBiomeFeatures.addFlowers(this);
-        AtmosphericBiomeFeatures.addFoliage(this);
-        AtmosphericBiomeFeatures.addWaterFoliage(this);
+        AtmosphericBiomeFeatures.addRainforestDoublePlants(this);
+        AtmosphericBiomeFeatures.addRainforestFlowers(this);
+        AtmosphericBiomeFeatures.addRainforestFoliage(this);
+        AtmosphericBiomeFeatures.addRainforestWaterFoliage(this);
         
         DefaultBiomeFeatures.addFreezeTopLayer(this);
         

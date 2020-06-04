@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:crustose_log"
+    }
+  },
+  "result": {
+    "item": "atmospheric:crustose_wood",
+    "count": 3
+  }
+}

@@ -10,6 +10,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -29,7 +30,7 @@ public class YuccaLeafCarpetBlock extends LeafCarpetBlock {
     }
 
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-		if (entityIn instanceof LivingEntity) {
+		if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {
 			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.getPosX() || entityIn.lastTickPosZ != entityIn.getPosZ())) {
 				double d0 = Math.abs(entityIn.getPosX() - entityIn.lastTickPosX);
 				double d1 = Math.abs(entityIn.getPosZ() - entityIn.lastTickPosZ);

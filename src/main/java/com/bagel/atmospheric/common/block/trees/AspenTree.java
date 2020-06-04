@@ -4,7 +4,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
+import com.bagel.atmospheric.common.world.biome.AtmosphericFeatureConfigs;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 
 import net.minecraft.block.trees.BigTree;
@@ -18,7 +18,7 @@ public class AspenTree extends BigTree {
     */
    @Nullable
    protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
-      return AtmosphericFeatures.ASPEN_TREE.withConfiguration(AtmosphericBiomeFeatures.ASPEN_TREE_CONFIG);
+      return AtmosphericFeatures.ASPEN_TREE.withConfiguration(AtmosphericFeatureConfigs.ASPEN_TREE_CONFIG);
    }
 
    /**
@@ -26,6 +26,6 @@ public class AspenTree extends BigTree {
     */
    @Nullable
    protected ConfiguredFeature<HugeTreeFeatureConfig, ?> getHugeTreeFeature(Random rand) {
-      return AtmosphericFeatures.MEGA_ASPEN_TREE.withConfiguration(rand.nextBoolean() ? AtmosphericBiomeFeatures.MEGA_ASPEN_TREE_CONFIG : AtmosphericBiomeFeatures.MEGA_ASPEN_TREE_CONFIG);
+      return AtmosphericFeatures.MEGA_ASPEN_TREE.withConfiguration(rand.nextBoolean() ? AtmosphericFeatureConfigs.MEGA_ASPEN_TREE_CONFIG : AtmosphericFeatureConfigs.MEGA_ASPEN_TREE_CONFIG);
    }
 }

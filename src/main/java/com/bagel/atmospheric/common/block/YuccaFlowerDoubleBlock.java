@@ -2,6 +2,7 @@ package com.bagel.atmospheric.common.block;
 
 import javax.annotation.Nullable;
 
+import com.bagel.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
@@ -13,6 +14,8 @@ import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.passive.BeeEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.math.BlockPos;
@@ -41,7 +44,7 @@ public class YuccaFlowerDoubleBlock extends DoublePlantBlock {
 	}
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-		if (entityIn instanceof LivingEntity) {
+		if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {
 			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.getPosX() || entityIn.lastTickPosZ != entityIn.getPosZ())) {
 				double d0 = Math.abs(entityIn.getPosX() - entityIn.lastTickPosX);
 				double d1 = Math.abs(entityIn.getPosZ() - entityIn.lastTickPosZ);
@@ -49,7 +52,13 @@ public class YuccaFlowerDoubleBlock extends DoublePlantBlock {
 	            	if (!entityIn.isCrouching()) {
 	            		entityIn.addVelocity(MathHelper.sin((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.1F, 0.05F, -MathHelper.cos((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.1F);
 	            	}
-	            	entityIn.attackEntityFrom(AtmosphericDamageSources.YUCCA_FLOWER, 1.0F);	
+	            	entityIn.attackEntityFrom(AtmosphericDamageSources.YUCCA_FLOWER, 1.0F);
+	            	if (entityIn instanceof ServerPlayerEntity) {
+	            		ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
+	            		if(!entityIn.getEntityWorld().isRemote() && !serverplayerentity.isCreative()) {
+	            			AtmosphericCriteriaTriggers.YUCCA_FLOWER_PRICK.trigger(serverplayerentity); 
+	            		}
+	            	}
 	            }
 			}
 		}	

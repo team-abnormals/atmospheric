@@ -4,6 +4,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.bagel.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 
@@ -14,6 +15,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.potion.EffectInstance;
@@ -58,7 +60,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
           worldIn.destroyBlock(pos, true);
        } else {
     	   int j = state.get(AGE);
-    	   if(worldIn.getBlockState(pos.down()).getBlock() == AtmosphericBlocks.ARID_SAND.get() && j < this.getMaxAge(worldIn, pos) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, true)) {
+    	   if(worldIn.getBlockState(pos.down()).getBlock() == AtmosphericBlocks.ARID_SAND.get() && j < this.getMaxAge(worldIn, pos) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0)) {
     		 	  worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(j + 1)));
     	   } 
     	   net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
@@ -119,9 +121,15 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 	   if (entityIn instanceof LivingEntity) {
 		   LivingEntity living = (LivingEntity) entityIn;
-		   living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, true, false));
+		   living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, false, false, true));
 	   }
 	   entityIn.attackEntityFrom(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.get(AGE));
+	   if (entityIn instanceof ServerPlayerEntity) {
+		   ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
+		   if(!entityIn.getEntityWorld().isRemote() && !serverplayerentity.isCreative()) {
+			   AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.trigger(serverplayerentity); 
+		   }
+	   }
    }
    
    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {

@@ -28,7 +28,7 @@ public class DuneRocksFeature extends Feature<BlockBlobConfig> {
 	               }
 
 	               Block block = worldIn.getBlockState(pos.down()).getBlock();
-	               if (block != AtmosphericBlocks.ARID_SAND.get() && isStone(block)) {
+	               if (block != AtmosphericBlocks.ARID_SAND.get() && block != AtmosphericBlocks.RED_ARID_SAND.get()) {
 	                  break label50;
 	               }
 	            }
@@ -47,7 +47,7 @@ public class DuneRocksFeature extends Feature<BlockBlobConfig> {
 
 	               for(BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-j, -k, -l), pos.add(j, k, l))) {
 	                  if (blockpos.distanceSq(pos) <= (double)(f * f)) {
-	                     worldIn.setBlockState(blockpos, config.state, 4);
+	                     worldIn.setBlockState(blockpos, rand.nextBoolean() ? AtmosphericBlocks.RED_ARID_SANDSTONE.get().getDefaultState() : AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState(), 4);
 	                  }
 	               }
 

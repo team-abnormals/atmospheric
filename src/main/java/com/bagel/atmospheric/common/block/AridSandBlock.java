@@ -1,13 +1,8 @@
 package com.bagel.atmospheric.common.block;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FallingBlock;
-import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.state.DirectionProperty;
-import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -16,27 +11,16 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
 
 public class AridSandBlock extends FallingBlock {
-	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
     private final int color;
 
     public AridSandBlock(int color, Properties properties) {
         super(properties);
         this.color = color;
-
-    }
-    
-    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-    	builder.add(FACING);
     }
 
     @Override
     public int getDustColor(BlockState state) {
         return this.color;
-    }
-    
-    @Override
-    public BlockState getStateForPlacement(BlockItemUseContext context) {
-    	return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing());
     }
 
 	@Override

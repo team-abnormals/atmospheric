@@ -26,10 +26,10 @@ public final class FlourishingDunesBiome extends Biome {
 				Blocks.GRAVEL.getDefaultState()))
 			.precipitation(Biome.RainType.NONE)
 			.category(Biome.Category.DESERT)
-			.depth(0.42F)
-			.scale(0.25F)
+			.depth(0.45F)
+			.scale(0.15F)
 			.temperature(2.0F)
-			.downfall(0.0F)
+			.downfall(0.1F)
 			.waterColor(4159204)
 			.waterFogColor(329011)
 			.parent(null)));
@@ -44,10 +44,18 @@ public final class FlourishingDunesBiome extends Biome {
 		DefaultBiomeFeatures.addOres(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
 		AtmosphericBiomeFeatures.addFossils(this);
+		AtmosphericBiomeFeatures.addDuneGrassPatches(this);
 
-		DefaultBiomeFeatures.addDeadBushes(this);
+		AtmosphericBiomeFeatures.addDeadBushes(this, 4);
+		AtmosphericBiomeFeatures.addMelons(this);
 		DefaultBiomeFeatures.addMushrooms(this);
-		AtmosphericBiomeFeatures.addSparseYuccaTrees(this);
+		AtmosphericBiomeFeatures.addBeehiveYuccaTrees(this, 0, 0.25F, 1);
+		AtmosphericBiomeFeatures.addBabyYuccaTrees(this, 2, 0.05F, 1);
+		AtmosphericBiomeFeatures.addGilias(this, 6);
+		AtmosphericBiomeFeatures.addAloeVera(this, 6);
+		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.5F, 4);
+		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 3);
+		AtmosphericBiomeFeatures.addYuccaFlower(this, 5);
 
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 
@@ -66,7 +74,7 @@ public final class FlourishingDunesBiome extends Biome {
 	
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	   public int getSkyColor() {
-	      return 14988944;
-	   }
+	public int getSkyColor() {
+		return 14988944;
+	}
 }

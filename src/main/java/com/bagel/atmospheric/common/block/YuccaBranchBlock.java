@@ -2,7 +2,7 @@ package com.bagel.atmospheric.common.block;
 
 import java.util.Random;
 
-import com.bagel.atmospheric.core.other.AtmosphericBlockStates;
+import com.bagel.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
@@ -13,8 +13,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BushBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Items;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
@@ -37,7 +40,7 @@ import net.minecraft.world.server.ServerWorld;
 public class YuccaBranchBlock extends BushBlock implements IGrowable {
 	protected static final VoxelShape SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 16.0D, 11.0D);
 	protected static final VoxelShape SHAPE_SNAPPED = Block.makeCuboidShape(5.0D, 6.0D, 5.0D, 11.0D, 16.0D, 11.0D);
-	public static final BooleanProperty SNAPPED = AtmosphericBlockStates.SNAPPED;
+	public static final BooleanProperty SNAPPED = BooleanProperty.create("snapped");
 
 	public YuccaBranchBlock(Properties properties) {
 		super(properties);
@@ -92,7 +95,7 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable {
 		if (!state.isValidPosition(worldIn, pos)) {
 			worldIn.destroyBlock(pos, true);
 		} else {
-			if(state.get(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, true) && worldIn.getBlockState(pos.down()).isAir()) {
+			if(state.get(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0) && worldIn.getBlockState(pos.down()).isAir()) {
 				worldIn.setBlockState(pos, state.with(SNAPPED, false));
 				worldIn.setBlockState(pos.down(), AtmosphericBlocks.YUCCA_BUNDLE.get().getDefaultState());
 			} 
@@ -115,7 +118,7 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable {
 	}
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-		if (entityIn instanceof LivingEntity) {
+		if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {
 			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.getPosX() || entityIn.lastTickPosZ != entityIn.getPosZ())) {
 				double d0 = Math.abs(entityIn.getPosX() - entityIn.lastTickPosX);
 				double d1 = Math.abs(entityIn.getPosZ() - entityIn.lastTickPosZ);
@@ -124,8 +127,16 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable {
 	            		entityIn.addVelocity(MathHelper.sin((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.125F, 0.075F, -MathHelper.cos((float) (entityIn.rotationYaw * Math.PI / 180.0F)) * 2F * 0.125F);
 	            	}
 	            	entityIn.attackEntityFrom(AtmosphericDamageSources.YUCCA_BRANCH, 1.0F);	
+	            	if (entityIn instanceof ServerPlayerEntity) {
+	            		ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
+	            		if(!entityIn.getEntityWorld().isRemote() && !serverplayerentity.isCreative()) {
+	            			AtmosphericCriteriaTriggers.YUCCA_BRANCH_PRICK.trigger(serverplayerentity); 
+	            		}
+	            	}
 	            }
 			}
-		}	
+		} else if (entityIn instanceof IProjectile && !state.get(SNAPPED)) {
+			worldIn.setBlockState(pos, state.with(SNAPPED, true));
+		}
 	}
 }

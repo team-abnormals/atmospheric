@@ -36,4 +36,8 @@ public class YuccaBundleBlock extends FallingBlock {
 			}
 		}
 	}
+	
+	protected void onStartFalling(FallingBlockEntity fallingEntity) {
+		fallingEntity.setHurtEntities(true);
+	}
 }

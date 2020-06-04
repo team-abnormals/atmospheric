@@ -2,6 +2,7 @@ package com.bagel.atmospheric.common.item;
 
 import java.util.Random;
 
+import com.bagel.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.bagel.atmospheric.core.other.AtmosphericDamageSources;
 
 import net.minecraft.advancements.CriteriaTriggers;
@@ -28,6 +29,12 @@ public class AloeLeavesItem extends Item {
 	   
 	   Random rand = new Random();
 	   if(rand.nextInt(5) == 0) entityLiving.attackEntityFrom(AtmosphericDamageSources.ALOE_LEAVES, 3.0F);
+	   if (entityLiving.getFireTimer() > 0 && entityLiving instanceof ServerPlayerEntity) {
+		   ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityLiving;
+		   if(!entityLiving.getEntityWorld().isRemote()) {
+			   AtmosphericCriteriaTriggers.PUT_OUT_FIRE.trigger(serverplayerentity); 
+		   }
+	   }
 	   entityLiving.setFireTimer(0);
 	   return entityLiving.onFoodEaten(worldIn, stack);
    }

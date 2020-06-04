@@ -43,7 +43,7 @@ public class DirectionalFlowersFeature extends Feature<NoFeatureConfig> {
 	            ++i;
 	         }
 	      }
-
+	      
 	      return i > 0;
 	   }
-	}
+}

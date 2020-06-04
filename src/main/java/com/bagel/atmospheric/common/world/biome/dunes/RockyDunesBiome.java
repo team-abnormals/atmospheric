@@ -1,6 +1,7 @@
 package com.bagel.atmospheric.common.world.biome.dunes;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
+import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 
@@ -26,8 +27,8 @@ public final class RockyDunesBiome extends Biome {
 				Blocks.GRAVEL.getDefaultState()))
 			.precipitation(Biome.RainType.NONE)
 			.category(Biome.Category.DESERT)
-			.depth(0.42F)
-			.scale(0.25F)
+			.depth(0.45F)
+			.scale(0.3F)
 			.temperature(2.0F)
 			.downfall(0.0F)
 			.waterColor(4159204)
@@ -43,13 +44,15 @@ public final class RockyDunesBiome extends Biome {
 		DefaultBiomeFeatures.addStoneVariants(this);
 		DefaultBiomeFeatures.addOres(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
-		AtmosphericBiomeFeatures.addDuneRocks(this);
 		AtmosphericBiomeFeatures.addFossils(this);
-
-		DefaultBiomeFeatures.addSparseGrass(this);
-		DefaultBiomeFeatures.addDeadBushes(this);
 		DefaultBiomeFeatures.addMushrooms(this);
-		AtmosphericBiomeFeatures.addYuccaTrees(this);
+		
+		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 4);
+		AtmosphericBiomeFeatures.addDuneRocks(this, 2, 3);
+		AtmosphericBiomeFeatures.addDeadBushes(this, 3);
+		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.1F, 1, false);
+		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 1);
+		AtmosphericBiomeFeatures.addAloeVera(this, 2);
 
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 
@@ -68,7 +71,13 @@ public final class RockyDunesBiome extends Biome {
 	
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	   public int getSkyColor() {
-	      return 14988944;
-	   }
+	public int getSkyColor() {
+		return 14988944;
+	}
+	
+	
+	@Override
+	public Biome getHill(net.minecraft.world.gen.INoiseRandom rand) {
+		return rand.random(5) > 1 ? AtmosphericBiomes.ROCKY_DUNES_HILLS.get() : AtmosphericBiomes.PETRIFIED_DUNES.get();
+	}
 }
