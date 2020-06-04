@@ -39,7 +39,7 @@
 	"item.atmospheric.passionfruit": "Fruta de la pasión",
 	"item.atmospheric.passionfruit_seed": "Semilla de fruta de la pasión",
 	"item.atmospheric.shimmering_passionfruit": "Fruta de la pasión reluciente",
-	"item.atmospheric.passionfruit_tart": "Pastelillo de fruta de la pasión",
+	"item.atmospheric.passionfruit_tart": "Tarta de fruta de la pasión",
 	"item.atmospheric.passionfruit_sorbet": "Sorbete de fruta de la pasión",
 	"item.atmospheric.passion_vine_coil": "Rollo de pasionaria",
 	
@@ -89,9 +89,6 @@
 	
 	"advancements.husbandry.spit_passionfruit.title": "A escupitajos",
 	"advancements.husbandry.spit_passionfruit.description": "Ataca a un enemigo con semillas de fruta de la pasión",
-	
-	"advancements.husbandry.eat_sorbet.title": "Kilitos de más",
-	"advancements.husbandry.eat_sorbet.description": "Obtén Lentitud V tras consumir un sorbete de fruta de la pasión",
 
   "_comment2": "START OF THE SPRINGS SECTION",
 
@@ -181,7 +178,7 @@
 	"block.atmospheric.yucca_leaf_carpet": "Alfombra de hojas de yuca",
 	"block.atmospheric.yucca_cask": "Barrica de yucas",
 	"block.atmospheric.roasted_yucca_cask": "Barrica de yucas asadas",
-	"block.atmospheric.yucca_gateau": "Tarta de yuca",
+	"block.atmospheric.yucca_gateau": "Gateau de yuca",
 	
 	"block.atmospheric.barrel_cactus": "Cactus barril",
 	"block.atmospheric.barrel_cactus_batch": "Lote de cactus barril",
@@ -265,6 +262,15 @@
 	"death.attack.barrelCactus.player": "%1$s ha pisado un cactus barril mientras intentaba huir de %2$s",
 	"death.attack.aloeLeaves": "%1$s ha muerto entre espinas en hojas de aloe",
 	"death.attack.aloeLeaves.player": "%1$s ha muerto entre espinas en hojas de aloe mientras intentaba huir de %2$s",
+
+	"advancements.husbandry.finish_gateau.title": "Que coman... ¿pasteles?",
+	"advancements.husbandry.finish_gateau.description": "Cómete la útlima última de un gateau de yuca",
+
+	"advancements.adventure.dunes_pricks.title": "Picado y rebanado",
+	"advancements.adventure.dunes_pricks.description": "Pínchate con todas las fuentes naturales de daño que hay en las dunas",
+
+	"advancements.husbandry.put_out_fire.title": "Víctima de quemaduras",
+	"advancements.husbandry.put_out_fire.description": "Usa hojas de aloe para evitar quemarte",
   
   "_comment4": "START OF THE KOUSA SECTION",
   
