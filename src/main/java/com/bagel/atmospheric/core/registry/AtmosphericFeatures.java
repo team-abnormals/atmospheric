@@ -1,5 +1,7 @@
 package com.bagel.atmospheric.core.registry;
 
+import java.util.Locale;
+
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.bagel.atmospheric.common.world.gen.feature.AloeVeraFeature;
 import com.bagel.atmospheric.common.world.gen.feature.BabyYuccaTreeFeature;
@@ -13,10 +15,13 @@ import com.bagel.atmospheric.common.world.gen.feature.RosewoodTreeFeature;
 import com.bagel.atmospheric.common.world.gen.feature.SurfaceFossilFeature;
 import com.bagel.atmospheric.common.world.gen.feature.YuccaFlowerFeature;
 import com.bagel.atmospheric.common.world.gen.feature.YuccaTreeFeature;
+import com.bagel.atmospheric.common.world.gen.structure.AridShrinePieces;
+import com.bagel.atmospheric.common.world.gen.structure.AridShrineStructure;
 import com.bagel.atmospheric.common.world.gen.surfacebuilders.DunesSurfaceBuilder;
 import com.bagel.atmospheric.common.world.gen.surfacebuilders.WaveyDunesSurfaceBuilder;
 import com.bagel.atmospheric.core.Atmospheric;
 
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
@@ -25,6 +30,7 @@ import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.FancyTreeFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.MegaPineTree;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
@@ -32,6 +38,8 @@ import net.minecraft.world.gen.feature.ShrubFeature;
 import net.minecraft.world.gen.feature.SphereReplaceConfig;
 import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.feature.structure.IStructurePieceType;
+import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.event.RegistryEvent;
@@ -72,40 +80,46 @@ public class AtmosphericFeatures {
 	
 	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> WAVEY_DUNES = new WaveyDunesSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	
+	public static final Structure<NoFeatureConfig> ARID_SHRINE = new AridShrineStructure(NoFeatureConfig::deserialize);
+	public static final IStructurePieceType ARID_SHRINE_PIECES = AridShrinePieces.Piece::new;
 
     @SubscribeEvent
     public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
+    	
         event.getRegistry().registerAll(
-        		PODZOL.setRegistryName(Atmospheric.MODID, "podzol"), 
-        		OAK_BUSH.setRegistryName(Atmospheric.MODID, "oak_bush"),
-        		DUNE_ROCKS.setRegistryName(Atmospheric.MODID, "dune_rocks"), 
-        		SURFACE_FOSSIL.setRegistryName(Atmospheric.MODID, "surface_fossil"), 
-        		COARSE_DIRT_PATCH.setRegistryName(Atmospheric.MODID, "coarse_dirt_patch"), 
+        	PODZOL.setRegistryName(Atmospheric.MODID, "podzol"), 
+        	OAK_BUSH.setRegistryName(Atmospheric.MODID, "oak_bush"),
+        	DUNE_ROCKS.setRegistryName(Atmospheric.MODID, "dune_rocks"), 
+        	SURFACE_FOSSIL.setRegistryName(Atmospheric.MODID, "surface_fossil"), 
+        	COARSE_DIRT_PATCH.setRegistryName(Atmospheric.MODID, "coarse_dirt_patch"), 
 
-        		WARM_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "warm_monkey_brush"), 
-        		HOT_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "hot_monkey_brush"), 
-        		SCALDING_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "scalding_monkey_brush"), 
-        		PASSION_VINE.setRegistryName(Atmospheric.MODID, "passion_vine"),
-        		BARREL_CACTUS.setRegistryName(Atmospheric.MODID, "barrel_cactus"),
-        		ALOE_VERA.setRegistryName(Atmospheric.MODID, "aloe_vera"),
-        		YUCCA_FLOWER.setRegistryName(Atmospheric.MODID, "yucca_flower"),
+        	WARM_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "warm_monkey_brush"), 
+        	HOT_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "hot_monkey_brush"), 
+        	SCALDING_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "scalding_monkey_brush"), 
+        	PASSION_VINE.setRegistryName(Atmospheric.MODID, "passion_vine"),
+        	BARREL_CACTUS.setRegistryName(Atmospheric.MODID, "barrel_cactus"),
+        	ALOE_VERA.setRegistryName(Atmospheric.MODID, "aloe_vera"),
+        	YUCCA_FLOWER.setRegistryName(Atmospheric.MODID, "yucca_flower"),
         		
-        		ROSEWOOD_TREE.setRegistryName(Atmospheric.MODID, "rosewood_tree"), 
+        	ROSEWOOD_TREE.setRegistryName(Atmospheric.MODID, "rosewood_tree"), 
 
-        		YUCCA_TREE.setRegistryName(Atmospheric.MODID, "yucca_tree"),
-        		PETRIFIED_YUCCA_TREE.setRegistryName(Atmospheric.MODID, "petrified_yucca_tree"),
-        		YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "yucca_tree_patch"),		
-        		BABY_YUCCA_TREE.setRegistryName(Atmospheric.MODID, "baby_yucca_tree"),
-        		BABY_YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "baby_yucca_tree_patch")
-        		);
+        	YUCCA_TREE.setRegistryName(Atmospheric.MODID, "yucca_tree"),
+        	PETRIFIED_YUCCA_TREE.setRegistryName(Atmospheric.MODID, "petrified_yucca_tree"),
+        	YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "yucca_tree_patch"),		
+        	BABY_YUCCA_TREE.setRegistryName(Atmospheric.MODID, "baby_yucca_tree"),
+        	BABY_YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "baby_yucca_tree_patch"),
+        	ARID_SHRINE.setRegistryName(Atmospheric.MODID, "run_down_house")
+        ); 
+    	register(ARID_SHRINE_PIECES, "ARID_SHRINE_PIECES");
     }
     
     @SubscribeEvent
     public static void registerSurfaceBuilders(RegistryEvent.Register<SurfaceBuilder<?>> event) {
         event.getRegistry().registerAll(
-        		DUNES.setRegistryName(Atmospheric.MODID, "dunes_builder"),
-        		WAVEY_DUNES.setRegistryName(Atmospheric.MODID, "wavey_dunes")
-        		);
+        	DUNES.setRegistryName(Atmospheric.MODID, "dunes_builder"),
+        	WAVEY_DUNES.setRegistryName(Atmospheric.MODID, "wavey_dunes")
+        );
     }
     
     public static void generateFeatures() {
@@ -124,5 +138,12 @@ public class AtmosphericFeatures {
         if (biome == Biomes.SHATTERED_SAVANNA || biome == Biomes.SHATTERED_SAVANNA_PLATEAU) {
             AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.15F, 1, false);
         }
+        if (biome == Biomes.MODIFIED_JUNGLE_EDGE) {
+        	biome.addStructure(AtmosphericFeatures.ARID_SHRINE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+        }
     }
+    
+    static IStructurePieceType register(IStructurePieceType structurePiece, String key) {
+		return Registry.register(Registry.STRUCTURE_PIECE, key.toLowerCase(Locale.ROOT), structurePiece);
+	}
 }

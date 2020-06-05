@@ -60,7 +60,7 @@ public class Atmospheric
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
     }
     
-    private void setup(final FMLCommonSetupEvent event)
+	private void setup(final FMLCommonSetupEvent event)
 	{   
     	AtmosphericFeatures.generateFeatures();
     	AtmosphericBiomeFeatures.addCarvables();
