@@ -10,11 +10,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:leather_horse_armor"
-        },
-
-        {
-          "type": "minecraft:item",
           "name": "minecraft:iron_horse_armor"
         },
         {
@@ -38,7 +33,6 @@
           "type": "minecraft:item",
           "name": "atmospheric:aspen_sapling"
         },
-
         {
           "type": "minecraft:item",
           "name": "atmospheric:kousa_sapling"

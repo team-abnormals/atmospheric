@@ -85,7 +85,7 @@ public class AridShrinePieces {
 		
 		@Override
 		protected void handleDataMarker(String function, BlockPos pos, IWorld worldIn, Random rand, MutableBoundingBox sbb) {
-			if ("shrine_decor".equals(function))
+			if ("decor".equals(function))
 			{
 				ArrayList<BlockState> stateList = new ArrayList<>();
 				stateList.add(AtmosphericBlocks.ALOE_BUNDLE.get().getDefaultState().with(RotatedPillarBlock.AXIS, Axis.X));
