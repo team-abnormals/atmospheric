@@ -1,22 +1,15 @@
 package com.bagel.atmospheric.common.world.biome;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.GenerationStage.Carving;
 import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.BlockBlobConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
@@ -125,23 +118,5 @@ public class AtmosphericBiomeFeatures {
 	
 	public static void addMelons(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(AtmosphericFeatureConfigs.MELON_PATCH_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(5))));
-	}
-	
-	public static void addCarvables() {
-		Set<Block> allBlocksToCarve = new HashSet<Block>();
-		
-		allBlocksToCarve.add(AtmosphericBlocks.ARID_SAND.get());
-		allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
-		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SAND.get());
-		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
-		
-		for (Carving carverStage : GenerationStage.Carving.values())
-		{
-		    for (ConfiguredCarver<?> carver : AtmosphericBiomes.DUNES.get().getCarvers(carverStage))
-		    {
-		        allBlocksToCarve.addAll(carver.carver.carvableBlocks);
-		        carver.carver.carvableBlocks = allBlocksToCarve;
-		    }
-		}
 	}
 }

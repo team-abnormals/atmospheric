@@ -16,14 +16,14 @@ There will continue to be more biomes over time!'''
 [[dependencies.atmospheric]]
     modId="forge"
     mandatory=true
-    versionRange="[31.1.49,)"
+    versionRange="[31.1.46,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.atmospheric]]
     modId="abnormals_core"
     mandatory=true
-    versionRange="[1.0.4,)"
+    versionRange="[1.0.5,)"
     ordering="AFTER"
     side="BOTH"
 

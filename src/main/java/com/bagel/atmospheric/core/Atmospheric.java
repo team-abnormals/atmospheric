@@ -1,19 +1,17 @@
 package com.bagel.atmospheric.core;
 
-import com.bagel.atmospheric.common.data.PassionVineBundleDispenseBehavior;
-import com.bagel.atmospheric.common.data.PassionVineDispenseBehavior;
-import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
-import com.bagel.atmospheric.core.other.AtmosphericBlockData;
-import com.bagel.atmospheric.core.other.AtmosphericColors;
+import com.bagel.atmospheric.core.data.AtmosphericColors;
+import com.bagel.atmospheric.core.data.AtmosphericCompostables;
+import com.bagel.atmospheric.core.data.AtmosphericDispenserBehaviors;
+import com.bagel.atmospheric.core.data.AtmosphericFlammables;
+import com.bagel.atmospheric.core.data.AtmosphericRenderLayers;
 import com.bagel.atmospheric.core.other.AtmosphericConfig;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
-import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 import com.bagel.atmospheric.core.registry.AtmosphericParticles;
 import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 
-import net.minecraft.block.DispenserBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,6 +24,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+@SuppressWarnings("deprecation")
 @Mod(Atmospheric.MODID)
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Atmospheric
@@ -63,24 +62,21 @@ public class Atmospheric
     
 	private void setup(final FMLCommonSetupEvent event)
 	{
-		// Note: This was deprecated too early by Forge. There is no replacement yet, so
-		// the deprecation can (and should) be safely disregarded.
-		//noinspection deprecation
+		// Note: This was deprecated too early by Forge. There is no replacement yet, so it can be safely disregarded.
 		DeferredWorkQueue.runLater(() -> {
 			AtmosphericFeatures.generateFeatures();
-			AtmosphericBiomeFeatures.addCarvables();
+			AtmosphericFeatures.addCarvables();
 			AtmosphericBiomes.registerBiomesToDictionary();
-			AtmosphericBlockData.registerCompostables();
-			AtmosphericBlockData.registerFlammables();
+			AtmosphericCompostables.registerCompostables();
+			AtmosphericFlammables.registerFlammables();
 			AtmosphericEffects.registerBrewingRecipes();
-			DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
-			DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
+			AtmosphericDispenserBehaviors.registerDispenserBehaviors();
 		});
 	}
     
     private void clientSetup(final FMLClientSetupEvent event) 
     {
     	AtmosphericColors.registerBlockColors();
-    	AtmosphericBlockData.setupRenderLayer();
+    	AtmosphericRenderLayers.setupRenderLayer();
     }
 }

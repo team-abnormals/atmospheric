@@ -1,6 +1,8 @@
 package com.bagel.atmospheric.core.registry;
 
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.bagel.atmospheric.common.world.gen.feature.AloeVeraFeature;
@@ -21,9 +23,13 @@ import com.bagel.atmospheric.common.world.gen.surfacebuilders.DunesSurfaceBuilde
 import com.bagel.atmospheric.common.world.gen.surfacebuilders.WaveyDunesSurfaceBuilder;
 import com.bagel.atmospheric.core.Atmospheric;
 
+import net.minecraft.block.Block;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.GenerationStage.Carving;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.BlockBlobConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
@@ -113,6 +119,24 @@ public class AtmosphericFeatures {
         ); 
     	register(ARID_SHRINE_PIECES, "ARID_SHRINE_PIECES");
     }
+    
+	public static void addCarvables() {
+		Set<Block> allBlocksToCarve = new HashSet<Block>();
+		
+		allBlocksToCarve.add(AtmosphericBlocks.ARID_SAND.get());
+		allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
+		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SAND.get());
+		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
+		
+		for (Carving carverStage : GenerationStage.Carving.values())
+		{
+		    for (ConfiguredCarver<?> carver : AtmosphericBiomes.DUNES.get().getCarvers(carverStage))
+		    {
+		        allBlocksToCarve.addAll(carver.carver.carvableBlocks);
+		        carver.carver.carvableBlocks = allBlocksToCarve;
+		    }
+		}
+	}
     
     @SubscribeEvent
     public static void registerSurfaceBuilders(RegistryEvent.Register<SurfaceBuilder<?>> event) {
