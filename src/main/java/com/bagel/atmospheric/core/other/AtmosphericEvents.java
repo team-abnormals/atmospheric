@@ -4,11 +4,8 @@ import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.living.PotionEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -71,16 +68,6 @@ public class AtmosphericEvents {
 				event.getEntityLiving().heal((amplifierHeal + 1));
 				event.getEntityLiving().getPersistentData().putBoolean("Heal", false);
 			}
-		}
-	}
-	
-	@SubscribeEvent
-	public static void addPotion(PotionEvent.PotionAddedEvent event) {
-		
-		// GELLED //
-		LivingEntity entity = event.getEntityLiving();
-		if (entity.isPotionActive(AtmosphericEffects.GELLED.get()) && event.getPotionEffect().getPotion() == AtmosphericEffects.GELLED.get()) {
-			entity.addPotionEffect(new EffectInstance(Effects.POISON, 160, 0));
 		}
 	}
 }
