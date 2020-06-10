@@ -17,6 +17,7 @@ import net.minecraft.block.DispenserBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -61,15 +62,20 @@ public class Atmospheric
     }
     
 	private void setup(final FMLCommonSetupEvent event)
-	{   
-    	AtmosphericFeatures.generateFeatures();
-    	AtmosphericBiomeFeatures.addCarvables();
-        AtmosphericBiomes.registerBiomesToDictionary();
-    	AtmosphericBlockData.registerCompostables();
-    	AtmosphericBlockData.registerFlammables();
-    	AtmosphericEffects.registerBrewingRecipes();
-    	DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
-    	DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
+	{
+		// Note: This was deprecated too early by Forge. There is no replacement yet, so
+		// the deprecation can (and should) be safely disregarded.
+		//noinspection deprecation
+		DeferredWorkQueue.runLater(() -> {
+			AtmosphericFeatures.generateFeatures();
+			AtmosphericBiomeFeatures.addCarvables();
+			AtmosphericBiomes.registerBiomesToDictionary();
+			AtmosphericBlockData.registerCompostables();
+			AtmosphericBlockData.registerFlammables();
+			AtmosphericEffects.registerBrewingRecipes();
+			DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
+			DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
+		});
 	}
     
     private void clientSetup(final FMLClientSetupEvent event) 
