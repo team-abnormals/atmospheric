@@ -32,11 +32,10 @@ public class AloeVeraFeature extends DefaultFlowersFeature {
 		   BlockPos blockpos = this.getNearbyPos(rand, pos, config);
 		   if (worldIn.isAirBlock(blockpos) && blockpos.getY() < worldIn.getMaxHeight() - 1 && blockstate.isValidPosition(worldIn, blockpos) && this.func_225559_a_(worldIn, blockpos, config)) {
 			   if (rand.nextBoolean() && worldIn.isAirBlock(blockpos.up())) {
-				   int age = 6 + rand.nextInt(3);
-				   worldIn.setBlockState(blockpos, tallBlockstate.with(AloeVeraTallBlock.AGE, age), 2);
-				   worldIn.setBlockState(blockpos.up(), tallBlockstate.with(AloeVeraTallBlock.HALF, DoubleBlockHalf.UPPER).with(AloeVeraTallBlock.AGE, age), 2);
+				   worldIn.setBlockState(blockpos, tallBlockstate.with(AloeVeraTallBlock.AGE, 8), 2);
+				   worldIn.setBlockState(blockpos.up(), tallBlockstate.with(AloeVeraTallBlock.HALF, DoubleBlockHalf.UPPER).with(AloeVeraTallBlock.AGE, 8), 2);
 			   } else {
-				   worldIn.setBlockState(blockpos, blockstate.with(AloeVeraBlock.AGE, rand.nextInt(6)), 2);
+				   worldIn.setBlockState(blockpos, blockstate.with(AloeVeraBlock.AGE, 5), 2);
 			   }
 			   ++i;
 		   }
