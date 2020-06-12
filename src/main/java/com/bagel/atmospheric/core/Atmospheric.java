@@ -1,11 +1,8 @@
 package com.bagel.atmospheric.core;
 
-import com.bagel.atmospheric.core.data.AtmosphericColors;
-import com.bagel.atmospheric.core.data.AtmosphericCompostables;
-import com.bagel.atmospheric.core.data.AtmosphericDispenserBehaviors;
-import com.bagel.atmospheric.core.data.AtmosphericFlammables;
-import com.bagel.atmospheric.core.data.AtmosphericRenderLayers;
 import com.bagel.atmospheric.core.other.AtmosphericConfig;
+import com.bagel.atmospheric.core.other.AtmosphericData;
+import com.bagel.atmospheric.core.other.AtmosphericRender;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
@@ -60,23 +57,21 @@ public class Atmospheric
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
     }
     
-	private void setup(final FMLCommonSetupEvent event)
-	{
-		// Note: This was deprecated too early by Forge. There is no replacement yet, so it can be safely disregarded.
+	private void setup(final FMLCommonSetupEvent event) {
 		DeferredWorkQueue.runLater(() -> {
 			AtmosphericFeatures.generateFeatures();
 			AtmosphericFeatures.addCarvables();
 			AtmosphericBiomes.registerBiomesToDictionary();
-			AtmosphericCompostables.registerCompostables();
-			AtmosphericFlammables.registerFlammables();
-			AtmosphericEffects.registerBrewingRecipes();
-			AtmosphericDispenserBehaviors.registerDispenserBehaviors();
+			AtmosphericBiomes.setupVillagerTypes();
+			AtmosphericData.registerCompostables();
+			AtmosphericData.registerFlammables();
+			AtmosphericData.registerDispenserBehaviors();
+			AtmosphericEffects.registerBrewingRecipes();			
 		});
 	}
     
-    private void clientSetup(final FMLClientSetupEvent event) 
-    {
-    	AtmosphericColors.registerBlockColors();
-    	AtmosphericRenderLayers.setupRenderLayer();
+    private void clientSetup(final FMLClientSetupEvent event) {
+    	AtmosphericRender.registerBlockColors();
+    	AtmosphericRender.setupRenderLayer();
     }
 }

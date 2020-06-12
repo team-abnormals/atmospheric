@@ -1,11 +1,75 @@
-package com.bagel.atmospheric.core.data;
+package com.bagel.atmospheric.core.other;
 
+import com.bagel.atmospheric.common.data.PassionVineBundleDispenseBehavior;
+import com.bagel.atmospheric.common.data.PassionVineDispenseBehavior;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
+import com.bagel.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.abnormals_core.core.utils.DataUtils;
 
-public class AtmosphericFlammables {
+import net.minecraft.block.DispenserBlock;
+
+public class AtmosphericData {
+	
+	public static void registerDispenserBehaviors() {
+		DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
+		DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
+	}
+	
+	public static void registerCompostables() {
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_LEAVES.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_SAPLING.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get());
+		
+		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
+		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
+		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get());
+		DataUtils.registerCompostable(0.5F, AtmosphericBlocks.PASSION_VINE_BUNDLE.get());
+		DataUtils.registerCompostable(0.5F, AtmosphericBlocks.PASSION_VINE.get());
+		
+		DataUtils.registerCompostable(0.65F,AtmosphericItems.PASSIONFRUIT.get());
+		DataUtils.registerCompostable(0.65F,AtmosphericItems.YUCCA_FRUIT.get());
+		DataUtils.registerCompostable(0.65F,AtmosphericItems.ROASTED_YUCCA_FRUIT.get());
+		
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.YUCCA_LEAVES.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.YUCCA_SAPLING.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.YUCCA_LEAF_CARPET.get());
+
+		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.YUCCA_FLOWER.get());
+		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.TALL_YUCCA_FLOWER.get());
+		DataUtils.registerCompostable(0.5F, AtmosphericBlocks.BARREL_CACTUS.get());
+		
+		DataUtils.registerCompostable(0.65F,AtmosphericBlocks.GILIA.get());
+		
+		DataUtils.registerCompostable(0.3F, AtmosphericItems.ALOE_KERNELS.get());
+		DataUtils.registerCompostable(0.65F, AtmosphericItems.ALOE_LEAVES.get());
+		DataUtils.registerCompostable(1F,    AtmosphericBlocks.ALOE_BUNDLE.get());
+		
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_LEAVES.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_SAPLING.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.KOUSA_LEAF_CARPET.get());
+
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ASPEN_LEAVES.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ASPEN_SAPLING.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.ASPEN_LEAF_CARPET.get());
+		
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.GRIMWOOD_LEAVES.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.GRIMWOOD_SAPLING.get());
+		DataUtils.registerCompostable(0.3F, AtmosphericBlocks.GRIMWOOD_LEAF_CARPET.get());
+
+		DataUtils.registerCompostable(1F, AtmosphericBlocks.PASSIONFRUIT_CRATE.get());
+		DataUtils.registerCompostable(1F, AtmosphericBlocks.YUCCA_CASK.get());
+		DataUtils.registerCompostable(1F, AtmosphericBlocks.ROASTED_YUCCA_CASK.get());
+		DataUtils.registerCompostable(1F, AtmosphericBlocks.BARREL_CACTUS_BATCH.get());
+	}
 	
 	public static void registerFlammables() {
+		DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE.get(), 5, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE_BUNDLE.get(), 5, 60);
+
+		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_FLOWER.get(), 5, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(), 5, 60);
+		DataUtils.registerFlammable(AtmosphericBlocks.BARREL_CACTUS.get(), 5, 60);
+		
 		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_LEAVES.get(), 30, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_LOG.get(), 5, 5);
 		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD.get(), 5, 5);
@@ -20,9 +84,6 @@ public class AtmosphericFlammables {
 		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get(), 30, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_VERTICAL_SLAB.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_BOOKSHELF.get(), 5, 20);
-
-		DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE.get(), 5, 60);
-		DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE_BUNDLE.get(), 5, 60);
 		
 		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_LEAVES.get(), 30, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_LOG.get(), 5, 5);
@@ -38,10 +99,6 @@ public class AtmosphericFlammables {
 		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_LEAF_CARPET.get(), 30, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_VERTICAL_SLAB.get(), 5, 20);
 		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_BOOKSHELF.get(), 5, 20);
-		
-		DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_FLOWER.get(), 5, 60);
-		DataUtils.registerFlammable(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(), 5, 60);
-		DataUtils.registerFlammable(AtmosphericBlocks.BARREL_CACTUS.get(), 5, 60);
 		
 		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_LEAVES.get(), 30, 60);
 		DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_LOG.get(), 5, 5);
