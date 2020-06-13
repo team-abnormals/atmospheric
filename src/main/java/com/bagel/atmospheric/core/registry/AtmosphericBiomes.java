@@ -13,7 +13,6 @@ import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodPlateauBiome;
 import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.other.AtmosphericConfig;
 
-import net.minecraft.entity.villager.IVillagerType;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
@@ -59,19 +58,5 @@ public class AtmosphericBiomes {
         BiomeDictionary.addTypes(ROCKY_DUNES.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(ROCKY_DUNES_HILLS.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(PETRIFIED_DUNES.get(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.OVERWORLD);
-    }
-    
-    public static void setupVillagerTypes() {
-    	IVillagerType.BY_BIOME.put(ROSEWOOD_FOREST.get(), IVillagerType.JUNGLE);
-    	IVillagerType.BY_BIOME.put(ROSEWOOD_MOUNTAINS.get(), IVillagerType.JUNGLE);
-    	IVillagerType.BY_BIOME.put(ROSEWOOD_PLATEAU.get(), IVillagerType.JUNGLE);
-    	IVillagerType.BY_BIOME.put(ROSEWOOD_FOREST_PLATEAU.get(), IVillagerType.JUNGLE);
-    	
-    	IVillagerType.BY_BIOME.put(DUNES.get(), IVillagerType.DESERT);
-    	IVillagerType.BY_BIOME.put(DUNES_HILLS.get(), IVillagerType.DESERT);
-    	IVillagerType.BY_BIOME.put(FLOURISHING_DUNES.get(), IVillagerType.DESERT);
-    	IVillagerType.BY_BIOME.put(ROCKY_DUNES.get(), IVillagerType.DESERT);
-    	IVillagerType.BY_BIOME.put(ROCKY_DUNES_HILLS.get(), IVillagerType.DESERT);
-    	IVillagerType.BY_BIOME.put(PETRIFIED_DUNES.get(), IVillagerType.DESERT);
     }
 }

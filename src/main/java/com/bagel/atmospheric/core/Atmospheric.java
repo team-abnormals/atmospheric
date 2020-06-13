@@ -3,6 +3,7 @@ package com.bagel.atmospheric.core;
 import com.bagel.atmospheric.core.other.AtmosphericConfig;
 import com.bagel.atmospheric.core.other.AtmosphericData;
 import com.bagel.atmospheric.core.other.AtmosphericRender;
+import com.bagel.atmospheric.core.other.AtmosphericVillagers;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 import com.bagel.atmospheric.core.registry.AtmosphericEffects;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
@@ -62,7 +63,7 @@ public class Atmospheric
 			AtmosphericFeatures.generateFeatures();
 			AtmosphericFeatures.addCarvables();
 			AtmosphericBiomes.registerBiomesToDictionary();
-			AtmosphericBiomes.setupVillagerTypes();
+			AtmosphericVillagers.setupVillagerTypes();
 			AtmosphericData.registerCompostables();
 			AtmosphericData.registerFlammables();
 			AtmosphericData.registerDispenserBehaviors();
