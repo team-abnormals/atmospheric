@@ -16,7 +16,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.4.0'
+version = '1.4.1'
 group = 'com.bagel.atmospheric' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'Atmospheric-1.15.2'
 
@@ -95,8 +95,7 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.15.2-31.1.79'
 	compile fg.deobf("curse.maven:abnormals-core:2979730")
 	compile fg.deobf("curse.maven:locatebiome:2922461")
-	compile fg.deobf("curse.maven:autoreglib:2911830")
-	compile fg.deobf("curse.maven:quark:2976581")
+	compile fg.deobf("curse.maven:jei:2944279")
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"

@@ -59,10 +59,10 @@ public class Atmospheric
     }
     
 	private void setup(final FMLCommonSetupEvent event) {
+		AtmosphericBiomes.addBiomeTypes();
 		DeferredWorkQueue.runLater(() -> {
 			AtmosphericFeatures.generateFeatures();
 			AtmosphericFeatures.addCarvables();
-			AtmosphericBiomes.addBiomeTypes();
 			AtmosphericBiomes.registerBiomesToDictionary();
 			AtmosphericVillagers.setupVillagerTypes();
 			AtmosphericData.registerCompostables();
