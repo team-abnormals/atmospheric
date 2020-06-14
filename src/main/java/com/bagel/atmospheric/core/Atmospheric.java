@@ -62,6 +62,7 @@ public class Atmospheric
 		DeferredWorkQueue.runLater(() -> {
 			AtmosphericFeatures.generateFeatures();
 			AtmosphericFeatures.addCarvables();
+			AtmosphericBiomes.addBiomeTypes();
 			AtmosphericBiomes.registerBiomesToDictionary();
 			AtmosphericVillagers.setupVillagerTypes();
 			AtmosphericData.registerCompostables();
