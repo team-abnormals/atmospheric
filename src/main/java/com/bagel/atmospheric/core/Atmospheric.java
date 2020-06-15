@@ -59,10 +59,10 @@ public class Atmospheric
     }
     
 	private void setup(final FMLCommonSetupEvent event) {
-		AtmosphericBiomes.addBiomeTypes();
 		DeferredWorkQueue.runLater(() -> {
 			AtmosphericFeatures.generateFeatures();
 			AtmosphericFeatures.addCarvables();
+			AtmosphericBiomes.addBiomeTypes();
 			AtmosphericBiomes.registerBiomesToDictionary();
 			AtmosphericVillagers.setupVillagerTypes();
 			AtmosphericData.registerCompostables();
@@ -73,7 +73,9 @@ public class Atmospheric
 	}
     
     private void clientSetup(final FMLClientSetupEvent event) {
-    	AtmosphericRender.registerBlockColors();
-    	AtmosphericRender.setupRenderLayer();
+    	DeferredWorkQueue.runLater(() -> {
+    		AtmosphericRender.registerBlockColors();
+    		AtmosphericRender.setupRenderLayer();
+    	});
     }
 }
