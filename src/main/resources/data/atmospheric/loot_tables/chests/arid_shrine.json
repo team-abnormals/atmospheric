@@ -31,15 +31,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atmospheric:aspen_sapling"
+          "name": "atmospheric:rosewood_sapling"
         },
         {
           "type": "minecraft:item",
-          "name": "atmospheric:kousa_sapling"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "atmospheric:grimwood_sapling"
+          "name": "atmospheric:yucca_sapling"
         }
       ]
     },
