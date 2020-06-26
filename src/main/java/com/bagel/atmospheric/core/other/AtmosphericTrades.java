@@ -29,9 +29,8 @@ public class AtmosphericTrades {
 		
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ROSEWOOD_SAPLING.get(), 5, 1, 8, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.YUCCA_SAPLING.get(), 5, 1, 8, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.KOUSA_SAPLING.get(), 5, 1, 8, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ASPEN_SAPLING.get(), 5, 1, 8, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.GRIMWOOD_SAPLING.get(), 5, 1, 8, 1));
+		//event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.KOUSA_SAPLING.get(), 5, 1, 8, 1));
+		//event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ASPEN_SAPLING.get(), 5, 1, 8, 1));
 	}
 	
 	@SubscribeEvent
