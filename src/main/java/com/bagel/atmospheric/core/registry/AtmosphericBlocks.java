@@ -26,6 +26,7 @@ import com.bagel.atmospheric.common.block.trees.YuccaTree;
 import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.other.AtmosphericProperties;
 import com.mojang.datafixers.util.Pair;
+import com.teamabnormals.abnormals_core.common.blocks.AbnormalsLadderBlock;
 import com.teamabnormals.abnormals_core.common.blocks.AbnormalsStairsBlock;
 import com.teamabnormals.abnormals_core.common.blocks.BookshelfBlock;
 import com.teamabnormals.abnormals_core.common.blocks.DirectionalVerticalSlabBlock;
@@ -53,7 +54,6 @@ import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerPotBlock;
-import net.minecraft.block.LadderBlock;
 import net.minecraft.block.MagmaBlock;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.block.RotatedPillarBlock;
@@ -107,7 +107,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> VERTICAL_ROSEWOOD_PLANKS 	= HELPER.createCompatBlock("quark", "vertical_rosewood_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "rosewood_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_BOOKSHELF 		= HELPER.createCompatBlock("quark", "rosewood_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ROSEWOOD_LADDER 			= HELPER.createCompatBlock("quark", "rosewood_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ROSEWOOD_LADDER 			= HELPER.createCompatBlock("quark", "rosewood_ladder", 			() -> new AbnormalsLadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ROSEWOOD_LEAF_CARPET 		= HELPER.createCompatBlock("quark", "rosewood_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ROSEWOOD_LEAVES.get())), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSIONFRUIT_CRATE				= HELPER.createCompatBlock("quark", "passionfruit_crate", 				() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.PURPLE).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> SHIMMERING_PASSIONFRUIT_CRATE		= HELPER.createCompatBlock("quark", "shimmering_passionfruit_crate", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GOLD).lightValue(7).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
@@ -247,7 +247,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> VERTICAL_YUCCA_PLANKS = HELPER.createCompatBlock("quark", "vertical_yucca_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "yucca_vertical_slab", 		() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_BOOKSHELF 		= HELPER.createCompatBlock("quark", "yucca_bookshelf", 			() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_LADDER 			= HELPER.createCompatBlock("quark", "yucca_ladder", 				() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_LADDER 			= HELPER.createCompatBlock("quark", "yucca_ladder", 				() -> new AbnormalsLadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> YUCCA_LEAF_CARPET 	= HELPER.createCompatBlock("quark", "yucca_leaf_carpet", 	() -> new YuccaLeafCarpetBlock(Block.Properties.from(YUCCA_LEAVES.get())), ItemGroup.DECORATIONS);
 	
 	public static final RegistryObject<Block> YUCCA_CASK			= HELPER.createCompatBlock("quark", "yucca_cask", 			() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
@@ -277,7 +277,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> VERTICAL_KOUSA_PLANKS = HELPER.createCompatBlock("quark", "vertical_kousa_planks",() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "kousa_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_BOOKSHELF 		= HELPER.createCompatBlock("quark", "kousa_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LADDER 			= HELPER.createCompatBlock("quark", "kousa_ladder", 		() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_LADDER 			= HELPER.createCompatBlock("quark", "kousa_ladder", 		() -> new AbnormalsLadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> KOUSA_LEAF_CARPET 	= HELPER.createCompatBlock("quark", "kousa_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(KOUSA_LEAVES.get())), ItemGroup.DECORATIONS);
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -305,7 +305,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> VERTICAL_ASPEN_PLANKS = HELPER.createCompatBlock("quark", "vertical_aspen_planks",() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "aspen_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_BOOKSHELF 		= HELPER.createCompatBlock("quark", "aspen_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ASPEN_LADDER 			= HELPER.createCompatBlock("quark", "aspen_ladder", 		() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ASPEN_LADDER 			= HELPER.createCompatBlock("quark", "aspen_ladder", 		() -> new AbnormalsLadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_LEAF_CARPET 	= HELPER.createCompatBlock("quark", "aspen_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ASPEN_LEAVES.get())), ItemGroup.DECORATIONS);
 	
 	public static final RegistryObject<Block> CRUSTOSE 			    = HELPER.createBlock("crustose", 		    () -> new CrustoseBlock(Block.Properties.from(Blocks.DIRT).tickRandomly()), ItemGroup.BUILDING_BLOCKS);	
@@ -335,6 +335,6 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> VERTICAL_GRIMWOOD_PLANKS 	= HELPER.createCompatBlock("quark", "vertical_grimwood_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "grimwood_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_BOOKSHELF 		= HELPER.createCompatBlock("quark", "grimwood_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> GRIMWOOD_LADDER 			= HELPER.createCompatBlock("quark", "grimwood_ladder", 			() -> new LadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> GRIMWOOD_LADDER 			= HELPER.createCompatBlock("quark", "grimwood_ladder", 			() -> new AbnormalsLadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> GRIMWOOD_LEAF_CARPET 		= HELPER.createCompatBlock("quark", "grimwood_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(GRIMWOOD_LEAVES.get())), ItemGroup.DECORATIONS);
 }
