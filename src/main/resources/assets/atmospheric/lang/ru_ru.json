@@ -16,12 +16,14 @@
 	"block.atmospheric.rosewood_fence_gate": "Палисандровая калитка",
 	"block.atmospheric.rosewood_sapling": "Палисандровый саженец",
 	"block.atmospheric.rosewood_leaves": "Листья палисандра",
+	"block.atmospheric.rosewood_sign": "Палисандровая табличка",
 	
 	"block.atmospheric.passion_vine": "Пассифлора",
-	"block.atmospheric.passion_vine_bundle": "Связка пассифлоры",	
+	"block.atmospheric.passion_vine_bundle": "Связка пассифлоры",
 	
+	"block.atmospheric.warm_monkey_brush": "Тёплая обезьяняя кисть",
 	"block.atmospheric.monkey_brush": "Обезьянья кисть",
-	
+	"block.atmospheric.scalding_monkey_brush": "Жгучая обезьяняя кисть",
 	"block.atmospheric.potted_monkey_brush": "Обезьянья кисть в горшке",
 	"block.atmospheric.potted_rosewood_sapling": "Палисандровый саженец в горшке",
 	
@@ -37,16 +39,13 @@
 	"item.atmospheric.passionfruit": "Маракуйя",
 	"item.atmospheric.passionfruit_seed": "Семя маракуйи",
 	"item.atmospheric.shimmering_passionfruit": "Сияющая маракуйя",
-	"item.atmospheric.shimmering_passionfruit_seed": "Семя сияющей маракуйи",
 	"item.atmospheric.passionfruit_tart": "Пирог из маракуйи",
 	"item.atmospheric.passionfruit_sorbet": "Шербет из маракуйи",
-	
-	"entity.atmospheric.boat": "Лодка",
+	"item.atmospheric.passion_vine_coil": "Пассифлоровый виток",
 	
 	"effect.atmospheric.relief": "Облегчение",
 	"effect.atmospheric.worsening": "Ранимость",
 	"effect.atmospheric.spitting": "Слюнотечение",
-	"effect.atmospheric.golden_spitting": "Золотое слюнотечение",
 	
 	"item.minecraft.potion.effect.relief": "Зелье облегчения",
 	"item.minecraft.potion.effect.relief_strong": "Зелье облегчения",
@@ -162,6 +161,7 @@
 	"block.atmospheric.yucca_fence_gate": "Юкковая калитка",
 	"block.atmospheric.yucca_sapling": "Саженец юкки",
 	"block.atmospheric.yucca_leaves": "Листья юкки",
+	"block.atmospheric.yucca_sign": "Юкковая табличка",
 	
 	"block.atmospheric.yucca_flower": "Цветок юкки",
 	"block.atmospheric.tall_yucca_flower": "Высокий цветок юкки",
@@ -186,7 +186,9 @@
 	"block.atmospheric.barrel_cactus": "Эхинокактус",
 	"block.atmospheric.barrel_cactus_batch": "Пачка эхинокактусов",
 	"block.atmospheric.aloe_vera": "Алоэ",
+	"block.atmospheric.tall_aloe_vera": "Большое алоэ",
 	"block.atmospheric.aloe_bundle": "Связка алоэ",
+	"block.atmospheric.aloe_gel_block": "Блок алоевого геля",
 	"block.atmospheric.gilia": "Гилия",
 	
 	"block.atmospheric.arid_sand": "Сухой песок",
@@ -240,10 +242,16 @@
 	"item.atmospheric.aloe_leaves": "Листья алоэ",
 	"item.atmospheric.aloe_gel_bottle": "Бутылочка геля алоэ",
 	
+	"effect.atmospheric.persistence": "Упорство",
+	"effect.atmospheric.gelled": "Гелевый",
+	
 	"biome.atmospheric.dunes": "Дюны",
-	"biome.atmospheric.rocky_dunes": "Скалистые дюны",
-	"biome.atmospheric.petrified_dunes": "Каменистые дюны",
+	"biome.atmospheric.dunes_hills": "Холмы дюн",
 	"biome.atmospheric.flourishing_dunes": "Цветущие дюны",
+	
+	"biome.atmospheric.rocky_dunes": "Скалистые дюны",
+	"biome.atmospheric.rocky_dunes_hills": "Холмы скалистых дюн",
+	"biome.atmospheric.petrified_dunes": "Каменистые дюны",
 	
 	"death.attack.yuccaSapling": "Саженец юкки рассёк %1$s",
 	"death.attack.yuccaSapling.player": "Саженец юкки рассёк %1$s, спасавшегося от %2$s",
@@ -251,8 +259,21 @@
 	"death.attack.yuccaFlower.player": "Цветок юкки рассёк %1$s, спасавшегося от %2$s",
 	"death.attack.yuccaBranch": "Ветка юкки рассекла %1$s",
 	"death.attack.yuccaBranch.player": "Ветка юкки рассекла %1$s, спасавшегося от %2$s",
+	"death.attack.yuccaLeaves": "Листья юкки рассекли %1$s",
+	"death.attack.yuccaLeaves.player": "Листья юкки рассекли %1$s, спасавшегося от %2$s",
 	"death.attack.barrelCactus": "Эхинокактус оказался на пути у %1$s",
 	"death.attack.barrelCactus.player": "Эхинокактус оказался на пути у %1$s, спасавшегося от %2$s",
+	"death.attack.aloeLeaves": "Листья алоэ проткнули %1$s",
+	"death.attack.aloeLeaves.player": "Листья алоэ проткнули %1$s, спасавшегося от %2$s",
+	
+	"advancements.husbandry.finish_gateau.title": "Подайте им... торта?",
+	"advancements.husbandry.finish_gateau.description": "Полакомьтесь последним кусочком торта из юкки",
+	
+	"advancements.adventure.dunes_pricks.title": "Разрублен и раскромсан",
+	"advancements.adventure.dunes_pricks.description": "Порежьтесь обо всё, об что можно порезаться в дюнах",
+	
+	"advancements.husbandry.put_out_fire.title": "Жертва ожогов",
+	"advancements.husbandry.put_out_fire.description": "Спаситесь от горения при помощи листьев алоэ",
   
   "_comment4": "START OF THE KOUSA SECTION",
   
@@ -271,6 +292,7 @@
 	"block.atmospheric.kousa_fence_gate": "Кизиловая калитка",
 	"block.atmospheric.kousa_sapling": "Кизиловый саженец",
 	"block.atmospheric.kousa_leaves": "Листья кизила",
+	"block.atmospheric.kousa_sign": "Кизиловая табличка",
 	
 	"block.atmospheric.potted_kousa_sapling": "Саженец кизила в горшке",
 	
@@ -286,11 +308,14 @@
   
 	"block.atmospheric.crustose": "Лишайник",
 	"block.atmospheric.crustose_log": "Покрытое лишайником бревно",
+	"block.atmospheric.crustose_wood": "Лешайниковое дерево",
   
 	"block.atmospheric.aspen_log": "Осиновое бревно",
 	"block.atmospheric.aspen_wood": "Осина",
 	"block.atmospheric.stripped_aspen_log": "Обтёсанное осиновое бревно",
 	"block.atmospheric.stripped_aspen_wood": "Обтёсанная осина",
+	"block.atmospheric.watchful_aspen_log": "Глазастое осиновое бревно",
+	"block.atmospheric.watchful_aspen_wood": "Глазастая осина",
 	"block.atmospheric.aspen_planks": "Осиновые доски",
 	"block.atmospheric.aspen_stairs": "Осиновые ступеньки",
 	"block.atmospheric.aspen_slab": "Осиновая плита",
@@ -302,6 +327,7 @@
 	"block.atmospheric.aspen_fence_gate": "Осиновая калитка",
 	"block.atmospheric.aspen_sapling": "Осиновый саженец",
 	"block.atmospheric.aspen_leaves": "Листья осины",
+	"block.atmospheric.aspen_sign": "Осиновая табличка",
 	
 	"block.atmospheric.potted_aspen_sapling": "Осиновый саженец в горшке",
 	
@@ -312,6 +338,34 @@
 	"block.atmospheric.aspen_leaf_carpet": "Ковёр из осиновых листьев",
 	
 	"item.atmospheric.aspen_boat": "Осиновая лодка",
- 
-  "_comment6": "END"
+	
+  "_comment6": "START OF THE SHADED WOODS SECTION",
+  
+    "block.atmospheric.grimwood_log": "Бревно мрачного дерева",
+	"block.atmospheric.grimwood": "Мрачное дерево",
+	"block.atmospheric.stripped_grimwood_log": "Обтёсанное бревно мрачного дерева",
+	"block.atmospheric.stripped_grimwood": "Обтёсанное мрачная древесина",
+	"block.atmospheric.grimwood_planks": "Доски из мрачного дерева",
+	"block.atmospheric.grimwood_stairs": "Ступеньки из мрачного дерева",
+	"block.atmospheric.grimwood_slab": "Плита из мрачного дерева",
+	"block.atmospheric.grimwood_pressure_plate": "Нажимная плита из мрачного дерева",
+	"block.atmospheric.grimwood_button": "Кнопка из мрачного дерева",
+	"block.atmospheric.grimwood_door": "Дверь из мрачного дерева",
+	"block.atmospheric.grimwood_trapdoor": "Люк из мрачного дерева",
+	"block.atmospheric.grimwood_fence": "Забор из мрачного дерева",
+	"block.atmospheric.grimwood_fence_gate": "Калитка из мрачного дерева",
+	"block.atmospheric.grimwood_sapling": "Саженец мрачного дерева",
+	"block.atmospheric.grimwood_leaves": "Листья мрачного дерева",
+	"block.atmospheric.grimwood_sign": "Табличка из мрачного дерева",
+	"block.atmospheric.potted_grimwood_sapling": "Саженец мрачного дерева в горшке",
+	
+	"block.atmospheric.grimwood_bookshelf": "Книжная полка из мрачного дерева",
+	"block.atmospheric.grimwood_vertical_slab": "Вертикальная плита из мрачного дерева",
+	"block.atmospheric.vertical_grimwood_planks": "Вертикальные доски из мрачного дерева",
+	"block.atmospheric.grimwood_ladder": "Лестница из мрачного дерева",
+	"block.atmospheric.grimwood_leaf_carpet": "Ковёр из листьев мрачного дерева",
+	
+	"item.atmospheric.grimwood_boat": "Лодка из мрачного дерева",
+
+  "_comment7": "END"
 }
