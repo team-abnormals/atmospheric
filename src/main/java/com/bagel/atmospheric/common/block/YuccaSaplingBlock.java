@@ -31,7 +31,7 @@ public class YuccaSaplingBlock extends AbnormalsSaplingBlock implements net.mine
 	
 	@Override
 	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
-		return net.minecraftforge.common.PlantType.Desert;	
+		return net.minecraftforge.common.PlantType.DESERT;	
 	}
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {

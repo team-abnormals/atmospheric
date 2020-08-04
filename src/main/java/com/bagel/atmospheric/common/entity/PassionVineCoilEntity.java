@@ -63,11 +63,10 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 
    }
 
-   @SuppressWarnings("deprecation")
    protected void onImpact(RayTraceResult result) {
 	   if (result.getType() == RayTraceResult.Type.ENTITY) {
 		   Entity entity = ((EntityRayTraceResult)result).getEntity();
-		   entity.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 0);
+		   entity.attackEntityFrom(DamageSource.causeThrownDamage(this, this.func_234616_v_()), 0);
 	   } else if (result.getType() == RayTraceResult.Type.BLOCK) {
 		   BlockPos pos = this.getPosition();
 		   World worldIn = this.getEntityWorld();
@@ -75,17 +74,17 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 		   BlockPos nextPos = pos.offset(Direction.DOWN);
 		   Block nextBlock = worldIn.getBlockState(nextPos).getBlock();
 		   int counter = 8;
-		   Direction direction = this.getThrower().getHorizontalFacing();
+		   Direction direction = this.func_234616_v_().getHorizontalFacing();
 		   //Block blockreader = worldIn.getBlockState(pos.offset(direction)).getBlock();
 		   Block landed = worldIn.getBlockState(pos.offset(direction)).getBlock();
-		   if (!landed.isAir(worldIn.getBlockState(pos.offset(direction))) 
+		   if (!landed.isAir(worldIn.getBlockState(pos.offset(direction)), worldIn, pos.offset(direction)) 
 				   && AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite()).isValidPosition(worldIn, pos)
 				   ) {
 			   BlockState vine = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite());
 			   worldIn.setBlockState(pos, vine);
 			   counter = 7;
 			   while (counter > 0) {
-				   if (nextBlock.isAir(worldIn.getBlockState(nextPos))) {
+				   if (nextBlock.isAir(worldIn.getBlockState(nextPos), worldIn, nextPos)) {
 					   worldIn.setBlockState(nextPos, vine);
 					   counter = counter - 1;
 					   nextPos = nextPos.offset(Direction.DOWN);
@@ -108,14 +107,14 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 					   direction = Direction.NORTH;
 				   }
 				   k1 = k1 + 1;
-				   if (!worldIn.getBlockState(pos.offset(direction)).getBlock().isAir(worldIn.getBlockState(pos.offset(direction))) 
+				   if (!worldIn.getBlockState(pos.offset(direction)).getBlock().isAir(worldIn.getBlockState(pos.offset(direction)), worldIn, pos.offset(direction)) 
 						   && AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite()).isValidPosition(worldIn, pos)
 						   ) {
 					   BlockState vine = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite());
 					   worldIn.setBlockState(pos, vine);
 					   counter = 7;
 					   while (counter > 0) {
-						   if (nextBlock.isAir(worldIn.getBlockState(nextPos))) {
+						   if (nextBlock.isAir(worldIn.getBlockState(nextPos), worldIn, nextPos)) {
 							   worldIn.setBlockState(nextPos, vine);
 							   counter = counter - 1;
 							   nextPos = nextPos.offset(Direction.DOWN);

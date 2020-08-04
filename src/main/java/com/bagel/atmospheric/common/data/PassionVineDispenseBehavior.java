@@ -16,9 +16,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class PassionVineDispenseBehavior extends OptionalDispenseBehavior {
-	@SuppressWarnings("deprecation")
+    
 	protected ItemStack dispenseStack(IBlockSource source, ItemStack stack) {
-		this.successful = false;
 		Item item = stack.getItem();
 		if (item instanceof BlockItem) {
 			
@@ -26,14 +25,13 @@ public class PassionVineDispenseBehavior extends OptionalDispenseBehavior {
 			World worldIn = source.getWorld().getWorld();
 			BlockPos pos = source.getBlockPos().offset(direction);
 			
-	 		if (direction != Direction.UP && direction != Direction.DOWN && worldIn.getBlockState(pos).getBlock().isAir(worldIn.getBlockState(pos))) {
+	 		if (direction != Direction.UP && direction != Direction.DOWN && worldIn.getBlockState(pos).getBlock().isAir(worldIn.getBlockState(pos), worldIn, pos)) {
 	 			BlockState vine = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction);
 	 			worldIn.setBlockState(pos, vine);
 	 		} else {
 	 			Block.spawnAsEntity(worldIn, pos.offset(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), 1));
 	 		}
 	 		stack.shrink(1);
-	 		this.successful = true;	
 		}
 		return stack;	
 	}	

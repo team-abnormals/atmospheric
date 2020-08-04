@@ -1,7 +1,7 @@
-modLoader="javafml" #mandatory
-loaderVersion="[31,)" #mandatory (31 is current forge version)
+modLoader="javafml"
+loaderVersion="[32,)"
 logoFile="logo.png"
-authors="five & bageldotjpg" #optional
+authors="five & bageldotjpg"
 credits="Jackson for CurseForge page & Logo"
 
 [[mods]]
@@ -16,20 +16,20 @@ There will continue to be more biomes over time!'''
 [[dependencies.atmospheric]]
     modId="forge"
     mandatory=true
-    versionRange="[31.1.46,)"
+    versionRange="[32.0.72,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.atmospheric]]
     modId="abnormals_core"
     mandatory=true
-    versionRange="[1.0.6,)"
+    versionRange="[2.0.1,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.atmospheric]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.16.1]"
     ordering="NONE"
     side="BOTH"

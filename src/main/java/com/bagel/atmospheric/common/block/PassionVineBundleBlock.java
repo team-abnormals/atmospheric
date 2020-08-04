@@ -31,7 +31,6 @@ public class PassionVineBundleBlock extends Block {
 		entityIn.onLivingFall(fallDistance, rand.nextFloat());	
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public void harvestBlock(World worldIn, PlayerEntity player, BlockPos pos, BlockState state, @Nullable TileEntity te, ItemStack stack) {
 		super.harvestBlock(worldIn, player, pos, state, te, stack);
@@ -44,14 +43,14 @@ public class PassionVineBundleBlock extends Block {
 		int counter = 9;
 		Direction direction = player.getHorizontalFacing();
 		//Block blockreader = worldIn.getBlockState(pos.offset(direction)).getBlock();
-		if (!worldIn.getBlockState(pos.offset(direction)).getBlock().isAir(worldIn.getBlockState(pos.offset(direction))) 
+		if (!worldIn.getBlockState(pos.offset(direction)).getBlock().isAir(worldIn.getBlockState(pos.offset(direction)), worldIn, pos.offset(direction)) 
 				&& AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite()).isValidPosition(worldIn, pos)
 				) {
 			BlockState vine = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite());
 			worldIn.setBlockState(pos, vine);
 			counter = 8;
 			while (counter > 0) {
-				if (nextBlock.isAir(worldIn.getBlockState(nextPos))) {
+				if (nextBlock.isAir(worldIn.getBlockState(nextPos), worldIn, nextPos)) {
 					worldIn.setBlockState(nextPos, vine);
 					counter = counter - 1;
 					nextPos = nextPos.offset(Direction.DOWN);
@@ -77,14 +76,14 @@ public class PassionVineBundleBlock extends Block {
 				direction = Direction.NORTH;
 			}
 			k1 = k1 + 1;
-			if (!worldIn.getBlockState(pos.offset(direction)).getBlock().isAir(worldIn.getBlockState(pos.offset(direction))) 
+			if (!worldIn.getBlockState(pos.offset(direction)).getBlock().isAir(worldIn.getBlockState(pos.offset(direction)), worldIn, pos.offset(direction)) 
 					&& AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite()).isValidPosition(worldIn, pos)
 					) {
 				BlockState vine = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite());
 				worldIn.setBlockState(pos, vine);
 				counter = 8;
 				while (counter > 0) {
-					if (nextBlock.isAir(worldIn.getBlockState(nextPos))) {
+					if (nextBlock.isAir(worldIn.getBlockState(nextPos), worldIn, nextPos)) {
 						worldIn.setBlockState(nextPos, vine);
 						counter = counter - 1;
 						nextPos = nextPos.offset(Direction.DOWN);

@@ -35,15 +35,13 @@ import net.minecraft.world.gen.feature.BlockBlobConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.FancyTreeFeature;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
+import net.minecraft.world.gen.feature.HugeBaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.MegaPineTree;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
-import net.minecraft.world.gen.feature.ShrubFeature;
 import net.minecraft.world.gen.feature.SphereReplaceConfig;
 import net.minecraft.world.gen.feature.TreeFeature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.structure.IStructurePieceType;
 import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
@@ -56,26 +54,26 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericFeatures {
 	
-	public static final Feature<ProbabilityConfig> PODZOL = new PodzolFeature(ProbabilityConfig::deserialize);
-	public static final Feature<NoFeatureConfig> SURFACE_FOSSIL = new SurfaceFossilFeature(NoFeatureConfig::deserialize);
-	public static final Feature<BaseTreeFeatureConfig> OAK_BUSH = new ShrubFeature(BaseTreeFeatureConfig::deserialize);
-	public static final Feature<SphereReplaceConfig> COARSE_DIRT_PATCH = new CoarseDirtPatchFeature(SphereReplaceConfig::deserialize);
+	public static final Feature<ProbabilityConfig> PODZOL = new PodzolFeature(ProbabilityConfig.field_236576_b_);
+	public static final Feature<NoFeatureConfig> SURFACE_FOSSIL = new SurfaceFossilFeature(NoFeatureConfig.field_236558_a_);
+	public static final Feature<BaseTreeFeatureConfig> OAK_BUSH = new ShrubFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
+	public static final Feature<SphereReplaceConfig> COARSE_DIRT_PATCH = new CoarseDirtPatchFeature(SphereReplaceConfig.field_236516_a_);
 
-	public static final Feature<NoFeatureConfig> WARM_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize, 1);
-	public static final Feature<NoFeatureConfig> HOT_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize, 2);
-	public static final Feature<NoFeatureConfig> SCALDING_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig::deserialize, 3);
+	public static final Feature<NoFeatureConfig> WARM_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig.field_236558_a_, 1);
+	public static final Feature<NoFeatureConfig> HOT_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig.field_236558_a_, 2);
+	public static final Feature<NoFeatureConfig> SCALDING_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig.field_236558_a_, 3);
 	
-	public static final Feature<TreeFeatureConfig> ROSEWOOD_TREE = new RosewoodTreeFeature(TreeFeatureConfig::func_227338_a_);
+	public static final Feature<BaseTreeFeatureConfig> ROSEWOOD_TREE = new RosewoodTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
 	
-	public static final Feature<TreeFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(TreeFeatureConfig::func_227338_a_, false, false);
-	public static final Feature<TreeFeatureConfig> PETRIFIED_YUCCA_TREE = new YuccaTreeFeature(TreeFeatureConfig::func_227338_a_, false, true);
-	public static final Feature<TreeFeatureConfig> YUCCA_TREE_PATCH = new YuccaTreeFeature(TreeFeatureConfig::func_227338_a_, true, false);
-	public static final Feature<TreeFeatureConfig> BABY_YUCCA_TREE = new BabyYuccaTreeFeature(TreeFeatureConfig::func_227338_a_, false);
-	public static final Feature<TreeFeatureConfig> BABY_YUCCA_TREE_PATCH = new BabyYuccaTreeFeature(TreeFeatureConfig::func_227338_a_, true);
+	public static final Feature<BaseTreeFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, false, false);
+	public static final Feature<BaseTreeFeatureConfig> PETRIFIED_YUCCA_TREE = new YuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, false, true);
+	public static final Feature<BaseTreeFeatureConfig> YUCCA_TREE_PATCH = new YuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, true, false);
+	public static final Feature<BaseTreeFeatureConfig> BABY_YUCCA_TREE = new BabyYuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, false);
+	public static final Feature<BaseTreeFeatureConfig> BABY_YUCCA_TREE_PATCH = new BabyYuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, true);
 
-	public static final Feature<TreeFeatureConfig> KOUSA_TREE = new FancyTreeFeature(TreeFeatureConfig::func_227338_a_);
-	public static final Feature<TreeFeatureConfig> ASPEN_TREE = new TreeFeature(TreeFeatureConfig::func_227338_a_);
-	public static final Feature<HugeTreeFeatureConfig> MEGA_ASPEN_TREE = new MegaPineTree(HugeTreeFeatureConfig::deserializeSpruce);
+	public static final Feature<BaseTreeFeatureConfig> KOUSA_TREE = new FancyTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
+	public static final Feature<BaseTreeFeatureConfig> ASPEN_TREE = new TreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
+	public static final Feature<HugeBaseTreeFeatureConfig> MEGA_ASPEN_TREE = new MegaPineTree(HugeBaseTreeFeatureConfig.);
 
 	public static final Feature<NoFeatureConfig> PASSION_VINE = new PassionVineFeature(NoFeatureConfig::deserialize);
 	public static final Feature<BlockClusterFeatureConfig> BARREL_CACTUS = new BarrelCactusFeature(BlockClusterFeatureConfig::deserialize);
@@ -84,10 +82,10 @@ public class AtmosphericFeatures {
 
 	public static final Feature<BlockBlobConfig> DUNE_ROCKS = new DuneRocksFeature(BlockBlobConfig::deserialize);
 	
-	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig::deserialize);
-	public static final SurfaceBuilder<SurfaceBuilderConfig> WAVEY_DUNES = new WaveyDunesSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> WAVEY_DUNES = new WaveyDunesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
 	
-	public static final Structure<NoFeatureConfig> ARID_SHRINE = new AridShrineStructure(NoFeatureConfig::deserialize);
+	public static final Structure<NoFeatureConfig> ARID_SHRINE = new AridShrineStructure(NoFeatureConfig.field_236558_a_);
 	public static final IStructurePieceType ARID_SHRINE_PIECES = AridShrinePieces.Piece::new;
 
     @SubscribeEvent
@@ -163,7 +161,7 @@ public class AtmosphericFeatures {
             AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.15F, 1, false);
         }
         if (biome == Biomes.MODIFIED_JUNGLE_EDGE) {
-        	biome.addStructure(AtmosphericFeatures.ARID_SHRINE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+        	biome.func_235068_b_(AtmosphericFeatures.ARID_SHRINE.func_236391_a_(IFeatureConfig.NO_FEATURE_CONFIG));
         }
     }
     

@@ -27,7 +27,7 @@ public class PassionVineCoilItem extends Item {
       if (!worldIn.isRemote) {
          PassionVineCoilEntity coil = new PassionVineCoilEntity(worldIn, playerIn);
          coil.setItem(itemstack);
-         coil.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+         coil.func_234612_a_(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
          worldIn.addEntity(coil);
       }
 

@@ -27,7 +27,7 @@ public class SpittingEffect extends Effect {
 				entity.getEntityWorld().playSound((PlayerEntity)null, entity.getPosX(), entity.getPosY(), entity.getPosZ(), SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
 				PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(entity.world, entity, amplifier);
 				passionseed.setItem(new ItemStack(AtmosphericItems.PASSIONFRUIT_SEED.get()));
-				passionseed.shoot(entity, entity.rotationPitch, entity.rotationYaw, 0.0F, amplifier + 1, 1.0F);
+				passionseed.func_234612_a_(entity, entity.rotationPitch, entity.rotationYaw, 0.0F, amplifier + 1, 1.0F);
 				entity.world.addEntity(passionseed);    
 			}	
 		}

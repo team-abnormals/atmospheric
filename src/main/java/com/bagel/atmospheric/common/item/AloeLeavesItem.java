@@ -35,7 +35,7 @@ public class AloeLeavesItem extends Item {
 			   AtmosphericCriteriaTriggers.PUT_OUT_FIRE.trigger(serverplayerentity); 
 		   }
 	   }
-	   entityLiving.setFireTimer(0);
+	   entityLiving.setFire(0);
 	   return entityLiving.onFoodEaten(worldIn, stack);
    }
    

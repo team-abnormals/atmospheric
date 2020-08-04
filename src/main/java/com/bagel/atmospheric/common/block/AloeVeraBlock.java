@@ -32,9 +32,9 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -62,7 +62,7 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		int age = state.get(AGE);
 		VoxelShape shape = age >= 4 ? SHAPE_LARGE : age >= 2 ? SHAPE_MEDIUM : SHAPE_SMALL;
-		Vec3d vec3d = state.getOffset(worldIn, pos);
+		Vector3d vec3d = state.getOffset(worldIn, pos);
         return shape.withOffset(vec3d.x, vec3d.y, vec3d.z);
 	}
 	
@@ -100,7 +100,7 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 			if (state.get(AGE) == 5) chance = 0.4;
 			
 			if (!worldIn.isRemote && state.get(AGE) > 2 && Math.random() <= chance) {
-				entityIn.setMotionMultiplier(state, new Vec3d((double)0.2F, 0.2D, (double)0.2F));
+				entityIn.setMotionMultiplier(state, new Vector3d((double)0.2F, 0.2D, (double)0.2F));
 				entityIn.attackEntityFrom(AtmosphericDamageSources.ALOE_LEAVES, 1.0F);
 				if (entityIn instanceof ServerPlayerEntity) {
             		ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;

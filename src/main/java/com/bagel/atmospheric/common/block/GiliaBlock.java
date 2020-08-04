@@ -22,6 +22,6 @@ public class GiliaBlock extends FlowerBlock  {
 	
 	@Override
 	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
-		return net.minecraftforge.common.PlantType.Desert;	
+		return net.minecraftforge.common.PlantType.DESERT;	
 	}
 }

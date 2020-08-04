@@ -19,38 +19,23 @@ public class AridSandBlock extends FallingBlock {
     }
 
     @Override
-    public int getDustColor(BlockState state) {
+    public int getDustColor(BlockState state, IBlockReader reader, BlockPos pos) {
         return this.color;
     }
 
-	@Override
+    @Override
     public boolean canSustainPlant(BlockState state, IBlockReader blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
         final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
         final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
-        switch (plantType) {
-            case Desert: {
-                return true;
-            }
-            case Water: {
-                return blockReader.getBlockState(pos).getMaterial() == Material.WATER && blockReader.getBlockState(pos) == getDefaultState();
-            }
-            case Beach: {
-                return ((blockReader.getBlockState(pos.east()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.east()).has(BlockStateProperties.WATERLOGGED))
-                        || (blockReader.getBlockState(pos.west()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.west()).has(BlockStateProperties.WATERLOGGED))
-                        || (blockReader.getBlockState(pos.north()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.north()).has(BlockStateProperties.WATERLOGGED))
-                        || (blockReader.getBlockState(pos.south()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.south()).has(BlockStateProperties.WATERLOGGED)));
-            }
-            case Plains: {
-            	return false;
-            }
-		case Cave:
-			return false;
-		case Crop:
-			return false;
-		case Nether:
-			return false;
-		default:
-			return false;
+        if (plantType == PlantType.WATER) {
+            return blockReader.getBlockState(pos).getMaterial() == Material.WATER && blockReader.getBlockState(pos) == getDefaultState();
+        } else if (plantType == PlantType.BEACH) {
+            return ((blockReader.getBlockState(pos.east()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.east()).hasProperty(BlockStateProperties.WATERLOGGED))
+                    || (blockReader.getBlockState(pos.west()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.west()).hasProperty(BlockStateProperties.WATERLOGGED))
+                    || (blockReader.getBlockState(pos.north()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.north()).hasProperty(BlockStateProperties.WATERLOGGED))
+                    || (blockReader.getBlockState(pos.south()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.south()).hasProperty(BlockStateProperties.WATERLOGGED)));
+        } else {
+            return false;
         }
     }
 }

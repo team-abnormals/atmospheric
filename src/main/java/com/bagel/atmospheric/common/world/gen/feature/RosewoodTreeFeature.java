@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 
 import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
-import com.mojang.datafixers.Dynamic;
+import com.mojang.serialization.Dynamic;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

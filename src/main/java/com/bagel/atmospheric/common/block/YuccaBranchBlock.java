@@ -13,11 +13,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BushBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.Items;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
@@ -135,7 +135,7 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable {
 	            	}
 	            }
 			}
-		} else if (entityIn instanceof IProjectile && !state.get(SNAPPED)) {
+		} else if (entityIn instanceof ProjectileEntity && !state.get(SNAPPED)) {
 			worldIn.setBlockState(pos, state.with(SNAPPED, true));
 		}
 	}

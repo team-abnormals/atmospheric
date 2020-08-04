@@ -22,10 +22,9 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -79,7 +78,7 @@ public class MonkeyBrushBlock extends FlowerBlock implements IGrowable, IPlantab
 	
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		Vec3d vec3d = state.getOffset(worldIn, pos);
+		Vector3d vec3d = state.getOffset(worldIn, pos);
 		switch(state.get(FACING)) {
 		default:
 			return SHAPE;//S.get(state.get(FACING));
@@ -109,9 +108,9 @@ public class MonkeyBrushBlock extends FlowerBlock implements IGrowable, IPlantab
                 for(int y = 0; y < x / 16; ++y) {
                     newBlockPos = newBlockPos.add(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
                     if (state.isValidPosition(world, newBlockPos) && world.isAirBlock(newBlockPos)) {
-                    	Direction randomD = Direction.random(random);
+                    	Direction randomD = Direction.func_239631_a_(random);
         	        	while (randomD == Direction.DOWN || !state.with(MonkeyBrushBlock.FACING, randomD).isValidPosition(world, newBlockPos)) {
-        		        	randomD = Direction.random(random);
+        		        	randomD = Direction.func_239631_a_(random);
         	        	}
                         world.setBlockState(newBlockPos, state.with(FACING, randomD));
                         break label;
@@ -120,14 +119,15 @@ public class MonkeyBrushBlock extends FlowerBlock implements IGrowable, IPlantab
             }  
     }
 	   
-	@Override
-	public Vec3d getOffset(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		Block.OffsetType block$offsettype = this.getOffsetType();
-		if (state.get(FACING) == Direction.UP) {
-			long i = MathHelper.getCoordinateRandom(pos.getX(), 0, pos.getZ());
-			return new Vec3d(((double)((float)(i & 15L) / 15.0F) - 0.5D) * 0.5D, block$offsettype == Block.OffsetType.XYZ ? ((double)((float)(i >> 4 & 15L) / 15.0F) - 1.0D) * 0.2D : 0.0D, ((double)((float)(i >> 8 & 15L) / 15.0F) - 0.5D) * 0.5D);
-		} else {
-			return Vec3d.ZERO;
-		}
-	}
+//	@Override
+//	public Vector3d getOffset(IBlockReader access, BlockPos pos) {
+//		Block.OffsetType block$offsettype = this.getOffsetType();
+//		BlockState state = access.getBlockState(pos);
+//		if (state.get(FACING) == Direction.UP) {
+//			long i = MathHelper.getCoordinateRandom(pos.getX(), 0, pos.getZ());
+//			return new Vector3d(((double)((float)(i & 15L) / 15.0F) - 0.5D) * 0.5D, block$offsettype == Block.OffsetType.XYZ ? ((double)((float)(i >> 4 & 15L) / 15.0F) - 1.0D) * 0.2D : 0.0D, ((double)((float)(i >> 8 & 15L) / 15.0F) - 0.5D) * 0.5D);
+//		} else {
+//			return Vector3d.ZERO;
+//		}
+//	}
 }

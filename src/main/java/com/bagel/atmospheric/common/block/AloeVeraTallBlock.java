@@ -33,7 +33,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
@@ -54,7 +54,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 	}
 	
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		Vec3d vec3d = state.getOffset(worldIn, pos);
+		Vector3d vec3d = state.getOffset(worldIn, pos);
 		VoxelShape shape = state.get(HALF) == DoubleBlockHalf.UPPER ? SHAPE_TOP : SHAPE;
         return shape.withOffset(vec3d.x, vec3d.y, vec3d.z);
 	}
@@ -81,7 +81,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity) {
-			if (!(entityIn instanceof BeeEntity)) entityIn.setMotionMultiplier(state, new Vec3d((double)0.8F, 0.75D, (double)0.8F));
+			if (!(entityIn instanceof BeeEntity)) entityIn.setMotionMultiplier(state, new Vector3d((double)0.8F, 0.75D, (double)0.8F));
 			Random rand = new Random();
 			
 			for (int i = 0; i < 3; i++) {
@@ -96,7 +96,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 			}
 			
 			if (!worldIn.isRemote && state.get(AGE) > 3 && Math.random() <= 0.4 && state.get(HALF) == DoubleBlockHalf.LOWER && !(entityIn instanceof BeeEntity)) {
-				entityIn.setMotionMultiplier(state, new Vec3d((double)0.2F, 0.2D, (double)0.2F));
+				entityIn.setMotionMultiplier(state, new Vector3d((double)0.2F, 0.2D, (double)0.2F));
 				entityIn.attackEntityFrom(AtmosphericDamageSources.ALOE_LEAVES, 1.0F);
 				if (entityIn instanceof ServerPlayerEntity) {
             		ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;

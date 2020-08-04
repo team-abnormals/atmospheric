@@ -14,7 +14,8 @@ public enum PassionVineAttachment implements IStringSerializable {
       this.name = name;
    }
 
-   public String getName() {
+   @Override
+   public String getString() {
       return this.name;
    }
 }

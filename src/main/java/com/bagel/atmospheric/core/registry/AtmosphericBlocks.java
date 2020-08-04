@@ -79,7 +79,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_PLANKS 			= HELPER.createBlock("rosewood_planks", 		() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_SAPLING 			= HELPER.createBlock("rosewood_sapling", 		() -> new AbnormalsSaplingBlock(new RosewoodTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_ROSEWOOD_LOG 	= HELPER.createBlock("stripped_rosewood_log", 	() -> new StrippedLogBlock(Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ROSEWOOD_LOG 				= HELPER.createBlock("rosewood_log", 			() -> new AbnormalsLogBlock(STRIPPED_ROSEWOOD_LOG, MaterialColor.BROWN, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ROSEWOOD_LOG 				= HELPER.createBlock("rosewood_log", 			() -> new AbnormalsLogBlock(STRIPPED_ROSEWOOD_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_ROSEWOOD 		= HELPER.createBlock("stripped_rosewood", 		() -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD 					= HELPER.createBlock("rosewood", 				() -> new WoodBlock(STRIPPED_ROSEWOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_LEAVES 			= HELPER.createBlock("rosewood_leaves", 		() -> new AbnormalsLeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
@@ -110,7 +110,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_LADDER 			= HELPER.createCompatBlock("quark", "rosewood_ladder", 			() -> new AbnormalsLadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ROSEWOOD_LEAF_CARPET 		= HELPER.createCompatBlock("quark", "rosewood_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ROSEWOOD_LEAVES.get())), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSIONFRUIT_CRATE				= HELPER.createCompatBlock("quark", "passionfruit_crate", 				() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.PURPLE).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> SHIMMERING_PASSIONFRUIT_CRATE		= HELPER.createCompatBlock("quark", "shimmering_passionfruit_crate", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GOLD).lightValue(7).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> SHIMMERING_PASSIONFRUIT_CRATE		= HELPER.createCompatBlock("quark", "shimmering_passionfruit_crate", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GOLD).setLightLevel((state) -> 7).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -187,7 +187,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> CHISELED_RED_ARID_SANDSTONE 		= HELPER.createBlock("chiseled_red_arid_sandstone", 	() -> new Block(Block.Properties.from(Blocks.CHISELED_SANDSTONE)), ItemGroup.BUILDING_BLOCKS);
 
 	public static final RegistryObject<Block> STRIPPED_YUCCA_LOG 	= HELPER.createBlock("stripped_yucca_log", 	() -> new StrippedLogBlock(Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_LOG 			= HELPER.createBlock("yucca_log", 			() -> new AbnormalsLogBlock(STRIPPED_YUCCA_LOG, MaterialColor.BROWN, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> YUCCA_LOG 			= HELPER.createBlock("yucca_log", 			() -> new AbnormalsLogBlock(STRIPPED_YUCCA_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_YUCCA_WOOD	= HELPER.createBlock("stripped_yucca_wood",	() -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_WOOD 			= HELPER.createBlock("yucca_wood",			() -> new WoodBlock(STRIPPED_YUCCA_WOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_LEAVES 			= HELPER.createBlock("yucca_leaves", 		() -> new YuccaLeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
@@ -259,7 +259,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> KOUSA_PLANKS 			= HELPER.createBlock("kousa_planks", 		() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_SAPLING 		= HELPER.createBlock("kousa_sapling", 		() -> new AbnormalsSaplingBlock(new KousaTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_KOUSA_LOG 	= HELPER.createBlock("stripped_kousa_log", 	() -> new StrippedLogBlock(Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LOG 			= HELPER.createBlock("kousa_log", 			() -> new AbnormalsLogBlock(STRIPPED_KOUSA_LOG, MaterialColor.BROWN, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_LOG 			= HELPER.createBlock("kousa_log", 			() -> new AbnormalsLogBlock(STRIPPED_KOUSA_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_KOUSA_WOOD	= HELPER.createBlock("stripped_kousa_wood", () -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_WOOD 			= HELPER.createBlock("kousa_wood",          () -> new WoodBlock(STRIPPED_KOUSA_WOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_LEAVES 			= HELPER.createBlock("kousa_leaves", 		() -> new AbnormalsLeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
@@ -285,8 +285,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_PLANKS 			= HELPER.createBlock("aspen_planks", 		() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_SAPLING 		= HELPER.createBlock("aspen_sapling", 		() -> new AbnormalsSaplingBlock(new AspenTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_ASPEN_LOG 	= HELPER.createBlock("stripped_aspen_log", 	() -> new StrippedLogBlock(Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ASPEN_LOG 			= HELPER.createBlock("aspen_log", 			() -> new AbnormalsLogBlock(STRIPPED_ASPEN_LOG, MaterialColor.BROWN, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> WATCHFUL_ASPEN_LOG 	= HELPER.createBlock("watchful_aspen_log", 	() -> new AbnormalsLogBlock(STRIPPED_ASPEN_LOG, MaterialColor.BROWN, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ASPEN_LOG 			= HELPER.createBlock("aspen_log", 			() -> new AbnormalsLogBlock(STRIPPED_ASPEN_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> WATCHFUL_ASPEN_LOG 	= HELPER.createBlock("watchful_aspen_log", 	() -> new AbnormalsLogBlock(STRIPPED_ASPEN_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_ASPEN_WOOD	= HELPER.createBlock("stripped_aspen_wood", () -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_WOOD 			= HELPER.createBlock("aspen_wood",          () -> new WoodBlock(STRIPPED_ASPEN_WOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> WATCHFUL_ASPEN_WOOD 	= HELPER.createBlock("watchful_aspen_wood", () -> new WoodBlock(STRIPPED_ASPEN_WOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
@@ -309,15 +309,15 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_LEAF_CARPET 	= HELPER.createCompatBlock("quark", "aspen_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ASPEN_LEAVES.get())), ItemGroup.DECORATIONS);
 	
 	public static final RegistryObject<Block> CRUSTOSE 			    = HELPER.createBlock("crustose", 		    () -> new CrustoseBlock(Block.Properties.from(Blocks.DIRT).tickRandomly()), ItemGroup.BUILDING_BLOCKS);	
-	public static final RegistryObject<Block> CRUSTOSE_LOG 			= HELPER.createBlock("crustose_log", 		() -> new CrustoseLogBlock(() -> ASPEN_LOG.get(), MaterialColor.GOLD, Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CRUSTOSE_WOOD 		= HELPER.createBlock("crustose_wood", 		() -> new CrustoseLogBlock(() -> ASPEN_WOOD.get(), MaterialColor.GOLD, Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CRUSTOSE_LOG 			= HELPER.createBlock("crustose_log", 		() -> new CrustoseLogBlock(() -> ASPEN_LOG.get(), Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CRUSTOSE_WOOD 		= HELPER.createBlock("crustose_wood", 		() -> new CrustoseLogBlock(() -> ASPEN_WOOD.get(), Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public static final RegistryObject<Block> GRIMWOOD_PLANKS 			= HELPER.createBlock("grimwood_planks", 		() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_SAPLING 			= HELPER.createBlock("grimwood_sapling", 		() -> new AbnormalsSaplingBlock(new RosewoodTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_GRIMWOOD_LOG 	= HELPER.createBlock("stripped_grimwood_log", 	() -> new StrippedLogBlock(Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> GRIMWOOD_LOG 				= HELPER.createBlock("grimwood_log", 			() -> new AbnormalsLogBlock(STRIPPED_GRIMWOOD_LOG, MaterialColor.BROWN, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD_LOG 				= HELPER.createBlock("grimwood_log", 			() -> new AbnormalsLogBlock(STRIPPED_GRIMWOOD_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_GRIMWOOD 		= HELPER.createBlock("stripped_grimwood", 		() -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD 					= HELPER.createBlock("grimwood", 				() -> new WoodBlock(STRIPPED_GRIMWOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_LEAVES 			= HELPER.createBlock("grimwood_leaves", 		() -> new AbnormalsLeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
