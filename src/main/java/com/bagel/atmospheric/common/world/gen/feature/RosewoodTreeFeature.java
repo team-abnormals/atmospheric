@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
-import com.mojang.serialization.Dynamic;
+import com.mojang.serialization.Codec;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -21,8 +20,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IWorldWriter;
 import net.minecraft.world.gen.IWorldGenerationReader;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.TreeFeature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 @SuppressWarnings("unused")
 public class RosewoodTreeFeature extends TreeFeature {
@@ -30,10 +29,11 @@ public class RosewoodTreeFeature extends TreeFeature {
 	private final Supplier<BlockState> ROSEWOOD_LEAVES = () -> AtmosphericBlocks.ROSEWOOD_LEAVES.get().getDefaultState().with(LeavesBlock.DISTANCE, 1);
 	private List<Block> brushes = new ArrayList<>();
 	
-	public RosewoodTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> config) {
+	public RosewoodTreeFeature(Codec<BaseTreeFeatureConfig> config) {
 		super(config);
 	}
 
+	@Override
 	public boolean func_225557_a_(IWorldGenerationReader worldIn, Random rand, BlockPos position, Set<BlockPos> logsPlaced, Set<BlockPos> leavesPlaced, MutableBoundingBox boundsIn, TreeFeatureConfig config) {
 		if (rand.nextInt(250) == 0) {
 			if (rand.nextInt(2) == 0) brushes.add(AtmosphericBlocks.WARM_MONKEY_BRUSH.get());

@@ -4,25 +4,25 @@ import java.util.Random;
 
 import com.bagel.atmospheric.common.block.BarrelCactusBlock;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
-import com.google.common.base.Function;
-import com.mojang.datafixers.Dynamic;
+import com.mojang.serialization.Codec;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorld;
+import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.GenerationSettings;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 
 public class BarrelCactusFeature extends Feature<BlockClusterFeatureConfig> {
-   public BarrelCactusFeature(Function<Dynamic<?>, ? extends BlockClusterFeatureConfig> config) {
+   public BarrelCactusFeature(Codec<BlockClusterFeatureConfig> config) {
       super(config);
    }
 
-   public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand, BlockPos pos, BlockClusterFeatureConfig config) {
+   @Override
+   public boolean func_230362_a_(ISeedReader worldIn, StructureManager manager, ChunkGenerator generator, Random rand, BlockPos pos, BlockClusterFeatureConfig config) {
 	   BlockState blockstate = config.stateProvider.getBlockState(rand, pos);
 	   BlockPos blockpos;
 	   if (config.field_227298_k_) {

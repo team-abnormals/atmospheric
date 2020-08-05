@@ -1,10 +1,9 @@
 package com.bagel.atmospheric.common.world.gen.surfacebuilders;
 
 import java.util.Random;
-import java.util.function.Function;
 
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
-import com.mojang.datafixers.Dynamic;
+import com.mojang.serialization.Codec;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -16,7 +15,7 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 @SuppressWarnings("deprecation")
 public class DunesSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
-	   public DunesSurfaceBuilder(Function<Dynamic<?>, ? extends SurfaceBuilderConfig> p_i51315_1_) {
+	   public DunesSurfaceBuilder(Codec<SurfaceBuilderConfig> p_i51315_1_) {
 	      super(p_i51315_1_);
 	   }
 

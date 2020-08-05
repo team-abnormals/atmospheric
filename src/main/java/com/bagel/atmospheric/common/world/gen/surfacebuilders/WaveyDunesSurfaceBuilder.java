@@ -1,11 +1,10 @@
 package com.bagel.atmospheric.common.world.gen.surfacebuilders;
 
 import java.util.Random;
-import java.util.function.Function;
 
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
-import com.mojang.datafixers.Dynamic;
+import com.mojang.serialization.Codec;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.world.biome.Biome;
@@ -15,7 +14,7 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class WaveyDunesSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 	
-	public WaveyDunesSurfaceBuilder(Function<Dynamic<?>, ? extends SurfaceBuilderConfig> function) {
+	public WaveyDunesSurfaceBuilder(Codec<SurfaceBuilderConfig> function) {
         super(function);
     }
 

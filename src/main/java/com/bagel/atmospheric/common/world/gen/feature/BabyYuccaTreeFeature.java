@@ -2,13 +2,12 @@ package com.bagel.atmospheric.common.world.gen.feature;
 
 import java.util.Random;
 import java.util.Set;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 import com.bagel.atmospheric.common.block.YuccaFlowerDoubleBlock;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
-import com.mojang.datafixers.Dynamic;
+import com.mojang.serialization.Codec;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
@@ -18,14 +17,17 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
+import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IWorldWriter;
+import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
-import net.minecraft.world.gen.feature.TreeFeature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 
-public class BabyYuccaTreeFeature extends TreeFeature {
+public class BabyYuccaTreeFeature extends Feature<BaseTreeFeatureConfig> {
 	private boolean patch;
 	
 	private Supplier<BlockState> YUCCA_LOG = () -> AtmosphericBlocks.YUCCA_LOG.get().getDefaultState();
@@ -35,13 +37,13 @@ public class BabyYuccaTreeFeature extends TreeFeature {
 	private Supplier<BlockState> TALL_YUCCA_FLOWER_TOP = () -> AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState().with(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.UPPER);
 	private Supplier<BlockState> TALL_YUCCA_FLOWER_BOTTOM = () -> AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState().with(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.LOWER);
 	
-	public BabyYuccaTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> config, boolean patch) {
+	public BabyYuccaTreeFeature(Codec<BaseTreeFeatureConfig> config, boolean patch) {
 		super(config);
 		this.patch = patch;
 	}
-
-	public boolean func_225557_a_(IWorldGenerationReader worldIn, Random rand, BlockPos position, Set<BlockPos> logsPlaced, Set<BlockPos> leavesPlaced, MutableBoundingBox boundsIn, TreeFeatureConfig config) {
-		
+	
+	@Override
+    public boolean func_230362_a_(ISeedReader worldIn, StructureManager manager, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
 		int height = 2 + rand.nextInt(2) + rand.nextInt(2);
 		boolean flag = true;
 

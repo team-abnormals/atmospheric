@@ -33,15 +33,11 @@ import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.BlockBlobConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
-import net.minecraft.world.gen.feature.FancyTreeFeature;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.HugeBaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.feature.MegaPineTree;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraft.world.gen.feature.SphereReplaceConfig;
-import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.structure.IStructurePieceType;
 import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
@@ -56,7 +52,7 @@ public class AtmosphericFeatures {
 	
 	public static final Feature<ProbabilityConfig> PODZOL = new PodzolFeature(ProbabilityConfig.field_236576_b_);
 	public static final Feature<NoFeatureConfig> SURFACE_FOSSIL = new SurfaceFossilFeature(NoFeatureConfig.field_236558_a_);
-	public static final Feature<BaseTreeFeatureConfig> OAK_BUSH = new ShrubFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
+//	public static final Feature<BaseTreeFeatureConfig> OAK_BUSH = new ShrubFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
 	public static final Feature<SphereReplaceConfig> COARSE_DIRT_PATCH = new CoarseDirtPatchFeature(SphereReplaceConfig.field_236516_a_);
 
 	public static final Feature<NoFeatureConfig> WARM_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig.field_236558_a_, 1);
@@ -71,16 +67,16 @@ public class AtmosphericFeatures {
 	public static final Feature<BaseTreeFeatureConfig> BABY_YUCCA_TREE = new BabyYuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, false);
 	public static final Feature<BaseTreeFeatureConfig> BABY_YUCCA_TREE_PATCH = new BabyYuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, true);
 
-	public static final Feature<BaseTreeFeatureConfig> KOUSA_TREE = new FancyTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
-	public static final Feature<BaseTreeFeatureConfig> ASPEN_TREE = new TreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
-	public static final Feature<HugeBaseTreeFeatureConfig> MEGA_ASPEN_TREE = new MegaPineTree(HugeBaseTreeFeatureConfig.);
+//	public static final Feature<BaseTreeFeatureConfig> KOUSA_TREE = new TreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
+//	public static final Feature<BaseTreeFeatureConfig> ASPEN_TREE = new TreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
+//	public static final Feature<HugeBaseTreeFeatureConfig> MEGA_ASPEN_TREE = new MegaPineTree(HugeBaseTreeFeatureConfig.); 
+	
+	public static final Feature<NoFeatureConfig> PASSION_VINE = new PassionVineFeature(NoFeatureConfig.field_236558_a_);
+	public static final Feature<BlockClusterFeatureConfig> BARREL_CACTUS = new BarrelCactusFeature(BlockClusterFeatureConfig.field_236587_a_);
+	public static final Feature<BlockClusterFeatureConfig> ALOE_VERA = new AloeVeraFeature(BlockClusterFeatureConfig.field_236587_a_);
+	public static final Feature<BlockClusterFeatureConfig> YUCCA_FLOWER = new YuccaFlowerFeature(BlockClusterFeatureConfig.field_236587_a_);
 
-	public static final Feature<NoFeatureConfig> PASSION_VINE = new PassionVineFeature(NoFeatureConfig::deserialize);
-	public static final Feature<BlockClusterFeatureConfig> BARREL_CACTUS = new BarrelCactusFeature(BlockClusterFeatureConfig::deserialize);
-	public static final Feature<BlockClusterFeatureConfig> ALOE_VERA = new AloeVeraFeature(BlockClusterFeatureConfig::deserialize);
-	public static final Feature<BlockClusterFeatureConfig> YUCCA_FLOWER = new YuccaFlowerFeature(BlockClusterFeatureConfig::deserialize);
-
-	public static final Feature<BlockBlobConfig> DUNE_ROCKS = new DuneRocksFeature(BlockBlobConfig::deserialize);
+	public static final Feature<BlockBlobConfig> DUNE_ROCKS = new DuneRocksFeature(BlockBlobConfig.field_236449_a_);
 	
 	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> WAVEY_DUNES = new WaveyDunesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
@@ -90,32 +86,37 @@ public class AtmosphericFeatures {
 
     @SubscribeEvent
     public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
-    	
         event.getRegistry().registerAll(
-        	PODZOL.setRegistryName(Atmospheric.MODID, "podzol"), 
-        	OAK_BUSH.setRegistryName(Atmospheric.MODID, "oak_bush"),
-        	DUNE_ROCKS.setRegistryName(Atmospheric.MODID, "dune_rocks"), 
-        	SURFACE_FOSSIL.setRegistryName(Atmospheric.MODID, "surface_fossil"), 
-        	COARSE_DIRT_PATCH.setRegistryName(Atmospheric.MODID, "coarse_dirt_patch"), 
+        	PODZOL.setRegistryName(Atmospheric.MODID, "podzol"),
+//        	OAK_BUSH.setRegistryName(Atmospheric.MODID, "oak_bush"),
+        	DUNE_ROCKS.setRegistryName(Atmospheric.MODID, "dune_rocks"),
+        	SURFACE_FOSSIL.setRegistryName(Atmospheric.MODID, "surface_fossil"),
+        	COARSE_DIRT_PATCH.setRegistryName(Atmospheric.MODID, "coarse_dirt_patch"),
 
-        	WARM_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "warm_monkey_brush"), 
-        	HOT_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "hot_monkey_brush"), 
-        	SCALDING_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "scalding_monkey_brush"), 
+        	WARM_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "warm_monkey_brush"),
+        	HOT_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "hot_monkey_brush"),
+        	SCALDING_MONKEY_BRUSH.setRegistryName(Atmospheric.MODID, "scalding_monkey_brush"),
         	PASSION_VINE.setRegistryName(Atmospheric.MODID, "passion_vine"),
         	BARREL_CACTUS.setRegistryName(Atmospheric.MODID, "barrel_cactus"),
         	ALOE_VERA.setRegistryName(Atmospheric.MODID, "aloe_vera"),
         	YUCCA_FLOWER.setRegistryName(Atmospheric.MODID, "yucca_flower"),
-        		
-        	ROSEWOOD_TREE.setRegistryName(Atmospheric.MODID, "rosewood_tree"), 
 
+        	ROSEWOOD_TREE.setRegistryName(Atmospheric.MODID, "rosewood_tree"),
+        	
         	YUCCA_TREE.setRegistryName(Atmospheric.MODID, "yucca_tree"),
         	PETRIFIED_YUCCA_TREE.setRegistryName(Atmospheric.MODID, "petrified_yucca_tree"),
-        	YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "yucca_tree_patch"),		
+        	YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "yucca_tree_patch")	,
         	BABY_YUCCA_TREE.setRegistryName(Atmospheric.MODID, "baby_yucca_tree"),
-        	BABY_YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "baby_yucca_tree_patch"),
-        	ARID_SHRINE.setRegistryName(Atmospheric.MODID, "run_down_house")
+        	BABY_YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "baby_yucca_tree_patch")
         ); 
-    	register(ARID_SHRINE_PIECES, "ARID_SHRINE_PIECES");
+    }
+    
+    @SubscribeEvent
+    public static void registerStructures(RegistryEvent.Register<Structure<?>> event) {
+        event.getRegistry().registerAll(
+            ARID_SHRINE.setRegistryName(Atmospheric.MODID, "arid_shrine")
+        ); 
+        register(ARID_SHRINE_PIECES, "ARID_SHRINE_PIECES");
     }
     
 	public static void addCarvables() {
