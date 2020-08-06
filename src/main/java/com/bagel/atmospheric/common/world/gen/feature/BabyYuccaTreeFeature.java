@@ -16,7 +16,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
@@ -56,8 +55,8 @@ public class BabyYuccaTreeFeature extends Feature<BaseTreeFeatureConfig> {
 
 			if (!flag) {
 				return false;
-			} else if (isYucca(worldIn, position.down()) && position.getY() < worldIn.getHeight()) {
-				if (!isSand(worldIn, position.down())) TreeUtils.setDirtAt(worldIn, position.down());
+			} else if (TreeUtils.isInTag(worldIn, position.down(), AtmosphericTags.YUCCA_PLANTABLE_ON) && position.getY() < worldIn.getHeight()) {
+				if (!TreeUtils.isInTag(worldIn, position.down(), BlockTags.SAND)) TreeUtils.setDirtAt(worldIn, position.down());
 				
 				int logX = position.getX();
 				int logZ = position.getZ();
@@ -132,15 +131,5 @@ public class BabyYuccaTreeFeature extends Feature<BaseTreeFeatureConfig> {
 			    TreeUtils.setLogState(world, pos, YUCCA_FLOWER.get());
 			}
 		}
-	}
-	
-	protected static boolean isYucca(IWorldGenerationBaseReader reader, BlockPos pos) {
-		return reader.hasBlockState(pos, state -> state.getBlock().isIn(AtmosphericTags.YUCCA_PLANTABLE_ON));
-	}
-	
-	public static boolean isSand(IWorldGenerationBaseReader worldIn, BlockPos pos) {
-		return worldIn.hasBlockState(pos, (block) -> {
-			return block.isIn(BlockTags.SAND);
-		});
 	}
 }

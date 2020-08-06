@@ -19,7 +19,6 @@ import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IWorldWriter;
 import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
@@ -83,9 +82,9 @@ public class YuccaTreeFeature extends Feature<BaseTreeFeatureConfig> {
 
 			if (!flag) {
 				return false;
-			} else if (isYucca(worldIn, position.down()) && position.getY() < worldIn.getHeight()) {
+			} else if (TreeUtils.isInTag(worldIn, position.down(), AtmosphericTags.YUCCA_PLANTABLE_ON) && position.getY() < worldIn.getHeight()) {
 				//base log
-				if (!isSand(worldIn, position.down())) TreeUtils.setDirtAt(worldIn, position.down());
+				if (!TreeUtils.isInTag(worldIn, position.down(), BlockTags.SAND)) TreeUtils.setDirtAt(worldIn, position.down());
 				for (int ja = 0; ja < reduction; ++ja) {
 					if (this.petrified) this.placeLogAt(worldIn, position.down(ja), Direction.UP, false);
 				}
@@ -136,7 +135,7 @@ public class YuccaTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				if (petrified && rand.nextInt(12) == 0) {
 					for(int j = 0; j < 12; ++j) {
 						BlockPos blockpos = position.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
-						if (TreeUtils.isAir(worldIn, blockpos) && blockpos.getY() < 255 && isSand(worldIn, blockpos.down())) {
+						if (TreeUtils.isAir(worldIn, blockpos) && blockpos.getY() < 255 && TreeUtils.isInTag(worldIn, blockpos.down(), BlockTags.SAND)) {
 						    TreeUtils.setLogState(worldIn, blockpos, AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get().getDefaultState());
 						}
 					}
@@ -244,16 +243,5 @@ public class YuccaTreeFeature extends Feature<BaseTreeFeatureConfig> {
 			    TreeUtils.setLogState(world, pos, YUCCA_FLOWER.get());
 			}
 		}
-	}
-
-	
-	protected static boolean isYucca(IWorldGenerationBaseReader reader, BlockPos pos) {
-		return reader.hasBlockState(pos, state -> state.getBlock().isIn(AtmosphericTags.YUCCA_PLANTABLE_ON));
-	}
-	
-	public static boolean isSand(IWorldGenerationBaseReader worldIn, BlockPos pos) {
-		return worldIn.hasBlockState(pos, (block) -> {
-			return block.isIn(BlockTags.SAND);
-		});
 	}
 }
