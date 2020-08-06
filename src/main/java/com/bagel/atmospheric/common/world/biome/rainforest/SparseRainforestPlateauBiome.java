@@ -1,4 +1,4 @@
-package com.bagel.atmospheric.common.world.biome.rosewood;
+package com.bagel.atmospheric.common.world.biome.rainforest;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 
@@ -7,8 +7,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 
-public class RosewoodPlateauBiome extends Biome {
-    public RosewoodPlateauBiome(Biome.Builder builder) {
+public class SparseRainforestPlateauBiome extends Biome {
+    public SparseRainforestPlateauBiome(Biome.Builder builder) {
         super(builder);
         
         this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_JUNGLE);

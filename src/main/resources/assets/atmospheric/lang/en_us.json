@@ -79,10 +79,10 @@
 	"item.minecraft.tipped_arrow.effect.worsening_strong": "Arrow of Worsening",
 	"item.minecraft.tipped_arrow.effect.worsening_long": "Arrow of Worsening",
 	
-	"biome.atmospheric.rosewood_forest": "Rosewood Forest",
-	"biome.atmospheric.rosewood_mountains": "Rosewood Mountains",
-	"biome.atmospheric.rosewood_plateau": "Rosewood Plateau",
-	"biome.atmospheric.rosewood_forest_plateau": "Rosewood Forest Plateau",
+	"biome.atmospheric.rainforest": "Rainforest",
+	"biome.atmospheric.rainforest_mountains": "Rainforest Mountains",
+	"biome.atmospheric.rainforest_plateau": "Rainforest Plateau",
+	"biome.atmospheric.sparse_rainforest_plateau": "Sparese Rainforest Plateau",
 	
 	"death.attack.passionfruitSeed": "%1$s was barraged to death by %2$s's seeds",
 	"death.attack.shimmeringPassionfruitSeed": "%1$s was passionately barraged to death by %2$s's seeds",

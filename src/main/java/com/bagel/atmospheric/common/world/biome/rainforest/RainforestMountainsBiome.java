@@ -1,4 +1,4 @@
-package com.bagel.atmospheric.common.world.biome.rosewood;
+package com.bagel.atmospheric.common.world.biome.rainforest;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 
@@ -7,8 +7,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 
-public class RosewoodForestPlateauBiome extends Biome {
-    public RosewoodForestPlateauBiome(Biome.Builder builder) {
+public class RainforestMountainsBiome extends Biome {
+    public RainforestMountainsBiome(Biome.Builder builder) {
         super(builder);
         
         this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_JUNGLE);
@@ -29,7 +29,7 @@ public class RosewoodForestPlateauBiome extends Biome {
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addRosewoodForestTrees(this, 10, 1);
+        AtmosphericBiomeFeatures.addRosewoodForestTrees(this, 13, 1);
         AtmosphericBiomeFeatures.addRainforestDoublePlants(this);
         AtmosphericBiomeFeatures.addRainforestFlowers(this);
         AtmosphericBiomeFeatures.addRainforestFoliage(this);
@@ -51,6 +51,11 @@ public class RosewoodForestPlateauBiome extends Biome {
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.CREEPER, 100, 4, 4));
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.SLIME, 100, 4, 4));
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
-        addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.WITCH, 5, 1, 1));
+        addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.WITCH, 5, 1, 1));      
+    }
+    
+    @Override
+    public boolean isMutation() {
+    	return true;
     }
 }

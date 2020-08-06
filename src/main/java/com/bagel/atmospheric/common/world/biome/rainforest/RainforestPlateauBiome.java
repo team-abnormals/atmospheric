@@ -1,15 +1,14 @@
-package com.bagel.atmospheric.common.world.biome.rosewood;
+package com.bagel.atmospheric.common.world.biome.rainforest;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
-import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 
-public class RosewoodForestBiome extends Biome {
-    public RosewoodForestBiome(Biome.Builder builder) {
+public class RainforestPlateauBiome extends Biome {
+    public RainforestPlateauBiome(Biome.Builder builder) {
         super(builder);
         
         this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_JUNGLE);
@@ -54,10 +53,4 @@ public class RosewoodForestBiome extends Biome {
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.WITCH, 5, 1, 1));
     }
-    
-    @Override
-	public Biome getHill(net.minecraft.world.gen.INoiseRandom rand) {
-    	int chance = rand.random(3);
-		return chance == 0 ? AtmosphericBiomes.ROSEWOOD_MOUNTAINS.get() : (chance ==  1 ? AtmosphericBiomes.ROSEWOOD_PLATEAU.get() : AtmosphericBiomes.ROSEWOOD_FOREST_PLATEAU.get());
-	}
 }

@@ -7,10 +7,10 @@ import com.bagel.atmospheric.common.world.biome.dunes.FlourishingDunesBiome;
 import com.bagel.atmospheric.common.world.biome.dunes.PetrifiedDunesBiome;
 import com.bagel.atmospheric.common.world.biome.dunes.RockyDunesBiome;
 import com.bagel.atmospheric.common.world.biome.dunes.RockyDunesHillsBiome;
-import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodForestBiome;
-import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodForestPlateauBiome;
-import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodMountainsBiome;
-import com.bagel.atmospheric.common.world.biome.rosewood.RosewoodPlateauBiome;
+import com.bagel.atmospheric.common.world.biome.rainforest.RainforestBiome;
+import com.bagel.atmospheric.common.world.biome.rainforest.RainforestPlateauBiome;
+import com.bagel.atmospheric.common.world.biome.rainforest.RainforestMountainsBiome;
+import com.bagel.atmospheric.common.world.biome.rainforest.SparseRainforestPlateauBiome;
 import com.bagel.atmospheric.core.Atmospheric;
 import com.bagel.atmospheric.core.other.AtmosphericConfig;
 
@@ -26,10 +26,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class AtmosphericBiomes {
 	public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, Atmospheric.MODID);
 	
-    public static final RegistryObject<Biome> ROSEWOOD_FOREST 			= BIOMES.register("rosewood_forest", () -> new RosewoodForestBiome(AtmosphericBiomeBuilders.RAINFOREST));
-    public static final RegistryObject<Biome> ROSEWOOD_MOUNTAINS 		= BIOMES.register("rosewood_mountains", () -> new RosewoodMountainsBiome(AtmosphericBiomeBuilders.RAINFOREST_MOUNTAINS));
-    public static final RegistryObject<Biome> ROSEWOOD_PLATEAU 			= BIOMES.register("rosewood_plateau", () -> new RosewoodPlateauBiome(AtmosphericBiomeBuilders.RAINFOREST_PLATEAU));
-    public static final RegistryObject<Biome> ROSEWOOD_FOREST_PLATEAU 	= BIOMES.register("rosewood_forest_plateau", () -> new RosewoodForestPlateauBiome(AtmosphericBiomeBuilders.RAINFOREST_PLATEAU));
+    public static final RegistryObject<Biome> RAINFOREST 			    = BIOMES.register("rainforest", () -> new RainforestBiome(AtmosphericBiomeBuilders.RAINFOREST));
+    public static final RegistryObject<Biome> RAINFOREST_MOUNTAINS      = BIOMES.register("rainforest_mountains", () -> new RainforestMountainsBiome(AtmosphericBiomeBuilders.RAINFOREST_MOUNTAINS));
+    public static final RegistryObject<Biome> RAINFOREST_PLATEAU        = BIOMES.register("rainforest_plateau", () -> new RainforestPlateauBiome(AtmosphericBiomeBuilders.RAINFOREST_PLATEAU));
+    public static final RegistryObject<Biome> SPARSE_RAINFOREST_PLATEAU = BIOMES.register("sparse_rainforest_plateau", () -> new SparseRainforestPlateauBiome(AtmosphericBiomeBuilders.RAINFOREST_PLATEAU));
     
 	public static final RegistryObject<Biome> DUNES 			= BIOMES.register("dunes", 				() -> new DunesBiome(AtmosphericBiomeBuilders.DUNES));
 	public static final RegistryObject<Biome> DUNES_HILLS		= BIOMES.register("dunes_hills",		() -> new DunesHillsBiome(AtmosphericBiomeBuilders.DUNES_HILLS));
@@ -40,16 +40,16 @@ public class AtmosphericBiomes {
 	public static final RegistryObject<Biome> PETRIFIED_DUNES 	= BIOMES.register("petrified_dunes",	() -> new PetrifiedDunesBiome(AtmosphericBiomeBuilders.DUNES_HILLS));
     
     public static void registerBiomesToDictionary() {
-        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ROSEWOOD_FOREST.get(), AtmosphericConfig.ValuesHolder.getRosewoodForestWeight()));  
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RAINFOREST.get(), AtmosphericConfig.ValuesHolder.getRosewoodForestWeight()));  
         BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(DUNES.get(), AtmosphericConfig.ValuesHolder.getDunesWeight()));
         BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(ROCKY_DUNES.get(), AtmosphericConfig.ValuesHolder.getRockyDunesWeight()));
     }
     
     public static void addBiomeTypes() {
-    	BiomeDictionary.addTypes(ROSEWOOD_FOREST.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(ROSEWOOD_MOUNTAINS.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(ROSEWOOD_PLATEAU.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(ROSEWOOD_FOREST_PLATEAU.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
+    	BiomeDictionary.addTypes(RAINFOREST.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(RAINFOREST_MOUNTAINS.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(SPARSE_RAINFOREST_PLATEAU.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(RAINFOREST_PLATEAU.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
         
         BiomeDictionary.addTypes(DUNES.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(DUNES_HILLS.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
