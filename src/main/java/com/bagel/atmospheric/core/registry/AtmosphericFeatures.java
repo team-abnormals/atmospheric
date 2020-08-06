@@ -34,7 +34,6 @@ import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.BlockBlobConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraft.world.gen.feature.SphereReplaceConfig;
@@ -111,13 +110,13 @@ public class AtmosphericFeatures {
         ); 
     }
     
-    @SubscribeEvent
-    public static void registerStructures(RegistryEvent.Register<Structure<?>> event) {
-        event.getRegistry().registerAll(
-            ARID_SHRINE.setRegistryName(Atmospheric.MODID, "arid_shrine")
-        ); 
-        register(ARID_SHRINE_PIECES, "ARID_SHRINE_PIECES");
-    }
+//    @SubscribeEvent
+//    public static void registerStructures(RegistryEvent.Register<Structure<?>> event) {
+//        event.getRegistry().registerAll(
+//            ARID_SHRINE.setRegistryName(Atmospheric.MODID, "arid_shrine")
+//        ); 
+//        register(ARID_SHRINE_PIECES, "ARID_SHRINE_PIECES");
+//    }
     
 	public static void addCarvables() {
 		Set<Block> allBlocksToCarve = new HashSet<Block>();
@@ -161,9 +160,9 @@ public class AtmosphericFeatures {
         if (biome == Biomes.SHATTERED_SAVANNA || biome == Biomes.SHATTERED_SAVANNA_PLATEAU) {
             AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.15F, 1, false);
         }
-        if (biome == Biomes.MODIFIED_JUNGLE_EDGE) {
-        	biome.func_235068_b_(AtmosphericFeatures.ARID_SHRINE.func_236391_a_(IFeatureConfig.NO_FEATURE_CONFIG));
-        }
+//        if (biome == Biomes.MODIFIED_JUNGLE_EDGE) {
+//        	biome.func_235068_b_(AtmosphericFeatures.ARID_SHRINE.func_236391_a_(IFeatureConfig.NO_FEATURE_CONFIG));
+//        }
     }
     
     static IStructurePieceType register(IStructurePieceType structurePiece, String key) {

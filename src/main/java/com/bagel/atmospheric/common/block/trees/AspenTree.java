@@ -5,27 +5,21 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericFeatureConfigs;
-import com.bagel.atmospheric.core.registry.AtmosphericFeatures;
 
 import net.minecraft.block.trees.BigTree;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.feature.Feature;
 
 public class AspenTree extends BigTree {
-   /**
-    * Get a {@link net.minecraft.world.gen.feature.ConfiguredFeature} of tree
-    */
+
    @Nullable
-   protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
-      return AtmosphericFeatures.ASPEN_TREE.withConfiguration(AtmosphericFeatureConfigs.ASPEN_TREE_CONFIG);
+   protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
+      return Feature.field_236291_c_.withConfiguration(AtmosphericFeatureConfigs.ASPEN_TREE_CONFIG);
    }
 
-   /**
-    * Get a {@link net.minecraft.world.gen.feature.ConfiguredFeature} of the huge variant of this tree
-    */
    @Nullable
-   protected ConfiguredFeature<HugeTreeFeatureConfig, ?> getHugeTreeFeature(Random rand) {
-      return AtmosphericFeatures.MEGA_ASPEN_TREE.withConfiguration(rand.nextBoolean() ? AtmosphericFeatureConfigs.MEGA_ASPEN_TREE_CONFIG : AtmosphericFeatureConfigs.MEGA_ASPEN_TREE_CONFIG);
+   protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getHugeTreeFeature(Random rand) {
+      return Feature.field_236291_c_.withConfiguration(AtmosphericFeatureConfigs.MEGA_ASPEN_TREE_CONFIG);
    }
 }

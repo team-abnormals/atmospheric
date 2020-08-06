@@ -1,5 +1,6 @@
 package com.bagel.atmospheric.core.registry;
 
+import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeBuilders;
 import com.bagel.atmospheric.common.world.biome.dunes.DunesBiome;
 import com.bagel.atmospheric.common.world.biome.dunes.DunesHillsBiome;
 import com.bagel.atmospheric.common.world.biome.dunes.FlourishingDunesBiome;
@@ -25,18 +26,18 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class AtmosphericBiomes {
 	public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, Atmospheric.MODID);
 	
-    public static final RegistryObject<Biome> ROSEWOOD_FOREST 			= BIOMES.register("rosewood_forest", () -> new RosewoodForestBiome());
-    public static final RegistryObject<Biome> ROSEWOOD_MOUNTAINS 		= BIOMES.register("rosewood_mountains", () -> new RosewoodMountainsBiome());
-    public static final RegistryObject<Biome> ROSEWOOD_PLATEAU 			= BIOMES.register("rosewood_plateau", () -> new RosewoodPlateauBiome());
-    public static final RegistryObject<Biome> ROSEWOOD_FOREST_PLATEAU 	= BIOMES.register("rosewood_forest_plateau", () -> new RosewoodForestPlateauBiome());
+    public static final RegistryObject<Biome> ROSEWOOD_FOREST 			= BIOMES.register("rosewood_forest", () -> new RosewoodForestBiome(AtmosphericBiomeBuilders.RAINFOREST));
+    public static final RegistryObject<Biome> ROSEWOOD_MOUNTAINS 		= BIOMES.register("rosewood_mountains", () -> new RosewoodMountainsBiome(AtmosphericBiomeBuilders.RAINFOREST_MOUNTAINS));
+    public static final RegistryObject<Biome> ROSEWOOD_PLATEAU 			= BIOMES.register("rosewood_plateau", () -> new RosewoodPlateauBiome(AtmosphericBiomeBuilders.RAINFOREST_PLATEAU));
+    public static final RegistryObject<Biome> ROSEWOOD_FOREST_PLATEAU 	= BIOMES.register("rosewood_forest_plateau", () -> new RosewoodForestPlateauBiome(AtmosphericBiomeBuilders.RAINFOREST_PLATEAU));
     
-	public static final RegistryObject<Biome> DUNES 			= BIOMES.register("dunes", 				() -> new DunesBiome());
-	public static final RegistryObject<Biome> DUNES_HILLS		= BIOMES.register("dunes_hills",		() -> new DunesHillsBiome());
-	public static final RegistryObject<Biome> FLOURISHING_DUNES	= BIOMES.register("flourishing_dunes",	() -> new FlourishingDunesBiome());
+	public static final RegistryObject<Biome> DUNES 			= BIOMES.register("dunes", 				() -> new DunesBiome(AtmosphericBiomeBuilders.DUNES));
+	public static final RegistryObject<Biome> DUNES_HILLS		= BIOMES.register("dunes_hills",		() -> new DunesHillsBiome(AtmosphericBiomeBuilders.DUNES_HILLS));
+	public static final RegistryObject<Biome> FLOURISHING_DUNES	= BIOMES.register("flourishing_dunes",	() -> new FlourishingDunesBiome(AtmosphericBiomeBuilders.DUNES));
 
-    public static final RegistryObject<Biome> ROCKY_DUNES 		= BIOMES.register("rocky_dunes",		() -> new RockyDunesBiome());
-    public static final RegistryObject<Biome> ROCKY_DUNES_HILLS	= BIOMES.register("rocky_dunes_hills",	() -> new RockyDunesHillsBiome());
-	public static final RegistryObject<Biome> PETRIFIED_DUNES 	= BIOMES.register("petrified_dunes",	() -> new PetrifiedDunesBiome());
+    public static final RegistryObject<Biome> ROCKY_DUNES 		= BIOMES.register("rocky_dunes",		() -> new RockyDunesBiome(AtmosphericBiomeBuilders.ROCKY_DUNES));
+    public static final RegistryObject<Biome> ROCKY_DUNES_HILLS	= BIOMES.register("rocky_dunes_hills",	() -> new RockyDunesHillsBiome(AtmosphericBiomeBuilders.ROCKY_DUNES_HILLS));
+	public static final RegistryObject<Biome> PETRIFIED_DUNES 	= BIOMES.register("petrified_dunes",	() -> new PetrifiedDunesBiome(AtmosphericBiomeBuilders.DUNES_HILLS));
     
     public static void registerBiomesToDictionary() {
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ROSEWOOD_FOREST.get(), AtmosphericConfig.ValuesHolder.getRosewoodForestWeight()));  

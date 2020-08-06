@@ -13,18 +13,19 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.LogBlock;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.block.SaplingBlock;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
-import net.minecraft.world.IWorldWriter;
+import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
-import net.minecraft.world.gen.feature.TreeFeature;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 
 @SuppressWarnings("unused")
-public class RosewoodTreeFeature extends TreeFeature {
+public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 	private final Supplier<BlockState> ROSEWOOD_LOG = () -> AtmosphericBlocks.ROSEWOOD_LOG.get().getDefaultState();
 	private final Supplier<BlockState> ROSEWOOD_LEAVES = () -> AtmosphericBlocks.ROSEWOOD_LEAVES.get().getDefaultState().with(LeavesBlock.DISTANCE, 1);
 	private List<Block> brushes = new ArrayList<>();
@@ -34,7 +35,7 @@ public class RosewoodTreeFeature extends TreeFeature {
 	}
 
 	@Override
-	public boolean func_225557_a_(IWorldGenerationReader worldIn, Random rand, BlockPos position, Set<BlockPos> logsPlaced, Set<BlockPos> leavesPlaced, MutableBoundingBox boundsIn, TreeFeatureConfig config) {
+	public boolean func_230362_a_(ISeedReader worldIn, StructureManager manager, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
 		if (rand.nextInt(250) == 0) {
 			if (rand.nextInt(2) == 0) brushes.add(AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
 			if (rand.nextInt(3) == 0) brushes.add(AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
@@ -49,7 +50,7 @@ public class RosewoodTreeFeature extends TreeFeature {
 		int bonusCanopies = rand.nextInt(3);
 		boolean flag = true;
 
-		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getMaxHeight()) {
+		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getHeight()) {
 			for (int j = position.getY(); j <= position.getY() + 1 + height; ++j) {
 				int k = 1;
 				if (j == position.getY()) {
@@ -62,8 +63,8 @@ public class RosewoodTreeFeature extends TreeFeature {
 
 				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
-						if (j >= 0 && j < worldIn.getMaxHeight()) {
-							if (!func_214587_a(worldIn, blockpos$mutableblockpos.setPos(l, j, i1))) {
+						if (j >= 0 && j < worldIn.getHeight()) {
+							if (!TreeUtils.isAirOrLeaves(worldIn, blockpos$mutableblockpos.setPos(l, j, i1))) {
 								flag = false;
 							}
 						} else {
@@ -75,9 +76,9 @@ public class RosewoodTreeFeature extends TreeFeature {
 
 			if (!flag) {
 				return false;
-			} else if (isSoil(worldIn, position.down(), config.getSapling()) && position.getY() < worldIn.getMaxHeight() - branches - 1) {
+			} else if (TreeUtils.isValidGround(worldIn, position.down(), (SaplingBlock)AtmosphericBlocks.ROSEWOOD_SAPLING.get()) && position.getY() < worldIn.getHeight() - branches - 1) {
 				//base log
-				this.setDirtAt(worldIn, position.down(), position);
+				TreeUtils.setDirtAt(worldIn, position.down());
 				Direction direction = Direction.Plane.HORIZONTAL.random(rand);
 
 				int logX = position.getX();
@@ -88,15 +89,15 @@ public class RosewoodTreeFeature extends TreeFeature {
 				for (int k1 = 0; k1 < height; ++k1) {
 					int logY = position.getY() + k1;
 					BlockPos blockpos = new BlockPos(logX, logY, logZ);
-					if (isAirOrLeaves(worldIn, blockpos)) {
-						this.placeLogAt(logsPlaced, worldIn, blockpos, boundsIn, Direction.UP);
+					if (TreeUtils.isAirOrLeaves(worldIn, blockpos)) {
+					    TreeUtils.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);
 					}
 					if (rand.nextInt(6) == 0 && k1 > 3 && k1 < height && canopy == false) {
 						int leafSize = 1 + rand.nextInt(2);
 						for(int k3 = -leafSize; k3 <= leafSize; ++k3) {
 							for(int j4 = -leafSize; j4 <= leafSize; ++j4) {
 								if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-									this.placeLeafAt(leavesPlaced, worldIn, blockpos.add(k3, 0, j4), boundsIn);
+									TreeUtils.placeLeafAt(worldIn, blockpos.add(k3, 0, j4), rand, config);
 								}
 							}
 						}
@@ -123,8 +124,8 @@ public class RosewoodTreeFeature extends TreeFeature {
 					for (int k4 = 0; k4 < turns; ++k4) {
 						branchLength = 1 + rand.nextInt(2) + rand.nextInt(2);
 						branchHeight = 1 + rand.nextInt(3) + rand.nextInt(2);
-						createHorizontalLog(branchLength, logsPlaced, leavesPlaced, worldIn, currentPos, offset, boundsIn);
-						createVerticalLog(branchHeight, logsPlaced, leavesPlaced, worldIn, currentPos.offset(offset, branchLength), boundsIn, rand);
+						createHorizontalLog(branchLength, worldIn, currentPos, offset, rand, config);
+						createVerticalLog(branchHeight, worldIn, currentPos.offset(offset, branchLength), rand, config);
 						currentPos = currentPos.offset(offset, branchLength).offset(Direction.UP, branchHeight);
 					}
 					
@@ -139,7 +140,7 @@ public class RosewoodTreeFeature extends TreeFeature {
 					for(int k3 = -leafSize; k3 <= leafSize; ++k3) {
 						for(int j4 = -leafSize; j4 <= leafSize; ++j4) {
 							if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-								this.placeLeafAt(leavesPlaced, worldIn, currentPos.add(k3, 0, j4), boundsIn);
+								TreeUtils.placeLeafAt(worldIn, currentPos.add(k3, 0, j4), rand, config);
 							}
 						}
 					}
@@ -149,7 +150,7 @@ public class RosewoodTreeFeature extends TreeFeature {
 					for(int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
 						for(int j4 = -leafSizeTop; j4 <= leafSizeTop; ++j4) {
 							if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
-								this.placeLeafAt(leavesPlaced, worldIn, currentPos.add(k3, 0, j4), boundsIn);
+							    TreeUtils.placeLeafAt(worldIn, currentPos.add(k3, 0, j4), rand, config);
 							}
 						}
 					}
@@ -157,15 +158,15 @@ public class RosewoodTreeFeature extends TreeFeature {
 					logZ = position.getZ();
 				}
 				
-				if (!brushes.isEmpty()) {
-					for (BlockPos pos : logsPlaced) {
-						for(Direction direction2 : Direction.values()) {
-							if (isAir(worldIn, pos.offset(direction2)) && rand.nextInt(3) == 0) {
-								worldIn.setBlockState(pos.offset(direction2), brushes.get(rand.nextInt(brushes.size())).getDefaultState().with(MonkeyBrushBlock.FACING, direction2), 18);
-							}
-						}
-					}
-				}
+//				if (!brushes.isEmpty()) {
+//					for (BlockPos pos : ) {
+//						for(Direction direction2 : Direction.values()) {
+//							if (TreeUtils.isAir(worldIn, pos.offset(direction2)) && rand.nextInt(3) == 0) {
+//								worldIn.setBlockState(pos.offset(direction2), brushes.get(rand.nextInt(brushes.size())).getDefaultState().with(MonkeyBrushBlock.FACING, direction2), 18);
+//							}
+//						}
+//					}
+//				}
 
 				return true;
 			} else {
@@ -178,12 +179,11 @@ public class RosewoodTreeFeature extends TreeFeature {
 	
 	private void createHorizontalLog(
 			int branchLength,
-			Set<BlockPos> changedBlocks, 
-			Set<BlockPos> changedBlocksLeaves, 
 			IWorldGenerationReader worldIn, 
 			BlockPos pos, 
 			Direction direction, 
-			MutableBoundingBox boundsIn) {
+			Random rand, 
+			BaseTreeFeatureConfig config) {
 		
 		int logX = pos.getX();
 		int logY = pos.getY();
@@ -195,19 +195,18 @@ public class RosewoodTreeFeature extends TreeFeature {
 			logZ += direction.getZOffset();
 			
 			BlockPos blockpos1 = new BlockPos(logX, logY, logZ);
-			if (isAirOrLeaves(worldIn, blockpos1)) {
-				this.placeLogAt(changedBlocks, worldIn, blockpos1, boundsIn, direction);
+			if (TreeUtils.isAirOrLeaves(worldIn, blockpos1)) {
+			    TreeUtils.placeDirectionalLogAt(worldIn, blockpos1, direction, rand, config);
 			}
 		}
 	}
 	
 	private void createVerticalLog(
 			int branchHeight,
-			Set<BlockPos> changedBlocks, 
-			Set<BlockPos> changedBlocksLeaves, 
 			IWorldGenerationReader worldIn, 
 			BlockPos pos, 
-			MutableBoundingBox boundsIn, Random rand) {
+			Random rand,
+			BaseTreeFeatureConfig config) {
 		
 		int logX = pos.getX();
 		int logY = pos.getY();
@@ -219,15 +218,15 @@ public class RosewoodTreeFeature extends TreeFeature {
 			logY += 1;
 			
 			BlockPos blockpos = new BlockPos(logX, logY, logZ);
-			if (isAirOrLeaves(worldIn, blockpos)) {
-				this.placeLogAt(changedBlocks, worldIn, blockpos, boundsIn, Direction.UP);	
+			if (TreeUtils.isAirOrLeaves(worldIn, blockpos)) {
+			    TreeUtils.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);	
 			}
 			if (rand.nextInt(6) == 0 && canopy == false) {
 				int leafSize = 1 + rand.nextInt(2);
 				for(int k3 = -leafSize; k3 <= leafSize; ++k3) {
 					for(int j4 = -leafSize; j4 <= leafSize; ++j4) {
 						if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-							this.placeLeafAt(changedBlocksLeaves, worldIn, blockpos.add(k3, 0, j4), boundsIn);
+						    TreeUtils.placeLeafAt(worldIn, blockpos.add(k3, 0, j4), rand, config);
 						}
 					}
 				}
@@ -235,34 +234,12 @@ public class RosewoodTreeFeature extends TreeFeature {
 			}
 		}
 	}
-
-	private void placeLogAt(Set<BlockPos> changedBlocks, IWorldGenerationReader worldIn, BlockPos pos, MutableBoundingBox boundsIn, Direction direction) {
-		this.setLogState(changedBlocks, worldIn, pos, ROSEWOOD_LOG.get().with(LogBlock.AXIS, direction.getAxis()), boundsIn);
-	}
-
-	private void placeLeafAt(Set<BlockPos> changedBlocks, IWorldGenerationReader world, BlockPos pos, MutableBoundingBox boundsIn) {
-		if (isAirOrLeaves(world, pos)) { 
-			this.setLogState(changedBlocks, world, pos, ROSEWOOD_LEAVES.get(), boundsIn);
-		}
-	}
 	
 	private void placeBrushAt(Set<BlockPos> changedBlocks, IWorldGenerationReader world, BlockPos pos, MutableBoundingBox boundsIn, Direction direction2) {
 		Random rand = new Random();
 		boundsIn.expandTo(new MutableBoundingBox(pos, pos));
-		if (isAir(world, pos.offset(direction2))) {
+		if (TreeUtils.isAir(world, pos.offset(direction2))) {
 			world.setBlockState(pos.offset(direction2), brushes.get(rand.nextInt(brushes.size())).getDefaultState().with(MonkeyBrushBlock.FACING, direction2), 18);
 		}
-	}
-	
-	protected final void setLogState(Set<BlockPos> changedBlocks, IWorldWriter worldIn, BlockPos pos, BlockState state, MutableBoundingBox boundsIn) {
-		worldIn.setBlockState(pos, state, 18);
-		boundsIn.expandTo(new MutableBoundingBox(pos, pos));
-		if (BlockTags.LOGS.contains(state.getBlock())) {
-			changedBlocks.add(pos.toImmutable());
-		}
-	}
-	
-	private void func_208521_b(IWorldWriter p_208521_1_, BlockPos p_208521_2_, BlockState p_208521_3_) {
-		p_208521_1_.setBlockState(p_208521_2_, p_208521_3_, 18);
 	}
 }

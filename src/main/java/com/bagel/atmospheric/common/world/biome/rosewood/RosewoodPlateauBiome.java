@@ -6,30 +6,15 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.feature.structure.MineshaftConfig;
-import net.minecraft.world.gen.feature.structure.MineshaftStructure;
-import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class RosewoodPlateauBiome extends Biome {
-    public RosewoodPlateauBiome() {
-        super(new Biome.Builder()
-				.surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
-				.precipitation(Biome.RainType.RAIN)
-				.category(Biome.Category.FOREST)
-				.depth(1.5F)
-				.scale(0.025F)
-				.temperature(0.90F)
-				.downfall(0.8F)
-				.waterColor(6675400)
-				.waterFogColor(206651)
-				.parent(null));
+    public RosewoodPlateauBiome(Biome.Builder builder) {
+        super(builder);
         
-        this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
-        this.addStructure(Feature.STRONGHOLD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+        this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_JUNGLE);
+        DefaultBiomeFeatures.func_235196_b_(this); // MINESHAFTS & STRONGHOLDS
+
         DefaultBiomeFeatures.addCarvers(this);
-        DefaultBiomeFeatures.addStructures(this);
         DefaultBiomeFeatures.addMonsterRooms(this);
         
         DefaultBiomeFeatures.addStoneVariants(this);

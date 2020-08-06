@@ -1,27 +1,20 @@
 package com.bagel.atmospheric.common.world.gen.structure;
 
-import java.util.Random;
-
 import com.bagel.atmospheric.core.Atmospheric;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.util.Rotation;
-import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeManager;
-import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
-public class AridShrineStructure<C extends IFeatureConfig> extends Structure<NoFeatureConfig> {
+public class AridShrineStructure extends Structure<NoFeatureConfig> {
 
     public AridShrineStructure(Codec<NoFeatureConfig> configFactoryIn) {
         super(configFactoryIn);
@@ -48,17 +41,17 @@ public class AridShrineStructure<C extends IFeatureConfig> extends Structure<NoF
 //        return new ChunkPos(validChunkX, validChunkZ);
 //    }
 
-    @Override
-    protected boolean func_230363_a_(ChunkGenerator generatorIn, BiomeProvider p_230363_2_, long p_230363_3_, SharedSeedRandom randIn, int chunkX, int chunkZ, Biome biomeIn, ChunkPos p_230363_9_, C p_230363_10_) {
-        ChunkPos chunkpos = this.getStartPositionForPosition(generatorIn, randIn, chunkX, chunkZ, 0, 0);
-        if (chunkX == chunkpos.x && chunkZ == chunkpos.z) {
-            if (generatorIn.(biomeIn, this)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
+//    @Override
+//    protected boolean func_230363_a_(ChunkGenerator generatorIn, BiomeProvider p_230363_2_, long p_230363_3_, SharedSeedRandom randIn, int chunkX, int chunkZ, Biome biomeIn, ChunkPos p_230363_9_, C p_230363_10_) {
+//        ChunkPos chunkpos = this.getStartPositionForPosition(generatorIn, randIn, chunkX, chunkZ, 0, 0);
+//        if (chunkX == chunkpos.x && chunkZ == chunkpos.z) {
+//            if (generatorIn.(biomeIn, this)) {
+//                return true;
+//            }
+//        }
+//
+//        return false;
+//    }
 
     @Override
     public IStartFactory<NoFeatureConfig> getStartFactory() {

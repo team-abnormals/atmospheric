@@ -77,6 +77,5 @@ jar {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.1-32.0.106'
     compile fg.deobf("curse.maven:abnormals-core:3017821")
-    compile fg.deobf("curse.maven:locatebiome:2922461")
     compile fg.deobf("curse.maven:jei:3022016")
 }
