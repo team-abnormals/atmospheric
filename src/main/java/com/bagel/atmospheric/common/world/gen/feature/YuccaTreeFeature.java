@@ -11,7 +11,6 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.RotatedPillarBlock;
-import net.minecraft.block.SaplingBlock;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
@@ -76,7 +75,7 @@ public class YuccaTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
 						if (j >= 0 && j < worldIn.getHeight()) {
-						    if (!TreeUtils.isValidGround(worldIn, blockpos$mutableblockpos.setPos(l, j, i1), (SaplingBlock)AtmosphericBlocks.YUCCA_SAPLING.get())) flag = false;
+						    if (!TreeUtils.isAirOrLeaves(worldIn, blockpos$mutableblockpos.setPos(l, j, i1))) flag = false;
 						} else flag = false;
 					}
 				}

@@ -9,6 +9,7 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ITag.INamedTag;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -26,6 +27,12 @@ public class TreeUtils {
     
     public static void placeDirectionalLogAt(IWorldWriter worldIn, BlockPos pos, Direction direction, Random rand, BaseTreeFeatureConfig config) {
         setLogState(worldIn, pos, config.trunkProvider.getBlockState(rand, pos).with(RotatedPillarBlock.AXIS, direction.getAxis()));
+    }
+    
+    public static boolean isInTag(IWorldGenerationBaseReader worldIn, BlockPos pos, INamedTag<Block> tag) {
+        return worldIn.hasBlockState(pos, (block) -> {
+            return block.isIn(tag);
+        });
     }
 
     public static void placeLeafAt(IWorldGenerationReader world, BlockPos pos, Random rand, BaseTreeFeatureConfig config) {
