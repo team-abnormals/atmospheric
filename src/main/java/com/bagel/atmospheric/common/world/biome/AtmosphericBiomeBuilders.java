@@ -18,6 +18,25 @@ public class AtmosphericBiomeBuilders {
     public static final Biome.Builder ROCKY_DUNES       = createDunesBiome(0.45F, 0.30F, 2.0F, 0.0F);
     public static final Biome.Builder ROCKY_DUNES_HILLS = createDunesBiome(0.45F, 0.45F, 2.0F, 0.0F);
     
+    private static Biome.Builder createRainforestBiome(float depth, float scale, float temperature, float downfall) {
+        return (new Biome.Builder())
+        .surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
+        .precipitation(Biome.RainType.NONE)
+        .category(Biome.Category.FOREST)
+        .depth(depth)
+        .scale(scale)
+        .temperature(temperature)
+        .downfall(downfall)
+        .func_235097_a_((
+                new BiomeAmbience.Builder())
+                .setWaterColor(6675400)
+                .setWaterFogColor(206651)
+                .setFogColor(12638463)
+                .setMoodSound(MoodSoundAmbience.field_235027_b_)
+                .build())
+        .parent((String)null);
+    }
+    
     private static Biome.Builder createDunesBiome(float depth, float scale, float temperature, float downfall) {
         return (new Biome.Builder())
         .surfaceBuilder(AtmosphericFeatures.WAVEY_DUNES, AtmosphericFeatureConfigs.DUNES)
@@ -31,25 +50,6 @@ public class AtmosphericBiomeBuilders {
                 new BiomeAmbience.Builder())
                 .setWaterColor(4159204)
                 .setWaterFogColor(329011)
-                .setFogColor(12638463)
-                .setMoodSound(MoodSoundAmbience.field_235027_b_)
-                .build())
-        .parent((String)null);
-    }
-    
-    private static Biome.Builder createRainforestBiome(float depth, float scale, float temperature, float downfall) {
-        return (new Biome.Builder())
-        .surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
-        .precipitation(Biome.RainType.RAIN)
-        .category(Biome.Category.FOREST)
-        .depth(depth)
-        .scale(scale)
-        .temperature(temperature)
-        .downfall(downfall)
-        .func_235097_a_((
-                new BiomeAmbience.Builder())
-                .setWaterColor(6675400)
-                .setWaterFogColor(206651)
                 .setFogColor(12638463)
                 .setMoodSound(MoodSoundAmbience.field_235027_b_)
                 .build())
