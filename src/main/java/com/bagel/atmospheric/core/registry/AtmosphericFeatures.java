@@ -5,6 +5,7 @@ import java.util.Locale;
 import java.util.Set;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
+import com.bagel.atmospheric.common.world.biome.AtmosphericFeatureConfigs;
 import com.bagel.atmospheric.common.world.gen.feature.AloeVeraFeature;
 import com.bagel.atmospheric.common.world.gen.feature.BabyYuccaTreeFeature;
 import com.bagel.atmospheric.common.world.gen.feature.BarrelCactusFeature;
@@ -51,7 +52,6 @@ public class AtmosphericFeatures {
 	
 	public static final Feature<ProbabilityConfig> PODZOL = new PodzolFeature(ProbabilityConfig.field_236576_b_);
 	public static final Feature<NoFeatureConfig> SURFACE_FOSSIL = new SurfaceFossilFeature(NoFeatureConfig.field_236558_a_);
-//	public static final Feature<BaseTreeFeatureConfig> OAK_BUSH = new ShrubFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
 	public static final Feature<SphereReplaceConfig> COARSE_DIRT_PATCH = new CoarseDirtPatchFeature(SphereReplaceConfig.field_236516_a_);
 
 	public static final Feature<NoFeatureConfig> WARM_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig.field_236558_a_, 1);
@@ -87,7 +87,6 @@ public class AtmosphericFeatures {
     public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
         event.getRegistry().registerAll(
         	PODZOL.setRegistryName(Atmospheric.MODID, "podzol"),
-//        	OAK_BUSH.setRegistryName(Atmospheric.MODID, "oak_bush"),
         	DUNE_ROCKS.setRegistryName(Atmospheric.MODID, "dune_rocks"),
         	SURFACE_FOSSIL.setRegistryName(Atmospheric.MODID, "surface_fossil"),
         	COARSE_DIRT_PATCH.setRegistryName(Atmospheric.MODID, "coarse_dirt_patch"),
@@ -110,13 +109,13 @@ public class AtmosphericFeatures {
         ); 
     }
     
-//    @SubscribeEvent
-//    public static void registerStructures(RegistryEvent.Register<Structure<?>> event) {
-//        event.getRegistry().registerAll(
-//            ARID_SHRINE.setRegistryName(Atmospheric.MODID, "arid_shrine")
-//        ); 
-//        register(ARID_SHRINE_PIECES, "ARID_SHRINE_PIECES");
-//    }
+    @SubscribeEvent
+    public static void registerStructures(RegistryEvent.Register<Structure<?>> event) {
+        event.getRegistry().registerAll(
+            ARID_SHRINE.setRegistryName(Atmospheric.MODID, "arid_shrine")
+        ); 
+        register(ARID_SHRINE_PIECES, "ARID_SHRINE_PIECES");
+    }
     
 	public static void addCarvables() {
 		Set<Block> allBlocksToCarve = new HashSet<Block>();
@@ -160,9 +159,10 @@ public class AtmosphericFeatures {
         if (biome == Biomes.SHATTERED_SAVANNA || biome == Biomes.SHATTERED_SAVANNA_PLATEAU) {
             AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.15F, 1, false);
         }
-//        if (biome == Biomes.MODIFIED_JUNGLE_EDGE) {
-//        	biome.func_235068_b_(AtmosphericFeatures.ARID_SHRINE.func_236391_a_(IFeatureConfig.NO_FEATURE_CONFIG));
-//        }
+        
+//      if (biome == Biomes.MODIFIED_JUNGLE_EDGE) {
+//          biome.func_235063_a_(AtmosphericFeatureConfigs.ARID_SHRINE);
+//      }
     }
     
     static IStructurePieceType register(IStructurePieceType structurePiece, String key) {

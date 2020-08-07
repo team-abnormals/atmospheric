@@ -1,6 +1,7 @@
 package com.bagel.atmospheric.common.world.biome.dunes;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
+import com.bagel.atmospheric.common.world.biome.AtmosphericFeatureConfigs;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 
 import net.minecraft.entity.EntityClassification;
@@ -14,6 +15,7 @@ public final class RockyDunesBiome extends Biome {
 	public RockyDunesBiome(Biome.Builder builder) {
         super(builder);
 		
+//        this.func_235063_a_(AtmosphericFeatureConfigs.ARID_SHRINE);
         this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_DESERT);
         this.func_235063_a_(DefaultBiomeFeatures.PILLAGER_OUTPOST);
         

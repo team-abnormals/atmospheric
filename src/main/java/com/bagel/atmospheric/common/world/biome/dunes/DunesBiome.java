@@ -14,9 +14,7 @@ public final class DunesBiome extends Biome {
 	public DunesBiome(Biome.Builder builder) {
         super(builder);
 		
-//		this.addStructure(AtmosphericFeatures.ARID_SHRINE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-//      this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, AtmosphericFeatures.ARID_SHRINE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
-
+//        this.func_235063_a_(AtmosphericFeatureConfigs.ARID_SHRINE);
         this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_DESERT);
         this.func_235063_a_(DefaultBiomeFeatures.PILLAGER_OUTPOST);
         

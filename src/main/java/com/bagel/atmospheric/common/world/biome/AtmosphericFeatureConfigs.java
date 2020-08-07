@@ -55,6 +55,7 @@ public class AtmosphericFeatureConfigs {
 	public static final BlockState ALOE_VERA       = AtmosphericBlocks.ALOE_VERA.get().getDefaultState();
 	public static final BlockState YUCCA_FLOWER	   = AtmosphericBlocks.YUCCA_FLOWER.get().getDefaultState();
 
+	public static final StructureFeature<NoFeatureConfig, ? extends Structure<NoFeatureConfig>> ARID_SHRINE = AtmosphericFeatures.ARID_SHRINE.func_236391_a_(NoFeatureConfig.field_236559_b_);
 
 	public static final BlockClusterFeatureConfig MELON_PATCH_CONFIG   = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.MELON.getDefaultState()), new SimpleBlockPlacer())).tries(64).whitelist(ImmutableSet.of(AtmosphericBlocks.RED_ARID_SAND.get())).func_227317_b_().build();
 	public static final BlockClusterFeatureConfig GILIA_CONFIG         = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(GILIA), new SimpleBlockPlacer())).tries(64).build();
