@@ -7,6 +7,7 @@ import com.bagel.atmospheric.common.block.YuccaFlowerDoubleBlock;
 import com.bagel.atmospheric.core.other.AtmosphericTags;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
+import com.teamabnormals.abnormals_core.core.utils.TreeUtils;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.state.properties.DoubleBlockHalf;
@@ -123,12 +124,12 @@ public class BabyYuccaTreeFeature extends Feature<BaseTreeFeatureConfig> {
 	private void placeFlowerAt(IWorldGenerationReader world, BlockPos pos, Random rand) {
 		if (TreeUtils.isAir(world, pos)) {
 			if (!TreeUtils.isAir(world, pos.up())) {
-			    TreeUtils.setLogState(world, pos, YUCCA_FLOWER.get());
+			    TreeUtils.setForcedState(world, pos, YUCCA_FLOWER.get());
 			} else if (rand.nextInt(4) == 0) {
-			    TreeUtils.setLogState(world, pos, TALL_YUCCA_FLOWER_BOTTOM.get());
-			    TreeUtils.setLogState(world, pos.up(), TALL_YUCCA_FLOWER_TOP.get());
+			    TreeUtils.setForcedState(world, pos, TALL_YUCCA_FLOWER_BOTTOM.get());
+			    TreeUtils.setForcedState(world, pos.up(), TALL_YUCCA_FLOWER_TOP.get());
 			} else {
-			    TreeUtils.setLogState(world, pos, YUCCA_FLOWER.get());
+			    TreeUtils.setForcedState(world, pos, YUCCA_FLOWER.get());
 			}
 		}
 	}

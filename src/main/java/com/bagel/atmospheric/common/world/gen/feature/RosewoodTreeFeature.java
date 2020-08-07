@@ -9,6 +9,7 @@ import java.util.function.Supplier;
 import com.bagel.atmospheric.common.block.MonkeyBrushBlock;
 import com.bagel.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
+import com.teamabnormals.abnormals_core.core.utils.TreeUtils;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

@@ -5,10 +5,10 @@ authors="five & bageldotjpg"
 credits="Jackson for CurseForge page & Logo"
 
 [[mods]]
-modId="atmospheric"
-version="${file.jarVersion}"
-displayName="Atmospheric"
-description='''
+    modId="atmospheric"
+    version="${file.jarVersion}"
+    displayName="Atmospheric"
+    description='''
 Adds two unique biome types with several variants.
 Also introduces several new types of blocks, foliage, and plants!
 There will continue to be more biomes over time!'''
@@ -23,7 +23,7 @@ There will continue to be more biomes over time!'''
 [[dependencies.atmospheric]]
     modId="abnormals_core"
     mandatory=true
-    versionRange="[2.0.1,)"
+    versionRange="[2.0.2,)"
     ordering="AFTER"
     side="BOTH"
 
