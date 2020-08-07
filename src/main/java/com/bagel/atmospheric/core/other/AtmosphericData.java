@@ -67,6 +67,7 @@ public class AtmosphericData {
         DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE_BUNDLE.get(), 5, 60);
 
         DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_FLOWER.get(), 5, 60);
+        DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_BRANCH.get(), 5, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(), 5, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.BARREL_CACTUS.get(), 5, 60);
 
