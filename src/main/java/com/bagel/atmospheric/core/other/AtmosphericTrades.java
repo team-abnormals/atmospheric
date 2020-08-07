@@ -37,10 +37,10 @@ public class AtmosphericTrades {
 	public static void onVillagerTradesEvent(VillagerTradesEvent event) {
 		if(event.getType() == VillagerProfession.FARMER) {
 			event.getTrades().get(3).add(new TradeUtils.EmeraldsForItemsTrade(AtmosphericItems.PASSIONFRUIT.get(), 8, 1, 12, 10));
-			event.getTrades().get(3).add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.PASSIONFRUIT_TART.get(), 4, 16, 4, 15));	
+			event.getTrades().get(3).add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.PASSIONFRUIT_TART.get(), 16, 4, 4, 15));	
 			event.getTrades().get(2).add(new TradeUtils.EmeraldsForItemsTrade(AtmosphericItems.ALOE_LEAVES.get(), 4, 1, 16, 15));
 			event.getTrades().get(2).add(new TradeUtils.EmeraldsForItemsTrade(AtmosphericItems.YUCCA_FRUIT.get(), 3, 1, 12, 10));
-			event.getTrades().get(2).add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.YUCCA_GATEAU.get(), 1, 12, 1, 10));	
+			event.getTrades().get(2).add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.YUCCA_GATEAU.get(), 12, 1, 1, 10));	
 		}
     }
 }
