@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+	"atmospheric:rosewood_ladder",
+	"atmospheric:yucca_ladder",
+	"atmospheric:kousa_ladder",
+	"atmospheric:aspen_ladder",
+	"atmospheric:grimwood_ladder"
+  ]
+}
