@@ -17,9 +17,13 @@
 	"block.atmospheric.rosewood_sapling": "Rosewood Sapling",
 	"block.atmospheric.rosewood_leaves": "Rosewood Leaves",
 	"block.atmospheric.rosewood_sign": "Rosewood Sign",
-	
-	"block.atmospheric.passion_vine": "Passion Vine",
-	"block.atmospheric.passion_vine_bundle": "Passion Vine Bundle",	
+	"block.atmospheric.rosewood_wall_sign": "Rosewood Wall Sign",
+  "block.atmospheric.rosewood_bookshelf": "Rosewood Bookshelf",
+  "block.atmospheric.rosewood_vertical_slab": "Rosewood Vertical Slab",
+  "block.atmospheric.vertical_rosewood_planks": "Vertical Rosewood Planks",
+  "block.atmospheric.rosewood_ladder": "Rosewood Ladder",
+  "block.atmospheric.rosewood_leaf_carpet": "Rosewood Leaf Carpet",
+  "block.atmospheric.rosewood_beehive": "Rosewood Beehive",
 	
 	"block.atmospheric.warm_monkey_brush": "Warm Monkey Brush",
 	"block.atmospheric.hot_monkey_brush": "Hot Monkey Brush",
@@ -27,11 +31,9 @@
 	"block.atmospheric.potted_hot_monkey_brush": "Potted Monkey Brush",
 	"block.atmospheric.potted_rosewood_sapling": "Potted Rosewood Sapling",
 	
-	"block.atmospheric.rosewood_bookshelf": "Rosewood Bookshelf",
-	"block.atmospheric.rosewood_vertical_slab": "Rosewood Vertical Slab",
-	"block.atmospheric.vertical_rosewood_planks": "Vertical Rosewood Planks",
-	"block.atmospheric.rosewood_ladder": "Rosewood Ladder",
-	"block.atmospheric.rosewood_leaf_carpet": "Rosewood Leaf Carpet",
+	"block.atmospheric.passion_vine": "Passion Vine",
+  "block.atmospheric.passion_vine_bundle": "Passion Vine Bundle", 
+  
 	"block.atmospheric.passionfruit_crate": "Passionfruit Crate",
 	"block.atmospheric.shimmering_passionfruit_crate": "Shimmering Passionfruit Crate",
 	
@@ -159,7 +161,14 @@
 	"block.atmospheric.yucca_sapling": "Yucca Sapling",
 	"block.atmospheric.yucca_leaves": "Yucca Leaves",
 	"block.atmospheric.yucca_sign": "Yucca Sign",
-	
+	"block.atmospheric.yucca_wall_sign": "Yucca Wall Sign",
+  "block.atmospheric.yucca_bookshelf": "Yucca Bookshelf",
+  "block.atmospheric.yucca_vertical_slab": "Yucca Vertical Slab",
+  "block.atmospheric.vertical_yucca_planks": "Vertical Yucca Planks",
+  "block.atmospheric.yucca_ladder": "Yucca Ladder",
+  "block.atmospheric.yucca_leaf_carpet": "Yucca Leaf Carpet",
+  "block.atmospheric.yucca_beehive": "Yucca Beehive",
+  
 	"block.atmospheric.yucca_flower": "Yucca Flower",
 	"block.atmospheric.tall_yucca_flower": "Tall Yucca Flower",
 	"block.atmospheric.yucca_branch": "Yucca Branch",	
@@ -171,11 +180,6 @@
 	"block.atmospheric.potted_barrel_cactus": "Potted Barrel Cactus",
 	"block.atmospheric.potted_gilia": "Potted Gilia",
 	
-	"block.atmospheric.yucca_bookshelf": "Yucca Bookshelf",
-	"block.atmospheric.yucca_vertical_slab": "Yucca Vertical Slab",
-	"block.atmospheric.vertical_yucca_planks": "Vertical Yucca Planks",
-	"block.atmospheric.yucca_ladder": "Yucca Ladder",
-	"block.atmospheric.yucca_leaf_carpet": "Yucca Leaf Carpet",
 	"block.atmospheric.yucca_cask": "Yucca Cask",
 	"block.atmospheric.roasted_yucca_cask": "Roasted Yucca Cask",
 	"block.atmospheric.yucca_gateau": "Yucca Gateau",
@@ -290,6 +294,7 @@
 	"block.atmospheric.kousa_sapling": "Kousa Sapling",
 	"block.atmospheric.kousa_leaves": "Kousa Leaves",
 	"block.atmospheric.kousa_sign": "Kousa Sign",
+	"block.atmospheric.kousa_wall_sign": "Kousa Wall Sign",
 	
 	"block.atmospheric.potted_kousa_sapling": "Potted Kousa Sapling",
 	
@@ -298,6 +303,7 @@
 	"block.atmospheric.vertical_kousa_planks": "Vertical Kousa Planks",
 	"block.atmospheric.kousa_ladder": "Kousa Ladder",
 	"block.atmospheric.kousa_leaf_carpet": "Kousa Leaf Carpet",
+	"block.atmospheric.kousa_beehive": "Kousa Beehive",
 	
 	"item.atmospheric.kousa_boat": "Kousa Boat",
   
@@ -325,6 +331,7 @@
 	"block.atmospheric.aspen_sapling": "Aspen Sapling",
 	"block.atmospheric.aspen_leaves": "Aspen Leaves",
 	"block.atmospheric.aspen_sign": "Aspen Sign",
+	"block.atmospheric.aspen_wall_sign": "Aspen Wall Sign",
 	
 	"block.atmospheric.potted_aspen_sapling": "Potted Aspen Sapling",
 	
@@ -333,6 +340,7 @@
 	"block.atmospheric.vertical_aspen_planks": "Vertical Aspen Planks",
 	"block.atmospheric.aspen_ladder": "Aspen Ladder",
 	"block.atmospheric.aspen_leaf_carpet": "Aspen Leaf Carpet",
+	"block.atmospheric.aspen_beehive": "Aspen Beehive",
 	
 	"item.atmospheric.aspen_boat": "Aspen Boat",
 	
@@ -354,6 +362,7 @@
 	"block.atmospheric.grimwood_sapling": "Grimwood Sapling",
 	"block.atmospheric.grimwood_leaves": "Grimwood Leaves",
 	"block.atmospheric.grimwood_sign": "Grimwood Sign",
+	"block.atmospheric.grimwood_wall_sign": "Grimwood Wall Sign",
 	"block.atmospheric.potted_grimwood_sapling": "Potted Grimwood Sapling",
 	
 	"block.atmospheric.grimwood_bookshelf": "Grimwood Bookshelf",
@@ -361,6 +370,7 @@
 	"block.atmospheric.vertical_grimwood_planks": "Vertical Grimwood Planks",
 	"block.atmospheric.grimwood_ladder": "Grimwood Ladder",
 	"block.atmospheric.grimwood_leaf_carpet": "Grimwood Leaf Carpet",
+	"block.atmospheric.grimwood_beehive": "Grimwood Beehive",
 	
 	"item.atmospheric.grimwood_boat": "Grimwood Boat",
  
