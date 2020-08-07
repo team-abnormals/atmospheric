@@ -16,7 +16,7 @@ import com.minecraftabnormals.atmospheric.common.world.gen.feature.RosewoodTreeF
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.SurfaceFossilFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaFlowerFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaTreeFeature;
-import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaTreeFeatureConfig;
+import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.common.world.gen.structure.AridShrinePieces;
 import com.minecraftabnormals.atmospheric.common.world.gen.structure.AridShrineStructure;
 import com.minecraftabnormals.atmospheric.common.world.gen.surfacebuilders.DunesSurfaceBuilder;

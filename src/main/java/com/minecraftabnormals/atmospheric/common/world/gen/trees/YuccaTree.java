@@ -1,11 +1,11 @@
-package com.minecraftabnormals.atmospheric.common.block.trees;
+package com.minecraftabnormals.atmospheric.common.world.gen.trees;
 
 import java.util.Random;
 
 import javax.annotation.Nullable;
 
 import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericFeatureConfigs;
-import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaTreeFeatureConfig;
+import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
 
 import net.minecraft.block.BlockState;

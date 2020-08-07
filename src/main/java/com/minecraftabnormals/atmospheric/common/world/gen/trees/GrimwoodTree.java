@@ -1,4 +1,4 @@
-package com.minecraftabnormals.atmospheric.common.block.trees;
+package com.minecraftabnormals.atmospheric.common.world.gen.trees;
 
 import java.util.Random;
 

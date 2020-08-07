@@ -5,7 +5,7 @@ import java.util.OptionalInt;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.minecraftabnormals.atmospheric.common.block.YuccaFlowerDoubleBlock;
-import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaTreeFeatureConfig;
+import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
 

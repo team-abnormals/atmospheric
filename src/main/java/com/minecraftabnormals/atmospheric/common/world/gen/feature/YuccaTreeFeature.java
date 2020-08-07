@@ -2,6 +2,7 @@ package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
 import java.util.Random;
 
+import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.abnormals_core.core.utils.TreeUtils;
