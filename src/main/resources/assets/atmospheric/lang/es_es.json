@@ -17,21 +17,26 @@
 	"block.atmospheric.rosewood_sapling": "Brote de palisandro",
 	"block.atmospheric.rosewood_leaves": "Hojas de palisandro",
 	"block.atmospheric.rosewood_sign": "Cartel de palisandro",
-	
-	"block.atmospheric.passion_vine": "Enredadera pasionaria",
-	"block.atmospheric.passion_vine_bundle": "Paquete de pasionarias",	
-	
-	"block.atmospheric.warm_monkey_brush": "Cepillo de mono cálido",
-	"block.atmospheric.hot_monkey_brush": "Cepillo de mono caliente",
-	"block.atmospheric.scalding_monkey_brush": "Cepillo de mono hirviente",
-	"block.atmospheric.potted_hot_monkey_brush": "Maceta con cepillo de mono",
-	"block.atmospheric.potted_rosewood_sapling": "Maceta con brote de palisandro",
+	"block.atmospheric.rosewood_wall_sign": "Cartel de palisandro en pared",
 	
 	"block.atmospheric.rosewood_bookshelf": "Librería de palisandro",
 	"block.atmospheric.rosewood_vertical_slab": "Losa vertical de palisandro",
 	"block.atmospheric.vertical_rosewood_planks": "Madera vertical de palisandro",
 	"block.atmospheric.rosewood_ladder": "Escalera de mano de palisandro",
 	"block.atmospheric.rosewood_leaf_carpet": "Alfombra de hojas de palisandro",
+	"block.atmospheric.rosewood_chest": "Cofre de palisandro",
+	"block.atmospheric.rosewood_trapped_chest": "Cofre trampa de palisandro",
+	"block.atmospheric.rosewood_beehive": "Apiario de palisandro",
+	
+	"block.atmospheric.warm_monkey_brush": "Cepillo de mono cálido",
+	"block.atmospheric.hot_monkey_brush": "Cepillo de mono caliente",
+	"block.atmospheric.scalding_monkey_brush": "Cepillo de mono hirviente",
+	"block.atmospheric.potted_hot_monkey_brush": "Maceta con cepillo de mono",
+	"block.atmospheric.potted_rosewood_sapling": "Maceta con brote de palisandro",
+
+	"block.atmospheric.passion_vine": "Enredadera pasionaria",
+	"block.atmospheric.passion_vine_bundle": "Paquete de pasionarias",	
+	
 	"block.atmospheric.passionfruit_crate": "Cajón de frutas de la pasión",
 	"block.atmospheric.shimmering_passionfruit_crate": "Cajón de frutas de la pasión relucientes",
 	
@@ -79,10 +84,10 @@
 	"item.minecraft.tipped_arrow.effect.worsening_strong": "Flecha de degradación",
 	"item.minecraft.tipped_arrow.effect.worsening_long": "Flecha de degradación",
 	
-	"biome.atmospheric.rosewood_forest": "Bosque de palisandros",
-	"biome.atmospheric.rosewood_mountains": "Montañas de palisandros",
-	"biome.atmospheric.rosewood_plateau": "Meseta de palisandros",
-	"biome.atmospheric.rosewood_forest_plateau": "Meseta de bosque de palisandros",
+	"biome.atmospheric.rainforest": "Selva",
+	"biome.atmospheric.rainforest_mountains": "Montañas de selva",
+	"biome.atmospheric.rainforest_plateau": "Meseta de selva",
+	"biome.atmospheric.sparse_rainforest_plateau": "Meseta de selva dispersa",
 	
 	"death.attack.passionfruitSeed": "%1$s ha sido bombardeado/a con las semillas de %2$s",
 	"death.attack.shimmeringPassionfruitSeed": "%1$s ha sido bombardeado/a apasionadamente con las semillas de %2$s",
@@ -159,6 +164,16 @@
 	"block.atmospheric.yucca_sapling": "Brote de yuca",
 	"block.atmospheric.yucca_leaves": "Hojas de yuca",
 	"block.atmospheric.yucca_sign": "Cartel de yuca",
+	"block.atmospheric.yucca_wall_sign": "Cartel de yuca en pared",
+
+	"block.atmospheric.yucca_bookshelf": "Librería de yuca",
+	"block.atmospheric.yucca_vertical_slab": "Losa vertical de yuca",
+	"block.atmospheric.vertical_yucca_planks": "Madera vertical de yuca",
+	"block.atmospheric.yucca_ladder": "Escalera de mano de yuca",
+	"block.atmospheric.yucca_leaf_carpet": "Alfombra de hojas de yuca",
+	"block.atmospheric.yucca_chest": "Cofre de yuca",
+	"block.atmospheric.yucca_trapped_chest": "Cofre trampa de yuca",
+	"block.atmospheric.yucca_beehive": "Apiario de yuca",
 	
 	"block.atmospheric.yucca_flower": "Flor de yuca",
 	"block.atmospheric.tall_yucca_flower": "Flor de yuca alta",
@@ -171,11 +186,6 @@
 	"block.atmospheric.potted_barrel_cactus": "Maceta con cactus barril",
 	"block.atmospheric.potted_gilia": "Maceta con gilia",
 	
-	"block.atmospheric.yucca_bookshelf": "Librería de yuca",
-	"block.atmospheric.yucca_vertical_slab": "Losa vertical de yuca",
-	"block.atmospheric.vertical_yucca_planks": "Madera vertical de yuca",
-	"block.atmospheric.yucca_ladder": "Escalera de mano de yuca",
-	"block.atmospheric.yucca_leaf_carpet": "Alfombra de hojas de yuca",
 	"block.atmospheric.yucca_cask": "Barrica de yucas",
 	"block.atmospheric.roasted_yucca_cask": "Barrica de yucas asadas",
 	"block.atmospheric.yucca_gateau": "Gateau de yuca",
@@ -290,6 +300,7 @@
 	"block.atmospheric.kousa_sapling": "Brote de kousa",
 	"block.atmospheric.kousa_leaves": "Hojas de kousa",
 	"block.atmospheric.kousa_sign": "Cartel de kousa",
+	"block.atmospheric.kousa_wall_sign": "Cartel de kousa en pared",
 	
 	"block.atmospheric.potted_kousa_sapling": "Maceta con brote de kousa",
 	
@@ -298,6 +309,9 @@
 	"block.atmospheric.vertical_kousa_planks": "Madera vertical de kousa",
 	"block.atmospheric.kousa_ladder": "Escalera de mano de kousa",
 	"block.atmospheric.kousa_leaf_carpet": "Alfombra de hojas de kousa",
+	"block.atmospheric.kousa_chest": "Cofre de kousa",
+	"block.atmospheric.kousa_trapped_chest": "Cofre trampa de kousa",
+	"block.atmospheric.kousa_beehive": "Apiario de kousa",
 	
 	"item.atmospheric.kousa_boat": "Barca de kousa",
   
@@ -325,6 +339,7 @@
 	"block.atmospheric.aspen_sapling": "Brote de álamo",
 	"block.atmospheric.aspen_leaves": "Hojas de álamo",
 	"block.atmospheric.aspen_sign": "Cartel de álamo",
+	"block.atmospheric.aspen_wall_sign": "Cartel de álamo en pared",
 	
 	"block.atmospheric.potted_aspen_sapling": "Maceta con brote de álamo",
 	
@@ -333,6 +348,9 @@
 	"block.atmospheric.vertical_aspen_planks": "Madera vertical de álamo",
 	"block.atmospheric.aspen_ladder": "Escalera de mano de álamo",
 	"block.atmospheric.aspen_leaf_carpet": "Alfombra de hojas de álamo",
+	"block.atmospheric.aspen_chest": "Cofre de álamo",
+	"block.atmospheric.aspen_trapped_chest": "Cofre trampa de álamo",
+	"block.atmospheric.aspen_beehive": "Apiario de álamo",
 	
 	"item.atmospheric.aspen_boat": "Barca de álamo",
 
@@ -354,6 +372,7 @@
 	"block.atmospheric.grimwood_sapling": "Brote siniestro",
 	"block.atmospheric.grimwood_leaves": "Hojas siniestras",
 	"block.atmospheric.grimwood_sign": "Cartel siniestro",
+	"block.atmospheric.grimwood_wall_sign": "Cartel siniestro en pared",
 	"block.atmospheric.potted_grimwood_sapling": "Maceta con brote siniestro",
 
 	"block.atmospheric.grimwood_bookshelf": "Librería siniestra",
@@ -361,6 +380,9 @@
 	"block.atmospheric.vertical_grimwood_planks": "Madera vertical siniestra",
 	"block.atmospheric.grimwood_ladder": "Escalera de mano siniestra",
 	"block.atmospheric.grimwood_leaf_carpet": "Alfombra de hojas siniestras",
+	"block.atmospheric.grimwood_chest": "Cofre siniestro",
+	"block.atmospheric.grimwood_trapped_chest": "Cofre trampa siniestro",
+	"block.atmospheric.grimwood_beehive": "Apiario siniestro",
 
 	"item.atmospheric.grimwood_boat": "Barca siniestra",
  
