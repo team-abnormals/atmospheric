@@ -31,7 +31,7 @@ public final class RockyDunesHillsBiome extends Biome {
 		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 5);
 		AtmosphericBiomeFeatures.addDuneRocks(this, 2, 3);
 		AtmosphericBiomeFeatures.addDeadBushes(this, 4);
-		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.1F, 1, false);
+		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.1F, 1);
 		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 1);
 		AtmosphericBiomeFeatures.addAloeVera(this, 1);
 

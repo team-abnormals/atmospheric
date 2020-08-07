@@ -6,7 +6,6 @@ import java.util.Set;
 
 import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.AloeVeraFeature;
-import com.minecraftabnormals.atmospheric.common.world.gen.feature.BabyYuccaTreeFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.BarrelCactusFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.CoarseDirtPatchFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.DirectionalFlowersFeature;
@@ -17,6 +16,7 @@ import com.minecraftabnormals.atmospheric.common.world.gen.feature.RosewoodTreeF
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.SurfaceFossilFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaFlowerFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaTreeFeature;
+import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.common.world.gen.structure.AridShrinePieces;
 import com.minecraftabnormals.atmospheric.common.world.gen.structure.AridShrineStructure;
 import com.minecraftabnormals.atmospheric.common.world.gen.surfacebuilders.DunesSurfaceBuilder;
@@ -58,12 +58,7 @@ public class AtmosphericFeatures {
 	public static final Feature<NoFeatureConfig> SCALDING_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig.field_236558_a_, 3);
 	
 	public static final Feature<BaseTreeFeatureConfig> ROSEWOOD_TREE = new RosewoodTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
-	
-	public static final Feature<BaseTreeFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, false, false);
-	public static final Feature<BaseTreeFeatureConfig> PETRIFIED_YUCCA_TREE = new YuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, false, true);
-	public static final Feature<BaseTreeFeatureConfig> YUCCA_TREE_PATCH = new YuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, true, false);
-	public static final Feature<BaseTreeFeatureConfig> BABY_YUCCA_TREE = new BabyYuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, false);
-	public static final Feature<BaseTreeFeatureConfig> BABY_YUCCA_TREE_PATCH = new BabyYuccaTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, true);
+	public static final Feature<YuccaTreeFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(YuccaTreeFeatureConfig.CODEC_YUCCA_TREE_FEATURE_CONFIG);
 
 //	public static final Feature<BaseTreeFeatureConfig> KOUSA_TREE = new TreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
 //	public static final Feature<BaseTreeFeatureConfig> ASPEN_TREE = new TreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
@@ -99,12 +94,7 @@ public class AtmosphericFeatures {
         	YUCCA_FLOWER.setRegistryName(Atmospheric.MODID, "yucca_flower"),
 
         	ROSEWOOD_TREE.setRegistryName(Atmospheric.MODID, "rosewood_tree"),
-        	
-        	YUCCA_TREE.setRegistryName(Atmospheric.MODID, "yucca_tree"),
-        	PETRIFIED_YUCCA_TREE.setRegistryName(Atmospheric.MODID, "petrified_yucca_tree"),
-        	YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "yucca_tree_patch")	,
-        	BABY_YUCCA_TREE.setRegistryName(Atmospheric.MODID, "baby_yucca_tree"),
-        	BABY_YUCCA_TREE_PATCH.setRegistryName(Atmospheric.MODID, "baby_yucca_tree_patch")
+        	YUCCA_TREE.setRegistryName(Atmospheric.MODID, "yucca_tree")
         ); 
     }
     
@@ -148,15 +138,15 @@ public class AtmosphericFeatures {
 
     public static void generate(Biome biome) {
         if (biome == Biomes.DESERT || biome == Biomes.DESERT_HILLS) {
-            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.005F, 1, false);
+            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.005F, 1);
         }
         
         if (biome == Biomes.MODIFIED_WOODED_BADLANDS_PLATEAU || biome == Biomes.WOODED_BADLANDS_PLATEAU) {
-            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.25F, 1, false);
+            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.25F, 1);
         }
         
         if (biome == Biomes.SHATTERED_SAVANNA || biome == Biomes.SHATTERED_SAVANNA_PLATEAU) {
-            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.15F, 1, false);
+            AtmosphericBiomeFeatures.addYuccaTrees(biome, 0, 0.15F, 1);
         }
         
 //      if (biome == Biomes.MODIFIED_JUNGLE_EDGE) {

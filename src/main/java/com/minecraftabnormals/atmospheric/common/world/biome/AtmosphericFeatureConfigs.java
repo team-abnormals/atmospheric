@@ -4,11 +4,14 @@ import java.util.OptionalInt;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.minecraftabnormals.atmospheric.common.block.YuccaFlowerDoubleBlock;
+import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
@@ -39,7 +42,16 @@ public class AtmosphericFeatureConfigs {
 	
 	public static final BlockState YUCCA_LOG           = AtmosphericBlocks.YUCCA_LOG.get().getDefaultState();
 	public static final BlockState YUCCA_LEAVES        = AtmosphericBlocks.YUCCA_LEAVES.get().getDefaultState();
+	public static final BlockState YUCCA_BRANCH        = AtmosphericBlocks.YUCCA_BRANCH.get().getDefaultState();
 	
+    public static final BlockState YUCCA_BUNDLE         = AtmosphericBlocks.YUCCA_BUNDLE.get().getDefaultState();
+    public static final BlockState ROASTED_YUCCA_BUNDLE = AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get().getDefaultState();
+
+    public static final BlockState ARID_SANDSTONE           = AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState();
+    public static final BlockState ARID_SANDSTONE_WALL      = AtmosphericBlocks.ARID_SANDSTONE_WALL.get().getDefaultState();
+    public static final BlockState RED_ARID_SANDSTONE       = AtmosphericBlocks.RED_ARID_SANDSTONE.get().getDefaultState();
+    public static final BlockState RED_ARID_SANDSTONE_WALL  = AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get().getDefaultState();
+    
 	public static final BlockState ASPEN_LOG           = AtmosphericBlocks.ASPEN_LOG.get().getDefaultState();
 	public static final BlockState ASPEN_LEAVES        = AtmosphericBlocks.ASPEN_LEAVES.get().getDefaultState();
 	
@@ -54,6 +66,12 @@ public class AtmosphericFeatureConfigs {
 	public static final BlockState CRUSTOSE        = AtmosphericBlocks.CRUSTOSE.get().getDefaultState();
 	public static final BlockState ALOE_VERA       = AtmosphericBlocks.ALOE_VERA.get().getDefaultState();
 	public static final BlockState YUCCA_FLOWER	   = AtmosphericBlocks.YUCCA_FLOWER.get().getDefaultState();
+	public static final BlockState TALL_YUCCA_FLOWER_TOP    = AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState().with(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.UPPER);
+    public static final BlockState TALL_YUCCA_FLOWER_BOTTOM = AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState().with(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.LOWER);
+
+    public static final YuccaTreeFeatureConfig.Builder YUCCA_TREE_BUILDER           = new YuccaTreeFeatureConfig.Builder(new SimpleBlockStateProvider(YUCCA_LOG), new SimpleBlockStateProvider(YUCCA_LEAVES), new SimpleBlockStateProvider(YUCCA_BRANCH), new SimpleBlockStateProvider(YUCCA_BUNDLE), new SimpleBlockStateProvider(YUCCA_FLOWER), new SimpleBlockStateProvider(TALL_YUCCA_FLOWER_TOP), new SimpleBlockStateProvider(TALL_YUCCA_FLOWER_BOTTOM));
+    public static final YuccaTreeFeatureConfig.Builder ARID_YUCCA_TREE_BUILDER      = new YuccaTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ARID_SANDSTONE), new SimpleBlockStateProvider(ARID_SANDSTONE), new SimpleBlockStateProvider(ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(ROASTED_YUCCA_BUNDLE), new SimpleBlockStateProvider(ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(ARID_SANDSTONE_WALL));
+    public static final YuccaTreeFeatureConfig.Builder RED_ARID_YUCCA_TREE_BUILDER  = new YuccaTreeFeatureConfig.Builder(new SimpleBlockStateProvider(RED_ARID_SANDSTONE), new SimpleBlockStateProvider(RED_ARID_SANDSTONE), new SimpleBlockStateProvider(RED_ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(ROASTED_YUCCA_BUNDLE), new SimpleBlockStateProvider(RED_ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(RED_ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(RED_ARID_SANDSTONE_WALL));
 
 	public static final StructureFeature<NoFeatureConfig, ? extends Structure<NoFeatureConfig>> ARID_SHRINE = AtmosphericFeatures.ARID_SHRINE.func_236391_a_(NoFeatureConfig.field_236559_b_);
 
@@ -70,8 +88,16 @@ public class AtmosphericFeatureConfigs {
     public static final BaseTreeFeatureConfig KOUSA_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(KOUSA_LOG), new SimpleBlockStateProvider(KOUSA_LEAVES), new FancyFoliagePlacer(2, 0, 4, 0, 4), new FancyTrunkPlacer(3, 11, 0), new TwoLayerFeature(0, 0, 0, OptionalInt.of(4)))).setIgnoreVines().func_236702_a_(Heightmap.Type.MOTION_BLOCKING).build();
     public static final BaseTreeFeatureConfig KOUSA_TREE_WITH_MORE_BEEHIVES_CONFIG = KOUSA_TREE_CONFIG.func_236685_a_(ImmutableList.of(MANY_BEEHIVES));
     
-    public static final BaseTreeFeatureConfig YUCCA_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(YUCCA_LOG), new SimpleBlockStateProvider(YUCCA_LEAVES), null, null, null)).setIgnoreVines().func_236702_a_(Heightmap.Type.MOTION_BLOCKING).build();
-    public static final BaseTreeFeatureConfig YUCCA_TREE_WITH_MORE_BEEHIVES_CONFIG = YUCCA_TREE_CONFIG.func_236685_a_(ImmutableList.of(MANY_BEEHIVES));
+    public static final YuccaTreeFeatureConfig YUCCA_TREE_CONFIG                                = YUCCA_TREE_BUILDER.setHeightmap(Heightmap.Type.MOTION_BLOCKING).build();
+    public static final YuccaTreeFeatureConfig YUCCA_TREE_WITH_PATCH_CONFIG                     = YUCCA_TREE_CONFIG.setPatch();
+    public static final YuccaTreeFeatureConfig YUCCA_TREE_WITH_MORE_BEEHIVES_CONFIG             = YUCCA_TREE_CONFIG.func_236685_a_(ImmutableList.of(MANY_BEEHIVES));
+    public static final YuccaTreeFeatureConfig YUCCA_TREE_WITH_MORE_BEEHIVES_AND_PATCH_CONFIG   = YUCCA_TREE_WITH_MORE_BEEHIVES_CONFIG.setPatch();
+    
+    public static final YuccaTreeFeatureConfig BABY_YUCCA_TREE_CONFIG               = YUCCA_TREE_CONFIG.setBaby();
+    public static final YuccaTreeFeatureConfig BABY_YUCCA_TREE_WITH_PATCH_CONFIG    = BABY_YUCCA_TREE_CONFIG.setPatch();
+    
+    public static final YuccaTreeFeatureConfig ARID_YUCCA_TREE_CONFIG       = ARID_YUCCA_TREE_BUILDER.isPetrified().setHeightmap(Heightmap.Type.MOTION_BLOCKING).build();
+    public static final YuccaTreeFeatureConfig RED_ARID_YUCCA_TREE_CONFIG   = RED_ARID_YUCCA_TREE_BUILDER.isPetrified().setHeightmap(Heightmap.Type.MOTION_BLOCKING).build();
 	
 	public static final BaseTreeFeatureConfig ROSEWOOD_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ROSEWOOD_LOG), new SimpleBlockStateProvider(ROSEWOOD_LEAVES), null, null, null)).setIgnoreVines().func_236702_a_(Heightmap.Type.MOTION_BLOCKING).build();
     public static final BaseTreeFeatureConfig ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG = ROSEWOOD_TREE_CONFIG.func_236685_a_(ImmutableList.of(FEW_BEEHIVES));

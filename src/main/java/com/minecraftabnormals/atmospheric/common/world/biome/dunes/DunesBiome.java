@@ -30,7 +30,7 @@ public final class DunesBiome extends Biome {
 		DefaultBiomeFeatures.addMushrooms(this);
 
 		AtmosphericBiomeFeatures.addDeadBushes(this, 2);
-		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.25F, 1, false);
+		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.25F, 1);
 		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 2);
 		AtmosphericBiomeFeatures.addAloeVera(this, 2);
 		AtmosphericBiomeFeatures.addYuccaFlower(this, 2);

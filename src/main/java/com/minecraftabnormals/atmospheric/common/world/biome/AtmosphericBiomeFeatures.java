@@ -10,7 +10,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.BlockBlobConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
@@ -94,17 +93,20 @@ public class AtmosphericBiomeFeatures {
 		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, AtmosphericFeatures.SURFACE_FOSSIL.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.CHANCE_PASSTHROUGH.configure(new ChanceConfig(64))));
 	}
 
-	public static void addYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount, boolean petrified) {
-		Feature<BaseTreeFeatureConfig> feature = petrified ? AtmosphericFeatures.PETRIFIED_YUCCA_TREE : AtmosphericFeatures.YUCCA_TREE_PATCH;
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, feature.withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
+	public static void addYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount) {
+        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(AtmosphericFeatures.YUCCA_TREE.withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_WITH_PATCH_CONFIG).withChance(0.25F)), AtmosphericFeatures.YUCCA_TREE.withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
+	}
+
+	public static void addPetrifiedYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount) {
+        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(AtmosphericFeatures.YUCCA_TREE.withConfiguration(AtmosphericFeatureConfigs.RED_ARID_YUCCA_TREE_CONFIG).withChance(0.25F)), AtmosphericFeatures.YUCCA_TREE.withConfiguration(AtmosphericFeatureConfigs.ARID_YUCCA_TREE_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
 	}
 	
 	public static void addBeehiveYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_TREE_PATCH.withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_WITH_MORE_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_TREE.withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_WITH_MORE_BEEHIVES_AND_PATCH_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
 	}
 	
 	public static void addBabyYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.BABY_YUCCA_TREE_PATCH.withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
+        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(AtmosphericFeatures.YUCCA_TREE.withConfiguration(AtmosphericFeatureConfigs.BABY_YUCCA_TREE_WITH_PATCH_CONFIG).withChance(0.25F)), AtmosphericFeatures.YUCCA_TREE.withConfiguration(AtmosphericFeatureConfigs.BABY_YUCCA_TREE_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
 	}
 	
 	public static void addRainforestWaterFoliage(Biome biomeIn) {
