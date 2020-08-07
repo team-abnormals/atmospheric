@@ -104,7 +104,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH		= HELPER.createBlock("scalding_monkey_brush", 	() -> new MonkeyBrushBlock(() -> AtmosphericEffects.RELIEF.get(), 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> POTTED_WARM_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_warm_monkey_brush",		() -> new FlowerPotBlock(WARM_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
-	public static final RegistryObject<Block> POTTED_HOT_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_monkey_brush",			() -> new FlowerPotBlock(HOT_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
+	public static final RegistryObject<Block> POTTED_HOT_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_hot_monkey_brush",			() -> new FlowerPotBlock(HOT_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_SCALDING_MONKEY_BRUSH	= HELPER.createBlockNoItem("potted_scalding_monkey_brush",	() -> new FlowerPotBlock(SCALDING_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_ROSEWOOD_SAPLING		= HELPER.createBlockNoItem("potted_rosewood_sapling",		() -> new FlowerPotBlock(ROSEWOOD_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 
