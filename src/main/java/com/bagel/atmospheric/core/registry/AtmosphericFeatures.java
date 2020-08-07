@@ -5,7 +5,6 @@ import java.util.Locale;
 import java.util.Set;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
-import com.bagel.atmospheric.common.world.biome.AtmosphericFeatureConfigs;
 import com.bagel.atmospheric.common.world.gen.feature.AloeVeraFeature;
 import com.bagel.atmospheric.common.world.gen.feature.BabyYuccaTreeFeature;
 import com.bagel.atmospheric.common.world.gen.feature.BarrelCactusFeature;

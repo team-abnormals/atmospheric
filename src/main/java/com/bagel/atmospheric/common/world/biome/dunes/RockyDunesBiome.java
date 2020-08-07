@@ -1,7 +1,6 @@
 package com.bagel.atmospheric.common.world.biome.dunes;
 
 import com.bagel.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
-import com.bagel.atmospheric.common.world.biome.AtmosphericFeatureConfigs;
 import com.bagel.atmospheric.core.registry.AtmosphericBiomes;
 
 import net.minecraft.entity.EntityClassification;
