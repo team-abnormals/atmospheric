@@ -14,7 +14,6 @@ public final class PetrifiedDunesBiome extends Biome {
         super(builder);
 		
         this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_DESERT);
-        this.func_235063_a_(DefaultBiomeFeatures.PILLAGER_OUTPOST);
         
         DefaultBiomeFeatures.func_235196_b_(this); // MINESHAFTS & STRONGHOLDS
 
