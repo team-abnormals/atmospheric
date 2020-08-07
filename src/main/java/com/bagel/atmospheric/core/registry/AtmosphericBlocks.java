@@ -20,6 +20,7 @@ import com.bagel.atmospheric.common.block.YuccaLeafCarpetBlock;
 import com.bagel.atmospheric.common.block.YuccaLeavesBlock;
 import com.bagel.atmospheric.common.block.YuccaSaplingBlock;
 import com.bagel.atmospheric.common.block.trees.AspenTree;
+import com.bagel.atmospheric.common.block.trees.GrimwoodTree;
 import com.bagel.atmospheric.common.block.trees.KousaTree;
 import com.bagel.atmospheric.common.block.trees.RosewoodTree;
 import com.bagel.atmospheric.common.block.trees.YuccaTree;
@@ -315,7 +316,7 @@ public class AtmosphericBlocks {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public static final RegistryObject<Block> GRIMWOOD_PLANKS 			= HELPER.createBlock("grimwood_planks", 		() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> GRIMWOOD_SAPLING 			= HELPER.createBlock("grimwood_sapling", 		() -> new AbnormalsSaplingBlock(new RosewoodTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> GRIMWOOD_SAPLING 			= HELPER.createBlock("grimwood_sapling", 		() -> new AbnormalsSaplingBlock(new GrimwoodTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_GRIMWOOD_LOG 	= HELPER.createBlock("stripped_grimwood_log", 	() -> new StrippedLogBlock(Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_LOG 				= HELPER.createBlock("grimwood_log", 			() -> new AbnormalsLogBlock(STRIPPED_GRIMWOOD_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_GRIMWOOD 		= HELPER.createBlock("stripped_grimwood", 		() -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
