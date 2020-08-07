@@ -20,7 +20,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atmospheric:monkey_brush"
+          "name": "atmospheric:hot_monkey_brush"
         }
       ],
       "conditions": [

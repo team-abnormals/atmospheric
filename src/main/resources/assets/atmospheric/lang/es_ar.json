@@ -22,9 +22,9 @@
 	"block.atmospheric.passion_vine_bundle": "Paquete de pasionarias",	
 	
 	"block.atmospheric.warm_monkey_brush": "Cepillo de mono cálido",
-	"block.atmospheric.monkey_brush": "Cepillo de mono caliente",
+	"block.atmospheric.hot_monkey_brush": "Cepillo de mono caliente",
 	"block.atmospheric.scalding_monkey_brush": "Cepillo de mono hirviente",
-	"block.atmospheric.potted_monkey_brush": "Maceta con cepillo de mono",
+	"block.atmospheric.potted_hot_monkey_brush": "Maceta con cepillo de mono",
 	"block.atmospheric.potted_rosewood_sapling": "Maceta con brote de palisandro",
 	
 	"block.atmospheric.rosewood_bookshelf": "Biblioteca de palisandro",

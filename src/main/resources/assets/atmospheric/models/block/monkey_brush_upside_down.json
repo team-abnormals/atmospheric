@@ -1,7 +1,0 @@
-{
-    "parent": "atmospheric:block/upside_down_cross",
-    "textures": {
-        "particle": "atmospheric:block/hot_monkey_brush",
-        "cross": "atmospheric:block/hot_monkey_brush"
-    }
-}
