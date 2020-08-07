@@ -6,11 +6,11 @@ import java.util.Random;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+import com.teamabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.potion.Effect;
@@ -31,7 +31,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IPlantable;
 
-public class MonkeyBrushBlock extends FlowerBlock implements IGrowable, IPlantable {
+public class MonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowable, IPlantable {
 	public static final DirectionProperty FACING = BlockStateProperties.FACING;
 	
 	protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);

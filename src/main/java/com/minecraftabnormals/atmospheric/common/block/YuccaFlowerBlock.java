@@ -11,10 +11,10 @@ import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.abnormals_core.common.advancement.EmptyTrigger;
+import com.teamabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MobEntity;
@@ -30,7 +30,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class YuccaFlowerBlock extends FlowerBlock implements IGrowable, IYuccaPlant {
+public class YuccaFlowerBlock extends AbnormalsFlowerBlock implements IGrowable, IYuccaPlant {
 	private final Supplier<Effect> stewEffect;
 	
 	public YuccaFlowerBlock(Supplier<Effect> effect, int effectDuration, Properties properties) {
