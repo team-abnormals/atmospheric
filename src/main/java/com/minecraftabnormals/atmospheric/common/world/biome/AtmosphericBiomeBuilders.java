@@ -9,9 +9,9 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class AtmosphericBiomeBuilders {
     
-    public static final Biome.Builder RAINFOREST            = createRainforestBiome(0.1F, 0.2F, 0.90F, 0.80F);
-    public static final Biome.Builder RAINFOREST_MOUNTAINS  = createRainforestBiome(0.2825F, 0.225F, 0.90F, 0.80F);
-    public static final Biome.Builder RAINFOREST_PLATEAU    = createRainforestBiome(1.5F, 0.025F, 0.90F, 0.80F);
+    public static final Biome.Builder RAINFOREST            = createRainforestBiome(0.1F, 0.2F, 0.90F, 0.95F);
+    public static final Biome.Builder RAINFOREST_MOUNTAINS  = createRainforestBiome(0.2825F, 0.225F, 0.90F, 0.95F);
+    public static final Biome.Builder RAINFOREST_PLATEAU    = createRainforestBiome(1.5F, 0.025F, 0.90F, 0.95F);
     
     public static final Biome.Builder DUNES             = createDunesBiome(0.45F, 0.15F, 2.0F, 0.0F);
     public static final Biome.Builder DUNES_HILLS       = createDunesBiome(0.45F, 0.20F, 2.0F, 0.0F);
@@ -21,7 +21,7 @@ public class AtmosphericBiomeBuilders {
     private static Biome.Builder createRainforestBiome(float depth, float scale, float temperature, float downfall) {
         return (new Biome.Builder())
         .surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
-        .precipitation(Biome.RainType.NONE)
+        .precipitation(Biome.RainType.RAIN)
         .category(Biome.Category.FOREST)
         .depth(depth)
         .scale(scale)
