@@ -3,8 +3,6 @@ package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
-import java.util.function.Supplier;
 
 import com.minecraftabnormals.atmospheric.common.block.MonkeyBrushBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
@@ -12,12 +10,9 @@ import com.mojang.serialization.Codec;
 import com.teamabnormals.abnormals_core.core.utils.TreeUtils;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.IWorldGenerationReader;
@@ -25,10 +20,7 @@ import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 
-@SuppressWarnings("unused")
 public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
-	private final Supplier<BlockState> ROSEWOOD_LOG = () -> AtmosphericBlocks.ROSEWOOD_LOG.get().getDefaultState();
-	private final Supplier<BlockState> ROSEWOOD_LEAVES = () -> AtmosphericBlocks.ROSEWOOD_LEAVES.get().getDefaultState().with(LeavesBlock.DISTANCE, 1);
 	private List<Block> brushes = new ArrayList<>();
 	
 	public RosewoodTreeFeature(Codec<BaseTreeFeatureConfig> config) {
@@ -45,10 +37,8 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 			brushes.clear();
 		}
 		
-		
 		int branches = 2 + rand.nextInt(3);
 		int height = 4 + rand.nextInt(2) + rand.nextInt(3) + rand.nextInt(3);
-		int bonusCanopies = rand.nextInt(3);
 		boolean flag = true;
 
 		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getHeight()) {
@@ -80,18 +70,18 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 			} else if (TreeUtils.isValidGround(worldIn, position.down(), (SaplingBlock)AtmosphericBlocks.ROSEWOOD_SAPLING.get()) && position.getY() < worldIn.getHeight() - branches - 1) {
 				//base log
 				TreeUtils.setDirtAt(worldIn, position.down());
-				Direction direction = Direction.Plane.HORIZONTAL.random(rand);
+				List<BlockPos> logsPlaced = new ArrayList<>();
 
 				int logX = position.getX();
 				int logZ = position.getZ();
 				boolean canopy = false;
-				BlockPos sapling = position;
 
 				for (int k1 = 0; k1 < height; ++k1) {
 					int logY = position.getY() + k1;
 					BlockPos blockpos = new BlockPos(logX, logY, logZ);
 					if (TreeUtils.isAirOrLeaves(worldIn, blockpos)) {
 					    TreeUtils.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);
+					    logsPlaced.add(blockpos);
 					}
 					if (rand.nextInt(6) == 0 && k1 > 3 && k1 < height && canopy == false) {
 						int leafSize = 1 + rand.nextInt(2);
@@ -125,8 +115,8 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 					for (int k4 = 0; k4 < turns; ++k4) {
 						branchLength = 1 + rand.nextInt(2) + rand.nextInt(2);
 						branchHeight = 1 + rand.nextInt(3) + rand.nextInt(2);
-						createHorizontalLog(branchLength, worldIn, currentPos, offset, rand, config);
-						createVerticalLog(branchHeight, worldIn, currentPos.offset(offset, branchLength), rand, config);
+						createHorizontalLog(branchLength, worldIn, currentPos, offset, rand, config, logsPlaced);
+						createVerticalLog(branchHeight, worldIn, currentPos.offset(offset, branchLength), rand, config, logsPlaced);
 						currentPos = currentPos.offset(offset, branchLength).offset(Direction.UP, branchHeight);
 					}
 					
@@ -159,15 +149,15 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 					logZ = position.getZ();
 				}
 				
-//				if (!brushes.isEmpty()) {
-//					for (BlockPos pos : ) {
-//						for(Direction direction2 : Direction.values()) {
-//							if (TreeUtils.isAir(worldIn, pos.offset(direction2)) && rand.nextInt(3) == 0) {
-//								worldIn.setBlockState(pos.offset(direction2), brushes.get(rand.nextInt(brushes.size())).getDefaultState().with(MonkeyBrushBlock.FACING, direction2), 18);
-//							}
-//						}
-//					}
-//				}
+				if (!brushes.isEmpty()) {
+					for (BlockPos pos : logsPlaced) {
+						for(Direction direction2 : Direction.values()) {
+							if (TreeUtils.isAir(worldIn, pos.offset(direction2)) && rand.nextInt(3) == 0) {
+								worldIn.setBlockState(pos.offset(direction2), brushes.get(rand.nextInt(brushes.size())).getDefaultState().with(MonkeyBrushBlock.FACING, direction2), 18);
+							}
+						}
+					}
+				}
 
 				return true;
 			} else {
@@ -178,14 +168,7 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 		}
 	}
 	
-	private void createHorizontalLog(
-			int branchLength,
-			IWorldGenerationReader worldIn, 
-			BlockPos pos, 
-			Direction direction, 
-			Random rand, 
-			BaseTreeFeatureConfig config) {
-		
+	private void createHorizontalLog(int branchLength, IWorldGenerationReader worldIn, BlockPos pos, Direction direction, Random rand, BaseTreeFeatureConfig config, List<BlockPos> logsPlaced) {
 		int logX = pos.getX();
 		int logY = pos.getY();
 		int logZ = pos.getZ();
@@ -198,29 +181,23 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 			BlockPos blockpos1 = new BlockPos(logX, logY, logZ);
 			if (TreeUtils.isAirOrLeaves(worldIn, blockpos1)) {
 			    TreeUtils.placeDirectionalLogAt(worldIn, blockpos1, direction, rand, config);
+			    logsPlaced.add(blockpos1);
 			}
 		}
 	}
 	
-	private void createVerticalLog(
-			int branchHeight,
-			IWorldGenerationReader worldIn, 
-			BlockPos pos, 
-			Random rand,
-			BaseTreeFeatureConfig config) {
-		
+	private void createVerticalLog(int branchHeight, IWorldGenerationReader worldIn, BlockPos pos, Random rand, BaseTreeFeatureConfig config, List<BlockPos> logsPlaced) {
 		int logX = pos.getX();
 		int logY = pos.getY();
 		int logZ = pos.getZ();
 		boolean canopy = false;
 		
 		for (int k1 = 0; k1 < branchHeight; ++k1) {
-			
 			logY += 1;
-			
 			BlockPos blockpos = new BlockPos(logX, logY, logZ);
 			if (TreeUtils.isAirOrLeaves(worldIn, blockpos)) {
 			    TreeUtils.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);	
+			    logsPlaced.add(blockpos);
 			}
 			if (rand.nextInt(6) == 0 && canopy == false) {
 				int leafSize = 1 + rand.nextInt(2);
@@ -233,14 +210,6 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				}
 				canopy = true;
 			}
-		}
-	}
-	
-	private void placeBrushAt(Set<BlockPos> changedBlocks, IWorldGenerationReader world, BlockPos pos, MutableBoundingBox boundsIn, Direction direction2) {
-		Random rand = new Random();
-		boundsIn.expandTo(new MutableBoundingBox(pos, pos));
-		if (TreeUtils.isAir(world, pos.offset(direction2))) {
-			world.setBlockState(pos.offset(direction2), brushes.get(rand.nextInt(brushes.size())).getDefaultState().with(MonkeyBrushBlock.FACING, direction2), 18);
 		}
 	}
 }
