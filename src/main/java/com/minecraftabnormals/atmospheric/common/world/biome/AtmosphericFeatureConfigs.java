@@ -102,7 +102,7 @@ public class AtmosphericFeatureConfigs {
 	public static final BaseTreeFeatureConfig ROSEWOOD_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ROSEWOOD_LOG), new SimpleBlockStateProvider(ROSEWOOD_LEAVES), null, null, null)).setIgnoreVines().func_236702_a_(Heightmap.Type.MOTION_BLOCKING).build();
     public static final BaseTreeFeatureConfig ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG = ROSEWOOD_TREE_CONFIG.func_236685_a_(ImmutableList.of(FEW_BEEHIVES));
     public static final BaseTreeFeatureConfig ROSEWOOD_TREE_WITH_MORE_BEEHIVES_CONFIG = ROSEWOOD_TREE_CONFIG.func_236685_a_(ImmutableList.of(MANY_BEEHIVES));
-	
+
 	public static final BaseTreeFeatureConfig ASPEN_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ASPEN_LOG), new SimpleBlockStateProvider(ASPEN_LEAVES), new SpruceFoliagePlacer(2, 1, 0, 2, 1, 1), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).setIgnoreVines().build();
 	public static final BaseTreeFeatureConfig MEGA_ASPEN_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ASPEN_LOG), new SimpleBlockStateProvider(ASPEN_LEAVES), new MegaPineFoliagePlacer(0, 0, 0, 0, 4, 13), new GiantTrunkPlacer(13, 2, 14), new TwoLayerFeature(1, 1, 2))).func_236703_a_(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(CRUSTOSE)))).build();
 

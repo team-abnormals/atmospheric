@@ -87,7 +87,8 @@
 	"biome.atmospheric.rainforest": "Rainforest",
 	"biome.atmospheric.rainforest_mountains": "Rainforest Mountains",
 	"biome.atmospheric.rainforest_plateau": "Rainforest Plateau",
-	"biome.atmospheric.sparse_rainforest_plateau": "Sparese Rainforest Plateau",
+	"biome.atmospheric.sparse_rainforest_plateau": "Sparse Rainforest Plateau",
+	"biome.atmospheric.rainforest_basin": "Rainforest Basin",
 	
 	"death.attack.passionfruitSeed": "%1$s was barraged to death by %2$s's seeds",
 	"death.attack.shimmeringPassionfruitSeed": "%1$s was passionately barraged to death by %2$s's seeds",

@@ -13,6 +13,7 @@ import com.minecraftabnormals.atmospheric.common.world.gen.feature.DuneRocksFeat
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.PassionVineFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.PodzolFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.RosewoodTreeFeature;
+import com.minecraftabnormals.atmospheric.common.world.gen.feature.RosewoodWaterTreeFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.SurfaceFossilFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaFlowerFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaTreeFeature;
@@ -58,6 +59,7 @@ public class AtmosphericFeatures {
 	public static final Feature<NoFeatureConfig> SCALDING_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig.field_236558_a_, 3);
 	
 	public static final Feature<BaseTreeFeatureConfig> ROSEWOOD_TREE = new RosewoodTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
+	public static final Feature<BaseTreeFeatureConfig> ROSEWOOD_WATER_TREE = new RosewoodWaterTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
 	public static final Feature<YuccaTreeFeatureConfig> YUCCA_TREE = new YuccaTreeFeature(YuccaTreeFeatureConfig.CODEC_YUCCA_TREE_FEATURE_CONFIG);
 
 //	public static final Feature<BaseTreeFeatureConfig> KOUSA_TREE = new TreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
@@ -94,6 +96,7 @@ public class AtmosphericFeatures {
         	YUCCA_FLOWER.setRegistryName(Atmospheric.MODID, "yucca_flower"),
 
         	ROSEWOOD_TREE.setRegistryName(Atmospheric.MODID, "rosewood_tree"),
+        	ROSEWOOD_WATER_TREE.setRegistryName(Atmospheric.MODID, "rosewood_water_tree"),
         	YUCCA_TREE.setRegistryName(Atmospheric.MODID, "yucca_tree")
         ); 
     }
