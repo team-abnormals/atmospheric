@@ -97,7 +97,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_DOOR 			= HELPER.createBlock("rosewood_door", 			() -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> ROSEWOOD_SIGNS = HELPER.createSignBlock("rosewood", MaterialColor.PINK);
 
-	public static final RegistryObject<Block> PASSION_VINE 				= HELPER.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> PASSION_VINE 				= HELPER.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.VINE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= HELPER.createBlock("passion_vine_bundle", 	() -> new PassionVineBundleBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> WARM_MONKEY_BRUSH			= HELPER.createBlock("warm_monkey_brush", 		() -> new MonkeyBrushBlock(() -> AtmosphericEffects.RELIEF.get(), 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> HOT_MONKEY_BRUSH 			= HELPER.createBlock("hot_monkey_brush", 		() -> new MonkeyBrushBlock(() -> AtmosphericEffects.RELIEF.get(), 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
