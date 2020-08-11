@@ -11,8 +11,8 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericFoods {
 	
-	public static final Food PASSIONFRUIT = new Food.Builder().hunger(3).saturation(0.3F).setAlwaysEdible().effect(() -> new EffectInstance(AtmosphericEffects.SPITTING.get(), 140, 0, false, false, true), 1.0F).build();
-	public static final Food SHIMMERING_PASSIONFRUIT = new Food.Builder().hunger(5).saturation(0.2F).setAlwaysEdible().effect(() -> new EffectInstance(AtmosphericEffects.SPITTING.get(), 140, 1, false, false, true), 1.0F).build();
+	public static final Food PASSIONFRUIT = new Food.Builder().hunger(3).saturation(0.3F).setAlwaysEdible().effect(() -> new EffectInstance(AtmosphericEffects.SPITTING.get(), 140, 0, false, false, false), 1.0F).build();
+	public static final Food SHIMMERING_PASSIONFRUIT = new Food.Builder().hunger(5).saturation(0.2F).setAlwaysEdible().effect(() -> new EffectInstance(AtmosphericEffects.SPITTING.get(), 140, 1, false, false, false), 1.0F).build();
 	public static final Food PASSIONFRUIT_TART = new Food.Builder().hunger(4).saturation(0.6F).build();
 	public static final Food PASSIONFRUIT_SORBET = new Food.Builder().hunger(15).saturation(0.5F).effect(() -> new EffectInstance(Effects.SLOWNESS, 300, 4, false, false, true), 1.0F).build();
 	
