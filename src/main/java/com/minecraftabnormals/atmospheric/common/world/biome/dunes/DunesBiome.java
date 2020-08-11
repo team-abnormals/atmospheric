@@ -14,9 +14,7 @@ public final class DunesBiome extends Biome {
 	public DunesBiome(Biome.Builder builder) {
         super(builder);
 		
-//        this.func_235063_a_(AtmosphericFeatureConfigs.ARID_SHRINE);
         this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_DESERT);
-        
         DefaultBiomeFeatures.func_235196_b_(this); // MINESHAFTS & STRONGHOLDS
 
 		DefaultBiomeFeatures.addCarvers(this);

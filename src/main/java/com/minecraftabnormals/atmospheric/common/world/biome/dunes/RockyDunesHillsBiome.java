@@ -14,8 +14,6 @@ public final class RockyDunesHillsBiome extends Biome {
         super(builder);
 		
         this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_DESERT);
-        
-        DefaultBiomeFeatures.func_235191_ai_(this); // UNDERGROUND FOSSILS
         DefaultBiomeFeatures.func_235196_b_(this); // MINESHAFTS & STRONGHOLDS
 
         DefaultBiomeFeatures.addCarvers(this);

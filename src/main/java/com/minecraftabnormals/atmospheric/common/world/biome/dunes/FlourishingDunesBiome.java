@@ -14,7 +14,6 @@ public final class FlourishingDunesBiome extends Biome {
         super(builder);
 		
         this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_DESERT);
-        
         DefaultBiomeFeatures.func_235196_b_(this); // MINESHAFTS & STRONGHOLDS
 
         DefaultBiomeFeatures.addCarvers(this);

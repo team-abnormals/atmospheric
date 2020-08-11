@@ -1,7 +1,6 @@
 package com.minecraftabnormals.atmospheric.core.registry;
 
 import java.util.HashSet;
-import java.util.Locale;
 import java.util.Set;
 
 import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
@@ -18,14 +17,11 @@ import com.minecraftabnormals.atmospheric.common.world.gen.feature.SurfaceFossil
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaFlowerFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaTreeFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
-import com.minecraftabnormals.atmospheric.common.world.gen.structure.AridShrinePieces;
-import com.minecraftabnormals.atmospheric.common.world.gen.structure.AridShrineStructure;
 import com.minecraftabnormals.atmospheric.common.world.gen.surfacebuilders.DunesSurfaceBuilder;
 import com.minecraftabnormals.atmospheric.common.world.gen.surfacebuilders.WaveyDunesSurfaceBuilder;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 
 import net.minecraft.block.Block;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.GenerationStage;
@@ -38,8 +34,6 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraft.world.gen.feature.SphereReplaceConfig;
-import net.minecraft.world.gen.feature.structure.IStructurePieceType;
-import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.event.RegistryEvent;
@@ -76,9 +70,6 @@ public class AtmosphericFeatures {
 	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> WAVEY_DUNES = new WaveyDunesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
 	
-	public static final Structure<NoFeatureConfig> ARID_SHRINE = new AridShrineStructure(NoFeatureConfig.field_236558_a_);
-	public static final IStructurePieceType ARID_SHRINE_PIECES = AridShrinePieces.Piece::new;
-
     @SubscribeEvent
     public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
         event.getRegistry().registerAll(
@@ -100,15 +91,7 @@ public class AtmosphericFeatures {
         	YUCCA_TREE.setRegistryName(Atmospheric.MODID, "yucca_tree")
         ); 
     }
-    
-    @SubscribeEvent
-    public static void registerStructures(RegistryEvent.Register<Structure<?>> event) {
-        event.getRegistry().registerAll(
-            ARID_SHRINE.setRegistryName(Atmospheric.MODID, "arid_shrine")
-        ); 
-        register(ARID_SHRINE_PIECES, "ARID_SHRINE_PIECES");
-    }
-    
+
 	public static void addCarvables() {
 		Set<Block> allBlocksToCarve = new HashSet<Block>();
 		
@@ -156,8 +139,4 @@ public class AtmosphericFeatures {
 //          biome.func_235063_a_(AtmosphericFeatureConfigs.ARID_SHRINE);
 //      }
     }
-    
-    static IStructurePieceType register(IStructurePieceType structurePiece, String key) {
-		return Registry.register(Registry.STRUCTURE_PIECE, key.toLowerCase(Locale.ROOT), structurePiece);
-	}
 }

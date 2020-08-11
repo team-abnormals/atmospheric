@@ -7,7 +7,6 @@ import com.google.common.collect.ImmutableSet;
 import com.minecraftabnormals.atmospheric.common.block.YuccaFlowerDoubleBlock;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -17,10 +16,7 @@ import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
-import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraft.world.gen.feature.TwoLayerFeature;
-import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.foliageplacer.BushFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.FancyFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.MegaPineFoliagePlacer;
@@ -72,8 +68,6 @@ public class AtmosphericFeatureConfigs {
     public static final YuccaTreeFeatureConfig.Builder YUCCA_TREE_BUILDER           = new YuccaTreeFeatureConfig.Builder(new SimpleBlockStateProvider(YUCCA_LOG), new SimpleBlockStateProvider(YUCCA_LEAVES), new SimpleBlockStateProvider(YUCCA_BRANCH), new SimpleBlockStateProvider(YUCCA_BUNDLE), new SimpleBlockStateProvider(YUCCA_FLOWER), new SimpleBlockStateProvider(TALL_YUCCA_FLOWER_TOP), new SimpleBlockStateProvider(TALL_YUCCA_FLOWER_BOTTOM));
     public static final YuccaTreeFeatureConfig.Builder ARID_YUCCA_TREE_BUILDER      = new YuccaTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ARID_SANDSTONE), new SimpleBlockStateProvider(ARID_SANDSTONE), new SimpleBlockStateProvider(ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(ROASTED_YUCCA_BUNDLE), new SimpleBlockStateProvider(ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(ARID_SANDSTONE_WALL));
     public static final YuccaTreeFeatureConfig.Builder RED_ARID_YUCCA_TREE_BUILDER  = new YuccaTreeFeatureConfig.Builder(new SimpleBlockStateProvider(RED_ARID_SANDSTONE), new SimpleBlockStateProvider(RED_ARID_SANDSTONE), new SimpleBlockStateProvider(RED_ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(ROASTED_YUCCA_BUNDLE), new SimpleBlockStateProvider(RED_ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(RED_ARID_SANDSTONE_WALL), new SimpleBlockStateProvider(RED_ARID_SANDSTONE_WALL));
-
-	public static final StructureFeature<NoFeatureConfig, ? extends Structure<NoFeatureConfig>> ARID_SHRINE = AtmosphericFeatures.ARID_SHRINE.func_236391_a_(NoFeatureConfig.field_236559_b_);
 
 	public static final BlockClusterFeatureConfig MELON_PATCH_CONFIG   = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.MELON.getDefaultState()), new SimpleBlockPlacer())).tries(64).whitelist(ImmutableSet.of(AtmosphericBlocks.RED_ARID_SAND.get())).func_227317_b_().build();
 	public static final BlockClusterFeatureConfig GILIA_CONFIG         = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(GILIA), new SimpleBlockPlacer())).tries(64).build();

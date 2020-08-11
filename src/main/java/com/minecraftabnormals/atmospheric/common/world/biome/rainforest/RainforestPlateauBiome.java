@@ -11,7 +11,6 @@ public class RainforestPlateauBiome extends Biome {
     public RainforestPlateauBiome(Biome.Builder builder) {
         super(builder);
         
-        this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_JUNGLE);
         DefaultBiomeFeatures.func_235196_b_(this); // MINESHAFTS & STRONGHOLDS
 
         DefaultBiomeFeatures.addCarvers(this);
