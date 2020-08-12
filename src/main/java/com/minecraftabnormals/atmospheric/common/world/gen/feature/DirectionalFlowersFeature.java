@@ -37,7 +37,7 @@ public class DirectionalFlowersFeature extends Feature<NoFeatureConfig> {
             BlockPos blockpos = pos.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
             if (worldIn.isAirBlock(blockpos) && blockpos.getY() < 255 && blockstate.isValidPosition(worldIn, blockpos)) {
                 Direction randomD = Direction.func_239631_a_(rand);
-                while (randomD == Direction.DOWN || !blockstate.with(MonkeyBrushBlock.FACING, randomD).isValidPosition(worldIn, blockpos)) {
+                while (!blockstate.with(MonkeyBrushBlock.FACING, randomD).isValidPosition(worldIn, blockpos)) {
                     randomD = Direction.func_239631_a_(rand);
                 }
                 BlockState blockstate2 = blockstate.with(MonkeyBrushBlock.FACING, randomD);

@@ -57,9 +57,6 @@ public class MonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowable,
 	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		Direction direction = state.get(FACING); 
-		if (direction == Direction.DOWN) {
-			return false;
-		}
 		BlockPos blockpos = pos.offset(direction.getOpposite());
 	    return this.isValidGround(worldIn.getBlockState(blockpos), worldIn, blockpos);    
 	}
