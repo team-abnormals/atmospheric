@@ -43,13 +43,6 @@ public class Atmospheric
         
         MinecraftForge.EVENT_BUS.register(this);
         
-        modEventBus.addListener((ModConfig.ModConfigEvent event) -> {
-			final ModConfig config = event.getConfig();
-			if(config.getSpec() == AtmosphericConfig.COMMON_SPEC) {
-				AtmosphericConfig.ValuesHolder.updateCommonValuesFromConfig(config);
-			}
-		});
-        
         modEventBus.addListener(this::setup);
         DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
         	modEventBus.addListener(this::clientSetup);

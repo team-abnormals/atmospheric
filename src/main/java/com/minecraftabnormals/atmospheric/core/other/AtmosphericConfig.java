@@ -4,7 +4,6 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
-import net.minecraftforge.fml.config.ModConfig;
 
 /**
  * @author SmellyModder(Luke Tonon)
@@ -12,7 +11,8 @@ import net.minecraftforge.fml.config.ModConfig;
 public class AtmosphericConfig {
 
 	public static class Common {
-		public final ConfigValue<Integer> rosewoodForestWeight;
+		public final ConfigValue<Integer> rainforestWeight;
+		public final ConfigValue<Integer> rainforestMountainsWeight;
 		public final ConfigValue<Integer> dunesWeight;
 		public final ConfigValue<Integer> rockyDunesWeight;
 		
@@ -23,9 +23,13 @@ public class AtmosphericConfig {
 			builder.comment("Values for biome frequencies; lower = more rare. (Requires restart)")
 			.push("biomeWeights");
 			
-			rosewoodForestWeight = builder
-				.comment("The frequency of Rosewood Forests; Default: 2")
-				.define("rosewoodForestWeight", 2);
+			rainforestWeight = builder
+				.comment("The frequency of Rainforests; Default: 2")
+				.define("rainforestWeight", 2);
+			
+			rainforestMountainsWeight = builder
+	                .comment("The frequency of Rainforest Mountains; Default: 1")
+	                .define("rainforestMountainsWeight", 1);
 			
 			dunesWeight = builder
 				.comment("The frequency of Dunes; Default: 5")
@@ -47,30 +51,4 @@ public class AtmosphericConfig {
 		COMMON_SPEC = specPair.getRight();
 		COMMON = specPair.getLeft();
 	}
-	
-	public static class ValuesHolder {
-		private static int rosewoodForestWeight;
-		private static int dunesWeight;
-		private static int rockyDunesWeight;
-
-		public static void updateCommonValuesFromConfig(ModConfig config) {
-			rosewoodForestWeight = AtmosphericConfig.COMMON.rosewoodForestWeight.get();
-			dunesWeight = AtmosphericConfig.COMMON.dunesWeight.get();
-			rockyDunesWeight = AtmosphericConfig.COMMON.rockyDunesWeight.get();
-		}
-
-		public static int getRosewoodForestWeight() {
-			return rosewoodForestWeight;
-		}
-		
-		public static int getRockyDunesWeight() {
-			return dunesWeight;
-		}
-		
-		public static int getDunesWeight() {
-			return rockyDunesWeight;
-		}
-
-	}
- 
 }

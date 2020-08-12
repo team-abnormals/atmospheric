@@ -57,15 +57,13 @@ public class RainforestBiome extends Biome {
     }
     
     @Override
-	public Biome getHill(net.minecraft.world.gen.INoiseRandom rand) {
-    	int chance = rand.random(4);
-    	
+	public Biome getHill(net.minecraft.world.gen.INoiseRandom rand) {    	
     	ArrayList<Biome> list = new ArrayList<Biome>();
-    	list.add(AtmosphericBiomes.RAINFOREST_MOUNTAINS.get());
+
     	list.add(AtmosphericBiomes.RAINFOREST_BASIN.get());
     	list.add(AtmosphericBiomes.RAINFOREST_PLATEAU.get());
         list.add(AtmosphericBiomes.SPARSE_RAINFOREST_PLATEAU.get());
         
-		return list.get(chance);
+		return list.get(rand.random(list.size()));
 	}
 }
