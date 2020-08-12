@@ -88,6 +88,7 @@
 	"biome.atmospheric.rainforest_mountains": "Montañas de selva",
 	"biome.atmospheric.rainforest_plateau": "Meseta de selva",
 	"biome.atmospheric.sparse_rainforest_plateau": "Meseta de selva dispersa",
+	"biome.atmospheric.rainforest_basin": "Cuenca de selva",
 	
 	"death.attack.passionfruitSeed": "%1$s ha sido bombardeado/a con las semillas de %2$s",
 	"death.attack.shimmeringPassionfruitSeed": "%1$s ha sido bombardeado/a apasionadamente con las semillas de %2$s",
@@ -188,7 +189,7 @@
 	
 	"block.atmospheric.yucca_cask": "Barrica de yucas",
 	"block.atmospheric.roasted_yucca_cask": "Barrica de yucas asadas",
-	"block.atmospheric.yucca_gateau": "Gateau de yuca",
+	"block.atmospheric.yucca_gateau": "Tarta de yuca",
 	
 	"block.atmospheric.barrel_cactus": "Cactus barril",
 	"block.atmospheric.barrel_cactus_batch": "Lote de cactus barril",
@@ -273,8 +274,8 @@
 	"death.attack.aloeLeaves": "%1$s ha muerto entre espinas en hojas de aloe",
 	"death.attack.aloeLeaves.player": "%1$s ha muerto entre espinas en hojas de aloe mientras intentaba huir de %2$s",
 
-	"advancements.husbandry.finish_gateau.title": "Que coman... ¿pasteles?",
-	"advancements.husbandry.finish_gateau.description": "Cómete la última porción de un gateau de yuca",
+	"advancements.husbandry.finish_gateau.title": "Que coman pasteles",
+	"advancements.husbandry.finish_gateau.description": "Cómete la última porción de una tarta de yuca",
 
 	"advancements.adventure.dunes_pricks.title": "Picado y rebanado",
 	"advancements.adventure.dunes_pricks.description": "Pínchate con todas las fuentes naturales de daño que hay en las dunas",
