@@ -88,6 +88,7 @@
 	"biome.atmospheric.rainforest_mountains": "Montañas de selva",
 	"biome.atmospheric.rainforest_plateau": "Meseta de selva",
 	"biome.atmospheric.sparse_rainforest_plateau": "Meseta de selva dispersa",
+	"biome.atmospheric.rainforest_basin": "Cuenca de selva",
 	
 	"death.attack.passionfruitSeed": "%1$s fue bombardeado/a con las semillas de %2$s",
 	"death.attack.shimmeringPassionfruitSeed": "%1$s fue bombardeado/a apasionadamente con las semillas de %2$s",
@@ -188,7 +189,7 @@
 	
 	"block.atmospheric.yucca_cask": "Barrica de yucas",
 	"block.atmospheric.roasted_yucca_cask": "Barrica de yucas asadas",
-	"block.atmospheric.yucca_gateau": "Gateau de yuca",
+	"block.atmospheric.yucca_gateau": "Torta de yuca",
 	
 	"block.atmospheric.barrel_cactus": "Cactus barril",
 	"block.atmospheric.barrel_cactus_batch": "Lote de cactus barril",
@@ -247,7 +248,7 @@
 	
 	"item.atmospheric.aloe_kernels": "Semillas de aloe",
 	"item.atmospheric.aloe_leaves": "Hojas de aloe",
-	"item.atmospheric.aloe_gel_bottle": "Frasco de gel de aloe",
+	"item.atmospheric.aloe_gel_bottle": "Botella de gel de aloe",
 
 	"effect.atmospheric.persistence": "Perseverancia",
 	"effect.atmospheric.gelled": "Gelificación",
@@ -273,8 +274,8 @@
 	"death.attack.aloeLeaves": "%1$s se dio con hojas de aloe",
 	"death.attack.aloeLeaves.player": "%1$s se dio con hojas de aloe tratando de escapar de %2$s",
 
-	"advancements.husbandry.finish_gateau.title": "Que coman... ¿torta?",
-	"advancements.husbandry.finish_gateau.description": "Comete la última porción de un gateau de yuca",
+	"advancements.husbandry.finish_gateau.title": "Que coman torta",
+	"advancements.husbandry.finish_gateau.description": "Comete la última porción de una torta de yuca",
 
 	"advancements.adventure.dunes_pricks.title": "Picado y rebanado",
 	"advancements.adventure.dunes_pricks.description": "Pinchate con todas las fuentes naturales de daño que hay en las dunas",
