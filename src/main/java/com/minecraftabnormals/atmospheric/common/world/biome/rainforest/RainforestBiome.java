@@ -1,5 +1,7 @@
 package com.minecraftabnormals.atmospheric.common.world.biome.rainforest;
 
+import java.util.ArrayList;
+
 import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
 
@@ -56,7 +58,14 @@ public class RainforestBiome extends Biome {
     
     @Override
 	public Biome getHill(net.minecraft.world.gen.INoiseRandom rand) {
-    	int chance = rand.random(3);
-		return chance == 0 ? AtmosphericBiomes.RAINFOREST_MOUNTAINS.get() : (chance ==  1 ? AtmosphericBiomes.SPARSE_RAINFOREST_PLATEAU.get() : AtmosphericBiomes.RAINFOREST_PLATEAU.get());
+    	int chance = rand.random(4);
+    	
+    	ArrayList<Biome> list = new ArrayList<Biome>();
+    	list.add(AtmosphericBiomes.RAINFOREST_MOUNTAINS.get());
+    	list.add(AtmosphericBiomes.RAINFOREST_BASIN.get());
+    	list.add(AtmosphericBiomes.RAINFOREST_PLATEAU.get());
+        list.add(AtmosphericBiomes.SPARSE_RAINFOREST_PLATEAU.get());
+        
+		return list.get(chance);
 	}
 }

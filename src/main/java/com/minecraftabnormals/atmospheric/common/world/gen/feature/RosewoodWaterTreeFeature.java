@@ -222,7 +222,7 @@ public class RosewoodWaterTreeFeature extends Feature<BaseTreeFeatureConfig> {
 	}
 	
 	public static void placeLeafAt(IWorldGenerationReader world, BlockPos pos, Random rand, BaseTreeFeatureConfig config) {
-        if (isAirOrWaterOrLeaves(world, pos)) {
+        if (TreeUtils.isAirOrLeaves(world, pos)) {
             TreeUtils.setForcedState(world, pos, config.leavesProvider.getBlockState(rand, pos).with(LeavesBlock.DISTANCE, 1));
         }
     }
