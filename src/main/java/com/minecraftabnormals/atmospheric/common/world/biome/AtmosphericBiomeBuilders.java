@@ -12,7 +12,7 @@ public class AtmosphericBiomeBuilders {
     public static final Biome.Builder RAINFOREST            = createRainforestBiome(0.1F, 0.2F, 0.90F, 0.95F);
     public static final Biome.Builder RAINFOREST_MOUNTAINS  = createRainforestBiome(0.2825F, 1.225F, 0.90F, 0.95F);
     public static final Biome.Builder RAINFOREST_PLATEAU    = createRainforestBiome(1.5F, 0.025F, 0.90F, 0.95F);
-    public static final Biome.Builder RAINFOREST_BASIN      = createRainforestBiome(-0.225F, 0.01F, 0.90F, 0.95F);
+    public static final Biome.Builder RAINFOREST_BASIN      = createRainforestBiome(-0.3F, 0.01F, 0.90F, 0.95F);
     
     public static final Biome.Builder DUNES             = createDunesBiome(0.45F, 0.15F, 2.0F, 0.0F);
     public static final Biome.Builder DUNES_HILLS       = createDunesBiome(0.45F, 0.20F, 2.0F, 0.0F);

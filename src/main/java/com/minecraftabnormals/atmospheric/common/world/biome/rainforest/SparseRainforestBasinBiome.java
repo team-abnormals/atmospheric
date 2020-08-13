@@ -1,17 +1,14 @@
 package com.minecraftabnormals.atmospheric.common.world.biome.rainforest;
 
-import java.util.ArrayList;
-
 import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 
-public class RainforestBasinBiome extends Biome {
-    public RainforestBasinBiome(Biome.Builder builder) {
+public class SparseRainforestBasinBiome extends Biome {
+    public SparseRainforestBasinBiome(Biome.Builder builder) {
         super(builder);
         
         DefaultBiomeFeatures.func_235196_b_(this); // MINESHAFTS & STRONGHOLDS
@@ -31,11 +28,11 @@ public class RainforestBasinBiome extends Biome {
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addRainforestBasinTrees(this, 3200);
+        AtmosphericBiomeFeatures.addRainforestBasinTrees(this, 5);
         AtmosphericBiomeFeatures.addRainforestDoublePlants(this);
         AtmosphericBiomeFeatures.addRainforestFlowers(this);
         AtmosphericBiomeFeatures.addRainforestFoliage(this);
-        AtmosphericBiomeFeatures.addRainforestBasinWaterFoliage(this);
+        AtmosphericBiomeFeatures.addSparseRainforestBasinWaterFoliage(this);
         
         DefaultBiomeFeatures.addFreezeTopLayer(this);
         
@@ -57,15 +54,5 @@ public class RainforestBasinBiome extends Biome {
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.SLIME, 100, 4, 4));
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
         addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.WITCH, 5, 1, 1));
-    }
-    
-    @Override
-    public Biome getHill(net.minecraft.world.gen.INoiseRandom rand) {       
-        ArrayList<Biome> list = new ArrayList<Biome>();
-
-        list.add(AtmosphericBiomes.SPARSE_RAINFOREST_BASIN.get());
-        list.add(AtmosphericBiomes.RAINFOREST_PLATEAU.get());
-        
-        return list.get(rand.random(list.size()));
     }
 }

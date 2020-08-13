@@ -11,9 +11,10 @@ import com.minecraftabnormals.atmospheric.common.world.biome.rainforest.Rainfore
 import com.minecraftabnormals.atmospheric.common.world.biome.rainforest.RainforestBiome;
 import com.minecraftabnormals.atmospheric.common.world.biome.rainforest.RainforestMountainsBiome;
 import com.minecraftabnormals.atmospheric.common.world.biome.rainforest.RainforestPlateauBiome;
+import com.minecraftabnormals.atmospheric.common.world.biome.rainforest.SparseRainforestBasinBiome;
 import com.minecraftabnormals.atmospheric.common.world.biome.rainforest.SparseRainforestPlateauBiome;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
-import com.minecraftabnormals.atmospheric.core.other.AtmosphericConfig;
+import com.minecraftabnormals.atmospheric.core.AtmosphericConfig;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
@@ -32,6 +33,7 @@ public class AtmosphericBiomes {
     public static final RegistryObject<Biome> RAINFOREST_PLATEAU        = BIOMES.register("rainforest_plateau", () -> new RainforestPlateauBiome(AtmosphericBiomeBuilders.RAINFOREST_PLATEAU));
     public static final RegistryObject<Biome> SPARSE_RAINFOREST_PLATEAU = BIOMES.register("sparse_rainforest_plateau", () -> new SparseRainforestPlateauBiome(AtmosphericBiomeBuilders.RAINFOREST_PLATEAU));
     public static final RegistryObject<Biome> RAINFOREST_BASIN          = BIOMES.register("rainforest_basin", () -> new RainforestBasinBiome(AtmosphericBiomeBuilders.RAINFOREST_BASIN));
+    public static final RegistryObject<Biome> SPARSE_RAINFOREST_BASIN   = BIOMES.register("sparse_rainforest_basin", () -> new SparseRainforestBasinBiome(AtmosphericBiomeBuilders.RAINFOREST_BASIN));
 
 	public static final RegistryObject<Biome> DUNES 			= BIOMES.register("dunes", 				() -> new DunesBiome(AtmosphericBiomeBuilders.DUNES));
 	public static final RegistryObject<Biome> DUNES_HILLS		= BIOMES.register("dunes_hills",		() -> new DunesHillsBiome(AtmosphericBiomeBuilders.DUNES_HILLS));
@@ -43,9 +45,18 @@ public class AtmosphericBiomes {
     
     public static void registerBiomesToDictionary() {
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RAINFOREST.get(), AtmosphericConfig.COMMON.rainforestWeight.get())); 
-        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RAINFOREST_MOUNTAINS.get(), AtmosphericConfig.COMMON.rainforestMountainsWeight.get())); 
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RAINFOREST_MOUNTAINS.get(), AtmosphericConfig.COMMON.rainforestMountainsWeight.get()));
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RAINFOREST_PLATEAU.get(), AtmosphericConfig.COMMON.rainforestPlateauWeight.get()));
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(SPARSE_RAINFOREST_PLATEAU.get(), AtmosphericConfig.COMMON.sparseRainforestPlateauWeight.get()));
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RAINFOREST_BASIN.get(), AtmosphericConfig.COMMON.rainforestBasinWeight.get()));
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(SPARSE_RAINFOREST_BASIN.get(), AtmosphericConfig.COMMON.sparseRainforestBasinWeight.get()));
+        
         BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(DUNES.get(), AtmosphericConfig.COMMON.dunesWeight.get()));
+        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(DUNES_HILLS.get(), AtmosphericConfig.COMMON.dunesHillsWeight.get()));
+        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(FLOURISHING_DUNES.get(), AtmosphericConfig.COMMON.flourishingDunesWeight.get()));
         BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(ROCKY_DUNES.get(), AtmosphericConfig.COMMON.rockyDunesWeight.get()));
+        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(ROCKY_DUNES_HILLS.get(), AtmosphericConfig.COMMON.rockyDunesHillsWeight.get()));
+        BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(PETRIFIED_DUNES.get(), AtmosphericConfig.COMMON.petrifiedDunesWeight.get()));
     }
     
     public static void addBiomeTypes() {
@@ -54,6 +65,7 @@ public class AtmosphericBiomes {
         BiomeDictionary.addTypes(SPARSE_RAINFOREST_PLATEAU.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(RAINFOREST_PLATEAU.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(RAINFOREST_BASIN.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.WET, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(SPARSE_RAINFOREST_BASIN.get(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.WET, BiomeDictionary.Type.OVERWORLD);
 
         BiomeDictionary.addTypes(DUNES.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(DUNES_HILLS.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);

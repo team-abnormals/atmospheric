@@ -1,6 +1,5 @@
 package com.minecraftabnormals.atmospheric.core;
 
-import com.minecraftabnormals.atmospheric.core.other.AtmosphericConfig;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericData;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericRender;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericVillagers;
