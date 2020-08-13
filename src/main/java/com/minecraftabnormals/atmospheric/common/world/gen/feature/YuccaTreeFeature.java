@@ -8,6 +8,7 @@ import com.mojang.serialization.Codec;
 import com.teamabnormals.abnormals_core.core.utils.TreeUtils;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
@@ -273,7 +274,11 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 
     private void placeLeafAt(IWorldGenerationReader world, BlockPos pos, Random rand, YuccaTreeFeatureConfig config) {
         if (TreeUtils.isAirOrLeaves(world, pos) && !config.petrified) {
-            TreeUtils.setForcedState(world, pos, config.leavesProvider.getBlockState(rand, pos));
+            if(config.leavesProvider.getBlockState(rand, pos).hasProperty(LeavesBlock.DISTANCE)) {
+                TreeUtils.setForcedState(world, pos, config.leavesProvider.getBlockState(rand, pos).with(LeavesBlock.DISTANCE, 1));
+            } else {
+                TreeUtils.setForcedState(world, pos, config.leavesProvider.getBlockState(rand, pos));
+            }
         }
         if (rand.nextInt(8) == 0 && !config.petrified) {
             placeFlowerAt(world, pos.up(), rand, config);
