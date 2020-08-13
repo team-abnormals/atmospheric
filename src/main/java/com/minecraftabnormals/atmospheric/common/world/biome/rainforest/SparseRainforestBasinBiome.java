@@ -28,7 +28,7 @@ public class SparseRainforestBasinBiome extends Biome {
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addRainforestBasinTrees(this, 5);
+        AtmosphericBiomeFeatures.addRainforestBasinTrees(this, 100);
         AtmosphericBiomeFeatures.addRainforestDoublePlants(this);
         AtmosphericBiomeFeatures.addRainforestFlowers(this);
         AtmosphericBiomeFeatures.addRainforestFoliage(this);
