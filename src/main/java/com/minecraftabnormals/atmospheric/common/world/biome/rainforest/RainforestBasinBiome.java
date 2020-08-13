@@ -36,7 +36,8 @@ public class RainforestBasinBiome extends Biome {
         AtmosphericBiomeFeatures.addRainforestFlowers(this);
         AtmosphericBiomeFeatures.addRainforestFoliage(this);
         AtmosphericBiomeFeatures.addRainforestBasinWaterFoliage(this);
-        
+        AtmosphericBiomeFeatures.addDriftwood(this, 8);
+
         DefaultBiomeFeatures.addFreezeTopLayer(this);
         
         addSpawn(EntityClassification.CREATURE, new SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
