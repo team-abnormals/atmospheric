@@ -1,4 +1,4 @@
-package com.minecraftabnormals.atmospheric.common.client.particle;
+package com.minecraftabnormals.atmospheric.client.particle;
 import net.minecraft.client.particle.IAnimatedSprite;
 import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.particle.IParticleRenderType;
