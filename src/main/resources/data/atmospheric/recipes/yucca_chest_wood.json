@@ -8,11 +8,11 @@
   ],
   "key": {
     "#": {
-      "tag": "environmental:yucca_logs"
+      "tag": "atmospheric:yucca_logs"
     }
   },
   "result": {
-    "item": "environmental:yucca_chest",
+    "item": "atmospheric:yucca_chest",
     "count": 4
   },
   "conditions": [

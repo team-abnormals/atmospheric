@@ -8,11 +8,11 @@
   ],
   "key": {
     "#": {
-      "tag": "environmental:rosewood_logs"
+      "tag": "atmospheric:rosewood_logs"
     }
   },
   "result": {
-    "item": "environmental:rosewood_chest",
+    "item": "atmospheric:rosewood_chest",
     "count": 4
   },
   "conditions": [
