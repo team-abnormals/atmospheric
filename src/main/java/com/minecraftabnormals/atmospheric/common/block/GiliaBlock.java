@@ -1,11 +1,11 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
+import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
 import com.teamabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.potion.Effect;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
@@ -18,7 +18,7 @@ public class GiliaBlock extends AbnormalsFlowerBlock  {
 	@Override
 	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		Block block = state.getBlock();
-		return block.isIn(BlockTags.BAMBOO_PLANTABLE_ON);
+		return block.isIn(AtmosphericTags.YUCCA_PLANTABLE_ON);
 	}
 	
 	@Override
