@@ -178,7 +178,7 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> CHISELED_ARID_SANDSTONE 		= HELPER.createBlock("chiseled_arid_sandstone", 	() -> new Block(Block.Properties.from(Blocks.CHISELED_SANDSTONE)), ItemGroup.BUILDING_BLOCKS);
 	
-	public static final RegistryObject<Block> RED_ARID_SAND 					= HELPER.createBlock("red_arid_sand", 					() -> new AridSandBlock(14406560, AtmosphericProperties.RED_ARID_SAND), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> RED_ARID_SAND 					= HELPER.createBlock("red_arid_sand", 					() -> new AridSandBlock(16241568, AtmosphericProperties.RED_ARID_SAND), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> RED_ARID_SANDSTONE 				= HELPER.createBlock("red_arid_sandstone", 				() -> new Block(Block.Properties.from(Blocks.SANDSTONE)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> RED_ARID_SANDSTONE_SLAB 			= HELPER.createBlock("red_arid_sandstone_slab", 		() -> new SlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> RED_ARID_SANDSTONE_STAIRS 		= HELPER.createBlock("red_arid_sandstone_stairs", 		() -> new AbnormalsStairsBlock(RED_ARID_SANDSTONE.get().getDefaultState(), Block.Properties.from(Blocks.SANDSTONE_STAIRS)), ItemGroup.BUILDING_BLOCKS);

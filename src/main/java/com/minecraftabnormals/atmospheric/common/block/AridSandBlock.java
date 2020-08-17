@@ -27,7 +27,9 @@ public class AridSandBlock extends FallingBlock {
     public boolean canSustainPlant(BlockState state, IBlockReader blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
         final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
         final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
-        if (plantType == PlantType.WATER) {
+        if (plantType == PlantType.DESERT) {
+            return true;
+        } else if (plantType == PlantType.WATER) {
             return blockReader.getBlockState(pos).getMaterial() == Material.WATER && blockReader.getBlockState(pos) == getDefaultState();
         } else if (plantType == PlantType.BEACH) {
             return ((blockReader.getBlockState(pos.east()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.east()).hasProperty(BlockStateProperties.WATERLOGGED))
