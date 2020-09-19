@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "atmospheric:block/peach_fumarole_block"
-    }
-}

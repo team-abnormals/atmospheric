@@ -58,7 +58,6 @@ import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerPotBlock;
-import net.minecraft.block.MagmaBlock;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SlabBlock;
@@ -150,11 +149,6 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> PEACH_TRAVERTINE_WALL 	= HELPER.createBlock("peach_travertine_wall", 	() -> new WallBlock(AtmosphericProperties.PEACH_TRAVERTINE), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_WALL	= HELPER.createBlock("persimmon_travertine_wall",() -> new WallBlock(AtmosphericProperties.PERSIMMON_TRAVERTINE), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_WALL 	= HELPER.createBlock("saffron_travertine_wall", () -> new WallBlock(AtmosphericProperties.SAFFRON_TRAVERTINE), ItemGroup.DECORATIONS);
-	
-	public static final RegistryObject<Block> IVORY_FUMAROLE_BLOCK 		= HELPER.createBlock("ivory_fumarole_block", 	() -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PEACH_FUMAROLE_BLOCK 		= HELPER.createBlock("peach_fumarole_block", 	() -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PERSIMMON_FUMAROLE_BLOCK 	= HELPER.createBlock("persimmon_fumarole_block", () -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SAFFRON_FUMAROLE_BLOCK 	= HELPER.createBlock("saffron_fumarole_block", 	() -> new MagmaBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)), ItemGroup.BUILDING_BLOCKS);
 	
 	public static final RegistryObject<Block> IVORY_TRAVERTINE_VERTICAL_SLAB 		= HELPER.createCompatBlock("quark", "ivory_travertine_vertical_slab", 		() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.IVORY_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> PEACH_TRAVERTINE_VERTICAL_SLAB 		= HELPER.createCompatBlock("quark", "peach_travertine_vertical_slab", 		() -> new DirectionalVerticalSlabBlock(AtmosphericProperties.PEACH_TRAVERTINE), ItemGroup.BUILDING_BLOCKS);
