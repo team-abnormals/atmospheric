@@ -123,7 +123,7 @@ public class YuccaGateauBlock extends HorizontalBlock {
 			   } else {
 				   if (player instanceof ServerPlayerEntity) {
 					   ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) player;
-					   if(!player.getEntityWorld().isRemote() && !serverplayerentity.isCreative()) {
+					   if(!player.getEntityWorld().isRemote()) {
 						   AtmosphericCriteriaTriggers.FINISH_GATEAU.trigger(serverplayerentity); 
 					   }
 				   }
