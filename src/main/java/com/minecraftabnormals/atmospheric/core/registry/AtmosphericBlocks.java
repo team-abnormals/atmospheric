@@ -226,7 +226,7 @@ public class AtmosphericBlocks {
 	
 	public static final RegistryObject<Block> ALOE_VERA	 			= HELPER.createBlockNoItem("aloe_vera", 	 () -> new AloeVeraBlock(AtmosphericProperties.ALOE_VERA));
 	public static final RegistryObject<Block> TALL_ALOE_VERA	 	= HELPER.createBlockNoItem("tall_aloe_vera", () -> new AloeVeraTallBlock(AtmosphericProperties.ALOE_VERA));
-	public static final RegistryObject<Block> ALOE_BUNDLE 			= HELPER.createBlock("aloe_bundle", 	 () -> new RotatedPillarBlock(Block.Properties.from(Blocks.DRIED_KELP_BLOCK)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ALOE_BUNDLE 			= HELPER.createBlock("aloe_bundle", 	 () -> new RotatedPillarBlock(Block.Properties.from(Blocks.DRIED_KELP_BLOCK).harvestTool(ToolType.HOE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ALOE_GEL_BLOCK		= HELPER.createBlock("aloe_gel_block", 	 () -> new AloeGelBlock(Block.Properties.from(Blocks.SLIME_BLOCK)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> BARREL_CACTUS 		= HELPER.createBlock("barrel_cactus", 	 () -> new BarrelCactusBlock(Block.Properties.from(Blocks.CACTUS).tickRandomly()), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_BARREL_CACTUS	= HELPER.createBlockNoItem("potted_barrel_cactus",	() -> new FlowerPotBlock(BARREL_CACTUS.get(), Block.Properties.from(Blocks.POTTED_CACTUS)));
