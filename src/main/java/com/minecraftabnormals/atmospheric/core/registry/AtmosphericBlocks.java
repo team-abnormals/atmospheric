@@ -213,8 +213,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> POTTED_YUCCA_SAPLING	= HELPER.createBlockNoItem("potted_yucca_sapling",	() -> new FlowerPotBlock(YUCCA_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 
 	public static final RegistryObject<Block> YUCCA_BRANCH 			= HELPER.createBlock("yucca_branch", 		() -> new YuccaBranchBlock(Block.Properties.from(Blocks.MELON_STEM).sound(SoundType.CROP).tickRandomly()), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> YUCCA_BUNDLE 			= HELPER.createBlock("yucca_bundle", 	 	() -> new YuccaBundleBlock(Block.Properties.from(Blocks.MELON).tickRandomly()), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> ROASTED_YUCCA_BUNDLE	= HELPER.createBlock("roasted_yucca_bundle",() -> new YuccaBundleBlock(Block.Properties.from(Blocks.MELON).tickRandomly()), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_BUNDLE 			= HELPER.createBlock("yucca_bundle", 	 	() -> new YuccaBundleBlock(Block.Properties.from(Blocks.MELON).tickRandomly().harvestTool(ToolType.HOE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ROASTED_YUCCA_BUNDLE	= HELPER.createBlock("roasted_yucca_bundle",() -> new YuccaBundleBlock(Block.Properties.from(Blocks.MELON).tickRandomly().harvestTool(ToolType.HOE)), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> YUCCA_GATEAU 			= HELPER.createBlockNoItem("yucca_gateau", 	() -> new YuccaGateauBlock(Block.Properties.from(Blocks.CAKE)));
 	public static final RegistryObject<Block> YUCCA_FLOWER 			= HELPER.createBlock("yucca_flower", 	 	() -> new YuccaFlowerBlock(() -> AtmosphericEffects.PERSISTENCE.get(), 15, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
