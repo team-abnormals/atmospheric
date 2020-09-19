@@ -85,7 +85,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_LOG 				= HELPER.createBlock("rosewood_log", 			() -> new AbnormalsLogBlock(STRIPPED_ROSEWOOD_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_ROSEWOOD 		= HELPER.createBlock("stripped_rosewood", 		() -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD 					= HELPER.createBlock("rosewood", 				() -> new WoodBlock(STRIPPED_ROSEWOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ROSEWOOD_LEAVES 			= HELPER.createBlock("rosewood_leaves", 		() -> new AbnormalsLeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES).harvestTool(ToolType.HOE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ROSEWOOD_LEAVES 			= HELPER.createBlock("rosewood_leaves", 		() -> new AbnormalsLeavesBlock(AtmosphericProperties.createLeaves()), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ROSEWOOD_SLAB 			= HELPER.createBlock("rosewood_slab", 			() -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_STAIRS 			= HELPER.createBlock("rosewood_stairs", 		() -> new WoodStairsBlock(ROSEWOOD_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_PRESSURE_PLATE 	= HELPER.createBlock("rosewood_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
@@ -191,7 +191,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_LOG 			= HELPER.createBlock("yucca_log", 			() -> new AbnormalsLogBlock(STRIPPED_YUCCA_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_YUCCA_WOOD	= HELPER.createBlock("stripped_yucca_wood",	() -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_WOOD 			= HELPER.createBlock("yucca_wood",			() -> new WoodBlock(STRIPPED_YUCCA_WOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_LEAVES 			= HELPER.createBlock("yucca_leaves", 		() -> new YuccaLeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES).harvestTool(ToolType.HOE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_LEAVES 			= HELPER.createBlock("yucca_leaves", 		() -> new YuccaLeavesBlock(AtmosphericProperties.createLeaves()), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> YUCCA_PLANKS 			= HELPER.createBlock("yucca_planks", 		() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_STAIRS 			= HELPER.createBlock("yucca_stairs", 		() -> new WoodStairsBlock(YUCCA_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_SLAB 			= HELPER.createBlock("yucca_slab", 			() -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
@@ -265,7 +265,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> KOUSA_LOG 			= HELPER.createBlock("kousa_log", 			() -> new AbnormalsLogBlock(STRIPPED_KOUSA_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_KOUSA_WOOD	= HELPER.createBlock("stripped_kousa_wood", () -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_WOOD 			= HELPER.createBlock("kousa_wood",          () -> new WoodBlock(STRIPPED_KOUSA_WOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LEAVES 			= HELPER.createBlock("kousa_leaves", 		() -> new AbnormalsLeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES).harvestTool(ToolType.HOE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_LEAVES 			= HELPER.createBlock("kousa_leaves", 		() -> new AbnormalsLeavesBlock(AtmosphericProperties.createLeaves()), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> KOUSA_SLAB 			= HELPER.createBlock("kousa_slab", 			() -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_STAIRS 			= HELPER.createBlock("kousa_stairs", 		() -> new WoodStairsBlock(KOUSA_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_PRESSURE_PLATE 	= HELPER.createBlock("kousa_pressure_plate",() -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
@@ -295,7 +295,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> STRIPPED_ASPEN_WOOD	= HELPER.createBlock("stripped_aspen_wood", () -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_WOOD 			= HELPER.createBlock("aspen_wood",          () -> new WoodBlock(STRIPPED_ASPEN_WOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> WATCHFUL_ASPEN_WOOD 	= HELPER.createBlock("watchful_aspen_wood", () -> new WoodBlock(STRIPPED_ASPEN_WOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ASPEN_LEAVES 			= HELPER.createBlock("aspen_leaves", 		() -> new AbnormalsLeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ASPEN_LEAVES 			= HELPER.createBlock("aspen_leaves", 		() -> new AbnormalsLeavesBlock(AtmosphericProperties.createLeaves()), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_SLAB 			= HELPER.createBlock("aspen_slab", 			() -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_STAIRS 			= HELPER.createBlock("aspen_stairs", 		() -> new WoodStairsBlock(ASPEN_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_PRESSURE_PLATE 	= HELPER.createBlock("aspen_pressure_plate",() -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
@@ -327,7 +327,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> GRIMWOOD_LOG 				= HELPER.createBlock("grimwood_log", 			() -> new AbnormalsLogBlock(STRIPPED_GRIMWOOD_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_GRIMWOOD 		= HELPER.createBlock("stripped_grimwood", 		() -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD 					= HELPER.createBlock("grimwood", 				() -> new WoodBlock(STRIPPED_GRIMWOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> GRIMWOOD_LEAVES 			= HELPER.createBlock("grimwood_leaves", 		() -> new AbnormalsLeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES).harvestTool(ToolType.HOE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> GRIMWOOD_LEAVES 			= HELPER.createBlock("grimwood_leaves", 		() -> new AbnormalsLeavesBlock(AtmosphericProperties.createLeaves()), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> GRIMWOOD_SLAB 			= HELPER.createBlock("grimwood_slab", 			() -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_STAIRS 			= HELPER.createBlock("grimwood_stairs", 		() -> new WoodStairsBlock(GRIMWOOD_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_PRESSURE_PLATE 	= HELPER.createBlock("grimwood_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
