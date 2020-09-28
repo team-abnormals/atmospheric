@@ -8,23 +8,19 @@
       "tag": "forge:fruits/passionfruit"
     },
     {
-      "item": "minecraft:ice"
+      "item": "neapolitan:ice_cubes"
     },
     {
       "item": "minecraft:sugar"
     }
-    
   ],
   "result": {
     "item": "atmospheric:passionfruit_sorbet"
   },
   "conditions": [
     {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:mod_loaded",
-        "modid": "neapolitan"
-      }
+      "type": "forge:mod_loaded",
+      "modid": "neapolitan"
     }
   ]
 }
