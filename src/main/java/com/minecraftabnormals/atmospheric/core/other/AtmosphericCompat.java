@@ -68,6 +68,11 @@ public class AtmosphericCompat {
     public static void registerFlammables() {
         DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE.get(), 15, 100);
         DataUtils.registerFlammable(AtmosphericBlocks.PASSION_VINE_BUNDLE.get(), 60, 20);
+ 
+        DataUtils.registerFlammable(AtmosphericBlocks.PASSIONFRUIT_CRATE.get(), 5, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.SHIMMERING_PASSIONFRUIT_CRATE.get(), 5, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_CASK.get(), 5, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.ROASTED_YUCCA_CASK.get(), 5, 20);
         
         DataUtils.registerFlammable(AtmosphericBlocks.WARM_MONKEY_BRUSH.get(), 60, 100);
         DataUtils.registerFlammable(AtmosphericBlocks.HOT_MONKEY_BRUSH.get(), 60, 100);
