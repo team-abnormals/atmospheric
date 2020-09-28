@@ -7,10 +7,10 @@
   ],
   "key": {
     "#": {
-      "item": "atmospheric:passionfruit"
+      "tag": "forge:fruits/passionfruit"
     },
     "X": {
-      "item": "minecraft:egg"
+      "tag": "forge:eggs"
     }
   },
   "result": {

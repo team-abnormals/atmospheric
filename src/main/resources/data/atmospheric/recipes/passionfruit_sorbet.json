@@ -5,7 +5,7 @@
       "item": "minecraft:bowl"
     },
     {
-      "item": "atmospheric:passionfruit"
+      "tag": "forge:fruits/passionfruit"
     },
     {
       "item": "minecraft:ice"
