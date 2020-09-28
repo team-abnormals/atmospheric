@@ -70,7 +70,6 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable, IYuccaPlan
 		return !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState() : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		return state.get(SNAPPED) && worldIn.getBlockState(pos.down()).isAir();
@@ -81,7 +80,6 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable, IYuccaPlan
 		return state.get(SNAPPED);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
 		 if (state.get(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(6) == 0) && worldIn.getBlockState(pos.down()).isAir()) {
@@ -91,7 +89,7 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable, IYuccaPlan
 		 }		
 	}
 	
-	@SuppressWarnings("deprecation")
+	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		if (!state.isValidPosition(worldIn, pos)) {
 			worldIn.destroyBlock(pos, true);
@@ -104,7 +102,7 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable, IYuccaPlan
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
+	@Override
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		if (!state.get(SNAPPED) && (player.getHeldItem(handIn).getItem() == Items.SHEARS)) {
 			player.getHeldItem(handIn).damageItem(1, player, (p_213442_1_) -> {

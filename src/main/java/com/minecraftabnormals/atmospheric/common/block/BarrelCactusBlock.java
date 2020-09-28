@@ -101,7 +101,6 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
       return SHAPE_BY_AGE[state.get(AGE)];
    }
 
-   @SuppressWarnings("deprecation")
    @Override
    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
       if (!stateIn.isValidPosition(worldIn, currentPos)) {

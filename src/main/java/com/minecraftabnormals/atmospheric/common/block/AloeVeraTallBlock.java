@@ -127,7 +127,6 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		int age = state.get(AGE);
 		Random rand = new Random();
@@ -187,7 +186,6 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
         return  PathNodeType.DAMAGE_CACTUS;
     }
 	
-	@SuppressWarnings("deprecation")
     @Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);

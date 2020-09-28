@@ -35,7 +35,12 @@ public class MonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowable,
 	public static final DirectionProperty FACING = BlockStateProperties.FACING;
 	
 	protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
-	private static final Map<Direction, VoxelShape> SHAPES = Maps.newEnumMap(ImmutableMap.of(Direction.NORTH, Block.makeCuboidShape(5.5D, 3.0D, 11.0D, 10.5D, 13.0D, 16.0D), Direction.SOUTH, Block.makeCuboidShape(5.5D, 3.0D, 0.0D, 10.5D, 13.0D, 5.0D), Direction.WEST, Block.makeCuboidShape(11.0D, 3.0D, 5.5D, 16.0D, 13.0D, 10.5D), Direction.EAST, Block.makeCuboidShape(0.0D, 3.0D, 5.5D, 5.0D, 13.0D, 10.5D)));
+	private static final Map<Direction, VoxelShape> SHAPES = Maps.newEnumMap(ImmutableMap.of(
+			Direction.NORTH, Block.makeCuboidShape(5.5D, 3.0D, 11.0D, 10.5D, 13.0D, 16.0D), 
+			Direction.SOUTH, Block.makeCuboidShape(5.5D, 3.0D, 0.0D, 10.5D, 13.0D, 5.0D), 
+			Direction.WEST, Block.makeCuboidShape(11.0D, 3.0D, 5.5D, 16.0D, 13.0D, 10.5D), 
+			Direction.EAST, Block.makeCuboidShape(0.0D, 3.0D, 5.5D, 5.0D, 13.0D, 10.5D)));
+	
 	private final Supplier<Effect> stewEffect;
 	
 	public MonkeyBrushBlock(Supplier<Effect> effect, int effectDuration, Properties properties) {
@@ -78,17 +83,17 @@ public class MonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowable,
 		Vector3d vec3d = state.getOffset(worldIn, pos);
 		switch(state.get(FACING)) {
 		default:
-			return SHAPE;//S.get(state.get(FACING));
+			return SHAPE;
 		case UP:
 			return SHAPE.withOffset(vec3d.x, vec3d.y, vec3d.z);
 		}	
 	}
 	
-	public static VoxelShape func_220289_j(BlockState state) {
+	public static VoxelShape getShapeForState(BlockState state) {
 		return SHAPES.get(state.get(FACING));
 	}
 	
-	@SuppressWarnings("deprecation")
+	@Override
 	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		return worldIn.getBlockState(pos.up()).isAir();
 	}

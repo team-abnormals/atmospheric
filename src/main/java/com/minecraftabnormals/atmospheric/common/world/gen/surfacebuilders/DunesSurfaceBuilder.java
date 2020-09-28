@@ -13,7 +13,6 @@ import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
-@SuppressWarnings("deprecation")
 public class DunesSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 	   public DunesSurfaceBuilder(Codec<SurfaceBuilderConfig> p_i51315_1_) {
 	      super(p_i51315_1_);

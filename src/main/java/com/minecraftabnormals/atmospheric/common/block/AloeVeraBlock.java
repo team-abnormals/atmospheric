@@ -67,7 +67,6 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	}
 	
 	@Override
-	@SuppressWarnings("deprecation")
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		int i = state.get(AGE);
 
@@ -138,7 +137,6 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 		return true;
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void grow(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
 		int age = state.get(AGE);
@@ -148,7 +146,6 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
     @Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);

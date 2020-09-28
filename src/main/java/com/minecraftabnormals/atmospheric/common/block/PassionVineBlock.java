@@ -67,7 +67,6 @@ public class PassionVineBlock extends Block implements IGrowable {
 	
 	@Override public boolean isLadder(BlockState state, IWorldReader world, BlockPos pos, net.minecraft.entity.LivingEntity entity) { return true; }
 	
-	@SuppressWarnings("deprecation")
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
 	    int i = state.get(AGE);
@@ -139,7 +138,6 @@ public class PassionVineBlock extends Block implements IGrowable {
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		int i = state.get(AGE);
 		boolean flag = i == 4;
@@ -188,7 +186,6 @@ public class PassionVineBlock extends Block implements IGrowable {
 		}
 	}
 	   
-	@SuppressWarnings("deprecation")
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
 	    if (!stateIn.isValidPosition(worldIn, currentPos)) {
 	        return Blocks.AIR.getDefaultState();

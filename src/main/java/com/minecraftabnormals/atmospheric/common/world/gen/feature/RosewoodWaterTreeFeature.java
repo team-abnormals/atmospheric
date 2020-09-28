@@ -227,7 +227,6 @@ public class RosewoodWaterTreeFeature extends Feature<BaseTreeFeatureConfig> {
         }
     }
 	
-	@SuppressWarnings("deprecation")
     public static boolean isAirOrWater(IWorldGenerationBaseReader world, BlockPos pos) {
         if (!(world instanceof IBlockReader)) {
             return world.hasBlockState(pos, BlockState::isAir) || world.hasBlockState(pos, state -> state.getFluidState().isTagged(FluidTags.WATER));
