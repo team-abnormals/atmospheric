@@ -29,6 +29,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+            jvmArg "-Dmixin.env.disableRefMap=true"
             mods {
                 atmospheric {
                     source sourceSets.main
@@ -39,6 +40,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+            jvmArg "-Dmixin.env.disableRefMap=true"
             mods {
                 atmospheric {
                     source sourceSets.main
@@ -75,6 +77,6 @@ jar {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.1-32.0.106'
-    compile fg.deobf("curse.maven:abnormals-core:3025510")
+    compile fg.deobf("curse.maven:abnormals-core:3063658")
     compile fg.deobf("curse.maven:jei:3022016")
 }
