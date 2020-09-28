@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
-		"wall": "atmospheric:block/hot_hot_monkey_brush",
-		"particle": "atmospheric:block/hot_hot_monkey_brush"
+		"wall": "atmospheric:block/hot_monkey_brush",
+		"particle": "atmospheric:block/hot_monkey_brush"
 	},
 	"elements": [
 		{

@@ -1,6 +1,6 @@
 {
     "parent": "block/flower_pot_cross",
     "textures": {
-        "plant": "atmospheric:block/hot_hot_monkey_brush" }
+        "plant": "atmospheric:block/hot_monkey_brush" }
     }
 }
