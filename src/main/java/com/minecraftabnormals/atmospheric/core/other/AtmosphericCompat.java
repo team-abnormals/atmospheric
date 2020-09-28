@@ -8,7 +8,7 @@ import com.teamabnormals.abnormals_core.core.utils.DataUtils;
 
 import net.minecraft.block.DispenserBlock;
 
-public class AtmosphericData {
+public class AtmosphericCompat {
 
     public static void registerDispenserBehaviors() {
         DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
@@ -55,6 +55,9 @@ public class AtmosphericData {
         DataUtils.registerCompostable(AtmosphericBlocks.GRIMWOOD_LEAVES.get(), 0.3F);
         DataUtils.registerCompostable(AtmosphericBlocks.GRIMWOOD_SAPLING.get(), 0.3F);
         DataUtils.registerCompostable(AtmosphericBlocks.GRIMWOOD_LEAF_CARPET.get(), 0.3F);
+
+        DataUtils.registerCompostable(AtmosphericBlocks.YUCCA_BUNDLE.get(), 0.85F);
+        DataUtils.registerCompostable(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get(), 0.85F);
 
         DataUtils.registerCompostable(AtmosphericBlocks.PASSIONFRUIT_CRATE.get(), 1.0F);
         DataUtils.registerCompostable(AtmosphericBlocks.YUCCA_CASK.get(), 1.0F);

@@ -1,6 +1,6 @@
 package com.minecraftabnormals.atmospheric.core;
 
-import com.minecraftabnormals.atmospheric.core.other.AtmosphericData;
+import com.minecraftabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericRender;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericVillagers;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
@@ -57,9 +57,9 @@ public class Atmospheric
 			AtmosphericBiomes.addBiomeTypes();
 			AtmosphericBiomes.registerBiomesToDictionary();
 			AtmosphericVillagers.setupVillagerTypes();
-			AtmosphericData.registerCompostables();
-			AtmosphericData.registerFlammables();
-			AtmosphericData.registerDispenserBehaviors();
+			AtmosphericCompat.registerCompostables();
+			AtmosphericCompat.registerFlammables();
+			AtmosphericCompat.registerDispenserBehaviors();
 			AtmosphericEffects.registerBrewingRecipes();			
 		});
 	}
