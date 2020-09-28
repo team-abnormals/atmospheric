@@ -97,6 +97,7 @@ public class AtmosphericCompat {
         DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_VERTICAL_SLAB.get(), 5, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_BOOKSHELF.get(), 30, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_BEEHIVE.get(), 5, 20);
 
         DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_LEAVES.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_LOG.get(), 5, 5);
@@ -112,6 +113,7 @@ public class AtmosphericCompat {
         DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_LEAF_CARPET.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_VERTICAL_SLAB.get(), 5, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_BOOKSHELF.get(), 30, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_BEEHIVE.get(), 5, 20);
 
         DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_LEAVES.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_LOG.get(), 5, 5);
@@ -127,6 +129,7 @@ public class AtmosphericCompat {
         DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_LEAF_CARPET.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_VERTICAL_SLAB.get(), 5, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_BOOKSHELF.get(), 30, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.KOUSA_BEEHIVE.get(), 5, 20);
 
         DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_LEAVES.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_LOG.get(), 5, 5);
@@ -144,6 +147,7 @@ public class AtmosphericCompat {
         DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_LEAF_CARPET.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_VERTICAL_SLAB.get(), 5, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_BOOKSHELF.get(), 30, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.ASPEN_BEEHIVE.get(), 5, 20);
 
         DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_LEAVES.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_LOG.get(), 5, 5);
@@ -159,5 +163,6 @@ public class AtmosphericCompat {
         DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_LEAF_CARPET.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_VERTICAL_SLAB.get(), 5, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_BOOKSHELF.get(), 30, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.GRIMWOOD_BEEHIVE.get(), 5, 20);
     }
 }
