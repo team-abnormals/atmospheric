@@ -11,6 +11,7 @@ import com.minecraftabnormals.atmospheric.common.block.GiliaBlock;
 import com.minecraftabnormals.atmospheric.common.block.MonkeyBrushBlock;
 import com.minecraftabnormals.atmospheric.common.block.PassionVineBlock;
 import com.minecraftabnormals.atmospheric.common.block.PassionVineBundleBlock;
+import com.minecraftabnormals.atmospheric.common.block.WallMonkeyBrushBlock;
 import com.minecraftabnormals.atmospheric.common.block.YuccaBranchBlock;
 import com.minecraftabnormals.atmospheric.common.block.YuccaBundleBlock;
 import com.minecraftabnormals.atmospheric.common.block.YuccaFlowerBlock;
@@ -25,6 +26,7 @@ import com.minecraftabnormals.atmospheric.common.world.gen.trees.KousaTree;
 import com.minecraftabnormals.atmospheric.common.world.gen.trees.RosewoodTree;
 import com.minecraftabnormals.atmospheric.common.world.gen.trees.YuccaTree;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
+import com.minecraftabnormals.atmospheric.core.AtmosphericRegistryHelper;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericProperties;
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.abnormals_core.common.blocks.AbnormalsBeehiveBlock;
@@ -53,7 +55,6 @@ import com.teamabnormals.abnormals_core.common.blocks.wood.WoodPressurePlateBloc
 import com.teamabnormals.abnormals_core.common.blocks.wood.WoodSlabBlock;
 import com.teamabnormals.abnormals_core.common.blocks.wood.WoodStairsBlock;
 import com.teamabnormals.abnormals_core.common.blocks.wood.WoodTrapDoorBlock;
-import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -74,7 +75,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericBlocks {
 
-	public static final RegistryHelper HELPER = Atmospheric.REGISTRY_HELPER;	
+	public static final AtmosphericRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER;	
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -97,10 +98,15 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> PASSION_VINE 				= HELPER.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.VINE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= HELPER.createBlock("passion_vine_bundle", 	() -> new PassionVineBundleBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> WARM_MONKEY_BRUSH			= HELPER.createBlock("warm_monkey_brush", 		() -> new MonkeyBrushBlock(() -> AtmosphericEffects.RELIEF.get(), 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> HOT_MONKEY_BRUSH 			= HELPER.createBlock("hot_monkey_brush", 		() -> new MonkeyBrushBlock(() -> AtmosphericEffects.RELIEF.get(), 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH		= HELPER.createBlock("scalding_monkey_brush", 	() -> new MonkeyBrushBlock(() -> AtmosphericEffects.RELIEF.get(), 6, Block.Properties.from(Blocks.ALLIUM)), ItemGroup.DECORATIONS);
 
+	public static final RegistryObject<Block> WARM_WALL_MONKEY_BRUSH	= HELPER.createBlockNoItem("warm_wall_monkey_brush", 		() -> new WallMonkeyBrushBlock(Block.Properties.from(Blocks.ALLIUM)));
+	public static final RegistryObject<Block> HOT_WALL_MONKEY_BRUSH 	= HELPER.createBlockNoItem("hot_wall_monkey_brush", 		() -> new WallMonkeyBrushBlock(Block.Properties.from(Blocks.ALLIUM)));
+	public static final RegistryObject<Block> SCALDING_WALL_MONKEY_BRUSH= HELPER.createBlockNoItem("scalding_wall_monkey_brush", 	() -> new WallMonkeyBrushBlock(Block.Properties.from(Blocks.ALLIUM)));
+	
+	public static final RegistryObject<Block> WARM_MONKEY_BRUSH			= HELPER.createWallOrVerticalBlock("warm_monkey_brush", 		() -> new MonkeyBrushBlock(Block.Properties.from(Blocks.ALLIUM)), WARM_WALL_MONKEY_BRUSH::get, ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> HOT_MONKEY_BRUSH 			= HELPER.createWallOrVerticalBlock("hot_monkey_brush", 			() -> new MonkeyBrushBlock(Block.Properties.from(Blocks.ALLIUM)), HOT_WALL_MONKEY_BRUSH::get, ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH		= HELPER.createWallOrVerticalBlock("scalding_monkey_brush", 	() -> new MonkeyBrushBlock(Block.Properties.from(Blocks.ALLIUM)), SCALDING_WALL_MONKEY_BRUSH::get, ItemGroup.DECORATIONS);
+	
 	public static final RegistryObject<Block> POTTED_WARM_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_warm_monkey_brush",		() -> new FlowerPotBlock(WARM_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_HOT_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_hot_monkey_brush",			() -> new FlowerPotBlock(HOT_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_SCALDING_MONKEY_BRUSH	= HELPER.createBlockNoItem("potted_scalding_monkey_brush",	() -> new FlowerPotBlock(SCALDING_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.minecraftabnormals.atmospheric.common.block.MonkeyBrushBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.abnormals_core.core.utils.TreeUtils;
@@ -161,7 +160,7 @@ public class RosewoodWaterTreeFeature extends Feature<BaseTreeFeatureConfig> {
 					for (BlockPos pos : logsPlaced) {
 						for(Direction direction2 : Direction.values()) {
 							if (TreeUtils.isAir(worldIn, pos.offset(direction2)) && rand.nextInt(3) == 0) {
-								worldIn.setBlockState(pos.offset(direction2), brushes.get(rand.nextInt(brushes.size())).getDefaultState().with(MonkeyBrushBlock.FACING, direction2), 18);
+								worldIn.setBlockState(pos.offset(direction2), MonkeyBrushFeature.monkeyBrushState(brushes.get(rand.nextInt(brushes.size())).getDefaultState(), direction2), 18);
 							}
 						}
 					}

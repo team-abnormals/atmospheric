@@ -7,7 +7,7 @@ import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFea
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.AloeVeraFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.BarrelCactusFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.CoarseDirtPatchFeature;
-import com.minecraftabnormals.atmospheric.common.world.gen.feature.DirectionalFlowersFeature;
+import com.minecraftabnormals.atmospheric.common.world.gen.feature.MonkeyBrushFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.DuneRocksFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.PassionVineFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.PodzolFeature;
@@ -48,9 +48,9 @@ public class AtmosphericFeatures {
 	public static final Feature<NoFeatureConfig> SURFACE_FOSSIL = new SurfaceFossilFeature(NoFeatureConfig.field_236558_a_);
 	public static final Feature<SphereReplaceConfig> COARSE_DIRT_PATCH = new CoarseDirtPatchFeature(SphereReplaceConfig.field_236516_a_);
 
-	public static final Feature<NoFeatureConfig> WARM_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig.field_236558_a_, 1);
-	public static final Feature<NoFeatureConfig> HOT_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig.field_236558_a_, 2);
-	public static final Feature<NoFeatureConfig> SCALDING_MONKEY_BRUSH = new DirectionalFlowersFeature(NoFeatureConfig.field_236558_a_, 3);
+	public static final Feature<NoFeatureConfig> WARM_MONKEY_BRUSH = new MonkeyBrushFeature(NoFeatureConfig.field_236558_a_, 1);
+	public static final Feature<NoFeatureConfig> HOT_MONKEY_BRUSH = new MonkeyBrushFeature(NoFeatureConfig.field_236558_a_, 2);
+	public static final Feature<NoFeatureConfig> SCALDING_MONKEY_BRUSH = new MonkeyBrushFeature(NoFeatureConfig.field_236558_a_, 3);
 	
 	public static final Feature<BaseTreeFeatureConfig> ROSEWOOD_TREE = new RosewoodTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);
 	public static final Feature<BaseTreeFeatureConfig> ROSEWOOD_WATER_TREE = new RosewoodWaterTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG);

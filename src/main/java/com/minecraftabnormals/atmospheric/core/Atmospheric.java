@@ -7,7 +7,6 @@ import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericParticles;
-import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,7 +25,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class Atmospheric
 {
     public static final String MODID = "atmospheric";
-	public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MODID);
+	public static final AtmosphericRegistryHelper REGISTRY_HELPER = new AtmosphericRegistryHelper(MODID);
 
     public Atmospheric() {
     	IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
