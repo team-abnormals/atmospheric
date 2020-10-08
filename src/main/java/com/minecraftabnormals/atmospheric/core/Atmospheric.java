@@ -8,11 +8,9 @@ import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericParticles;
 
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DeferredWorkQueue;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -32,6 +30,7 @@ public class Atmospheric
         
     	REGISTRY_HELPER.getDeferredItemRegister().register(modEventBus);
     	REGISTRY_HELPER.getDeferredBlockRegister().register(modEventBus);
+    	REGISTRY_HELPER.getDeferredEntityRegister().register(modEventBus);
     	
     	AtmosphericBiomes.BIOMES.register(modEventBus);
     	AtmosphericParticles.PARTICLES.register(modEventBus);
@@ -41,9 +40,7 @@ public class Atmospheric
         MinecraftForge.EVENT_BUS.register(this);
         
         modEventBus.addListener(this::setup);
-        DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
-        	modEventBus.addListener(this::clientSetup);
-        });
+        modEventBus.addListener(this::clientSetup);
         
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
     }
@@ -65,7 +62,8 @@ public class Atmospheric
     private void clientSetup(final FMLClientSetupEvent event) {
     	DeferredWorkQueue.runLater(() -> {
     		AtmosphericRender.registerBlockColors();
-    		AtmosphericRender.setupRenderLayer();
+    		AtmosphericRender.registerRenderLayers();
+    		AtmosphericRender.registerEntityRenderers();
     	});
     }
 }

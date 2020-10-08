@@ -42,7 +42,6 @@
 	
 	"item.atmospheric.rosewood_boat": "Rosewood Boat",
 	"item.atmospheric.passionfruit": "Passionfruit",
-	"item.atmospheric.passionfruit_seed": "Passionfruit Seed",
 	"item.atmospheric.shimmering_passionfruit": "Shimmering Passionfruit",
 	"item.atmospheric.passionfruit_tart": "Passionfruit Tart",
 	"item.atmospheric.passionfruit_sorbet": "Passionfruit Sorbet",
@@ -90,6 +89,8 @@
 	"biome.atmospheric.sparse_rainforest_plateau": "Sparse Rainforest Plateau",
 	"biome.atmospheric.rainforest_basin": "Rainforest Basin",
 	"biome.atmospheric.sparse_rainforest_basin": "Sparse Rainforest Basin",
+	
+	"entity.atmospheric.passionfruit_seed": "Passionfruit Seed",
 	
 	"death.attack.passionfruitSeed": "%1$s was barraged to death by %2$s's seeds",
 	"death.attack.shimmeringPassionfruitSeed": "%1$s was passionately barraged to death by %2$s's seeds",

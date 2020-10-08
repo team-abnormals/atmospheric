@@ -2,7 +2,9 @@ package com.minecraftabnormals.atmospheric.core.other;
 
 import java.util.Arrays;
 
+import com.minecraftabnormals.atmospheric.client.render.PassionfruitSeedRenderer;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEntities;
 import com.teamabnormals.abnormals_core.core.utils.DataUtils;
 
 import net.minecraft.client.Minecraft;
@@ -12,6 +14,7 @@ import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.world.FoliageColors;
 import net.minecraft.world.biome.BiomeColors;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class AtmosphericRender {
 	public static void registerBlockColors() {
@@ -27,8 +30,12 @@ public class AtmosphericRender {
 		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.YUCCA_LEAVES));
 		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.YUCCA_LEAF_CARPET));
 	}
+	
+	public static void registerEntityRenderers() {
+		RenderingRegistry.registerEntityRenderingHandler(AtmosphericEntities.PASSIONFRUIT_SEED.get(), PassionfruitSeedRenderer::new);
+	}
 
-	public static void setupRenderLayer() {
+	public static void registerRenderLayers() {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_LEAVES.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_SAPLING.get(), RenderType.getCutout());

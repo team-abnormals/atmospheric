@@ -27,8 +27,6 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> PASSIONFRUIT_SORBET 		= HELPER.createItem("passionfruit_sorbet", () -> new SoupItem(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT_SORBET).maxStackSize(1).containerItem(Items.BOWL).group(ItemGroup.FOOD)));
 	public static final RegistryObject<Item> PASSION_VINE_COIL			= HELPER.createItem("passion_vine_coil", () -> new PassionVineCoilItem(new Item.Properties().maxStackSize(16).group(ItemGroup.MISC)));
 	
-	public static final RegistryObject<Item> PASSIONFRUIT_SEED 		= HELPER.createItem("passionfruit_seed", () -> new Item(new Item.Properties()));
-
 	public static final RegistryObject<Item> YUCCA_FRUIT			= HELPER.createItem("yucca_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.YUCCA_FRUIT).group(ItemGroup.FOOD)));
 	public static final RegistryObject<Item> ROASTED_YUCCA_FRUIT	= HELPER.createItem("roasted_yucca_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.ROASTED_YUCCA_FRUIT).group(ItemGroup.FOOD)));
 	public static final RegistryObject<Item> YUCCA_GATEAU			= HELPER.createItem("yucca_gateau", () -> new BlockItem(AtmosphericBlocks.YUCCA_GATEAU.get(), new Item.Properties().maxStackSize(1).group(ItemGroup.FOOD)));
