@@ -1,5 +1,5 @@
 {
-    "parent": "atmospheric:block/vertical_slab",
+    "parent": "abnormals_core:block/vertical_slab",
     "textures": {
         "side": "atmospheric:block/aspen_planks",
         "top": "atmospheric:block/aspen_planks",

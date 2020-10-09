@@ -1,5 +1,5 @@
 {
-    "parent": "atmospheric:block/vertical_slab",
+    "parent": "abnormals_core:block/vertical_slab",
     "textures": {
         "bottom": "atmospheric:block/red_arid_sandstone_bottom",
         "top": "atmospheric:block/red_arid_sandstone_top",
