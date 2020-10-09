@@ -25,6 +25,7 @@ import com.minecraftabnormals.atmospheric.common.block.YuccaSaplingBlock;
 import com.minecraftabnormals.atmospheric.common.world.gen.trees.AspenTree;
 import com.minecraftabnormals.atmospheric.common.world.gen.trees.GrimwoodTree;
 import com.minecraftabnormals.atmospheric.common.world.gen.trees.KousaTree;
+import com.minecraftabnormals.atmospheric.common.world.gen.trees.MoradoTree;
 import com.minecraftabnormals.atmospheric.common.world.gen.trees.RosewoodTree;
 import com.minecraftabnormals.atmospheric.common.world.gen.trees.YuccaTree;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
@@ -107,7 +108,7 @@ public class AtmosphericBlocks {
 	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> ROSEWOOD_CHESTS = HELPER.createCompatChestBlocks("rosewood", MaterialColor.PINK);
 	
 	public static final RegistryObject<Block> MORADO_PLANKS 		= HELPER.createBlock("morado_planks", 			() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> MORADO_SAPLING 		= HELPER.createBlock("morado_sapling", 			() -> new AbnormalsSaplingBlock(new KousaTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> MORADO_SAPLING 		= HELPER.createBlock("morado_sapling", 			() -> new AbnormalsSaplingBlock(new MoradoTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_MORADO_LOG 	= HELPER.createBlock("stripped_morado_log", 	() -> new StrippedLogBlock(Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> MORADO_LOG 			= HELPER.createBlock("morado_log", 				() -> new AbnormalsLogBlock(STRIPPED_MORADO_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_MORADO_WOOD	= HELPER.createBlock("stripped_morado_wood", 	() -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);

@@ -31,7 +31,7 @@ public class RainforestBasinBiome extends Biome {
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addRainforestBasinTrees(this, 3200);
+        AtmosphericBiomeFeatures.addRainforestBasinTrees(this, 2400, 800);
         AtmosphericBiomeFeatures.addRainforestDoublePlants(this);
         AtmosphericBiomeFeatures.addRainforestFlowers(this);
         AtmosphericBiomeFeatures.addRainforestFoliage(this);

@@ -14,6 +14,7 @@ import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.TwoLayerFeature;
@@ -36,6 +37,10 @@ public class AtmosphericFeatureConfigs {
 	public static final BlockState ROSEWOOD_LOG        = AtmosphericBlocks.ROSEWOOD_LOG.get().getDefaultState();
 	public static final BlockState ROSEWOOD_LEAVES     = AtmosphericBlocks.ROSEWOOD_LEAVES.get().getDefaultState();
 	
+	public static final BlockState MORADO_LOG        = AtmosphericBlocks.MORADO_LOG.get().getDefaultState();
+	public static final BlockState MORADO_LEAVES     = AtmosphericBlocks.MORADO_LEAVES.get().getDefaultState();
+	public static final BlockState FLOWERING_MORADO_LEAVES     = AtmosphericBlocks.FLOWERING_MORADO_LEAVES.get().getDefaultState();
+
 	public static final BlockState YUCCA_LOG           = AtmosphericBlocks.YUCCA_LOG.get().getDefaultState();
 	public static final BlockState YUCCA_LEAVES        = AtmosphericBlocks.YUCCA_LEAVES.get().getDefaultState();
 	public static final BlockState YUCCA_BRANCH        = AtmosphericBlocks.YUCCA_BRANCH.get().getDefaultState();
@@ -96,6 +101,10 @@ public class AtmosphericFeatureConfigs {
 	public static final BaseTreeFeatureConfig ROSEWOOD_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ROSEWOOD_LOG), new SimpleBlockStateProvider(ROSEWOOD_LEAVES), null, null, null)).setIgnoreVines().func_236702_a_(Heightmap.Type.MOTION_BLOCKING).build();
     public static final BaseTreeFeatureConfig ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG = ROSEWOOD_TREE_CONFIG.func_236685_a_(ImmutableList.of(FEW_BEEHIVES));
     public static final BaseTreeFeatureConfig ROSEWOOD_TREE_WITH_MORE_BEEHIVES_CONFIG = ROSEWOOD_TREE_CONFIG.func_236685_a_(ImmutableList.of(MANY_BEEHIVES));
+    
+    public static final BaseTreeFeatureConfig MORADO_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(MORADO_LOG), new WeightedBlockStateProvider().addWeightedBlockstate(MORADO_LEAVES, 2).addWeightedBlockstate(FLOWERING_MORADO_LEAVES, 6), null, null, null)).setIgnoreVines().func_236702_a_(Heightmap.Type.MOTION_BLOCKING).build();
+    public static final BaseTreeFeatureConfig MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG = MORADO_TREE_CONFIG.func_236685_a_(ImmutableList.of(FEW_BEEHIVES));
+    public static final BaseTreeFeatureConfig MORADO_TREE_WITH_MORE_BEEHIVES_CONFIG = MORADO_TREE_CONFIG.func_236685_a_(ImmutableList.of(MANY_BEEHIVES));
 
 	public static final BaseTreeFeatureConfig ASPEN_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ASPEN_LOG), new SimpleBlockStateProvider(ASPEN_LEAVES), new SpruceFoliagePlacer(2, 1, 0, 2, 1, 1), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).setIgnoreVines().build();
 	public static final BaseTreeFeatureConfig MEGA_ASPEN_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ASPEN_LOG), new SimpleBlockStateProvider(ASPEN_LEAVES), new MegaPineFoliagePlacer(0, 0, 0, 0, 4, 13), new GiantTrunkPlacer(13, 2, 14), new TwoLayerFeature(1, 1, 2))).func_236703_a_(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(CRUSTOSE)))).build();

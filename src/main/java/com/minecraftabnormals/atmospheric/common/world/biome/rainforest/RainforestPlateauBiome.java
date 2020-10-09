@@ -28,7 +28,7 @@ public class RainforestPlateauBiome extends Biome {
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addRainforestTrees(this, 10, 1);
+        AtmosphericBiomeFeatures.addRainforestTrees(this, 8, 1, 2, 1);
         AtmosphericBiomeFeatures.addRainforestDoublePlants(this);
         AtmosphericBiomeFeatures.addRainforestFlowers(this);
         AtmosphericBiomeFeatures.addRainforestFoliage(this);

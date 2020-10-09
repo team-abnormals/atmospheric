@@ -70,20 +70,23 @@ public class AtmosphericBiomeFeatures {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.DEAD_BUSH_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(freq))));
 	}
 	
-	public static void addRainforestTrees (Biome biomeIn, int count, int extraCountIn) {
+	public static void addRainforestTrees (Biome biomeIn, int rosewoodCount, int extraRosewoodCountIn, int moradoCount, int extraMoradoCountIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(Feature.field_236291_c_.withConfiguration(DefaultBiomeFeatures.FANCY_TREE_WITH_MORE_BEEHIVES_CONFIG).withChance(0.33333334F)), Feature.field_236291_c_.withConfiguration(DefaultBiomeFeatures.OAK_TREE_WITH_MORE_BEEHIVES_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1))));
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, 0.1F, extraCountIn))));
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(rosewoodCount, 0.1F, extraRosewoodCountIn))));
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(AtmosphericFeatureConfigs.MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(moradoCount, 0.1F, extraMoradoCountIn))));
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.field_236291_c_.withConfiguration(AtmosphericFeatureConfigs.OAK_GROUND_BUSH_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(2, 0.1F, 1))));
 	}
 	
-	public static void addRainforestBasinTrees(Biome biomeIn, int count) {
+	public static void addRainforestBasinTrees(Biome biomeIn, int rosewoodCount, int moradoCount) {
         biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(Feature.field_236291_c_.withConfiguration(DefaultBiomeFeatures.FANCY_TREE_WITH_MORE_BEEHIVES_CONFIG).withChance(0.33333334F)), Feature.field_236291_c_.withConfiguration(DefaultBiomeFeatures.OAK_TREE_WITH_MORE_BEEHIVES_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_WATER_TREE.withConfiguration(AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(count))));
+        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_WATER_TREE.withConfiguration(AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(rosewoodCount))));
+        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_WATER_TREE.withConfiguration(AtmosphericFeatureConfigs.MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(moradoCount))));
         biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.field_236291_c_.withConfiguration(AtmosphericFeatureConfigs.OAK_GROUND_BUSH_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(2, 0.1F, 1))));
     }
 	
-	public static void addSparseRainforestPlateauTrees (Biome biomeIn, int count, int extraCountIn) {
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, 0.1F, extraCountIn))));
+	public static void addSparseRainforestPlateauTrees (Biome biomeIn, int rosewoodCount, int extraRosewoodCountIn, int moradoCount, int extraMoradoCountIn) {
+        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(rosewoodCount, 0.1F, extraRosewoodCountIn))));
+        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(AtmosphericFeatureConfigs.MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(moradoCount, 0.1F, extraMoradoCountIn))));
         biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.field_236291_c_.withConfiguration(AtmosphericFeatureConfigs.OAK_GROUND_BUSH_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(2, 0.1F, 1))));
 	}
 	
