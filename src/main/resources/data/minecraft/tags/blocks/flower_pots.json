@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:potted_rosewood_sapling",
+    "atmospheric:potted_morado_sapling",
+    "atmospheric:potted_yucca_sapling",
+    "atmospheric:potted_kousa_sapling",
+    "atmospheric:potted_aspen_sapling",
+    "atmospheric:potted_grimwood_sapling",
+    "atmospheric:potted_warm_monkey_brush",
+    "atmospheric:potted_hot_monkey_brush",
+    "atmospheric:potted_scalding_monkey_brush",
+    "atmospheric:potted_yucca_flower",
+    "atmospheric:potted_barrel_cactus",
+    "atmospheric:potted_gilia"
+  ]
+}
