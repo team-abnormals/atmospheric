@@ -42,7 +42,6 @@
 	
 	"item.atmospheric.rosewood_boat": "Barca de palisandro",
 	"item.atmospheric.passionfruit": "Fruta de la pasión",
-	"item.atmospheric.passionfruit_seed": "Semilla de fruta de la pasión",
 	"item.atmospheric.shimmering_passionfruit": "Fruta de la pasión reluciente",
 	"item.atmospheric.passionfruit_tart": "Tarta de fruta de la pasión",
 	"item.atmospheric.passionfruit_sorbet": "Sorbete de fruta de la pasión",
@@ -89,6 +88,9 @@
 	"biome.atmospheric.rainforest_plateau": "Meseta de selva",
 	"biome.atmospheric.sparse_rainforest_plateau": "Meseta de selva dispersa",
 	"biome.atmospheric.rainforest_basin": "Cuenca de selva",
+	"biome.atmospheric.sparse_rainforest_basin": "Cuenca de selva abrupta",
+
+	"entity.atmospheric.passionfruit_seed": "Semilla de fruta de la pasión",
 	
 	"death.attack.passionfruitSeed": "%1$s ha sido bombardeado/a con las semillas de %2$s",
 	"death.attack.shimmeringPassionfruitSeed": "%1$s ha sido bombardeado/a apasionadamente con las semillas de %2$s",
