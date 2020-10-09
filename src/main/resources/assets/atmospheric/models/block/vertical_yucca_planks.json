@@ -1,5 +1,5 @@
 {
-    "parent": "atmospheric:block/vertical_planks",
+    "parent": "abnormals_core:block/vertical_planks",
     "textures": {
         "all": "atmospheric:block/yucca_planks"
     }
