@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:flowering_morado_leaves"
+    }
+  },
+  "result": {
+    "item": "atmospheric:flowering_morado_leaf_carpet",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "abnormals_core:quark_flag",
+       "flag": "leaf_carpet"
+    }
+  ]
+} 

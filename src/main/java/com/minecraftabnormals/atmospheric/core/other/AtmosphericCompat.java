@@ -23,6 +23,10 @@ public class AtmosphericCompat {
         DataUtils.registerCompostable(AtmosphericBlocks.MORADO_LEAVES.get(), 0.3F);
         DataUtils.registerCompostable(AtmosphericBlocks.MORADO_SAPLING.get(), 0.3F);
         DataUtils.registerCompostable(AtmosphericBlocks.MORADO_LEAF_CARPET.get(), 0.3F);
+        
+        DataUtils.registerCompostable(AtmosphericBlocks.FLOWERING_MORADO_LEAVES.get(), 0.3F);
+        DataUtils.registerCompostable(AtmosphericItems.YELLOW_BLOSSOMS.get(), 0.3F);
+        DataUtils.registerCompostable(AtmosphericBlocks.FLOWERING_MORADO_LEAF_CARPET.get(), 0.3F);
 
         DataUtils.registerCompostable(AtmosphericBlocks.WARM_MONKEY_BRUSH.get(), 0.65F);
         DataUtils.registerCompostable(AtmosphericBlocks.HOT_MONKEY_BRUSH.get(), 0.65F);
@@ -104,6 +108,7 @@ public class AtmosphericCompat {
         DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_BEEHIVE.get(), 5, 20);
         
         DataUtils.registerFlammable(AtmosphericBlocks.MORADO_LEAVES.get(), 30, 60);
+        DataUtils.registerFlammable(AtmosphericBlocks.FLOWERING_MORADO_LEAVES.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.MORADO_LOG.get(), 5, 5);
         DataUtils.registerFlammable(AtmosphericBlocks.MORADO_WOOD.get(), 5, 5);
         DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_MORADO_LOG.get(), 5, 5);
@@ -115,6 +120,7 @@ public class AtmosphericCompat {
         DataUtils.registerFlammable(AtmosphericBlocks.MORADO_FENCE_GATE.get(), 5, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_MORADO_PLANKS.get(), 5, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.MORADO_LEAF_CARPET.get(), 30, 60);
+        DataUtils.registerFlammable(AtmosphericBlocks.FLOWERING_MORADO_LEAF_CARPET.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.MORADO_VERTICAL_SLAB.get(), 5, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.MORADO_BOOKSHELF.get(), 30, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.MORADO_BEEHIVE.get(), 5, 20);

@@ -7,6 +7,8 @@ import com.minecraftabnormals.atmospheric.common.block.AridSandBlock;
 import com.minecraftabnormals.atmospheric.common.block.BarrelCactusBlock;
 import com.minecraftabnormals.atmospheric.common.block.CrustoseBlock;
 import com.minecraftabnormals.atmospheric.common.block.CrustoseLogBlock;
+import com.minecraftabnormals.atmospheric.common.block.FloweringMoradoLeafCarpetBlock;
+import com.minecraftabnormals.atmospheric.common.block.FloweringMoradoLeavesBlock;
 import com.minecraftabnormals.atmospheric.common.block.GiliaBlock;
 import com.minecraftabnormals.atmospheric.common.block.MonkeyBrushBlock;
 import com.minecraftabnormals.atmospheric.common.block.PassionVineBlock;
@@ -129,7 +131,10 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> MORADO_LEAF_CARPET 		= HELPER.createCompatBlock("quark", "morado_leaf_carpet", 		() -> new LeafCarpetBlock(Block.Properties.from(MORADO_LEAVES.get())), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> MORADO_BEEHIVE         	= HELPER.createCompatBlock("buzzier_bees", "morado_beehive", 	() -> new AbnormalsBeehiveBlock(Block.Properties.from(Blocks.BEEHIVE)), ItemGroup.DECORATIONS);
 	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> MORADO_CHESTS = HELPER.createCompatChestBlocks("morado", MaterialColor.RED_TERRACOTTA);
-	
+
+	public static final RegistryObject<Block> FLOWERING_MORADO_LEAVES 		= HELPER.createBlock("flowering_morado_leaves", () -> new FloweringMoradoLeavesBlock(AtmosphericProperties.createLeaves()), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> FLOWERING_MORADO_LEAF_CARPET 	= HELPER.createCompatBlock("quark", "flowering_morado_leaf_carpet", () -> new FloweringMoradoLeafCarpetBlock(Block.Properties.from(FLOWERING_MORADO_LEAVES.get())), ItemGroup.DECORATIONS);
+
 	public static final RegistryObject<Block> PASSION_VINE 				= HELPER.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.VINE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= HELPER.createBlock("passion_vine_bundle", 	() -> new PassionVineBundleBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
 

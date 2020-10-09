@@ -52,6 +52,7 @@
   "block.atmospheric.vertical_morado_planks": "Vertical Morado Planks",
   "block.atmospheric.morado_ladder": "Morado Ladder",
   "block.atmospheric.morado_leaf_carpet": "Morado Leaf Carpet",
+  "block.atmospheric.flowering_morado_leaf_carpet": "Flowering Morado Leaf Carpet",
   "block.atmospheric.morado_chest": "Morado Chest",
   "block.atmospheric.morado_trapped_chest": "Morado Trapped Chest",
   "block.atmospheric.morado_beehive": "Morado Beehive",
@@ -76,6 +77,7 @@
 	"item.atmospheric.passionfruit_tart": "Passionfruit Tart",
 	"item.atmospheric.passionfruit_sorbet": "Passionfruit Sorbet",
 	"item.atmospheric.passion_vine_coil": "Passion Vine Coil",
+	"item.atmospheric.yellow_blossoms": "Yellow Blossoms",
 	
 	"effect.atmospheric.relief": "Relief",
 	"effect.atmospheric.worsening": "Worsening",

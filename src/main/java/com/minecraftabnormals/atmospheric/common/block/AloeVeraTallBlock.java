@@ -157,7 +157,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 			}
 			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), new Random().nextInt(5) + 3));
 			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_KERNELS.get(), age - 5));
-			spawnAsEntity(worldIn, pos, new ItemStack(Items.YELLOW_DYE, age - 5));
+			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.YELLOW_BLOSSOMS.get(), age - 5));
 			
 			return ActionResultType.SUCCESS;
 		} else  {
