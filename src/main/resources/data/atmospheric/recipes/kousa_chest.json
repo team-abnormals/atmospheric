@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "kousa_chest",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:kousa_planks"
+    }
+  },
+  "result": {
+    "item": "atmospheric:kousa_chest",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "abnormals_core:quark_flag",
+      "flag": "variant_chests"
+    }
+  ]
+}

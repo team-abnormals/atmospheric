@@ -4,6 +4,12 @@
     "atmospheric:rosewood_chest",
     "atmospheric:rosewood_trapped_chest",
     "atmospheric:yucca_chest",
-    "atmospheric:yucca_trapped_chest"
+    "atmospheric:yucca_trapped_chest",
+    "atmospheric:kousa_chest",
+    "atmospheric:kousa_trapped_chest",
+    "atmospheric:aspen_chest",
+    "atmospheric:aspen_trapped_chest",
+    "atmospheric:grimwood_chest",
+    "atmospheric:grimwood_trapped_chest"
   ]
 }

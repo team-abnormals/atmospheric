@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "aspen_chest",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:aspen_planks"
+    }
+  },
+  "result": {
+    "item": "atmospheric:aspen_chest",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "abnormals_core:quark_flag",
+      "flag": "variant_chests"
+    }
+  ]
+}
