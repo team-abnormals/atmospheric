@@ -1,0 +1,10 @@
+{
+    "parent": "block/orientable_with_bottom",
+    "textures": {
+        "particle": "atmospheric:block/morado_beehive_side",
+        "bottom": "atmospheric:block/morado_beehive_end",
+        "top": "atmospheric:block/morado_beehive_end",
+        "front": "atmospheric:block/morado_beehive_front",
+        "side": "atmospheric:block/morado_beehive_side"
+    }
+}

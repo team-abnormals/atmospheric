@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:morado_planks"
+    }
+  },
+  "result": {
+    "item": "atmospheric:vertical_morado_planks",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "abnormals_core:quark_flag",
+       "flag": "vertical_planks"
+    }
+  ]
+}

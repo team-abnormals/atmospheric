@@ -37,6 +37,7 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> ALOE_GEL_BOTTLE	= HELPER.createItem("aloe_gel_bottle", () -> new AloeGelBottleItem(new Item.Properties().containerItem(Items.GLASS_BOTTLE).food(AtmosphericFoods.ALOE_GEL).maxStackSize(16).group(ItemGroup.FOOD)));
 	
 	public static final RegistryObject<Item> ROSEWOOD_BOAT 	= HELPER.createBoatItem("rosewood", AtmosphericBlocks.ROSEWOOD_PLANKS);
+	public static final RegistryObject<Item> MORADO_BOAT 	= HELPER.createBoatItem("morado", AtmosphericBlocks.MORADO_PLANKS);
 	public static final RegistryObject<Item> YUCCA_BOAT 	= HELPER.createBoatItem("yucca", AtmosphericBlocks.YUCCA_PLANKS);
 	public static final RegistryObject<Item> KOUSA_BOAT 	= HELPER.createBoatItem("kousa", AtmosphericBlocks.KOUSA_PLANKS);
 	public static final RegistryObject<Item> ASPEN_BOAT 	= HELPER.createBoatItem("aspen", AtmosphericBlocks.ASPEN_PLANKS);

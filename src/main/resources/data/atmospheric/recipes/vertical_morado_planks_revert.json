@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:vertical_morado_planks"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:morado_planks"
+  },
+  "conditions": [
+    {
+      "type": "abnormals_core:quark_flag",
+       "flag": "vertical_planks"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "atmospheric:morado_planks"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:morado_button"
+  }
+}

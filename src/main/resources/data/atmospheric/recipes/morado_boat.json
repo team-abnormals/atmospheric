@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "boat",
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:morado_planks"
+    }
+  },
+  "result": {
+    "item": "atmospheric:morado_boat"
+  }
+}

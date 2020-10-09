@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "atmospheric:rosewood_pressure_plate",
+    "atmospheric:morado_pressure_plate",
     "atmospheric:yucca_pressure_plate",
     "atmospheric:kousa_pressure_plate",
     "atmospheric:aspen_pressure_plate",

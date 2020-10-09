@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:morado_log",
+    "atmospheric:morado_wood",
+    "atmospheric:stripped_morado_log",
+    "atmospheric:stripped_morado_wood"
+  ]
+}

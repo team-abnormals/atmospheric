@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "atmospheric:morado_logs"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:morado_planks",
+    "count": 4
+  }
+}

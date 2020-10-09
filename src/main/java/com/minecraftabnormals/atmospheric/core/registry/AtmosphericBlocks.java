@@ -96,6 +96,40 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_DOOR 			= HELPER.createBlock("rosewood_door", 			() -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> ROSEWOOD_SIGNS = HELPER.createSignBlock("rosewood", MaterialColor.PINK);
 
+	public static final RegistryObject<Block> VERTICAL_ROSEWOOD_PLANKS 	= HELPER.createCompatBlock("quark", "vertical_rosewood_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ROSEWOOD_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "rosewood_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ROSEWOOD_BOOKSHELF 		= HELPER.createCompatBlock("quark", "rosewood_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ROSEWOOD_LADDER 			= HELPER.createCompatBlock("quark", "rosewood_ladder", 			() -> new AbnormalsLadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ROSEWOOD_LEAF_CARPET 		= HELPER.createCompatBlock("quark", "rosewood_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ROSEWOOD_LEAVES.get())), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ROSEWOOD_BEEHIVE          = HELPER.createCompatBlock("buzzier_bees", "rosewood_beehive", () -> new AbnormalsBeehiveBlock(Block.Properties.from(Blocks.BEEHIVE)), ItemGroup.DECORATIONS);
+	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> ROSEWOOD_CHESTS = HELPER.createCompatChestBlocks("rosewood", MaterialColor.PINK);
+	
+	public static final RegistryObject<Block> MORADO_PLANKS 		= HELPER.createBlock("morado_planks", 			() -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> MORADO_SAPLING 		= HELPER.createBlock("morado_sapling", 			() -> new AbnormalsSaplingBlock(new KousaTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> STRIPPED_MORADO_LOG 	= HELPER.createBlock("stripped_morado_log", 	() -> new StrippedLogBlock(Block.Properties.from(Blocks.STRIPPED_OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> MORADO_LOG 			= HELPER.createBlock("morado_log", 				() -> new AbnormalsLogBlock(STRIPPED_MORADO_LOG, Block.Properties.from(Blocks.OAK_LOG)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> STRIPPED_MORADO_WOOD	= HELPER.createBlock("stripped_morado_wood", 	() -> new StrippedWoodBlock(Block.Properties.from(Blocks.STRIPPED_OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> MORADO_WOOD 			= HELPER.createBlock("morado_wood",          	() -> new WoodBlock(STRIPPED_MORADO_WOOD, Block.Properties.from(Blocks.OAK_WOOD)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> MORADO_LEAVES 		= HELPER.createBlock("morado_leaves", 			() -> new AbnormalsLeavesBlock(AtmosphericProperties.createLeaves()), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> MORADO_SLAB 			= HELPER.createBlock("morado_slab", 			() -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> MORADO_STAIRS 		= HELPER.createBlock("morado_stairs", 			() -> new WoodStairsBlock(MORADO_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> MORADO_PRESSURE_PLATE = HELPER.createBlock("morado_pressure_plate",	() -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> MORADO_FENCE 			= HELPER.createBlock("morado_fence", 			() -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> MORADO_TRAPDOOR 		= HELPER.createBlock("morado_trapdoor", 		() -> new WoodTrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> MORADO_FENCE_GATE 	= HELPER.createBlock("morado_fence_gate", 		() -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> MORADO_BUTTON 		= HELPER.createBlock("morado_button", 			() -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> MORADO_DOOR 			= HELPER.createBlock("morado_door", 			() -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> POTTED_MORADO_SAPLING	= HELPER.createBlockNoItem("potted_morado_sapling",	() -> new FlowerPotBlock(MORADO_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
+	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> MORADO_SIGNS = HELPER.createSignBlock("morado", MaterialColor.RED_TERRACOTTA);
+
+	public static final RegistryObject<Block> VERTICAL_MORADO_PLANKS 	= HELPER.createCompatBlock("quark", "vertical_morado_planks",	() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> MORADO_VERTICAL_SLAB 		= HELPER.createCompatBlock("quark", "morado_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> MORADO_BOOKSHELF 			= HELPER.createCompatBlock("quark", "morado_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> MORADO_LADDER 			= HELPER.createCompatBlock("quark", "morado_ladder", 			() -> new AbnormalsLadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> MORADO_LEAF_CARPET 		= HELPER.createCompatBlock("quark", "morado_leaf_carpet", 		() -> new LeafCarpetBlock(Block.Properties.from(MORADO_LEAVES.get())), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> MORADO_BEEHIVE         	= HELPER.createCompatBlock("buzzier_bees", "morado_beehive", 	() -> new AbnormalsBeehiveBlock(Block.Properties.from(Blocks.BEEHIVE)), ItemGroup.DECORATIONS);
+	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> MORADO_CHESTS = HELPER.createCompatChestBlocks("morado", MaterialColor.RED_TERRACOTTA);
+	
 	public static final RegistryObject<Block> PASSION_VINE 				= HELPER.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.VINE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= HELPER.createBlock("passion_vine_bundle", 	() -> new PassionVineBundleBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
 
@@ -111,14 +145,6 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> POTTED_HOT_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_hot_monkey_brush",			() -> new FlowerPotBlock(HOT_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_SCALDING_MONKEY_BRUSH	= HELPER.createBlockNoItem("potted_scalding_monkey_brush",	() -> new FlowerPotBlock(SCALDING_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_ROSEWOOD_SAPLING		= HELPER.createBlockNoItem("potted_rosewood_sapling",		() -> new FlowerPotBlock(ROSEWOOD_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
-
-	public static final RegistryObject<Block> VERTICAL_ROSEWOOD_PLANKS 	= HELPER.createCompatBlock("quark", "vertical_rosewood_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ROSEWOOD_VERTICAL_SLAB 	= HELPER.createCompatBlock("quark", "rosewood_vertical_slab", 	() -> new VerticalSlabBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ROSEWOOD_BOOKSHELF 		= HELPER.createCompatBlock("quark", "rosewood_bookshelf", 		() -> new BookshelfBlock(Block.Properties.from(Blocks.BOOKSHELF)), ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ROSEWOOD_LADDER 			= HELPER.createCompatBlock("quark", "rosewood_ladder", 			() -> new AbnormalsLadderBlock(Block.Properties.from(Blocks.LADDER).harvestTool(ToolType.AXE)), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> ROSEWOOD_LEAF_CARPET 		= HELPER.createCompatBlock("quark", "rosewood_leaf_carpet", 	() -> new LeafCarpetBlock(Block.Properties.from(ROSEWOOD_LEAVES.get())), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> ROSEWOOD_BEEHIVE          = HELPER.createCompatBlock("buzzier_bees", "rosewood_beehive", () -> new AbnormalsBeehiveBlock(Block.Properties.from(Blocks.BEEHIVE)), ItemGroup.DECORATIONS);
-	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> ROSEWOOD_CHESTS = HELPER.createCompatChestBlocks("rosewood", MaterialColor.PINK);
 
 	public static final RegistryObject<Block> PASSIONFRUIT_CRATE				= HELPER.createCompatBlock("quark", "passionfruit_crate", 				() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.PURPLE).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> SHIMMERING_PASSIONFRUIT_CRATE		= HELPER.createCompatBlock("quark", "shimmering_passionfruit_crate", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GOLD).setLightLevel((state) -> 7).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);

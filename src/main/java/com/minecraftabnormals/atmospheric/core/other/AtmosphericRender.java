@@ -21,12 +21,16 @@ public class AtmosphericRender {
 		BlockColors blockColors = Minecraft.getInstance().getBlockColors();
 		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.ROSEWOOD_LEAVES));
 		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET));
+		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.MORADO_LEAVES));
+		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.MORADO_LEAF_CARPET));
 		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.YUCCA_LEAVES));
 		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.YUCCA_LEAF_CARPET));
 
 		ItemColors itemColors = Minecraft.getInstance().getItemColors();
 		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.ROSEWOOD_LEAVES));
 		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET));
+		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.MORADO_LEAVES));
+		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.MORADO_LEAF_CARPET));
 		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.YUCCA_LEAVES));
 		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.YUCCA_LEAF_CARPET));
 	}
@@ -41,6 +45,12 @@ public class AtmosphericRender {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_SAPLING.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_ROSEWOOD_SAPLING.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_LADDER.get(), RenderType.getCutout());
+		
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.MORADO_LEAVES.get(), RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.MORADO_LEAF_CARPET.get(), RenderType.getCutoutMipped());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.MORADO_SAPLING.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_MORADO_SAPLING.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.MORADO_LADDER.get(), RenderType.getCutout());
 
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_LEAVES.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.YUCCA_LEAF_CARPET.get(), RenderType.getCutoutMipped());

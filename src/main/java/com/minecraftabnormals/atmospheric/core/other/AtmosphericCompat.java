@@ -19,6 +19,10 @@ public class AtmosphericCompat {
         DataUtils.registerCompostable(AtmosphericBlocks.ROSEWOOD_LEAVES.get(), 0.3F);
         DataUtils.registerCompostable(AtmosphericBlocks.ROSEWOOD_SAPLING.get(), 0.3F);
         DataUtils.registerCompostable(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET.get(), 0.3F);
+        
+        DataUtils.registerCompostable(AtmosphericBlocks.MORADO_LEAVES.get(), 0.3F);
+        DataUtils.registerCompostable(AtmosphericBlocks.MORADO_SAPLING.get(), 0.3F);
+        DataUtils.registerCompostable(AtmosphericBlocks.MORADO_LEAF_CARPET.get(), 0.3F);
 
         DataUtils.registerCompostable(AtmosphericBlocks.WARM_MONKEY_BRUSH.get(), 0.65F);
         DataUtils.registerCompostable(AtmosphericBlocks.HOT_MONKEY_BRUSH.get(), 0.65F);
@@ -98,6 +102,22 @@ public class AtmosphericCompat {
         DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_VERTICAL_SLAB.get(), 5, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_BOOKSHELF.get(), 30, 20);
         DataUtils.registerFlammable(AtmosphericBlocks.ROSEWOOD_BEEHIVE.get(), 5, 20);
+        
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_LEAVES.get(), 30, 60);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_LOG.get(), 5, 5);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_WOOD.get(), 5, 5);
+        DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_MORADO_LOG.get(), 5, 5);
+        DataUtils.registerFlammable(AtmosphericBlocks.STRIPPED_MORADO_WOOD.get(), 5, 5);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_PLANKS.get(), 5, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_SLAB.get(), 5, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_STAIRS.get(), 5, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_FENCE.get(), 5, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_FENCE_GATE.get(), 5, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.VERTICAL_MORADO_PLANKS.get(), 5, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_LEAF_CARPET.get(), 30, 60);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_VERTICAL_SLAB.get(), 5, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_BOOKSHELF.get(), 30, 20);
+        DataUtils.registerFlammable(AtmosphericBlocks.MORADO_BEEHIVE.get(), 5, 20);
 
         DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_LEAVES.get(), 30, 60);
         DataUtils.registerFlammable(AtmosphericBlocks.YUCCA_LOG.get(), 5, 5);
