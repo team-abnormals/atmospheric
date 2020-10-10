@@ -64,7 +64,7 @@ minecraft {
 jar {
     manifest {
         attributes([
-          "Specification-Title": "Atmospheric",
+            "Specification-Title": "Atmospheric",
             "Specification-Vendor": "Team Abnormals",
             "Specification-Version": "1",
             "Implementation-Title": project.name,
@@ -77,6 +77,6 @@ jar {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.1-32.0.106'
-    compile fg.deobf("curse.maven:abnormals-core:3063658")
+    compile fg.deobf("curse.maven:abnormals-core:3072976")
     compile fg.deobf("curse.maven:jei:3022016")
 }
