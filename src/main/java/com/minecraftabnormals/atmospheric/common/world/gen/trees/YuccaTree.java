@@ -22,7 +22,7 @@ import net.minecraft.world.server.ServerWorld;
 public class YuccaTree extends Tree {
     @Nullable
     protected ConfiguredFeature<YuccaTreeFeatureConfig, ?> getYuccaTreeFeature(Random randomIn, boolean beehive) {
-        return randomIn.nextInt(10) == 0 ? AtmosphericFeatures.YUCCA_TREE.withConfiguration(AtmosphericFeatureConfigs.BABY_YUCCA_TREE_CONFIG) : beehive ? AtmosphericFeatures.YUCCA_TREE.withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_WITH_MORE_BEEHIVES_CONFIG) : AtmosphericFeatures.YUCCA_TREE.withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_CONFIG);
+        return AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(randomIn.nextInt(10) == 0 ? AtmosphericFeatureConfigs.BABY_YUCCA_TREE_CONFIG : beehive ? AtmosphericFeatureConfigs.YUCCA_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatureConfigs.YUCCA_TREE_CONFIG);
     }
 
     @Override

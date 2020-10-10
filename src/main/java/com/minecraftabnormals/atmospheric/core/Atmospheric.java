@@ -33,6 +33,7 @@ public class Atmospheric
     	REGISTRY_HELPER.getDeferredEntityRegister().register(modEventBus);
     	
     	AtmosphericBiomes.BIOMES.register(modEventBus);
+    	AtmosphericFeatures.FEATURES.register(modEventBus);
     	AtmosphericParticles.PARTICLES.register(modEventBus);
         AtmosphericEffects.EFFECTS.register(modEventBus);
         AtmosphericEffects.POTIONS.register(modEventBus);

@@ -15,6 +15,6 @@ public class RosewoodTree extends Tree {
 	
 	@Nullable
 	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean beehive) {
-		return AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(beehive ? AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatureConfigs.ROSEWOOD_TREE_CONFIG);
+		return AtmosphericFeatures.ROSEWOOD_TREE.get().withConfiguration(beehive ? AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatureConfigs.ROSEWOOD_TREE_CONFIG);
 	}
 }

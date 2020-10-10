@@ -15,6 +15,6 @@ public class MoradoTree extends Tree {
 	
 	@Nullable
 	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean beehive) {
-		return AtmosphericFeatures.ROSEWOOD_TREE.withConfiguration(beehive ? AtmosphericFeatureConfigs.MORADO_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatureConfigs.MORADO_TREE_CONFIG);
+		return AtmosphericFeatures.ROSEWOOD_TREE.get().withConfiguration(beehive ? AtmosphericFeatureConfigs.MORADO_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatureConfigs.MORADO_TREE_CONFIG);
 	}
 }
