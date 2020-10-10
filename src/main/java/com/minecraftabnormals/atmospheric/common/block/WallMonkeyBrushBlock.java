@@ -109,8 +109,7 @@ public class WallMonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowa
 
 	@Override
 	public void grow(ServerWorld world, Random random, BlockPos blockPos, BlockState state) {
-		label: for (int x = 0; x < 64; ++x) {
-			BlockPos newBlockPos = blockPos;
+		for (int x = 0; x < 64; ++x) {
 			if (state.getBlock() == AtmosphericBlocks.WARM_WALL_MONKEY_BRUSH.get())
 				state = AtmosphericBlocks.WARM_MONKEY_BRUSH.get().getDefaultState();
 			if (state.getBlock() == AtmosphericBlocks.HOT_WALL_MONKEY_BRUSH.get())
@@ -119,14 +118,14 @@ public class WallMonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowa
 				state = AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().getDefaultState();
 
 			for (int y = 0; y < x / 16; ++y) {
-				newBlockPos = newBlockPos.add(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
-				if (state.isValidPosition(world, newBlockPos) && world.isAirBlock(newBlockPos)) {
+				blockPos = blockPos.add(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
+				if (state.isValidPosition(world, blockPos) && world.isAirBlock(blockPos)) {
 					Direction randomD = Direction.func_239631_a_(random);
-					while (!MonkeyBrushFeature.monkeyBrushState(state, randomD).isValidPosition(world, newBlockPos)) {
+					while (!MonkeyBrushFeature.monkeyBrushState(state, randomD).isValidPosition(world, blockPos)) {
 						randomD = Direction.func_239631_a_(random);
 					}
-					world.setBlockState(newBlockPos, MonkeyBrushFeature.monkeyBrushState(state, randomD), 2);
-					break label;
+					world.setBlockState(blockPos, MonkeyBrushFeature.monkeyBrushState(state, randomD), 2);
+					return;
 				}
 			}
 		}
