@@ -32,7 +32,7 @@ public class AtmosphericBiomeBuilders {
                 new BiomeAmbience.Builder())
                 .setWaterColor(6675400)
                 .setWaterFogColor(408635)
-                .setFogColor(12638463)
+                .setFogColor(8444415)
                 .setMoodSound(MoodSoundAmbience.field_235027_b_)
                 .build())
         .parent((String)null);
