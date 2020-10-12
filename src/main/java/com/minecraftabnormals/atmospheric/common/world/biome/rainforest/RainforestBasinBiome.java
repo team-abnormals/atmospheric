@@ -10,7 +10,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 
-public class RainforestBasinBiome extends RainforestBiome {
+public class RainforestBasinBiome extends AbstractRainforestBiome {
 	
 	public RainforestBasinBiome(Biome.Builder builder) {
 		super(builder);
@@ -34,7 +34,7 @@ public class RainforestBasinBiome extends RainforestBiome {
 		DefaultBiomeFeatures.addMushrooms(this);
 		DefaultBiomeFeatures.addReedsAndPumpkins(this);
 		DefaultBiomeFeatures.addTaigaLargeFerns(this);
-		AtmosphericBiomeFeatures.addRainforestBasinTrees(this, 2400, 800);
+		AtmosphericBiomeFeatures.addRainforestBasinTrees(this, 2600, 800);
 		AtmosphericBiomeFeatures.addRainforestDoublePlants(this);
 		AtmosphericBiomeFeatures.addRainforestFlowers(this);
 		AtmosphericBiomeFeatures.addRainforestFoliage(this);

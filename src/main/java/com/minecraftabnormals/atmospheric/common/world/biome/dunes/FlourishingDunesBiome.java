@@ -5,7 +5,7 @@ import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFea
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 
-public class FlourishingDunesBiome extends DunesBiome {
+public class FlourishingDunesBiome extends AbstractDunesBiome {
 
 	public FlourishingDunesBiome(Biome.Builder builder) {
 		super(builder);

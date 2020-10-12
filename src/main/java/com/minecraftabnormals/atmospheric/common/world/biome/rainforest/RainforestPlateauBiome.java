@@ -5,7 +5,7 @@ import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFea
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 
-public class RainforestPlateauBiome extends RainforestBiome {
+public class RainforestPlateauBiome extends AbstractRainforestBiome {
 
 	public RainforestPlateauBiome(Biome.Builder builder) {
 		super(builder);
@@ -30,7 +30,7 @@ public class RainforestPlateauBiome extends RainforestBiome {
 		DefaultBiomeFeatures.addMushrooms(this);
 		DefaultBiomeFeatures.addReedsAndPumpkins(this);
 		DefaultBiomeFeatures.addTaigaLargeFerns(this);
-		AtmosphericBiomeFeatures.addRainforestTrees(this, 8, 1, 2, 1);
+		AtmosphericBiomeFeatures.addRainforestTrees(this, 9, 1, 2, 1);
 		AtmosphericBiomeFeatures.addRainforestDoublePlants(this);
 		AtmosphericBiomeFeatures.addRainforestFlowers(this);
 		AtmosphericBiomeFeatures.addRainforestFoliage(this);

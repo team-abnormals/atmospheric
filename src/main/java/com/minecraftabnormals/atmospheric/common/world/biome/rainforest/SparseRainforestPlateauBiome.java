@@ -5,7 +5,7 @@ import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFea
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 
-public class SparseRainforestPlateauBiome extends RainforestBiome {
+public class SparseRainforestPlateauBiome extends AbstractRainforestBiome {
     public SparseRainforestPlateauBiome(Biome.Builder builder) {
         super(builder);
     }

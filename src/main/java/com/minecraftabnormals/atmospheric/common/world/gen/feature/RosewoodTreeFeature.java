@@ -28,19 +28,17 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 
 	@Override
 	public boolean func_230362_a_(ISeedReader worldIn, StructureManager manager, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
+		boolean morado = config.trunkProvider.getBlockState(rand, position).isIn(AtmosphericBlocks.MORADO_LOG.get());
 		if (rand.nextInt(250) == 0) {
-			if (rand.nextInt(2) == 0)
-				brushes.add(AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
-			if (rand.nextInt(3) == 0)
-				brushes.add(AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
-			if (rand.nextInt(4) == 0)
-				brushes.add(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get());
-		} else {
-			brushes.clear();
-		}
+            if (rand.nextInt(2) == 0) brushes.add(AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
+            if (rand.nextInt(3) == 0) brushes.add(AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
+            if (rand.nextInt(4) == 0) brushes.add(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get());
+        } else {
+            brushes.clear();
+        }
 
-		int branches = 2 + rand.nextInt(3);
-		int height = 4 + rand.nextInt(2) + rand.nextInt(3) + rand.nextInt(3);
+		int branches = 2 + rand.nextInt(3) - (!morado ? 0 : 1);
+		int height = 4 + rand.nextInt(2) + rand.nextInt(3) + (!morado ? rand.nextInt(3) : -1);
 		boolean flag = true;
 
 		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getHeight()) {
@@ -115,8 +113,8 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 					int branchHeight = 0;
 
 					for (int k4 = 0; k4 < turns; ++k4) {
-						branchLength = 1 + rand.nextInt(2) + rand.nextInt(2);
-						branchHeight = 1 + rand.nextInt(3) + rand.nextInt(2);
+						branchLength = !morado ? 1 + rand.nextInt(2) + rand.nextInt(2) : 1 + rand.nextInt(2);
+						branchHeight = !morado ? 1 + rand.nextInt(3) + rand.nextInt(2) : 1 + rand.nextInt(3);
 						createHorizontalLog(branchLength, worldIn, currentPos, offset, rand, config, logsPlaced);
 						createVerticalLog(branchHeight, worldIn, currentPos.offset(offset, branchLength), rand, config, logsPlaced);
 						currentPos = currentPos.offset(offset, branchLength).offset(Direction.UP, branchHeight);

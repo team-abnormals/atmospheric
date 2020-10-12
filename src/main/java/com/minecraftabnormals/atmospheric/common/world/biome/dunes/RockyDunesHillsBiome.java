@@ -5,7 +5,7 @@ import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFea
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 
-public final class RockyDunesHillsBiome extends DunesBiome {
+public final class RockyDunesHillsBiome extends AbstractDunesBiome {
 	
 	public RockyDunesHillsBiome(Biome.Builder builder) {
 		super(builder);
