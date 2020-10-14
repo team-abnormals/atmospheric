@@ -1,45 +1,15 @@
 package com.minecraftabnormals.atmospheric.common.world.biome.rainforest;
 
-import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.teamabnormals.abnormals_core.common.world.biome.AbnormalsBiome;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
 
 public abstract class AbstractRainforestBiome extends AbnormalsBiome {
 	
 	public AbstractRainforestBiome(Biome.Builder builder) {
 		super(builder);
-	}
-
-	@Override
-	public void addFeatures() {
-		DefaultBiomeFeatures.func_235196_b_(this); // MINESHAFTS & STRONGHOLDS
-
-		DefaultBiomeFeatures.addCarvers(this);
-		DefaultBiomeFeatures.addMonsterRooms(this);
-
-		DefaultBiomeFeatures.addStoneVariants(this);
-		DefaultBiomeFeatures.addOres(this);
-		DefaultBiomeFeatures.addSedimentDisks(this);
-
-		DefaultBiomeFeatures.addLakes(this);
-		DefaultBiomeFeatures.addSprings(this);
-		AtmosphericBiomeFeatures.addPodzol(this);
-		DefaultBiomeFeatures.addTaigaRocks(this);
-
-		DefaultBiomeFeatures.addMushrooms(this);
-		DefaultBiomeFeatures.addReedsAndPumpkins(this);
-		DefaultBiomeFeatures.addTaigaLargeFerns(this);
-		AtmosphericBiomeFeatures.addRainforestTrees(this, 10, 1, 2, 1);
-		AtmosphericBiomeFeatures.addRainforestDoublePlants(this);
-		AtmosphericBiomeFeatures.addRainforestFlowers(this);
-		AtmosphericBiomeFeatures.addRainforestFoliage(this);
-		AtmosphericBiomeFeatures.addRainforestWaterFoliage(this);
-
-		DefaultBiomeFeatures.addFreezeTopLayer(this);
 	}
 
 	@Override

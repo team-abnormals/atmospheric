@@ -1,41 +1,15 @@
 package com.minecraftabnormals.atmospheric.common.world.biome.dunes;
 
-import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericBiomeFeatures;
 import com.teamabnormals.abnormals_core.common.world.biome.AbnormalsBiome;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
 
 public abstract class AbstractDunesBiome extends AbnormalsBiome {
 
 	public AbstractDunesBiome(Biome.Builder builder) {
 		super(builder);
-	}
-
-	@Override
-	public void addFeatures() {
-		this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_DESERT);
-		DefaultBiomeFeatures.func_235196_b_(this); // MINESHAFTS & STRONGHOLDS
-
-		DefaultBiomeFeatures.addCarvers(this);
-		DefaultBiomeFeatures.addMonsterRooms(this);
-
-		DefaultBiomeFeatures.addStoneVariants(this);
-		DefaultBiomeFeatures.addOres(this);
-		DefaultBiomeFeatures.addSedimentDisks(this);
-		AtmosphericBiomeFeatures.addFossils(this);
-		DefaultBiomeFeatures.addMushrooms(this);
-
-		AtmosphericBiomeFeatures.addDeadBushes(this, 2);
-		AtmosphericBiomeFeatures.addYuccaTrees(this, 0, 0.25F, 1);
-		AtmosphericBiomeFeatures.addBarrelCactus(this, 0, 0.075F, 2);
-		AtmosphericBiomeFeatures.addAloeVera(this, 2);
-		AtmosphericBiomeFeatures.addYuccaFlower(this, 2);
-		AtmosphericBiomeFeatures.addDuneRocks(this, 1, 2);
-
-		DefaultBiomeFeatures.addFreezeTopLayer(this);
 	}
 
 	@Override
