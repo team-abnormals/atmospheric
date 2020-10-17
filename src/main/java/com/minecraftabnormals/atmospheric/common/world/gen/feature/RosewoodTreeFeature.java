@@ -108,7 +108,7 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 					directions.add(offset.toString());
 					int turns = 1 + rand.nextInt(3);
 
-					BlockPos currentPos = position.offset(Direction.UP, height - 1);
+					BlockPos currentPos = position.up(height - 1);
 					int branchLength = 0;
 					int branchHeight = 0;
 
@@ -137,7 +137,7 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 					}
 
 					// second layer of leaves
-					currentPos = currentPos.offset(Direction.UP, 1);
+					currentPos = currentPos.up(1);
 					for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
 						for (int j4 = -leafSizeTop; j4 <= leafSizeTop; ++j4) {
 							if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
@@ -145,6 +145,30 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 							}
 						}
 					}
+					
+					if(morado) {
+						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
+							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
+								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
+									if (rand.nextBoolean())
+										TreeUtils.placeLeafAt(worldIn, currentPos.add(k3, 0, j4), rand, config);
+								}
+							}
+						}
+					}
+					
+					if(morado) {
+						currentPos = currentPos.down(2);
+						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
+							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
+								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
+									if (rand.nextBoolean())
+										TreeUtils.placeLeafAt(worldIn, currentPos.add(k3, 0, j4), rand, config);
+								}
+							}
+						}
+					}
+					
 					logX = position.getX();
 					logZ = position.getZ();
 				}

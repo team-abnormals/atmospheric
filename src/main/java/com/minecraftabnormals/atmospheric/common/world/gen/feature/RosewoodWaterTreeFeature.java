@@ -153,6 +153,30 @@ public class RosewoodWaterTreeFeature extends Feature<BaseTreeFeatureConfig> {
 							}
 						}
 					}
+					
+					if(morado) {
+						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
+							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
+								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
+									if (rand.nextBoolean())
+										TreeUtils.placeLeafAt(worldIn, currentPos.add(k3, 0, j4), rand, config);
+								}
+							}
+						}
+					}
+					
+					if(morado) {
+						currentPos = currentPos.down(2);
+						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
+							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
+								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
+									if (rand.nextBoolean())
+										TreeUtils.placeLeafAt(worldIn, currentPos.add(k3, 0, j4), rand, config);
+								}
+							}
+						}
+					}
+					
 					logX = position.getX();
 					logZ = position.getZ();
 				}
