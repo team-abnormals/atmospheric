@@ -28,7 +28,7 @@ public class SparseRainforestPlateauBiome extends AbstractRainforestBiome {
         DefaultBiomeFeatures.addMushrooms(this);
         DefaultBiomeFeatures.addReedsAndPumpkins(this);
         DefaultBiomeFeatures.addTaigaLargeFerns(this);
-        AtmosphericBiomeFeatures.addSparseRainforestPlateauTrees(this, 0, 4);
+        AtmosphericBiomeFeatures.addSparseRainforestPlateauTrees(this);
         AtmosphericBiomeFeatures.addRainforestFlowers(this);
         AtmosphericBiomeFeatures.addRainforestFoliage(this);
         AtmosphericBiomeFeatures.addRainforestWaterFoliage(this);
