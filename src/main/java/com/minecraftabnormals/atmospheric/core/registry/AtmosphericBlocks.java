@@ -7,13 +7,13 @@ import com.minecraftabnormals.atmospheric.common.block.AridSandBlock;
 import com.minecraftabnormals.atmospheric.common.block.BarrelCactusBlock;
 import com.minecraftabnormals.atmospheric.common.block.CrustoseBlock;
 import com.minecraftabnormals.atmospheric.common.block.CrustoseLogBlock;
-import com.minecraftabnormals.atmospheric.common.block.FloweringMoradoLeafCarpetBlock;
 import com.minecraftabnormals.atmospheric.common.block.FloweringMoradoLeavesBlock;
 import com.minecraftabnormals.atmospheric.common.block.GiliaBlock;
 import com.minecraftabnormals.atmospheric.common.block.MonkeyBrushBlock;
 import com.minecraftabnormals.atmospheric.common.block.PassionVineBlock;
 import com.minecraftabnormals.atmospheric.common.block.PassionVineBundleBlock;
 import com.minecraftabnormals.atmospheric.common.block.WallMonkeyBrushBlock;
+import com.minecraftabnormals.atmospheric.common.block.WaterHyacinthBlock;
 import com.minecraftabnormals.atmospheric.common.block.YuccaBranchBlock;
 import com.minecraftabnormals.atmospheric.common.block.YuccaBundleBlock;
 import com.minecraftabnormals.atmospheric.common.block.YuccaFlowerBlock;
@@ -138,7 +138,9 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> PASSION_VINE 				= HELPER.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.VINE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= HELPER.createBlock("passion_vine_bundle", 	() -> new PassionVineBundleBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
-
+	
+	public static final RegistryObject<Block> WATER_HYACINTH	= HELPER.createBlockNoItem("water_hyacinth", () -> new WaterHyacinthBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(0F).sound(SoundType.VINE)));
+	
 	public static final RegistryObject<Block> WARM_WALL_MONKEY_BRUSH	= HELPER.createBlockNoItem("warm_wall_monkey_brush", 		() -> new WallMonkeyBrushBlock(Block.Properties.from(Blocks.ALLIUM)));
 	public static final RegistryObject<Block> HOT_WALL_MONKEY_BRUSH 	= HELPER.createBlockNoItem("hot_wall_monkey_brush", 		() -> new WallMonkeyBrushBlock(Block.Properties.from(Blocks.ALLIUM)));
 	public static final RegistryObject<Block> SCALDING_WALL_MONKEY_BRUSH= HELPER.createBlockNoItem("scalding_wall_monkey_brush", 	() -> new WallMonkeyBrushBlock(Block.Properties.from(Blocks.ALLIUM)));

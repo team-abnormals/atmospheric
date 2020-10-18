@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=top": {
+      "model": "atmospheric:block/water_hyacinth_top"
+    },
+    "half=bottom": {
+      "model": "atmospheric:block/water_hyacinth_bottom"
+    }
+  }
+}

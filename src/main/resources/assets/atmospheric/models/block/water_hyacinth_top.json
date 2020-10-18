@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "atmospheric:block/water_hyacinth_top"
+    }
+}

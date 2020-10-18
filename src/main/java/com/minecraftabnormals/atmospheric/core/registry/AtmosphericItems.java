@@ -3,6 +3,7 @@ package com.minecraftabnormals.atmospheric.core.registry;
 import com.minecraftabnormals.atmospheric.common.item.AloeGelBottleItem;
 import com.minecraftabnormals.atmospheric.common.item.AloeLeavesItem;
 import com.minecraftabnormals.atmospheric.common.item.PassionVineCoilItem;
+import com.minecraftabnormals.atmospheric.common.item.WaterHyacinthItem;
 import com.minecraftabnormals.atmospheric.common.item.YuccaJuiceItem;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericFoods;
@@ -38,6 +39,8 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> ALOE_LEAVES		= HELPER.createItem("aloe_leaves", () -> new AloeLeavesItem(new Item.Properties().food(AtmosphericFoods.ALOE_LEAVES).group(ItemGroup.FOOD)));
 	public static final RegistryObject<Item> ALOE_GEL_BOTTLE	= HELPER.createItem("aloe_gel_bottle", () -> new AloeGelBottleItem(new Item.Properties().containerItem(Items.GLASS_BOTTLE).food(AtmosphericFoods.ALOE_GEL).maxStackSize(16).group(ItemGroup.FOOD)));
 	
+	public static final RegistryObject<Item> WATER_HYACINTH		= HELPER.createItem("water_hyacinth", () -> new WaterHyacinthItem(new Item.Properties().group(ItemGroup.DECORATIONS)));
+
 	public static final RegistryObject<Item> ROSEWOOD_BOAT 	= HELPER.createBoatItem("rosewood", AtmosphericBlocks.ROSEWOOD_PLANKS);
 	public static final RegistryObject<Item> MORADO_BOAT 	= HELPER.createBoatItem("morado", AtmosphericBlocks.MORADO_PLANKS);
 	public static final RegistryObject<Item> YUCCA_BOAT 	= HELPER.createBoatItem("yucca", AtmosphericBlocks.YUCCA_PLANKS);
