@@ -5,6 +5,7 @@ import java.util.Random;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsLeavesBlock;
+import com.teamabnormals.abnormals_core.core.utils.BlockUtils;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -31,7 +32,7 @@ public class FloweringMoradoLeavesBlock extends AbnormalsLeavesBlock {
 				onBroken.sendBreakAnimation(handIn);
 			});
 			worldIn.playSound((PlayerEntity) null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-			worldIn.setBlockState(pos, AtmosphericBlocks.MORADO_LEAVES.get().getDefaultState());
+			worldIn.setBlockState(pos, BlockUtils.transferAllBlockStates(state, AtmosphericBlocks.MORADO_LEAVES.get().getDefaultState()));
 			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.YELLOW_BLOSSOMS.get(), 1 + rand.nextInt(3)));
 
 			return ActionResultType.SUCCESS;

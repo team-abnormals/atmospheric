@@ -134,7 +134,7 @@ public class AtmosphericBlocks {
 	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> MORADO_CHESTS = HELPER.createCompatChestBlocks("morado", MaterialColor.RED_TERRACOTTA);
 
 	public static final RegistryObject<Block> FLOWERING_MORADO_LEAVES 		= HELPER.createBlock("flowering_morado_leaves", () -> new FloweringMoradoLeavesBlock(AtmosphericProperties.createLeaves()), ItemGroup.DECORATIONS);
-	public static final RegistryObject<Block> FLOWERING_MORADO_LEAF_CARPET 	= HELPER.createCompatBlock("quark", "flowering_morado_leaf_carpet", () -> new FloweringMoradoLeafCarpetBlock(Block.Properties.from(FLOWERING_MORADO_LEAVES.get())), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> FLOWERING_MORADO_LEAF_CARPET 	= HELPER.createCompatBlock("quark", "flowering_morado_leaf_carpet", () -> new LeafCarpetBlock(Block.Properties.from(FLOWERING_MORADO_LEAVES.get())), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> PASSION_VINE 				= HELPER.createBlock("passion_vine", 			() -> new PassionVineBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0F).sound(SoundType.VINE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE		= HELPER.createBlock("passion_vine_bundle", 	() -> new PassionVineBundleBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).harvestTool(ToolType.AXE).hardnessAndResistance(0.5F, 2.5F).sound(SoundType.PLANT)), ItemGroup.DECORATIONS);
