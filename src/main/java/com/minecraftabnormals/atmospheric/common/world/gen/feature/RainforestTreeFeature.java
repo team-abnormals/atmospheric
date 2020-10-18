@@ -9,33 +9,44 @@ import com.mojang.serialization.Codec;
 import com.teamabnormals.abnormals_core.core.utils.TreeUtils;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.SaplingBlock;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 
-public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
+public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 	private List<Block> brushes = new ArrayList<>();
-
-	public RosewoodTreeFeature(Codec<BaseTreeFeatureConfig> config) {
+	private boolean water = false;
+	
+	public RainforestTreeFeature(Codec<BaseTreeFeatureConfig> config, boolean water) {
 		super(config);
+		this.water = water;
 	}
 
 	@Override
 	public boolean func_230362_a_(ISeedReader worldIn, StructureManager manager, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
 		boolean morado = config.trunkProvider.getBlockState(rand, position).isIn(AtmosphericBlocks.MORADO_LOG.get());
 		if (rand.nextInt(250) == 0) {
-            if (rand.nextInt(2) == 0) brushes.add(AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
-            if (rand.nextInt(3) == 0) brushes.add(AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
-            if (rand.nextInt(4) == 0) brushes.add(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get());
-        } else {
-            brushes.clear();
-        }
+			if (rand.nextInt(2) == 0)
+				brushes.add(AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
+			if (rand.nextInt(3) == 0)
+				brushes.add(AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
+			if (rand.nextInt(4) == 0)
+				brushes.add(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get());
+		} else {
+			brushes.clear();
+		}
 
 		int branches = 2 + rand.nextInt(3) - (!morado ? 0 : 1);
 		int height = 4 + rand.nextInt(2) + rand.nextInt(3) + (!morado ? rand.nextInt(3) : -1);
@@ -55,7 +66,7 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
 						if (j >= 0 && j < worldIn.getHeight()) {
-							if (!TreeUtils.isAirOrLeaves(worldIn, blockpos$mutableblockpos.setPos(l, j, i1))) {
+							if (!this.water ? !TreeUtils.isAirOrLeaves(worldIn, blockpos$mutableblockpos.setPos(l, j, i1)) : !isAirOrWaterOrLeaves(worldIn, blockpos$mutableblockpos.setPos(l, j, i1))) {
 								flag = false;
 							}
 						} else {
@@ -69,7 +80,8 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				return false;
 			} else if (TreeUtils.isValidGround(worldIn, position.down(), (SaplingBlock) AtmosphericBlocks.ROSEWOOD_SAPLING.get()) && position.getY() < worldIn.getHeight() - branches - 1) {
 				// base log
-				TreeUtils.setDirtAt(worldIn, position.down());
+				if (!this.water)
+					TreeUtils.setDirtAt(worldIn, position.down());
 				List<BlockPos> logsPlaced = new ArrayList<>();
 
 				int logX = position.getX();
@@ -79,7 +91,7 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				for (int k1 = 0; k1 < height; ++k1) {
 					int logY = position.getY() + k1;
 					BlockPos blockpos = new BlockPos(logX, logY, logZ);
-					if (TreeUtils.isAirOrLeaves(worldIn, blockpos)) {
+					if (!this.water ? TreeUtils.isAirOrLeaves(worldIn, blockpos) : isAirOrWaterOrLeaves(worldIn, blockpos)) {
 						TreeUtils.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);
 						logsPlaced.add(blockpos);
 					}
@@ -145,8 +157,8 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 							}
 						}
 					}
-					
-					if(morado) {
+
+					if (morado) {
 						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
 							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
 								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
@@ -156,8 +168,8 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 							}
 						}
 					}
-					
-					if(morado) {
+
+					if (morado) {
 						currentPos = currentPos.down(2);
 						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
 							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
@@ -168,7 +180,7 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 							}
 						}
 					}
-					
+
 					logX = position.getX();
 					logZ = position.getZ();
 				}
@@ -203,7 +215,7 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 			logZ += direction.getZOffset();
 
 			BlockPos blockpos1 = new BlockPos(logX, logY, logZ);
-			if (TreeUtils.isAirOrLeaves(worldIn, blockpos1)) {
+			if (!this.water ? TreeUtils.isAirOrLeaves(worldIn, blockpos1) : isAirOrWaterOrLeaves(worldIn, blockpos1)) {
 				TreeUtils.placeDirectionalLogAt(worldIn, blockpos1, direction, rand, config);
 				logsPlaced.add(blockpos1);
 			}
@@ -219,7 +231,7 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 		for (int k1 = 0; k1 < branchHeight; ++k1) {
 			logY += 1;
 			BlockPos blockpos = new BlockPos(logX, logY, logZ);
-			if (TreeUtils.isAirOrLeaves(worldIn, blockpos)) {
+			if (!this.water ? TreeUtils.isAirOrLeaves(worldIn, blockpos) : isAirOrWaterOrLeaves(worldIn, blockpos)) {
 				TreeUtils.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);
 				logsPlaced.add(blockpos);
 			}
@@ -235,5 +247,22 @@ public class RosewoodTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				canopy = true;
 			}
 		}
+	}
+
+	public static boolean isAirOrWater(IWorldGenerationBaseReader world, BlockPos pos) {
+		if (!(world instanceof IBlockReader)) {
+			return world.hasBlockState(pos, BlockState::isAir) || world.hasBlockState(pos, state -> state.getFluidState().isTagged(FluidTags.WATER));
+		} else {
+			return world.hasBlockState(pos, state -> state.isAir((IBlockReader) world, pos)) || world.hasBlockState(pos, state -> state.getFluidState().isTagged(FluidTags.WATER));
+		}
+	}
+
+	public static boolean isAirOrWaterOrLeaves(IWorldGenerationBaseReader world, BlockPos pos) {
+		if (world instanceof IWorldReader) {
+			return world.hasBlockState(pos, state -> state.canBeReplacedByLeaves((IWorldReader) world, pos)) || world.hasBlockState(pos, state -> state.getFluidState().isTagged(FluidTags.WATER));
+		}
+		return world.hasBlockState(pos, (state) -> {
+			return isAirOrWater(world, pos) || state.isIn(BlockTags.LEAVES);
+		});
 	}
 }
