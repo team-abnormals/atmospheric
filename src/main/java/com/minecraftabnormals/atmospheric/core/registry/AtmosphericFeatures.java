@@ -13,6 +13,7 @@ import com.minecraftabnormals.atmospheric.common.world.gen.feature.PassionVineFe
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.PodzolFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.RainforestTreeFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.SurfaceFossilFeature;
+import com.minecraftabnormals.atmospheric.common.world.gen.feature.WaterHyacinthPatchFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaFlowerFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.YuccaTreeFeature;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
@@ -53,7 +54,8 @@ public class AtmosphericFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> WARM_MONKEY_BRUSH = FEATURES.register("warm_monkey_brush", () -> new MonkeyBrushFeature(NoFeatureConfig.field_236558_a_, 1));
 	public static final RegistryObject<Feature<NoFeatureConfig>> HOT_MONKEY_BRUSH = FEATURES.register("hot_monkey_brush", () -> new MonkeyBrushFeature(NoFeatureConfig.field_236558_a_, 2));
 	public static final RegistryObject<Feature<NoFeatureConfig>> SCALDING_MONKEY_BRUSH = FEATURES.register("scalding_monkey_brush", () -> new MonkeyBrushFeature(NoFeatureConfig.field_236558_a_, 3));
-	
+	public static final RegistryObject<Feature<NoFeatureConfig>> WATER_HYACINTH_PATCH = FEATURES.register("water_hyacinth_patch", () -> new WaterHyacinthPatchFeature(NoFeatureConfig.field_236558_a_));
+
 	public static final RegistryObject<Feature<BaseTreeFeatureConfig>> ROSEWOOD_TREE = FEATURES.register("rosewood_tree", () -> new RainforestTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, false));
 	public static final RegistryObject<Feature<BaseTreeFeatureConfig>> ROSEWOOD_WATER_TREE = FEATURES.register("rosewood_water_tree", () -> new RainforestTreeFeature(BaseTreeFeatureConfig.CODEC_BASE_TREE_FEATURE_CONFIG, true));
 	public static final RegistryObject<Feature<YuccaTreeFeatureConfig>> YUCCA_TREE = FEATURES.register("yucca_tree", () -> new YuccaTreeFeature(YuccaTreeFeatureConfig.CODEC_YUCCA_TREE_FEATURE_CONFIG));

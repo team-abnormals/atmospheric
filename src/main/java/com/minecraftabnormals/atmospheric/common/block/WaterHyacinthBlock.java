@@ -2,11 +2,13 @@ package com.minecraftabnormals.atmospheric.common.block;
 
 import javax.annotation.Nullable;
 
+import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
+import com.teamabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
+
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.BushBlock;
 import net.minecraft.block.IWaterLoggable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,6 +16,8 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Effect;
+import net.minecraft.potion.Effects;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
@@ -33,15 +37,20 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class WaterHyacinthBlock extends BushBlock implements IWaterLoggable {
+public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLoggable {
 	public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 
 	public WaterHyacinthBlock(Properties properties) {
-		super(properties);
+		super(Effects.BLINDNESS, 120, properties);
 		this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, false).with(HALF, Half.TOP));
+	}
+
+	@Override
+	public Effect getStewEffect() {
+		return AtmosphericEffects.WORSENING.get();
 	}
 
 	@Override

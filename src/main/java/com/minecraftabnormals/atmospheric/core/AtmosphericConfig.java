@@ -36,7 +36,7 @@ public class AtmosphericConfig {
 			builder.comment("Rainforest biome weights")
             .push("rainforest");
 			
-			rainforestWeight = builder.define("Rainforest weight", 2);
+			rainforestWeight = builder.define("Rainforest weight", 1);
 			rainforestMountainsWeight = builder.define("Rainforest Mountains weight", 1);
 			rainforestPlateauWeight = builder.define("Rainforest Plateau weight", 0);
 			sparseRainforestPlateauWeight = builder.define("Sparse Rainforest Plateau weight", 0);

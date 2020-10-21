@@ -106,5 +106,6 @@ public class AtmosphericRender {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_SCALDING_MONKEY_BRUSH.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_FLOWER.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_GILIA.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_WATER_HYACINTH.get(), RenderType.getCutout());
 	}
 }

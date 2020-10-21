@@ -33,7 +33,8 @@ public class AtmosphericCompat {
         DataUtils.registerCompostable(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get(), 0.65F);
         DataUtils.registerCompostable(AtmosphericBlocks.PASSION_VINE_BUNDLE.get(), 0.5F);
         DataUtils.registerCompostable(AtmosphericBlocks.PASSION_VINE.get(), 0.5F);
-
+        DataUtils.registerCompostable(AtmosphericBlocks.WATER_HYACINTH.get(), 0.65F);
+        
         DataUtils.registerCompostable(AtmosphericItems.PASSIONFRUIT.get(), 0.65F);
         DataUtils.registerCompostable(AtmosphericItems.YUCCA_FRUIT.get(), 0.65F);
         DataUtils.registerCompostable(AtmosphericItems.ROASTED_YUCCA_FRUIT.get(), 0.65F);

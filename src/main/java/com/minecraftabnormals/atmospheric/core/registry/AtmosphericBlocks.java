@@ -153,6 +153,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> POTTED_HOT_MONKEY_BRUSH		= HELPER.createBlockNoItem("potted_hot_monkey_brush",			() -> new FlowerPotBlock(HOT_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_SCALDING_MONKEY_BRUSH	= HELPER.createBlockNoItem("potted_scalding_monkey_brush",	() -> new FlowerPotBlock(SCALDING_MONKEY_BRUSH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_ROSEWOOD_SAPLING		= HELPER.createBlockNoItem("potted_rosewood_sapling",		() -> new FlowerPotBlock(ROSEWOOD_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
+	public static final RegistryObject<Block> POTTED_WATER_HYACINTH			= HELPER.createBlockNoItem("potted_water_hyacinth",		() -> new FlowerPotBlock(WATER_HYACINTH.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 
 	public static final RegistryObject<Block> PASSIONFRUIT_CRATE				= HELPER.createCompatBlock("quark", "passionfruit_crate", 				() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.PURPLE).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> SHIMMERING_PASSIONFRUIT_CRATE		= HELPER.createCompatBlock("quark", "shimmering_passionfruit_crate", 	() -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GOLD).setLightLevel((state) -> 7).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);

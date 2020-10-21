@@ -23,6 +23,7 @@ public class AtmosphericTrades {
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ARID_SAND.get(), 1, 8, 8, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.RED_ARID_SAND.get(), 1, 4, 6, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.YUCCA_FLOWER.get(), 1, 1, 8, 1));
+		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.WATER_HYACINTH.get(), 1, 1, 8, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.GILIA.get(), 1, 1, 12, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.ALOE_KERNELS.get(), 1, 1, 12, 1));
 		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.BARREL_CACTUS.get(), 3, 1, 8, 1));

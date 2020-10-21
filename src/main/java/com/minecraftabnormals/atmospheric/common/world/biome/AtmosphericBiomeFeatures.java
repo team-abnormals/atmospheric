@@ -14,6 +14,7 @@ import net.minecraft.world.gen.feature.BlockBlobConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraft.world.gen.feature.SeaGrassConfig;
 import net.minecraft.world.gen.feature.SphereReplaceConfig;
@@ -119,11 +120,13 @@ public class AtmosphericBiomeFeatures {
 	}
 	
 	public static void addRainforestWaterFoliage(Biome biomeIn) {
+	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.WATER_HYACINTH_PATCH.get().withConfiguration(NoFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(2))));
 	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.LILY_PAD_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SEAGRASS.withConfiguration(new SeaGrassConfig(64, 0.6D)).withPlacement(Placement.TOP_SOLID_HEIGHTMAP.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
 	}
 	
 	public static void addRainforestBasinWaterFoliage(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.WATER_HYACINTH_PATCH.get().withConfiguration(NoFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(2))));
         biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.LILY_PAD_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(3))));
         biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SEAGRASS.withConfiguration(new SeaGrassConfig(128, 0.6D)).withPlacement(Placement.TOP_SOLID_HEIGHTMAP.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
     }
