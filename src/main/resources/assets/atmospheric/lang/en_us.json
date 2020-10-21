@@ -60,7 +60,9 @@
 	"block.atmospheric.warm_monkey_brush": "Warm Monkey Brush",
 	"block.atmospheric.hot_monkey_brush": "Hot Monkey Brush",
 	"block.atmospheric.scalding_monkey_brush": "Scalding Monkey Brush",
-	"block.atmospheric.potted_hot_monkey_brush": "Potted Monkey Brush",
+	"block.atmospheric.potted_warm_monkey_brush": "Potted Warm Monkey Brush",
+	"block.atmospheric.potted_hot_monkey_brush": "Potted Hot Monkey Brush",
+	"block.atmospheric.potted_scalding_monkey_brush": "Potted Scalding Monkey Brush",
 	"block.atmospheric.potted_rosewood_sapling": "Potted Rosewood Sapling",
   "block.atmospheric.potted_morado_sapling": "Potted Morado Sapling",
   
@@ -68,6 +70,7 @@
   "block.atmospheric.passion_vine_bundle": "Passion Vine Bundle", 
   
   "block.atmospheric.water_hyacinth": "Water Hyacinth",
+  "block.atmospheric.potted_water_hyacinth": "Potted Water Hyacinth",
   
 	"block.atmospheric.passionfruit_crate": "Passionfruit Crate",
 	"block.atmospheric.shimmering_passionfruit_crate": "Shimmering Passionfruit Crate",
