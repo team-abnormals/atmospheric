@@ -60,7 +60,9 @@
 	"block.atmospheric.warm_monkey_brush": "Cepillo de mono cálido",
 	"block.atmospheric.hot_monkey_brush": "Cepillo de mono caliente",
 	"block.atmospheric.scalding_monkey_brush": "Cepillo de mono escaldado",
-	"block.atmospheric.potted_hot_monkey_brush": "Maceta con cepillo de mono",
+	"block.atmospheric.potted_warm_monkey_brush": "Maceta con cepillo de mono cálido",
+	"block.atmospheric.potted_hot_monkey_brush": "Maceta con cepillo de mono caliente",
+	"block.atmospheric.potted_scalding_monkey_brush": "Maceta con cepillo de mono escaldado",
 	"block.atmospheric.potted_rosewood_sapling": "Maceta con retoño de jacarandá",
 	"block.atmospheric.potted_morado_sapling": "Maceta con retoño de palo de hierro",
 	
@@ -68,6 +70,7 @@
 	"block.atmospheric.passion_vine_bundle": "Fardo de pasionarias",
 
 	"block.atmospheric.water_hyacinth": "Jacinto de agua",
+	"block.atmospheric.potted_water_hyacinth": "Maceta con jacinto de agua",
 	
 	"block.atmospheric.passionfruit_crate": "Cajón de maracuyás",
 	"block.atmospheric.shimmering_passionfruit_crate": "Cajón de maracuyás relucientes",
