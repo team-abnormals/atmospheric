@@ -15,7 +15,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '2.0.1'
+version = '2.1.0'
 group = 'com.minecraftabnormals'
 archivesBaseName = 'Atmospheric-1.16.1'
 
@@ -77,6 +77,6 @@ jar {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.1-32.0.106'
-    compile fg.deobf("curse.maven:abnormals-core:3072976")
+    compile fg.deobf("curse.maven:abnormals-core:3083794")
     compile fg.deobf("curse.maven:jei:3022016")
 }

@@ -8,7 +8,7 @@ import com.mojang.serialization.Codec;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.state.properties.Half;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
@@ -24,7 +24,7 @@ public class WaterHyacinthPatchFeature extends Feature<NoFeatureConfig> {
 	@Override
 	public boolean func_230362_a_(ISeedReader world, StructureManager manager, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
 		BlockState topState = AtmosphericBlocks.WATER_HYACINTH.get().getDefaultState();
-		BlockState bottomState = AtmosphericBlocks.WATER_HYACINTH.get().getDefaultState().with(WaterHyacinthBlock.WATERLOGGED, true).with(WaterHyacinthBlock.HALF, Half.BOTTOM);
+		BlockState bottomState = AtmosphericBlocks.WATER_HYACINTH.get().getDefaultState().with(WaterHyacinthBlock.WATERLOGGED, true).with(WaterHyacinthBlock.HALF, DoubleBlockHalf.LOWER);
 		BlockPos blockpos = pos;
 		int i = 0;
 

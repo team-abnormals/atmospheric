@@ -22,7 +22,7 @@ import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.properties.Half;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -38,14 +38,14 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLoggable {
-	public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
+	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 
 	public WaterHyacinthBlock(Properties properties) {
 		super(Effects.BLINDNESS, 120, properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, false).with(HALF, Half.TOP));
+		this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, false).with(HALF, DoubleBlockHalf.UPPER));
 	}
 
 	@Override
@@ -65,9 +65,9 @@ public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLo
 			worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
 		}
 
-		Half doubleblockhalf = stateIn.get(HALF);
-		if (facing.getAxis() != Direction.Axis.Y || doubleblockhalf == Half.BOTTOM != (facing == Direction.UP) || facingState.isIn(this) && facingState.get(HALF) != doubleblockhalf) {
-			return doubleblockhalf == Half.BOTTOM && facing == Direction.DOWN && !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState() : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		DoubleBlockHalf doubleblockhalf = stateIn.get(HALF);
+		if (facing.getAxis() != Direction.Axis.Y || doubleblockhalf == DoubleBlockHalf.LOWER != (facing == Direction.UP) || facingState.isIn(this) && facingState.get(HALF) != doubleblockhalf) {
+			return doubleblockhalf == DoubleBlockHalf.LOWER && facing == Direction.DOWN && !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState() : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 		} else {
 			return Blocks.AIR.getDefaultState();
 		}
@@ -82,33 +82,39 @@ public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLo
 
 	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
-		worldIn.setBlockState(pos.down(), this.getDefaultState().with(HALF, Half.BOTTOM), 3);
+		worldIn.setBlockState(pos.down(), this.getDefaultState().with(HALF, DoubleBlockHalf.LOWER), 3);
 	}
 
 	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		if (state.get(HALF) != Half.TOP) {
+		if (state.get(HALF) != DoubleBlockHalf.UPPER) {
 			return state.get(WATERLOGGED);
 		} else {
 			BlockState blockstate = worldIn.getBlockState(pos.down());
 			if (state.getBlock() != this)
 				return super.isValidPosition(state, worldIn, pos);
-			return blockstate.isIn(this) && blockstate.get(HALF) == Half.BOTTOM && blockstate.get(WATERLOGGED);
+			return blockstate.isIn(this) && blockstate.get(HALF) == DoubleBlockHalf.LOWER && blockstate.get(WATERLOGGED);
 		}
 	}
 
 	public void placeAt(IWorld worldIn, BlockPos pos, int flags) {
-		worldIn.setBlockState(pos.down(), this.getDefaultState().with(HALF, Half.BOTTOM).with(WATERLOGGED, true), flags);
-		worldIn.setBlockState(pos, this.getDefaultState().with(HALF, Half.TOP), flags);
+		worldIn.setBlockState(pos.down(), this.getDefaultState().with(HALF, DoubleBlockHalf.LOWER).with(WATERLOGGED, true), flags);
+		worldIn.setBlockState(pos, this.getDefaultState().with(HALF, DoubleBlockHalf.UPPER), flags);
 	}
 
 	@Override
 	public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
-		if (!worldIn.isRemote) {
-			if (player.isCreative()) {
-				func_241471_b_(worldIn, pos, state, player);
-			} else {
-				spawnDrops(state, worldIn, pos, (TileEntity) null, player, player.getHeldItemMainhand());
+		DoubleBlockHalf half = state.get(HALF);
+		BlockPos blockpos = half == DoubleBlockHalf.LOWER ? pos.up() : pos.down();
+		BlockState blockstate = worldIn.getBlockState(blockpos);
+		if(blockstate.getBlock() == this && blockstate.get(HALF) != half) {
+			worldIn.playEvent(player, 2001, blockpos, Block.getStateId(blockstate));
+			if(!worldIn.isRemote && !player.isCreative()) {
+				spawnDrops(state, worldIn, pos, (TileEntity)null, player, player.getHeldItemMainhand());
+				spawnDrops(blockstate, worldIn, pos, (TileEntity)null, player, player.getHeldItemMainhand());
+			}
+			if(blockstate.get(HALF) == DoubleBlockHalf.LOWER) {
+				worldIn.destroyBlock(blockpos, false);
 			}
 		}
 
@@ -121,11 +127,11 @@ public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLo
 	}
 
 	protected static void func_241471_b_(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-		Half doubleblockhalf = state.get(HALF);
-		if (doubleblockhalf == Half.TOP) {
+		DoubleBlockHalf doubleblockhalf = state.get(HALF);
+		if (doubleblockhalf == DoubleBlockHalf.UPPER) {
 			BlockPos blockpos = pos.down();
 			BlockState blockstate = world.getBlockState(blockpos);
-			if (blockstate.getBlock() == state.getBlock() && blockstate.get(HALF) == Half.BOTTOM) {
+			if (blockstate.getBlock() == state.getBlock() && blockstate.get(HALF) == DoubleBlockHalf.LOWER) {
 				world.setBlockState(blockpos, Blocks.WATER.getDefaultState(), 35);
 				world.playEvent(player, 2001, blockpos, Block.getStateId(blockstate));
 			}
@@ -151,6 +157,6 @@ public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLo
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public long getPositionRandom(BlockState state, BlockPos pos) {
-		return MathHelper.getCoordinateRandom(pos.getX(), pos.down(state.get(HALF) == Half.BOTTOM ? 0 : 1).getY(), pos.getZ());
+		return MathHelper.getCoordinateRandom(pos.getX(), pos.down(state.get(HALF) == DoubleBlockHalf.LOWER ? 0 : 1).getY(), pos.getZ());
 	}
 }
