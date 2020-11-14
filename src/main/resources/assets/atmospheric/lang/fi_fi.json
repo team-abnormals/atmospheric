@@ -26,7 +26,7 @@
 	"block.atmospheric.rosewood_leaf_carpet": "Ruusupuunlehtimatto",
 	"block.atmospheric.rosewood_chest": "Ruusupuuarkku",
 	"block.atmospheric.rosewood_trapped_chest": "Ansoitettu ruusupuuarkku",
-	"block.atmospheric.rosewood_beehive": "Keinotekoinen ruusupuumehiläispesä",
+	"block.atmospheric.rosewood_beehive": "Ruusupuumehiläispesä",
 
 	"block.atmospheric.morado_log": "Kesalpiniahalko",
 	"block.atmospheric.morado_wood": "Kesalpiniapuu",
@@ -55,7 +55,7 @@
 	"block.atmospheric.flowering_morado_leaf_carpet": "Kukkiva kesalpinianlehtimatto",
 	"block.atmospheric.morado_chest": "Kesalpinia-arkku",
 	"block.atmospheric.morado_trapped_chest": "Ansoitettu kesalpinia-arkku",
-	"block.atmospheric.morado_beehive": "Keinotekoinen kesalpiniamehiläispesä",
+	"block.atmospheric.morado_beehive": "Kesalpiniamehiläispesä",
 
 	"block.atmospheric.warm_monkey_brush": "Lämmin apinanharja",
 	"block.atmospheric.hot_monkey_brush": "Kuuma apinanharja",
@@ -213,7 +213,7 @@
 	"block.atmospheric.yucca_leaf_carpet": "Jukanlehtimatto",
 	"block.atmospheric.yucca_chest": "Jukka-arkku",
 	"block.atmospheric.yucca_trapped_chest": "Ansoitettu jukka-arkku",
-	"block.atmospheric.yucca_beehive": "Keinotekoinen jukkamehiläispesä",
+	"block.atmospheric.yucca_beehive": "Jukkamehiläispesä",
 
 	"block.atmospheric.yucca_flower": "Jukan kukka",
 	"block.atmospheric.tall_yucca_flower": "Pitkä jukan kukka",
@@ -351,7 +351,7 @@
 	"block.atmospheric.kousa_leaf_carpet": "Kanukanlehtimatto",
 	"block.atmospheric.kousa_chest": "Kanukka-arkku",
 	"block.atmospheric.kousa_trapped_chest": "Ansoitettu kanukka-arkku",
-	"block.atmospheric.kousa_beehive": "Keinotekoinen kanukkamehiläispesä",
+	"block.atmospheric.kousa_beehive": "Kanukkamehiläispesä",
 
 	"item.atmospheric.kousa_boat": "Kanukkavene",
 
@@ -390,7 +390,7 @@
 	"block.atmospheric.aspen_leaf_carpet": "Haavanlehtimatto",
 	"block.atmospheric.aspen_chest": "Haapa-arkku",
 	"block.atmospheric.aspen_trapped_chest": "Ansoitettu haapa-arkku",
-	"block.atmospheric.aspen_beehive": "Keinotekoinen haapamehiläispesä",
+	"block.atmospheric.aspen_beehive": "Haapamehiläispesä",
 
 	"item.atmospheric.aspen_boat": "Haapavene",
 
@@ -422,7 +422,7 @@
 	"block.atmospheric.grimwood_leaf_carpet": "Synkkäpuunlehtimatto",
 	"block.atmospheric.grimwood_chest": "Synkkäpuuarkku",
 	"block.atmospheric.grimwood_trapped_chest": "Ansoitettu synkkäpuuarkku",
-	"block.atmospheric.grimwood_beehive": "Keinotekoinen synkkäpuumehiläispesä",
+	"block.atmospheric.grimwood_beehive": "Synkkäpuumehiläispesä",
 
 	"item.atmospheric.grimwood_boat": "Synkkäpuuvene",
 
