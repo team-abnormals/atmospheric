@@ -8,7 +8,6 @@ import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class AtmosphericBiomeBuilders {
-    
     public static final Biome.Builder RAINFOREST            = createRainforestBiome(0.1F, 0.2F);
     public static final Biome.Builder RAINFOREST_MOUNTAINS  = createRainforestBiome(0.2825F, 1.225F);
     public static final Biome.Builder RAINFOREST_PLATEAU    = createRainforestBiome(1.5F, 0.025F);
@@ -32,7 +31,7 @@ public class AtmosphericBiomeBuilders {
                 new BiomeAmbience.Builder())
                 .setWaterColor(6675400)
                 .setWaterFogColor(408635)
-                .setFogColor(8444415)
+                .setFogColor(12638463)
                 .setMoodSound(MoodSoundAmbience.field_235027_b_)
                 .build())
         .parent(null);
@@ -51,7 +50,7 @@ public class AtmosphericBiomeBuilders {
                 new BiomeAmbience.Builder())
                 .setWaterColor(4159204)
                 .setWaterFogColor(329011)
-                .setFogColor(12638463)
+                .setFogColor(14988944)
                 .setMoodSound(MoodSoundAmbience.field_235027_b_)
                 .build())
         .parent(null);
