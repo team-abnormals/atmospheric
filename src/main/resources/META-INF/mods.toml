@@ -5,10 +5,11 @@ license = "https://github.com/team-abnormals/atmospheric/blob/main/LICENSE.txt"
 
 [[mods]]
     modId = "atmospheric"
-    displayName = "Atmospheric"
     version = "${file.jarVersion}"
     logoFile = "logo.png"
-    authors = "bageldotjpg & five"
+    authors = "Team Abnormals"
+    credits = "bageldotjpg, five"
+    displayName = "Neapolitan"
     description = '''
     Adds two unique biome types with several variants.
     Also introduces several new types of blocks, foliage, and plants!

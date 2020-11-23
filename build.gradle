@@ -30,7 +30,7 @@ minecraft {
             workingDirectory project.file('run/client')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
-            jvmArg "-Dmixin.env.disableRefMap=true"
+            property 'mixin.env.disableRefMap', 'true'
             mods {
                 atmospheric {
                     source sourceSets.main
@@ -42,7 +42,7 @@ minecraft {
             workingDirectory project.file('run/server')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
-            jvmArg "-Dmixin.env.disableRefMap=true"
+            property 'mixin.env.disableRefMap', 'true'
             mods {
                 atmospheric {
                     source sourceSets.main
