@@ -2,13 +2,21 @@ package com.minecraftabnormals.atmospheric.core.other;
 
 import com.minecraftabnormals.atmospheric.common.data.PassionVineBundleDispenseBehavior;
 import com.minecraftabnormals.atmospheric.common.data.PassionVineDispenseBehavior;
+import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.abnormals_core.core.registry.LootInjectionRegistry;
 import com.teamabnormals.abnormals_core.core.utils.DataUtils;
 
 import net.minecraft.block.DispenserBlock;
+import net.minecraft.loot.LootTables;
 
 public class AtmosphericCompat {
+
+    public static void registerLootInjectors() {
+        LootInjectionRegistry.LootInjector injector = new LootInjectionRegistry.LootInjector(Atmospheric.MODID);
+        injector.registerLootInjection(injector.buildLootPool("ruined_portal", 1, 0), LootTables.field_237384_P_);
+    }
 
     public static void registerDispenserBehaviors() {
         DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
