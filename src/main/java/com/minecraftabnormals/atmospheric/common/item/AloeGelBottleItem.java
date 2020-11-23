@@ -11,7 +11,7 @@ public class AloeGelBottleItem extends YuccaJuiceItem {
    }
 
    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
-	   entityLiving.setFire(0);
+	   entityLiving.extinguish();
 	   return super.onItemUseFinish(stack, worldIn, entityLiving);
 	   
    }
