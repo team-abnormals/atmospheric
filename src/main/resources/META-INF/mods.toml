@@ -9,7 +9,7 @@ license = "https://github.com/team-abnormals/atmospheric/blob/main/LICENSE.txt"
     logoFile = "logo.png"
     authors = "Team Abnormals"
     credits = "bageldotjpg, five"
-    displayName = "Neapolitan"
+    displayName = "Atmospheric"
     description = '''
     Adds two unique biome types with several variants.
     Also introduces several new types of blocks, foliage, and plants!
