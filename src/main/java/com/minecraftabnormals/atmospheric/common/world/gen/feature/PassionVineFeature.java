@@ -50,7 +50,7 @@ public class PassionVineFeature extends Feature<NoFeatureConfig> {
 		if (world.getBlockState(pos.offset(state.get(PassionVineBlock.FACING).getOpposite())).isIn(AtmosphericTags.PASSION_VINE_GROWABLE_ON)) {
 			return state.with(PassionVineBlock.AGE, 4);
 		} else {
-			return state.with(PassionVineBlock.AGE, 2);
+			return state.with(PassionVineBlock.AGE, 1);
 		}
 	}
 }
