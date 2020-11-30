@@ -15,7 +15,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '2.1.1'
+version = '2.1.2'
 group = 'com.minecraftabnormals'
 archivesBaseName = 'Atmospheric-1.16.1'
 
