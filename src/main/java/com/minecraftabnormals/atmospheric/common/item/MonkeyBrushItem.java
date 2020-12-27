@@ -37,7 +37,7 @@ public class MonkeyBrushItem extends BlockItem {
 			}
 		}
 
-		return blockstate1 != null && iworldreader.func_226663_a_(blockstate1, blockpos, ISelectionContext.dummy()) ? blockstate1 : null;
+		return blockstate1 != null && iworldreader.placedBlockCollides(blockstate1, blockpos, ISelectionContext.dummy()) ? blockstate1 : null;
 	}
 
 	public void addToBlockToItemMap(Map<Block, Item> blockToItemMap, Item itemIn) {

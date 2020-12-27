@@ -1,72 +1,19 @@
 package com.minecraftabnormals.atmospheric.core.registry;
 
-import com.minecraftabnormals.atmospheric.common.block.AloeGelBlock;
-import com.minecraftabnormals.atmospheric.common.block.AloeVeraBlock;
-import com.minecraftabnormals.atmospheric.common.block.AloeVeraTallBlock;
-import com.minecraftabnormals.atmospheric.common.block.AridSandBlock;
-import com.minecraftabnormals.atmospheric.common.block.BarrelCactusBlock;
-import com.minecraftabnormals.atmospheric.common.block.CrustoseBlock;
-import com.minecraftabnormals.atmospheric.common.block.CrustoseLogBlock;
-import com.minecraftabnormals.atmospheric.common.block.FloweringMoradoLeavesBlock;
-import com.minecraftabnormals.atmospheric.common.block.GiliaBlock;
-import com.minecraftabnormals.atmospheric.common.block.MonkeyBrushBlock;
-import com.minecraftabnormals.atmospheric.common.block.PassionVineBlock;
-import com.minecraftabnormals.atmospheric.common.block.PassionVineBundleBlock;
-import com.minecraftabnormals.atmospheric.common.block.WallMonkeyBrushBlock;
-import com.minecraftabnormals.atmospheric.common.block.WaterHyacinthBlock;
-import com.minecraftabnormals.atmospheric.common.block.YuccaBranchBlock;
-import com.minecraftabnormals.atmospheric.common.block.YuccaBundleBlock;
-import com.minecraftabnormals.atmospheric.common.block.YuccaFlowerBlock;
-import com.minecraftabnormals.atmospheric.common.block.YuccaFlowerDoubleBlock;
-import com.minecraftabnormals.atmospheric.common.block.YuccaGateauBlock;
-import com.minecraftabnormals.atmospheric.common.block.YuccaLeafCarpetBlock;
-import com.minecraftabnormals.atmospheric.common.block.YuccaLeavesBlock;
-import com.minecraftabnormals.atmospheric.common.block.YuccaSaplingBlock;
-import com.minecraftabnormals.atmospheric.common.world.gen.trees.AspenTree;
-import com.minecraftabnormals.atmospheric.common.world.gen.trees.GrimwoodTree;
-import com.minecraftabnormals.atmospheric.common.world.gen.trees.KousaTree;
-import com.minecraftabnormals.atmospheric.common.world.gen.trees.MoradoTree;
-import com.minecraftabnormals.atmospheric.common.world.gen.trees.RosewoodTree;
-import com.minecraftabnormals.atmospheric.common.world.gen.trees.YuccaTree;
+import com.minecraftabnormals.abnormals_core.common.blocks.*;
+import com.minecraftabnormals.abnormals_core.common.blocks.chest.AbnormalsChestBlock;
+import com.minecraftabnormals.abnormals_core.common.blocks.chest.AbnormalsTrappedChestBlock;
+import com.minecraftabnormals.abnormals_core.common.blocks.sign.AbnormalsStandingSignBlock;
+import com.minecraftabnormals.abnormals_core.common.blocks.sign.AbnormalsWallSignBlock;
+import com.minecraftabnormals.abnormals_core.common.blocks.wood.*;
+import com.minecraftabnormals.abnormals_core.core.util.registry.BlockSubRegistryHelper;
+import com.minecraftabnormals.atmospheric.common.block.*;
+import com.minecraftabnormals.atmospheric.common.world.gen.trees.*;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
-import com.minecraftabnormals.atmospheric.core.AtmosphericRegistryHelper;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericProperties;
+import com.minecraftabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
 import com.mojang.datafixers.util.Pair;
-import com.teamabnormals.abnormals_core.common.blocks.AbnormalsBeehiveBlock;
-import com.teamabnormals.abnormals_core.common.blocks.AbnormalsLadderBlock;
-import com.teamabnormals.abnormals_core.common.blocks.AbnormalsStairsBlock;
-import com.teamabnormals.abnormals_core.common.blocks.BookshelfBlock;
-import com.teamabnormals.abnormals_core.common.blocks.DirectionalVerticalSlabBlock;
-import com.teamabnormals.abnormals_core.common.blocks.LeafCarpetBlock;
-import com.teamabnormals.abnormals_core.common.blocks.VerticalSlabBlock;
-import com.teamabnormals.abnormals_core.common.blocks.chest.AbnormalsChestBlock;
-import com.teamabnormals.abnormals_core.common.blocks.chest.AbnormalsTrappedChestBlock;
-import com.teamabnormals.abnormals_core.common.blocks.sign.AbnormalsStandingSignBlock;
-import com.teamabnormals.abnormals_core.common.blocks.sign.AbnormalsWallSignBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsLeavesBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsLogBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsSaplingBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsWoodButtonBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.PlanksBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.StrippedLogBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.StrippedWoodBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.WoodBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.WoodDoorBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.WoodFenceBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.WoodFenceGateBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.WoodPressurePlateBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.WoodSlabBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.WoodStairsBlock;
-import com.teamabnormals.abnormals_core.common.blocks.wood.WoodTrapDoorBlock;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerPotBlock;
-import net.minecraft.block.PressurePlateBlock;
-import net.minecraft.block.RotatedPillarBlock;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.WallBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.ItemGroup;
@@ -78,7 +25,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericBlocks {
 
-	public static final AtmosphericRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER;	
+	public static final AtmosphericBlockSubRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER.getBlockSubHelper();
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -251,11 +198,11 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROASTED_YUCCA_BUNDLE	= HELPER.createBlock("roasted_yucca_bundle",() -> new YuccaBundleBlock(Block.Properties.from(Blocks.MELON).tickRandomly().harvestTool(ToolType.HOE)), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> YUCCA_GATEAU 			= HELPER.createBlockNoItem("yucca_gateau", 	() -> new YuccaGateauBlock(Block.Properties.from(Blocks.CAKE)));
-	public static final RegistryObject<Block> YUCCA_FLOWER 			= HELPER.createBlock("yucca_flower", 	 	() -> new YuccaFlowerBlock(() -> AtmosphericEffects.PERSISTENCE.get(), 15, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_FLOWER 			= HELPER.createBlock("yucca_flower", 	 	() -> new YuccaFlowerBlock(AtmosphericEffects.PERSISTENCE::get, 15, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_YUCCA_FLOWER	= HELPER.createBlockNoItem("potted_yucca_flower",	() -> new FlowerPotBlock(YUCCA_FLOWER.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> TALL_YUCCA_FLOWER 	= HELPER.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
 	
-	public static final RegistryObject<Block> GILIA 		= HELPER.createBlock("gilia", () -> new GiliaBlock(Effects.SLOW_FALLING, 9, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> GILIA 		= HELPER.createBlock("gilia", () -> new GiliaBlock(() -> Effects.SLOW_FALLING, 9, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_GILIA	= HELPER.createBlockNoItem("potted_gilia",	() -> new FlowerPotBlock(GILIA.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 	
 	public static final RegistryObject<Block> ALOE_VERA	 			= HELPER.createBlockNoItem("aloe_vera", 	 () -> new AloeVeraBlock(AtmosphericProperties.ALOE_VERA));

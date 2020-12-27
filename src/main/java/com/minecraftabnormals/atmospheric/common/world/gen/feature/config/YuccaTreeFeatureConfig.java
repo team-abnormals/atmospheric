@@ -1,151 +1,150 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature.config;
 
-import java.util.List;
-
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.blockstateprovider.BlockStateProvider;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.treedecorator.TreeDecorator;
 
+import java.util.List;
+
 public class YuccaTreeFeatureConfig implements IFeatureConfig {
-    public static final Codec<YuccaTreeFeatureConfig> CODEC_YUCCA_TREE_FEATURE_CONFIG = RecordCodecBuilder.create((p_236683_0_) -> {
-        return p_236683_0_.group(BlockStateProvider.field_236796_a_.fieldOf("trunk_provider").forGetter((p_236693_0_) -> {
-            return p_236693_0_.trunkProvider;
-        }), BlockStateProvider.field_236796_a_.fieldOf("leaves_provider").forGetter((p_236692_0_) -> {
-            return p_236692_0_.leavesProvider;
-        }), BlockStateProvider.field_236796_a_.fieldOf("branch_provider").forGetter((p_236692_0_) -> {
-            return p_236692_0_.branchProvider;
-        }), BlockStateProvider.field_236796_a_.fieldOf("bundle_provider").forGetter((p_236692_0_) -> {
-            return p_236692_0_.bundleProvider;
-        }), BlockStateProvider.field_236796_a_.fieldOf("flower_provider").forGetter((p_236692_0_) -> {
-            return p_236692_0_.flowerProvider;
-        }), BlockStateProvider.field_236796_a_.fieldOf("tall_flower_top_provider").forGetter((p_236692_0_) -> {
-            return p_236692_0_.tallFlowerTopProvider;
-        }), BlockStateProvider.field_236796_a_.fieldOf("tall_flower_bottom_provider").forGetter((p_236692_0_) -> {
-            return p_236692_0_.tallFlowerBottomProvider;
-        }), TreeDecorator.field_236874_c_.listOf().fieldOf("decorators").forGetter((p_236688_0_) -> {
-            return p_236688_0_.decorators;
-        }), Codec.BOOL.fieldOf("petrified").withDefault(false).forGetter((p_236686_0_) -> {
-            return p_236686_0_.petrified;
-        }), Codec.BOOL.fieldOf("patch").withDefault(false).forGetter((p_236686_0_) -> {
-            return p_236686_0_.patch;
-        }), Codec.BOOL.fieldOf("baby").withDefault(false).forGetter((p_236686_0_) -> {
-            return p_236686_0_.baby;
-        }), Heightmap.Type.field_236078_g_.fieldOf("heightmap").forGetter((p_236684_0_) -> {
-            return p_236684_0_.heightmap;
-        })).apply(p_236683_0_, YuccaTreeFeatureConfig::new);
-    });
+	public static final Codec<YuccaTreeFeatureConfig> CODEC = RecordCodecBuilder.create((p_236683_0_) -> {
+		return p_236683_0_.group(BlockStateProvider.CODEC.fieldOf("trunk_provider").forGetter((p_236693_0_) -> {
+			return p_236693_0_.trunkProvider;
+		}), BlockStateProvider.CODEC.fieldOf("leaves_provider").forGetter((p_236692_0_) -> {
+			return p_236692_0_.leavesProvider;
+		}), BlockStateProvider.CODEC.fieldOf("branch_provider").forGetter((p_236692_0_) -> {
+			return p_236692_0_.branchProvider;
+		}), BlockStateProvider.CODEC.fieldOf("bundle_provider").forGetter((p_236692_0_) -> {
+			return p_236692_0_.bundleProvider;
+		}), BlockStateProvider.CODEC.fieldOf("flower_provider").forGetter((p_236692_0_) -> {
+			return p_236692_0_.flowerProvider;
+		}), BlockStateProvider.CODEC.fieldOf("tall_flower_top_provider").forGetter((p_236692_0_) -> {
+			return p_236692_0_.tallFlowerTopProvider;
+		}), BlockStateProvider.CODEC.fieldOf("tall_flower_bottom_provider").forGetter((p_236692_0_) -> {
+			return p_236692_0_.tallFlowerBottomProvider;
+		}), TreeDecorator.field_236874_c_.listOf().fieldOf("decorators").forGetter((p_236688_0_) -> {
+			return p_236688_0_.decorators;
+		}), Codec.BOOL.fieldOf("petrified").orElse(false).forGetter((p_236686_0_) -> {
+			return p_236686_0_.petrified;
+		}), Codec.BOOL.fieldOf("patch").orElse(false).forGetter((p_236686_0_) -> {
+			return p_236686_0_.patch;
+		}), Codec.BOOL.fieldOf("baby").orElse(false).forGetter((p_236686_0_) -> {
+			return p_236686_0_.baby;
+		}), Heightmap.Type.CODEC.fieldOf("heightmap").forGetter((p_236684_0_) -> {
+			return p_236684_0_.heightmap;
+		})).apply(p_236683_0_, YuccaTreeFeatureConfig::new);
+	});
 
-    public final BlockStateProvider trunkProvider;
-    public final BlockStateProvider leavesProvider;
-    public final BlockStateProvider branchProvider;
-    public final BlockStateProvider bundleProvider;
-    public final BlockStateProvider flowerProvider;
-    public final BlockStateProvider tallFlowerTopProvider;
-    public final BlockStateProvider tallFlowerBottomProvider;
+	public final BlockStateProvider trunkProvider;
+	public final BlockStateProvider leavesProvider;
+	public final BlockStateProvider branchProvider;
+	public final BlockStateProvider bundleProvider;
+	public final BlockStateProvider flowerProvider;
+	public final BlockStateProvider tallFlowerTopProvider;
+	public final BlockStateProvider tallFlowerBottomProvider;
 
-    public final List<TreeDecorator> decorators;
-    public transient boolean forcePlacement;
-    public final boolean petrified;
-    public final boolean patch;
-    public final boolean baby;
-    public final Heightmap.Type heightmap;
+	public final List<TreeDecorator> decorators;
+	public transient boolean forcePlacement;
+	public final boolean petrified;
+	public final boolean patch;
+	public final boolean baby;
+	public final Heightmap.Type heightmap;
 
-    protected YuccaTreeFeatureConfig(BlockStateProvider trunkProvider, BlockStateProvider leavesProvider, BlockStateProvider branchProvider, BlockStateProvider bundleProvider, BlockStateProvider flowerProvider, BlockStateProvider tallFlowerTopProvider, BlockStateProvider tallFlowerBottomProvider, List<TreeDecorator> decorators, boolean petrified, boolean patch, boolean baby, Heightmap.Type p_i232020_9_) {
-        this.trunkProvider = trunkProvider;
-        this.leavesProvider = leavesProvider;
-        this.branchProvider = branchProvider;
-        this.bundleProvider = bundleProvider;
-        this.flowerProvider = flowerProvider;
-        this.tallFlowerTopProvider = tallFlowerTopProvider;
-        this.tallFlowerBottomProvider = tallFlowerBottomProvider;
-        this.decorators = decorators;
-        this.petrified = petrified;
-        this.patch = patch;
-        this.baby = baby;
-        this.heightmap = p_i232020_9_;
-    }
+	protected YuccaTreeFeatureConfig(BlockStateProvider trunkProvider, BlockStateProvider leavesProvider, BlockStateProvider branchProvider, BlockStateProvider bundleProvider, BlockStateProvider flowerProvider, BlockStateProvider tallFlowerTopProvider, BlockStateProvider tallFlowerBottomProvider, List<TreeDecorator> decorators, boolean petrified, boolean patch, boolean baby, Heightmap.Type p_i232020_9_) {
+		this.trunkProvider = trunkProvider;
+		this.leavesProvider = leavesProvider;
+		this.branchProvider = branchProvider;
+		this.bundleProvider = bundleProvider;
+		this.flowerProvider = flowerProvider;
+		this.tallFlowerTopProvider = tallFlowerTopProvider;
+		this.tallFlowerBottomProvider = tallFlowerBottomProvider;
+		this.decorators = decorators;
+		this.petrified = petrified;
+		this.patch = patch;
+		this.baby = baby;
+		this.heightmap = p_i232020_9_;
+	}
 
-    public void forcePlacement() {
-        this.forcePlacement = true;
-    }
+	public void forcePlacement() {
+		this.forcePlacement = true;
+	}
 
-    public YuccaTreeFeatureConfig func_236685_a_(List<TreeDecorator> p_236685_1_) {
-        return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, p_236685_1_, this.petrified, this.patch, this.baby, this.heightmap);
-    }
-    
-    public YuccaTreeFeatureConfig configureType(boolean isPetrified, boolean hasPatch, boolean isBaby) {
-        return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, this.decorators, isPetrified, hasPatch, isBaby, this.heightmap);
-    }
-    
-    public YuccaTreeFeatureConfig setPetrified() {
-        return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, this.decorators, true, this.patch, this.baby, this.heightmap);
-    }
-    
-    public YuccaTreeFeatureConfig setPatch() {
-        return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, this.decorators, this.petrified, true, this.baby, this.heightmap);
-    }
-    
-    public YuccaTreeFeatureConfig setBaby() {
-        return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, this.decorators, this.petrified, this.patch, true, this.heightmap);
-    }
+	public YuccaTreeFeatureConfig func_236685_a_(List<TreeDecorator> p_236685_1_) {
+		return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, p_236685_1_, this.petrified, this.patch, this.baby, this.heightmap);
+	}
 
-    public static class Builder {
-        public final BlockStateProvider trunkProvider;
-        public final BlockStateProvider leavesProvider;
-        public final BlockStateProvider branchProvider;
-        public final BlockStateProvider bundleProvider;
-        public final BlockStateProvider flowerProvider;
-        public final BlockStateProvider tallFlowerTopProvider;
-        public final BlockStateProvider tallFlowerBottomProvider;
-        
-        private List<TreeDecorator> decorators = ImmutableList.of();
-        private boolean petrified;
-        private boolean patch;
-        private boolean baby;
-        private Heightmap.Type heightmap = Heightmap.Type.OCEAN_FLOOR;
+	public YuccaTreeFeatureConfig configureType(boolean isPetrified, boolean hasPatch, boolean isBaby) {
+		return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, this.decorators, isPetrified, hasPatch, isBaby, this.heightmap);
+	}
 
-        public Builder(BlockStateProvider trunkProvider, BlockStateProvider leavesProvider, BlockStateProvider branchProvider, BlockStateProvider bundleProvider, BlockStateProvider flowerProvider, BlockStateProvider tallFlowerTopProvider, BlockStateProvider tallFlowerBottomProvider) {
-            this.trunkProvider = trunkProvider;
-            this.leavesProvider = leavesProvider;
-            this.branchProvider = branchProvider;
-            this.bundleProvider = bundleProvider;
-            this.flowerProvider = flowerProvider;
-            this.tallFlowerTopProvider = tallFlowerTopProvider;
-            this.tallFlowerBottomProvider = tallFlowerBottomProvider;
-        }
+	public YuccaTreeFeatureConfig setPetrified() {
+		return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, this.decorators, true, this.patch, this.baby, this.heightmap);
+	}
 
-        public YuccaTreeFeatureConfig.Builder func_236703_a_(List<TreeDecorator> p_236703_1_) {
-            this.decorators = p_236703_1_;
-            return this;
-        }
+	public YuccaTreeFeatureConfig setPatch() {
+		return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, this.decorators, this.petrified, true, this.baby, this.heightmap);
+	}
 
-        public YuccaTreeFeatureConfig.Builder isPetrified() {
-            this.petrified = true;
-            return this;
-        }
-        
-        public YuccaTreeFeatureConfig.Builder hasPatch() {
-            this.patch = true;
-            return this;
-        }
-        
-        public YuccaTreeFeatureConfig.Builder isBaby() {
-            this.baby = true;
-            return this;
-        }
+	public YuccaTreeFeatureConfig setBaby() {
+		return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, this.decorators, this.petrified, this.patch, true, this.heightmap);
+	}
 
-        public YuccaTreeFeatureConfig.Builder setHeightmap(Heightmap.Type heightmap) {
-            this.heightmap = heightmap;
-            return this;
-        }
+	public static class Builder {
+		public final BlockStateProvider trunkProvider;
+		public final BlockStateProvider leavesProvider;
+		public final BlockStateProvider branchProvider;
+		public final BlockStateProvider bundleProvider;
+		public final BlockStateProvider flowerProvider;
+		public final BlockStateProvider tallFlowerTopProvider;
+		public final BlockStateProvider tallFlowerBottomProvider;
 
-        public YuccaTreeFeatureConfig build() {
-            return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, this.decorators, this.petrified, this.patch, this.baby, this.heightmap);
-        }
-    }
+		private List<TreeDecorator> decorators = ImmutableList.of();
+		private boolean petrified;
+		private boolean patch;
+		private boolean baby;
+		private Heightmap.Type heightmap = Heightmap.Type.OCEAN_FLOOR;
+
+		public Builder(BlockStateProvider trunkProvider, BlockStateProvider leavesProvider, BlockStateProvider branchProvider, BlockStateProvider bundleProvider, BlockStateProvider flowerProvider, BlockStateProvider tallFlowerTopProvider, BlockStateProvider tallFlowerBottomProvider) {
+			this.trunkProvider = trunkProvider;
+			this.leavesProvider = leavesProvider;
+			this.branchProvider = branchProvider;
+			this.bundleProvider = bundleProvider;
+			this.flowerProvider = flowerProvider;
+			this.tallFlowerTopProvider = tallFlowerTopProvider;
+			this.tallFlowerBottomProvider = tallFlowerBottomProvider;
+		}
+
+		public YuccaTreeFeatureConfig.Builder func_236703_a_(List<TreeDecorator> p_236703_1_) {
+			this.decorators = p_236703_1_;
+			return this;
+		}
+
+		public YuccaTreeFeatureConfig.Builder isPetrified() {
+			this.petrified = true;
+			return this;
+		}
+
+		public YuccaTreeFeatureConfig.Builder hasPatch() {
+			this.patch = true;
+			return this;
+		}
+
+		public YuccaTreeFeatureConfig.Builder isBaby() {
+			this.baby = true;
+			return this;
+		}
+
+		public YuccaTreeFeatureConfig.Builder setHeightmap(Heightmap.Type heightmap) {
+			this.heightmap = heightmap;
+			return this;
+		}
+
+		public YuccaTreeFeatureConfig build() {
+			return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, this.decorators, this.petrified, this.patch, this.baby, this.heightmap);
+		}
+	}
 }

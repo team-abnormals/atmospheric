@@ -1,147 +1,223 @@
 package com.minecraftabnormals.atmospheric.common.world.biome;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
+import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
+import com.minecraftabnormals.atmospheric.core.Atmospheric;
+import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
-
-import net.minecraft.block.Blocks;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.block.Block;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.BiomeGenerationSettings;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.gen.feature.BlockBlobConfig;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
-import net.minecraft.world.gen.feature.ProbabilityConfig;
-import net.minecraft.world.gen.feature.SeaGrassConfig;
-import net.minecraft.world.gen.feature.SphereReplaceConfig;
-import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
-import net.minecraft.world.gen.placement.ChanceConfig;
-import net.minecraft.world.gen.placement.FrequencyConfig;
-import net.minecraft.world.gen.placement.IPlacementConfig;
-import net.minecraft.world.gen.placement.Placement;
-import net.minecraft.world.gen.placement.TopSolidWithNoiseConfig;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
+import net.minecraft.world.gen.feature.Features;
+import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.function.Supplier;
+
+@Mod.EventBusSubscriber(modid = Atmospheric.MODID)
 public class AtmosphericBiomeFeatures {
-    
-	public static void addRainforestDoublePlants(Biome biomeIn) {
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.TALL_GRASS_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(8))));
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.ROSE_BUSH_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(1))));
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.LILAC_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(1))));
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.PEONY_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(1))));
-	}
-	
-	public static void addRainforestFlowers(Biome biomeIn) {
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.FLOWER.withConfiguration(DefaultBiomeFeatures.LILY_OF_THE_VALLEY_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(1))));
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.WARM_MONKEY_BRUSH.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(3))));
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.HOT_MONKEY_BRUSH.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(2))));
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.SCALDING_MONKEY_BRUSH.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
-	}
-	
-	public static void addGilias(Biome biomeIn, int freq) {
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.FLOWER.withConfiguration(AtmosphericFeatureConfigs.GILIA_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(freq))));
-	}
-	
-	public static void addAloeVera(Biome biomeIn, int freq) {
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ALOE_VERA.get().withConfiguration(AtmosphericFeatureConfigs.ALOE_VERA_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(freq))));
-	}
-	
-	public static void addYuccaFlower(Biome biomeIn, int freq) {
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_FLOWER.get().withConfiguration(AtmosphericFeatureConfigs.YUCCA_FLOWER_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(freq))));
-	}
-	
-	public static void addBarrelCactus(Biome biomeIn, int count, float extraChance, int extraCount) {
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.BARREL_CACTUS.get().withConfiguration(AtmosphericFeatureConfigs.BARREL_CACTUS_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
-	}
-	
-	public static void addPodzol(Biome biomeIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.PODZOL.get().withConfiguration(new ProbabilityConfig(0.2F)).withPlacement(Placement.TOP_SOLID_HEIGHTMAP_NOISE_BIASED.configure(new TopSolidWithNoiseConfig(160, 80.0D, 0.3D, Heightmap.Type.WORLD_SURFACE_WG))));
-	}
-	
-	public static void addRainforestFoliage(Biome biomeIn) {
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.LUSH_GRASS_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(25))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.VINES.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHT_64.configure(new FrequencyConfig(50))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.PASSION_VINE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
-	}
-	
-	public static void addDeadBushes(Biome biomeIn, int freq) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.DEAD_BUSH_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(freq))));
-	}
-	
-	public static void addRainforestTrees (Biome biomeIn, int rosewoodCount, int extraRosewoodCountIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(Feature.field_236291_c_.withConfiguration(DefaultBiomeFeatures.FANCY_TREE_WITH_MORE_BEEHIVES_CONFIG).withChance(0.33333334F)), Feature.field_236291_c_.withConfiguration(DefaultBiomeFeatures.OAK_TREE_WITH_MORE_BEEHIVES_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1))));
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_TREE.get().withConfiguration(AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(rosewoodCount, 0.1F, extraRosewoodCountIn))));
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_TREE.get().withConfiguration(AtmosphericFeatureConfigs.MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.05F, 1))));
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.field_236291_c_.withConfiguration(AtmosphericFeatureConfigs.OAK_GROUND_BUSH_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(2, 0.1F, 1))));
-	}
-	
-	public static void addRainforestBasinTrees(Biome biomeIn, int rosewoodCount, int moradoCount) {
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(Feature.field_236291_c_.withConfiguration(DefaultBiomeFeatures.FANCY_TREE_WITH_MORE_BEEHIVES_CONFIG).withChance(0.33333334F)), Feature.field_236291_c_.withConfiguration(DefaultBiomeFeatures.OAK_TREE_WITH_MORE_BEEHIVES_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_WATER_TREE.get().withConfiguration(AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(rosewoodCount))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_WATER_TREE.get().withConfiguration(AtmosphericFeatureConfigs.MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(moradoCount))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.field_236291_c_.withConfiguration(AtmosphericFeatureConfigs.OAK_GROUND_BUSH_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(2, 0.1F, 1))));
-    }
-	
-	public static void addSparseRainforestPlateauTrees(Biome biomeIn) {
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_TREE.get().withConfiguration(AtmosphericFeatureConfigs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.1F, 4))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.ROSEWOOD_TREE.get().withConfiguration(AtmosphericFeatureConfigs.MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.field_236291_c_.withConfiguration(AtmosphericFeatureConfigs.OAK_GROUND_BUSH_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(2, 0.1F, 1))));
-	}
-	
-	public static void addDuneRocks(Biome biomeIn, int size, int frequency) {
-		biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, AtmosphericFeatures.DUNE_ROCKS.get().withConfiguration(new BlockBlobConfig(AtmosphericBlocks.ARID_SANDSTONE.get().getDefaultState(), size)).withPlacement(Placement.FOREST_ROCK.configure(new FrequencyConfig(frequency))));
+
+	@SubscribeEvent
+	public static void onBiomeLoad(BiomeLoadingEvent event) {
+		ResourceLocation biome = event.getName();
+		BiomeGenerationSettingsBuilder builder = event.getGeneration();
+
+		Set<Block> allBlocksToCarve = new HashSet<>();
+		allBlocksToCarve.add(AtmosphericBlocks.ARID_SAND.get());
+		allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
+		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SAND.get());
+		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
+
+		for (GenerationStage.Carving carverStage : GenerationStage.Carving.values()) {
+			for (Supplier<ConfiguredCarver<?>> carver : event.getGeneration().getCarvers(carverStage)) {
+				allBlocksToCarve.addAll(carver.get().carver.carvableBlocks);
+				carver.get().carver.carvableBlocks = allBlocksToCarve;
+			}
+		}
+
+		if (biome != null) {
+			if(DataUtil.matchesKeys(biome, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST_PLATEAU.getKey())) withRainforestFeatures(builder);
+			if(DataUtil.matchesKeys(biome, AtmosphericBiomes.RAINFOREST_MOUNTAINS.getKey())) withRainforestMountainsFeatures(builder);
+			if(DataUtil.matchesKeys(biome, AtmosphericBiomes.SPARSE_RAINFOREST_PLATEAU.getKey())) withSparseRainforestPlateauFeatures(builder);
+			if(DataUtil.matchesKeys(biome, AtmosphericBiomes.RAINFOREST_BASIN.getKey())) withRainforestBasinFeatures(builder);
+			if(DataUtil.matchesKeys(biome, AtmosphericBiomes.SPARSE_RAINFOREST_BASIN.getKey())) withSparseRainforestBasinFeatures(builder);
+
+			if(DataUtil.matchesKeys(biome, AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.DUNES_HILLS.getKey())) withDunesFeatures(builder);
+			if(DataUtil.matchesKeys(biome, AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES_HILLS.getKey())) withRockyDunesFeatures(builder);
+			if(DataUtil.matchesKeys(biome, AtmosphericBiomes.PETRIFIED_DUNES.getKey())) withPetrifiedDunesFeatures(builder);
+			if(DataUtil.matchesKeys(biome, AtmosphericBiomes.FLOURISHING_DUNES.getKey())) withFlourishingDunesFeatures(builder);
+
+			if (DataUtil.matchesKeys(biome, Biomes.DESERT, Biomes.DESERT_HILLS))
+				builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_DESERT);
+			if (DataUtil.matchesKeys(biome, Biomes.MODIFIED_WOODED_BADLANDS_PLATEAU, Biomes.WOODED_BADLANDS_PLATEAU))
+				builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE);
+			if (DataUtil.matchesKeys(biome, Biomes.SHATTERED_SAVANNA, Biomes.SHATTERED_SAVANNA_PLATEAU))
+				builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_SAVANNA);
+		}
 	}
 
-	public static void addFossils(Biome biomeIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, Feature.FOSSIL.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.CHANCE_PASSTHROUGH.configure(new ChanceConfig(64))));
-	}
-	
-	public static void addSurfaceFossils(Biome biomeIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, AtmosphericFeatures.SURFACE_FOSSIL.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.CHANCE_PASSTHROUGH.configure(new ChanceConfig(64))));
+	public static void withBaseRainforestFeatures(BiomeGenerationSettingsBuilder builder) {
+		DefaultBiomeFeatures.withStrongholdAndMineshaft(builder);
+		DefaultBiomeFeatures.withCavesAndCanyons(builder);
+		DefaultBiomeFeatures.withLavaAndWaterLakes(builder);
+		DefaultBiomeFeatures.withMonsterRoom(builder);
+		DefaultBiomeFeatures.withCommonOverworldBlocks(builder);
+		DefaultBiomeFeatures.withOverworldOres(builder);
+		DefaultBiomeFeatures.withDisks(builder);
+		DefaultBiomeFeatures.withNormalMushroomGeneration(builder);
+		DefaultBiomeFeatures.withSugarCaneAndPumpkins(builder);
+		DefaultBiomeFeatures.withLavaAndWaterSprings(builder);
+		DefaultBiomeFeatures.withFrozenTopLayer(builder);
+		DefaultBiomeFeatures.withForestRocks(builder);
+		DefaultBiomeFeatures.withLargeFern(builder);
+		AtmosphericBiomeFeatures.withRainforestFoliage(builder);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PODZOL);
 	}
 
-	public static void addYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount) {
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_WITH_PATCH_CONFIG).withChance(0.25F)), AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
+	public static void withRainforestFeatures(BiomeGenerationSettingsBuilder builder) {
+		AtmosphericBiomeFeatures.withBaseRainforestFeatures(builder);
+		AtmosphericBiomeFeatures.withRainforestWaterFoliage(builder);
+		AtmosphericBiomeFeatures.withRainforestTrees(builder);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.ROSEWOOD_TREE);
 	}
 
-	public static void addPetrifiedYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount) {
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatureConfigs.RED_ARID_YUCCA_TREE_CONFIG).withChance(0.25F)), AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatureConfigs.ARID_YUCCA_TREE_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
+	public static void withRainforestMountainsFeatures(BiomeGenerationSettingsBuilder builder) {
+		AtmosphericBiomeFeatures.withBaseRainforestFeatures(builder);
+		AtmosphericBiomeFeatures.withRainforestWaterFoliage(builder);
+		AtmosphericBiomeFeatures.withRainforestTrees(builder);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.ROSEWOOD_TREE_EXTRA);
 	}
-	
-	public static void addBeehiveYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatureConfigs.YUCCA_TREE_WITH_MORE_BEEHIVES_AND_PATCH_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
+
+	public static void withSparseRainforestPlateauFeatures(BiomeGenerationSettingsBuilder builder) {
+		AtmosphericBiomeFeatures.withBaseRainforestFeatures(builder);
+		AtmosphericBiomeFeatures.withRainforestWaterFoliage(builder);
+		AtmosphericBiomeFeatures.withSparseRainforestPlateauTrees(builder);
 	}
-	
-	public static void addBabyYuccaTrees(Biome biomeIn, int count, float extraChance, int extraCount) {
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatureConfigs.BABY_YUCCA_TREE_WITH_PATCH_CONFIG).withChance(0.25F)), AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatureConfigs.BABY_YUCCA_TREE_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(count, extraChance, extraCount))));
+
+	public static void withRainforestBasinFeatures(BiomeGenerationSettingsBuilder builder) {
+		AtmosphericBiomeFeatures.withBaseRainforestFeatures(builder);
+		AtmosphericBiomeFeatures.withRainforestBasinWaterFoliage(builder);
+		AtmosphericBiomeFeatures.withRainforestBasinTrees(builder);
 	}
-	
-	public static void addRainforestWaterFoliage(Biome biomeIn) {
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.WATER_HYACINTH_PATCH.get().withConfiguration(NoFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(2))));
-	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.LILY_PAD_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SEAGRASS.withConfiguration(new SeaGrassConfig(64, 0.6D)).withPlacement(Placement.TOP_SOLID_HEIGHTMAP.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+
+	public static void withSparseRainforestBasinFeatures(BiomeGenerationSettingsBuilder builder) {
+		AtmosphericBiomeFeatures.withBaseRainforestFeatures(builder);
+		AtmosphericBiomeFeatures.withSparseRainforestBasinWaterFoliage(builder);
+		AtmosphericBiomeFeatures.withSparseRainforestBasinTrees(builder);
 	}
-	
-	public static void addRainforestBasinWaterFoliage(Biome biomeIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.WATER_HYACINTH_PATCH.get().withConfiguration(NoFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(2))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.LILY_PAD_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(3))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SEAGRASS.withConfiguration(new SeaGrassConfig(128, 0.6D)).withPlacement(Placement.TOP_SOLID_HEIGHTMAP.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+
+	public static void withBaseDunesFeatures(BiomeGenerationSettingsBuilder builder) {
+		DefaultBiomeFeatures.withStrongholdAndMineshaft(builder);
+		DefaultBiomeFeatures.withCavesAndCanyons(builder);
+		DefaultBiomeFeatures.withMonsterRoom(builder);
+		DefaultBiomeFeatures.withCommonOverworldBlocks(builder);
+		DefaultBiomeFeatures.withOverworldOres(builder);
+		DefaultBiomeFeatures.withDisks(builder);
+		DefaultBiomeFeatures.withNormalMushroomGeneration(builder);
+		DefaultBiomeFeatures.withFrozenTopLayer(builder);
+		DefaultBiomeFeatures.withFossils(builder);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_DEAD_BUSH);
+
+	}
+
+	public static void withDunesFeatures(BiomeGenerationSettingsBuilder builder) {
+		withBaseDunesFeatures(builder);
+		builder.withFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, AtmosphericFeatures.Configured.DUNE_ROCK);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_YUCCA_FLOWER);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_ALOE_VERA);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_DUNES);
+	}
+
+	public static void withFlourishingDunesFeatures(BiomeGenerationSettingsBuilder builder) {
+		withBaseDunesFeatures(builder);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_MELON);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_GILIA);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_DUNE_GRASS);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_BEEHIVE);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_BABY);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_YUCCA_FLOWER_EXTRA);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_ALOE_VERA_EXTRA);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_FLOURISHING_DUNES);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.DUNE_ROCK_EXTRA);
+	}
+
+	public static void withRockyDunesFeatures(BiomeGenerationSettingsBuilder builder) {
+		withBaseDunesFeatures(builder);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_ROCKY_DUNES);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_ALOE_VERA);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_ROCKY_DUNES);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.DUNE_ROCK_MANY);
+	}
+
+	public static void withPetrifiedDunesFeatures(BiomeGenerationSettingsBuilder builder) {
+		withBaseDunesFeatures(builder);
+		builder.withFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, AtmosphericFeatures.Configured.DUNE_ROCK);
+		builder.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, AtmosphericFeatures.Configured.FOSSIL_SURFACE);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_PETRIFIED);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_PETRIFIED_DUNES);
+	}
+
+	public static void withRainforestFoliage(BiomeGenerationSettings.Builder builder) {
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_TALL_GRASS);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_GRASS_JUNGLE);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.VINES);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PASSION_VINES);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.FOREST_FLOWER_VEGETATION_COMMON);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_WARM_MONKEY_BRUSH);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_HOT_MONKEY_BRUSH);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_SCALDING_MONKEY_BRUSH);
+	}
+
+	public static void withRainforestWaterFoliage(BiomeGenerationSettings.Builder builder) {
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_WATER_HYACINTH);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_WATERLILLY_RAINFOREST);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.SEAGRASS_SWAMP);
+	}
+
+	public static void withRainforestTrees (BiomeGenerationSettings.Builder builder) {
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.OAK_TREE_RAINFOREST);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.MORADO_TREE);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.RAINFOREST_BUSH);
+	}
+
+	public static void withRainforestBasinTrees(BiomeGenerationSettings.Builder builder) {
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.OAK_TREE_RAINFOREST);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.RAINFOREST_BUSH);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.ROSEWOOD_WATER_TREE);
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.MORADO_WATER_TREE);
     }
-	
-	public static void addSparseRainforestBasinWaterFoliage(Biome biomeIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.WATER_HYACINTH_PATCH.get().withConfiguration(NoFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.LILY_PAD_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(3))));
-        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SEAGRASS.withConfiguration(new SeaGrassConfig(256, 0.8D)).withPlacement(Placement.TOP_SOLID_HEIGHTMAP.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+
+	public static void withSparseRainforestBasinTrees(BiomeGenerationSettings.Builder builder) {
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.OAK_TREE_RAINFOREST);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.RAINFOREST_BUSH);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.ROSEWOOD_WATER_TREE_SPARSE);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.MORADO_WATER_TREE_SPARSE);
+	}
+
+	public static void withSparseRainforestPlateauTrees(BiomeGenerationSettings.Builder builder) {
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.ROSEWOOD_TREE_SPARSE);
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.MORADO_TREE_SPARSE);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.RAINFOREST_BUSH);
+	}
+
+	public static void withRainforestBasinWaterFoliage(BiomeGenerationSettings.Builder builder) {
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_WATER_HYACINTH);
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_WATERLILLY);
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.SEAGRASS_DEEP_WARM);
     }
-	
-	public static void addDuneGrassPatches(Biome biomeIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.COARSE_DIRT_PATCH.get().withConfiguration(new SphereReplaceConfig(Blocks.COARSE_DIRT.getDefaultState(), 7, 2, Lists.newArrayList(AtmosphericBlocks.RED_ARID_SAND.get().getDefaultState(), AtmosphericBlocks.ARID_SAND.get().getDefaultState()))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.8F, 1))));
-	}
-	
-	public static void addMelons(Biome biomeIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(AtmosphericFeatureConfigs.MELON_PATCH_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(5))));
-	}
+
+	public static void withSparseRainforestBasinWaterFoliage(BiomeGenerationSettings.Builder builder) {
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_WATER_HYACINTH_SPARSE);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_WATERLILLY);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.SEAGRASS_DEEP_WARM);
+    }
 }

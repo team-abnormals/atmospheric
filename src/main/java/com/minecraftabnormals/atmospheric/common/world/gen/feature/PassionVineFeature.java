@@ -21,7 +21,7 @@ public class PassionVineFeature extends Feature<NoFeatureConfig> {
 	}
 
 	@Override
-	public boolean func_230362_a_(ISeedReader worldIn, StructureManager manager, ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config) {
+	public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config) {
 		int i = 0;
 		for (int j = 0; j < 400; ++j) {
 			Direction direction = Direction.Plane.HORIZONTAL.random(rand);

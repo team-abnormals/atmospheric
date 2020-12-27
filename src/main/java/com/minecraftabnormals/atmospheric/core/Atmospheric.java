@@ -1,36 +1,33 @@
 package com.minecraftabnormals.atmospheric.core;
 
+import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericRender;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericVillagers;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericParticles;
+import com.minecraftabnormals.atmospheric.core.registry.*;
+import com.minecraftabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(Atmospheric.MODID)
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Atmospheric {
 	public static final String MODID = "atmospheric";
-	public static final AtmosphericRegistryHelper REGISTRY_HELPER = new AtmosphericRegistryHelper(MODID);
+	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MODID, helper -> {
+		helper.putSubHelper(ForgeRegistries.BLOCKS, new AtmosphericBlockSubRegistryHelper(helper));
+	});
 
 	public Atmospheric() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-		REGISTRY_HELPER.getDeferredItemRegister().register(bus);
-		REGISTRY_HELPER.getDeferredBlockRegister().register(bus);
-		REGISTRY_HELPER.getDeferredEntityRegister().register(bus);
-
-		AtmosphericBiomes.BIOMES.register(bus);
+		REGISTRY_HELPER.register(bus);
 		AtmosphericFeatures.FEATURES.register(bus);
 		AtmosphericParticles.PARTICLES.register(bus);
 		AtmosphericEffects.EFFECTS.register(bus);
@@ -45,11 +42,12 @@ public class Atmospheric {
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
-		DeferredWorkQueue.runLater(() -> {
-			AtmosphericFeatures.generateFeatures();
-			AtmosphericFeatures.addCarvables();
+		event.enqueueWork(() -> {
+			AtmosphericFeatures.Configured.registerConfiguredFeatures();
+			AtmosphericSurfaceBuilders.Configured.registerConfiguredSurfaceBuilders();
 			AtmosphericBiomes.addBiomeTypes();
 			AtmosphericBiomes.registerBiomesToDictionary();
+			AtmosphericBiomes.addBiomeVariants();
 			AtmosphericVillagers.setupVillagerTypes();
 			AtmosphericCompat.registerCompostables();
 			AtmosphericCompat.registerFlammables();
@@ -60,10 +58,10 @@ public class Atmospheric {
 	}
 
 	private void clientSetup(final FMLClientSetupEvent event) {
-		DeferredWorkQueue.runLater(() -> {
+		AtmosphericRender.registerEntityRenderers();
+		event.enqueueWork(() -> {
 			AtmosphericRender.registerBlockColors();
 			AtmosphericRender.registerRenderLayers();
-			AtmosphericRender.registerEntityRenderers();
 		});
 	}
 }

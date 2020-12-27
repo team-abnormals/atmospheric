@@ -26,7 +26,7 @@ public class AtmosphericEvents {
 		
 		// RELIEF //
 		if (entity.isPotionActive(AtmosphericEffects.RELIEF.get())) {
-			if (entity.isEntityUndead() == false) {
+			if (!entity.isEntityUndead()) {
 				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.RELIEF.get()).getAmplifier();
 				entity.getPersistentData().putInt("PotionHealAmplifier", amplifier);
 				entity.getPersistentData().putFloat("IncomingDamage", event.getAmount());
@@ -42,7 +42,7 @@ public class AtmosphericEvents {
 		
 		// WORSENING //
 		if (entity.isPotionActive(AtmosphericEffects.WORSENING.get())) {
-			if (entity.isEntityUndead() == false) {
+			if (!entity.isEntityUndead()) {
 				int amplifier = entity.getActivePotionEffect(AtmosphericEffects.WORSENING.get()).getAmplifier();
 				if (event.getAmount() >= (amplifier + 1)) {
 					event.setAmount(event.getAmount() + (amplifier + 1));

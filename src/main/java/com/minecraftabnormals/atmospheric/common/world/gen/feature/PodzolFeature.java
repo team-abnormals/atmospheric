@@ -20,7 +20,7 @@ public class PodzolFeature extends Feature<ProbabilityConfig> {
     }
 
     @Override
-    public boolean func_230362_a_(ISeedReader worldIn, StructureManager manager, ChunkGenerator generator, Random rand, BlockPos pos, ProbabilityConfig config) {
+    public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, ProbabilityConfig config) {
         int i = 0;
         BlockPos.Mutable blockpos$mutable = pos.toMutable();
         if (rand.nextFloat() < config.probability) {

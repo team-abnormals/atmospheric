@@ -22,7 +22,7 @@ public class WaterHyacinthPatchFeature extends Feature<NoFeatureConfig> {
 	}
 
 	@Override
-	public boolean func_230362_a_(ISeedReader world, StructureManager manager, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
+	public boolean generate(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
 		BlockState topState = AtmosphericBlocks.WATER_HYACINTH.get().getDefaultState();
 		BlockState bottomState = AtmosphericBlocks.WATER_HYACINTH.get().getDefaultState().with(WaterHyacinthBlock.WATERLOGGED, true).with(WaterHyacinthBlock.HALF, DoubleBlockHalf.LOWER);
 		BlockPos blockpos = pos;
@@ -35,7 +35,7 @@ public class WaterHyacinthPatchFeature extends Feature<NoFeatureConfig> {
 		BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable();
 
 		for (int j = 0; j < 512; ++j) {
-			blockpos$mutable.func_239621_a_(blockpos, random.nextInt(xSpread + 1) - random.nextInt(xSpread + 1), random.nextInt(ySpread + 1) - random.nextInt(ySpread + 1), random.nextInt(zSpread + 1) - random.nextInt(zSpread + 1));
+			blockpos$mutable.setAndOffset(blockpos, random.nextInt(xSpread + 1) - random.nextInt(xSpread + 1), random.nextInt(ySpread + 1) - random.nextInt(ySpread + 1), random.nextInt(zSpread + 1) - random.nextInt(zSpread + 1));
 			BlockPos blockpos1 = blockpos$mutable.down();
 			if (world.isAirBlock(blockpos$mutable) && world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {
 				world.setBlockState(blockpos$mutable, topState, 2);

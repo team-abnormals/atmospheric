@@ -5,7 +5,7 @@ import java.util.Arrays;
 import com.minecraftabnormals.atmospheric.client.render.PassionfruitSeedRenderer;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEntities;
-import com.teamabnormals.abnormals_core.core.utils.DataUtils;
+import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
@@ -19,24 +19,27 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 public class AtmosphericRender {
 	public static void registerBlockColors() {
 		BlockColors blockColors = Minecraft.getInstance().getBlockColors();
-		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.ROSEWOOD_LEAVES));
-		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET));
-		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.MORADO_LEAVES));
-		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.MORADO_LEAF_CARPET));
-		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.FLOWERING_MORADO_LEAVES));
-		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.FLOWERING_MORADO_LEAF_CARPET));
-		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.YUCCA_LEAVES));
-		DataUtils.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.YUCCA_LEAF_CARPET));
-
 		ItemColors itemColors = Minecraft.getInstance().getItemColors();
-		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.ROSEWOOD_LEAVES));
-		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.ROSEWOOD_LEAF_CARPET));
-		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.MORADO_LEAVES));
-		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.MORADO_LEAF_CARPET));
-		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.FLOWERING_MORADO_LEAVES));
-		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.FLOWERING_MORADO_LEAF_CARPET));
-		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.YUCCA_LEAVES));
-		DataUtils.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(AtmosphericBlocks.YUCCA_LEAF_CARPET));
+
+		DataUtil.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), Arrays.asList(
+				AtmosphericBlocks.ROSEWOOD_LEAVES,
+				AtmosphericBlocks.ROSEWOOD_LEAF_CARPET,
+				AtmosphericBlocks.MORADO_LEAVES,
+				AtmosphericBlocks.MORADO_LEAF_CARPET,
+				AtmosphericBlocks.FLOWERING_MORADO_LEAVES,
+				AtmosphericBlocks.FLOWERING_MORADO_LEAF_CARPET,
+				AtmosphericBlocks.YUCCA_LEAVES,
+				AtmosphericBlocks.YUCCA_LEAF_CARPET));
+
+		DataUtil.registerBlockItemColor(itemColors, (color, items) -> FoliageColors.get(0.5D, 1.0D), Arrays.asList(
+				AtmosphericBlocks.ROSEWOOD_LEAVES,
+				AtmosphericBlocks.ROSEWOOD_LEAF_CARPET,
+				AtmosphericBlocks.MORADO_LEAVES,
+				AtmosphericBlocks.MORADO_LEAF_CARPET,
+				AtmosphericBlocks.FLOWERING_MORADO_LEAVES,
+				AtmosphericBlocks.FLOWERING_MORADO_LEAF_CARPET,
+				AtmosphericBlocks.YUCCA_LEAVES,
+				AtmosphericBlocks.YUCCA_LEAF_CARPET));
 	}
 	
 	public static void registerEntityRenderers() {

@@ -4,7 +4,7 @@ import java.util.Random;
 
 import com.google.common.base.Supplier;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.abnormals_core.common.blocks.wood.AbnormalsLogBlock;
+import com.minecraftabnormals.abnormals_core.common.blocks.wood.AbnormalsLogBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

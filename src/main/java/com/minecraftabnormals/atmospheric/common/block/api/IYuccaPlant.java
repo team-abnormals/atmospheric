@@ -1,6 +1,6 @@
 package com.minecraftabnormals.atmospheric.common.block.api;
 
-import com.teamabnormals.abnormals_core.common.advancement.EmptyTrigger;
+import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;

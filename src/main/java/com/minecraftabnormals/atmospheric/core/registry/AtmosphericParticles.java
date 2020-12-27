@@ -21,8 +21,7 @@ public class AtmosphericParticles {
 	public static final RegistryObject<BasicParticleType> ALOE_BLOSSOM = createBasicParticleType(true, "aloe_blossom");
 	
 	private static RegistryObject<BasicParticleType> createBasicParticleType(boolean alwaysShow, String name) {
-		RegistryObject<BasicParticleType> particleType = PARTICLES.register(name, () -> new BasicParticleType(alwaysShow));
-		return particleType;
+		return PARTICLES.register(name, () -> new BasicParticleType(alwaysShow));
 	}
 	
 	@EventBusSubscriber(modid = Atmospheric.MODID, bus = EventBusSubscriber.Bus.MOD)

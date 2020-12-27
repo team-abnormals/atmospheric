@@ -49,7 +49,7 @@ public class WaterHyacinthItem extends BlockItem {
 
 				BlockPos blockpos1 = blockpos.up();
 				if (worldIn.getBlockState(blockpos).isIn(Blocks.WATER) && worldIn.getBlockState(blockpos1).isAir()) {
-					net.minecraftforge.common.util.BlockSnapshot blocksnapshot = net.minecraftforge.common.util.BlockSnapshot.create(worldIn, blockpos1);
+					net.minecraftforge.common.util.BlockSnapshot blocksnapshot = net.minecraftforge.common.util.BlockSnapshot.create(worldIn.getDimensionKey(), worldIn, blockpos1);
 					if (!worldIn.isRemote())
 						((WaterHyacinthBlock) AtmosphericBlocks.WATER_HYACINTH.get()).placeAt(worldIn, blockpos1, 18);
 					if (net.minecraftforge.event.ForgeEventFactory.onBlockPlace(playerIn, blocksnapshot, Direction.UP)) {

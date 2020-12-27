@@ -8,7 +8,7 @@ import com.google.common.collect.Maps;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.MonkeyBrushFeature;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
-import com.teamabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
+import com.minecraftabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -43,7 +43,7 @@ public class WallMonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowa
 	private static final Map<Direction, VoxelShape> SHAPES = Maps.newEnumMap(ImmutableMap.of(Direction.NORTH, Block.makeCuboidShape(5.5D, 3.0D, 11.0D, 10.5D, 13.0D, 16.0D), Direction.SOUTH, Block.makeCuboidShape(5.5D, 3.0D, 0.0D, 10.5D, 13.0D, 5.0D), Direction.WEST, Block.makeCuboidShape(11.0D, 3.0D, 5.5D, 16.0D, 13.0D, 10.5D), Direction.EAST, Block.makeCuboidShape(0.0D, 3.0D, 5.5D, 5.0D, 13.0D, 10.5D)));
 
 	public WallMonkeyBrushBlock(Properties properties) {
-		super(Effects.BLINDNESS, 120, properties);
+		super(AtmosphericEffects.RELIEF::get, 120, properties);
 		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
 	}
 
@@ -51,11 +51,6 @@ public class WallMonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowa
 	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		Block block = state.getBlock();
 		return block == Blocks.GRASS_BLOCK || block == Blocks.DIRT || block == Blocks.COARSE_DIRT || block == Blocks.PODZOL || block == Blocks.FARMLAND || block.getBlock().isIn(BlockTags.LOGS);
-	}
-
-	@Override
-	public Effect getStewEffect() {
-		return AtmosphericEffects.RELIEF.get();
 	}
 
 	@Override
@@ -120,9 +115,9 @@ public class WallMonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowa
 			for (int y = 0; y < x / 16; ++y) {
 				blockPos = blockPos.add(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
 				if (state.isValidPosition(world, blockPos) && world.isAirBlock(blockPos)) {
-					Direction randomD = Direction.func_239631_a_(random);
+					Direction randomD = Direction.getRandomDirection(random);
 					while (!MonkeyBrushFeature.monkeyBrushState(state, randomD).isValidPosition(world, blockPos)) {
-						randomD = Direction.func_239631_a_(random);
+						randomD = Direction.getRandomDirection(random);
 					}
 					world.setBlockState(blockPos, MonkeyBrushFeature.monkeyBrushState(state, randomD), 2);
 					return;

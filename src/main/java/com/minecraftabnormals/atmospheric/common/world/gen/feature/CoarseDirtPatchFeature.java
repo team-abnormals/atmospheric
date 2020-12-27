@@ -1,9 +1,7 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
-import java.util.Random;
-
+import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.LargeSphereReplaceConfig;
 import com.mojang.serialization.Codec;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DoublePlantBlock;
@@ -14,27 +12,28 @@ import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.SphereReplaceConfig;
-import net.minecraft.world.gen.feature.structure.StructureManager;
 
-public class CoarseDirtPatchFeature extends Feature<SphereReplaceConfig> {
-    public CoarseDirtPatchFeature(Codec<SphereReplaceConfig> p_i49885_1_) {
-        super(p_i49885_1_);
+import java.util.Random;
+
+public class CoarseDirtPatchFeature extends Feature<LargeSphereReplaceConfig> {
+    public CoarseDirtPatchFeature(Codec<LargeSphereReplaceConfig> codec) {
+        super(codec);
     }
 
     @Override
-    public boolean func_230362_a_(ISeedReader worldIn, StructureManager manager, ChunkGenerator generator, Random rand, BlockPos pos, SphereReplaceConfig config) {
+    public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, LargeSphereReplaceConfig config) {
         if (worldIn.getFluidState(pos).isTagged(FluidTags.WATER)) {
             return false;
         } else {
             int i = 0;
-            int j = rand.nextInt(config.radius - 2) + 2;
+            int j = rand.nextInt(config.radius.func_242259_a(rand) - 2) + 2;
 
             for (int k = pos.getX() - j; k <= pos.getX() + j; ++k) {
                 for (int l = pos.getZ() - j; l <= pos.getZ() + j; ++l) {
                     int i1 = k - pos.getX();
                     int j1 = l - pos.getZ();
                     if (i1 * i1 + j1 * j1 <= j * j) {
-                        for (int k1 = pos.getY() - config.ySize; k1 <= pos.getY() + config.ySize; ++k1) {
+                        for (int k1 = pos.getY() - config.field_242809_d; k1 <= pos.getY() + config.field_242809_d; ++k1) {
                             BlockPos blockpos = new BlockPos(k, k1, l);
                             BlockState blockstate = worldIn.getBlockState(blockpos);
 

@@ -1,13 +1,7 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.trees;
 
-import java.util.Random;
-
-import javax.annotation.Nullable;
-
-import com.minecraftabnormals.atmospheric.common.world.biome.AtmosphericFeatureConfigs;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.trees.Tree;
@@ -19,10 +13,13 @@ import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.server.ServerWorld;
 
+import javax.annotation.Nullable;
+import java.util.Random;
+
 public class YuccaTree extends Tree {
     @Nullable
     protected ConfiguredFeature<YuccaTreeFeatureConfig, ?> getYuccaTreeFeature(Random randomIn, boolean beehive) {
-        return AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(randomIn.nextInt(10) == 0 ? AtmosphericFeatureConfigs.BABY_YUCCA_TREE_CONFIG : beehive ? AtmosphericFeatureConfigs.YUCCA_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatureConfigs.YUCCA_TREE_CONFIG);
+        return AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(randomIn.nextInt(10) == 0 ? AtmosphericFeatures.Configs.BABY_YUCCA_TREE_CONFIG : beehive ? AtmosphericFeatures.Configs.YUCCA_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatures.Configs.YUCCA_TREE_CONFIG);
     }
 
     @Override
@@ -33,7 +30,7 @@ public class YuccaTree extends Tree {
         } else {
             world.setBlockState(pos, Blocks.AIR.getDefaultState(), 4);
             configuredfeature.config.forcePlacement();
-            if (configuredfeature.func_236265_a_(world, world.func_241112_a_(), chunkGenerator, rand, pos)) {
+            if (configuredfeature.generate(world, chunkGenerator, rand, pos)) {
                 return true;
             } else {
                 world.setBlockState(pos, state, 4);

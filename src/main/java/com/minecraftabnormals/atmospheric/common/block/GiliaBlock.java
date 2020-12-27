@@ -1,7 +1,8 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
+import com.google.common.base.Supplier;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
-import com.teamabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
+import com.minecraftabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -11,7 +12,7 @@ import net.minecraft.world.IBlockReader;
 
 public class GiliaBlock extends AbnormalsFlowerBlock  {
 
-	public GiliaBlock(Effect effect, int effectDuration, Properties properties) {
+	public GiliaBlock(Supplier<Effect> effect, int effectDuration, Properties properties) {
 		super(effect, effectDuration, properties);
 	}
 	

@@ -1,26 +1,16 @@
 package com.minecraftabnormals.atmospheric.core.registry;
 
-import com.minecraftabnormals.atmospheric.common.item.AloeGelBottleItem;
-import com.minecraftabnormals.atmospheric.common.item.AloeLeavesItem;
-import com.minecraftabnormals.atmospheric.common.item.PassionVineCoilItem;
-import com.minecraftabnormals.atmospheric.common.item.WaterHyacinthItem;
-import com.minecraftabnormals.atmospheric.common.item.YuccaJuiceItem;
+import com.minecraftabnormals.abnormals_core.core.util.registry.ItemSubRegistryHelper;
+import com.minecraftabnormals.atmospheric.common.item.*;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericFoods;
-import com.teamabnormals.abnormals_core.core.utils.RegistryHelper;
-
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.BlockNamedItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Items;
-import net.minecraft.item.SoupItem;
+import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericItems {
-	public static final RegistryHelper HELPER = Atmospheric.REGISTRY_HELPER;	
+	public static final ItemSubRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER.getItemSubHelper();
 	
 	public static final RegistryObject<Item> PASSIONFRUIT				= HELPER.createItem("passionfruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT).group(ItemGroup.FOOD)));
 	public static final RegistryObject<Item> SHIMMERING_PASSIONFRUIT 	= HELPER.createItem("shimmering_passionfruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.SHIMMERING_PASSIONFRUIT).group(ItemGroup.FOOD)));

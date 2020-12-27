@@ -7,7 +7,7 @@ import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.abnormals_core.common.advancement.EmptyTrigger;
+import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

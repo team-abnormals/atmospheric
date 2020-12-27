@@ -1,7 +1,6 @@
 {
     "pack": {
-        "description": "Atmospheric",
-        "pack_format": 5,
-        "_comment": "hi"
+        "description": "Atmospheric resources",
+        "pack_format": 6
     }
 }

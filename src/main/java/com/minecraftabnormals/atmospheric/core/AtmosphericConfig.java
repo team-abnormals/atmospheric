@@ -5,9 +5,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
 
-/**
- * @author SmellyModder(Luke Tonon)
- */
 public class AtmosphericConfig {
 
 	public static class Common {

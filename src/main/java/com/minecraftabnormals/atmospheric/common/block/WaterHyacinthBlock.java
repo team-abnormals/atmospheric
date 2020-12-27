@@ -3,7 +3,7 @@ package com.minecraftabnormals.atmospheric.common.block;
 import javax.annotation.Nullable;
 
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
-import com.teamabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
+import com.minecraftabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -44,15 +44,9 @@ public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLo
 	public static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 
 	public WaterHyacinthBlock(Properties properties) {
-		super(Effects.BLINDNESS, 120, properties);
+		super(AtmosphericEffects.WORSENING::get, 120, properties);
 		this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, false).with(HALF, DoubleBlockHalf.UPPER));
 	}
-
-	@Override
-	public Effect getStewEffect() {
-		return AtmosphericEffects.WORSENING.get();
-	}
-
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		Vector3d vec3d = state.getOffset(worldIn, pos);

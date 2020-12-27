@@ -5,8 +5,8 @@ import javax.annotation.Nullable;
 import com.minecraftabnormals.atmospheric.common.block.api.IYuccaPlant;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
-import com.teamabnormals.abnormals_core.common.advancement.EmptyTrigger;
-import com.teamabnormals.abnormals_core.common.blocks.LeafCarpetBlock;
+import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
+import com.minecraftabnormals.abnormals_core.common.blocks.LeafCarpetBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

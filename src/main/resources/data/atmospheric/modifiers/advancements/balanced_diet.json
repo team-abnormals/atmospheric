@@ -1,0 +1,114 @@
+{
+  "advancement": "minecraft:husbandry/balanced_diet",
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "mode": "modify",
+        "criteria": {
+          "atmospheric:passionfruit": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "atmospheric:passionfruit"
+              }
+            }
+          },
+          "atmospheric:shimmering_passionfruit": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "atmospheric:shimmering_passionfruit"
+              }
+            }
+          },
+          "atmospheric:passionfruit_tart": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "atmospheric:passionfruit_tart"
+              }
+            }
+          },
+          "atmospheric:passionfruit_sorbet": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "atmospheric:passionfruit_sorbet"
+              }
+            }
+          },
+          "atmospheric:yucca_fruit": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "atmospheric:yucca_fruit"
+              }
+            }
+          },
+          "atmospheric:roasted_yucca_fruit": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "atmospheric:roasted_yucca_fruit"
+              }
+            }
+          },
+          "atmospheric:yucca_juice": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "atmospheric:yucca_juice"
+              }
+            }
+          },
+          "atmospheric:aloe_leaves": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "atmospheric:aloe_leaves"
+              }
+            }
+          },
+          "atmospheric:aloe_gel_bottle": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "atmospheric:aloe_gel_bottle"
+              }
+            }
+          }
+        },
+        "requirements": [
+          [
+            "atmospheric:passionfruit"
+          ],
+          [
+            "atmospheric:shimmering_passionfruit"
+          ],
+          [
+            "atmospheric:passionfruit_tart"
+          ],
+          [
+            "atmospheric:passionfruit_sorbet"
+          ],
+          [
+            "atmospheric:yucca_fruit"
+          ],
+          [
+            "atmospheric:roasted_yucca_fruit"
+          ],
+          [
+            "atmospheric:yucca_juice"
+          ],
+          [
+            "atmospheric:aloe_leaves"
+          ],
+          [
+            "atmospheric:aloe_gel_bottle"
+          ]
+        ]
+      }
+    }
+  ]
+}

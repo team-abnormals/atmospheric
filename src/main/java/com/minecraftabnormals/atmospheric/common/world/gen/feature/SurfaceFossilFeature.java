@@ -47,10 +47,10 @@ public class SurfaceFossilFeature extends Feature<NoFeatureConfig> {
         super(codec);
     }
 
-    public boolean func_230362_a_(ISeedReader world, StructureManager manager, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
+    public boolean generate(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
         Rotation rotation = Rotation.randomRotation(random);
         int i = random.nextInt(FOSSILS.length);
-        TemplateManager templatemanager = ((ServerWorld) world.getWorld()).getServer().func_240792_aT_();
+        TemplateManager templatemanager = ((ServerWorld) world.getWorld()).getServer().getTemplateManager();
         Template template = templatemanager.getTemplateDefaulted(FOSSILS[i]);
         Template template1 = templatemanager.getTemplateDefaulted(FOSSILS_COAL[i]);
         ChunkPos chunkpos = new ChunkPos(pos);

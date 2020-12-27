@@ -1,10 +1,10 @@
 package com.minecraftabnormals.atmospheric.core.other;
 
+import com.minecraftabnormals.abnormals_core.core.util.TradeUtil;
+import com.minecraftabnormals.abnormals_core.core.util.TradeUtil.AbnormalsTrade;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericItems;
-import com.teamabnormals.abnormals_core.core.utils.TradeUtils;
-
 import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
@@ -13,34 +13,44 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID)
 public class AtmosphericTrades {
-	
+
 	@SubscribeEvent
 	public static void onWandererTradesEvent(WandererTradesEvent event) {
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.WARM_MONKEY_BRUSH.get(), 1, 1, 6, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.HOT_MONKEY_BRUSH.get(), 1, 1, 6, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get(), 1, 1, 6, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.PASSION_VINE.get(), 4, 1, 8, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ARID_SAND.get(), 1, 8, 8, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.RED_ARID_SAND.get(), 1, 4, 6, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.YUCCA_FLOWER.get(), 1, 1, 8, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.WATER_HYACINTH.get(), 1, 1, 8, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.GILIA.get(), 1, 1, 12, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.ALOE_KERNELS.get(), 1, 1, 12, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.BARREL_CACTUS.get(), 3, 1, 8, 1));
-		
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.ROSEWOOD_SAPLING.get(), 5, 1, 8, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.YUCCA_SAPLING.get(), 5, 1, 8, 1));
-		event.getGenericTrades().add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericBlocks.MORADO_SAPLING.get(), 5, 1, 8, 1));
+		TradeUtil.addWandererTrades(event,
+				new AbnormalsTrade(1, AtmosphericBlocks.WARM_MONKEY_BRUSH.get().asItem(), 1, 6, 1),
+				new AbnormalsTrade(1, AtmosphericBlocks.HOT_MONKEY_BRUSH.get().asItem(), 1, 6, 1),
+				new AbnormalsTrade(1, AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().asItem(), 1, 6, 1),
+				new AbnormalsTrade(4, AtmosphericBlocks.PASSION_VINE.get().asItem(), 1, 8, 1),
+				new AbnormalsTrade(1, AtmosphericBlocks.ARID_SAND.get().asItem(), 8, 8, 1),
+				new AbnormalsTrade(1, AtmosphericBlocks.RED_ARID_SAND.get().asItem(), 4, 6, 1),
+				new AbnormalsTrade(1, AtmosphericBlocks.YUCCA_FLOWER.get().asItem(), 1, 8, 1),
+				new AbnormalsTrade(1, AtmosphericBlocks.WATER_HYACINTH.get().asItem(), 1, 8, 1),
+				new AbnormalsTrade(1, AtmosphericBlocks.GILIA.get().asItem(), 1, 12, 1),
+				new AbnormalsTrade(1, AtmosphericItems.ALOE_KERNELS.get().asItem(), 1, 12, 1),
+				new AbnormalsTrade(3, AtmosphericBlocks.BARREL_CACTUS.get().asItem(), 1, 8, 1),
+
+				new AbnormalsTrade(5, AtmosphericBlocks.ROSEWOOD_SAPLING.get().asItem(), 1, 8, 1),
+				new AbnormalsTrade(5, AtmosphericBlocks.YUCCA_SAPLING.get().asItem(), 1, 8, 1),
+				new AbnormalsTrade(5, AtmosphericBlocks.MORADO_SAPLING.get().asItem(), 1, 8, 1)
+		);
 	}
-	
+
 	@SubscribeEvent
 	public static void onVillagerTradesEvent(VillagerTradesEvent event) {
-		if(event.getType() == VillagerProfession.FARMER) {
-			event.getTrades().get(3).add(new TradeUtils.EmeraldsForItemsTrade(AtmosphericItems.PASSIONFRUIT.get(), 8, 1, 12, 10));
-			event.getTrades().get(2).add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.PASSIONFRUIT_TART.get(), 1, 4, 12, 5));
-			event.getTrades().get(2).add(new TradeUtils.EmeraldsForItemsTrade(AtmosphericItems.ALOE_LEAVES.get(), 4, 1, 16, 15));
-			event.getTrades().get(2).add(new TradeUtils.EmeraldsForItemsTrade(AtmosphericItems.YUCCA_FRUIT.get(), 3, 1, 12, 10));
-			event.getTrades().get(4).add(new TradeUtils.ItemsForEmeraldsTrade(AtmosphericItems.YUCCA_GATEAU.get(), 3, 1, 12, 15));
+		if (event.getType().equals(VillagerProfession.FARMER)) {
+			TradeUtil.addVillagerTrades(event, 2,
+					new AbnormalsTrade(1, AtmosphericItems.PASSIONFRUIT_TART.get(), 4, 12, 5),
+					new AbnormalsTrade(AtmosphericItems.ALOE_LEAVES.get(), 4, 1, 16, 15),
+					new AbnormalsTrade(AtmosphericItems.YUCCA_FRUIT.get(), 3, 1, 12, 10)
+			);
+
+			TradeUtil.addVillagerTrades(event, 3,
+					new AbnormalsTrade(AtmosphericItems.PASSIONFRUIT.get(), 8, 1, 12, 10)
+			);
+
+			TradeUtil.addVillagerTrades(event, 4,
+					new AbnormalsTrade(3, AtmosphericItems.YUCCA_GATEAU.get(), 1, 12, 15)
+			);
 		}
-    }
+	}
 }

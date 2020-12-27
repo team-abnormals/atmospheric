@@ -1,12 +1,9 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
-import java.util.Random;
-
 import com.minecraftabnormals.atmospheric.common.block.MonkeyBrushBlock;
 import com.minecraftabnormals.atmospheric.common.block.WallMonkeyBrushBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +11,8 @@ import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
-import net.minecraft.world.gen.feature.structure.StructureManager;
+
+import java.util.Random;
 
 public class MonkeyBrushFeature extends Feature<NoFeatureConfig> {
 	int temp;
@@ -25,7 +23,7 @@ public class MonkeyBrushFeature extends Feature<NoFeatureConfig> {
 	}
 
 	@Override
-	public boolean func_230362_a_(ISeedReader worldIn, StructureManager manager, ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config) {
+	public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config) {
 		BlockState blockstate = AtmosphericBlocks.HOT_MONKEY_BRUSH.get().getDefaultState();
 		if (temp == 3) {
 			blockstate = AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().getDefaultState();
@@ -37,9 +35,9 @@ public class MonkeyBrushFeature extends Feature<NoFeatureConfig> {
 		for (int j = 0; j < 64; ++j) {
 			BlockPos blockpos = pos.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 			if (worldIn.isAirBlock(blockpos) && blockpos.getY() < 255 && blockstate.isValidPosition(worldIn, blockpos)) {
-				Direction randomD = Direction.func_239631_a_(rand);
+				Direction randomD = Direction.getRandomDirection(rand);
 				while (!monkeyBrushState(blockstate, randomD).isValidPosition(worldIn, blockpos)) {
-					randomD = Direction.func_239631_a_(rand);
+					randomD = Direction.getRandomDirection(rand);
 				}
 				worldIn.setBlockState(blockpos, monkeyBrushState(blockstate, randomD), 2);
 				++i;

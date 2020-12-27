@@ -21,7 +21,7 @@ public class YuccaFlowerFeature extends DefaultFlowersFeature {
     }
 
     @Override
-    public boolean func_230362_a_(ISeedReader worldIn, StructureManager manager, ChunkGenerator generator, Random rand, BlockPos pos, BlockClusterFeatureConfig config) {
+    public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, BlockClusterFeatureConfig config) {
         BlockState blockstate = AtmosphericBlocks.YUCCA_FLOWER.get().getDefaultState();
         BlockState tallBlockstate = AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState();
         int i = 0;
