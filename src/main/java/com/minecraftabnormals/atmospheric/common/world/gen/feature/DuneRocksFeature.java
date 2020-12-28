@@ -19,7 +19,8 @@ public class DuneRocksFeature extends Feature<BlockStateFeatureConfig> {
 	@Override
 	public boolean generate(ISeedReader reader, ChunkGenerator generator, Random rand, BlockPos pos, BlockStateFeatureConfig config) {
 		while (true) {
-			label46: {
+			label46:
+			{
 				if (pos.getY() > 3) {
 					if (reader.isAirBlock(pos.down())) {
 						break label46;

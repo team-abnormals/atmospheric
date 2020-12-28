@@ -21,42 +21,44 @@ import javax.annotation.Nullable;
 
 public class YuccaSaplingBlock extends AbnormalsSaplingBlock implements IPlantable, IYuccaPlant {
 	public YuccaSaplingBlock(Tree tree, Properties properties) {
-        super(tree, properties);
-    }
-	
+		super(tree, properties);
+	}
+
 	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		return worldIn.getBlockState(pos.down()).isIn(AtmosphericTags.YUCCA_PLANTABLE_ON);
 	}
-	
+
 	@Override
 	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
-		return net.minecraftforge.common.PlantType.DESERT;	
+		return net.minecraftforge.common.PlantType.DESERT;
 	}
 
-    @Override
-    public float getKnockbackForce() {
-        return 0.35F;
-    }
+	@Override
+	public float getKnockbackForce() {
+		return 0.35F;
+	}
 
-    @Override
-    public DamageSource getDamageSource() {
-        return AtmosphericDamageSources.YUCCA_SAPLING;
-    }
+	@Override
+	public DamageSource getDamageSource() {
+		return AtmosphericDamageSources.YUCCA_SAPLING;
+	}
 
-    @Override
-    public EmptyTrigger getCriteriaTrigger() {
-        return null;
-    }
-	
+	@Override
+	public EmptyTrigger getCriteriaTrigger() {
+		return null;
+	}
+
 	@Nullable
-    @Override
-    public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
-        return PathNodeType.DAMAGE_CACTUS;
-    }
+	@Override
+	public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
+		return PathNodeType.DAMAGE_CACTUS;
+	}
 
-    @Override
-    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-        this.onYuccaCollision(state, worldIn, pos, entityIn);
-    };
+	@Override
+	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+		this.onYuccaCollision(state, worldIn, pos, entityIn);
+	}
+
+	;
 }

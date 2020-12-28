@@ -26,7 +26,7 @@ import java.util.Random;
 public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 	private List<Block> brushes = new ArrayList<>();
 	private boolean water = false;
-	
+
 	public RainforestTreeFeature(Codec<BaseTreeFeatureConfig> config, boolean water) {
 		super(config);
 		this.water = water;

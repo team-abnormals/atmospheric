@@ -21,7 +21,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 
 public class YuccaLeavesBlock extends AbnormalsLeavesBlock implements IYuccaPlant {
-    private static final VoxelShape HITBOX = makeCuboidShape(1.0F, 1.0F, 1.0F, 15.0F, 15.0F, 15.0F);
+	private static final VoxelShape HITBOX = makeCuboidShape(1.0F, 1.0F, 1.0F, 15.0F, 15.0F, 15.0F);
 
 	public YuccaLeavesBlock(Properties properties) {
 		super(properties);
@@ -29,43 +29,45 @@ public class YuccaLeavesBlock extends AbnormalsLeavesBlock implements IYuccaPlan
 
 	@Override
 	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-	      return HITBOX;
+		return HITBOX;
 	}
-	
+
 	@Override
 	public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		return 1;
 	}
-	
+
 	@Deprecated
 	@OnlyIn(Dist.CLIENT)
 	public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		return 0.2F;
 	}
-	
+
 	@Nullable
-    @Override
-    public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
-        return  PathNodeType.DAMAGE_CACTUS;
-    }
+	@Override
+	public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
+		return PathNodeType.DAMAGE_CACTUS;
+	}
 
-    @Override
-    public float getKnockbackForce() {
-        return 0.35F;
-    }
+	@Override
+	public float getKnockbackForce() {
+		return 0.35F;
+	}
 
-    @Override
-    public DamageSource getDamageSource() {
-        return AtmosphericDamageSources.YUCCA_LEAVES;
-    }
+	@Override
+	public DamageSource getDamageSource() {
+		return AtmosphericDamageSources.YUCCA_LEAVES;
+	}
 
-    @Override
-    public EmptyTrigger getCriteriaTrigger() {
-        return AtmosphericCriteriaTriggers.YUCCA_LEAVES_PRICK;
-    }
+	@Override
+	public EmptyTrigger getCriteriaTrigger() {
+		return AtmosphericCriteriaTriggers.YUCCA_LEAVES_PRICK;
+	}
 
-    @Override
-    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-        this.onYuccaCollision(state, worldIn, pos, entityIn);
-    };
+	@Override
+	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+		this.onYuccaCollision(state, worldIn, pos, entityIn);
+	}
+
+	;
 }

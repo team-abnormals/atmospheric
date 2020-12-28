@@ -32,7 +32,7 @@ public class YuccaFlowerDoubleBlock extends AbnormalsTallFlowerBlock implements 
 	public YuccaFlowerDoubleBlock(Properties properties) {
 		super(properties);
 	}
-	
+
 	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		BlockState state2 = worldIn.getBlockState(pos.down());
@@ -43,33 +43,35 @@ public class YuccaFlowerDoubleBlock extends AbnormalsTallFlowerBlock implements 
 	}
 
 	@Nullable
-    @Override
-    public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
-        return  PathNodeType.DAMAGE_CACTUS;
-    }
-	
-	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		Vector3d vec3d = state.getOffset(worldIn, pos);
-        return SHAPE.withOffset(vec3d.x, vec3d.y, vec3d.z);
+	@Override
+	public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
+		return PathNodeType.DAMAGE_CACTUS;
 	}
 
-    @Override
-    public float getKnockbackForce() {
-        return 0.65F;
-    }
+	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+		Vector3d vec3d = state.getOffset(worldIn, pos);
+		return SHAPE.withOffset(vec3d.x, vec3d.y, vec3d.z);
+	}
 
-    @Override
-    public DamageSource getDamageSource() {
-        return AtmosphericDamageSources.YUCCA_FLOWER;
-    }
+	@Override
+	public float getKnockbackForce() {
+		return 0.65F;
+	}
 
-    @Override
-    public EmptyTrigger getCriteriaTrigger() {
-        return AtmosphericCriteriaTriggers.YUCCA_FLOWER_PRICK;
-    }
+	@Override
+	public DamageSource getDamageSource() {
+		return AtmosphericDamageSources.YUCCA_FLOWER;
+	}
 
-    @Override
-    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-        this.onYuccaCollision(state, worldIn, pos, entityIn);
-    };
+	@Override
+	public EmptyTrigger getCriteriaTrigger() {
+		return AtmosphericCriteriaTriggers.YUCCA_FLOWER_PRICK;
+	}
+
+	@Override
+	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+		this.onYuccaCollision(state, worldIn, pos, entityIn);
+	}
+
+	;
 }

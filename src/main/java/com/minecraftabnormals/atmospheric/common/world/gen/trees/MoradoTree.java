@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class MoradoTree extends Tree {
-	
+
 	@Nullable
 	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean beehive) {
 		return AtmosphericFeatures.ROSEWOOD_TREE.get().withConfiguration(beehive ? AtmosphericFeatures.Configs.MORADO_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatures.Configs.MORADO_TREE_CONFIG);

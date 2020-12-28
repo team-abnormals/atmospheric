@@ -12,19 +12,19 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import java.util.Random;
 
 public class DunesWavesSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
-	
-	public DunesWavesSurfaceBuilder(Codec<SurfaceBuilderConfig> function) {
-        super(function);
-    }
 
-    @Override
-    public void buildSurface(Random random, IChunk chunk, Biome biome, int x, int z, int height, double noise, BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig surfaceBlocks) {
-    	if (noise > 0.3 && noise < 2.5) {
-    		BlockState state = AtmosphericBlocks.RED_ARID_SAND.get().getDefaultState();
-            AtmosphericSurfaceBuilders.DUNES.buildSurface(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(state, state, state));
-        } else {
-        	BlockState state = AtmosphericBlocks.ARID_SAND.get().getDefaultState();
+	public DunesWavesSurfaceBuilder(Codec<SurfaceBuilderConfig> function) {
+		super(function);
+	}
+
+	@Override
+	public void buildSurface(Random random, IChunk chunk, Biome biome, int x, int z, int height, double noise, BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig surfaceBlocks) {
+		if (noise > 0.3 && noise < 2.5) {
+			BlockState state = AtmosphericBlocks.RED_ARID_SAND.get().getDefaultState();
 			AtmosphericSurfaceBuilders.DUNES.buildSurface(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(state, state, state));
-        }
-    }
+		} else {
+			BlockState state = AtmosphericBlocks.ARID_SAND.get().getDefaultState();
+			AtmosphericSurfaceBuilders.DUNES.buildSurface(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(state, state, state));
+		}
+	}
 }

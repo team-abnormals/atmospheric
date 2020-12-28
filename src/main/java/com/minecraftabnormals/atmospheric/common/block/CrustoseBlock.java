@@ -35,17 +35,17 @@ public class CrustoseBlock extends Block {
 		return func_220257_b(state, world, pos)
 				&& !world.getFluidState(blockpos).isTagged(FluidTags.WATER);
 	}
-	
+
 	@Override
-    public boolean canSustainPlant(BlockState state, IBlockReader blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
-        final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
-        final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
-        if (plantType == PlantType.PLAINS) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+	public boolean canSustainPlant(BlockState state, IBlockReader blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
+		final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
+		final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
+		if (plantType == PlantType.PLAINS) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
 		if (!worldIn.isRemote) {
