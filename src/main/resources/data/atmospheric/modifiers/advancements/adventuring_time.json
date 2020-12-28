@@ -1,0 +1,147 @@
+{
+  "advancement": "minecraft:adventure/adventuring_time",
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "mode": "modify",
+        "criteria": {
+          "atmospheric:rainforest": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:rainforest"
+              }
+            }
+          },
+          "atmospheric:rainforest_mountains": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:rainforest_mountains"
+              }
+            }
+          },
+          "atmospheric:rainforest_plateau": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:rainforest_plateau"
+              }
+            }
+          },
+          "atmospheric:sparse_rainforest_plateau": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:sparse_rainforest_plateau"
+              }
+            }
+          },
+          "atmospheric:rainforest_basin": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:rainforest_basin"
+              }
+            }
+          },
+          "atmospheric:sparse_rainforest_basin": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:sparse_rainforest_basin"
+              }
+            }
+          },
+          "atmospheric:dunes": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:dunes"
+              }
+            }
+          },
+          "atmospheric:dunes_hills": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:dunes_hills"
+              }
+            }
+          },
+          "atmospheric:flourishing_dunes": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:flourishing_dunes"
+              }
+            }
+          },
+          "atmospheric:rocky_dunes": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:rocky_dunes"
+              }
+            }
+          },
+          "atmospheric:rocky_dunes_hills": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:rocky_dunes_hills"
+              }
+            }
+          },
+          "atmospheric:petrified_dunes": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:petrified_dunes"
+              }
+            }
+          }
+        },
+        "requirements": [
+          [
+            "atmospheric:rainforest"
+          ],
+          [
+            "atmospheric:rainforest_mountains"
+          ],
+          [
+            "atmospheric:rainforest_plateau"
+          ],
+          [
+            "atmospheric:sparse_rainforest_plateau"
+          ],
+          [
+            "atmospheric:rainforest_basin"
+          ],
+          [
+            "atmospheric:sparse_rainforest_basin"
+          ],
+          [
+            "atmospheric:dunes"
+          ],
+          [
+            "atmospheric:dunes_hills"
+          ],
+          [
+            "atmospheric:flourishing_dunes"
+          ],
+          [
+            "atmospheric:rocky_dunes"
+          ],
+          [
+            "atmospheric:rocky_dunes_hills"
+          ],
+          [
+            "atmospheric:petrified_dunes"
+          ]
+        ]
+      }
+    }
+  ]
+}
