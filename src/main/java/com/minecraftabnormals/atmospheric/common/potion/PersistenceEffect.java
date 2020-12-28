@@ -1,7 +1,5 @@
 package com.minecraftabnormals.atmospheric.common.potion;
 
-import java.util.Map.Entry;
-
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -10,6 +8,8 @@ import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
+
+import java.util.Map.Entry;
 
 public class PersistenceEffect extends Effect {	
 	public PersistenceEffect() {

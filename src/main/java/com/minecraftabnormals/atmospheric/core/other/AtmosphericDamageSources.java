@@ -1,10 +1,10 @@
 package com.minecraftabnormals.atmospheric.core.other;
 
-import javax.annotation.Nullable;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.IndirectEntityDamageSource;
+
+import javax.annotation.Nullable;
 
 public class AtmosphericDamageSources {
 	public static final DamageSource YUCCA_SAPLING = new DamageSource("yuccaSapling");
@@ -16,9 +16,5 @@ public class AtmosphericDamageSources {
 	
 	public static DamageSource causePassionfruitSeedDamage(Entity source, @Nullable Entity indirectEntityIn) {
 	      return (new IndirectEntityDamageSource("passionfruitSeed", source, indirectEntityIn)).setProjectile();
-	}
-	
-	public static DamageSource causeShimmeringPassionfruitSeedDamage(Entity source, @Nullable Entity indirectEntityIn) {
-	      return (new IndirectEntityDamageSource("shimmeringPassionfruitSeed", source, indirectEntityIn)).setProjectile();
 	}
 }

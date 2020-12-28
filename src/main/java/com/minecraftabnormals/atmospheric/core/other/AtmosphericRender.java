@@ -1,12 +1,9 @@
 package com.minecraftabnormals.atmospheric.core.other;
 
-import java.util.Arrays;
-
+import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.minecraftabnormals.atmospheric.client.render.PassionfruitSeedRenderer;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEntities;
-import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -15,6 +12,8 @@ import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.world.FoliageColors;
 import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+
+import java.util.Arrays;
 
 public class AtmosphericRender {
 	public static void registerBlockColors() {

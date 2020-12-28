@@ -1,11 +1,8 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import java.util.Random;
-
 import com.google.common.base.Supplier;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.abnormals_core.common.blocks.wood.AbnormalsLogBlock;
-
+import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -15,6 +12,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.lighting.LightEngine;
+
+import java.util.Random;
 
 public class CrustoseLogBlock extends AbnormalsLogBlock {
 

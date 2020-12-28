@@ -1,15 +1,12 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import javax.annotation.Nullable;
-
+import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
+import com.minecraftabnormals.abnormals_core.common.blocks.AbnormalsTallFlowerBlock;
 import com.minecraftabnormals.atmospheric.common.block.api.IYuccaPlant;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
-import com.minecraftabnormals.abnormals_core.common.blocks.AbnormalsTallFlowerBlock;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -26,6 +23,8 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class YuccaFlowerDoubleBlock extends AbnormalsTallFlowerBlock implements IYuccaPlant {
 	public static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);

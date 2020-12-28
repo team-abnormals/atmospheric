@@ -6,7 +6,6 @@ import com.minecraftabnormals.abnormals_core.common.blocks.chest.AbnormalsTrappe
 import com.minecraftabnormals.abnormals_core.common.blocks.sign.AbnormalsStandingSignBlock;
 import com.minecraftabnormals.abnormals_core.common.blocks.sign.AbnormalsWallSignBlock;
 import com.minecraftabnormals.abnormals_core.common.blocks.wood.*;
-import com.minecraftabnormals.abnormals_core.core.util.registry.BlockSubRegistryHelper;
 import com.minecraftabnormals.atmospheric.common.block.*;
 import com.minecraftabnormals.atmospheric.common.world.gen.trees.*;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;

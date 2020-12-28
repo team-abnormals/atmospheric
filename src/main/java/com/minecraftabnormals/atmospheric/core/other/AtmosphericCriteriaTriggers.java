@@ -1,8 +1,7 @@
 package com.minecraftabnormals.atmospheric.core.other;
 
-import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
-
+import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;

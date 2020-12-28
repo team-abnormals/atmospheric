@@ -2,7 +2,6 @@ package com.minecraftabnormals.atmospheric.core.other;
 
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
-
 import net.minecraft.item.Food;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;

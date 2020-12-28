@@ -1,10 +1,7 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.surfacebuilders;
 
-import java.util.Random;
-
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -12,6 +9,8 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
+
+import java.util.Random;
 
 public class DunesSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 	   public DunesSurfaceBuilder(Codec<SurfaceBuilderConfig> p_i51315_1_) {

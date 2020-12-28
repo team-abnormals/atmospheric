@@ -1,9 +1,6 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
-import java.util.Random;
-
 import com.mojang.serialization.Codec;
-
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -11,7 +8,8 @@ import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
-import net.minecraft.world.gen.feature.structure.StructureManager;
+
+import java.util.Random;
 
 public class PodzolFeature extends Feature<ProbabilityConfig> {
 

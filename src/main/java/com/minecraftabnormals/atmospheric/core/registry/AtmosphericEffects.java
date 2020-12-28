@@ -1,20 +1,11 @@
 package com.minecraftabnormals.atmospheric.core.registry;
 
-import com.minecraftabnormals.atmospheric.common.potion.GelledEffect;
-import com.minecraftabnormals.atmospheric.common.potion.PersistenceEffect;
-import com.minecraftabnormals.atmospheric.common.potion.ReliefEffect;
-import com.minecraftabnormals.atmospheric.common.potion.SpittingEffect;
-import com.minecraftabnormals.atmospheric.common.potion.WorseningEffect;
+import com.minecraftabnormals.atmospheric.common.potion.*;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
-
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.item.Items;
-import net.minecraft.potion.Effect;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionBrewing;
-import net.minecraft.potion.Potions;
+import net.minecraft.potion.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;

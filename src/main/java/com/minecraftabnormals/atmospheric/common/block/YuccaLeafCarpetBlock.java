@@ -1,13 +1,10 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import javax.annotation.Nullable;
-
+import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
+import com.minecraftabnormals.abnormals_core.common.blocks.LeafCarpetBlock;
 import com.minecraftabnormals.atmospheric.common.block.api.IYuccaPlant;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
-import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
-import com.minecraftabnormals.abnormals_core.common.blocks.LeafCarpetBlock;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -17,6 +14,8 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class YuccaLeafCarpetBlock extends LeafCarpetBlock implements IYuccaPlant {
 

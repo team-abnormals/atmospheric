@@ -1,11 +1,8 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
-import java.util.Random;
-
 import com.minecraftabnormals.atmospheric.common.block.BarrelCactusBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +11,8 @@ import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.structure.StructureManager;
+
+import java.util.Random;
 
 public class BarrelCactusFeature extends Feature<BlockClusterFeatureConfig> {
    public BarrelCactusFeature(Codec<BlockClusterFeatureConfig> config) {

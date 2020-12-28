@@ -2,7 +2,6 @@ package com.minecraftabnormals.atmospheric.common.data;
 
 import com.minecraftabnormals.atmospheric.common.block.PassionVineBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DispenserBlock;

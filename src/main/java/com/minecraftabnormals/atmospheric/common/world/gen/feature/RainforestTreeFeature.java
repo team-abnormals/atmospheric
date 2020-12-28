@@ -1,13 +1,8 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
+import com.minecraftabnormals.abnormals_core.core.util.TreeUtil;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-import com.minecraftabnormals.abnormals_core.core.util.TreeUtil;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SaplingBlock;
@@ -23,7 +18,10 @@ import net.minecraft.world.gen.IWorldGenerationBaseReader;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.structure.StructureManager;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 	private List<Block> brushes = new ArrayList<>();

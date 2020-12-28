@@ -1,9 +1,8 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
 import com.google.common.base.Supplier;
-import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
 import com.minecraftabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
-
+import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.potion.Effect;

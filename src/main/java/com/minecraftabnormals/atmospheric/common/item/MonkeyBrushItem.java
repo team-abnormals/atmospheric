@@ -1,9 +1,5 @@
 package com.minecraftabnormals.atmospheric.common.item;
 
-import java.util.Map;
-
-import javax.annotation.Nullable;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.BlockItem;
@@ -13,6 +9,9 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IWorldReader;
+
+import javax.annotation.Nullable;
+import java.util.Map;
 
 public class MonkeyBrushItem extends BlockItem {
 	protected final Block wallBlock;

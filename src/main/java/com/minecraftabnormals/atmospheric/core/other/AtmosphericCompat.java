@@ -1,12 +1,12 @@
 package com.minecraftabnormals.atmospheric.core.other;
 
+import com.minecraftabnormals.abnormals_core.core.registry.LootInjectionRegistry;
+import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.minecraftabnormals.atmospheric.common.data.PassionVineBundleDispenseBehavior;
 import com.minecraftabnormals.atmospheric.common.data.PassionVineDispenseBehavior;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericItems;
-import com.minecraftabnormals.abnormals_core.core.registry.LootInjectionRegistry;
-import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.loot.LootTables;
 

@@ -1,9 +1,6 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import java.util.Random;
-
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -16,6 +13,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.lighting.LightEngine;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
+
+import java.util.Random;
 
 public class CrustoseBlock extends Block {
 

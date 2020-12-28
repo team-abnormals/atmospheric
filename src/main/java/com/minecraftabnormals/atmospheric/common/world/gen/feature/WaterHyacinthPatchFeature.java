@@ -1,11 +1,8 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
-import java.util.Random;
-
 import com.minecraftabnormals.atmospheric.common.block.WaterHyacinthBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.state.properties.DoubleBlockHalf;
@@ -14,7 +11,8 @@ import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
-import net.minecraft.world.gen.feature.structure.StructureManager;
+
+import java.util.Random;
 
 public class WaterHyacinthPatchFeature extends Feature<NoFeatureConfig> {
 	public WaterHyacinthPatchFeature(Codec<NoFeatureConfig> codec) {

@@ -1,13 +1,8 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import java.util.Random;
-
-import javax.annotation.Nullable;
-
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.IGrowable;
@@ -33,6 +28,9 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IPlantable;
+
+import javax.annotation.Nullable;
+import java.util.Random;
 
 public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
    public static final IntegerProperty AGE = BlockStateProperties.AGE_0_3;

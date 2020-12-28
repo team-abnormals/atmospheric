@@ -5,7 +5,6 @@ import com.minecraftabnormals.atmospheric.common.entity.PassionfruitSeedEntity;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;

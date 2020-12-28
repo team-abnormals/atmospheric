@@ -2,7 +2,6 @@ package com.minecraftabnormals.atmospheric.core.registry;
 
 import com.minecraftabnormals.atmospheric.client.particle.AloeBlossomParticle;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleType;

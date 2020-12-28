@@ -1,22 +1,15 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import java.util.Map;
-import java.util.Random;
-
-import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+import com.minecraftabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.MonkeyBrushFeature;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
-import com.minecraftabnormals.abnormals_core.common.blocks.AbnormalsFlowerBlock;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.IGrowable;
 import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.potion.Effect;
-import net.minecraft.potion.Effects;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tags.BlockTags;
@@ -31,6 +24,9 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IPlantable;
+
+import java.util.Map;
+import java.util.Random;
 
 public class MonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowable, IPlantable {
 	public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.VERTICAL);

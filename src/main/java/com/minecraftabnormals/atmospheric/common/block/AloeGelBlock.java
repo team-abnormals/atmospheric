@@ -1,9 +1,6 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import javax.annotation.Nullable;
-
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -29,6 +26,8 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import javax.annotation.Nullable;
 
 public class AloeGelBlock extends BreakableBlock {
 

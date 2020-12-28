@@ -1,9 +1,8 @@
 package com.minecraftabnormals.atmospheric.core;
 
-import org.apache.commons.lang3.tuple.Pair;
-
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
+import org.apache.commons.lang3.tuple.Pair;
 
 public class AtmosphericConfig {
 

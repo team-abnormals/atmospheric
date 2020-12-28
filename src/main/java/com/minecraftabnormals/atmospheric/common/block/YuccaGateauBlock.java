@@ -2,7 +2,6 @@ package com.minecraftabnormals.atmospheric.common.block;
 
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

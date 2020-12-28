@@ -1,7 +1,6 @@
 package com.minecraftabnormals.atmospheric.core.other;
 
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
-
 import net.minecraft.block.Block;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ITag.INamedTag;
