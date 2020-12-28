@@ -14,7 +14,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericSurfaceBuilders {
 	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES_WAVES = new DunesWavesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
@@ -22,8 +22,8 @@ public class AtmosphericSurfaceBuilders {
 	@SubscribeEvent
 	public static void registerSurfaceBuilders(RegistryEvent.Register<SurfaceBuilder<?>> event) {
 		event.getRegistry().registerAll(
-				DUNES.setRegistryName(Atmospheric.MODID, "dunes"),
-				DUNES_WAVES.setRegistryName(Atmospheric.MODID, "wavey_dunes")
+				DUNES.setRegistryName(Atmospheric.MOD_ID, "dunes"),
+				DUNES_WAVES.setRegistryName(Atmospheric.MOD_ID, "wavey_dunes")
 		);
 	}
 
@@ -36,7 +36,7 @@ public class AtmosphericSurfaceBuilders {
 		public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> DUNES_WAVES = AtmosphericSurfaceBuilders.DUNES_WAVES.func_242929_a(Configs.DUNES);
 
 		private static <SC extends ISurfaceBuilderConfig> void register(String key, ConfiguredSurfaceBuilder<SC> builder) {
-			WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_SURFACE_BUILDER, new ResourceLocation(Atmospheric.MODID, key), builder);
+			WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_SURFACE_BUILDER, new ResourceLocation(Atmospheric.MOD_ID, key), builder);
 		}
 
 		public static void registerConfiguredSurfaceBuilders() {

@@ -15,7 +15,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class AtmosphericParticles {
-	public static final DeferredRegister<ParticleType<?>> PARTICLES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, Atmospheric.MODID);
+	public static final DeferredRegister<ParticleType<?>> PARTICLES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, Atmospheric.MOD_ID);
 
 	public static final RegistryObject<BasicParticleType> ALOE_BLOSSOM = createBasicParticleType(true, "aloe_blossom");
 
@@ -23,7 +23,7 @@ public class AtmosphericParticles {
 		return PARTICLES.register(name, () -> new BasicParticleType(alwaysShow));
 	}
 
-	@EventBusSubscriber(modid = Atmospheric.MODID, bus = EventBusSubscriber.Bus.MOD)
+	@EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 	public static class RegisterParticleFactories {
 
 		@SubscribeEvent(priority = EventPriority.LOWEST)

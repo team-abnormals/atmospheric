@@ -11,7 +11,7 @@ import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = Atmospheric.MODID)
+@Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericTrades {
 
 	@SubscribeEvent

@@ -27,6 +27,10 @@ public class AtmosphericProperties {
 		return AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.PLANT).notSolid().harvestTool(ToolType.HOE).setAllowsSpawn(AtmosphericProperties::allowsSpawnOnLeaves).setSuffocates(AtmosphericProperties::isntSolid).setBlocksVision(AtmosphericProperties::isntSolid);
 	}
 
+	public static Block.Properties createLeafCarpet() {
+		return Block.Properties.create(Material.CARPET).notSolid().hardnessAndResistance(0.0F).tickRandomly().sound(SoundType.PLANT).harvestTool(ToolType.HOE);
+	}
+
 	private static Boolean allowsSpawnOnLeaves(BlockState state, IBlockReader reader, BlockPos pos, EntityType<?> entity) {
 		return entity == EntityType.OCELOT || entity == EntityType.PARROT;
 	}

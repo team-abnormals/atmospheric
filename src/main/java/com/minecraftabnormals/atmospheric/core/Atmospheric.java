@@ -16,11 +16,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod(Atmospheric.MODID)
-@Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod(Atmospheric.MOD_ID)
+@Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Atmospheric {
-	public static final String MODID = "atmospheric";
-	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MODID, helper -> {
+	public static final String MOD_ID = "atmospheric";
+	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> {
 		helper.putSubHelper(ForgeRegistries.BLOCKS, new AtmosphericBlockSubRegistryHelper(helper));
 	});
 

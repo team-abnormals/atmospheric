@@ -13,7 +13,7 @@ import net.minecraft.loot.LootTables;
 public class AtmosphericCompat {
 
 	public static void registerLootInjectors() {
-		LootInjectionRegistry.LootInjector injector = new LootInjectionRegistry.LootInjector(Atmospheric.MODID);
+		LootInjectionRegistry.LootInjector injector = new LootInjectionRegistry.LootInjector(Atmospheric.MOD_ID);
 		injector.addLootInjection(injector.buildLootPool("ruined_portal", 1, 0), LootTables.RUINED_PORTAL);
 	}
 

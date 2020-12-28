@@ -6,7 +6,7 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber(modid = Atmospheric.MODID)
+@EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericCriteriaTriggers {
 	public static final EmptyTrigger SPIT_PASSIONFRUIT = CriteriaTriggers.register(new EmptyTrigger(prefix("spit_passionfruit")));
 
@@ -20,6 +20,6 @@ public class AtmosphericCriteriaTriggers {
 	public static final EmptyTrigger YUCCA_LEAVES_PRICK = CriteriaTriggers.register(new EmptyTrigger(prefix("yucca_leaves_prick")));
 
 	private static ResourceLocation prefix(String name) {
-		return new ResourceLocation(Atmospheric.MODID, name);
+		return new ResourceLocation(Atmospheric.MOD_ID, name);
 	}
 }

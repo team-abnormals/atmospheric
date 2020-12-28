@@ -7,7 +7,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericFoods {
 
 	public static final Food PASSIONFRUIT = new Food.Builder().hunger(3).saturation(0.3F).setAlwaysEdible().effect(() -> new EffectInstance(AtmosphericEffects.SPITTING.get(), 140, 0, false, false, false), 1.0F).build();

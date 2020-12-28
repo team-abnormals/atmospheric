@@ -9,7 +9,7 @@ public class AtmosphericVillagers {
 
 	public static void setupVillagerTypes() {
 		VillagerTrades.VILLAGER_DEFAULT_TRADES.isEmpty();
-		VillagerType dunes = VillagerType.register(Atmospheric.MODID + ":dunes");
+		VillagerType dunes = VillagerType.register(Atmospheric.MOD_ID + ":dunes");
 
 		VillagerType.BY_BIOME.put(AtmosphericBiomes.RAINFOREST.getKey(), VillagerType.JUNGLE);
 		VillagerType.BY_BIOME.put(AtmosphericBiomes.RAINFOREST_MOUNTAINS.getKey(), VillagerType.JUNGLE);

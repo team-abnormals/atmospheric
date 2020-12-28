@@ -22,7 +22,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber(modid = Atmospheric.MODID)
+@Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericBiomeFeatures {
 
 	@SubscribeEvent

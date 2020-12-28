@@ -34,9 +34,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.OptionalInt;
 
-@Mod.EventBusSubscriber(modid = Atmospheric.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericFeatures {
-	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, Atmospheric.MODID);
+	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, Atmospheric.MOD_ID);
 
 	public static final RegistryObject<Feature<ProbabilityConfig>> PODZOL = FEATURES.register("podzol", () -> new PodzolFeature(ProbabilityConfig.CODEC));
 	public static final RegistryObject<Feature<NoFeatureConfig>> SURFACE_FOSSIL = FEATURES.register("surface_fossil", () -> new SurfaceFossilFeature(NoFeatureConfig.field_236558_a_));
@@ -169,7 +169,7 @@ public class AtmosphericFeatures {
 		public static final ConfiguredFeature<?, ?> YUCCA_TREE_PETRIFIED = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatures.Configs.RED_ARID_YUCCA_TREE_CONFIG).withChance(0.25F)), AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatures.Configs.ARID_YUCCA_TREE_CONFIG))).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(0, 0.5F, 2)));
 
 		private static <FC extends IFeatureConfig> void register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
-			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(Atmospheric.MODID, name), configuredFeature);
+			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(Atmospheric.MOD_ID, name), configuredFeature);
 		}
 
 		public static void registerConfiguredFeatures() {
