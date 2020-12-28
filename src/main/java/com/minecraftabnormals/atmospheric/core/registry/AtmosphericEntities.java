@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = Atmospheric.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class AtmosphericEntities {
-    public static final EntitySubRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER.getEntitySubHelper();
+	public static final EntitySubRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER.getEntitySubHelper();
 
 	public static final RegistryObject<EntityType<PassionfruitSeedEntity>> PASSIONFRUIT_SEED = HELPER.createEntity("passionfruit_seed", PassionfruitSeedEntity::new, PassionfruitSeedEntity::new, EntityClassification.MISC, 0.25F, 0.25F);
 }

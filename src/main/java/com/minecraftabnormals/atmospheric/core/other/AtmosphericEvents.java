@@ -10,11 +10,11 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MODID)
 public class AtmosphericEvents {
-	
+
 	@SubscribeEvent
 	public static void livingHurt(LivingHurtEvent event) {
 		LivingEntity entity = event.getEntityLiving();
-		
+
 		// GELLED //
 		if (event.getEntityLiving().isPotionActive(AtmosphericEffects.GELLED.get())) {
 			int amplifier = entity.getActivePotionEffect(AtmosphericEffects.GELLED.get()).getAmplifier();
@@ -22,7 +22,7 @@ public class AtmosphericEvents {
 				event.setAmount(event.getAmount() / (amplifier + 2));
 			}
 		}
-		
+
 		// RELIEF //
 		if (entity.isPotionActive(AtmosphericEffects.RELIEF.get())) {
 			if (!entity.isEntityUndead()) {
@@ -36,9 +36,9 @@ public class AtmosphericEvents {
 					event.setAmount(event.getAmount() + (amplifier + 1));
 				}
 			}
-			
+
 		}
-		
+
 		// WORSENING //
 		if (entity.isPotionActive(AtmosphericEffects.WORSENING.get())) {
 			if (!entity.isEntityUndead()) {
@@ -54,10 +54,10 @@ public class AtmosphericEvents {
 			}
 		}
 	}
-	
+
 	@SubscribeEvent
 	public static void livingTick(LivingUpdateEvent event) {
-		
+
 		// RELIEF //
 		float damage = event.getEntity().getPersistentData().getFloat("IncomingDamage");
 		int amplifierHeal = event.getEntity().getPersistentData().getInt("PotionHealAmplifier");

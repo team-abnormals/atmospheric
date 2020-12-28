@@ -40,10 +40,11 @@ public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLo
 		super(AtmosphericEffects.WORSENING::get, 120, properties);
 		this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, false).with(HALF, DoubleBlockHalf.UPPER));
 	}
+
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		Vector3d vec3d = state.getOffset(worldIn, pos);
-        return SHAPE.withOffset(vec3d.x, vec3d.y, vec3d.z);
+		return SHAPE.withOffset(vec3d.x, vec3d.y, vec3d.z);
 	}
 
 	@Override
@@ -94,13 +95,13 @@ public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLo
 		DoubleBlockHalf half = state.get(HALF);
 		BlockPos blockpos = half == DoubleBlockHalf.LOWER ? pos.up() : pos.down();
 		BlockState blockstate = worldIn.getBlockState(blockpos);
-		if(blockstate.getBlock() == this && blockstate.get(HALF) != half) {
+		if (blockstate.getBlock() == this && blockstate.get(HALF) != half) {
 			worldIn.playEvent(player, 2001, blockpos, Block.getStateId(blockstate));
-			if(!worldIn.isRemote && !player.isCreative()) {
-				spawnDrops(state, worldIn, pos, (TileEntity)null, player, player.getHeldItemMainhand());
-				spawnDrops(blockstate, worldIn, pos, (TileEntity)null, player, player.getHeldItemMainhand());
+			if (!worldIn.isRemote && !player.isCreative()) {
+				spawnDrops(state, worldIn, pos, (TileEntity) null, player, player.getHeldItemMainhand());
+				spawnDrops(blockstate, worldIn, pos, (TileEntity) null, player, player.getHeldItemMainhand());
 			}
-			if(blockstate.get(HALF) == DoubleBlockHalf.LOWER) {
+			if (blockstate.get(HALF) == DoubleBlockHalf.LOWER) {
 				worldIn.destroyBlock(blockpos, false);
 			}
 		}

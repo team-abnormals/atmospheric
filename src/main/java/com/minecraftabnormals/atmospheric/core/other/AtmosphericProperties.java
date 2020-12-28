@@ -26,11 +26,11 @@ public class AtmosphericProperties {
 	public static AbstractBlock.Properties createLeaves() {
 		return AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.PLANT).notSolid().harvestTool(ToolType.HOE).setAllowsSpawn(AtmosphericProperties::allowsSpawnOnLeaves).setSuffocates(AtmosphericProperties::isntSolid).setBlocksVision(AtmosphericProperties::isntSolid);
 	}
-	
+
 	private static Boolean allowsSpawnOnLeaves(BlockState state, IBlockReader reader, BlockPos pos, EntityType<?> entity) {
 		return entity == EntityType.OCELOT || entity == EntityType.PARROT;
 	}
-	
+
 	private static boolean isntSolid(BlockState state, IBlockReader reader, BlockPos pos) {
 		return false;
 	}

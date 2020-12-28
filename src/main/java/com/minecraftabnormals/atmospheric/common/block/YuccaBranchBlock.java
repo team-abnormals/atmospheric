@@ -42,19 +42,19 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable, IYuccaPlan
 	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		return state.getBlock().isIn(AtmosphericTags.YUCCA_LOGS);
 	}
-	
+
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		return this.isValidGround(worldIn.getBlockState(pos.up()), worldIn, pos.up());
 	}
-	
+
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		return state.get(SNAPPED) ? SHAPE_SNAPPED : SHAPE;
 	}
-	
+
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
 		builder.add(SNAPPED);
 	}
-	
+
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
 		worldIn.setBlockState(currentPos, stateIn.with(SNAPPED, !(worldIn.getBlockState(currentPos.down()).getBlock() instanceof YuccaBundleBlock)), 2);
 		return !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState() : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
@@ -72,61 +72,61 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable, IYuccaPlan
 
 	@Override
 	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
-		 if (state.get(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(6) == 0) && worldIn.getBlockState(pos.down()).isAir()) {
-			   worldIn.setBlockState(pos, state.with(SNAPPED, false));
-			   worldIn.setBlockState(pos.down(), AtmosphericBlocks.YUCCA_BUNDLE.get().getDefaultState());
-			   net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);	
-		 }		
+		if (state.get(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(6) == 0) && worldIn.getBlockState(pos.down()).isAir()) {
+			worldIn.setBlockState(pos, state.with(SNAPPED, false));
+			worldIn.setBlockState(pos.down(), AtmosphericBlocks.YUCCA_BUNDLE.get().getDefaultState());
+			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+		}
 	}
-	
+
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		if (!state.isValidPosition(worldIn, pos)) {
 			worldIn.destroyBlock(pos, true);
 		} else {
-			if(state.get(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0) && worldIn.getBlockState(pos.down()).isAir()) {
+			if (state.get(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0) && worldIn.getBlockState(pos.down()).isAir()) {
 				worldIn.setBlockState(pos, state.with(SNAPPED, false));
 				worldIn.setBlockState(pos.down(), AtmosphericBlocks.YUCCA_BUNDLE.get().getDefaultState());
-			} 
+			}
 			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 		}
 	}
-	
+
 	@Override
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		if (!state.get(SNAPPED) && (player.getHeldItem(handIn).getItem() == Items.SHEARS)) {
 			player.getHeldItem(handIn).damageItem(1, player, (p_213442_1_) -> {
-	  	    p_213442_1_.sendBreakAnimation(handIn);
-	  	    });
-	  	    worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-	  	    worldIn.setBlockState(pos, state.with(SNAPPED, true), 2);
-	  	    return ActionResultType.SUCCESS;    
+				p_213442_1_.sendBreakAnimation(handIn);
+			});
+			worldIn.playSound((PlayerEntity) null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+			worldIn.setBlockState(pos, state.with(SNAPPED, true), 2);
+			return ActionResultType.SUCCESS;
 		} else {
-			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);	
-		}	
+			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+		}
 	}
-	
+
 	@Override
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-	    if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {
-	        this.onYuccaCollision(state, worldIn, pos, entityIn);
-	    } else if (entityIn instanceof ProjectileEntity && !state.get(SNAPPED)) {
-	        worldIn.setBlockState(pos, state.with(SNAPPED, true));
-	    }
+		if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {
+			this.onYuccaCollision(state, worldIn, pos, entityIn);
+		} else if (entityIn instanceof ProjectileEntity && !state.get(SNAPPED)) {
+			worldIn.setBlockState(pos, state.with(SNAPPED, true));
+		}
 	}
 
-    @Override
-    public float getKnockbackForce() {
-        return 0.85F;
-    }
+	@Override
+	public float getKnockbackForce() {
+		return 0.85F;
+	}
 
-    @Override
-    public DamageSource getDamageSource() {
-        return AtmosphericDamageSources.YUCCA_BRANCH;
-    }
+	@Override
+	public DamageSource getDamageSource() {
+		return AtmosphericDamageSources.YUCCA_BRANCH;
+	}
 
-    @Override
-    public EmptyTrigger getCriteriaTrigger() {
-        return AtmosphericCriteriaTriggers.YUCCA_BRANCH_PRICK;
-    }
+	@Override
+	public EmptyTrigger getCriteriaTrigger() {
+		return AtmosphericCriteriaTriggers.YUCCA_BRANCH_PRICK;
+	}
 }

@@ -19,33 +19,35 @@ import javax.annotation.Nullable;
 
 public class YuccaLeafCarpetBlock extends LeafCarpetBlock implements IYuccaPlant {
 
-    public YuccaLeafCarpetBlock(Block.Properties properties) {
-        super(properties);
-    }
+	public YuccaLeafCarpetBlock(Block.Properties properties) {
+		super(properties);
+	}
 
-    @Nullable
-    @Override
-    public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
-        return PathNodeType.DAMAGE_CACTUS;
-    }
+	@Nullable
+	@Override
+	public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
+		return PathNodeType.DAMAGE_CACTUS;
+	}
 
-    @Override
-    public float getKnockbackForce() {
-        return 0.35F;
-    }
+	@Override
+	public float getKnockbackForce() {
+		return 0.35F;
+	}
 
-    @Override
-    public DamageSource getDamageSource() {
-        return AtmosphericDamageSources.YUCCA_LEAVES;
-    }
+	@Override
+	public DamageSource getDamageSource() {
+		return AtmosphericDamageSources.YUCCA_LEAVES;
+	}
 
-    @Override
-    public EmptyTrigger getCriteriaTrigger() {
-        return AtmosphericCriteriaTriggers.YUCCA_LEAVES_PRICK;
-    }
+	@Override
+	public EmptyTrigger getCriteriaTrigger() {
+		return AtmosphericCriteriaTriggers.YUCCA_LEAVES_PRICK;
+	}
 
-    @Override
-    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-        this.onYuccaCollision(state, worldIn, pos, entityIn);
-    };
+	@Override
+	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+		this.onYuccaCollision(state, worldIn, pos, entityIn);
+	}
+
+	;
 }

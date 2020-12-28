@@ -40,7 +40,7 @@ public class AtmosphericRender {
 				AtmosphericBlocks.YUCCA_LEAVES,
 				AtmosphericBlocks.YUCCA_LEAF_CARPET));
 	}
-	
+
 	public static void registerEntityRenderers() {
 		RenderingRegistry.registerEntityRenderingHandler(AtmosphericEntities.PASSIONFRUIT_SEED.get(), PassionfruitSeedRenderer::new);
 	}
@@ -51,7 +51,7 @@ public class AtmosphericRender {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_SAPLING.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.POTTED_ROSEWOOD_SAPLING.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ROSEWOOD_LADDER.get(), RenderType.getCutout());
-		
+
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.MORADO_LEAVES.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.MORADO_LEAF_CARPET.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.FLOWERING_MORADO_LEAVES.get(), RenderType.getCutoutMipped());
@@ -87,11 +87,11 @@ public class AtmosphericRender {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.WARM_MONKEY_BRUSH.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.HOT_MONKEY_BRUSH.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get(), RenderType.getCutout());
-		
+
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.WARM_WALL_MONKEY_BRUSH.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.HOT_WALL_MONKEY_BRUSH.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.SCALDING_WALL_MONKEY_BRUSH.get(), RenderType.getCutout());
-		
+
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.GILIA.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.PASSION_VINE.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.WATER_HYACINTH.get(), RenderType.getCutout());
