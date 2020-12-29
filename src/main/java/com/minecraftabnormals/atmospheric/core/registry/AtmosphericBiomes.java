@@ -24,8 +24,8 @@ public class AtmosphericBiomes {
 	public static final BiomeSubRegistryHelper.KeyedBiome RAINFOREST_MOUNTAINS = HELPER.createBiome("rainforest_mountains", () -> createRainforestBiome(0.2825F, 1.225F));
 	public static final BiomeSubRegistryHelper.KeyedBiome RAINFOREST_PLATEAU = HELPER.createBiome("rainforest_plateau", () -> createRainforestBiome(1.5F, 0.025F));
 	public static final BiomeSubRegistryHelper.KeyedBiome SPARSE_RAINFOREST_PLATEAU = HELPER.createBiome("sparse_rainforest_plateau", () -> createRainforestBiome(1.5F, 0.025F));
-	public static final BiomeSubRegistryHelper.KeyedBiome RAINFOREST_BASIN = HELPER.createBiome("rainforest_basin", () -> createRainforestBiome(-0.33F, 0.01F));
-	public static final BiomeSubRegistryHelper.KeyedBiome SPARSE_RAINFOREST_BASIN = HELPER.createBiome("sparse_rainforest_basin", () -> createRainforestBiome(-0.33F, 0.01F));
+	public static final BiomeSubRegistryHelper.KeyedBiome RAINFOREST_BASIN = HELPER.createBiome("rainforest_basin", () -> createRainforestBiome(-0.35F, 0.05F));
+	public static final BiomeSubRegistryHelper.KeyedBiome SPARSE_RAINFOREST_BASIN = HELPER.createBiome("sparse_rainforest_basin", () -> createRainforestBiome(-0.35F, 0.05F));
 
 	public static final BiomeSubRegistryHelper.KeyedBiome DUNES = HELPER.createBiome("dunes", () -> createDunesBiome(0.45F, 0.15F));
 	public static final BiomeSubRegistryHelper.KeyedBiome DUNES_HILLS = HELPER.createBiome("dunes_hills", () -> createDunesBiome(0.45F, 0.20F));
