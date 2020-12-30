@@ -6,10 +6,7 @@ import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.AtmosphericConfig;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeAmbience;
-import net.minecraft.world.biome.BiomeGenerationSettings;
-import net.minecraft.world.biome.MobSpawnInfo;
+import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilders;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
@@ -74,13 +71,11 @@ public class AtmosphericBiomes {
 	}
 
 	private static Biome createRainforestBiome(float depth, float scale) {
-		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).withSurfaceBuilder(ConfiguredSurfaceBuilders.field_244178_j);
-		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(depth).scale(scale).temperature(0.9F).downfall(0.95F).setEffects((new BiomeAmbience.Builder()).setWaterColor(6675400).setWaterFogColor(408635).setFogColor(12638463).withSkyColor(getSkyColorWithTemperatureModifier(0.9F)).build()).withMobSpawnSettings(new MobSpawnInfo.Builder().copy()).withGenerationSettings((builder).build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(depth).scale(scale).temperature(0.9F).downfall(0.95F).setEffects((new BiomeAmbience.Builder()).setWaterColor(6675400).setWaterFogColor(408635).setFogColor(12638463).withSkyColor(getSkyColorWithTemperatureModifier(0.9F)).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).build()).withMobSpawnSettings(new MobSpawnInfo.Builder().copy()).withGenerationSettings((new BiomeGenerationSettings.Builder()).withSurfaceBuilder(ConfiguredSurfaceBuilders.field_244178_j).build()).build();
 	}
 
 	private static Biome createDunesBiome(float depth, float scale) {
-		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).withSurfaceBuilder(AtmosphericSurfaceBuilders.Configured.DUNES_WAVES);
-		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(depth).scale(scale).temperature(2.0F).downfall(0.0F).setEffects((new BiomeAmbience.Builder()).setWaterColor(4159204).setWaterFogColor(329011).setFogColor(14988944).withSkyColor(getSkyColorWithTemperatureModifier(2.0F)).build()).withMobSpawnSettings(new MobSpawnInfo.Builder().copy()).withGenerationSettings(builder.build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(depth).scale(scale).temperature(2.0F).downfall(0.0F).setEffects((new BiomeAmbience.Builder()).setWaterColor(4159204).setWaterFogColor(329011).setFogColor(14988944).withSkyColor(getSkyColorWithTemperatureModifier(2.0F)).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).build()).withMobSpawnSettings(new MobSpawnInfo.Builder().copy()).withGenerationSettings((new BiomeGenerationSettings.Builder()).withSurfaceBuilder(AtmosphericSurfaceBuilders.Configured.DUNES_WAVES).build()).build();
 	}
 
 	private static int getSkyColorWithTemperatureModifier(float temperature) {
