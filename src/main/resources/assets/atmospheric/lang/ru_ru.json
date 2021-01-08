@@ -15,24 +15,64 @@
 	"block.atmospheric.rosewood_fence": "Палисандровый забор",
 	"block.atmospheric.rosewood_fence_gate": "Палисандровая калитка",
 	"block.atmospheric.rosewood_sapling": "Палисандровый саженец",
-	"block.atmospheric.rosewood_leaves": "Листья палисандра",
+	"block.atmospheric.rosewood_leaves": "Палисандровая листва",
 	"block.atmospheric.rosewood_sign": "Палисандровая табличка",
+	"block.atmospheric.rosewood_wall_sign": "Палисандровая настенная табличка",
 	
-	"block.atmospheric.passion_vine": "Пассифлора",
-	"block.atmospheric.passion_vine_bundle": "Связка пассифлоры",
-	
-	"block.atmospheric.warm_monkey_brush": "Тёплая обезьяняя кисть",
+  "block.atmospheric.rosewood_bookshelf": "Палисандровая книжная полка",
+  "block.atmospheric.rosewood_vertical_slab": "Палисандровая вертикальная плита",
+  "block.atmospheric.vertical_rosewood_planks": "Палисандровые вертикальные доски",
+  "block.atmospheric.rosewood_ladder": "Палисандровая лестница",
+  "block.atmospheric.rosewood_leaf_carpet": "Ковёр из листьев палисандра",
+  "block.atmospheric.rosewood_chest": "Палисандровый сундук",
+  "block.atmospheric.rosewood_trapped_chest": "Палисандровый сундук-ловушка",
+  "block.atmospheric.rosewood_beehive": "Палисандровый улей",
+  
+  "block.atmospheric.morado_log": "Морадовое бревно",
+  "block.atmospheric.morado_wood": "Морадо",
+  "block.atmospheric.stripped_morado_log": "Обтёсанное морадовое бревно",
+  "block.atmospheric.stripped_morado_wood": "Обтёсанное морадо",
+  "block.atmospheric.morado_planks": "Морадовые доски",
+  "block.atmospheric.morado_stairs": "Морадовые ступеньки",
+  "block.atmospheric.morado_slab": "Морадовая плита",
+  "block.atmospheric.morado_pressure_plate": "Морадовая нажимная плита",
+  "block.atmospheric.morado_button": "Морадовая кнопка",
+  "block.atmospheric.morado_door": "Морадовая дверь",
+  "block.atmospheric.morado_trapdoor": "Морадовый люк",
+  "block.atmospheric.morado_fence": "Морадовый забор",
+  "block.atmospheric.morado_fence_gate": "Морадовая калитка",
+  "block.atmospheric.morado_sapling": "Морадовый саженец",
+  "block.atmospheric.morado_leaves": "Морадовая листва",
+  "block.atmospheric.flowering_morado_leaves": "Цветущая морадовая листва",
+  "block.atmospheric.morado_sign": "Морадовая табличка",
+  "block.atmospheric.morado_wall_sign": "Морадовая настенная табличка",
+  
+  "block.atmospheric.morado_bookshelf": "Морадовая книжная полка",
+  "block.atmospheric.morado_vertical_slab": "Морадовая вертикальная плита",
+  "block.atmospheric.vertical_morado_planks": "Морадовые вертикальная доски",
+  "block.atmospheric.morado_ladder": "Морадовая лестница",
+  "block.atmospheric.morado_leaf_carpet": "Ковёр из морадовых листьев",
+  "block.atmospheric.flowering_morado_leaf_carpet": "Ковёр из цветущих морадовых листьев",
+  "block.atmospheric.morado_chest": "Морадовый сундук",
+  "block.atmospheric.morado_trapped_chest": "Морадовый сундук-ловушка",
+  "block.atmospheric.morado_beehive": "Морадовый улей",
+  
+    "block.atmospheric.warm_monkey_brush": "Тёплая обезьяняя кисть",
 	"block.atmospheric.hot_monkey_brush": "Обезьянья кисть",
 	"block.atmospheric.scalding_monkey_brush": "Жгучая обезьяняя кисть",
+	"block.atmospheric.potted_warm_monkey_brush": "Тёплая обезьяняя кисть в горшке",
 	"block.atmospheric.potted_hot_monkey_brush": "Обезьянья кисть в горшке",
+	"block.atmospheric.potted_scalding_monkey_brush": "Жгучая обезьяняя кисть в горшке",
 	"block.atmospheric.potted_rosewood_sapling": "Палисандровый саженец в горшке",
+  "block.atmospheric.potted_morado_sapling": "Морадовый саженец в горшке",
 	
-	"block.atmospheric.rosewood_bookshelf": "Палисандровая книжная полка",
-	"block.atmospheric.rosewood_vertical_slab": "Палисандровая вертикальная плита",
-	"block.atmospheric.vertical_rosewood_planks": "Палисандровые вертикальные доски",
-	"block.atmospheric.rosewood_ladder": "Палисандровая лестница",
-	"block.atmospheric.rosewood_leaf_carpet": "Ковёр из листьев палисандра",
-	"block.atmospheric.passionfruit_crate": "Ящик маракуйи",
+	"block.atmospheric.passion_vine": "Пассифлора",
+  "block.atmospheric.passion_vine_bundle": "Связка пассифлоры",
+  
+  "block.atmospheric.water_hyacinth": "Водяной гиацинт",
+  "block.atmospheric.potted_water_hyacinth": "Водяной гиацинт в горшке",
+  
+    "block.atmospheric.passionfruit_crate": "Ящик маракуйи",
 	"block.atmospheric.shimmering_passionfruit_crate": "Ящик сияющей маракуйи",
 	
 	"item.atmospheric.rosewood_boat": "Палисандровая лодка",
@@ -42,6 +82,7 @@
 	"item.atmospheric.passionfruit_tart": "Пирог из маракуйи",
 	"item.atmospheric.passionfruit_sorbet": "Шербет из маракуйи",
 	"item.atmospheric.passion_vine_coil": "Пассифлоровый виток",
+	"item.atmospheric.yellow_blossoms": "Жёлтые цветы",
 	
 	"effect.atmospheric.relief": "Облегчение",
 	"effect.atmospheric.worsening": "Ранимость",
@@ -79,19 +120,20 @@
 	"item.minecraft.tipped_arrow.effect.worsening_strong": "Стрела ранимости",
 	"item.minecraft.tipped_arrow.effect.worsening_long": "Стрела ранимости",
 	
-	"biome.atmospheric.rosewood_forest": "Палисандровый лес",
-	"biome.atmospheric.rosewood_mountains": "Палисандровые горы",
-	"biome.atmospheric.rosewood_plateau": "Палисандровое плато",
-	"biome.atmospheric.rosewood_forest_plateau": "Лесистое палисандровое плато",
+	"biome.atmospheric.rainforest": "Тропический лес",
+	"biome.atmospheric.rainforest_mountains": "Горы тропического леса",
+	"biome.atmospheric.rainforest_plateau": "Плато тропического леса",
+	"biome.atmospheric.sparse_rainforest_plateau": "Редкое плато тропического леса",
+	"biome.atmospheric.rainforest_basin": "Водоём тропического леса",
+	"biome.atmospheric.sparse_rainforest_basin": "Редкий водоём тропического леса",
+	
+	"entity.atmospheric.passionfruit_seed": "Маракуйевое семечко",
 	
 	"death.attack.passionfruitSeed": "%1$s закидан семенами %2$s",
 	"death.attack.shimmeringPassionfruitSeed": "%1$s яростно закидан семенами %2$s",
 	
 	"advancements.husbandry.spit_passionfruit.title": "Маракуйевый орёл",
 	"advancements.husbandry.spit_passionfruit.description": "Нанесите урон врагу семенами маракуйи",
-	
-	"advancements.husbandry.eat_sorbet.title": "Смокинг для Сливина",
-	"advancements.husbandry.eat_sorbet.description": "Получите Замедление V от маракуйевого шербета",
 
   "_comment2": "START OF THE SPRINGS SECTION",
 
@@ -162,26 +204,31 @@
 	"block.atmospheric.yucca_sapling": "Саженец юкки",
 	"block.atmospheric.yucca_leaves": "Листья юкки",
 	"block.atmospheric.yucca_sign": "Юкковая табличка",
+	"block.atmospheric.yucca_wall_sign": "Юкковая настенная табличка",
 	
-	"block.atmospheric.yucca_flower": "Цветок юкки",
+  "block.atmospheric.yucca_bookshelf": "Книжная полка из юкки",
+  "block.atmospheric.yucca_vertical_slab": "Юкковая вертикальная плита",
+  "block.atmospheric.vertical_yucca_planks": "Юкковые вертикальные доски",
+  "block.atmospheric.yucca_ladder": "Юкковая лестница",
+  "block.atmospheric.yucca_leaf_carpet": "Ковёр из листьев юкки",
+  "block.atmospheric.yucca_chest": "Юкковый сундук",
+  "block.atmospheric.yucca_trapped_chest": "Юкковый сундук-ловушка",
+  "block.atmospheric.yucca_beehive": "Юкковый улей",
+  
+    "block.atmospheric.yucca_flower": "Цветок юкки",
 	"block.atmospheric.tall_yucca_flower": "Высокий цветок юкки",
 	"block.atmospheric.yucca_branch": "Ветка юкки",	
 	"block.atmospheric.yucca_bundle": "Связка юкки",	
-	"block.atmospheric.roasted_yucca_bundle": "Связка жареной юкки",	
+	"block.atmospheric.roasted_yucca_bundle": "Связка жареной юкки",
 	
 	"block.atmospheric.potted_yucca_sapling": "Саженец юкки в горшке",
 	"block.atmospheric.potted_yucca_flower": "Цветок в горшке",
 	"block.atmospheric.potted_barrel_cactus": "Эхинокактус в горшке",
 	"block.atmospheric.potted_gilia": "Гилия в горшке",
 	
-	"block.atmospheric.yucca_bookshelf": "Книжная полка из юкки",
-	"block.atmospheric.yucca_vertical_slab": "Юкковая вертикальная плита",
-	"block.atmospheric.vertical_yucca_planks": "Юкковые вертикальные доски",
-	"block.atmospheric.yucca_ladder": "Юкковая лестница",
-	"block.atmospheric.yucca_leaf_carpet": "Ковёр из листьев юкки",
-	"block.atmospheric.yucca_cask": "Бочка юкки",
-	"block.atmospheric.roasted_yucca_cask": "Бочка жареной юкки",
-	"block.atmospheric.yucca_gateau": "Торт из юкки",
+    "block.atmospheric.yucca_cask": "Бочка юкки",
+    "block.atmospheric.roasted_yucca_cask": "Бочка жареной юкки",
+    "block.atmospheric.yucca_gateau": "Торт из юкки",
 	
 	"block.atmospheric.barrel_cactus": "Эхинокактус",
 	"block.atmospheric.barrel_cactus_batch": "Пачка эхинокактусов",
@@ -231,12 +278,12 @@
 	"block.atmospheric.red_arid_sandstone_bricks": "Красные кирпичи из сухого песчаника",
 	"block.atmospheric.red_arid_sandstone_brick_stairs": "Ступеньки из красных кирпичей сухого песчаника",
 	"block.atmospheric.red_arid_sandstone_brick_slab": "Плита из красных кирпичей сухого песчаника",
-	"block.atmospheric.red_arid_sandstone_brick_wall": "Стена из красных кирпичей сухого песчаника",	
-	
-	"item.atmospheric.yucca_boat": "Лодка из юкки",
+	"block.atmospheric.red_arid_sandstone_brick_wall": "Стена из красных кирпичей сухого песчаника",
+
+    "item.atmospheric.yucca_boat": "Юкковая лодка",
 	"item.atmospheric.yucca_fruit": "Плод юкки",
 	"item.atmospheric.roasted_yucca_fruit": "Жареный плод юкки",
-	"item.atmospheric.yucca_juice": "Сок юкки",
+	"item.atmospheric.yucca_juice": "Сок юкки",	
 	
 	"item.atmospheric.aloe_kernels": "Зерна алоэ",
 	"item.atmospheric.aloe_leaves": "Листья алоэ",
@@ -293,6 +340,7 @@
 	"block.atmospheric.kousa_sapling": "Кизиловый саженец",
 	"block.atmospheric.kousa_leaves": "Листья кизила",
 	"block.atmospheric.kousa_sign": "Кизиловая табличка",
+	"block.atmospheric.kousa_wall_sign": "Кизиловая настенная табличка",
 	
 	"block.atmospheric.potted_kousa_sapling": "Саженец кизила в горшке",
 	
@@ -301,6 +349,9 @@
 	"block.atmospheric.vertical_kousa_planks": "Кизиловые вертикальные доски",
 	"block.atmospheric.kousa_ladder": "Кизиловая лестница",
 	"block.atmospheric.kousa_leaf_carpet": "Ковёр из листьев кизила",
+	"block.atmospheric.kousa_chest": "Кизиловый сундук",
+  "block.atmospheric.kousa_trapped_chest": "Кизиловый сундук-ловушка",
+	"block.atmospheric.kousa_beehive": "Кизиловый улей",
 	
 	"item.atmospheric.kousa_boat": "Кизиловая лодка",
   
@@ -328,6 +379,7 @@
 	"block.atmospheric.aspen_sapling": "Осиновый саженец",
 	"block.atmospheric.aspen_leaves": "Листья осины",
 	"block.atmospheric.aspen_sign": "Осиновая табличка",
+	"block.atmospheric.aspen_wall_sign": "Осиновая настенная табличка",
 	
 	"block.atmospheric.potted_aspen_sapling": "Осиновый саженец в горшке",
 	
@@ -336,6 +388,9 @@
 	"block.atmospheric.vertical_aspen_planks": "Осиновые вертикальные доски",
 	"block.atmospheric.aspen_ladder": "Осиновая лестница",
 	"block.atmospheric.aspen_leaf_carpet": "Ковёр из осиновых листьев",
+	"block.atmospheric.aspen_chest": "Осиновый сундук",
+  "block.atmospheric.aspen_trapped_chest": "Осиновый сундук-ловушка",
+	"block.atmospheric.aspen_beehive": "Осиновый улей",
 	
 	"item.atmospheric.aspen_boat": "Осиновая лодка",
 	
@@ -357,6 +412,7 @@
 	"block.atmospheric.grimwood_sapling": "Саженец мрачного дерева",
 	"block.atmospheric.grimwood_leaves": "Листья мрачного дерева",
 	"block.atmospheric.grimwood_sign": "Табличка из мрачного дерева",
+	"block.atmospheric.grimwood_wall_sign": "Настенная табличка из мрачного дерева",
 	"block.atmospheric.potted_grimwood_sapling": "Саженец мрачного дерева в горшке",
 	
 	"block.atmospheric.grimwood_bookshelf": "Книжная полка из мрачного дерева",
@@ -364,6 +420,9 @@
 	"block.atmospheric.vertical_grimwood_planks": "Вертикальные доски из мрачного дерева",
 	"block.atmospheric.grimwood_ladder": "Лестница из мрачного дерева",
 	"block.atmospheric.grimwood_leaf_carpet": "Ковёр из листьев мрачного дерева",
+	"block.atmospheric.grimwood_chest": "Сундук из мрачного дерева",
+	"block.atmospheric.grimwood_trapped_chest": "Сундук-ловушка из мрачного дерева",
+	"block.atmospheric.grimwood_beehive": "Улей из мрачного дерева",
 	
 	"item.atmospheric.grimwood_boat": "Лодка из мрачного дерева",
 
