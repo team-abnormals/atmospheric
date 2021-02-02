@@ -9,6 +9,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilders;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.Mod;
 
@@ -55,19 +56,19 @@ public class AtmosphericBiomes {
 	}
 
 	public static void addBiomeTypes() {
-		BiomeDictionary.addTypes(RAINFOREST.getKey(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);
-		BiomeDictionary.addTypes(RAINFOREST_MOUNTAINS.getKey(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.RARE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
-		BiomeDictionary.addTypes(SPARSE_RAINFOREST_PLATEAU.getKey(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
-		BiomeDictionary.addTypes(RAINFOREST_PLATEAU.getKey(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
-		BiomeDictionary.addTypes(RAINFOREST_BASIN.getKey(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.WET, BiomeDictionary.Type.OVERWORLD);
-		BiomeDictionary.addTypes(SPARSE_RAINFOREST_BASIN.getKey(), BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.WET, BiomeDictionary.Type.OVERWORLD);
+		BiomeDictionary.addTypes(RAINFOREST.getKey(), Type.JUNGLE, Type.FOREST, Type.OVERWORLD);
+		BiomeDictionary.addTypes(RAINFOREST_MOUNTAINS.getKey(), Type.JUNGLE, Type.RARE, Type.FOREST, Type.MOUNTAIN, Type.OVERWORLD);
+		BiomeDictionary.addTypes(SPARSE_RAINFOREST_PLATEAU.getKey(), Type.JUNGLE, Type.PLATEAU, Type.OVERWORLD);
+		BiomeDictionary.addTypes(RAINFOREST_PLATEAU.getKey(), Type.JUNGLE, Type.FOREST, Type.PLATEAU, Type.OVERWORLD);
+		BiomeDictionary.addTypes(RAINFOREST_BASIN.getKey(), Type.JUNGLE, Type.FOREST, Type.WET, Type.OVERWORLD);
+		BiomeDictionary.addTypes(SPARSE_RAINFOREST_BASIN.getKey(), Type.JUNGLE, Type.FOREST, Type.WET, Type.OVERWORLD);
 
-		BiomeDictionary.addTypes(DUNES.getKey(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-		BiomeDictionary.addTypes(DUNES_HILLS.getKey(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-		BiomeDictionary.addTypes(FLOURISHING_DUNES.getKey(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.LUSH, BiomeDictionary.Type.OVERWORLD);
-		BiomeDictionary.addTypes(ROCKY_DUNES.getKey(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.OVERWORLD);
-		BiomeDictionary.addTypes(ROCKY_DUNES_HILLS.getKey(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.OVERWORLD);
-		BiomeDictionary.addTypes(PETRIFIED_DUNES.getKey(), BiomeDictionary.Type.RARE, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.OVERWORLD);
+		BiomeDictionary.addTypes(DUNES.getKey(), Type.DRY, Type.HOT, Type.SANDY, Type.OVERWORLD);
+		BiomeDictionary.addTypes(DUNES_HILLS.getKey(), Type.DRY, Type.HOT, Type.SANDY, Type.OVERWORLD);
+		BiomeDictionary.addTypes(FLOURISHING_DUNES.getKey(), Type.RARE, Type.DRY, Type.HOT, Type.SANDY, Type.LUSH, Type.OVERWORLD);
+		BiomeDictionary.addTypes(ROCKY_DUNES.getKey(), Type.DRY, Type.HOT, Type.SANDY, Type.WASTELAND, Type.OVERWORLD);
+		BiomeDictionary.addTypes(ROCKY_DUNES_HILLS.getKey(), Type.DRY, Type.HOT, Type.SANDY, Type.WASTELAND, Type.OVERWORLD);
+		BiomeDictionary.addTypes(PETRIFIED_DUNES.getKey(), Type.RARE, Type.DRY, Type.HOT, Type.SANDY, Type.WASTELAND, Type.OVERWORLD);
 	}
 
 	private static Biome createRainforestBiome(float depth, float scale) {
