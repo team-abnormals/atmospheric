@@ -3,8 +3,8 @@
 
 	"block.atmospheric.rosewood_log": "자단나무 원목",
 	"block.atmospheric.rosewood": "자단나무",
-	"block.atmospheric.stripped_rosewood_log": "껍질을 벗긴 자단나무 원목",
-	"block.atmospheric.stripped_rosewood": "껍질을 벗긴 자단나무",
+	"block.atmospheric.stripped_rosewood_log": "껍질 벗긴 자단나무 원목",
+	"block.atmospheric.stripped_rosewood": "껍질 벗긴 자단나무",
 	"block.atmospheric.rosewood_planks": "자단나무 판자",
 	"block.atmospheric.rosewood_stairs": "자단나무 계단",
 	"block.atmospheric.rosewood_slab": "자단나무 반 블록",
@@ -30,8 +30,8 @@
   
   "block.atmospheric.morado_log": "모라도나무 원목",
   "block.atmospheric.morado_wood": "모라도나무",
-  "block.atmospheric.stripped_morado_log": "껍질을 벗긴 모라도나무 원목",
-  "block.atmospheric.stripped_morado_wood": "껍질을 벗긴 모라도나무",
+  "block.atmospheric.stripped_morado_log": "껍질 벗긴 모라도나무 원목",
+  "block.atmospheric.stripped_morado_wood": "껍질 벗긴 모라도나무",
   "block.atmospheric.morado_planks": "모라도나무 판자",
   "block.atmospheric.morado_stairs": "모라도나무 계단",
   "block.atmospheric.morado_slab": "모라도나무 반 블록",
@@ -190,8 +190,8 @@
   
 	"block.atmospheric.yucca_log": "유카나무 원목",
 	"block.atmospheric.yucca_wood": "유카나무",
-	"block.atmospheric.stripped_yucca_log": "껍질을 벗긴 유카나무 원목",
-	"block.atmospheric.stripped_yucca_wood": "껍질을 벗긴 유카나무",
+	"block.atmospheric.stripped_yucca_log": "껍질 벗긴 유카나무 원목",
+	"block.atmospheric.stripped_yucca_wood": "껍질 벗긴 유카나무",
 	"block.atmospheric.yucca_planks": "유카나무 판자",
 	"block.atmospheric.yucca_stairs": "유카나무 계단",
 	"block.atmospheric.yucca_slab": "유카나무 반 블록",
@@ -235,7 +235,7 @@
 	"block.atmospheric.aloe_vera": "알로에 베라",
 	"block.atmospheric.tall_aloe_vera": "키 큰 알로에 베라",
 	"block.atmospheric.aloe_bundle": "알로에 묶음",
-	"block.atmospheric.aloe_gel_block": 알로에 젤 블록",
+	"block.atmospheric.aloe_gel_block": "알로에 젤 블록",
 	"block.atmospheric.gilia": "꽃고비",
 	
 	"block.atmospheric.arid_sand": "건조한 모래",
@@ -316,7 +316,7 @@
 	"advancements.husbandry.finish_gateau.title": "빵이 없으면... 케이크?",
 	"advancements.husbandry.finish_gateau.description": "유카 케이크의 마지막 조각을 집으세요",
 	
-	"advancements.adventure.dunes_pricks.title": "잘게 썰기",
+	"advancements.adventure.dunes_pricks.title": "잘리고 썰리고",
 	"advancements.adventure.dunes_pricks.description": "사구의 모든 자연산 피해 공급원에 찔리세요",
 	
 	"advancements.husbandry.put_out_fire.title": "화상 피해",
@@ -326,8 +326,8 @@
   
 	"block.atmospheric.kousa_log": "산딸나무 원목",
 	"block.atmospheric.kousa_wood": "산딸나무",
-	"block.atmospheric.stripped_kousa_log": "껍질을 벗긴 산딸나무 원목",
-	"block.atmospheric.stripped_kousa_wood": "껍질을 벗긴 산딸나무",
+	"block.atmospheric.stripped_kousa_log": "껍질 벗긴 산딸나무 원목",
+	"block.atmospheric.stripped_kousa_wood": "껍질 벗긴 산딸나무",
 	"block.atmospheric.kousa_planks": "산딸나무 판자",
 	"block.atmospheric.kousa_stairs": "산딸나무 계단",
 	"block.atmospheric.kousa_slab": "산딸나무 반 블록",
@@ -363,8 +363,8 @@
   
 	"block.atmospheric.aspen_log": "사시나무 원목",
 	"block.atmospheric.aspen_wood": "사시나무",
-	"block.atmospheric.stripped_aspen_log": "껍질을 벗긴 사시나무 원목",
-	"block.atmospheric.stripped_aspen_wood": "껍질을 벗긴 사시나무",
+	"block.atmospheric.stripped_aspen_log": "껍질 벗긴 사시나무 원목",
+	"block.atmospheric.stripped_aspen_wood": "껍질 벗긴 사시나무",
 	"block.atmospheric.watchful_aspen_log": "지켜보는 사시나무 원목",
 	"block.atmospheric.watchful_aspen_wood": "지켜보는 사시나무",
 	"block.atmospheric.aspen_planks": "사시나무 판자",
@@ -398,8 +398,8 @@
 
 	"block.atmospheric.grimwood_log": "그림우드 원목",
 	"block.atmospheric.grimwood": "그림우드",
-	"block.atmospheric.stripped_grimwood_log": "껍질을 벗긴 그림우드 원목",
-	"block.atmospheric.stripped_grimwood": "껍질을 벗긴 그림우드",
+	"block.atmospheric.stripped_grimwood_log": "껍질 벗긴 그림우드 원목",
+	"block.atmospheric.stripped_grimwood": "껍질 벗긴 그림우드",
 	"block.atmospheric.grimwood_planks": "그림우드 판자",
 	"block.atmospheric.grimwood_stairs": "그림우드 계단",
 	"block.atmospheric.grimwood_slab": "그림우드 반 블록",
