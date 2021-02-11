@@ -6,7 +6,12 @@ import com.minecraftabnormals.atmospheric.core.other.AtmosphericRender;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericVillagers;
 import com.minecraftabnormals.atmospheric.core.registry.*;
 import com.minecraftabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
+import net.minecraft.world.gen.feature.structure.Structure;
+import net.minecraft.world.gen.settings.DimensionStructuresSettings;
+import net.minecraft.world.gen.settings.StructureSeparationSettings;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -15,6 +20,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 @Mod(Atmospheric.MOD_ID)
 @Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -29,6 +38,7 @@ public class Atmospheric {
 
 		REGISTRY_HELPER.register(bus);
 		AtmosphericFeatures.FEATURES.register(bus);
+		AtmosphericStructures.STRUCTURES.register(bus);
 		AtmosphericParticles.PARTICLES.register(bus);
 		AtmosphericEffects.EFFECTS.register(bus);
 		AtmosphericEffects.POTIONS.register(bus);
@@ -37,6 +47,7 @@ public class Atmospheric {
 
 		bus.addListener(this::setup);
 		bus.addListener(this::clientSetup);
+		MinecraftForge.EVENT_BUS.addListener(this::addDimensionalSpacing);
 
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
 	}
@@ -45,6 +56,8 @@ public class Atmospheric {
 		event.enqueueWork(() -> {
 			AtmosphericFeatures.Configured.registerConfiguredFeatures();
 			AtmosphericSurfaceBuilders.Configured.registerConfiguredSurfaceBuilders();
+			AtmosphericStructures.Configured.registerConfiguredFeatures();
+			AtmosphericStructures.registerNoiseSettings();
 			AtmosphericBiomes.addBiomeTypes();
 			AtmosphericBiomes.registerBiomesToDictionary();
 			AtmosphericBiomes.addBiomeVariants();
@@ -63,5 +76,14 @@ public class Atmospheric {
 			AtmosphericRender.registerBlockColors();
 			AtmosphericRender.registerRenderLayers();
 		});
+	}
+
+	private void addDimensionalSpacing(final WorldEvent.Load event) {
+//		if (event.getWorld() instanceof ServerWorld) {
+//			ServerWorld serverWorld = (ServerWorld) event.getWorld();
+//			Map<Structure<?>, StructureSeparationSettings> tempMap = new HashMap<>(serverWorld.getChunkProvider().generator.func_235957_b_().func_236195_a_());
+//			tempMap.putIfAbsent(AtmosphericStructures.ARID_SHRINE.get(), DimensionStructuresSettings.field_236191_b_.get(AtmosphericStructures.ARID_SHRINE.get()));
+//			serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap;
+//		}
 	}
 }

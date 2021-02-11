@@ -1,10 +1,11 @@
-package com.minecraftabnormals.atmospheric.common.world.biome;
+package com.minecraftabnormals.atmospheric.core.other;
 
 import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
+import com.minecraftabnormals.atmospheric.core.registry.AtmosphericStructures;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -27,7 +28,7 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID)
-public class AtmosphericBiomeFeatures {
+public class AtmosphericGeneration {
 
 	@SubscribeEvent
 	public static void onBiomeLoad(BiomeLoadingEvent event) {
@@ -92,7 +93,7 @@ public class AtmosphericBiomeFeatures {
 		DefaultBiomeFeatures.withFrozenTopLayer(builder);
 		DefaultBiomeFeatures.withForestRocks(builder);
 		DefaultBiomeFeatures.withLargeFern(builder);
-		AtmosphericBiomeFeatures.withRainforestFoliage(builder);
+		AtmosphericGeneration.withRainforestFoliage(builder);
 		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PODZOL);
 		DefaultBiomeFeatures.withBatsAndHostiles(spawns);
 		DefaultBiomeFeatures.withPassiveMobs(spawns);
@@ -101,35 +102,35 @@ public class AtmosphericBiomeFeatures {
 	}
 
 	public static void withRainforestFeatures(BiomeGenerationSettingsBuilder builder, MobSpawnInfoBuilder spawns) {
-		AtmosphericBiomeFeatures.withBaseRainforestFeatures(builder, spawns);
-		AtmosphericBiomeFeatures.withRainforestWaterFoliage(builder);
-		AtmosphericBiomeFeatures.withRainforestTrees(builder);
+		AtmosphericGeneration.withBaseRainforestFeatures(builder, spawns);
+		AtmosphericGeneration.withRainforestWaterFoliage(builder);
+		AtmosphericGeneration.withRainforestTrees(builder);
 		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.ROSEWOOD_TREE);
 	}
 
 	public static void withRainforestMountainsFeatures(BiomeGenerationSettingsBuilder builder, MobSpawnInfoBuilder spawns) {
-		AtmosphericBiomeFeatures.withBaseRainforestFeatures(builder, spawns);
-		AtmosphericBiomeFeatures.withRainforestWaterFoliage(builder);
-		AtmosphericBiomeFeatures.withRainforestTrees(builder);
+		AtmosphericGeneration.withBaseRainforestFeatures(builder, spawns);
+		AtmosphericGeneration.withRainforestWaterFoliage(builder);
+		AtmosphericGeneration.withRainforestTrees(builder);
 		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.ROSEWOOD_TREE_EXTRA);
 	}
 
 	public static void withSparseRainforestPlateauFeatures(BiomeGenerationSettingsBuilder builder, MobSpawnInfoBuilder spawns) {
-		AtmosphericBiomeFeatures.withBaseRainforestFeatures(builder, spawns);
-		AtmosphericBiomeFeatures.withRainforestWaterFoliage(builder);
-		AtmosphericBiomeFeatures.withSparseRainforestPlateauTrees(builder);
+		AtmosphericGeneration.withBaseRainforestFeatures(builder, spawns);
+		AtmosphericGeneration.withRainforestWaterFoliage(builder);
+		AtmosphericGeneration.withSparseRainforestPlateauTrees(builder);
 	}
 
 	public static void withRainforestBasinFeatures(BiomeGenerationSettingsBuilder builder, MobSpawnInfoBuilder spawns) {
-		AtmosphericBiomeFeatures.withBaseRainforestFeatures(builder, spawns);
-		AtmosphericBiomeFeatures.withRainforestBasinWaterFoliage(builder);
-		AtmosphericBiomeFeatures.withRainforestBasinTrees(builder);
+		AtmosphericGeneration.withBaseRainforestFeatures(builder, spawns);
+		AtmosphericGeneration.withRainforestBasinWaterFoliage(builder);
+		AtmosphericGeneration.withRainforestBasinTrees(builder);
 	}
 
 	public static void withSparseRainforestBasinFeatures(BiomeGenerationSettingsBuilder builder, MobSpawnInfoBuilder spawns) {
-		AtmosphericBiomeFeatures.withBaseRainforestFeatures(builder, spawns);
-		AtmosphericBiomeFeatures.withSparseRainforestBasinWaterFoliage(builder);
-		AtmosphericBiomeFeatures.withSparseRainforestBasinTrees(builder);
+		AtmosphericGeneration.withBaseRainforestFeatures(builder, spawns);
+		AtmosphericGeneration.withSparseRainforestBasinWaterFoliage(builder);
+		AtmosphericGeneration.withSparseRainforestBasinTrees(builder);
 	}
 
 	public static void withBaseDunesFeatures(BiomeGenerationSettingsBuilder builder, MobSpawnInfoBuilder spawns) {
@@ -143,6 +144,7 @@ public class AtmosphericBiomeFeatures {
 		DefaultBiomeFeatures.withFrozenTopLayer(builder);
 		DefaultBiomeFeatures.withFossils(builder);
 		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_DEAD_BUSH);
+		builder.withStructure(AtmosphericStructures.Configured.ARID_SHRINE);
 		DefaultBiomeFeatures.withDesertMobs(spawns);
 	}
 
