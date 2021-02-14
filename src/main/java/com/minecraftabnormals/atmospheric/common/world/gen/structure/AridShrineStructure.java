@@ -1,13 +1,11 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.structure;
 
-import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.DynamicRegistries;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
@@ -15,11 +13,7 @@ import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
-import java.util.List;
-
 public class AridShrineStructure extends Structure<NoFeatureConfig> {
-	private static final List<MobSpawnInfo.Spawners> SPAWN_LIST = ImmutableList.of();
-	private static final List<MobSpawnInfo.Spawners> CREATURE_SPAWN_LIST = ImmutableList.of();
 
 	public AridShrineStructure(Codec<NoFeatureConfig> config) {
 		super(config);
@@ -33,16 +27,6 @@ public class AridShrineStructure extends Structure<NoFeatureConfig> {
 	@Override
 	public GenerationStage.Decoration getDecorationStage() {
 		return GenerationStage.Decoration.SURFACE_STRUCTURES;
-	}
-
-	@Override
-	public List<MobSpawnInfo.Spawners> getDefaultSpawnList() {
-		return SPAWN_LIST;
-	}
-
-	@Override
-	public List<MobSpawnInfo.Spawners> getDefaultCreatureSpawnList() {
-		return CREATURE_SPAWN_LIST;
 	}
 
 	public static class Start extends StructureStart<NoFeatureConfig> {
