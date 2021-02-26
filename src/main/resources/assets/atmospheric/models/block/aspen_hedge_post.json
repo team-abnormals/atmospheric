@@ -1,0 +1,7 @@
+{
+  "parent": "abnormals_core:block/hedge_post",
+  "textures": {
+    "log": "atmospheric:block/aspen_log",
+    "leaf": "atmospheric:block/aspen_leaves"
+  }
+}

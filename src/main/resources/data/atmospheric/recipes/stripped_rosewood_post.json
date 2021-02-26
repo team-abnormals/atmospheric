@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "F",
+    "F",
+    "F"
+  ],
+  "key": {
+    "F": {
+      "item": "atmospheric:stripped_rosewood"
+    }
+  },
+  "result": {
+    "item": "atmospheric:stripped_rosewood_post",
+    "count": 8
+  },
+  "conditions": [
+    {
+      "type": "abnormals_core:quark_flag",
+      "flag": "wooden_posts"
+    }
+  ]
+}

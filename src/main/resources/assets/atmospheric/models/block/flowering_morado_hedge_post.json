@@ -1,0 +1,46 @@
+{
+  "parent": "abnormals_core:block/hedge_post",
+  "textures": {
+    "log": "atmospheric:block/morado_log",
+    "leaf": "atmospheric:block/flowering_morado_leaves",
+    "overlay": "atmospheric:block/flowering_morado_leaves_overlay"
+  },
+  "elements": [
+    {
+      "from": [6, 0, 6],
+      "to": [10, 15, 10],
+      "faces": {
+        "north": {"uv": [6, 1, 10, 16], "texture": "#log"},
+        "east": {"uv": [6, 1, 10, 16], "texture": "#log"},
+        "south": {"uv": [6, 1, 10, 16], "texture": "#log"},
+        "west": {"uv": [6, 1, 10, 16], "texture": "#log"},
+        "up": {"uv": [6, 6, 10, 10], "texture": "#log"},
+        "down": {"uv": [6, 6, 10, 10], "texture": "#log", "cullface": "down"}
+      }
+    },
+    {
+      "from": [2, 2, 2],
+      "to": [14, 16, 14],
+      "faces": {
+        "north": {"uv": [2, 0, 14, 14], "texture": "#leaf", "tintindex": 0},
+        "east": {"uv": [2, 0, 14, 14], "texture": "#leaf", "tintindex": 0},
+        "south": {"uv": [2, 0, 14, 14], "texture": "#leaf", "tintindex": 0},
+        "west": {"uv": [2, 0, 14, 14], "texture": "#leaf", "tintindex": 0},
+        "up": {"uv": [2, 2, 14, 14], "texture": "#leaf", "tintindex": 0},
+        "down": {"uv": [2, 2, 14, 14], "texture": "#leaf", "tintindex": 0}
+      }
+    },
+    {
+      "from": [2, 2, 2],
+      "to": [14, 16, 14],
+      "faces": {
+        "north": {"uv": [2, 0, 14, 14], "texture": "#overlay"},
+        "east": {"uv": [2, 0, 14, 14], "texture": "#overlay"},
+        "south": {"uv": [2, 0, 14, 14], "texture": "#overlay"},
+        "west": {"uv": [2, 0, 14, 14], "texture": "#overlay"},
+        "up": {"uv": [2, 2, 14, 14], "texture": "#overlay"},
+        "down": {"uv": [2, 2, 14, 14], "texture": "#overlay"}
+      }
+    }
+  ]
+}

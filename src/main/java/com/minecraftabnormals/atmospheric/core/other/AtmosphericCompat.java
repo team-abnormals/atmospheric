@@ -115,6 +115,9 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_VERTICAL_SLAB.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_BOOKSHELF.get(), 30, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_BEEHIVE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_ROSEWOOD_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_HEDGE.get(), 5, 20);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.FLOWERING_MORADO_LEAVES.get(), 30, 60);
@@ -133,6 +136,10 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_VERTICAL_SLAB.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_BOOKSHELF.get(), 30, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_BEEHIVE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_MORADO_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_HEDGE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.FLOWERING_MORADO_HEDGE.get(), 5, 20);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_LOG.get(), 5, 5);
@@ -149,6 +156,9 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_VERTICAL_SLAB.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_BOOKSHELF.get(), 30, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_BEEHIVE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_YUCCA_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_HEDGE.get(), 5, 20);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_LOG.get(), 5, 5);
@@ -165,6 +175,9 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_VERTICAL_SLAB.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_BOOKSHELF.get(), 30, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_BEEHIVE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_KOUSA_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_HEDGE.get(), 5, 20);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_LOG.get(), 5, 5);
@@ -183,6 +196,10 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_VERTICAL_SLAB.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_BOOKSHELF.get(), 30, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_BEEHIVE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_ASPEN_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.WATCHFUL_ASPEN_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_HEDGE.get(), 5, 20);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_LOG.get(), 5, 5);
@@ -199,5 +216,8 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_VERTICAL_SLAB.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_BOOKSHELF.get(), 30, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_BEEHIVE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_GRIMWOOD_POST.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_HEDGE.get(), 5, 20);
 	}
 }

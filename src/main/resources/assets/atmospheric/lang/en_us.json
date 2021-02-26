@@ -26,6 +26,9 @@
   "block.atmospheric.rosewood_chest": "Rosewood Chest",
   "block.atmospheric.rosewood_trapped_chest": "Rosewood Trapped Chest",
   "block.atmospheric.rosewood_beehive": "Rosewood Beehive",
+  "block.atmospheric.rosewood_post": "Rosewood Post",
+  "block.atmospheric.stripped_rosewood_post": "Stripped Rosewood Post",
+  "block.atmospheric.rosewood_hedge": "Rosewood Hedge",
 
   "block.atmospheric.morado_log": "Morado Log",
   "block.atmospheric.morado_wood": "Morado Wood",
@@ -55,6 +58,10 @@
   "block.atmospheric.morado_chest": "Morado Chest",
   "block.atmospheric.morado_trapped_chest": "Morado Trapped Chest",
   "block.atmospheric.morado_beehive": "Morado Beehive",
+  "block.atmospheric.morado_post": "Morado Post",
+  "block.atmospheric.stripped_morado_post": "Stripped Morado Post",
+  "block.atmospheric.morado_hedge": "Morado Hedge",
+  "block.atmospheric.flowering_morado_hedge": "Flowering Morado Hedge",
 
   "block.atmospheric.warm_monkey_brush": "Warm Monkey Brush",
   "block.atmospheric.hot_monkey_brush": "Hot Monkey Brush",
@@ -100,6 +107,9 @@
   "block.atmospheric.yucca_chest": "Yucca Chest",
   "block.atmospheric.yucca_trapped_chest": "Yucca Trapped Chest",
   "block.atmospheric.yucca_beehive": "Yucca Beehive",
+  "block.atmospheric.yucca_post": "Yucca Post",
+  "block.atmospheric.stripped_yucca_post": "Stripped Yucca Post",
+  "block.atmospheric.yucca_hedge": "Yucca Hedge",
 
   "block.atmospheric.yucca_flower": "Yucca Flower",
   "block.atmospheric.tall_yucca_flower": "Tall Yucca Flower",
@@ -225,6 +235,9 @@
   "block.atmospheric.kousa_chest": "Kousa Chest",
   "block.atmospheric.kousa_trapped_chest": "Kousa Trapped Chest",
   "block.atmospheric.kousa_beehive": "Kousa Beehive",
+  "block.atmospheric.kousa_post": "Kousa Post",
+  "block.atmospheric.stripped_kousa_post": "Stripped Kousa Post",
+  "block.atmospheric.kousa_hedge": "Kousa Hedge",
 
   "block.atmospheric.crustose": "Crustose",
   "block.atmospheric.crustose_log": "Crustose Log",
@@ -259,6 +272,10 @@
   "block.atmospheric.aspen_chest": "Aspen Chest",
   "block.atmospheric.aspen_trapped_chest": "Aspen Trapped Chest",
   "block.atmospheric.aspen_beehive": "Aspen Beehive",
+  "block.atmospheric.aspen_post": "Aspen Post",
+  "block.atmospheric.stripped_aspen_post": "Stripped Aspen Post",
+  "block.atmospheric.watchful_aspen_post": "Watchful Aspen Post",
+  "block.atmospheric.aspen_hedge": "Aspen Hedge",
 
   "block.atmospheric.grimwood_log": "Grimwood Log",
   "block.atmospheric.grimwood": "Grimwood",
@@ -287,6 +304,9 @@
   "block.atmospheric.grimwood_chest": "Grimwood Chest",
   "block.atmospheric.grimwood_trapped_chest": "Grimwood Trapped Chest",
   "block.atmospheric.grimwood_beehive": "Grimwood Beehive",
+  "block.atmospheric.grimwood_post": "Grimwood Post",
+  "block.atmospheric.stripped_grimwood_post": "Stripped Grimwood Post",
+  "block.atmospheric.grimwood_hedge": "Grimwood Hedge",
 
   "item.atmospheric.rosewood_boat": "Rosewood Boat",
   "item.atmospheric.morado_boat": "Morado Boat",

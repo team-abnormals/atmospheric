@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:rosewood_hedge",
+    "atmospheric:morado_hedge",
+    "atmospheric:flowering_morado_hedge",
+    "atmospheric:yucca_hedge",
+    "atmospheric:kousa_hedge",
+    "atmospheric:aspen_hedge",
+    "atmospheric:grimwood_hedge"
+  ]
+}

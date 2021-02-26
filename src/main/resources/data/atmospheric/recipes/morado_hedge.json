@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L",
+    "W"
+  ],
+  "key": {
+    "L": {
+      "item": "atmospheric:morado_leaves"
+    },
+    "W": {
+      "tag": "atmospheric:morado_logs"
+    }
+  },
+  "result": {
+    "item": "atmospheric:morado_hedge",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "abnormals_core:quark_flag",
+      "flag": "hedges"
+    }
+  ]
+} 

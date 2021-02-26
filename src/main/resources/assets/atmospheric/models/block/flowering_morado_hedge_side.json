@@ -1,0 +1,29 @@
+{
+  "parent": "abnormals_core:block/hedge_side",
+  "textures": {
+    "leaf": "atmospheric:block/flowering_morado_leaves",
+    "overlay": "atmospheric:block/flowering_morado_leaves_overlay"
+  },
+  "elements": [
+    {
+      "from": [2, 2, 0],
+      "to": [14, 16, 2],
+      "faces": {
+        "east": {"uv": [0, 0, 2, 14], "rotation": 180, "texture": "#leaf", "tintindex": 0},
+        "west": {"uv": [0, 0, 2, 14], "texture": "#leaf", "tintindex": 0},
+        "up": {"uv": [0, 1, 2, 15], "rotation": 270, "texture": "#leaf", "tintindex": 0},
+        "down": {"uv": [0, 1, 2, 15], "rotation": 270, "texture": "#leaf", "tintindex": 0}
+      }
+    },
+    {
+      "from": [2, 2, 0],
+      "to": [14, 16, 2],
+      "faces": {
+        "east": {"uv": [0, 0, 2, 14], "rotation": 180, "texture": "#overlay"},
+        "west": {"uv": [0, 0, 2, 14], "texture": "#overlay"},
+        "up": {"uv": [0, 1, 2, 15], "rotation": 270, "texture": "#overlay"},
+        "down": {"uv": [0, 1, 2, 15], "rotation": 270, "texture": "#overlay"}
+      }
+    }
+  ]
+}

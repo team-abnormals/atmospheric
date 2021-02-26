@@ -1,0 +1,6 @@
+{
+  "parent": "abnormals_core:block/post",
+  "textures": {
+    "texture": "atmospheric:block/stripped_morado_log"
+  }
+}
