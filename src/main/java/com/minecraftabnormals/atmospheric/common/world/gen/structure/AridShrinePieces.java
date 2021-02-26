@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Random;
 
 public class AridShrinePieces {
-	private static final BlockPos STRUCTURE_OFFSET = new BlockPos(0, -3, 0);
+	private static final BlockPos STRUCTURE_OFFSET = new BlockPos(0, 0, 0);
 	private static final ResourceLocation STRUCTURE = new ResourceLocation(Atmospheric.MOD_ID, "arid_shrine/arid_shrine");
 
 	public static void func_204760_a(TemplateManager p_204760_0_, BlockPos p_204760_1_, Rotation p_204760_2_, List<StructurePiece> p_204760_3_, Random random) {
@@ -104,7 +104,7 @@ public class AridShrinePieces {
 				}
 			}
 
-			int i1 = i - 1;
+			int i1 = i - 4;
 			this.templatePosition = new BlockPos(this.templatePosition.getX(), i1, this.templatePosition.getZ());
 			return super.func_230383_a_(world, manager, generator, random, boundingBox, chunkPos, blockPos);
 		}
