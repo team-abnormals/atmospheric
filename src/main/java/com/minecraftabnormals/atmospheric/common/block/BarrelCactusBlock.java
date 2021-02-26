@@ -5,6 +5,7 @@ import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -27,7 +28,10 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.PlantType;
+import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -49,7 +53,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 
 	public BarrelCactusBlock(Block.Properties properties) {
 		super(properties);
-		this.setDefaultState(this.getDefaultState().with(AGE, Integer.valueOf(0)));
+		this.setDefaultState(this.getDefaultState().with(AGE, 0));
 	}
 
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
@@ -59,10 +63,10 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 			worldIn.destroyBlock(pos, true);
 		} else {
 			int j = state.get(AGE);
-			if (worldIn.getBlockState(pos.down()).getBlock() == AtmosphericBlocks.ARID_SAND.get() && j < this.getMaxAge(worldIn, pos) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0)) {
-				worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(j + 1)));
+			if (worldIn.getBlockState(pos.down()).isIn(Tags.Blocks.SAND_COLORLESS) && j < this.getMaxAge(worldIn, pos) && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0)) {
+				worldIn.setBlockState(pos, state.with(AGE, j + 1));
 			}
-			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 		}
 	}
 
@@ -70,7 +74,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
 		int i = state.get(AGE);
 		if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(3) == 0)) {
-			worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)));
+			worldIn.setBlockState(pos, state.with(AGE, i + 1));
 			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 		}
 	}
@@ -111,15 +115,14 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 
 	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		BlockState soil = worldIn.getBlockState(pos.down());
-		boolean dune = soil.getBlock() == AtmosphericBlocks.ARID_SAND.get() || soil.getBlock() == AtmosphericBlocks.RED_ARID_SAND.get();
-		return dune && !worldIn.getBlockState(pos.up()).getMaterial().isLiquid();
+		BlockState downState = worldIn.getBlockState(pos.down());
+		return (downState.canSustainPlant(worldIn, pos.down(), Direction.UP, this) || downState.isIn(Blocks.RED_SAND)) && !worldIn.getBlockState(pos.up()).getMaterial().isLiquid();
 	}
 
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity) {
 			LivingEntity living = (LivingEntity) entityIn;
-			living.addPotionEffect(new EffectInstance(Effects.WEAKNESS, ((state.get(AGE) + 1) * 40), 0, false, false, true));
+			living.addPotionEffect(new EffectInstance(Effects.POISON, ((state.get(AGE) + 1) * 40)));
 		}
 		entityIn.attackEntityFrom(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.get(AGE));
 		if (entityIn instanceof ServerPlayerEntity) {
@@ -139,8 +142,8 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 	}
 
 	@Override
-	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
-		return net.minecraftforge.common.PlantType.DESERT;
+	public PlantType getPlantType(IBlockReader world, BlockPos pos) {
+		return PlantType.DESERT;
 	}
 
 	@Override

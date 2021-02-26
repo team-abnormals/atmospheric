@@ -18,10 +18,7 @@ import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.DoubleBlockHalf;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -33,6 +30,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.PlantType;
+import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -64,19 +64,27 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 
 	@Override
 	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		Block block = worldIn.getBlockState(pos.down()).getBlock();
-		DoubleBlockHalf half = state.get(HALF);
-		if (half == DoubleBlockHalf.UPPER) {
-			return block instanceof AridSandBlock || block instanceof AloeVeraTallBlock;
-		} else {
-			return block instanceof AridSandBlock;
+		BlockState downState = worldIn.getBlockState(pos.down());
+		if (state.getBlock() instanceof AloeVeraTallBlock) {
+			DoubleBlockHalf half = state.get(HALF);
+			if (half == DoubleBlockHalf.UPPER) {
+				return downState.getBlock() instanceof AloeVeraTallBlock;
+			} else {
+				return downState.canSustainPlant(worldIn, pos.down(), Direction.UP, this) || downState.isIn(Blocks.RED_SAND);
+			}
 		}
+		return super.isValidGround(state, worldIn, pos);
+	}
+
+	@Override
+	public PlantType getPlantType(IBlockReader world, BlockPos pos) {
+		return PlantType.DESERT;
 	}
 
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity) {
 			if (!(entityIn instanceof BeeEntity))
-				entityIn.setMotionMultiplier(state, new Vector3d((double) 0.8F, 0.75D, (double) 0.8F));
+				entityIn.setMotionMultiplier(state, new Vector3d(0.8F, 0.75D, 0.8F));
 			Random rand = new Random();
 
 			for (int i = 0; i < 3; i++) {
@@ -92,7 +100,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 			}
 
 			if (!worldIn.isRemote && state.get(AGE) > 3 && Math.random() <= 0.4 && state.get(HALF) == DoubleBlockHalf.LOWER && !(entityIn instanceof BeeEntity)) {
-				entityIn.setMotionMultiplier(state, new Vector3d((double) 0.2F, 0.2D, (double) 0.2F));
+				entityIn.setMotionMultiplier(state, new Vector3d((double) 0.2F, 0.2D, 0.2F));
 				entityIn.attackEntityFrom(AtmosphericDamageSources.ALOE_LEAVES, 1.0F);
 				if (entityIn instanceof ServerPlayerEntity) {
 					ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
@@ -133,8 +141,6 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 			player.getHeldItem(handIn).damageItem(1, player, (onBroken) -> {
 				onBroken.sendBreakAnimation(handIn);
 			});
-			worldIn.playSound((PlayerEntity) null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-			worldIn.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_SLIME_BLOCK_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 
 			for (int i = 0; i < (50 + rand.nextInt(50)); i++) {
 				double offsetX = rand.nextFloat();
@@ -148,16 +154,18 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 					worldIn.addParticle(AtmosphericParticles.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
 			}
 
-			if (state.get(HALF) == DoubleBlockHalf.LOWER) {
-				worldIn.setBlockState(pos, AtmosphericBlocks.ALOE_VERA.get().getDefaultState().with(AloeVeraBlock.AGE, 2), 32);
-				worldIn.setBlockState(pos.up(), Blocks.AIR.getDefaultState(), 32);
-			} else {
-				worldIn.setBlockState(pos, AtmosphericBlocks.ALOE_VERA.get().getDefaultState().with(AloeVeraBlock.AGE, 2), 32);
-				worldIn.setBlockState(pos.up(), Blocks.AIR.getDefaultState(), 32);
-			}
-			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), new Random().nextInt(5) + 3));
-			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_KERNELS.get(), age - 5));
+			worldIn.playSound(null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.YELLOW_BLOSSOMS.get(), age - 5));
+			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_KERNELS.get(), age - 5));
+			if (state.get(HALF) == DoubleBlockHalf.LOWER) {
+				worldIn.playSound(null, pos, SoundEvents.BLOCK_SLIME_BLOCK_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+				worldIn.setBlockState(pos.up(), Blocks.AIR.getDefaultState(), 35);
+				worldIn.setBlockState(pos, AtmosphericBlocks.ALOE_VERA.get().getDefaultState().with(AloeVeraBlock.AGE, 2), 35);
+				spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), rand.nextInt(5) + 3));
+			} else {
+				worldIn.setBlockState(pos.down(), AtmosphericBlocks.ALOE_VERA.get().getDefaultState().with(AloeVeraBlock.AGE, 5), 35);
+				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 35);
+			}
 
 			return ActionResultType.SUCCESS;
 		} else {
@@ -190,11 +198,11 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
 		if (state.get(HALF) == DoubleBlockHalf.LOWER) {
-			boolean flag = worldIn.getBlockState(pos.down()).getBlock() == AtmosphericBlocks.RED_ARID_SAND.get();
-			if (!flag && state.get(AGE) < 8 && worldIn.getLightSubtracted(pos.up(), 0) >= 12 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(12) == 0)) {
+			boolean flag = worldIn.getBlockState(pos.down()).isIn(Tags.Blocks.SAND_RED);
+			if (!flag && state.get(AGE) < 8 && worldIn.getLightSubtracted(pos.up(), 0) >= 12 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 				worldIn.setBlockState(pos, state.with(AGE, state.get(AGE) + 1));
 				worldIn.setBlockState(pos.up(), state.with(HALF, DoubleBlockHalf.UPPER).with(AGE, state.get(AGE) + 1));
-				net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+				ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 			}
 		}
 	}

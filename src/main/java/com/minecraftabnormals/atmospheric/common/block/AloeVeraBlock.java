@@ -4,10 +4,7 @@ import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BushBlock;
-import net.minecraft.block.IGrowable;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
@@ -21,10 +18,7 @@ import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.DoubleBlockHalf;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -35,12 +29,14 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.PlantType;
+import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
 public class AloeVeraBlock extends BushBlock implements IGrowable {
-
 	public static final VoxelShape SHAPE_SMALL = Block.makeCuboidShape(6.0D, 0.0D, 6.0D, 10.0D, 4.0D, 10.0D);
 	public static final VoxelShape SHAPE_MEDIUM = Block.makeCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
 	public static final VoxelShape SHAPE_LARGE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
@@ -75,11 +71,9 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 			if (i == 4) amount = rand.nextInt(5) + 2;
 			if (i == 5) amount = rand.nextInt(5) + 3;
 
-			player.getHeldItem(handIn).damageItem(1, player, (onBroken) -> {
-				onBroken.sendBreakAnimation(handIn);
-			});
-			worldIn.playSound((PlayerEntity) null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-			worldIn.playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_SLIME_BLOCK_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+			player.getHeldItem(handIn).damageItem(1, player, (onBroken) -> onBroken.sendBreakAnimation(handIn));
+			worldIn.playSound(null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+			worldIn.playSound(null, pos, SoundEvents.BLOCK_SLIME_BLOCK_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 			worldIn.setBlockState(pos, state.with(AGE, 2));
 
 			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), amount));
@@ -99,7 +93,7 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 			if (state.get(AGE) == 5) chance = 0.4;
 
 			if (!worldIn.isRemote && state.get(AGE) > 2 && Math.random() <= chance) {
-				entityIn.setMotionMultiplier(state, new Vector3d((double) 0.2F, 0.2D, (double) 0.2F));
+				entityIn.setMotionMultiplier(state, new Vector3d(0.2F, 0.2D, 0.2F));
 				entityIn.attackEntityFrom(AtmosphericDamageSources.ALOE_LEAVES, 1.0F);
 				if (entityIn instanceof ServerPlayerEntity) {
 					ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
@@ -116,15 +110,19 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	}
 
 	@Override
-	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		Block block = state.getBlock();
-		return block instanceof AridSandBlock;
+	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
+		BlockState downState = worldIn.getBlockState(pos.down());
+		return downState.canSustainPlant(worldIn, pos.down(), Direction.UP, this) || isValidGround(downState, worldIn, pos.down());
 	}
 
 	@Override
-	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		BlockPos blockpos = pos.down();
-		return this.isValidGround(worldIn.getBlockState(blockpos), worldIn, blockpos);
+	public boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		return state.isIn(Blocks.RED_SAND);
+	}
+
+	@Override
+	public PlantType getPlantType(IBlockReader world, BlockPos pos) {
+		return PlantType.DESERT;
 	}
 
 	@Override
@@ -141,7 +139,7 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	public void grow(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
 		int age = state.get(AGE);
 		if (age < 5) world.setBlockState(pos, state.with(AGE, age + 1));
-		else if (world.getBlockState(pos.up()).isAir() && world.getBlockState(pos.down()).getBlock() == AtmosphericBlocks.ARID_SAND.get()) {
+		else if (world.getBlockState(pos.up()).isAir() && world.getBlockState(pos.down()).isIn(Tags.Blocks.SAND_COLORLESS)) {
 			placeAt(world, pos, 2);
 		}
 	}
@@ -149,9 +147,9 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
-		boolean flag = worldIn.getBlockState(pos.down()).getBlock() == AtmosphericBlocks.RED_ARID_SAND.get();
-		int chance = flag ? 8 : 12;
-		if (worldIn.getLightSubtracted(pos.up(), 0) >= 12 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(chance) == 0)) {
+		boolean flag = worldIn.getBlockState(pos.down()).isIn(Tags.Blocks.SAND_RED);
+		int chance = flag ? 5 : 7;
+		if (worldIn.getLightSubtracted(pos.up(), 0) >= 12 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(chance) == 0)) {
 			if (state.get(AGE) < 5) {
 				worldIn.setBlockState(pos, state.with(AGE, state.get(AGE) + 1));
 			} else if (!flag) {
@@ -160,7 +158,7 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 					tallAloe.placeAt(worldIn, pos, 2);
 				}
 			}
-			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 		}
 	}
 

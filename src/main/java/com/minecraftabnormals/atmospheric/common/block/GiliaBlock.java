@@ -8,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.potion.Effect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraftforge.common.PlantType;
 
 public class GiliaBlock extends AbnormalsFlowerBlock {
 
@@ -22,7 +23,7 @@ public class GiliaBlock extends AbnormalsFlowerBlock {
 	}
 
 	@Override
-	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
-		return net.minecraftforge.common.PlantType.DESERT;
+	public PlantType getPlantType(IBlockReader world, BlockPos pos) {
+		return PlantType.DESERT;
 	}
 }
