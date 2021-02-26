@@ -38,9 +38,9 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_SLAB = HELPER.createBlock("rosewood_slab", () -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_STAIRS = HELPER.createBlock("rosewood_stairs", () -> new WoodStairsBlock(ROSEWOOD_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_PRESSURE_PLATE = HELPER.createBlock("rosewood_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> ROSEWOOD_FENCE = HELPER.createBlock("rosewood_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ROSEWOOD_FENCE = HELPER.createFuelBlock("rosewood_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), 300, ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ROSEWOOD_TRAPDOOR = HELPER.createBlock("rosewood_trapdoor", () -> new WoodTrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> ROSEWOOD_FENCE_GATE = HELPER.createBlock("rosewood_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> ROSEWOOD_FENCE_GATE = HELPER.createFuelBlock("rosewood_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), 300, ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> ROSEWOOD_BUTTON = HELPER.createBlock("rosewood_button", () -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> ROSEWOOD_DOOR = HELPER.createBlock("rosewood_door", () -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> ROSEWOOD_SIGNS = HELPER.createSignBlock("rosewood", MaterialColor.PINK);
@@ -54,7 +54,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> STRIPPED_ROSEWOOD_POST = HELPER.createCompatFuelBlock("quark", "stripped_rosewood_post", () -> new WoodPostBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_POST = HELPER.createCompatFuelBlock("quark", "rosewood_post", () -> new WoodPostBlock(STRIPPED_ROSEWOOD_POST, Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_HEDGE = HELPER.createCompatFuelBlock("quark", "rosewood_hedge", () -> new HedgeBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.DECORATIONS);
-	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> ROSEWOOD_CHESTS = HELPER.createCompatChestBlocks("rosewood", MaterialColor.PINK);
+	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> ROSEWOOD_CHESTS = HELPER.createCompatChestBlocks("quark", "rosewood", MaterialColor.PINK);
 
 	public static final RegistryObject<Block> MORADO_PLANKS = HELPER.createBlock("morado_planks", () -> new PlanksBlock(Block.Properties.from(Blocks.OAK_PLANKS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> MORADO_SAPLING = HELPER.createBlock("morado_sapling", () -> new AbnormalsSaplingBlock(new MoradoTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)), ItemGroup.DECORATIONS);
@@ -66,9 +66,9 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> MORADO_SLAB = HELPER.createBlock("morado_slab", () -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> MORADO_STAIRS = HELPER.createBlock("morado_stairs", () -> new WoodStairsBlock(MORADO_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> MORADO_PRESSURE_PLATE = HELPER.createBlock("morado_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> MORADO_FENCE = HELPER.createBlock("morado_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> MORADO_FENCE = HELPER.createFuelBlock("morado_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), 300, ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> MORADO_TRAPDOOR = HELPER.createBlock("morado_trapdoor", () -> new WoodTrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> MORADO_FENCE_GATE = HELPER.createBlock("morado_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> MORADO_FENCE_GATE = HELPER.createFuelBlock("morado_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), 300, ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> MORADO_BUTTON = HELPER.createBlock("morado_button", () -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> MORADO_DOOR = HELPER.createBlock("morado_door", () -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> POTTED_MORADO_SAPLING = HELPER.createBlockNoItem("potted_morado_sapling", () -> new FlowerPotBlock(MORADO_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
@@ -84,7 +84,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> MORADO_POST = HELPER.createCompatFuelBlock("quark", "morado_post", () -> new WoodPostBlock(STRIPPED_MORADO_POST, Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> MORADO_HEDGE = HELPER.createCompatFuelBlock("quark", "morado_hedge", () -> new HedgeBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> FLOWERING_MORADO_HEDGE = HELPER.createCompatFuelBlock("quark", "flowering_morado_hedge", () -> new HedgeBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.DECORATIONS);
-	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> MORADO_CHESTS = HELPER.createCompatChestBlocks("morado", MaterialColor.RED_TERRACOTTA);
+	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> MORADO_CHESTS = HELPER.createCompatChestBlocks("quark", "morado", MaterialColor.RED_TERRACOTTA);
 
 	public static final RegistryObject<Block> FLOWERING_MORADO_LEAVES = HELPER.createBlock("flowering_morado_leaves", () -> new FloweringMoradoLeavesBlock(AtmosphericProperties.createLeaves()), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> FLOWERING_MORADO_LEAF_CARPET = HELPER.createCompatBlock("quark", "flowering_morado_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.createLeafCarpet()), ItemGroup.DECORATIONS);
@@ -189,9 +189,9 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_STAIRS = HELPER.createBlock("yucca_stairs", () -> new WoodStairsBlock(YUCCA_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_SLAB = HELPER.createBlock("yucca_slab", () -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_PRESSURE_PLATE = HELPER.createBlock("yucca_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> YUCCA_FENCE = HELPER.createBlock("yucca_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_FENCE = HELPER.createFuelBlock("yucca_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), 300, ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> YUCCA_TRAPDOOR = HELPER.createBlock("yucca_trapdoor", () -> new WoodTrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> YUCCA_FENCE_GATE = HELPER.createBlock("yucca_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> YUCCA_FENCE_GATE = HELPER.createFuelBlock("yucca_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), 300, ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> YUCCA_BUTTON = HELPER.createBlock("yucca_button", () -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> YUCCA_DOOR = HELPER.createBlock("yucca_door", () -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> YUCCA_SIGNS = HELPER.createSignBlock("yucca", MaterialColor.ORANGE_TERRACOTTA);
@@ -247,7 +247,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> STRIPPED_YUCCA_POST = HELPER.createCompatFuelBlock("quark", "stripped_yucca_post", () -> new WoodPostBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_POST = HELPER.createCompatFuelBlock("quark", "yucca_post", () -> new WoodPostBlock(STRIPPED_YUCCA_POST, Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_HEDGE = HELPER.createCompatFuelBlock("quark", "yucca_hedge", () -> new HedgeBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.DECORATIONS);
-	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> YUCCA_CHESTS = HELPER.createCompatChestBlocks("yucca", MaterialColor.ADOBE);
+	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> YUCCA_CHESTS = HELPER.createCompatChestBlocks("quark", "yucca", MaterialColor.ADOBE);
 
 	public static final RegistryObject<Block> YUCCA_CASK = HELPER.createCompatBlock("quark", "yucca_cask", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ROASTED_YUCCA_CASK = HELPER.createCompatBlock("quark", "roasted_yucca_cask", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
@@ -265,9 +265,9 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> KOUSA_SLAB = HELPER.createBlock("kousa_slab", () -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_STAIRS = HELPER.createBlock("kousa_stairs", () -> new WoodStairsBlock(KOUSA_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_PRESSURE_PLATE = HELPER.createBlock("kousa_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> KOUSA_FENCE = HELPER.createBlock("kousa_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_FENCE = HELPER.createFuelBlock("kousa_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), 300, ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> KOUSA_TRAPDOOR = HELPER.createBlock("kousa_trapdoor", () -> new WoodTrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> KOUSA_FENCE_GATE = HELPER.createBlock("kousa_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> KOUSA_FENCE_GATE = HELPER.createFuelBlock("kousa_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), 300, ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> KOUSA_BUTTON = HELPER.createBlock("kousa_button", () -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> KOUSA_DOOR = HELPER.createBlock("kousa_door", () -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> POTTED_KOUSA_SAPLING = HELPER.createBlockNoItem("potted_kousa_sapling", () -> new FlowerPotBlock(KOUSA_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
@@ -282,7 +282,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> STRIPPED_KOUSA_POST = HELPER.createCompatFuelBlock("quark", "stripped_kousa_post", () -> new WoodPostBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_POST = HELPER.createCompatFuelBlock("quark", "kousa_post", () -> new WoodPostBlock(STRIPPED_KOUSA_POST, Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_HEDGE = HELPER.createCompatFuelBlock("quark", "kousa_hedge", () -> new HedgeBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.DECORATIONS);
-	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> KOUSA_CHESTS = HELPER.createCompatChestBlocks("kousa", MaterialColor.GREEN);
+	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> KOUSA_CHESTS = HELPER.createCompatChestBlocks("quark", "kousa", MaterialColor.GREEN);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -298,9 +298,9 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_SLAB = HELPER.createBlock("aspen_slab", () -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_STAIRS = HELPER.createBlock("aspen_stairs", () -> new WoodStairsBlock(ASPEN_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_PRESSURE_PLATE = HELPER.createBlock("aspen_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> ASPEN_FENCE = HELPER.createBlock("aspen_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ASPEN_FENCE = HELPER.createFuelBlock("aspen_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), 300, ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_TRAPDOOR = HELPER.createBlock("aspen_trapdoor", () -> new WoodTrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> ASPEN_FENCE_GATE = HELPER.createBlock("aspen_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> ASPEN_FENCE_GATE = HELPER.createFuelBlock("aspen_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), 300, ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> ASPEN_BUTTON = HELPER.createBlock("aspen_button", () -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> ASPEN_DOOR = HELPER.createBlock("aspen_door", () -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> POTTED_ASPEN_SAPLING = HELPER.createBlockNoItem("potted_aspen_sapling", () -> new FlowerPotBlock(ASPEN_SAPLING.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
@@ -316,7 +316,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_POST = HELPER.createCompatFuelBlock("quark", "aspen_post", () -> new WoodPostBlock(STRIPPED_ASPEN_POST, Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> WATCHFUL_ASPEN_POST = HELPER.createCompatFuelBlock("quark", "watchful_aspen_post", () -> new WoodPostBlock(STRIPPED_ASPEN_POST, Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_HEDGE = HELPER.createCompatFuelBlock("quark", "aspen_hedge", () -> new HedgeBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.DECORATIONS);
-	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> ASPEN_CHESTS = HELPER.createCompatChestBlocks("aspen", MaterialColor.YELLOW);
+	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> ASPEN_CHESTS = HELPER.createCompatChestBlocks("quark", "aspen", MaterialColor.YELLOW);
 
 	public static final RegistryObject<Block> CRUSTOSE = HELPER.createBlock("crustose", () -> new CrustoseBlock(Block.Properties.from(Blocks.DIRT).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> CRUSTOSE_LOG = HELPER.createBlock("crustose_log", () -> new CrustoseLogBlock(ASPEN_LOG::get, Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
@@ -334,9 +334,9 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> GRIMWOOD_SLAB = HELPER.createBlock("grimwood_slab", () -> new WoodSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_STAIRS = HELPER.createBlock("grimwood_stairs", () -> new WoodStairsBlock(GRIMWOOD_PLANKS.get().getDefaultState(), Block.Properties.from(Blocks.OAK_STAIRS)), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_PRESSURE_PLATE = HELPER.createBlock("grimwood_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.from(Blocks.DARK_OAK_PRESSURE_PLATE)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> GRIMWOOD_FENCE = HELPER.createBlock("grimwood_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> GRIMWOOD_FENCE = HELPER.createFuelBlock("grimwood_fence", () -> new WoodFenceBlock(Block.Properties.from(Blocks.OAK_FENCE)), 300, ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> GRIMWOOD_TRAPDOOR = HELPER.createBlock("grimwood_trapdoor", () -> new WoodTrapDoorBlock(Block.Properties.from(Blocks.OAK_TRAPDOOR)), ItemGroup.REDSTONE);
-	public static final RegistryObject<Block> GRIMWOOD_FENCE_GATE = HELPER.createBlock("grimwood_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), ItemGroup.REDSTONE);
+	public static final RegistryObject<Block> GRIMWOOD_FENCE_GATE = HELPER.createFuelBlock("grimwood_fence_gate", () -> new WoodFenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)), 300, ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> GRIMWOOD_BUTTON = HELPER.createBlock("grimwood_button", () -> new AbnormalsWoodButtonBlock(Block.Properties.from(Blocks.OAK_BUTTON)), ItemGroup.REDSTONE);
 	public static final RegistryObject<Block> GRIMWOOD_DOOR = HELPER.createBlock("grimwood_door", () -> new WoodDoorBlock(Block.Properties.from(Blocks.OAK_DOOR)), ItemGroup.REDSTONE);
 	public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> GRIMWOOD_SIGNS = HELPER.createSignBlock("grimwood", MaterialColor.PINK);
@@ -351,5 +351,5 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> STRIPPED_GRIMWOOD_POST = HELPER.createCompatFuelBlock("quark", "stripped_grimwood_post", () -> new WoodPostBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_POST = HELPER.createCompatFuelBlock("quark", "grimwood_post", () -> new WoodPostBlock(STRIPPED_GRIMWOOD_POST, Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_HEDGE = HELPER.createCompatFuelBlock("quark", "grimwood_hedge", () -> new HedgeBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.DECORATIONS);
-	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> GRIMWOOD_CHESTS = HELPER.createCompatChestBlocks("grimwood", MaterialColor.BLACK_TERRACOTTA);
+	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> GRIMWOOD_CHESTS = HELPER.createCompatChestBlocks("quark", "grimwood", MaterialColor.BLACK_TERRACOTTA);
 }

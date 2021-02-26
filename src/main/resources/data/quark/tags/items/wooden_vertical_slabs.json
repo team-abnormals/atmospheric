@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:rosewood_vertical_slab",
+    "atmospheric:morado_vertical_slab",
+    "atmospheric:yucca_vertical_slab",
+    "atmospheric:kousa_vertical_slab",
+    "atmospheric:aspen_vertical_slab",
+    "atmospheric:grimwood_vertical_slab"	
+  ]
+}
