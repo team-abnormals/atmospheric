@@ -89,7 +89,6 @@ public class AtmosphericRender {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LADDER.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_POST.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.STRIPPED_ASPEN_POST.get(), RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.WATCHFUL_ASPEN_POST.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LEAVES.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_LEAF_CARPET.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ASPEN_HEDGE.get(), RenderType.getCutoutMipped());

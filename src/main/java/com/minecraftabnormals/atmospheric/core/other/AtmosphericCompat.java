@@ -198,7 +198,6 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_BEEHIVE.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_ASPEN_POST.get(), 5, 20);
-		DataUtil.registerFlammable(AtmosphericBlocks.WATCHFUL_ASPEN_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_HEDGE.get(), 5, 20);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_LEAVES.get(), 30, 60);

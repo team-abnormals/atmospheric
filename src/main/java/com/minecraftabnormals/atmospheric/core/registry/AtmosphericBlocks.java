@@ -314,7 +314,6 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_BEEHIVE = HELPER.createCompatBlock("buzzier_bees", "aspen_beehive", () -> new AbnormalsBeehiveBlock(Block.Properties.from(Blocks.BEEHIVE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_ASPEN_POST = HELPER.createCompatFuelBlock("quark", "stripped_aspen_post", () -> new WoodPostBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_POST = HELPER.createCompatFuelBlock("quark", "aspen_post", () -> new WoodPostBlock(STRIPPED_ASPEN_POST, Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> WATCHFUL_ASPEN_POST = HELPER.createCompatFuelBlock("quark", "watchful_aspen_post", () -> new WoodPostBlock(STRIPPED_ASPEN_POST, Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_HEDGE = HELPER.createCompatFuelBlock("quark", "aspen_hedge", () -> new HedgeBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.DECORATIONS);
 	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> ASPEN_CHESTS = HELPER.createCompatChestBlocks("quark", "aspen", MaterialColor.YELLOW);
 
