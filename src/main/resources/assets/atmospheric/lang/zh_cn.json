@@ -82,11 +82,11 @@
 	"item.atmospheric.passionfruit_tart": "百香果馅饼",
 	"item.atmospheric.passionfruit_sorbet": "百香果冰糕",
 	"item.atmospheric.passion_vine_coil": "百香果藤圈",
-	"item.atmospheric.yellow_blossoms": "黄花",
+	"item.atmospheric.yellow_blossoms": "黄色花朵",
 	
 	"effect.atmospheric.relief": "缓解",
 	"effect.atmospheric.worsening": "恶化",
-	"effect.atmospheric.spitting": "吐唾沫",
+	"effect.atmospheric.spitting": "吐种子",
 	
 	"item.minecraft.potion.effect.relief": "缓解药水",
 	"item.minecraft.potion.effect.relief_strong": "缓解药水",
@@ -121,7 +121,7 @@
 	"item.minecraft.tipped_arrow.effect.worsening_long": "恶化之箭",
 	
 	"biome.atmospheric.rainforest": "雨林",
-	"biome.atmospheric.rainforest_mountains": "雨林山脉",
+	"biome.atmospheric.rainforest_mountains": "雨林山地",
 	"biome.atmospheric.rainforest_plateau": "雨林高原",
 	"biome.atmospheric.sparse_rainforest_plateau": "稀疏雨林高原",
 	"biome.atmospheric.rainforest_basin": "雨林盆地",
@@ -129,11 +129,11 @@
 	
 	"entity.atmospheric.passionfruit_seed": "百香果种子",
 	
-	"death.attack.passionfruitSeed": "%1$s被 %2$s的种子弹幕打成了筛子",
-	"death.attack.shimmeringPassionfruitSeed": "%1$s被 %2$s激烈的种子弹幕打成了筛子",
+	"death.attack.passionfruitSeed": "%1$s被%2$s吐出的百香果种子雨射死了",
+	"death.attack.shimmeringPassionfruitSeed": "%1$s被%2$s疯狂吐出的百香果种子雨射死了",
 	
 	"advancements.husbandry.spit_passionfruit.title": "噗——",
-	"advancements.husbandry.spit_passionfruit.description": "用来自百香果的百香果种子击中敌人",
+	"advancements.husbandry.spit_passionfruit.description": "用吃百香果吐出的百香果种子击中敌人",
 
   "_comment2": "START OF THE SPRINGS SECTION",
 
@@ -178,8 +178,8 @@
 	"block.atmospheric.saffron_travertine_vertical_slab": "藏红石灰华竖直台阶",	
 	
 	"item.atmospheric.spring_water": "泉水",
-	"item.atmospheric.combustive_tonic": "易燃汤力水",
-	"item.atmospheric.charged_tonic": "带电汤力水",
+	"item.atmospheric.combustive_tonic": "易燃的奎宁水",
+	"item.atmospheric.charged_tonic": "带电的奎宁水",
 
 	"biome.atmospheric.hot_springs": "热泉",
 	
