@@ -57,12 +57,12 @@
   "block.atmospheric.morado_trapped_chest": "酸枝木陷阱箱",
   "block.atmospheric.morado_beehive": "酸枝木蜂箱",
 	
-	"block.atmospheric.warm_monkey_brush": "暖和风车子",
-	"block.atmospheric.hot_monkey_brush": "炽热风车子",
-	"block.atmospheric.scalding_monkey_brush": "滚烫风车子",
-	"block.atmospheric.potted_warm_monkey_brush": "暖和风车子盆栽",
-	"block.atmospheric.potted_hot_monkey_brush": "炽热风车子盆栽",
-	"block.atmospheric.potted_scalding_monkey_brush": "滚烫风车子盆栽",
+	"block.atmospheric.warm_monkey_brush": "暖和猴毛风车子",
+	"block.atmospheric.hot_monkey_brush": "炽热猴毛风车子",
+	"block.atmospheric.scalding_monkey_brush": "滚烫猴毛风车子",
+	"block.atmospheric.potted_warm_monkey_brush": "暖和猴毛风车子盆栽",
+	"block.atmospheric.potted_hot_monkey_brush": "炽热猴毛风车子盆栽",
+	"block.atmospheric.potted_scalding_monkey_brush": "滚烫猴毛风车子盆栽",
 	"block.atmospheric.potted_rosewood_sapling": "花梨树树苗盆栽",
   "block.atmospheric.potted_morado_sapling": "酸枝树树苗盆栽",
   
@@ -427,4 +427,3 @@
 	"item.atmospheric.grimwood_boat": "阴郁木船",
  
   "_comment7": "END"
-}
