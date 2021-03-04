@@ -19,7 +19,7 @@ public class AtmosphericEffects {
 	public static final RegistryObject<Effect> RELIEF = EFFECTS.register("relief", ReliefEffect::new);
 	public static final RegistryObject<Effect> WORSENING = EFFECTS.register("worsening", WorseningEffect::new);
 	public static final RegistryObject<Effect> SPITTING = EFFECTS.register("spitting", SpittingEffect::new);
-	public static final RegistryObject<Effect> PERSISTENCE = EFFECTS.register("persistence", () -> new PersistenceEffect().addAttributesModifier(Attributes.MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890", (double) 0F, AttributeModifier.Operation.MULTIPLY_TOTAL));
+	public static final RegistryObject<Effect> PERSISTENCE = EFFECTS.register("persistence", () -> new PersistenceEffect().addAttributesModifier(Attributes.MOVEMENT_SPEED, "7A8BEE59-3D67-4D88-8223-81A15A706AE9", 0.0F, AttributeModifier.Operation.MULTIPLY_TOTAL));
 	public static final RegistryObject<Effect> GELLED = EFFECTS.register("gelled", GelledEffect::new);
 
 	public static final RegistryObject<Potion> RELIEF_NORMAL = POTIONS.register("relief", () -> new Potion(new EffectInstance(RELIEF.get(), 3600)));
