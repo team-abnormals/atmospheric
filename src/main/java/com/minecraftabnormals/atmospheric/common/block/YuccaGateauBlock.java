@@ -79,7 +79,7 @@ public class YuccaGateauBlock extends HorizontalBlock {
 
 	public YuccaGateauBlock(Block.Properties properties) {
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(BITES, Integer.valueOf(0)));
+		this.setDefaultState(this.stateContainer.getBaseState().with(BITES, 0));
 	}
 
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {

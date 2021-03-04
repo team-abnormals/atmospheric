@@ -76,7 +76,7 @@ public class AloeGelBlock extends BreakableBlock {
 	}
 
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		return stateIn.with(WET, Boolean.valueOf(this.touchingWater(currentPos, worldIn)));
+		return stateIn.with(WET, this.touchingWater(currentPos, worldIn));
 	}
 
 	public final boolean touchingWater(BlockPos blockPos, IBlockReader iBlockReader) {
