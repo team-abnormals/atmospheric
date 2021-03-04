@@ -17,7 +17,7 @@
   "conditions": [
     {
       "type": "abnormals_core:quark_flag",
-       "flag": "potato_crate"
+       "flag": "apple_crate"
     }
   ]
 }
