@@ -64,7 +64,7 @@
 	"block.atmospheric.potted_hot_monkey_brush": "炽热猴毛风车子盆栽",
 	"block.atmospheric.potted_scalding_monkey_brush": "滚烫猴毛风车子盆栽",
 	"block.atmospheric.potted_rosewood_sapling": "花梨树树苗盆栽",
-  "block.atmospheric.potted_morado_sapling": "酸枝树树苗盆栽",
+  "block.atmospheric.potted_morado_sapling": "酸枝树苗盆栽",
   
 	"block.atmospheric.passion_vine": "百香果藤",
   "block.atmospheric.passion_vine_bundle": "百香果藤捆", 
@@ -73,12 +73,12 @@
   "block.atmospheric.potted_water_hyacinth": "凤眼莲盆栽",
   
 	"block.atmospheric.passionfruit_crate": "箱装百香果",
-	"block.atmospheric.shimmering_passionfruit_crate": "箱装闪烁百香果",
+	"block.atmospheric.shimmering_passionfruit_crate": "箱装闪烁的百香果",
 	
 	"item.atmospheric.rosewood_boat": "花梨木船",
 	"item.atmospheric.morado_boat": "酸枝木船",
 	"item.atmospheric.passionfruit": "百香果",
-	"item.atmospheric.shimmering_passionfruit": "闪烁百香果",
+	"item.atmospheric.shimmering_passionfruit": "闪烁的百香果",
 	"item.atmospheric.passionfruit_tart": "百香果馅饼",
 	"item.atmospheric.passionfruit_sorbet": "百香果冰糕",
 	"item.atmospheric.passion_vine_coil": "百香果藤圈",
