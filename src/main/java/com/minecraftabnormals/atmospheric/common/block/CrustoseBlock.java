@@ -4,6 +4,8 @@ import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -13,6 +15,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.lighting.LightEngine;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
+import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
 
@@ -32,19 +35,22 @@ public class CrustoseBlock extends Block {
 
 	private static boolean func_220256_c(BlockState state, IWorldReader world, BlockPos pos) {
 		BlockPos blockpos = pos.up();
-		return func_220257_b(state, world, pos)
-				&& !world.getFluidState(blockpos).isTagged(FluidTags.WATER);
+		return func_220257_b(state, world, pos) && !world.getFluidState(blockpos).isTagged(FluidTags.WATER);
+	}
+
+	public BlockState getToolModifiedState(BlockState state, World world, BlockPos pos, PlayerEntity player, ItemStack stack, ToolType toolType) {
+		if (toolType == ToolType.SHOVEL) {
+			return AtmosphericBlocks.CRUSTOSE_PATH.get().getDefaultState();
+		} else {
+			return super.getToolModifiedState(state, world, pos, player, stack, toolType);
+		}
 	}
 
 	@Override
 	public boolean canSustainPlant(BlockState state, IBlockReader blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
 		final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
 		final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
-		if (plantType == PlantType.PLAINS) {
-			return true;
-		} else {
-			return false;
-		}
+		return plantType == PlantType.PLAINS;
 	}
 
 	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {

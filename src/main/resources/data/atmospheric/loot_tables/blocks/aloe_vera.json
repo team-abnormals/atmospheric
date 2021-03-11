@@ -11,30 +11,11 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "minecraft:alternative",
-                  "terms": [
-                    {
-                      "condition": "minecraft:block_state_property",
-                      "block": "atmospheric:aloe_vera",
-                      "properties": {
-                        "age": "3"
-                      }
-                    },
-                    {
-                      "condition": "minecraft:block_state_property",
-                      "block": "atmospheric:aloe_vera",
-                      "properties": {
-                        "age": "4"
-                      }
-                    },
-                    {
-                      "condition": "minecraft:block_state_property",
-                      "block": "atmospheric:aloe_vera",
-                      "properties": {
-                        "age": "5"
-                      }
-                    }
-                  ]
+                  "condition": "minecraft:block_state_property",
+                  "block": "atmospheric:aloe_vera",
+                  "properties": {
+                    "age": "5"
+                  }
                 }
               ],
               "functions": [
@@ -85,30 +66,11 @@
       ],
       "conditions": [
         {
-          "condition": "minecraft:alternative",
-          "terms": [
-            {
-              "condition": "minecraft:block_state_property",
-              "block": "atmospheric:aloe_vera",
-              "properties": {
-                "age": "3"
-              }
-            },
-            {
-              "condition": "minecraft:block_state_property",
-              "block": "atmospheric:aloe_vera",
-              "properties": {
-                "age": "4"
-              }
-            },
-            {
-              "condition": "minecraft:block_state_property",
-              "block": "atmospheric:aloe_vera",
-              "properties": {
-                "age": "5"
-              }
-            }
-          ]
+          "condition": "minecraft:block_state_property",
+          "block": "atmospheric:aloe_vera",
+          "properties": {
+            "age": "5"
+          }
         }
       ]
     }

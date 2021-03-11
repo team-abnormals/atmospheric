@@ -16,6 +16,9 @@ public class AtmosphericProperties {
 	public static final AbstractBlock.Properties ARID_SAND = AbstractBlock.Properties.create(Material.SAND, MaterialColor.SAND).harvestTool(ToolType.SHOVEL).hardnessAndResistance(0.5F).sound(SoundType.SAND);
 	public static final AbstractBlock.Properties RED_ARID_SAND = AbstractBlock.Properties.create(Material.SAND, MaterialColor.ORANGE_TERRACOTTA).harvestTool(ToolType.SHOVEL).hardnessAndResistance(0.5F).sound(SoundType.SAND);
 
+	public static final AbstractBlock.Properties CRUSTOSE_PATH = AbstractBlock.Properties.create(Material.EARTH, MaterialColor.GOLD).hardnessAndResistance(0.65F).sound(SoundType.PLANT).setBlocksVision(AtmosphericProperties::isntSolid).setBlocksVision(AtmosphericProperties::isntSolid);
+	public static final AbstractBlock.Properties ARID_SPROUTS = AbstractBlock.Properties.create(Material.TALL_PLANTS, MaterialColor.SAND).doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.NETHER_SPROUT);
+
 	public static final AbstractBlock.Properties IVORY_TRAVERTINE = AbstractBlock.Properties.create(Material.ROCK, MaterialColor.WHITE_TERRACOTTA).hardnessAndResistance(1.5F, 6.0F);
 	public static final AbstractBlock.Properties PEACH_TRAVERTINE = AbstractBlock.Properties.create(Material.ROCK, MaterialColor.PINK_TERRACOTTA).hardnessAndResistance(1.5F, 6.0F);
 	public static final AbstractBlock.Properties PERSIMMON_TRAVERTINE = AbstractBlock.Properties.create(Material.ROCK, MaterialColor.ORANGE_TERRACOTTA).hardnessAndResistance(1.5F, 6.0F);

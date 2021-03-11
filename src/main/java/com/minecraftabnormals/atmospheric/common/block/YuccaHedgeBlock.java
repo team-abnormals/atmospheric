@@ -1,7 +1,8 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
 import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
-import com.minecraftabnormals.abnormals_core.common.blocks.wood.AbnormalsLeavesBlock;
+import com.minecraftabnormals.abnormals_core.common.blocks.HedgeBlock;
+import com.minecraftabnormals.abnormals_core.common.blocks.LeafCarpetBlock;
 import com.minecraftabnormals.atmospheric.common.block.api.IYuccaPlant;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
@@ -11,36 +12,15 @@ import net.minecraft.entity.MobEntity;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 
-public class YuccaLeavesBlock extends AbnormalsLeavesBlock implements IYuccaPlant {
-	private static final VoxelShape HITBOX = makeCuboidShape(1.0F, 1.0F, 1.0F, 15.0F, 15.0F, 15.0F);
+public class YuccaHedgeBlock extends HedgeBlock implements IYuccaPlant {
 
-	public YuccaLeavesBlock(Properties properties) {
+	public YuccaHedgeBlock(Properties properties) {
 		super(properties);
-	}
-
-	@Override
-	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		return HITBOX;
-	}
-
-	@Override
-	public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		return 1;
-	}
-
-	@Deprecated
-	@OnlyIn(Dist.CLIENT)
-	public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		return 0.2F;
 	}
 
 	@Nullable

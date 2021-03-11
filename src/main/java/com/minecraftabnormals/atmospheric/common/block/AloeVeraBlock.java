@@ -64,19 +64,14 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		int i = state.get(AGE);
 
-		if (i > 2 && player.getHeldItem(handIn).getItem() == Items.SHEARS) {
+		if (i == 5 && player.getHeldItem(handIn).getItem() == Items.SHEARS) {
 			Random rand = new Random();
-
-			int amount = rand.nextInt(5) + 1;
-			if (i == 4) amount = rand.nextInt(5) + 2;
-			if (i == 5) amount = rand.nextInt(5) + 3;
-
 			player.getHeldItem(handIn).damageItem(1, player, (onBroken) -> onBroken.sendBreakAnimation(handIn));
 			worldIn.playSound(null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 			worldIn.playSound(null, pos, SoundEvents.BLOCK_SLIME_BLOCK_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 			worldIn.setBlockState(pos, state.with(AGE, 2));
 
-			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), amount));
+			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), rand.nextInt(5) + 3));
 
 			return ActionResultType.SUCCESS;
 		} else {

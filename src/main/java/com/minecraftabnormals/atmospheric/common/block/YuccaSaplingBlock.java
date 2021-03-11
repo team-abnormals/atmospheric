@@ -59,6 +59,4 @@ public class YuccaSaplingBlock extends AbnormalsSaplingBlock implements IPlantab
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		this.onYuccaCollision(state, worldIn, pos, entityIn);
 	}
-
-	;
 }

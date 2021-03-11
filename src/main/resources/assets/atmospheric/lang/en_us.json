@@ -1,5 +1,4 @@
 {
-  "_comment": "START OF THE ROSEWOOD SECTION",
   "block.atmospheric.rosewood_log": "Rosewood Log",
   "block.atmospheric.rosewood": "Rosewood",
   "block.atmospheric.stripped_rosewood_log": "Stripped Rosewood Log",
@@ -126,6 +125,7 @@
   "block.atmospheric.roasted_yucca_cask": "Roasted Yucca Cask",
   "block.atmospheric.yucca_gateau": "Yucca Gateau",
 
+  "block.atmospheric.arid_sprouts": "Arid Sprouts",
   "block.atmospheric.barrel_cactus": "Barrel Cactus",
   "block.atmospheric.barrel_cactus_batch": "Barrel Cactus Batch",
   "block.atmospheric.aloe_vera": "Aloe Vera",
@@ -240,6 +240,7 @@
   "block.atmospheric.kousa_hedge": "Kousa Hedge",
 
   "block.atmospheric.crustose": "Crustose",
+  "block.atmospheric.crustose_path": "Crustose Path",
   "block.atmospheric.crustose_log": "Crustose Log",
   "block.atmospheric.crustose_wood": "Crustose Wood",
 

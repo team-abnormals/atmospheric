@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "atmospheric:block/arid_sprouts"
+    }
+}

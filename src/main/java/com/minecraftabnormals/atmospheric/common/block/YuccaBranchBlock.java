@@ -98,7 +98,7 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable, IYuccaPlan
 			player.getHeldItem(handIn).damageItem(1, player, (p_213442_1_) -> {
 				p_213442_1_.sendBreakAnimation(handIn);
 			});
-			worldIn.playSound((PlayerEntity) null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+			worldIn.playSound(null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 			worldIn.setBlockState(pos, state.with(SNAPPED, true), 2);
 			return ActionResultType.SUCCESS;
 		} else {
@@ -108,6 +108,7 @@ public class YuccaBranchBlock extends BushBlock implements IGrowable, IYuccaPlan
 
 	@Override
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+		super.onEntityCollision(state, worldIn, pos, entityIn);
 		if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {
 			this.onYuccaCollision(state, worldIn, pos, entityIn);
 		} else if (entityIn instanceof ProjectileEntity && !state.get(SNAPPED)) {

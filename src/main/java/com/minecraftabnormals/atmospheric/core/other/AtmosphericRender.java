@@ -112,6 +112,7 @@ public class AtmosphericRender {
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.HOT_WALL_MONKEY_BRUSH.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.SCALDING_WALL_MONKEY_BRUSH.get(), RenderType.getCutout());
 
+		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.ARID_SPROUTS.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.GILIA.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.PASSION_VINE.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(AtmosphericBlocks.WATER_HYACINTH.get(), RenderType.getCutout());

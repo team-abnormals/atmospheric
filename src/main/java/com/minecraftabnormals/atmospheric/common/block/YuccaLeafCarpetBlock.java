@@ -48,6 +48,4 @@ public class YuccaLeafCarpetBlock extends LeafCarpetBlock implements IYuccaPlant
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		this.onYuccaCollision(state, worldIn, pos, entityIn);
 	}
-
-	;
 }

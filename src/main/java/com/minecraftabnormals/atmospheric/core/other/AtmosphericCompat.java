@@ -57,6 +57,7 @@ public class AtmosphericCompat {
 
 		DataUtil.registerCompostable(AtmosphericBlocks.GILIA.get(), 0.65F);
 
+		DataUtil.registerCompostable(AtmosphericBlocks.ARID_SPROUTS.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericItems.ALOE_KERNELS.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericItems.ALOE_LEAVES.get(), 0.65F);
 		DataUtil.registerCompostable(AtmosphericBlocks.ALOE_BUNDLE.get(), 1.0F);
@@ -95,6 +96,7 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.HOT_MONKEY_BRUSH.get(), 60, 100);
 		DataUtil.registerFlammable(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get(), 60, 100);
 
+		DataUtil.registerFlammable(AtmosphericBlocks.ARID_SPROUTS.get(), 60, 100);
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_FLOWER.get(), 5, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_BRANCH.get(), 5, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(), 5, 60);

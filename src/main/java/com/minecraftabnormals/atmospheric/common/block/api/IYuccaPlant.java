@@ -39,6 +39,4 @@ public interface IYuccaPlant {
 			}
 		}
 	}
-
-	;
 }

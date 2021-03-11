@@ -86,6 +86,4 @@ public class YuccaFlowerBlock extends AbnormalsFlowerBlock implements IGrowable,
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		this.onYuccaCollision(state, worldIn, pos, entityIn);
 	}
-
-	;
 }

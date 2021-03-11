@@ -156,15 +156,15 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 
 			worldIn.playSound(null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
 			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.YELLOW_BLOSSOMS.get(), age - 5));
-			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_KERNELS.get(), age - 5));
+			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_KERNELS.get()));
 			if (state.get(HALF) == DoubleBlockHalf.LOWER) {
 				worldIn.playSound(null, pos, SoundEvents.BLOCK_SLIME_BLOCK_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-				worldIn.setBlockState(pos.up(), Blocks.AIR.getDefaultState(), 35);
-				worldIn.setBlockState(pos, AtmosphericBlocks.ALOE_VERA.get().getDefaultState().with(AloeVeraBlock.AGE, 2), 35);
+				worldIn.setBlockState(pos.up(), Blocks.AIR.getDefaultState(), 18);
+				worldIn.setBlockState(pos, AtmosphericBlocks.ALOE_VERA.get().getDefaultState().with(AloeVeraBlock.AGE, 2), 18);
 				spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), rand.nextInt(5) + 3));
 			} else {
-				worldIn.setBlockState(pos.down(), AtmosphericBlocks.ALOE_VERA.get().getDefaultState().with(AloeVeraBlock.AGE, 5), 35);
-				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 35);
+				worldIn.setBlockState(pos.down(), AtmosphericBlocks.ALOE_VERA.get().getDefaultState().with(AloeVeraBlock.AGE, 5), 18);
+				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 18);
 			}
 
 			return ActionResultType.SUCCESS;

@@ -144,6 +144,7 @@ public class AtmosphericGeneration {
 		DefaultBiomeFeatures.withFrozenTopLayer(builder);
 		DefaultBiomeFeatures.withFossils(builder);
 		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_DEAD_BUSH);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_ARID_SPROUTS);
 		builder.withStructure(AtmosphericStructures.Configured.ARID_SHRINE);
 		DefaultBiomeFeatures.withDesertMobs(spawns);
 	}

@@ -19,10 +19,7 @@ import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.foliageplacer.*;
-import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
-import net.minecraft.world.gen.placement.IPlacementConfig;
-import net.minecraft.world.gen.placement.Placement;
-import net.minecraft.world.gen.placement.TopSolidWithNoiseConfig;
+import net.minecraft.world.gen.placement.*;
 import net.minecraft.world.gen.treedecorator.AlterGroundTreeDecorator;
 import net.minecraft.world.gen.trunkplacer.FancyTrunkPlacer;
 import net.minecraft.world.gen.trunkplacer.GiantTrunkPlacer;
@@ -96,6 +93,7 @@ public class AtmosphericFeatures {
 		public static final BlockClusterFeatureConfig BARREL_CACTUS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(States.BARREL_CACTUS), new SimpleBlockPlacer())).tries(64).build();
 		public static final BlockClusterFeatureConfig ALOE_VERA_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(States.ALOE_VERA), new SimpleBlockPlacer())).tries(64).build();
 		public static final BlockClusterFeatureConfig YUCCA_FLOWER_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(States.YUCCA_FLOWER), new SimpleBlockPlacer())).tries(64).build();
+		public static final BlockClusterFeatureConfig ARID_SPROUTS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(AtmosphericBlocks.ARID_SPROUTS.get().getDefaultState()), SimpleBlockPlacer.PLACER)).tries(32).build();
 
 		public static final BaseTreeFeatureConfig OAK_GROUND_BUSH_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()), new SimpleBlockStateProvider(Blocks.OAK_LEAVES.getDefaultState()), new BushFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(1), 2), new StraightTrunkPlacer(1, 0, 0), new TwoLayerFeature(0, 0, 0))).func_236702_a_(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES).build();
 
@@ -159,6 +157,7 @@ public class AtmosphericFeatures {
 		public static final ConfiguredFeature<?, ?> PATCH_BARREL_CACTUS_FLOURISHING_DUNES = AtmosphericFeatures.BARREL_CACTUS.get().withConfiguration(AtmosphericFeatures.Configs.BARREL_CACTUS_CONFIG).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(0, 0.5F, 4)));
 		public static final ConfiguredFeature<?, ?> PATCH_BARREL_CACTUS_PETRIFIED_DUNES = AtmosphericFeatures.BARREL_CACTUS.get().withConfiguration(AtmosphericFeatures.Configs.BARREL_CACTUS_CONFIG).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(0, 0.1F, 1)));
 		public static final ConfiguredFeature<?, ?> PATCH_DUNE_GRASS = AtmosphericFeatures.COARSE_DIRT_PATCH.get().withConfiguration(new LargeSphereReplaceConfig(Blocks.COARSE_DIRT.getDefaultState(), FeatureSpread.func_242253_a(7, 1), 2, Lists.newArrayList(AtmosphericBlocks.RED_ARID_SAND.get().getDefaultState(), AtmosphericBlocks.ARID_SAND.get().getDefaultState()))).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(0, 0.8F, 1)));
+		public static final ConfiguredFeature<?, ?> PATCH_ARID_SPROUTS = Feature.RANDOM_PATCH.withConfiguration(Configs.ARID_SPROUTS_CONFIG).withPlacement(Features.Placements.PATCH_PLACEMENT);
 
 		public static final ConfiguredFeature<?, ?> YUCCA_TREE = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatures.Configs.YUCCA_TREE_WITH_PATCH_CONFIG).withChance(0.25F)), AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatures.Configs.YUCCA_TREE_CONFIG))).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(0, 0.25F, 1)));
 		public static final ConfiguredFeature<?, ?> YUCCA_TREE_BEEHIVE = AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(AtmosphericFeatures.Configs.YUCCA_TREE_WITH_MORE_BEEHIVES_AND_PATCH_CONFIG).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(0, 0.25F, 1)));
@@ -210,6 +209,7 @@ public class AtmosphericFeatures {
 			register("patch_barrel_cactus_flourishing_dunes", PATCH_BARREL_CACTUS_FLOURISHING_DUNES);
 			register("patch_barrel_cactus_petrified_dunes", PATCH_BARREL_CACTUS_PETRIFIED_DUNES);
 			register("patch_dune_grass", PATCH_DUNE_GRASS);
+			register("patch_arid_sprouts", PATCH_ARID_SPROUTS);
 
 			register("yucca_tree", YUCCA_TREE);
 			register("yucca_tree_beehive", YUCCA_TREE_BEEHIVE);

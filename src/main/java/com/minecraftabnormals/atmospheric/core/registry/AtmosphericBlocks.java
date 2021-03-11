@@ -211,6 +211,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> GILIA = HELPER.createBlock("gilia", () -> new GiliaBlock(() -> Effects.SLOW_FALLING, 9, Block.Properties.from(Blocks.POPPY)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> POTTED_GILIA = HELPER.createBlockNoItem("potted_gilia", () -> new FlowerPotBlock(GILIA.get(), Block.Properties.from(Blocks.POTTED_ALLIUM)));
 
+	public static final RegistryObject<Block> ARID_SPROUTS = HELPER.createBlock("arid_sprouts", () -> new AridSproutsBlock(AtmosphericProperties.ARID_SPROUTS), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> ALOE_VERA = HELPER.createBlockNoItem("aloe_vera", () -> new AloeVeraBlock(AtmosphericProperties.ALOE_VERA));
 	public static final RegistryObject<Block> TALL_ALOE_VERA = HELPER.createBlockNoItem("tall_aloe_vera", () -> new AloeVeraTallBlock(AtmosphericProperties.ALOE_VERA));
 	public static final RegistryObject<Block> ALOE_BUNDLE = HELPER.createBlock("aloe_bundle", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.DRIED_KELP_BLOCK).harvestTool(ToolType.HOE)), ItemGroup.DECORATIONS);
@@ -246,7 +247,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_BEEHIVE = HELPER.createCompatBlock("buzzier_bees", "yucca_beehive", () -> new AbnormalsBeehiveBlock(Block.Properties.from(Blocks.BEEHIVE)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_YUCCA_POST = HELPER.createCompatFuelBlock("quark", "stripped_yucca_post", () -> new WoodPostBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_POST = HELPER.createCompatFuelBlock("quark", "yucca_post", () -> new WoodPostBlock(STRIPPED_YUCCA_POST, Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.BUILDING_BLOCKS);
-	public static final RegistryObject<Block> YUCCA_HEDGE = HELPER.createCompatFuelBlock("quark", "yucca_hedge", () -> new HedgeBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_HEDGE = HELPER.createCompatFuelBlock("quark", "yucca_hedge", () -> new YuccaHedgeBlock(Block.Properties.from(Blocks.OAK_PLANKS)), 300, ItemGroup.DECORATIONS);
 	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> YUCCA_CHESTS = HELPER.createCompatChestBlocks("quark", "yucca", MaterialColor.ADOBE);
 
 	public static final RegistryObject<Block> YUCCA_CASK = HELPER.createCompatBlock("quark", "yucca_cask", () -> new Block(Block.Properties.create(Material.WOOD, MaterialColor.GREEN).hardnessAndResistance(1.5F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
@@ -318,6 +319,7 @@ public class AtmosphericBlocks {
 	public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> ASPEN_CHESTS = HELPER.createCompatChestBlocks("quark", "aspen", MaterialColor.YELLOW);
 
 	public static final RegistryObject<Block> CRUSTOSE = HELPER.createBlock("crustose", () -> new CrustoseBlock(Block.Properties.from(Blocks.DIRT).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CRUSTOSE_PATH = HELPER.createBlock("crustose_path", () -> new GrassPathBlock(AtmosphericProperties.CRUSTOSE_PATH), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> CRUSTOSE_LOG = HELPER.createBlock("crustose_log", () -> new CrustoseLogBlock(ASPEN_LOG::get, Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
 	public static final RegistryObject<Block> CRUSTOSE_WOOD = HELPER.createBlock("crustose_wood", () -> new CrustoseLogBlock(ASPEN_WOOD::get, Block.Properties.from(Blocks.OAK_LOG).tickRandomly()), ItemGroup.BUILDING_BLOCKS);
 
