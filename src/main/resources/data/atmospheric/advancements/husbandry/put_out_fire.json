@@ -18,9 +18,9 @@
   "rewards": {
     "experience": 100
   },
-	"criteria": {
-		"put_out_fire": {
-			"trigger": "atmospheric:put_out_fire"
-		}
-	}
+  "criteria": {
+    "put_out_fire": {
+      "trigger": "atmospheric:put_out_fire"
+    }
+  }
 }

@@ -10,7 +10,7 @@
     "description": {
       "translate": "advancements.adventure.dunes_pricks.description"
     },
-    "frame": "challenge",
+    "frame": "goal",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
@@ -18,11 +18,21 @@
   "rewards": {
     "experience": 100
   },
-	"criteria": {
-		"barrel_cactus": { "trigger": "atmospheric:barrel_cactus_prick" },
-		"yucca_flower": { "trigger": "atmospheric:yucca_flower_prick" },
-		"aloe_vera": { "trigger": "atmospheric:aloe_vera_prick" },
-		"yucca_leaves": { "trigger": "atmospheric:yucca_leaves_prick" },
-		"yucca_branch": { "trigger": "atmospheric:yucca_branch_prick" }
-	}
+  "criteria": {
+    "barrel_cactus": {
+      "trigger": "atmospheric:barrel_cactus_prick"
+    },
+    "yucca_flower": {
+      "trigger": "atmospheric:yucca_flower_prick"
+    },
+    "aloe_vera": {
+      "trigger": "atmospheric:aloe_vera_prick"
+    },
+    "yucca_leaves": {
+      "trigger": "atmospheric:yucca_leaves_prick"
+    },
+    "yucca_branch": {
+      "trigger": "atmospheric:yucca_branch_prick"
+    }
+  }
 }
