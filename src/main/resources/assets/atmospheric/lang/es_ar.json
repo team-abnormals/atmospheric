@@ -1,5 +1,4 @@
 {
-  "_comment": "START OF THE ROSEWOOD SECTION",
   "block.atmospheric.rosewood_log": "Tronco de palisandro",
   "block.atmospheric.rosewood": "Leño de palisandro",
   "block.atmospheric.stripped_rosewood_log": "Tronco de palisandro sin corteza",
@@ -45,7 +44,7 @@
   "block.atmospheric.morado_fence_gate": "Puerta de valla de palo de hierro",
   "block.atmospheric.morado_sapling": "Brote de palo de hierro",
   "block.atmospheric.morado_leaves": "Hojas de palo de hierro",
-  "block.atmospheric.flowering_morado_leaves": "Hojas de palo de hierro florecidas",
+  "block.atmospheric.flowering_morado_leaves": "Hojas de palo de hierro floridas",
   "block.atmospheric.morado_sign": "Cartel de palo de hierro",
   "block.atmospheric.morado_wall_sign": "Cartel de palo de hierro en pared",
 
@@ -54,14 +53,14 @@
   "block.atmospheric.vertical_morado_planks": "Madera vertical de palo de hierro",
   "block.atmospheric.morado_ladder": "Escalera de palo de hierro",
   "block.atmospheric.morado_leaf_carpet": "Alfombra de hojas de palo de hierro",
-  "block.atmospheric.flowering_morado_leaf_carpet": "Alfombra de hojas de palo de hierro florecidas",
+  "block.atmospheric.flowering_morado_leaf_carpet": "Alfombra de hojas de palo de hierro floridas",
   "block.atmospheric.morado_chest": "Cofre de palo de hierro",
   "block.atmospheric.morado_trapped_chest": "Cofre con trampa de palo de hierro",
   "block.atmospheric.morado_beehive": "Apiario de palo de hierro",
   "block.atmospheric.morado_post": "Poste de palo de hierro",
   "block.atmospheric.stripped_morado_post": "Poste de palo de hierro sin corteza",
   "block.atmospheric.morado_hedge": "Seto de palo de hierro",
-  "block.atmospheric.flowering_morado_hedge": "Seto de palo de hierro florecido",
+  "block.atmospheric.flowering_morado_hedge": "Seto de palo de hierro florido",
 
   "block.atmospheric.warm_monkey_brush": "Cepillo de mono cálido",
   "block.atmospheric.hot_monkey_brush": "Cepillo de mono caliente",
@@ -126,6 +125,7 @@
   "block.atmospheric.roasted_yucca_cask": "Barrica de yucas asadas",
   "block.atmospheric.yucca_gateau": "Torta de yuca",
 
+  "block.atmospheric.arid_sprouts": "Brotes áridos",
   "block.atmospheric.barrel_cactus": "Cactus barril",
   "block.atmospheric.barrel_cactus_batch": "Lote de cactus barril",
   "block.atmospheric.aloe_vera": "Aloe vera",
@@ -240,6 +240,7 @@
   "block.atmospheric.kousa_hedge": "Seto de kousa",
 
   "block.atmospheric.crustose": "Costra",
+  "block.atmospheric.crustose_path": "Camino de costra",
   "block.atmospheric.crustose_log": "Tronco costroso",
   "block.atmospheric.crustose_wood": "Leño costroso",
 
@@ -378,8 +379,8 @@
   "advancements.husbandry.finish_gateau.description": "Comé el último pedazo de una torta de yuca",
   "advancements.adventure.dunes_pricks.title": "Picado y rebanado",
   "advancements.adventure.dunes_pricks.description": "Pinchate con todas las fuentes naturales de daño en las dunas",
-  "advancements.husbandry.put_out_fire.title": "Víctima de quemaduras",
-  "advancements.husbandry.put_out_fire.description": "Salvate de quemarte usando hojas de áloe",
+  "advancements.husbandry.put_out_fire.title": "Arde baby, arde",
+  "advancements.husbandry.put_out_fire.description": "Salvate de las quemaduras usando hojas de áloe",
 
   "item.minecraft.potion.effect.relief": "Poción de alivio",
   "item.minecraft.potion.effect.relief_strong": "Poción de alivio",
