@@ -35,10 +35,6 @@ public class AridShrinePieces {
 	private static final BlockPos STRUCTURE_OFFSET = new BlockPos(0, 0, 0);
 	private static final ResourceLocation STRUCTURE = new ResourceLocation(Atmospheric.MOD_ID, "arid_shrine/arid_shrine");
 
-	public static void func_204760_a(TemplateManager p_204760_0_, BlockPos p_204760_1_, Rotation p_204760_2_, List<StructurePiece> p_204760_3_, Random random) {
-		p_204760_3_.add(new AridShrinePieces.Piece(p_204760_0_, p_204760_1_, p_204760_2_));
-	}
-
 	public static class Piece extends TemplateStructurePiece {
 		private final Rotation rotation;
 
@@ -92,20 +88,6 @@ public class AridShrinePieces {
 
 		@Override
 		public boolean func_230383_a_(ISeedReader world, StructureManager manager, ChunkGenerator generator, Random random, MutableBoundingBox boundingBox, ChunkPos chunkPos, BlockPos blockPos) {
-			int i = 256;
-			BlockPos blockpos = this.template.getSize();
-			int k = blockpos.getX() * blockpos.getZ();
-			if (k != 0) {
-				BlockPos blockpos1 = this.templatePosition.add(blockpos.getX() - 1, 0, blockpos.getZ() - 1);
-
-				for (BlockPos blockpos2 : BlockPos.getAllInBoxMutable(this.templatePosition, blockpos1)) {
-					int l = world.getHeight(Heightmap.Type.WORLD_SURFACE_WG, blockpos2.getX(), blockpos2.getZ());
-					i = Math.min(i, l);
-				}
-			}
-
-			int i1 = i - 4;
-			this.templatePosition = new BlockPos(this.templatePosition.getX(), i1, this.templatePosition.getZ());
 			return super.func_230383_a_(world, manager, generator, random, boundingBox, chunkPos, blockPos);
 		}
 	}
