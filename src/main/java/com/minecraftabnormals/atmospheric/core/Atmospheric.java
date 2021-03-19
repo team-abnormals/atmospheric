@@ -52,10 +52,7 @@ public class Atmospheric {
 			AtmosphericBiomes.registerBiomesToDictionary();
 			AtmosphericBiomes.addBiomeVariants();
 			AtmosphericVillagers.setupVillagerTypes();
-			AtmosphericCompat.registerCompostables();
-			AtmosphericCompat.registerFlammables();
-			AtmosphericCompat.registerDispenserBehaviors();
-			AtmosphericCompat.registerLootInjectors();
+			AtmosphericCompat.registerCompat();
 			AtmosphericEffects.registerBrewingRecipes();
 		});
 	}

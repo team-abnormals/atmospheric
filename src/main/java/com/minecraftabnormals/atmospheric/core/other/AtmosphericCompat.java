@@ -7,10 +7,25 @@ import com.minecraftabnormals.atmospheric.common.data.PassionVineDispenseBehavio
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericItems;
+import net.minecraft.block.Block;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.loot.LootTables;
+import net.minecraft.world.gen.carver.WorldCarver;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class AtmosphericCompat {
+
+	public static void registerCompat() {
+		registerLootInjectors();
+		registerDispenserBehaviors();
+		registerCompostables();
+		registerFlammables();
+		registerCarvers();
+	}
 
 	public static void registerLootInjectors() {
 		LootInjectionRegistry.LootInjector injector = new LootInjectionRegistry.LootInjector(Atmospheric.MOD_ID);
@@ -20,6 +35,17 @@ public class AtmosphericCompat {
 	public static void registerDispenserBehaviors() {
 		DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
 		DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
+	}
+
+	public static void registerCarvers() {
+		ForgeRegistries.WORLD_CARVERS.forEach(carver -> {
+			Set<Block> allBlocksToCarve = new HashSet<>(carver.carvableBlocks);
+			allBlocksToCarve.add(AtmosphericBlocks.ARID_SAND.get());
+			allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
+			allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SAND.get());
+			allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
+			carver.carvableBlocks = allBlocksToCarve;
+		});
 	}
 
 	public static void registerCompostables() {

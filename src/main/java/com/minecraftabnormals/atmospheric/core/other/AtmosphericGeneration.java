@@ -3,10 +3,8 @@ package com.minecraftabnormals.atmospheric.core.other;
 import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericStructures;
-import net.minecraft.block.Block;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
@@ -15,17 +13,12 @@ import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.Features;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.common.world.MobSpawnInfoBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.HashSet;
-import java.util.Set;
-import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericGeneration {
@@ -35,19 +28,6 @@ public class AtmosphericGeneration {
 		ResourceLocation biome = event.getName();
 		BiomeGenerationSettingsBuilder generation = event.getGeneration();
 		MobSpawnInfoBuilder spawns = event.getSpawns();
-
-		Set<Block> allBlocksToCarve = new HashSet<>();
-		allBlocksToCarve.add(AtmosphericBlocks.ARID_SAND.get());
-		allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
-		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SAND.get());
-		allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
-
-		for (GenerationStage.Carving carverStage : GenerationStage.Carving.values()) {
-			for (Supplier<ConfiguredCarver<?>> carver : event.getGeneration().getCarvers(carverStage)) {
-				allBlocksToCarve.addAll(carver.get().carver.carvableBlocks);
-				carver.get().carver.carvableBlocks = allBlocksToCarve;
-			}
-		}
 
 		if (biome != null) {
 			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST_PLATEAU.getKey()))
