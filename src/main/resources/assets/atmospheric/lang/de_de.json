@@ -26,6 +26,9 @@
   "block.atmospheric.rosewood_leaf_carpet": "Palisanderlaubteppich",
   "block.atmospheric.rosewood_chest": "Palisanderholztruhe",
   "block.atmospheric.rosewood_trapped_chest": "Redstone-Palisanderholztruhe",
+  "block.atmospheric.rosewood_post": "Palisanderholzpfahl",
+  "block.atmospheric.stripped_rosewood_post": "Entrindeter Palisanderholzpfahl",
+  "block.atmospheric.rosewood_hedge": "Palisanderhecke",
   "block.atmospheric.rosewood_beehive": "Palisanderholzbienenstock",
   
   "block.atmospheric.morado_log": "Eisenstamm",
@@ -55,6 +58,10 @@
   "block.atmospheric.flowering_morado_leaf_carpet": "Blüteneisenlaubteppich",
   "block.atmospheric.morado_chest": "Eisenholztruhe",
   "block.atmospheric.morado_trapped_chest": "Redstone-Eisenholztruhe",
+  "block.atmospheric.morado_post": "Eisenholzpfahl",
+  "block.atmospheric.stripped_morado_post": "Entrindeter Eisenholzpfahl",
+  "block.atmospheric.morado_hedge": "Eisenhecke",
+  "block.atmospheric.flowering_morado_hedge": "Blüteneisenhecke",
   "block.atmospheric.morado_beehive": "Eisenholzbienenstock",
 	
 	"block.atmospheric.warm_monkey_brush": "Warme Langfäden",
@@ -213,6 +220,9 @@
   "block.atmospheric.yucca_leaf_carpet": "Yuccalaubteppich",
   "block.atmospheric.yucca_chest": "Yuccaholztruhe",
   "block.atmospheric.yucca_trapped_chest": "Redstone-Yuccaholztruhe",
+  "block.atmospheric.yucca_post": "Yuccaholzpfahl",
+  "block.atmospheric.stripped_yucca_post": "Entrindeter Yuccaholzpfahl",
+  "block.atmospheric.yucca_hedge": "Yuccahecke",
   "block.atmospheric.yucca_beehive": "Yuccaholzbienenstock",
   
 	"block.atmospheric.yucca_flower": "Yuccablume",
@@ -230,6 +240,7 @@
 	"block.atmospheric.roasted_yucca_cask": "Gebranntes Yuccafass",
 	"block.atmospheric.yucca_gateau": "Yuccatorte",
 	
+	"block.atmospheric.arid_sprouts": "Trockensprossen",
 	"block.atmospheric.barrel_cactus": "Echinokaktus",
 	"block.atmospheric.barrel_cactus_batch": "Echinokaktusbündel",
 	"block.atmospheric.aloe_vera": "Aloe Vera",
@@ -351,6 +362,9 @@
 	"block.atmospheric.kousa_leaf_carpet": "Hartriegellaubteppich",
 	"block.atmospheric.kousa_chest": "Hartriegelholztruhe",
   "block.atmospheric.kousa_trapped_chest": "Redstone-Hartriegelholztruhe",
+  "block.atmospheric.kousa_post": "Hartriegelholzpfahl",
+  "block.atmospheric.stripped_kousa_post": "Entrindeter Hartriegelholzpfahl",
+  "block.atmospheric.kousa_hedge": "Hartriegelhecke",
 	"block.atmospheric.kousa_beehive": "Hartriegelholzbienenstock",
 	
 	"item.atmospheric.kousa_boat": "Hartriegelholzboot",
@@ -358,6 +372,7 @@
   "_comment5": "START OF THE ASPEN SECTION",
   
 	"block.atmospheric.crustose": "Krustenblock",
+	"block.atmospheric.crustose_path": "Krustenpfad",
 	"block.atmospheric.crustose_log": "Krustenstamm",
 	"block.atmospheric.crustose_wood": "Krustenholz",
   
@@ -365,8 +380,8 @@
 	"block.atmospheric.aspen_wood": "Espenholz",
 	"block.atmospheric.stripped_aspen_log": "Entrindeter Espenstamm",
 	"block.atmospheric.stripped_aspen_wood": "Entrindetes Espenholz",
-	"block.atmospheric.watchful_aspen_log": "Wachsamer Espenstamm",
-	"block.atmospheric.watchful_aspen_wood": "Wachsames Espenholz",
+	"block.atmospheric.watchful_aspen_log": "Wachsamespenstamm",
+	"block.atmospheric.watchful_aspen_wood": "Wachsamespenholz",
 	"block.atmospheric.aspen_planks": "Espenholzbretter",
 	"block.atmospheric.aspen_stairs": "Espenholztreppe",
 	"block.atmospheric.aspen_slab": "Espenholzstufe",
@@ -390,6 +405,10 @@
 	"block.atmospheric.aspen_leaf_carpet": "Espenlaubteppich",
 	"block.atmospheric.aspen_chest": "Espenholztruhe",
   "block.atmospheric.aspen_trapped_chest": "Redstone-Espenholztruhe",
+  "block.atmospheric.aspen_post": "Espenholzpfahl",
+  "block.atmospheric.stripped_aspen_post": "Entrindeter Espenholzpfahl",
+  "block.atmospheric.watchful_aspen_post": "Wachsamespenholzpfahl",
+  "block.atmospheric.aspen_hedge": "Espenhecke",
 	"block.atmospheric.aspen_beehive": "Espenholzbienenstock",
 	
 	"item.atmospheric.aspen_boat": "Espenholzboot",
@@ -422,6 +441,9 @@
 	"block.atmospheric.grimwood_leaf_carpet": "Grimmlaubteppich",
 	"block.atmospheric.grimwood_chest": "Grimmholztruhe",
 	"block.atmospheric.grimwood_trapped_chest": "Redstone-Grimmholztruhe",
+	"block.atmospheric.grimwood_post": "Grimmholzpfahl",
+  "block.atmospheric.stripped_grimwood_post": "Entrindeter Grimmholzpfahl",
+  "block.atmospheric.grimwood_hedge": "Grimmhecke",
 	"block.atmospheric.grimwood_beehive": "Grimmholzbienenstock",
 	
 	"item.atmospheric.grimwood_boat": "Grimmholzboot",
