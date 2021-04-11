@@ -49,7 +49,7 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
-            args "--mod", "allurement", "--all", "--output", file("src/generated/resources/"), '--existing', sourceSets.main.resources.srcDirs[0]
+            args "--mod", project.modId, "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources")
             mods {
                 atmospheric {
                     source sourceSets.main
