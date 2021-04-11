@@ -5,10 +5,10 @@
       "item": "atmospheric:yucca_flower"
     },
     "title": {
-      "translate": "advancements.adventure.dunes_pricks.title"
+      "translate": "advancements.atmospheric.adventure.dunes_pricks.title"
     },
     "description": {
-      "translate": "advancements.adventure.dunes_pricks.description"
+      "translate": "advancements.atmospheric.adventure.dunes_pricks.description"
     },
     "frame": "goal",
     "show_toast": true,

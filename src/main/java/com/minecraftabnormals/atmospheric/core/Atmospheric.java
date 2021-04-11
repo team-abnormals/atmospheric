@@ -40,6 +40,7 @@ public class Atmospheric {
 		bus.addListener(this::clientSetup);
 
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
+		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, AtmosphericConfig.CLIENT_SPEC);
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {

@@ -7,6 +7,7 @@ license = "https://github.com/team-abnormals/atmospheric/blob/main/LICENSE.txt"
     modId = "atmospheric"
     version = "${file.jarVersion}"
     logoFile = "logo.png"
+    itemIcon = "atmospheric:passionfruit"
     authors = "Team Abnormals"
     credits = "bageldotjpg, five"
     displayName = "Atmospheric"
@@ -19,20 +20,20 @@ license = "https://github.com/team-abnormals/atmospheric/blob/main/LICENSE.txt"
 [[dependencies.atmospheric]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.16.3,1.17)"
+    versionRange = "[1.16.5,1.17)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.atmospheric]]
     modId = "forge"
     mandatory = true
-    versionRange = "[36.0.4,)"
+    versionRange = "[36.1.0,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.atmospheric]]
     modId = "abnormals_core"
     mandatory = true
-    versionRange = "[3.1.0,)"
+    versionRange = "[3.1.1,)"
     ordering = "AFTER"
     side = "BOTH"

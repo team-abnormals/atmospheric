@@ -5,10 +5,10 @@
       "item": "atmospheric:aloe_leaves"
     },
     "title": {
-      "translate": "advancements.husbandry.put_out_fire.title"
+      "translate": "advancements.atmospheric.husbandry.put_out_fire.title"
     },
     "description": {
-      "translate": "advancements.husbandry.put_out_fire.description"
+      "translate": "advancements.atmospheric.husbandry.put_out_fire.description"
     },
     "frame": "task",
     "show_toast": true,
