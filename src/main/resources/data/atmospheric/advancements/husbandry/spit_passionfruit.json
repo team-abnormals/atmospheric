@@ -15,12 +15,9 @@
     "announce_to_chat": true,
     "hidden": false
   },
-  "rewards": {
-    "experience": 100
-  },
-	"criteria": {
-		"spit_passionfruit": {
-			"trigger": "atmospheric:spit_passionfruit"
-		}
-	}
+  "criteria": {
+    "spit_passionfruit": {
+      "trigger": "atmospheric:spit_passionfruit"
+    }
+  }
 }

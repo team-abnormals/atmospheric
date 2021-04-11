@@ -15,9 +15,6 @@
     "announce_to_chat": true,
     "hidden": false
   },
-  "rewards": {
-    "experience": 100
-  },
   "criteria": {
     "barrel_cactus": {
       "trigger": "atmospheric:barrel_cactus_prick"
