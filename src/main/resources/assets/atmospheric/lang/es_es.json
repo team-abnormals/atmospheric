@@ -330,10 +330,6 @@
   "item.atmospheric.aloe_gel_bottle": "Frasco con gel de áloe",
   "item.atmospheric.yellow_blossoms": "Flores amarillas",
 
-  "item.atmospheric.spring_water": "Agua de manantial",
-  "item.atmospheric.combustive_tonic": "Tónico comburente",
-  "item.atmospheric.charged_tonic": "Tónico cargado",
-
   "effect.atmospheric.relief": "Alivio",
   "effect.atmospheric.worsening": "Empeoramiento",
   "effect.atmospheric.spitting": "Salivación",
@@ -354,8 +350,6 @@
   "biome.atmospheric.rocky_dunes_hills": "Colinas de dunas rocosas",
   "biome.atmospheric.petrified_dunes": "Dunas petrificadas",
 
-  "biome.atmospheric.hot_springs": "Aguas termales",
-
   "entity.atmospheric.passionfruit_seed": "Semilla de maracuyá",
 
   "death.attack.atmospheric.passionfruitSeed": "%1$s ha sido bombardeado/a con las semillas de %2$s",
@@ -373,14 +367,16 @@
   "death.attack.atmospheric.aloeLeaves": "%1$s ha muerto entre espinas de áloe",
   "death.attack.atmospheric.aloeLeaves.player": "%1$s ha muerto entre espinas de áloe mientras intentaba huir de %2$s",
 
-  "advancements.husbandry.spit_passionfruit.title": "A escupitajos",
-  "advancements.husbandry.spit_passionfruit.description": "Ataca a un enemigo con semillas de maracuyá",
-  "advancements.husbandry.finish_gateau.title": "Que coman... ¿pasteles?",
-  "advancements.husbandry.finish_gateau.description": "Come el último trozo de una tarta de yuca",
-  "advancements.adventure.dunes_pricks.title": "Picado y rebanado",
-  "advancements.adventure.dunes_pricks.description": "Pínchate con todas las fuentes naturales de daño en las dunas",
-  "advancements.husbandry.put_out_fire.title": "Arde baby, arde",
-  "advancements.husbandry.put_out_fire.description": "Sálvate de las quemaduras usando hojas de áloe",
+  "advancements.atmospheric.husbandry.spit_passionfruit.title": "A escupitajos",
+  "advancements.atmospheric.husbandry.spit_passionfruit.description": "Ataca a un enemigo con semillas de maracuyá",
+  "advancements.atmospheric.husbandry.finish_gateau.title": "Que coman... ¿pasteles?",
+  "advancements.atmospheric.husbandry.finish_gateau.description": "Come el último trozo de una tarta de yuca",
+  "advancements.atmospheric.adventure.dunes_pricks.title": "Picado y rebanado",
+  "advancements.atmospheric.adventure.dunes_pricks.description": "Pínchate con todas las fuentes naturales de daño en las dunas",
+  "advancements.atmospheric.husbandry.put_out_fire.title": "Arde baby, arde",
+  "advancements.atmospheric.husbandry.put_out_fire.description": "Sálvate de las quemaduras usando hojas de áloe",
+
+  "tooltip.atmospheric.unobtainable": "Inobtenible",
 
   "item.minecraft.potion.effect.relief": "Poción de alivio",
   "item.minecraft.potion.effect.relief_strong": "Poción de alivio",
