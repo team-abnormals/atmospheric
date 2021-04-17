@@ -31,7 +31,7 @@
     
     "block.atmospheric.morado_log": "Moradowy pień",
     "block.atmospheric.morado_wood": "Moradowe drewno",
-    "block.atmospheric.stripped_morado_log": "Okorowany moradowe pień",
+    "block.atmospheric.stripped_morado_log": "Okorowany moradowy pień",
     "block.atmospheric.stripped_morado_wood": "Okorowane moradowe drewno",
     "block.atmospheric.morado_planks": "Moradowe deski",
     "block.atmospheric.morado_stairs": "Moradowe schody",
@@ -79,46 +79,6 @@
   
 	"block.atmospheric.passionfruit_crate": "Skrzynka marakui",
 	"block.atmospheric.shimmering_passionfruit_crate": "Skrzynka lśniącej marakui",
-
-	"block.atmospheric.ivory_travertine": "Trawertyn z kości słoniowej",
-	"block.atmospheric.peach_travertine": "Trawertyn brzoskwiniowy",	
-	"block.atmospheric.persimmon_travertine": "Trawertyn hurmowy",
-	"block.atmospheric.saffron_travertine": "Trawertyn szafranowy",	
-	
-	"block.atmospheric.chiseled_ivory_travertine": "Rzeźbiony trawertyn z kości słoniowej",
-	"block.atmospheric.chiseled_peach_travertine": "Rzeźbiony trawertyn brzoskwiniowy",	
-	"block.atmospheric.chiseled_persimmon_travertine": "Rzeźbiony trawertyn hurmowy",
-	"block.atmospheric.chiseled_saffron_travertine": "Rzeźbiony trawertyn szafranowy",	
-	
-	"block.atmospheric.cut_ivory_travertine": "Przycięty trawertyn z kości słoniowej",
-	"block.atmospheric.cut_peach_travertine": "Przycięty trawertyn brzoskwiniowy",	
-	"block.atmospheric.cut_persimmon_travertine": "Przycięty trawertyn hurmowy",
-	"block.atmospheric.cut_saffron_travertine": "Przycięty trawertyn szafranowy",	
-	
-	"block.atmospheric.ivory_travertine_stairs": "Trawertynowe schody z kości słoniowej",
-	"block.atmospheric.peach_travertine_stairs": "Trawertynowe schody brzoskwiniowe",	
-	"block.atmospheric.persimmon_travertine_stairs": "Trawertynowe schody hurmowe",
-	"block.atmospheric.saffron_travertine_stairs": "Trawertynowe schody szafranowe",	
-	
-	"block.atmospheric.ivory_travertine_slab": "Trawertynowa płyta z kości słoniowej",
-	"block.atmospheric.peach_travertine_slab": "Trawertynowa płyta brzoskwiniowa",	
-	"block.atmospheric.persimmon_travertine_slab": "Trawertynowa płyta hurmowa",
-	"block.atmospheric.saffron_travertine_slab": "Trawertynowa płyta szafranowa",	
-	
-	"block.atmospheric.ivory_travertine_wall": "Trawertynowy murek z kości słoniowej",
-	"block.atmospheric.peach_travertine_wall": "Trawertynowy murek brzoskwiniowy",	
-	"block.atmospheric.persimmon_travertine_wall": "Trawertynowy murek hurmowy",
-	"block.atmospheric.saffron_travertine_wall": "Trawertynowy murek szafranowy",	
-	
-	"block.atmospheric.ivory_fumarole_block": "Blok fumaroli z kości słoniowej",
-	"block.atmospheric.peach_fumarole_block": "Blok fumaroli brzoskwiniowej",	
-	"block.atmospheric.persimmon_fumarole_block": "Blok fumaroli hurmowej",
-	"block.atmospheric.saffron_fumarole_block": "Blok fumaroli szafranowej",	
-	
-	"block.atmospheric.ivory_travertine_vertical_slab": "Pionowa trawertynowa płyta z kości słoniowej",
-	"block.atmospheric.peach_travertine_vertical_slab": "Pionowa trawertynowa płyta brzoskwiniowa",	
-	"block.atmospheric.persimmon_travertine_vertical_slab": "Pionowa trawertynowa płyta hurmowa",
-	"block.atmospheric.saffron_travertine_vertical_slab": "Pionowa trawertynowa płyta szafranowa",
   
 	"block.atmospheric.yucca_log": "Jukkowy pień",
 	"block.atmospheric.yucca_wood": "Jukkowe drewno",
@@ -165,6 +125,7 @@
 	"block.atmospheric.roasted_yucca_cask": "Baryłka pieczonej jukki",
 	"block.atmospheric.yucca_gateau": "Jukkowe ciasto",
 	
+    "block.atmospheric.arid_sprouts": "Suche kiełki",
 	"block.atmospheric.barrel_cactus": "Fotel teściowej",
 	"block.atmospheric.barrel_cactus_batch": "Wiązka fotelu teściowej",
 	"block.atmospheric.aloe_vera": "Aloes",
@@ -215,6 +176,38 @@
 	"block.atmospheric.red_arid_sandstone_brick_slab": "Sucha czerwona piaskowcowa ceglana płyta",
 	"block.atmospheric.red_arid_sandstone_brick_wall": "Suchy czerwony piaskowcowy ceglany murek",	
   
+    "block.atmospheric.ivory_travertine": "Trawertyn z kości słoniowej",
+    "block.atmospheric.chiseled_ivory_travertine": "Rzeźbiony trawertyn z kości słoniowej",
+    "block.atmospheric.cut_ivory_travertine": "Przycięty trawertyn z kości słoniowej",
+    "block.atmospheric.ivory_travertine_stairs": "Trawertynowe schody z kości słoniowej",
+    "block.atmospheric.ivory_travertine_slab": "Trawertynowa płyta z kości słoniowej",
+    "block.atmospheric.ivory_travertine_wall": "Trawertynowy murek z kości słoniowej",
+    "block.atmospheric.ivory_travertine_vertical_slab": "Pionowa trawertynowa płyta z kości słoniowej",
+    
+	"block.atmospheric.peach_travertine": "Trawertyn brzoskwiniowy",
+    "block.atmospheric.chiseled_peach_travertine": "Rzeźbiony trawertyn brzoskwiniowy",	
+    "block.atmospheric.cut_peach_travertine": "Przycięty trawertyn brzoskwiniowy",
+    "block.atmospheric.peach_travertine_stairs": "Trawertynowe schody brzoskwiniowe",	
+    "block.atmospheric.peach_travertine_slab": "Trawertynowa płyta brzoskwiniowa",	
+    "block.atmospheric.peach_travertine_wall": "Trawertynowy murek brzoskwiniowy",
+    "block.atmospheric.peach_travertine_vertical_slab": "Pionowa trawertynowa płyta brzoskwiniowa",	
+    
+	"block.atmospheric.persimmon_travertine": "Trawertyn hurmowy",
+    "block.atmospheric.chiseled_persimmon_travertine": "Rzeźbiony trawertyn hurmowy",
+    "block.atmospheric.cut_persimmon_travertine": "Przycięty trawertyn hurmowy",
+    "block.atmospheric.persimmon_travertine_stairs": "Trawertynowe schody hurmowe",
+    "block.atmospheric.persimmon_travertine_slab": "Trawertynowa płyta hurmowa",
+    "block.atmospheric.persimmon_travertine_wall": "Trawertynowy murek hurmowy",
+    "block.atmospheric.persimmon_travertine_vertical_slab": "Pionowa trawertynowa płyta hurmowa",
+    
+	"block.atmospheric.saffron_travertine": "Trawertyn szafranowy",	
+	"block.atmospheric.chiseled_saffron_travertine": "Rzeźbiony trawertyn szafranowy",	
+	"block.atmospheric.cut_saffron_travertine": "Przycięty trawertyn szafranowy",	
+	"block.atmospheric.saffron_travertine_stairs": "Trawertynowe schody szafranowe",	
+	"block.atmospheric.saffron_travertine_slab": "Trawertynowa płyta szafranowa",	
+	"block.atmospheric.saffron_travertine_wall": "Trawertynowy murek szafranowy",	
+	"block.atmospheric.saffron_travertine_vertical_slab": "Pionowa trawertynowa płyta szafranowa",	
+    
 	"block.atmospheric.kousa_log": "Dereniowy pień",
 	"block.atmospheric.kousa_wood": "Dereniowe drewno",
 	"block.atmospheric.stripped_kousa_log": "Okorowany dereniowy pień",
@@ -247,6 +240,7 @@
     "block.atmospheric.kousa_hedge": "Dereniowy żywopłot",
   
 	"block.atmospheric.crustose": "Skorupiała ziemia porostowa",
+    "block.atmospheric.crustose_path": "Skorupiała ścieżka porostowa",
 	"block.atmospheric.crustose_log": "Skorupiały pień porostowy",
 	"block.atmospheric.crustose_wood": "Skorupiałe drewno porostowe",
   
@@ -266,7 +260,7 @@
 	"block.atmospheric.aspen_fence": "Osikowy płot",
 	"block.atmospheric.aspen_fence_gate": "Osikowa furtka",
 	"block.atmospheric.aspen_sapling": "Sadzonka osiki",
-    
+    "block.atmospheric.aspen_sapling": "Sadzonka osiki w doniczce",
 	"block.atmospheric.aspen_leaves": "Osikowe liście",
 	"block.atmospheric.aspen_sign": "Osikowa tabliczka",
 	"block.atmospheric.aspen_wall_sign": "Osikowa ścienna tabliczka",
@@ -336,10 +330,6 @@
 	"item.atmospheric.aloe_gel_bottle": "Butelka z żelem aloesowym",
 	"item.atmospheric.yellow_blossoms": "Żółte kwiaty",
     
-    "item.atmospheric.spring_water": "Źródlana woda",
-	"item.atmospheric.combustive_tonic": "Wybuchowy tonik",
-	"item.atmospheric.charged_tonic": "Naładowany tonik",
-    
     "effect.atmospheric.relief": "Ulga",
 	"effect.atmospheric.worsening": "Pogorszenie",
 	"effect.atmospheric.spitting": "Plucie",
@@ -359,9 +349,7 @@
 	"biome.atmospheric.rocky_dunes": "Skaliste wydmy",
 	"biome.atmospheric.rocky_dunes_hills": "Wzgórza skalistych wydm",
 	"biome.atmospheric.petrified_dunes": "Skamieniałe wydmy",
-    
-    "biome.atmospheric.hot_springs": "Gorące źródła",
-	
+
 	"entity.atmospheric.passionfruit_seed": "Nasiono marakui",
     
     "death.attack.passionfruitSeed": "Gracz %1$s został zbombardowany nasiona przez %2$s",
@@ -378,8 +366,6 @@
 	"death.attack.barrelCactus.player": "Gracz %1$s usiadł na fotelu teściowej podczas walki z %2$s",
 	"death.attack.aloeLeaves": "Gracz %1$s został pokłuty przez liście aloesu",
 	"death.attack.aloeLeaves.player": "Gracz %1$s został pokłuty przez liście aloesu podczas walki z %2$s",
-    "death.attack.fumarole": "Gracz %1$s próbował przytulić gejzer, ale został odrzucony",
-	"death.attack.fumarole.player": "Gracz %1$s próbował przytulić gejzer podczas walki z %2$s",
     
     "advancements.husbandry.spit_passionfruit.title": "Strzały ostrzegawcze",
 	"advancements.husbandry.spit_passionfruit.description": "Traf we wroga plując nasionami marakui",
@@ -390,6 +376,8 @@
 	"advancements.husbandry.put_out_fire.title": "Ofiara poparzeń",
 	"advancements.husbandry.put_out_fire.description": "Uratuj się od spłonięcia używając liści aloesu",
     
+    "tooltip.atmospheric.unobtainable": "Nie do zdobycia",
+
     "item.minecraft.potion.effect.relief": "Mikstura ulgi",
 	"item.minecraft.potion.effect.relief_strong": "Mikstura ulgi",
 	"item.minecraft.potion.effect.relief_long": "Mikstura ulgi",
