@@ -56,6 +56,9 @@ public class AtmosphericGeneration {
 				generation.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE);
 			if (DataUtil.matchesKeys(biome, Biomes.SHATTERED_SAVANNA, Biomes.SHATTERED_SAVANNA_PLATEAU))
 				generation.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_SAVANNA);
+
+			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.HOT_SPRINGS.getKey()))
+				withHotSpringsFeatures(generation, spawns);
 		}
 	}
 
@@ -165,6 +168,31 @@ public class AtmosphericGeneration {
 		builder.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, AtmosphericFeatures.Configured.FOSSIL_SURFACE);
 		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_PETRIFIED);
 		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_PETRIFIED_DUNES);
+	}
+
+	public static void withHotSpringsFeatures(BiomeGenerationSettingsBuilder builder, MobSpawnInfoBuilder spawns) {
+		DefaultBiomeFeatures.withStrongholdAndMineshaft(builder);
+		DefaultBiomeFeatures.withCavesAndCanyons(builder);
+		DefaultBiomeFeatures.withLavaAndWaterLakes(builder);
+		DefaultBiomeFeatures.withMonsterRoom(builder);
+		DefaultBiomeFeatures.withCommonOverworldBlocks(builder);
+		DefaultBiomeFeatures.withOverworldOres(builder);
+		DefaultBiomeFeatures.withDisks(builder);
+		DefaultBiomeFeatures.withNormalMushroomGeneration(builder);
+		DefaultBiomeFeatures.withLavaAndWaterSprings(builder);
+		DefaultBiomeFeatures.withFrozenTopLayer(builder);
+		DefaultBiomeFeatures.withForestRocks(builder);
+		DefaultBiomeFeatures.withLargeFern(builder);
+		DefaultBiomeFeatures.withTaigaVegetation(builder);
+		DefaultBiomeFeatures.withGiantTaigaGrassVegetation(builder);
+		DefaultBiomeFeatures.withSparseBerries(builder);
+		builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.TREES_GIANT_SPRUCE);
+
+		DefaultBiomeFeatures.withPassiveMobs(spawns);
+		spawns.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.WOLF, 8, 4, 4));
+		spawns.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.RABBIT, 4, 2, 3));
+		spawns.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.FOX, 8, 2, 4));
+		DefaultBiomeFeatures.withBatsAndHostiles(spawns);
 	}
 
 	public static void withRainforestFoliage(BiomeGenerationSettings.Builder builder) {

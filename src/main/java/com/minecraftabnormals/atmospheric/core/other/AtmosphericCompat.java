@@ -10,8 +10,6 @@ import com.minecraftabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.loot.LootTables;
-import net.minecraft.world.gen.carver.WorldCarver;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.HashSet;
@@ -39,12 +37,19 @@ public class AtmosphericCompat {
 
 	public static void registerCarvers() {
 		ForgeRegistries.WORLD_CARVERS.forEach(carver -> {
-			Set<Block> allBlocksToCarve = new HashSet<>(carver.carvableBlocks);
-			allBlocksToCarve.add(AtmosphericBlocks.ARID_SAND.get());
-			allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
-			allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SAND.get());
-			allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
-			carver.carvableBlocks = allBlocksToCarve;
+			Set<Block> blocks = new HashSet<>(carver.carvableBlocks);
+
+			blocks.add(AtmosphericBlocks.ARID_SAND.get());
+			blocks.add(AtmosphericBlocks.ARID_SANDSTONE.get());
+			blocks.add(AtmosphericBlocks.RED_ARID_SAND.get());
+			blocks.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
+
+			blocks.add(AtmosphericBlocks.IVORY_TRAVERTINE.get());
+			blocks.add(AtmosphericBlocks.PEACH_TRAVERTINE.get());
+			blocks.add(AtmosphericBlocks.PERSIMMON_TRAVERTINE.get());
+			blocks.add(AtmosphericBlocks.SAFFRON_TRAVERTINE.get());
+
+			carver.carvableBlocks = blocks;
 		});
 	}
 

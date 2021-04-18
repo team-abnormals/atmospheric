@@ -2,7 +2,6 @@ package com.minecraftabnormals.atmospheric.common.block;
 
 import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
 import com.minecraftabnormals.abnormals_core.common.blocks.HedgeBlock;
-import com.minecraftabnormals.abnormals_core.common.blocks.LeafCarpetBlock;
 import com.minecraftabnormals.atmospheric.common.block.api.IYuccaPlant;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;

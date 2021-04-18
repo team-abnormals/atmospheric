@@ -1,11 +1,9 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import com.google.common.collect.ImmutableList;
 import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.FallingBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
@@ -15,18 +13,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FlowersFeature;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
 
-import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
 import java.util.Random;
-import java.util.function.Supplier;
 
 public class AridSandBlock extends FallingBlock implements IGrowable {
 	private final int color;

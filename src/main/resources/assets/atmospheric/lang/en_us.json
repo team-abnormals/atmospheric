@@ -350,6 +350,8 @@
   "biome.atmospheric.rocky_dunes_hills": "Rocky Dunes Hills",
   "biome.atmospheric.petrified_dunes": "Petrified Dunes",
 
+  "biome.atmospheric.hot_springs": "Hot Springs",
+
   "entity.atmospheric.passionfruit_seed": "Passionfruit Seed",
 
   "death.attack.atmospheric.passionfruitSeed": "%1$s was barraged to death by %2$s's seeds",

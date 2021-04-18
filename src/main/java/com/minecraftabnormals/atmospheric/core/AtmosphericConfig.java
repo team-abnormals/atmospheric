@@ -21,6 +21,8 @@ public class AtmosphericConfig {
 		public final ConfigValue<Integer> rockyDunesHillsWeight;
 		public final ConfigValue<Integer> petrifiedDunesWeight;
 
+		public final ConfigValue<Integer> hotSpringsWeight;
+
 		Common(ForgeConfigSpec.Builder builder) {
 			builder.push("world");
 			builder.push("biomes");
@@ -41,6 +43,10 @@ public class AtmosphericConfig {
 			rockyDunesWeight = builder.define("Rocky Dunes weight", 4);
 			rockyDunesHillsWeight = builder.define("Rocky Dunes Hills weight", 0);
 			petrifiedDunesWeight = builder.define("Petrified Dunes weight", 0);
+			builder.pop();
+
+			builder.push("hot_springs");
+			hotSpringsWeight = builder.define("Hot Springs weight", 1);
 			builder.pop();
 
 			builder.pop();
