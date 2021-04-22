@@ -350,6 +350,8 @@
   "biome.atmospheric.rocky_dunes_hills": "Colinas de dunas rocosas",
   "biome.atmospheric.petrified_dunes": "Dunas petrificadas",
 
+  "biome.atmospheric.hot_springs": "Aguas termales",
+
   "entity.atmospheric.passionfruit_seed": "Semilla de maracuyá",
 
   "death.attack.atmospheric.passionfruitSeed": "%1$s fue bombardeado/a con las semillas de %2$s",
