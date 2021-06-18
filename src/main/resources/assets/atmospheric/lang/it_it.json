@@ -15,7 +15,7 @@
   "block.atmospheric.rosewood_sapling": "Arboscello di palissandro",
   "block.atmospheric.rosewood_leaves": "Foglie di palissandro",
   "block.atmospheric.rosewood_sign": "Cartello di palissandro",
-  "block.atmospheric.rosewood_wall_sign": "Cartello di palissandro su parete",
+  "block.atmospheric.rosewood_wall_sign": "Cartello di palissandro a parete",
 
   "block.atmospheric.rosewood_bookshelf": "Libreria di palissandro",
   "block.atmospheric.rosewood_vertical_slab": "Lastra verticale di palissandro",
@@ -46,7 +46,7 @@
   "block.atmospheric.morado_leaves": "Foglie di leopardo",
   "block.atmospheric.flowering_morado_leaves": "Foglie fiorenti di leopardo",
   "block.atmospheric.morado_sign": "Cartello di leopardo",
-  "block.atmospheric.morado_wall_sign": "Cartello di leopardo su parete",
+  "block.atmospheric.morado_wall_sign": "Cartello di leopardo a parete",
 
   "block.atmospheric.morado_bookshelf": "Libreria di leopardo",
   "block.atmospheric.morado_vertical_slab": "Lastra di leopardo",
@@ -65,17 +65,17 @@
   "block.atmospheric.warm_monkey_brush": "Spazzola della scimmia calda",
   "block.atmospheric.hot_monkey_brush": "Spazzola della scimmia scottante",
   "block.atmospheric.scalding_monkey_brush": "Spazzola della scimmia cocente",
-  "block.atmospheric.potted_warm_monkey_brush": "Spazzola della scimmia calda in vaso",
-  "block.atmospheric.potted_hot_monkey_brush": "Spazzola della scimmia scottante in vaso",
-  "block.atmospheric.potted_scalding_monkey_brush": "Spazzola della scimmia cocente in vaso",
-  "block.atmospheric.potted_rosewood_sapling": "Arboscello di palissandro in vaso",
-  "block.atmospheric.potted_morado_sapling": "Arboscello di leopardo in vaso",
+  "block.atmospheric.potted_warm_monkey_brush": "Vaso con spazzola della scimmia calda",
+  "block.atmospheric.potted_hot_monkey_brush": "Vaso con spazzola della scimmia scottante",
+  "block.atmospheric.potted_scalding_monkey_brush": "Vaso con spazzola della scimmia cocente",
+  "block.atmospheric.potted_rosewood_sapling": "Vaso con arboscello di palissandro",
+  "block.atmospheric.potted_morado_sapling": "Vaso con arboscello di leopardo",
 
   "block.atmospheric.passion_vine": "Passiflora",
   "block.atmospheric.passion_vine_bundle": "Fascio di passiflora",
 
   "block.atmospheric.water_hyacinth": "Giacinto d'acqua",
-  "block.atmospheric.potted_water_hyacinth": "Giacinto d'acqua in vaso",
+  "block.atmospheric.potted_water_hyacinth": "Vaso con giacinto d'acqua",
 
   "block.atmospheric.passionfruit_crate": "Cassa di frutto della passione",
   "block.atmospheric.shimmering_passionfruit_crate": "Cassa di frutto della passione scintillante",
@@ -96,7 +96,7 @@
   "block.atmospheric.yucca_sapling": "Arboscello di yucca",
   "block.atmospheric.yucca_leaves": "Foglie di yucca",
   "block.atmospheric.yucca_sign": "Cartello di yucca",
-  "block.atmospheric.yucca_wall_sign": "Cartello di yucca su parete",
+  "block.atmospheric.yucca_wall_sign": "Cartello di yucca a parete",
 
   "block.atmospheric.yucca_bookshelf": "Libreria di yucca",
   "block.atmospheric.yucca_vertical_slab": "Lastra verticale di yucca",
@@ -225,7 +225,7 @@
   "block.atmospheric.potted_kousa_sapling": "Arboscello di kousa in vaso",
   "block.atmospheric.kousa_leaves": "Foglie di kousa",
   "block.atmospheric.kousa_sign": "Cartello di kousa",
-  "block.atmospheric.kousa_wall_sign": "Cartello di kousa su parete",
+  "block.atmospheric.kousa_wall_sign": "Cartello di kousa a parete",
 
   "block.atmospheric.kousa_bookshelf": "Libreria di kousa",
   "block.atmospheric.kousa_vertical_slab": "Lastra verticale di kousa",
@@ -263,7 +263,7 @@
   "block.atmospheric.potted_aspen_sapling": "Arboscello di aspen in vaso",
   "block.atmospheric.aspen_leaves": "Foglie di aspen",
   "block.atmospheric.aspen_sign": "Cartello di aspen",
-  "block.atmospheric.aspen_wall_sign": "Cartello di aspen su parete",
+  "block.atmospheric.aspen_wall_sign": "Cartello di aspen a parete",
 
   "block.atmospheric.aspen_bookshelf": "Libreria di aspen",
   "block.atmospheric.aspen_vertical_slab": "Lastra verticale di aspen",
@@ -295,7 +295,7 @@
   "block.atmospheric.potted_grimwood_sapling": "Arboscello cupo in vaso",
   "block.atmospheric.grimwood_leaves": "Foglie cupe",
   "block.atmospheric.grimwood_sign": "Cartello cupo",
-  "block.atmospheric.grimwood_wall_sign": "Cartello cupo su parete",
+  "block.atmospheric.grimwood_wall_sign": "Cartello cupo a parete",
 
   "block.atmospheric.grimwood_bookshelf": "Libreria cupa",
   "block.atmospheric.grimwood_vertical_slab": "Lastra verticale cupa",
