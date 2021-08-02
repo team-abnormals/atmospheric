@@ -1,5 +1,6 @@
 package com.minecraftabnormals.atmospheric.core;
 
+import com.minecraftabnormals.abnormals_core.core.annotations.ConfigKey;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
 import org.apache.commons.lang3.tuple.Pair;
@@ -7,20 +8,46 @@ import org.apache.commons.lang3.tuple.Pair;
 public class AtmosphericConfig {
 
 	public static class Common {
+
+		@ConfigKey("rainforest_weight")
 		public final ConfigValue<Integer> rainforestWeight;
+
+		@ConfigKey("rainforest_mountains_weight")
 		public final ConfigValue<Integer> rainforestMountainsWeight;
+
+		@ConfigKey("rainforest_plateau_weight")
 		public final ConfigValue<Integer> rainforestPlateauWeight;
+
+		@ConfigKey("sparse_rainforest_plateau_weight")
 		public final ConfigValue<Integer> sparseRainforestPlateauWeight;
+
+		@ConfigKey("rainforest_basin_weight")
 		public final ConfigValue<Integer> rainforestBasinWeight;
+
+		@ConfigKey("sparse_rainforest_basin_weight")
 		public final ConfigValue<Integer> sparseRainforestBasinWeight;
 
+
+		@ConfigKey("dunes_weight")
 		public final ConfigValue<Integer> dunesWeight;
+
+		@ConfigKey("dunes_hills_weight")
 		public final ConfigValue<Integer> dunesHillsWeight;
+
+		@ConfigKey("flourishing_dunes_weight")
 		public final ConfigValue<Integer> flourishingDunesWeight;
+
+		@ConfigKey("rocky_dunes_weight")
 		public final ConfigValue<Integer> rockyDunesWeight;
+
+		@ConfigKey("rocky_dunes_hills_weight")
 		public final ConfigValue<Integer> rockyDunesHillsWeight;
+
+		@ConfigKey("petrified_dunes_weight")
 		public final ConfigValue<Integer> petrifiedDunesWeight;
 
+
+		@ConfigKey("hot_springs_weight")
 		public final ConfigValue<Integer> hotSpringsWeight;
 
 		Common(ForgeConfigSpec.Builder builder) {
@@ -55,6 +82,8 @@ public class AtmosphericConfig {
 	}
 
 	public static class Client {
+
+		@ConfigKey("show_unobtainable_description")
 		public final ConfigValue<Boolean> showUnobtainableDescription;
 
 		public Client(ForgeConfigSpec.Builder builder) {

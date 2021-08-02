@@ -1,5 +1,6 @@
 package com.minecraftabnormals.atmospheric.core;
 
+import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericRender;
@@ -41,6 +42,7 @@ public class Atmospheric {
 
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
 		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, AtmosphericConfig.CLIENT_SPEC);
+		DataUtil.registerConfigCondition(Atmospheric.MOD_ID, AtmosphericConfig.COMMON, AtmosphericConfig.CLIENT);
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
