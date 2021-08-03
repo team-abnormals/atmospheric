@@ -18,22 +18,22 @@ public class YuccaJuiceItem extends Item {
 		super(properties);
 	}
 
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
-		super.onItemUseFinish(stack, worldIn, entityLiving);
+	public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entityLiving) {
+		super.finishUsingItem(stack, worldIn, entityLiving);
 		if (entityLiving instanceof ServerPlayerEntity) {
 			ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityLiving;
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverplayerentity, stack);
-			serverplayerentity.addStat(Stats.ITEM_USED.get(this));
+			serverplayerentity.awardStat(Stats.ITEM_USED.get(this));
 		}
 
 		if (stack.isEmpty()) {
 			return new ItemStack(Items.GLASS_BOTTLE);
 		} else {
-			if (entityLiving instanceof PlayerEntity && !((PlayerEntity) entityLiving).abilities.isCreativeMode) {
+			if (entityLiving instanceof PlayerEntity && !((PlayerEntity) entityLiving).abilities.instabuild) {
 				ItemStack itemstack = new ItemStack(Items.GLASS_BOTTLE);
 				PlayerEntity playerentity = (PlayerEntity) entityLiving;
-				if (!playerentity.inventory.addItemStackToInventory(itemstack)) {
-					playerentity.dropItem(itemstack, false);
+				if (!playerentity.inventory.add(itemstack)) {
+					playerentity.drop(itemstack, false);
 				}
 			}
 
@@ -42,12 +42,12 @@ public class YuccaJuiceItem extends Item {
 	}
 
 	@Override
-	public UseAction getUseAction(ItemStack stack) {
+	public UseAction getUseAnimation(ItemStack stack) {
 		return UseAction.DRINK;
 	}
 
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-		playerIn.setActiveHand(handIn);
-		return ActionResult.resultSuccess(playerIn.getHeldItem(handIn));
+	public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
+		playerIn.startUsingItem(handIn);
+		return ActionResult.success(playerIn.getItemInHand(handIn));
 	}
 }

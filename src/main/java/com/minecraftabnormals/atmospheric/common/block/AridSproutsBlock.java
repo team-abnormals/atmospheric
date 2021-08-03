@@ -11,7 +11,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraftforge.common.PlantType;
 
 public class AridSproutsBlock extends BushBlock {
-	protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
+	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
 
 	public AridSproutsBlock(AbstractBlock.Properties properties) {
 		super(properties);
@@ -21,8 +21,8 @@ public class AridSproutsBlock extends BushBlock {
 		return SHAPE;
 	}
 
-	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		return super.isValidGround(state, worldIn, pos);
+	protected boolean mayPlaceOn(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		return super.mayPlaceOn(state, worldIn, pos);
 	}
 
 	@Override

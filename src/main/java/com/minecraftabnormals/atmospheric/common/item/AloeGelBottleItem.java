@@ -10,9 +10,9 @@ public class AloeGelBottleItem extends YuccaJuiceItem {
 		super(properties);
 	}
 
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
-		entityLiving.extinguish();
-		return super.onItemUseFinish(stack, worldIn, entityLiving);
+	public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entityLiving) {
+		entityLiving.clearFire();
+		return super.finishUsingItem(stack, worldIn, entityLiving);
 
 	}
 }

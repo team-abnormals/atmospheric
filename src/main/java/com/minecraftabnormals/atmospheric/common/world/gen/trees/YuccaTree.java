@@ -19,29 +19,29 @@ import java.util.Random;
 public class YuccaTree extends Tree {
 	@Nullable
 	protected ConfiguredFeature<YuccaTreeFeatureConfig, ?> getYuccaTreeFeature(Random randomIn, boolean beehive) {
-		return AtmosphericFeatures.YUCCA_TREE.get().withConfiguration(randomIn.nextInt(10) == 0 ? AtmosphericFeatures.Configs.BABY_YUCCA_TREE_CONFIG : beehive ? AtmosphericFeatures.Configs.YUCCA_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatures.Configs.YUCCA_TREE_CONFIG);
+		return AtmosphericFeatures.YUCCA_TREE.get().configured(randomIn.nextInt(10) == 0 ? AtmosphericFeatures.Configs.BABY_YUCCA_TREE_CONFIG : beehive ? AtmosphericFeatures.Configs.YUCCA_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatures.Configs.YUCCA_TREE_CONFIG);
 	}
 
 	@Override
-	public boolean attemptGrowTree(ServerWorld world, ChunkGenerator chunkGenerator, BlockPos pos, BlockState state, Random rand) {
+	public boolean growTree(ServerWorld world, ChunkGenerator chunkGenerator, BlockPos pos, BlockState state, Random rand) {
 		ConfiguredFeature<YuccaTreeFeatureConfig, ?> configuredfeature = this.getYuccaTreeFeature(rand, this.hasNearbyFlora(world, pos));
 		if (configuredfeature == null) {
 			return false;
 		} else {
-			world.setBlockState(pos, Blocks.AIR.getDefaultState(), 4);
+			world.setBlock(pos, Blocks.AIR.defaultBlockState(), 4);
 			configuredfeature.config.forcePlacement();
-			if (configuredfeature.generate(world, chunkGenerator, rand, pos)) {
+			if (configuredfeature.place(world, chunkGenerator, rand, pos)) {
 				return true;
 			} else {
-				world.setBlockState(pos, state, 4);
+				world.setBlock(pos, state, 4);
 				return false;
 			}
 		}
 	}
 
 	private boolean hasNearbyFlora(IWorld world, BlockPos pos) {
-		for (BlockPos blockpos : BlockPos.Mutable.getAllInBoxMutable(pos.down().north(2).west(2), pos.up().south(2).east(2))) {
-			if (world.getBlockState(blockpos).isIn(BlockTags.FLOWERS)) {
+		for (BlockPos blockpos : BlockPos.Mutable.betweenClosed(pos.below().north(2).west(2), pos.above().south(2).east(2))) {
+			if (world.getBlockState(blockpos).is(BlockTags.FLOWERS)) {
 				return true;
 			}
 		}
@@ -50,7 +50,7 @@ public class YuccaTree extends Tree {
 	}
 
 	@Override
-	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean largeHive) {
+	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredFeature(Random randomIn, boolean largeHive) {
 		return null;
 	}
 }

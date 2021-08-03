@@ -23,23 +23,23 @@ public class MonkeyBrushFeature extends Feature<NoFeatureConfig> {
 	}
 
 	@Override
-	public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config) {
-		BlockState blockstate = AtmosphericBlocks.HOT_MONKEY_BRUSH.get().getDefaultState();
+	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config) {
+		BlockState blockstate = AtmosphericBlocks.HOT_MONKEY_BRUSH.get().defaultBlockState();
 		if (temp == 3) {
-			blockstate = AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().getDefaultState();
+			blockstate = AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().defaultBlockState();
 		} else if (temp == 1) {
-			blockstate = AtmosphericBlocks.WARM_MONKEY_BRUSH.get().getDefaultState();
+			blockstate = AtmosphericBlocks.WARM_MONKEY_BRUSH.get().defaultBlockState();
 		}
 		int i = 0;
 
 		for (int j = 0; j < 64; ++j) {
-			BlockPos blockpos = pos.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-			if (worldIn.isAirBlock(blockpos) && blockpos.getY() < 255 && blockstate.isValidPosition(worldIn, blockpos)) {
-				Direction randomD = Direction.getRandomDirection(rand);
-				while (!monkeyBrushState(blockstate, randomD).isValidPosition(worldIn, blockpos)) {
-					randomD = Direction.getRandomDirection(rand);
+			BlockPos blockpos = pos.offset(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+			if (worldIn.isEmptyBlock(blockpos) && blockpos.getY() < 255 && blockstate.canSurvive(worldIn, blockpos)) {
+				Direction randomD = Direction.getRandom(rand);
+				while (!monkeyBrushState(blockstate, randomD).canSurvive(worldIn, blockpos)) {
+					randomD = Direction.getRandom(rand);
 				}
-				worldIn.setBlockState(blockpos, monkeyBrushState(blockstate, randomD), 2);
+				worldIn.setBlock(blockpos, monkeyBrushState(blockstate, randomD), 2);
 				++i;
 			}
 		}
@@ -49,15 +49,15 @@ public class MonkeyBrushFeature extends Feature<NoFeatureConfig> {
 
 	public static BlockState monkeyBrushState(BlockState state, Direction direction) {
 		if (direction.getAxis().isVertical() && state.getBlock() instanceof MonkeyBrushBlock) {
-			return state.with(MonkeyBrushBlock.FACING, direction);
+			return state.setValue(MonkeyBrushBlock.FACING, direction);
 		} else {
 			if (state.getBlock() == AtmosphericBlocks.WARM_MONKEY_BRUSH.get())
-				state = AtmosphericBlocks.WARM_WALL_MONKEY_BRUSH.get().getDefaultState();
+				state = AtmosphericBlocks.WARM_WALL_MONKEY_BRUSH.get().defaultBlockState();
 			if (state.getBlock() == AtmosphericBlocks.HOT_MONKEY_BRUSH.get())
-				state = AtmosphericBlocks.HOT_WALL_MONKEY_BRUSH.get().getDefaultState();
+				state = AtmosphericBlocks.HOT_WALL_MONKEY_BRUSH.get().defaultBlockState();
 			if (state.getBlock() == AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get())
-				state = AtmosphericBlocks.SCALDING_WALL_MONKEY_BRUSH.get().getDefaultState();
-			return state.with(WallMonkeyBrushBlock.FACING, direction);
+				state = AtmosphericBlocks.SCALDING_WALL_MONKEY_BRUSH.get().defaultBlockState();
+			return state.setValue(WallMonkeyBrushBlock.FACING, direction);
 		}
 	}
 }

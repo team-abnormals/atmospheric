@@ -21,7 +21,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 
 public class YuccaLeavesBlock extends AbnormalsLeavesBlock implements IYuccaPlant {
-	private static final VoxelShape HITBOX = makeCuboidShape(1.0F, 1.0F, 1.0F, 15.0F, 15.0F, 15.0F);
+	private static final VoxelShape HITBOX = box(1.0F, 1.0F, 1.0F, 15.0F, 15.0F, 15.0F);
 
 	public YuccaLeavesBlock(Properties properties) {
 		super(properties);
@@ -33,13 +33,13 @@ public class YuccaLeavesBlock extends AbnormalsLeavesBlock implements IYuccaPlan
 	}
 
 	@Override
-	public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	public int getLightBlock(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		return 1;
 	}
 
 	@Deprecated
 	@OnlyIn(Dist.CLIENT)
-	public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	public float getShadeBrightness(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		return 0.2F;
 	}
 
@@ -65,7 +65,7 @@ public class YuccaLeavesBlock extends AbnormalsLeavesBlock implements IYuccaPlan
 	}
 
 	@Override
-	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+	public void entityInside(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		this.onYuccaCollision(state, worldIn, pos, entityIn);
 	}
 }

@@ -20,21 +20,21 @@ public class PassionVineFeature extends Feature<NoFeatureConfig> {
 	}
 
 	@Override
-	public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config) {
+	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config) {
 		int i = 0;
 		for (int j = 0; j < 400; ++j) {
-			Direction direction = Direction.Plane.HORIZONTAL.random(rand);
-			BlockState blockstate = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction);
-			BlockPos blockpos = pos.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+			Direction direction = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
+			BlockState blockstate = AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction);
+			BlockPos blockpos = pos.offset(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
 			int lengthA = 3 + rand.nextInt(2) + rand.nextInt(2) + rand.nextInt(2) - rand.nextInt(3);
 
-			if (worldIn.isAirBlock(blockpos) && blockpos.getY() > 50 && blockpos.getY() < 255 && blockstate.isValidPosition(worldIn, blockpos)) {
-				worldIn.setBlockState(blockpos, getVineState(worldIn, blockstate, blockpos, rand), 6);
+			if (worldIn.isEmptyBlock(blockpos) && blockpos.getY() > 50 && blockpos.getY() < 255 && blockstate.canSurvive(worldIn, blockpos)) {
+				worldIn.setBlock(blockpos, getVineState(worldIn, blockstate, blockpos, rand), 6);
 				for (int length = 0; length < lengthA; ++length) {
-					blockpos = blockpos.down();
-					if (worldIn.isAirBlock(blockpos) && blockpos.getY() < 255 && blockstate.isValidPosition(worldIn, blockpos)) {
-						worldIn.setBlockState(blockpos, getVineState(worldIn, blockstate, blockpos, rand), 6);
+					blockpos = blockpos.below();
+					if (worldIn.isEmptyBlock(blockpos) && blockpos.getY() < 255 && blockstate.canSurvive(worldIn, blockpos)) {
+						worldIn.setBlock(blockpos, getVineState(worldIn, blockstate, blockpos, rand), 6);
 					} else {
 						break;
 					}
@@ -46,10 +46,10 @@ public class PassionVineFeature extends Feature<NoFeatureConfig> {
 	}
 
 	private static BlockState getVineState(ISeedReader world, BlockState state, BlockPos pos, Random rand) {
-		if (world.getBlockState(pos.offset(state.get(PassionVineBlock.FACING).getOpposite())).isIn(AtmosphericTags.PASSION_VINE_GROWABLE_ON)) {
-			return state.with(PassionVineBlock.AGE, 4);
+		if (world.getBlockState(pos.relative(state.getValue(PassionVineBlock.FACING).getOpposite())).is(AtmosphericTags.PASSION_VINE_GROWABLE_ON)) {
+			return state.setValue(PassionVineBlock.AGE, 4);
 		} else {
-			return state.with(PassionVineBlock.AGE, 1);
+			return state.setValue(PassionVineBlock.AGE, 1);
 		}
 	}
 }

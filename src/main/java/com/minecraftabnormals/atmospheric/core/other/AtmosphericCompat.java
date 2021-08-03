@@ -31,13 +31,13 @@ public class AtmosphericCompat {
 	}
 
 	public static void registerDispenserBehaviors() {
-		DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
-		DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
+		DispenserBlock.registerBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
+		DispenserBlock.registerBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
 	}
 
 	public static void registerCarvers() {
 		ForgeRegistries.WORLD_CARVERS.forEach(carver -> {
-			Set<Block> blocks = new HashSet<>(carver.carvableBlocks);
+			Set<Block> blocks = new HashSet<>(carver.replaceableBlocks);
 
 			blocks.add(AtmosphericBlocks.ARID_SAND.get());
 			blocks.add(AtmosphericBlocks.ARID_SANDSTONE.get());
@@ -49,7 +49,7 @@ public class AtmosphericCompat {
 			blocks.add(AtmosphericBlocks.PERSIMMON_TRAVERTINE.get());
 			blocks.add(AtmosphericBlocks.SAFFRON_TRAVERTINE.get());
 
-			carver.carvableBlocks = blocks;
+			carver.replaceableBlocks = blocks;
 		});
 	}
 

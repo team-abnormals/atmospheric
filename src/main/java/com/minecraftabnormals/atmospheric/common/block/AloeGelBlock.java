@@ -35,19 +35,19 @@ public class AloeGelBlock extends BreakableBlock {
 
 	public AloeGelBlock(Properties properties) {
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(WET, Boolean.valueOf(false)));
+		this.registerDefaultState(this.stateDefinition.any().setValue(WET, Boolean.valueOf(false)));
 	}
 
 	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		return state.get(WET) ? VoxelShapes.fullCube() : VoxelShapes.empty();
+		return state.getValue(WET) ? VoxelShapes.block() : VoxelShapes.empty();
 	}
 
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return this.getDefaultState().with(WET, Boolean.valueOf(this.touchingWater(context.getPos(), context.getWorld())));
+		return this.defaultBlockState().setValue(WET, Boolean.valueOf(this.touchingWater(context.getClickedPos(), context.getLevel())));
 	}
 
 
-	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
 		builder.add(WET);
 	}
 
@@ -56,12 +56,12 @@ public class AloeGelBlock extends BreakableBlock {
 	}
 
 	public boolean isStickyBlock(BlockState state) {
-		return !state.get(WET);
+		return !state.getValue(WET);
 	}
 
 	@Override
 	public boolean isSlimeBlock(BlockState state) {
-		return !state.get(WET);
+		return !state.getValue(WET);
 	}
 
 	public boolean canStickTo(BlockState state, BlockState other) {
@@ -75,13 +75,13 @@ public class AloeGelBlock extends BreakableBlock {
 		return super.canStickTo(state, other);
 	}
 
-	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		return stateIn.with(WET, this.touchingWater(currentPos, worldIn));
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+		return stateIn.setValue(WET, this.touchingWater(currentPos, worldIn));
 	}
 
 	public final boolean touchingWater(BlockPos blockPos, IBlockReader iBlockReader) {
 		for (Direction direction : Direction.values()) {
-			if (iBlockReader.getFluidState(blockPos.offset(direction)).isTagged(FluidTags.WATER)) {
+			if (iBlockReader.getFluidState(blockPos.relative(direction)).is(FluidTags.WATER)) {
 				return true;
 			}
 		}
@@ -94,13 +94,13 @@ public class AloeGelBlock extends BreakableBlock {
 		return PathNodeType.DAMAGE_OTHER;
 	}
 
-	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-		if (!state.get(WET)) {
-			entity.setMotionMultiplier(state, new Vector3d(0.25D, 0.25D, 0.25D));
+	public void entityInside(BlockState state, World world, BlockPos pos, Entity entity) {
+		if (!state.getValue(WET)) {
+			entity.makeStuckInBlock(state, new Vector3d(0.25D, 0.25D, 0.25D));
 			if (entity instanceof LivingEntity) {
 				LivingEntity living = (LivingEntity) entity;
-				living.addPotionEffect(new EffectInstance(Effects.POISON, 150, 0, false, true, true));
-				living.addPotionEffect(new EffectInstance(AtmosphericEffects.GELLED.get(), 330, 0, false, false, true));
+				living.addEffect(new EffectInstance(Effects.POISON, 150, 0, false, true, true));
+				living.addEffect(new EffectInstance(AtmosphericEffects.GELLED.get(), 330, 0, false, false, true));
 			}
 		}
 	}

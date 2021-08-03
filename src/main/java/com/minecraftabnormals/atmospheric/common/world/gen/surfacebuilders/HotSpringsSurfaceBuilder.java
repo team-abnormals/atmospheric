@@ -18,24 +18,24 @@ public class HotSpringsSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfi
 	}
 
 	@Override
-	public void buildSurface(Random random, IChunk chunk, Biome biome, int x, int z, int height, double noise, BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig surfaceBlocks) {
+	public void apply(Random random, IChunk chunk, Biome biome, int x, int z, int height, double noise, BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig surfaceBlocks) {
 		if (height > 80) {
-			SurfaceBuilder.DEFAULT.buildSurface(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(Blocks.COARSE_DIRT.getDefaultState(), Blocks.COARSE_DIRT.getDefaultState(), Blocks.GRAVEL.getDefaultState()));
+			SurfaceBuilder.DEFAULT.apply(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(Blocks.COARSE_DIRT.defaultBlockState(), Blocks.COARSE_DIRT.defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
 			return;
 		}
 
-		BlockState state = AtmosphericBlocks.IVORY_TRAVERTINE.get().getDefaultState();
+		BlockState state = AtmosphericBlocks.IVORY_TRAVERTINE.get().defaultBlockState();
 		if (noise > -0.1 && noise < 2.9) {
-			state = AtmosphericBlocks.PEACH_TRAVERTINE.get().getDefaultState();
+			state = AtmosphericBlocks.PEACH_TRAVERTINE.get().defaultBlockState();
 			if (noise > 0.4 && noise < 2.4) {
-				state = AtmosphericBlocks.PERSIMMON_TRAVERTINE.get().getDefaultState();
+				state = AtmosphericBlocks.PERSIMMON_TRAVERTINE.get().defaultBlockState();
 				if (noise > 0.9 && noise < 1.9) {
-					state = AtmosphericBlocks.SAFFRON_TRAVERTINE.get().getDefaultState();
+					state = AtmosphericBlocks.SAFFRON_TRAVERTINE.get().defaultBlockState();
 				}
 			}
 		}
 
-		SurfaceBuilder.DEFAULT.buildSurface(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(state, state, state));
+		SurfaceBuilder.DEFAULT.apply(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(state, state, state));
 
 	}
 }

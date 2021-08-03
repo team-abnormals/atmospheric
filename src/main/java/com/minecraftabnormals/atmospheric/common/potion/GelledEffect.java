@@ -10,15 +10,15 @@ public class GelledEffect extends Effect {
 		super(EffectType.BENEFICIAL, 3145554);
 	}
 
-	public void performEffect(LivingEntity entity, int amplifier) {
-		int timer = entity.getFireTimer() - ((amplifier + 1) * 40);
-		entity.setFire(timer < 0 ? 0 : timer);
+	public void applyEffectTick(LivingEntity entity, int amplifier) {
+		int timer = entity.getRemainingFireTicks() - ((amplifier + 1) * 40);
+		entity.setSecondsOnFire(timer < 0 ? 0 : timer);
 		if (entity.getHealth() < entity.getMaxHealth()) {
 			entity.heal(0.5F);
 		}
 	}
 
-	public boolean isReady(int duration, int amplifier) {
+	public boolean isDurationEffectTick(int duration, int amplifier) {
 		int k = 50 >> amplifier;
 		if (k > 0) {
 			return duration % k == 0;

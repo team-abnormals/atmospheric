@@ -25,8 +25,8 @@ public class YuccaSaplingBlock extends AbnormalsSaplingBlock implements IPlantab
 	}
 
 	@Override
-	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		return worldIn.getBlockState(pos.down()).isIn(AtmosphericTags.YUCCA_PLANTABLE_ON);
+	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
+		return worldIn.getBlockState(pos.below()).is(AtmosphericTags.YUCCA_PLANTABLE_ON);
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class YuccaSaplingBlock extends AbnormalsSaplingBlock implements IPlantab
 	}
 
 	@Override
-	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+	public void entityInside(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		this.onYuccaCollision(state, worldIn, pos, entityIn);
 	}
 }

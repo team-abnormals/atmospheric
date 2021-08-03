@@ -33,8 +33,8 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 	}
 
 	@Override
-	public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
-		boolean morado = config.trunkProvider.getBlockState(rand, position).isIn(AtmosphericBlocks.MORADO_LOG.get());
+	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
+		boolean morado = config.trunkProvider.getState(rand, position).is(AtmosphericBlocks.MORADO_LOG.get());
 		if (rand.nextInt(250) == 0) {
 			if (rand.nextInt(2) == 0)
 				brushes.add(AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
@@ -50,7 +50,7 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 		int height = 4 + rand.nextInt(2) + rand.nextInt(3) + (!morado ? rand.nextInt(3) : -1);
 		boolean flag = true;
 
-		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getHeight()) {
+		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getMaxBuildHeight()) {
 			for (int j = position.getY(); j <= position.getY() + 1 + height; ++j) {
 				int k = 1;
 				if (j == position.getY()) {
@@ -63,8 +63,8 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 
 				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
-						if (j >= 0 && j < worldIn.getHeight()) {
-							if (!this.water ? !TreeUtil.isAirOrLeaves(worldIn, blockpos$mutableblockpos.setPos(l, j, i1)) : !isAirOrWaterOrLeaves(worldIn, blockpos$mutableblockpos.setPos(l, j, i1))) {
+						if (j >= 0 && j < worldIn.getMaxBuildHeight()) {
+							if (!this.water ? !TreeUtil.isAirOrLeaves(worldIn, blockpos$mutableblockpos.set(l, j, i1)) : !isAirOrWaterOrLeaves(worldIn, blockpos$mutableblockpos.set(l, j, i1))) {
 								flag = false;
 							}
 						} else {
@@ -76,10 +76,10 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 
 			if (!flag) {
 				return false;
-			} else if (TreeUtil.isValidGround(worldIn, position.down(), (SaplingBlock) AtmosphericBlocks.ROSEWOOD_SAPLING.get()) && position.getY() < worldIn.getHeight() - branches - 1) {
+			} else if (TreeUtil.isValidGround(worldIn, position.below(), (SaplingBlock) AtmosphericBlocks.ROSEWOOD_SAPLING.get()) && position.getY() < worldIn.getMaxBuildHeight() - branches - 1) {
 				// base log
 				if (!this.water)
-					TreeUtil.setDirtAt(worldIn, position.down());
+					TreeUtil.setDirtAt(worldIn, position.below());
 				List<BlockPos> logsPlaced = new ArrayList<>();
 
 				int logX = position.getX();
@@ -98,7 +98,7 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 						for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 							for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
 								if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-									TreeUtil.placeLeafAt(worldIn, blockpos.add(k3, 0, j4), rand, config);
+									TreeUtil.placeLeafAt(worldIn, blockpos.offset(k3, 0, j4), rand, config);
 								}
 							}
 						}
@@ -110,15 +110,15 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				ArrayList<String> directions = new ArrayList<String>();
 
 				for (int k2 = 0; k2 < branches; ++k2) {
-					Direction offset = Direction.Plane.HORIZONTAL.random(rand);
+					Direction offset = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
 
 					while (directions.contains(offset.toString())) {
-						offset = Direction.Plane.HORIZONTAL.random(rand);
+						offset = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
 					}
 					directions.add(offset.toString());
 					int turns = 1 + rand.nextInt(3);
 
-					BlockPos currentPos = position.up(height - 1);
+					BlockPos currentPos = position.above(height - 1);
 					int branchLength = 0;
 					int branchHeight = 0;
 
@@ -126,8 +126,8 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 						branchLength = !morado ? 1 + rand.nextInt(2) + rand.nextInt(2) : 1 + rand.nextInt(2);
 						branchHeight = !morado ? 1 + rand.nextInt(3) + rand.nextInt(2) : 1 + rand.nextInt(3);
 						createHorizontalLog(branchLength, worldIn, currentPos, offset, rand, config, logsPlaced);
-						createVerticalLog(branchHeight, worldIn, currentPos.offset(offset, branchLength), rand, config, logsPlaced);
-						currentPos = currentPos.offset(offset, branchLength).offset(Direction.UP, branchHeight);
+						createVerticalLog(branchHeight, worldIn, currentPos.relative(offset, branchLength), rand, config, logsPlaced);
+						currentPos = currentPos.relative(offset, branchLength).relative(Direction.UP, branchHeight);
 					}
 
 					int leafSize = 2 + rand.nextInt(2);
@@ -141,17 +141,17 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 					for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 						for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
 							if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-								TreeUtil.placeLeafAt(worldIn, currentPos.add(k3, 0, j4), rand, config);
+								TreeUtil.placeLeafAt(worldIn, currentPos.offset(k3, 0, j4), rand, config);
 							}
 						}
 					}
 
 					// second layer of leaves
-					currentPos = currentPos.up(1);
+					currentPos = currentPos.above(1);
 					for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
 						for (int j4 = -leafSizeTop; j4 <= leafSizeTop; ++j4) {
 							if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
-								TreeUtil.placeLeafAt(worldIn, currentPos.add(k3, 0, j4), rand, config);
+								TreeUtil.placeLeafAt(worldIn, currentPos.offset(k3, 0, j4), rand, config);
 							}
 						}
 					}
@@ -161,19 +161,19 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
 								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
 									if (rand.nextBoolean())
-										TreeUtil.placeLeafAt(worldIn, currentPos.add(k3, 0, j4), rand, config);
+										TreeUtil.placeLeafAt(worldIn, currentPos.offset(k3, 0, j4), rand, config);
 								}
 							}
 						}
 					}
 
 					if (morado) {
-						currentPos = currentPos.down(2);
+						currentPos = currentPos.below(2);
 						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
 							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
 								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
 									if (rand.nextBoolean())
-										TreeUtil.placeLeafAt(worldIn, currentPos.add(k3, 0, j4), rand, config);
+										TreeUtil.placeLeafAt(worldIn, currentPos.offset(k3, 0, j4), rand, config);
 								}
 							}
 						}
@@ -186,8 +186,8 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				if (!brushes.isEmpty()) {
 					for (BlockPos pos : logsPlaced) {
 						for (Direction direction2 : Direction.values()) {
-							if (TreeUtil.isAir(worldIn, pos.offset(direction2)) && rand.nextInt(3) == 0) {
-								worldIn.setBlockState(pos.offset(direction2), MonkeyBrushFeature.monkeyBrushState(brushes.get(rand.nextInt(brushes.size())).getDefaultState(), direction2), 18);
+							if (TreeUtil.isAir(worldIn, pos.relative(direction2)) && rand.nextInt(3) == 0) {
+								worldIn.setBlock(pos.relative(direction2), MonkeyBrushFeature.monkeyBrushState(brushes.get(rand.nextInt(brushes.size())).defaultBlockState(), direction2), 18);
 							}
 						}
 					}
@@ -209,8 +209,8 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 
 		for (int k3 = 0; k3 < branchLength; ++k3) {
 
-			logX += direction.getXOffset();
-			logZ += direction.getZOffset();
+			logX += direction.getStepX();
+			logZ += direction.getStepZ();
 
 			BlockPos blockpos1 = new BlockPos(logX, logY, logZ);
 			if (!this.water ? TreeUtil.isAirOrLeaves(worldIn, blockpos1) : isAirOrWaterOrLeaves(worldIn, blockpos1)) {
@@ -238,7 +238,7 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 					for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
 						if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-							TreeUtil.placeLeafAt(worldIn, blockpos.add(k3, 0, j4), rand, config);
+							TreeUtil.placeLeafAt(worldIn, blockpos.offset(k3, 0, j4), rand, config);
 						}
 					}
 				}
@@ -249,18 +249,18 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 
 	public static boolean isAirOrWater(IWorldGenerationBaseReader world, BlockPos pos) {
 		if (!(world instanceof IBlockReader)) {
-			return world.hasBlockState(pos, BlockState::isAir) || world.hasBlockState(pos, state -> state.getFluidState().isTagged(FluidTags.WATER));
+			return world.isStateAtPosition(pos, BlockState::isAir) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
 		} else {
-			return world.hasBlockState(pos, state -> state.isAir((IBlockReader) world, pos)) || world.hasBlockState(pos, state -> state.getFluidState().isTagged(FluidTags.WATER));
+			return world.isStateAtPosition(pos, state -> state.isAir((IBlockReader) world, pos)) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
 		}
 	}
 
 	public static boolean isAirOrWaterOrLeaves(IWorldGenerationBaseReader world, BlockPos pos) {
 		if (world instanceof IWorldReader) {
-			return world.hasBlockState(pos, state -> state.canBeReplacedByLeaves((IWorldReader) world, pos)) || world.hasBlockState(pos, state -> state.getFluidState().isTagged(FluidTags.WATER));
+			return world.isStateAtPosition(pos, state -> state.canBeReplacedByLeaves((IWorldReader) world, pos)) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
 		}
-		return world.hasBlockState(pos, (state) -> {
-			return isAirOrWater(world, pos) || state.isIn(BlockTags.LEAVES);
+		return world.isStateAtPosition(pos, (state) -> {
+			return isAirOrWater(world, pos) || state.is(BlockTags.LEAVES);
 		});
 	}
 }

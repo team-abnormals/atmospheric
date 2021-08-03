@@ -41,16 +41,16 @@ public class SurfaceFossilFeature extends Feature<NoFeatureConfig> {
 		super(codec);
 	}
 
-	public boolean generate(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
-		Rotation rotation = Rotation.randomRotation(random);
+	public boolean place(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
+		Rotation rotation = Rotation.getRandom(random);
 		int i = random.nextInt(FOSSILS.length);
-		TemplateManager templatemanager = ((ServerWorld) world.getWorld()).getServer().getTemplateManager();
-		Template template = templatemanager.getTemplateDefaulted(FOSSILS[i]);
-		Template template1 = templatemanager.getTemplateDefaulted(FOSSILS_COAL[i]);
+		TemplateManager templatemanager = ((ServerWorld) world.getLevel()).getServer().getStructureManager();
+		Template template = templatemanager.getOrCreate(FOSSILS[i]);
+		Template template1 = templatemanager.getOrCreate(FOSSILS_COAL[i]);
 		ChunkPos chunkpos = new ChunkPos(pos);
-		MutableBoundingBox mutableboundingbox = new MutableBoundingBox(chunkpos.getXStart(), 0, chunkpos.getZStart(), chunkpos.getXEnd(), 256, chunkpos.getZEnd());
-		PlacementSettings placementsettings = (new PlacementSettings()).setRotation(rotation).setBoundingBox(mutableboundingbox).setRandom(random).addProcessor(BlockIgnoreStructureProcessor.AIR_AND_STRUCTURE_BLOCK);
-		BlockPos blockpos = template.transformedSize(rotation);
+		MutableBoundingBox mutableboundingbox = new MutableBoundingBox(chunkpos.getMinBlockX(), 0, chunkpos.getMinBlockZ(), chunkpos.getMaxBlockX(), 256, chunkpos.getMaxBlockZ());
+		PlacementSettings placementsettings = (new PlacementSettings()).setRotation(rotation).setBoundingBox(mutableboundingbox).setRandom(random).addProcessor(BlockIgnoreStructureProcessor.STRUCTURE_AND_AIR);
+		BlockPos blockpos = template.getSize(rotation);
 		int j = random.nextInt(16 - blockpos.getX());
 		int k = random.nextInt(16 - blockpos.getZ());
 		int l = 256;
@@ -62,14 +62,14 @@ public class SurfaceFossilFeature extends Feature<NoFeatureConfig> {
 		}
 
 		int k1 = Math.max(l - 15 - random.nextInt(6), 65);
-		BlockPos blockpos1 = template.getZeroPositionWithTransform(pos.add(j, k1, k), Mirror.NONE, rotation);
+		BlockPos blockpos1 = template.getZeroPositionWithTransform(pos.offset(j, k1, k), Mirror.NONE, rotation);
 		IntegrityProcessor integrityprocessor = new IntegrityProcessor(0.9F);
 		placementsettings.clearProcessors().addProcessor(integrityprocessor);
-		template.func_237146_a_(world, blockpos1, blockpos1, placementsettings, random, 4);
-		placementsettings.removeProcessor(integrityprocessor);
+		template.placeInWorld(world, blockpos1, blockpos1, placementsettings, random, 4);
+		placementsettings.popProcessor(integrityprocessor);
 		IntegrityProcessor integrityprocessor1 = new IntegrityProcessor(0.1F);
 		placementsettings.clearProcessors().addProcessor(integrityprocessor1);
-		template1.func_237146_a_(world, blockpos1, blockpos1, placementsettings, random, 4);
+		template1.placeInWorld(world, blockpos1, blockpos1, placementsettings, random, 4);
 		return true;
 	}
 }

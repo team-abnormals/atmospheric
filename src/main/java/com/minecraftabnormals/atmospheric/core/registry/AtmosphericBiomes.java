@@ -78,29 +78,29 @@ public class AtmosphericBiomes {
 	}
 
 	private static Biome createRainforestBiome(float depth, float scale) {
-		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(depth).scale(scale).temperature(0.9F).downfall(0.95F).setEffects((new BiomeAmbience.Builder()).setWaterColor(6675400).setWaterFogColor(408635).setFogColor(12638463).withSkyColor(getSkyColorWithTemperatureModifier(0.9F)).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).build()).withMobSpawnSettings(new MobSpawnInfo.Builder().copy()).withGenerationSettings((new BiomeGenerationSettings.Builder()).withSurfaceBuilder(ConfiguredSurfaceBuilders.field_244178_j).build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.FOREST).depth(depth).scale(scale).temperature(0.9F).downfall(0.95F).specialEffects((new BiomeAmbience.Builder()).waterColor(6675400).waterFogColor(408635).fogColor(12638463).skyColor(getSkyColorWithTemperatureModifier(0.9F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(new MobSpawnInfo.Builder().build()).generationSettings((new BiomeGenerationSettings.Builder()).surfaceBuilder(ConfiguredSurfaceBuilders.GRASS).build()).build();
 	}
 
 	private static Biome createDunesBiome(float depth, float scale) {
-		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(depth).scale(scale).temperature(2.0F).downfall(0.0F).setEffects((new BiomeAmbience.Builder()).setWaterColor(4159204).setWaterFogColor(329011).setFogColor(14988944).withSkyColor(getSkyColorWithTemperatureModifier(2.0F)).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).build()).withMobSpawnSettings(new MobSpawnInfo.Builder().copy()).withGenerationSettings((new BiomeGenerationSettings.Builder()).withSurfaceBuilder(AtmosphericSurfaceBuilders.Configured.DUNES_WAVES).build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.DESERT).depth(depth).scale(scale).temperature(2.0F).downfall(0.0F).specialEffects((new BiomeAmbience.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(14988944).skyColor(getSkyColorWithTemperatureModifier(2.0F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(new MobSpawnInfo.Builder().build()).generationSettings((new BiomeGenerationSettings.Builder()).surfaceBuilder(AtmosphericSurfaceBuilders.Configured.DUNES_WAVES).build()).build();
 	}
 
 	private static Biome createHotSpringsBiome(float depth, float scale) {
 		return (new Biome.Builder()).precipitation(Biome.RainType.NONE)
-				.category(Biome.Category.TAIGA)
+				.biomeCategory(Biome.Category.TAIGA)
 				.depth(depth).scale(scale)
 				.temperature(0.25F)
 				.downfall(0.4F)
-				.setEffects((new BiomeAmbience.Builder())
-						.setWaterColor(4445678)
-						.setWaterFogColor(270131)
-						.setFogColor(12638463)
-						.withSkyColor(getSkyColorWithTemperatureModifier(0.25F))
-						.setMoodSound(MoodSoundAmbience.DEFAULT_CAVE)
+				.specialEffects((new BiomeAmbience.Builder())
+						.waterColor(4445678)
+						.waterFogColor(270131)
+						.fogColor(12638463)
+						.skyColor(getSkyColorWithTemperatureModifier(0.25F))
+						.ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS)
 						.build())
-				.withMobSpawnSettings(new MobSpawnInfo.Builder().copy())
-				.withGenerationSettings((new BiomeGenerationSettings.Builder())
-						.withSurfaceBuilder(AtmosphericSurfaceBuilders.Configured.HOT_SPRINGS)
+				.mobSpawnSettings(new MobSpawnInfo.Builder().build())
+				.generationSettings((new BiomeGenerationSettings.Builder())
+						.surfaceBuilder(AtmosphericSurfaceBuilders.Configured.HOT_SPRINGS)
 						.build())
 				.build();
 	}
@@ -108,6 +108,6 @@ public class AtmosphericBiomes {
 	private static int getSkyColorWithTemperatureModifier(float temperature) {
 		float lvt_1_1_ = temperature / 3.0F;
 		lvt_1_1_ = MathHelper.clamp(lvt_1_1_, -1.0F, 1.0F);
-		return MathHelper.hsvToRGB(0.62222224F - lvt_1_1_ * 0.05F, 0.5F + lvt_1_1_ * 0.1F, 1.0F);
+		return MathHelper.hsvToRgb(0.62222224F - lvt_1_1_ * 0.05F, 0.5F + lvt_1_1_ * 0.1F, 1.0F);
 	}
 }

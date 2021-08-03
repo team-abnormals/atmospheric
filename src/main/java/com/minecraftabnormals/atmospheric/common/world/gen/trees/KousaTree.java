@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class KousaTree extends Tree {
 	@Nullable
-	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
-		return Feature.TREE.withConfiguration(AtmosphericFeatures.Configs.KOUSA_TREE_CONFIG);
+	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredFeature(Random randomIn, boolean p_225546_2_) {
+		return Feature.TREE.configured(AtmosphericFeatures.Configs.KOUSA_TREE_CONFIG);
 	}
 }

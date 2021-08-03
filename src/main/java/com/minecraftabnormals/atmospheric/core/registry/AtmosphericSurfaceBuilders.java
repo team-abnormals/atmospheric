@@ -17,9 +17,9 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AtmosphericSurfaceBuilders {
-	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
-	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES_WAVES = new DunesWavesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
-	public static final SurfaceBuilder<SurfaceBuilderConfig> HOT_SPRINGS = new HotSpringsSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES = new DunesSurfaceBuilder(SurfaceBuilderConfig.CODEC);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> DUNES_WAVES = new DunesWavesSurfaceBuilder(SurfaceBuilderConfig.CODEC);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> HOT_SPRINGS = new HotSpringsSurfaceBuilder(SurfaceBuilderConfig.CODEC);
 
 	@SubscribeEvent
 	public static void registerSurfaceBuilders(RegistryEvent.Register<SurfaceBuilder<?>> event) {
@@ -31,14 +31,14 @@ public class AtmosphericSurfaceBuilders {
 	}
 
 	public static final class Configs {
-		public static final SurfaceBuilderConfig DUNES = new SurfaceBuilderConfig(AtmosphericBlocks.ARID_SAND.get().getDefaultState(), AtmosphericBlocks.ARID_SAND.get().getDefaultState(), Blocks.GRAVEL.getDefaultState());
-		public static final SurfaceBuilderConfig HOT_SPRINGS = new SurfaceBuilderConfig(AtmosphericBlocks.IVORY_TRAVERTINE.get().getDefaultState(), AtmosphericBlocks.IVORY_TRAVERTINE.get().getDefaultState(), Blocks.GRAVEL.getDefaultState());
+		public static final SurfaceBuilderConfig DUNES = new SurfaceBuilderConfig(AtmosphericBlocks.ARID_SAND.get().defaultBlockState(), AtmosphericBlocks.ARID_SAND.get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState());
+		public static final SurfaceBuilderConfig HOT_SPRINGS = new SurfaceBuilderConfig(AtmosphericBlocks.IVORY_TRAVERTINE.get().defaultBlockState(), AtmosphericBlocks.IVORY_TRAVERTINE.get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState());
 	}
 
 	public static final class Configured {
-		public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> DUNES = AtmosphericSurfaceBuilders.DUNES.func_242929_a(Configs.DUNES);
-		public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> DUNES_WAVES = AtmosphericSurfaceBuilders.DUNES_WAVES.func_242929_a(Configs.DUNES);
-		public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> HOT_SPRINGS = AtmosphericSurfaceBuilders.HOT_SPRINGS.func_242929_a(Configs.HOT_SPRINGS);
+		public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> DUNES = AtmosphericSurfaceBuilders.DUNES.configured(Configs.DUNES);
+		public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> DUNES_WAVES = AtmosphericSurfaceBuilders.DUNES_WAVES.configured(Configs.DUNES);
+		public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> HOT_SPRINGS = AtmosphericSurfaceBuilders.HOT_SPRINGS.configured(Configs.HOT_SPRINGS);
 
 		private static <SC extends ISurfaceBuilderConfig> void register(String key, ConfiguredSurfaceBuilder<SC> builder) {
 			WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_SURFACE_BUILDER, new ResourceLocation(Atmospheric.MOD_ID, key), builder);

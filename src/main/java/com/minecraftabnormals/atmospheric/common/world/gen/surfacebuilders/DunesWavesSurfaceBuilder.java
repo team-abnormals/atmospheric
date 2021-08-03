@@ -18,13 +18,13 @@ public class DunesWavesSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfi
 	}
 
 	@Override
-	public void buildSurface(Random random, IChunk chunk, Biome biome, int x, int z, int height, double noise, BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig surfaceBlocks) {
+	public void apply(Random random, IChunk chunk, Biome biome, int x, int z, int height, double noise, BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig surfaceBlocks) {
 		if (noise > 0.3 && noise < 2.5) {
-			BlockState state = AtmosphericBlocks.RED_ARID_SAND.get().getDefaultState();
-			AtmosphericSurfaceBuilders.DUNES.buildSurface(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(state, state, state));
+			BlockState state = AtmosphericBlocks.RED_ARID_SAND.get().defaultBlockState();
+			AtmosphericSurfaceBuilders.DUNES.apply(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(state, state, state));
 		} else {
-			BlockState state = AtmosphericBlocks.ARID_SAND.get().getDefaultState();
-			AtmosphericSurfaceBuilders.DUNES.buildSurface(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(state, state, state));
+			BlockState state = AtmosphericBlocks.ARID_SAND.get().defaultBlockState();
+			AtmosphericSurfaceBuilders.DUNES.apply(random, chunk, biome, x, z, height, noise, defaultBlock, defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(state, state, state));
 		}
 	}
 }

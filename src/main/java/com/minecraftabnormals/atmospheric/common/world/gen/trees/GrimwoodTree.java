@@ -12,7 +12,7 @@ import java.util.Random;
 public class GrimwoodTree extends Tree {
 
 	@Nullable
-	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
-		return Feature.TREE.withConfiguration(AtmosphericFeatures.Configs.GRIMWOOD_TREE_CONFIG);
+	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredFeature(Random randomIn, boolean p_225546_2_) {
+		return Feature.TREE.configured(AtmosphericFeatures.Configs.GRIMWOOD_TREE_CONFIG);
 	}
 }

@@ -20,9 +20,9 @@ public class WaterHyacinthPatchFeature extends Feature<NoFeatureConfig> {
 	}
 
 	@Override
-	public boolean generate(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
-		BlockState topState = AtmosphericBlocks.WATER_HYACINTH.get().getDefaultState();
-		BlockState bottomState = AtmosphericBlocks.WATER_HYACINTH.get().getDefaultState().with(WaterHyacinthBlock.WATERLOGGED, true).with(WaterHyacinthBlock.HALF, DoubleBlockHalf.LOWER);
+	public boolean place(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
+		BlockState topState = AtmosphericBlocks.WATER_HYACINTH.get().defaultBlockState();
+		BlockState bottomState = AtmosphericBlocks.WATER_HYACINTH.get().defaultBlockState().setValue(WaterHyacinthBlock.WATERLOGGED, true).setValue(WaterHyacinthBlock.HALF, DoubleBlockHalf.LOWER);
 		BlockPos blockpos = pos;
 		int i = 0;
 
@@ -33,11 +33,11 @@ public class WaterHyacinthPatchFeature extends Feature<NoFeatureConfig> {
 		BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable();
 
 		for (int j = 0; j < 512; ++j) {
-			blockpos$mutable.setAndOffset(blockpos, random.nextInt(xSpread + 1) - random.nextInt(xSpread + 1), random.nextInt(ySpread + 1) - random.nextInt(ySpread + 1), random.nextInt(zSpread + 1) - random.nextInt(zSpread + 1));
-			BlockPos blockpos1 = blockpos$mutable.down();
-			if (world.isAirBlock(blockpos$mutable) && world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {
-				world.setBlockState(blockpos$mutable, topState, 2);
-				world.setBlockState(blockpos1, bottomState, 2);
+			blockpos$mutable.setWithOffset(blockpos, random.nextInt(xSpread + 1) - random.nextInt(xSpread + 1), random.nextInt(ySpread + 1) - random.nextInt(ySpread + 1), random.nextInt(zSpread + 1) - random.nextInt(zSpread + 1));
+			BlockPos blockpos1 = blockpos$mutable.below();
+			if (world.isEmptyBlock(blockpos$mutable) && world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {
+				world.setBlock(blockpos$mutable, topState, 2);
+				world.setBlock(blockpos1, bottomState, 2);
 				++i;
 			}
 		}

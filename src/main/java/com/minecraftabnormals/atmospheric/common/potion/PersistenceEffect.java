@@ -17,34 +17,34 @@ public class PersistenceEffect extends Effect {
 	}
 
 	@Override
-	public double getAttributeModifierAmount(int amplifier, AttributeModifier modifier) {
+	public double getAttributeModifierValue(int amplifier, AttributeModifier modifier) {
 		return 0.05 * (double) (amplifier + 1);
 	}
 
 	@Override
-	public void applyAttributesModifiersToEntity(LivingEntity entity, AttributeModifierManager attributeMapIn, int amplifier) {
+	public void addAttributeModifiers(LivingEntity entity, AttributeModifierManager attributeMapIn, int amplifier) {
 		if (entity instanceof PlayerEntity) {
-			int amount = 20 - ((PlayerEntity) entity).getFoodStats().getFoodLevel();
-			for (Entry<Attribute, AttributeModifier> entry : this.getAttributeModifierMap().entrySet()) {
-				ModifiableAttributeInstance iattributeinstance = attributeMapIn.createInstanceIfAbsent(entry.getKey());
+			int amount = 20 - ((PlayerEntity) entity).getFoodData().getFoodLevel();
+			for (Entry<Attribute, AttributeModifier> entry : this.getAttributeModifiers().entrySet()) {
+				ModifiableAttributeInstance iattributeinstance = attributeMapIn.getInstance(entry.getKey());
 				if (iattributeinstance != null) {
 					AttributeModifier attributemodifier = entry.getValue();
 					iattributeinstance.removeModifier(attributemodifier);
-					iattributeinstance.applyPersistentModifier(new AttributeModifier(attributemodifier.getID(), this.getName() + " " + amplifier, amount * this.getAttributeModifierAmount(amplifier, attributemodifier), attributemodifier.getOperation()));
+					iattributeinstance.addPermanentModifier(new AttributeModifier(attributemodifier.getId(), this.getDescriptionId() + " " + amplifier, amount * this.getAttributeModifierValue(amplifier, attributemodifier), attributemodifier.getOperation()));
 				}
 			}
 		}
 	}
 
 	@Override
-	public void performEffect(LivingEntity entity, int amplifier) {
+	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		if (entity instanceof PlayerEntity) {
-			this.applyAttributesModifiersToEntity(entity, entity.getAttributeManager(), amplifier);
+			this.addAttributeModifiers(entity, entity.getAttributes(), amplifier);
 		}
 	}
 
 	@Override
-	public boolean isReady(int duration, int amplifier) {
+	public boolean isDurationEffectTick(int duration, int amplifier) {
 		return true;
 	}
 }

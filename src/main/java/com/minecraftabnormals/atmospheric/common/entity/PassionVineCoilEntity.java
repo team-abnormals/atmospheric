@@ -33,47 +33,47 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 
 	@OnlyIn(Dist.CLIENT)
 	private IParticleData makeParticle() {
-		ItemStack itemstack = this.func_213882_k();
+		ItemStack itemstack = this.getItemRaw();
 		return itemstack.isEmpty() ? ParticleTypes.ITEM_SNOWBALL : new ItemParticleData(ParticleTypes.ITEM, itemstack);
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public void handleStatusUpdate(byte id) {
+	public void handleEntityEvent(byte id) {
 		if (id == 3) {
 			IParticleData iparticledata = this.makeParticle();
 			for (int i = 0; i < 8; ++i) {
-				this.world.addParticle(iparticledata, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0D, 0.0D, 0.0D);
+				this.level.addParticle(iparticledata, this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
 			}
 		}
 
 	}
 
 	@Override
-	protected void func_230299_a_(BlockRayTraceResult result) {
-		World worldIn = this.getEntityWorld();
-		Direction direction = result.getFace().getAxis().isHorizontal() ? result.getFace().getOpposite() : this.func_234616_v_().getHorizontalFacing();
+	protected void onHitBlock(BlockRayTraceResult result) {
+		World worldIn = this.getCommandSenderWorld();
+		Direction direction = result.getDirection().getAxis().isHorizontal() ? result.getDirection().getOpposite() : this.getOwner().getDirection();
 
-		BlockPos pos = this.getPosition();
-		BlockPos landedPos = pos.offset(direction);
+		BlockPos pos = this.blockPosition();
+		BlockPos landedPos = pos.relative(direction);
 
-		if (!worldIn.getBlockState(pos).isIn(AtmosphericBlocks.PASSION_VINE.get()) && worldIn.getBlockState(landedPos).isIn(AtmosphericBlocks.PASSION_VINE.get())) {
+		if (!worldIn.getBlockState(pos).is(AtmosphericBlocks.PASSION_VINE.get()) && worldIn.getBlockState(landedPos).is(AtmosphericBlocks.PASSION_VINE.get())) {
 			pos = landedPos;
 		}
 
-		BlockPos nextPos = pos.offset(Direction.DOWN);
+		BlockPos nextPos = pos.relative(Direction.DOWN);
 		BlockState nextBlock = worldIn.getBlockState(nextPos);
 
 		int counter;
-		if (!world.getBlockState(pos).isAir(worldIn, pos)) {
-			if (world.getBlockState(pos).isIn(AtmosphericBlocks.PASSION_VINE.get())) {
+		if (!level.getBlockState(pos).isAir(worldIn, pos)) {
+			if (level.getBlockState(pos).is(AtmosphericBlocks.PASSION_VINE.get())) {
 				while (true) {
-					if (nextBlock.isIn(AtmosphericBlocks.PASSION_VINE.get())) {
-						nextPos = nextPos.down();
+					if (nextBlock.is(AtmosphericBlocks.PASSION_VINE.get())) {
+						nextPos = nextPos.below();
 						nextBlock = worldIn.getBlockState(nextPos);
 					} else {
 						if (nextBlock.isAir(worldIn, nextPos)) {
 							pos = nextPos;
-							nextPos = pos.down();
+							nextPos = pos.below();
 							nextBlock = worldIn.getBlockState(nextPos);
 							break;
 						} else {
@@ -88,21 +88,21 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 			}
 		}
 
-		if (AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite()).isValidPosition(worldIn, pos)) {
-			BlockState vine = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite());
-			worldIn.setBlockState(pos, vine);
+		if (AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction.getOpposite()).canSurvive(worldIn, pos)) {
+			BlockState vine = AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction.getOpposite());
+			worldIn.setBlockAndUpdate(pos, vine);
 			counter = 7;
 			while (counter > 0) {
 				if (nextBlock.isAir(worldIn, nextPos)) {
-					worldIn.setBlockState(nextPos, vine);
+					worldIn.setBlockAndUpdate(nextPos, vine);
 					counter = counter - 1;
-					nextPos = nextPos.down();
+					nextPos = nextPos.below();
 					nextBlock = worldIn.getBlockState(nextPos);
 				} else {
 					break;
 				}
 			}
-			PassionVineBundleBlock.spawnAsEntity(worldIn, nextPos.offset(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), counter));
+			PassionVineBundleBlock.popResource(worldIn, nextPos.relative(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), counter));
 		} else {
 			int k1 = 0;
 			while (true) {
@@ -116,25 +116,25 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 					direction = Direction.NORTH;
 				}
 				k1 = k1 + 1;
-				if (AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite()).isValidPosition(worldIn, pos)) {
-					BlockState vine = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction.getOpposite());
-					worldIn.setBlockState(pos, vine);
+				if (AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction.getOpposite()).canSurvive(worldIn, pos)) {
+					BlockState vine = AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction.getOpposite());
+					worldIn.setBlockAndUpdate(pos, vine);
 					counter = 7;
 					while (counter > 0) {
 						if (nextBlock.isAir(worldIn, nextPos)) {
-							worldIn.setBlockState(nextPos, vine);
+							worldIn.setBlockAndUpdate(nextPos, vine);
 							counter = counter - 1;
-							nextPos = nextPos.down();
+							nextPos = nextPos.below();
 							nextBlock = worldIn.getBlockState(nextPos);
 						} else {
 							break;
 						}
 					}
-					PassionVineBundleBlock.spawnAsEntity(worldIn, nextPos.up(), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), counter));
+					PassionVineBundleBlock.popResource(worldIn, nextPos.above(), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), counter));
 					break;
 				} else if (k1 >= 3) {
-					worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
-					PassionVineBundleBlock.spawnAsEntity(worldIn, nextPos.up(), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), 8));
+					worldIn.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+					PassionVineBundleBlock.popResource(worldIn, nextPos.above(), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), 8));
 					break;
 				}
 			}
@@ -143,11 +143,11 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 	}
 
 	private void removeVine(BlockPos nextPos, boolean doDrops) {
-		if (!this.world.isRemote) {
-			this.world.setEntityState(this, (byte) 3);
+		if (!this.level.isClientSide) {
+			this.level.broadcastEntityEvent(this, (byte) 3);
 			this.remove();
 		}
 		if (doDrops)
-			PassionVineBundleBlock.spawnAsEntity(this.world, nextPos.offset(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), 8));
+			PassionVineBundleBlock.popResource(this.level, nextPos.relative(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), 8));
 	}
 }

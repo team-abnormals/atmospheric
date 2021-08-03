@@ -18,25 +18,25 @@ public class YuccaBundleBlock extends FallingBlock {
 
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
-		BlockState up = worldIn.getBlockState(pos.up());
-		boolean solidBlocks = up.isSolid() || (up.getBlock() == AtmosphericBlocks.YUCCA_BRANCH.get() && !up.get(YuccaBranchBlock.SNAPPED)); //|| north.isSolid() || east.isSolid() || south.isSolid() || west.isSolid();
+		BlockState up = worldIn.getBlockState(pos.above());
+		boolean solidBlocks = up.canOcclude() || (up.getBlock() == AtmosphericBlocks.YUCCA_BRANCH.get() && !up.getValue(YuccaBranchBlock.SNAPPED)); //|| north.isSolid() || east.isSolid() || south.isSolid() || west.isSolid();
 
-		if (!solidBlocks && !worldIn.isRemote) {
+		if (!solidBlocks && !worldIn.isClientSide) {
 			this.checkFallable(worldIn, pos);
 		}
 	}
 
 	private void checkFallable(World worldIn, BlockPos pos) {
-		if (worldIn.isAirBlock(pos.down()) || canFallThrough(worldIn.getBlockState(pos.down())) && pos.getY() >= 0) {
-			if (!worldIn.isRemote) {
+		if (worldIn.isEmptyBlock(pos.below()) || isFree(worldIn.getBlockState(pos.below())) && pos.getY() >= 0) {
+			if (!worldIn.isClientSide) {
 				FallingBlockEntity fallingblockentity = new FallingBlockEntity(worldIn, (double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D, worldIn.getBlockState(pos));
-				this.onStartFalling(fallingblockentity);
-				worldIn.addEntity(fallingblockentity);
+				this.falling(fallingblockentity);
+				worldIn.addFreshEntity(fallingblockentity);
 			}
 		}
 	}
 
-	protected void onStartFalling(FallingBlockEntity fallingEntity) {
-		fallingEntity.setHurtEntities(true);
+	protected void falling(FallingBlockEntity fallingEntity) {
+		fallingEntity.setHurtsEntities(true);
 	}
 }

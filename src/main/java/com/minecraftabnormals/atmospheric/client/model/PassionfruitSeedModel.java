@@ -16,14 +16,14 @@ public class PassionfruitSeedModel<T extends Entity> extends SegmentedModel<T> {
 	}
 
 	public PassionfruitSeedModel(float size) {
-		this.main.setTextureOffset(0, 0).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 2.0F, size);
-		this.main.setRotationPoint(0.0F, 0.0F, 0.0F);
+		this.main.texOffs(0, 0).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 2.0F, size);
+		this.main.setPos(0.0F, 0.0F, 0.0F);
 	}
 
-	public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 	}
 
-	public Iterable<ModelRenderer> getParts() {
+	public Iterable<ModelRenderer> parts() {
 		return ImmutableList.of(this.main);
 	}
 }

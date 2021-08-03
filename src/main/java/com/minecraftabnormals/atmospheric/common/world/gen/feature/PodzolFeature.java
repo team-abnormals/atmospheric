@@ -18,9 +18,9 @@ public class PodzolFeature extends Feature<ProbabilityConfig> {
 	}
 
 	@Override
-	public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, ProbabilityConfig config) {
+	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, ProbabilityConfig config) {
 		int i = 0;
-		BlockPos.Mutable blockpos$mutable = pos.toMutable();
+		BlockPos.Mutable blockpos$mutable = pos.mutable();
 		if (rand.nextFloat() < config.probability) {
 			int k = rand.nextInt(4) + 1;
 			for (int l = pos.getX() - k; l <= pos.getX() + k; ++l) {
@@ -28,9 +28,9 @@ public class PodzolFeature extends Feature<ProbabilityConfig> {
 					int j1 = l - pos.getX();
 					int k1 = i1 - pos.getZ();
 					if (j1 * j1 + k1 * k1 <= k * k) {
-						blockpos$mutable.setPos(l, worldIn.getHeight(Heightmap.Type.WORLD_SURFACE, l, i1) - 1, i1);
+						blockpos$mutable.set(l, worldIn.getHeight(Heightmap.Type.WORLD_SURFACE, l, i1) - 1, i1);
 						if (isDirt(worldIn.getBlockState(blockpos$mutable).getBlock())) {
-							worldIn.setBlockState(blockpos$mutable, Blocks.PODZOL.getDefaultState(), 2);
+							worldIn.setBlock(blockpos$mutable, Blocks.PODZOL.defaultBlockState(), 2);
 						}
 					}
 				}

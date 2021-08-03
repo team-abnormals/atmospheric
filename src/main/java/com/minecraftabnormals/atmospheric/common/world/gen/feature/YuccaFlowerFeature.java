@@ -19,19 +19,19 @@ public class YuccaFlowerFeature extends DefaultFlowersFeature {
 	}
 
 	@Override
-	public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, BlockClusterFeatureConfig config) {
-		BlockState blockstate = AtmosphericBlocks.YUCCA_FLOWER.get().getDefaultState();
-		BlockState tallBlockstate = AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState();
+	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, BlockClusterFeatureConfig config) {
+		BlockState blockstate = AtmosphericBlocks.YUCCA_FLOWER.get().defaultBlockState();
+		BlockState tallBlockstate = AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState();
 		int i = 0;
 
-		for (int j = 0; j < this.getFlowerCount(config); ++j) {
-			BlockPos blockpos = this.getNearbyPos(rand, pos, config);
-			if (worldIn.isAirBlock(blockpos) && blockpos.getY() < worldIn.getHeight() - 1 && blockstate.isValidPosition(worldIn, blockpos) && this.isValidPosition(worldIn, blockpos, config)) {
-				if (rand.nextBoolean() && worldIn.isAirBlock(blockpos.up())) {
-					worldIn.setBlockState(blockpos, tallBlockstate, 2);
-					worldIn.setBlockState(blockpos.up(), tallBlockstate.with(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.UPPER), 2);
+		for (int j = 0; j < this.getCount(config); ++j) {
+			BlockPos blockpos = this.getPos(rand, pos, config);
+			if (worldIn.isEmptyBlock(blockpos) && blockpos.getY() < worldIn.getMaxBuildHeight() - 1 && blockstate.canSurvive(worldIn, blockpos) && this.isValid(worldIn, blockpos, config)) {
+				if (rand.nextBoolean() && worldIn.isEmptyBlock(blockpos.above())) {
+					worldIn.setBlock(blockpos, tallBlockstate, 2);
+					worldIn.setBlock(blockpos.above(), tallBlockstate.setValue(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.UPPER), 2);
 				} else {
-					worldIn.setBlockState(blockpos, blockstate, 2);
+					worldIn.setBlock(blockpos, blockstate, 2);
 				}
 				++i;
 			}

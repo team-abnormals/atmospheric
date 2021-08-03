@@ -25,22 +25,22 @@ public class CrustoseBlock extends Block {
 		super(properties);
 	}
 
-	private static boolean func_220257_b(BlockState state, IWorldReader world, BlockPos pos) {
-		BlockPos blockpos = pos.up();
+	private static boolean canBeGrass(BlockState state, IWorldReader world, BlockPos pos) {
+		BlockPos blockpos = pos.above();
 		BlockState blockstate = world.getBlockState(blockpos);
-		int i = LightEngine.func_215613_a(world, state, pos, blockstate, blockpos, Direction.UP, blockstate.getOpacity(world, blockpos));
+		int i = LightEngine.getLightBlockInto(world, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(world, blockpos));
 		return i < world.getMaxLightLevel();
 
 	}
 
-	private static boolean func_220256_c(BlockState state, IWorldReader world, BlockPos pos) {
-		BlockPos blockpos = pos.up();
-		return func_220257_b(state, world, pos) && !world.getFluidState(blockpos).isTagged(FluidTags.WATER);
+	private static boolean canPropagate(BlockState state, IWorldReader world, BlockPos pos) {
+		BlockPos blockpos = pos.above();
+		return canBeGrass(state, world, pos) && !world.getFluidState(blockpos).is(FluidTags.WATER);
 	}
 
 	public BlockState getToolModifiedState(BlockState state, World world, BlockPos pos, PlayerEntity player, ItemStack stack, ToolType toolType) {
 		if (toolType == ToolType.SHOVEL) {
-			return AtmosphericBlocks.CRUSTOSE_PATH.get().getDefaultState();
+			return AtmosphericBlocks.CRUSTOSE_PATH.get().defaultBlockState();
 		} else {
 			return super.getToolModifiedState(state, world, pos, player, stack, toolType);
 		}
@@ -54,20 +54,20 @@ public class CrustoseBlock extends Block {
 	}
 
 	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
-		if (!worldIn.isRemote) {
+		if (!worldIn.isClientSide) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			if (!func_220257_b(state, worldIn, pos)) {
-				worldIn.setBlockState(pos, Blocks.DIRT.getDefaultState());
+			if (!canBeGrass(state, worldIn, pos)) {
+				worldIn.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
 			} else {
-				if (worldIn.getLight(pos.up()) >= 9) {
-					BlockState blockstate = this.getDefaultState();
+				if (worldIn.getMaxLocalRawBrightness(pos.above()) >= 9) {
+					BlockState blockstate = this.defaultBlockState();
 					for (int i = 0; i < 4; ++i) {
-						BlockPos blockpos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
-						if (worldIn.getBlockState(blockpos).getBlock() == Blocks.DIRT && func_220256_c(blockstate, worldIn, blockpos)) {
-							worldIn.setBlockState(blockpos, this.getDefaultState());
-						} else if (worldIn.getBlockState(blockpos).getBlock() == AtmosphericBlocks.ASPEN_LOG.get() && func_220256_c(blockstate, worldIn, blockpos)) {
-							worldIn.setBlockState(blockpos, AtmosphericBlocks.CRUSTOSE_LOG.get().getDefaultState().with(CrustoseLogBlock.AXIS, worldIn.getBlockState(blockpos).get(CrustoseLogBlock.AXIS)));
+						BlockPos blockpos = pos.offset(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
+						if (worldIn.getBlockState(blockpos).getBlock() == Blocks.DIRT && canPropagate(blockstate, worldIn, blockpos)) {
+							worldIn.setBlockAndUpdate(blockpos, this.defaultBlockState());
+						} else if (worldIn.getBlockState(blockpos).getBlock() == AtmosphericBlocks.ASPEN_LOG.get() && canPropagate(blockstate, worldIn, blockpos)) {
+							worldIn.setBlockAndUpdate(blockpos, AtmosphericBlocks.CRUSTOSE_LOG.get().defaultBlockState().setValue(CrustoseLogBlock.AXIS, worldIn.getBlockState(blockpos).getValue(CrustoseLogBlock.AXIS)));
 						}
 					}
 				}

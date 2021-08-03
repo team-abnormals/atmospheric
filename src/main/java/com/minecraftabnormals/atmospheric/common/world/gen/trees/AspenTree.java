@@ -12,12 +12,12 @@ import java.util.Random;
 public class AspenTree extends BigTree {
 
 	@Nullable
-	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
-		return Feature.TREE.withConfiguration(AtmosphericFeatures.Configs.ASPEN_TREE_CONFIG);
+	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredFeature(Random randomIn, boolean p_225546_2_) {
+		return Feature.TREE.configured(AtmosphericFeatures.Configs.ASPEN_TREE_CONFIG);
 	}
 
 	@Nullable
-	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getHugeTreeFeature(Random rand) {
-		return Feature.TREE.withConfiguration(AtmosphericFeatures.Configs.MEGA_ASPEN_TREE_CONFIG);
+	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredMegaFeature(Random rand) {
+		return Feature.TREE.configured(AtmosphericFeatures.Configs.MEGA_ASPEN_TREE_CONFIG);
 	}
 }

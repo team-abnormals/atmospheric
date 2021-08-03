@@ -36,31 +36,31 @@ public class PassionfruitSeedEntity extends ThrowableEntity {
 		this.amplifier = amplifier;
 	}
 
-	protected void onImpact(RayTraceResult result) {
-		super.onImpact(result);
+	protected void onHit(RayTraceResult result) {
+		super.onHit(result);
 		if (result.getType() == RayTraceResult.Type.ENTITY) {
 			Entity entity = ((EntityRayTraceResult) result).getEntity();
-			entity.attackEntityFrom(AtmosphericDamageSources.causePassionfruitSeedDamage(this, this.func_234616_v_()), 0.5F + amplifier);
-			if (this.func_234616_v_() instanceof ServerPlayerEntity) {
-				ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) this.func_234616_v_();
-				if (!entity.getEntityWorld().isRemote()) {
+			entity.hurt(AtmosphericDamageSources.causePassionfruitSeedDamage(this, this.getOwner()), 0.5F + amplifier);
+			if (this.getOwner() instanceof ServerPlayerEntity) {
+				ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) this.getOwner();
+				if (!entity.getCommandSenderWorld().isClientSide()) {
 					AtmosphericCriteriaTriggers.SPIT_PASSIONFRUIT.trigger(serverplayerentity);
 				}
 			}
 		}
 
-		if (!this.world.isRemote) {
+		if (!this.level.isClientSide) {
 			this.remove();
 		}
 
 	}
 
 	@Override
-	protected void registerData() {
+	protected void defineSynchedData() {
 	}
 
 	@Override
-	public IPacket<?> createSpawnPacket() {
+	public IPacket<?> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 }
