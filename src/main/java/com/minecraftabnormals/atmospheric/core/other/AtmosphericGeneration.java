@@ -17,14 +17,15 @@ import net.minecraft.world.gen.feature.Features;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.common.world.MobSpawnInfoBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericGeneration {
 
-	@SubscribeEvent
-	public static void onBiomeLoad(BiomeLoadingEvent event) {
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
+	public static void onEarlyBiomeLoad(BiomeLoadingEvent event) {
 		ResourceLocation biome = event.getName();
 		BiomeGenerationSettingsBuilder generation = event.getGeneration();
 		MobSpawnInfoBuilder spawns = event.getSpawns();
@@ -50,15 +51,23 @@ public class AtmosphericGeneration {
 			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.FLOURISHING_DUNES.getKey()))
 				withFlourishingDunesFeatures(generation, spawns);
 
+			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.HOT_SPRINGS.getKey()))
+				withHotSpringsFeatures(generation, spawns);
+		}
+	}
+
+	@SubscribeEvent
+	public static void onBiomeLoad(BiomeLoadingEvent event) {
+		ResourceLocation biome = event.getName();
+		BiomeGenerationSettingsBuilder generation = event.getGeneration();
+
+		if (biome != null) {
 			if (DataUtil.matchesKeys(biome, Biomes.DESERT, Biomes.DESERT_HILLS))
 				generation.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_DESERT);
 			if (DataUtil.matchesKeys(biome, Biomes.MODIFIED_WOODED_BADLANDS_PLATEAU, Biomes.WOODED_BADLANDS_PLATEAU))
 				generation.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE);
 			if (DataUtil.matchesKeys(biome, Biomes.SHATTERED_SAVANNA, Biomes.SHATTERED_SAVANNA_PLATEAU))
 				generation.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_SAVANNA);
-
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.HOT_SPRINGS.getKey()))
-				withHotSpringsFeatures(generation, spawns);
 		}
 	}
 
