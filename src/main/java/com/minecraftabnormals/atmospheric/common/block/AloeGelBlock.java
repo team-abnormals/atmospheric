@@ -1,6 +1,5 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -94,13 +93,14 @@ public class AloeGelBlock extends BreakableBlock {
 		return PathNodeType.DAMAGE_OTHER;
 	}
 
+	@Override
 	public void entityInside(BlockState state, World world, BlockPos pos, Entity entity) {
 		if (!state.getValue(WET)) {
 			entity.makeStuckInBlock(state, new Vector3d(0.25D, 0.25D, 0.25D));
 			if (entity instanceof LivingEntity) {
 				LivingEntity living = (LivingEntity) entity;
 				living.addEffect(new EffectInstance(Effects.POISON, 150, 0, false, true, true));
-				living.addEffect(new EffectInstance(AtmosphericEffects.GELLED.get(), 330, 0, false, false, true));
+				living.clearFire();
 			}
 		}
 	}

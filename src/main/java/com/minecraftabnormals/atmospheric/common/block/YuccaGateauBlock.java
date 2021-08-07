@@ -116,9 +116,10 @@ public class YuccaGateauBlock extends HorizontalBlock {
 			player.awardStat(Stats.EAT_CAKE_SLICE);
 			player.getFoodData().eat(1, 0.0F);
 			player.addEffect(new EffectInstance(AtmosphericEffects.PERSISTENCE.get(), 320, 0, true, false, true));
+			player.clearFire();
 			int i = state.getValue(BITES);
 			if (i < 9) {
-				worldIn.setBlock(pos, state.setValue(BITES, Integer.valueOf(i + 1)), 3);
+				worldIn.setBlock(pos, state.setValue(BITES, i + 1), 3);
 			} else {
 				if (player instanceof ServerPlayerEntity) {
 					ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) player;

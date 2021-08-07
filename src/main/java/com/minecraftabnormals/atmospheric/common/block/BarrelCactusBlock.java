@@ -2,16 +2,15 @@ package com.minecraftabnormals.atmospheric.common.block;
 
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.IGrowable;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.potion.EffectInstance;
@@ -31,7 +30,6 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
-import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -56,18 +54,20 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 		this.registerDefaultState(this.defaultBlockState().setValue(AGE, 0));
 	}
 
-	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
-		if (!worldIn.isAreaLoaded(pos, 1))
-			return; // Forge: prevent growing cactus from loading unloaded chunks with block update
-		if (!state.canSurvive(worldIn, pos)) {
-			worldIn.destroyBlock(pos, true);
+	@Nullable
+	@Override
+	public BlockState getStateForPlacement(BlockItemUseContext context) {
+		BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos());
+		if (blockstate.getBlock() == this) {
+			return blockstate.setValue(AGE, Math.min(3, blockstate.getValue(AGE) + 1));
 		} else {
-			int j = state.getValue(AGE);
-			if (worldIn.getBlockState(pos.below()).is(Tags.Blocks.SAND_COLORLESS) && j < this.getMaxAge(worldIn, pos) && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0)) {
-				worldIn.setBlockAndUpdate(pos, state.setValue(AGE, j + 1));
-			}
-			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			return this.defaultBlockState();
 		}
+	}
+
+	@Override
+	public boolean canBeReplaced(BlockState state, BlockItemUseContext useContext) {
+		return useContext.getItemInHand().getItem() == this.asItem() && state.getValue(AGE) < 3 || super.canBeReplaced(state, useContext);
 	}
 
 	@Override
@@ -75,25 +75,8 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 		int i = state.getValue(AGE);
 		if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(3) == 0)) {
 			worldIn.setBlockAndUpdate(pos, state.setValue(AGE, i + 1));
-			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 		}
-	}
-
-	public int getMaxAge(World worldIn, BlockPos pos) {
-		for (Direction direction : Direction.Plane.HORIZONTAL) {
-			BlockState blockstate = worldIn.getBlockState(pos.relative(direction));
-			Block block = blockstate.getBlock();
-			Material material = blockstate.getMaterial();
-			Block cactus = AtmosphericBlocks.BARREL_CACTUS.get();
-			if (block == cactus) {
-				if (blockstate.getValue(AGE) == 3) {
-					return 2;
-				}
-			} else if (material.isSolid()) {
-				return 2;
-			}
-		}
-		return 3;
 	}
 
 	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {

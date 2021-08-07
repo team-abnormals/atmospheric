@@ -54,14 +54,6 @@
               }
             }
           },
-          "atmospheric:yucca_juice": {
-            "trigger": "minecraft:consume_item",
-            "conditions": {
-              "item": {
-                "item": "atmospheric:yucca_juice"
-              }
-            }
-          },
           "atmospheric:aloe_leaves": {
             "trigger": "minecraft:consume_item",
             "conditions": {
@@ -97,9 +89,6 @@
           ],
           [
             "atmospheric:roasted_yucca_fruit"
-          ],
-          [
-            "atmospheric:yucca_juice"
           ],
           [
             "atmospheric:aloe_leaves"

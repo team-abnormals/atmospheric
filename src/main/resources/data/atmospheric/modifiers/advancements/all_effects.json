@@ -7,7 +7,6 @@
         "criteria": "all_effects",
         "removes": false,
         "effects": {
-          "atmospheric:gelled": {},
           "atmospheric:persistence": {},
           "atmospheric:relief": {},
           "atmospheric:worsening": {},

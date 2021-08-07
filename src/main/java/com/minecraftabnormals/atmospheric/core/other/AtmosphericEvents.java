@@ -15,13 +15,6 @@ public class AtmosphericEvents {
 	public static void livingHurt(LivingHurtEvent event) {
 		LivingEntity entity = event.getEntityLiving();
 
-		if (entity.hasEffect(AtmosphericEffects.GELLED.get())) {
-			int amplifier = entity.getEffect(AtmosphericEffects.GELLED.get()).getAmplifier();
-			if (event.getSource().isFire()) {
-				event.setAmount(event.getAmount() / (amplifier + 2));
-			}
-		}
-
 		if (entity.hasEffect(AtmosphericEffects.RELIEF.get())) {
 			int amplifier = entity.getEffect(AtmosphericEffects.RELIEF.get()).getAmplifier();
 			if (!entity.isInvertedHealAndHarm()) {
