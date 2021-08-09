@@ -324,7 +324,6 @@
 
   "item.atmospheric.yucca_fruit": "Fruta de yuca",
   "item.atmospheric.roasted_yucca_fruit": "Fruta de yuca asada",
-  "item.atmospheric.yucca_juice": "Jugo de yuca",
   "item.atmospheric.aloe_kernels": "Semillas de áloe",
   "item.atmospheric.aloe_leaves": "Hojas de áloe",
   "item.atmospheric.aloe_gel_bottle": "Botella de gel de áloe",
@@ -334,7 +333,6 @@
   "effect.atmospheric.worsening": "Empeoramiento",
   "effect.atmospheric.spitting": "Salivación",
   "effect.atmospheric.persistence": "Perseverancia",
-  "effect.atmospheric.gelled": "Gelificación",
 
   "biome.atmospheric.rainforest": "Selva tropical",
   "biome.atmospheric.rainforest_mountains": "Montañas de selva tropical",
