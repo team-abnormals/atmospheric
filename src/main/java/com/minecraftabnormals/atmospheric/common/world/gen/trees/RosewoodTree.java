@@ -11,7 +11,7 @@ import java.util.Random;
 public class RosewoodTree extends Tree {
 
 	@Nullable
-	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean beehive) {
-		return AtmosphericFeatures.ROSEWOOD_TREE.get().withConfiguration(beehive ? AtmosphericFeatures.Configs.ROSEWOOD_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatures.Configs.ROSEWOOD_TREE_CONFIG);
+	protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredFeature(Random randomIn, boolean beehive) {
+		return AtmosphericFeatures.ROSEWOOD_TREE.get().configured(beehive ? AtmosphericFeatures.Configs.ROSEWOOD_TREE_WITH_MORE_BEEHIVES_CONFIG : AtmosphericFeatures.Configs.ROSEWOOD_TREE_CONFIG);
 	}
 }

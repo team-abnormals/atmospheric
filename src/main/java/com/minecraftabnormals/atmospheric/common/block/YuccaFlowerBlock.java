@@ -34,31 +34,31 @@ public class YuccaFlowerBlock extends AbnormalsFlowerBlock implements IGrowable,
 	}
 
 	@Override
-	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		BlockState state2 = worldIn.getBlockState(pos.down());
-		return state2.isIn(AtmosphericTags.YUCCA_PLANTABLE_ON) || state2.getBlock() == AtmosphericBlocks.YUCCA_LEAVES.get() || state2.getBlock() == Blocks.CACTUS;
+	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
+		BlockState state2 = worldIn.getBlockState(pos.below());
+		return state2.is(AtmosphericTags.YUCCA_PLANTABLE_ON) || state2.getBlock() == AtmosphericBlocks.YUCCA_LEAVES.get() || state2.getBlock() == Blocks.CACTUS;
 	}
 
 	@Override
-	public void grow(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
-		if (AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState().isValidPosition(world, pos) && (world.isAirBlock(pos.up()))) {
+	public void performBonemeal(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
+		if (AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState().canSurvive(world, pos) && (world.isEmptyBlock(pos.above()))) {
 			this.placeAt(world, pos, 2);
 		}
 	}
 
 	@Override
-	public boolean canGrow(IBlockReader world, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(IBlockReader world, BlockPos pos, BlockState state, boolean isClient) {
 		return true;
 	}
 
 	@Override
-	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(World worldIn, Random rand, BlockPos pos, BlockState state) {
 		return true;
 	}
 
 	public void placeAt(IWorld world, BlockPos pos, int flags) {
-		world.setBlockState(pos, AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState().with(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.LOWER), flags);
-		world.setBlockState(pos.up(), AtmosphericBlocks.TALL_YUCCA_FLOWER.get().getDefaultState().with(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.UPPER), flags);
+		world.setBlock(pos, AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState().setValue(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.LOWER), flags);
+		world.setBlock(pos.above(), AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState().setValue(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.UPPER), flags);
 	}
 
 	@Nullable
@@ -83,7 +83,7 @@ public class YuccaFlowerBlock extends AbnormalsFlowerBlock implements IGrowable,
 	}
 
 	@Override
-	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+	public void entityInside(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		this.onYuccaCollision(state, worldIn, pos, entityIn);
 	}
 }

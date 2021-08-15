@@ -20,7 +20,7 @@ public class AtmosphericBlockSubRegistryHelper extends BlockSubRegistryHelper {
 
 	public <B extends Block> RegistryObject<B> createWallOrVerticalBlock(String name, Supplier<? extends B> supplier, Supplier<? extends B> wallSupplier, @Nullable ItemGroup group) {
 		RegistryObject<B> block = this.deferredRegister.register(name, supplier);
-		parent.getSubHelper(ForgeRegistries.ITEMS).getDeferredRegister().register(name, () -> new MonkeyBrushItem(block.get(), wallSupplier.get(), new Item.Properties().group(group)));
+		parent.getSubHelper(ForgeRegistries.ITEMS).getDeferredRegister().register(name, () -> new MonkeyBrushItem(block.get(), wallSupplier.get(), new Item.Properties().tab(group)));
 		return block;
 	}
 }

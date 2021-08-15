@@ -20,32 +20,32 @@ public class CoarseDirtPatchFeature extends Feature<LargeSphereReplaceConfig> {
 	}
 
 	@Override
-	public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, LargeSphereReplaceConfig config) {
-		if (worldIn.getFluidState(pos).isTagged(FluidTags.WATER)) {
+	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, LargeSphereReplaceConfig config) {
+		if (worldIn.getFluidState(pos).is(FluidTags.WATER)) {
 			return false;
 		} else {
 			int i = 0;
-			int j = rand.nextInt(config.radius.func_242259_a(rand) - 2) + 2;
+			int j = rand.nextInt(config.radius.sample(rand) - 2) + 2;
 
 			for (int k = pos.getX() - j; k <= pos.getX() + j; ++k) {
 				for (int l = pos.getZ() - j; l <= pos.getZ() + j; ++l) {
 					int i1 = k - pos.getX();
 					int j1 = l - pos.getZ();
 					if (i1 * i1 + j1 * j1 <= j * j) {
-						for (int k1 = pos.getY() - config.field_242809_d; k1 <= pos.getY() + config.field_242809_d; ++k1) {
+						for (int k1 = pos.getY() - config.halfHeight; k1 <= pos.getY() + config.halfHeight; ++k1) {
 							BlockPos blockpos = new BlockPos(k, k1, l);
 							BlockState blockstate = worldIn.getBlockState(blockpos);
 
 							for (BlockState blockstate1 : config.targets) {
 								if (blockstate1.getBlock() == blockstate.getBlock()) {
-									worldIn.setBlockState(blockpos, config.state, 2);
-									if (worldIn.isAirBlock(blockpos.up())) {
+									worldIn.setBlock(blockpos, config.state, 2);
+									if (worldIn.isEmptyBlock(blockpos.above())) {
 										if (rand.nextInt(2) == 0) {
-											if (worldIn.isAirBlock(blockpos.up(2)) && rand.nextInt(4) != 0) {
-												worldIn.setBlockState(blockpos.up(), Blocks.TALL_GRASS.getDefaultState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER), 2);
-												worldIn.setBlockState(blockpos.up(2), Blocks.TALL_GRASS.getDefaultState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER), 2);
+											if (worldIn.isEmptyBlock(blockpos.above(2)) && rand.nextInt(4) != 0) {
+												worldIn.setBlock(blockpos.above(), Blocks.TALL_GRASS.defaultBlockState().setValue(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER), 2);
+												worldIn.setBlock(blockpos.above(2), Blocks.TALL_GRASS.defaultBlockState().setValue(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER), 2);
 											} else {
-												worldIn.setBlockState(blockpos.up(), Blocks.GRASS.getDefaultState(), 2);
+												worldIn.setBlock(blockpos.above(), Blocks.GRASS.defaultBlockState(), 2);
 											}
 										}
 									}

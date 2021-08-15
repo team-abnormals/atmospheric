@@ -21,10 +21,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class AtmosphericStructures {
 	public static final DeferredRegister<Structure<?>> STRUCTURES = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, Atmospheric.MOD_ID);
 
-	public static final RegistryObject<Structure<NoFeatureConfig>> ARID_SHRINE = STRUCTURES.register("arid_shrine", () -> new AridShrineStructure(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Structure<NoFeatureConfig>> ARID_SHRINE = STRUCTURES.register("arid_shrine", () -> new AridShrineStructure(NoFeatureConfig.CODEC));
 
 	public static final class Configured {
-		public static final StructureFeature<?, ?> ARID_SHRINE = AtmosphericStructures.ARID_SHRINE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG);
+		public static final StructureFeature<?, ?> ARID_SHRINE = AtmosphericStructures.ARID_SHRINE.get().configured(IFeatureConfig.NONE);
 
 		private static <FC extends IFeatureConfig> void register(String name, StructureFeature<FC, ?> stuctureFeature) {
 			Registry.register(WorldGenRegistries.CONFIGURED_STRUCTURE_FEATURE, new ResourceLocation(Atmospheric.MOD_ID, name), stuctureFeature);
@@ -36,13 +36,13 @@ public class AtmosphericStructures {
 	}
 
 	public static final class Pieces {
-		public static final IStructurePieceType ARID_SHRINE_PIECE = IStructurePieceType.register(AridShrinePieces.Piece::new, "arid_shrine_piece");
+		public static final IStructurePieceType ARID_SHRINE_PIECE = IStructurePieceType.setPieceId(AridShrinePieces.Piece::new, "arid_shrine_piece");
 	}
 
 	public static void registerNoiseSettings() {
-		Structure.NAME_STRUCTURE_BIMAP.put("arid_shrine", ARID_SHRINE.get());
-		WorldGenRegistries.NOISE_SETTINGS.forEach(settings -> {
-			settings.getStructures().func_236195_a_().put(ARID_SHRINE.get(), new StructureSeparationSettings(32, 8, 304972539));
+		Structure.STRUCTURES_REGISTRY.put("arid_shrine", ARID_SHRINE.get());
+		WorldGenRegistries.NOISE_GENERATOR_SETTINGS.forEach(settings -> {
+			settings.structureSettings().structureConfig().put(ARID_SHRINE.get(), new StructureSeparationSettings(32, 8, 304972539));
 		});
 	}
 }

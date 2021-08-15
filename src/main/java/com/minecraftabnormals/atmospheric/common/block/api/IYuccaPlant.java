@@ -21,17 +21,17 @@ public interface IYuccaPlant {
 	default void onYuccaCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {
 			LivingEntity livingEntity = (LivingEntity) entityIn;
-			if (!worldIn.isRemote && (entityIn.lastTickPosX != entityIn.getPosX() || entityIn.lastTickPosZ != entityIn.getPosZ())) {
-				double d0 = Math.abs(entityIn.getPosX() - entityIn.lastTickPosX);
-				double d1 = Math.abs(entityIn.getPosZ() - entityIn.lastTickPosZ);
+			if (!worldIn.isClientSide && (entityIn.xOld != entityIn.getX() || entityIn.zOld != entityIn.getZ())) {
+				double d0 = Math.abs(entityIn.getX() - entityIn.xOld);
+				double d1 = Math.abs(entityIn.getZ() - entityIn.zOld);
 				if (d0 >= (double) 0.003F || d1 >= (double) 0.003F) {
 					if (!entityIn.isCrouching()) {
-						livingEntity.applyKnockback(this.getKnockbackForce(), -MathHelper.sin((float) (entityIn.rotationYaw * Math.PI / 180.0F)), MathHelper.cos((float) (entityIn.rotationYaw * Math.PI / 180.0F)));
+						livingEntity.knockback(this.getKnockbackForce(), -MathHelper.sin((float) (entityIn.yRot * Math.PI / 180.0F)), MathHelper.cos((float) (entityIn.yRot * Math.PI / 180.0F)));
 					}
-					entityIn.attackEntityFrom(this.getDamageSource(), 1.0F);
+					entityIn.hurt(this.getDamageSource(), 1.0F);
 					if (entityIn instanceof ServerPlayerEntity) {
 						ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
-						if (!entityIn.getEntityWorld().isRemote() && !serverplayerentity.isCreative() && this.getCriteriaTrigger() != null) {
+						if (!entityIn.getCommandSenderWorld().isClientSide() && !serverplayerentity.isCreative() && this.getCriteriaTrigger() != null) {
 							this.getCriteriaTrigger().trigger(serverplayerentity);
 						}
 					}

@@ -32,6 +32,8 @@ public class AtmosphericBiomes {
 	public static final BiomeSubRegistryHelper.KeyedBiome ROCKY_DUNES_HILLS = HELPER.createBiome("rocky_dunes_hills", () -> createDunesBiome(0.45F, 0.45F));
 	public static final BiomeSubRegistryHelper.KeyedBiome PETRIFIED_DUNES = HELPER.createBiome("petrified_dunes", () -> createDunesBiome(0.45F, 0.20F));
 
+	public static final BiomeSubRegistryHelper.KeyedBiome HOT_SPRINGS = HELPER.createBiome("hot_springs", () -> createHotSpringsBiome(0.15F, 0.45F));
+
 	public static void addBiomeVariants() {
 		BiomeUtil.addHillBiome(RAINFOREST.getKey(), Pair.of(RAINFOREST_BASIN.getKey(), 1), Pair.of(RAINFOREST_PLATEAU.getKey(), 1), Pair.of(SPARSE_RAINFOREST_PLATEAU.getKey(), 1));
 		BiomeUtil.addHillBiome(RAINFOREST_BASIN.getKey(), Pair.of(SPARSE_RAINFOREST_BASIN.getKey(), 1), Pair.of(RAINFOREST_PLATEAU.getKey(), 1));
@@ -53,6 +55,8 @@ public class AtmosphericBiomes {
 		BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(ROCKY_DUNES.getKey(), AtmosphericConfig.COMMON.rockyDunesWeight.get()));
 		BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(ROCKY_DUNES_HILLS.getKey(), AtmosphericConfig.COMMON.rockyDunesHillsWeight.get()));
 		BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(PETRIFIED_DUNES.getKey(), AtmosphericConfig.COMMON.petrifiedDunesWeight.get()));
+
+		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(HOT_SPRINGS.getKey(), AtmosphericConfig.COMMON.hotSpringsWeight.get()));
 	}
 
 	public static void addBiomeTypes() {
@@ -69,19 +73,41 @@ public class AtmosphericBiomes {
 		BiomeDictionary.addTypes(ROCKY_DUNES.getKey(), Type.DRY, Type.HOT, Type.SANDY, Type.WASTELAND, Type.OVERWORLD);
 		BiomeDictionary.addTypes(ROCKY_DUNES_HILLS.getKey(), Type.DRY, Type.HOT, Type.SANDY, Type.WASTELAND, Type.OVERWORLD);
 		BiomeDictionary.addTypes(PETRIFIED_DUNES.getKey(), Type.RARE, Type.DRY, Type.HOT, Type.SANDY, Type.WASTELAND, Type.OVERWORLD);
+
+		BiomeDictionary.addTypes(HOT_SPRINGS.getKey(), Type.RARE, Type.WET, Type.CONIFEROUS, Type.OVERWORLD);
 	}
 
 	private static Biome createRainforestBiome(float depth, float scale) {
-		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(depth).scale(scale).temperature(0.9F).downfall(0.95F).setEffects((new BiomeAmbience.Builder()).setWaterColor(6675400).setWaterFogColor(408635).setFogColor(12638463).withSkyColor(getSkyColorWithTemperatureModifier(0.9F)).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).build()).withMobSpawnSettings(new MobSpawnInfo.Builder().copy()).withGenerationSettings((new BiomeGenerationSettings.Builder()).withSurfaceBuilder(ConfiguredSurfaceBuilders.field_244178_j).build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.FOREST).depth(depth).scale(scale).temperature(0.9F).downfall(0.95F).specialEffects((new BiomeAmbience.Builder()).waterColor(6675400).waterFogColor(408635).fogColor(12638463).skyColor(getSkyColorWithTemperatureModifier(0.9F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(new MobSpawnInfo.Builder().build()).generationSettings((new BiomeGenerationSettings.Builder()).surfaceBuilder(ConfiguredSurfaceBuilders.GRASS).build()).build();
 	}
 
 	private static Biome createDunesBiome(float depth, float scale) {
-		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(depth).scale(scale).temperature(2.0F).downfall(0.0F).setEffects((new BiomeAmbience.Builder()).setWaterColor(4159204).setWaterFogColor(329011).setFogColor(14988944).withSkyColor(getSkyColorWithTemperatureModifier(2.0F)).setMoodSound(MoodSoundAmbience.DEFAULT_CAVE).build()).withMobSpawnSettings(new MobSpawnInfo.Builder().copy()).withGenerationSettings((new BiomeGenerationSettings.Builder()).withSurfaceBuilder(AtmosphericSurfaceBuilders.Configured.DUNES_WAVES).build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.DESERT).depth(depth).scale(scale).temperature(2.0F).downfall(0.0F).specialEffects((new BiomeAmbience.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(14988944).skyColor(getSkyColorWithTemperatureModifier(2.0F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(new MobSpawnInfo.Builder().build()).generationSettings((new BiomeGenerationSettings.Builder()).surfaceBuilder(AtmosphericSurfaceBuilders.Configured.DUNES_WAVES).build()).build();
+	}
+
+	private static Biome createHotSpringsBiome(float depth, float scale) {
+		return (new Biome.Builder()).precipitation(Biome.RainType.NONE)
+				.biomeCategory(Biome.Category.TAIGA)
+				.depth(depth).scale(scale)
+				.temperature(0.25F)
+				.downfall(0.4F)
+				.specialEffects((new BiomeAmbience.Builder())
+						.waterColor(4445678)
+						.waterFogColor(270131)
+						.fogColor(12638463)
+						.skyColor(getSkyColorWithTemperatureModifier(0.25F))
+						.ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS)
+						.build())
+				.mobSpawnSettings(new MobSpawnInfo.Builder().build())
+				.generationSettings((new BiomeGenerationSettings.Builder())
+						.surfaceBuilder(AtmosphericSurfaceBuilders.Configured.HOT_SPRINGS)
+						.build())
+				.build();
 	}
 
 	private static int getSkyColorWithTemperatureModifier(float temperature) {
 		float lvt_1_1_ = temperature / 3.0F;
 		lvt_1_1_ = MathHelper.clamp(lvt_1_1_, -1.0F, 1.0F);
-		return MathHelper.hsvToRGB(0.62222224F - lvt_1_1_ * 0.05F, 0.5F + lvt_1_1_ * 0.1F, 1.0F);
+		return MathHelper.hsvToRgb(0.62222224F - lvt_1_1_ * 0.05F, 0.5F + lvt_1_1_ * 0.1F, 1.0F);
 	}
 }

@@ -17,9 +17,9 @@ public class GiliaBlock extends AbnormalsFlowerBlock {
 	}
 
 	@Override
-	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	protected boolean mayPlaceOn(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		Block block = state.getBlock();
-		return block.isIn(AtmosphericTags.YUCCA_PLANTABLE_ON);
+		return block.is(AtmosphericTags.YUCCA_PLANTABLE_ON);
 	}
 
 	@Override

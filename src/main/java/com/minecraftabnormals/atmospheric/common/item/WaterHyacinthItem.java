@@ -23,49 +23,49 @@ public class WaterHyacinthItem extends BlockItem {
 		super(AtmosphericBlocks.WATER_HYACINTH.get(), builder);
 	}
 
-	public ActionResultType onItemUse(ItemUseContext context) {
+	public ActionResultType useOn(ItemUseContext context) {
 		return ActionResultType.PASS;
 	}
 
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-		ItemStack itemstack = playerIn.getHeldItem(handIn);
-		RayTraceResult raytraceresult = rayTrace(worldIn, playerIn, RayTraceContext.FluidMode.SOURCE_ONLY);
+	public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
+		ItemStack itemstack = playerIn.getItemInHand(handIn);
+		RayTraceResult raytraceresult = getPlayerPOVHitResult(worldIn, playerIn, RayTraceContext.FluidMode.SOURCE_ONLY);
 		if (raytraceresult.getType() == RayTraceResult.Type.MISS) {
-			return ActionResult.resultPass(itemstack);
+			return ActionResult.pass(itemstack);
 		} else {
 			if (raytraceresult.getType() == RayTraceResult.Type.BLOCK) {
 				BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult) raytraceresult;
-				BlockPos blockpos = blockraytraceresult.getPos();
-				Direction direction = blockraytraceresult.getFace();
-				if (!worldIn.isBlockModifiable(playerIn, blockpos) || !playerIn.canPlayerEdit(blockpos.offset(direction), direction, itemstack)) {
-					return ActionResult.resultFail(itemstack);
+				BlockPos blockpos = blockraytraceresult.getBlockPos();
+				Direction direction = blockraytraceresult.getDirection();
+				if (!worldIn.mayInteract(playerIn, blockpos) || !playerIn.mayUseItemAt(blockpos.relative(direction), direction, itemstack)) {
+					return ActionResult.fail(itemstack);
 				}
 
-				BlockPos blockpos1 = blockpos.up();
-				if (worldIn.getBlockState(blockpos).isIn(Blocks.WATER) && worldIn.getBlockState(blockpos1).isAir()) {
-					net.minecraftforge.common.util.BlockSnapshot blocksnapshot = net.minecraftforge.common.util.BlockSnapshot.create(worldIn.getDimensionKey(), worldIn, blockpos1);
-					if (!worldIn.isRemote())
+				BlockPos blockpos1 = blockpos.above();
+				if (worldIn.getBlockState(blockpos).is(Blocks.WATER) && worldIn.getBlockState(blockpos1).isAir()) {
+					net.minecraftforge.common.util.BlockSnapshot blocksnapshot = net.minecraftforge.common.util.BlockSnapshot.create(worldIn.dimension(), worldIn, blockpos1);
+					if (!worldIn.isClientSide())
 						((WaterHyacinthBlock) AtmosphericBlocks.WATER_HYACINTH.get()).placeAt(worldIn, blockpos1, 18);
 					if (net.minecraftforge.event.ForgeEventFactory.onBlockPlace(playerIn, blocksnapshot, Direction.UP)) {
 						blocksnapshot.restore(true, false);
-						return ActionResult.resultFail(itemstack);
+						return ActionResult.fail(itemstack);
 					}
 
 					if (playerIn instanceof ServerPlayerEntity) {
 						CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayerEntity) playerIn, blockpos1, itemstack);
 					}
 
-					if (!playerIn.abilities.isCreativeMode) {
+					if (!playerIn.abilities.instabuild) {
 						itemstack.shrink(1);
 					}
 
-					playerIn.addStat(Stats.ITEM_USED.get(this));
-					worldIn.playSound(playerIn, blockpos, SoundEvents.BLOCK_LILY_PAD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
-					return ActionResult.resultSuccess(itemstack);
+					playerIn.awardStat(Stats.ITEM_USED.get(this));
+					worldIn.playSound(playerIn, blockpos, SoundEvents.LILY_PAD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+					return ActionResult.success(itemstack);
 				}
 			}
 
-			return ActionResult.resultFail(itemstack);
+			return ActionResult.fail(itemstack);
 		}
 	}
 }

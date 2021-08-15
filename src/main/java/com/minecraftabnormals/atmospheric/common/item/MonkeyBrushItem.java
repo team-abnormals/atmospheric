@@ -22,25 +22,25 @@ public class MonkeyBrushItem extends BlockItem {
 	}
 
 	@Nullable
-	protected BlockState getStateForPlacement(BlockItemUseContext context) {
+	protected BlockState getPlacementState(BlockItemUseContext context) {
 		BlockState blockstate = this.wallBlock.getStateForPlacement(context);
 		BlockState blockstate1 = null;
-		IWorldReader iworldreader = context.getWorld();
-		BlockPos blockpos = context.getPos();
+		IWorldReader iworldreader = context.getLevel();
+		BlockPos blockpos = context.getClickedPos();
 
 		for (Direction direction : context.getNearestLookingDirections()) {
 			BlockState blockstate2 = direction.getAxis().isVertical() ? this.getBlock().getStateForPlacement(context) : blockstate;
-			if (blockstate2 != null && blockstate2.isValidPosition(iworldreader, blockpos)) {
+			if (blockstate2 != null && blockstate2.canSurvive(iworldreader, blockpos)) {
 				blockstate1 = blockstate2;
 				break;
 			}
 		}
 
-		return blockstate1 != null && iworldreader.placedBlockCollides(blockstate1, blockpos, ISelectionContext.dummy()) ? blockstate1 : null;
+		return blockstate1 != null && iworldreader.isUnobstructed(blockstate1, blockpos, ISelectionContext.empty()) ? blockstate1 : null;
 	}
 
-	public void addToBlockToItemMap(Map<Block, Item> blockToItemMap, Item itemIn) {
-		super.addToBlockToItemMap(blockToItemMap, itemIn);
+	public void registerBlocks(Map<Block, Item> blockToItemMap, Item itemIn) {
+		super.registerBlocks(blockToItemMap, itemIn);
 		blockToItemMap.put(this.wallBlock, itemIn);
 	}
 

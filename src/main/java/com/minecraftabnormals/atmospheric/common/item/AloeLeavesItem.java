@@ -18,29 +18,29 @@ public class AloeLeavesItem extends Item {
 		super(properties);
 	}
 
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
-		super.onItemUseFinish(stack, worldIn, entityLiving);
+	public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entityLiving) {
+		super.finishUsingItem(stack, worldIn, entityLiving);
 		if (entityLiving instanceof ServerPlayerEntity) {
 			ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityLiving;
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverplayerentity, stack);
-			serverplayerentity.addStat(Stats.ITEM_USED.get(this));
+			serverplayerentity.awardStat(Stats.ITEM_USED.get(this));
 		}
 
 		Random rand = new Random();
 		if (rand.nextInt(5) == 0)
-			entityLiving.attackEntityFrom(AtmosphericDamageSources.ALOE_LEAVES, 3.0F);
-		if (entityLiving.getFireTimer() > 0 && entityLiving instanceof ServerPlayerEntity) {
+			entityLiving.hurt(AtmosphericDamageSources.ALOE_LEAVES, 3.0F);
+		if (entityLiving.getRemainingFireTicks() > 0 && entityLiving instanceof ServerPlayerEntity) {
 			ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityLiving;
-			if (!entityLiving.getEntityWorld().isRemote()) {
+			if (!entityLiving.getCommandSenderWorld().isClientSide()) {
 				AtmosphericCriteriaTriggers.PUT_OUT_FIRE.trigger(serverplayerentity);
 			}
 		}
-		entityLiving.extinguish();
-		return entityLiving.onFoodEaten(worldIn, stack);
+		entityLiving.clearFire();
+		return entityLiving.eat(worldIn, stack);
 	}
 
 	@Override
-	public UseAction getUseAction(ItemStack stack) {
+	public UseAction getUseAnimation(ItemStack stack) {
 		return UseAction.EAT;
 	}
 }

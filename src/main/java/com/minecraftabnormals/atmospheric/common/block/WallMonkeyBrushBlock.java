@@ -32,43 +32,43 @@ public class WallMonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowa
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
 
-	protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
-	private static final Map<Direction, VoxelShape> SHAPES = Maps.newEnumMap(ImmutableMap.of(Direction.NORTH, Block.makeCuboidShape(5.5D, 3.0D, 11.0D, 10.5D, 13.0D, 16.0D), Direction.SOUTH, Block.makeCuboidShape(5.5D, 3.0D, 0.0D, 10.5D, 13.0D, 5.0D), Direction.WEST, Block.makeCuboidShape(11.0D, 3.0D, 5.5D, 16.0D, 13.0D, 10.5D), Direction.EAST, Block.makeCuboidShape(0.0D, 3.0D, 5.5D, 5.0D, 13.0D, 10.5D)));
+	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
+	private static final Map<Direction, VoxelShape> SHAPES = Maps.newEnumMap(ImmutableMap.of(Direction.NORTH, Block.box(5.5D, 3.0D, 11.0D, 10.5D, 13.0D, 16.0D), Direction.SOUTH, Block.box(5.5D, 3.0D, 0.0D, 10.5D, 13.0D, 5.0D), Direction.WEST, Block.box(11.0D, 3.0D, 5.5D, 16.0D, 13.0D, 10.5D), Direction.EAST, Block.box(0.0D, 3.0D, 5.5D, 5.0D, 13.0D, 10.5D)));
 
 	public WallMonkeyBrushBlock(Properties properties) {
 		super(AtmosphericEffects.RELIEF::get, 120, properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
 	@Override
-	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	protected boolean mayPlaceOn(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		Block block = state.getBlock();
-		return block == Blocks.GRASS_BLOCK || block == Blocks.DIRT || block == Blocks.COARSE_DIRT || block == Blocks.PODZOL || block == Blocks.FARMLAND || block.getBlock().isIn(BlockTags.LOGS);
+		return block == Blocks.GRASS_BLOCK || block == Blocks.DIRT || block == Blocks.COARSE_DIRT || block == Blocks.PODZOL || block == Blocks.FARMLAND || block.getBlock().is(BlockTags.LOGS);
 	}
 
 	@Override
-	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		BlockPos blockpos = pos.offset(state.get(FACING).getOpposite());
-		return this.isValidGround(worldIn.getBlockState(blockpos), worldIn, blockpos);
+	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
+		BlockPos blockpos = pos.relative(state.getValue(FACING).getOpposite());
+		return this.mayPlaceOn(worldIn.getBlockState(blockpos), worldIn, blockpos);
 	}
 
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
-		return state.with(FACING, rot.rotate(state.get(FACING)));
+		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
 	}
 
 	@Override
-	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
 		builder.add(FACING, HALF);
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		if (context.getFace().getAxis().isVertical())
+		if (context.getClickedFace().getAxis().isVertical())
 			return null;
-		Direction direction = context.getFace();
-		BlockPos blockpos = context.getPos();
-		BlockState blockstate = this.getDefaultState().with(FACING, context.getFace()).with(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(context.getHitVec().y - (double) blockpos.getY() > 0.5D)) ? Half.TOP : Half.BOTTOM);
+		Direction direction = context.getClickedFace();
+		BlockPos blockpos = context.getClickedPos();
+		BlockState blockstate = this.defaultBlockState().setValue(FACING, context.getClickedFace()).setValue(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(context.getClickLocation().y - (double) blockpos.getY() > 0.5D)) ? Half.TOP : Half.BOTTOM);
 		return blockstate;
 	}
 
@@ -78,7 +78,7 @@ public class WallMonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowa
 	}
 
 	public static VoxelShape getShapeForState(BlockState state) {
-		return SHAPES.get(state.get(FACING));
+		return SHAPES.get(state.getValue(FACING));
 	}
 
 	public AbstractBlock.OffsetType getOffsetType() {
@@ -86,33 +86,33 @@ public class WallMonkeyBrushBlock extends AbnormalsFlowerBlock implements IGrowa
 	}
 
 	@Override
-	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
-		return worldIn.getBlockState(pos.up()).isAir();
+	public boolean isValidBonemealTarget(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+		return worldIn.getBlockState(pos.above()).isAir();
 	}
 
 	@Override
-	public boolean canUseBonemeal(World world, Random random, BlockPos blockPos, BlockState blockState) {
+	public boolean isBonemealSuccess(World world, Random random, BlockPos blockPos, BlockState blockState) {
 		return true;
 	}
 
 	@Override
-	public void grow(ServerWorld world, Random random, BlockPos blockPos, BlockState state) {
+	public void performBonemeal(ServerWorld world, Random random, BlockPos blockPos, BlockState state) {
 		for (int x = 0; x < 64; ++x) {
 			if (state.getBlock() == AtmosphericBlocks.WARM_WALL_MONKEY_BRUSH.get())
-				state = AtmosphericBlocks.WARM_MONKEY_BRUSH.get().getDefaultState();
+				state = AtmosphericBlocks.WARM_MONKEY_BRUSH.get().defaultBlockState();
 			if (state.getBlock() == AtmosphericBlocks.HOT_WALL_MONKEY_BRUSH.get())
-				state = AtmosphericBlocks.HOT_MONKEY_BRUSH.get().getDefaultState();
+				state = AtmosphericBlocks.HOT_MONKEY_BRUSH.get().defaultBlockState();
 			if (state.getBlock() == AtmosphericBlocks.SCALDING_WALL_MONKEY_BRUSH.get())
-				state = AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().getDefaultState();
+				state = AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().defaultBlockState();
 
 			for (int y = 0; y < x / 16; ++y) {
-				blockPos = blockPos.add(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
-				if (state.isValidPosition(world, blockPos) && world.isAirBlock(blockPos)) {
-					Direction randomD = Direction.getRandomDirection(random);
-					while (!MonkeyBrushFeature.monkeyBrushState(state, randomD).isValidPosition(world, blockPos)) {
-						randomD = Direction.getRandomDirection(random);
+				blockPos = blockPos.offset(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
+				if (state.canSurvive(world, blockPos) && world.isEmptyBlock(blockPos)) {
+					Direction randomD = Direction.getRandom(random);
+					while (!MonkeyBrushFeature.monkeyBrushState(state, randomD).canSurvive(world, blockPos)) {
+						randomD = Direction.getRandom(random);
 					}
-					world.setBlockState(blockPos, MonkeyBrushFeature.monkeyBrushState(state, randomD), 2);
+					world.setBlock(blockPos, MonkeyBrushFeature.monkeyBrushState(state, randomD), 2);
 					return;
 				}
 			}

@@ -16,25 +16,25 @@ import net.minecraft.world.World;
 
 public class PassionVineBundleDispenseBehavior extends OptionalDispenseBehavior {
 
-	protected ItemStack dispenseStack(IBlockSource source, ItemStack stack) {
+	protected ItemStack execute(IBlockSource source, ItemStack stack) {
 		Item item = stack.getItem();
 		if (item instanceof BlockItem) {
-			Direction direction = source.getBlockState().get(DispenserBlock.FACING);
-			World worldIn = source.getWorld().getWorld();
-			BlockPos pos = source.getBlockPos().offset(direction);
+			Direction direction = source.getBlockState().getValue(DispenserBlock.FACING);
+			World worldIn = source.getLevel().getLevel();
+			BlockPos pos = source.getPos().relative(direction);
 
-			BlockPos nextPos = pos.offset(Direction.DOWN);
+			BlockPos nextPos = pos.relative(Direction.DOWN);
 			Block nextBlock = worldIn.getBlockState(nextPos).getBlock();
 			int counter = 9;
 			if (direction != Direction.UP && direction != Direction.DOWN && worldIn.getBlockState(pos).getBlock().isAir(worldIn.getBlockState(pos), worldIn, pos)) {
-				BlockState vine = AtmosphericBlocks.PASSION_VINE.get().getDefaultState().with(PassionVineBlock.FACING, direction);
-				worldIn.setBlockState(pos, vine);
+				BlockState vine = AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction);
+				worldIn.setBlockAndUpdate(pos, vine);
 				counter = 8;
 				while (counter > 0) {
 					if (nextBlock.isAir(worldIn.getBlockState(nextPos), worldIn, nextPos)) {
-						worldIn.setBlockState(nextPos, vine);
+						worldIn.setBlockAndUpdate(nextPos, vine);
 						counter = counter - 1;
-						nextPos = nextPos.offset(Direction.DOWN);
+						nextPos = nextPos.relative(Direction.DOWN);
 						nextBlock = worldIn.getBlockState(nextPos).getBlock();
 					} else {
 						break;
@@ -42,7 +42,7 @@ public class PassionVineBundleDispenseBehavior extends OptionalDispenseBehavior 
 
 				}
 			}
-			Block.spawnAsEntity(worldIn, nextPos.offset(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), counter));
+			Block.popResource(worldIn, nextPos.relative(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), counter));
 			stack.shrink(1);
 		}
 		return stack;

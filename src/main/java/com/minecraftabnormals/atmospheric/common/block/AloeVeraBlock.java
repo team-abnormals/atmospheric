@@ -37,62 +37,62 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class AloeVeraBlock extends BushBlock implements IGrowable {
-	public static final VoxelShape SHAPE_SMALL = Block.makeCuboidShape(6.0D, 0.0D, 6.0D, 10.0D, 4.0D, 10.0D);
-	public static final VoxelShape SHAPE_MEDIUM = Block.makeCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
-	public static final VoxelShape SHAPE_LARGE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
+	public static final VoxelShape SHAPE_SMALL = Block.box(6.0D, 0.0D, 6.0D, 10.0D, 4.0D, 10.0D);
+	public static final VoxelShape SHAPE_MEDIUM = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
+	public static final VoxelShape SHAPE_LARGE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
 
-	public static final IntegerProperty AGE = BlockStateProperties.AGE_0_5;
+	public static final IntegerProperty AGE = BlockStateProperties.AGE_5;
 
 	public AloeVeraBlock(Properties properties) {
 		super(properties);
-		this.setDefaultState(this.getStateContainer().getBaseState().with(AGE, 0));
+		this.registerDefaultState(this.getStateDefinition().any().setValue(AGE, 0));
 	}
 
 	@Override
-	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
 		builder.add(AGE);
 	}
 
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		int age = state.get(AGE);
+		int age = state.getValue(AGE);
 		VoxelShape shape = age >= 4 ? SHAPE_LARGE : age >= 2 ? SHAPE_MEDIUM : SHAPE_SMALL;
 		Vector3d vec3d = state.getOffset(worldIn, pos);
-		return shape.withOffset(vec3d.x, vec3d.y, vec3d.z);
+		return shape.move(vec3d.x, vec3d.y, vec3d.z);
 	}
 
 	@Override
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		int i = state.get(AGE);
+	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+		int i = state.getValue(AGE);
 
-		if (i == 5 && player.getHeldItem(handIn).getItem() == Items.SHEARS) {
+		if (i == 5 && player.getItemInHand(handIn).getItem() == Items.SHEARS) {
 			Random rand = new Random();
-			player.getHeldItem(handIn).damageItem(1, player, (onBroken) -> onBroken.sendBreakAnimation(handIn));
-			worldIn.playSound(null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-			worldIn.playSound(null, pos, SoundEvents.BLOCK_SLIME_BLOCK_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-			worldIn.setBlockState(pos, state.with(AGE, 2));
+			player.getItemInHand(handIn).hurtAndBreak(1, player, (onBroken) -> onBroken.broadcastBreakEvent(handIn));
+			worldIn.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+			worldIn.playSound(null, pos, SoundEvents.SLIME_BLOCK_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+			worldIn.setBlockAndUpdate(pos, state.setValue(AGE, 2));
 
-			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), rand.nextInt(5) + 3));
+			popResource(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), rand.nextInt(5) + 3));
 
 			return ActionResultType.SUCCESS;
 		} else {
-			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+			return super.use(state, worldIn, pos, player, handIn, hit);
 		}
 	}
 
-	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+	public void entityInside(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity && !(entityIn instanceof BeeEntity)) {
 			double chance = 0.1;
 
-			if (state.get(AGE) == 3) chance = 0.1;
-			if (state.get(AGE) == 4) chance = 0.2;
-			if (state.get(AGE) == 5) chance = 0.4;
+			if (state.getValue(AGE) == 3) chance = 0.1;
+			if (state.getValue(AGE) == 4) chance = 0.2;
+			if (state.getValue(AGE) == 5) chance = 0.4;
 
-			if (!worldIn.isRemote && state.get(AGE) > 2 && Math.random() <= chance) {
-				entityIn.setMotionMultiplier(state, new Vector3d(0.2F, 0.2D, 0.2F));
-				entityIn.attackEntityFrom(AtmosphericDamageSources.ALOE_LEAVES, 1.0F);
+			if (!worldIn.isClientSide && state.getValue(AGE) > 2 && Math.random() <= chance) {
+				entityIn.makeStuckInBlock(state, new Vector3d(0.2F, 0.2D, 0.2F));
+				entityIn.hurt(AtmosphericDamageSources.ALOE_LEAVES, 1.0F);
 				if (entityIn instanceof ServerPlayerEntity) {
 					ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
-					if (!entityIn.getEntityWorld().isRemote() && !serverplayerentity.isCreative()) {
+					if (!entityIn.getCommandSenderWorld().isClientSide() && !serverplayerentity.isCreative()) {
 						AtmosphericCriteriaTriggers.ALOE_VERA_PRICK.trigger(serverplayerentity);
 					}
 				}
@@ -105,14 +105,14 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	}
 
 	@Override
-	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		BlockState downState = worldIn.getBlockState(pos.down());
-		return downState.canSustainPlant(worldIn, pos.down(), Direction.UP, this) || isValidGround(downState, worldIn, pos.down());
+	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
+		BlockState downState = worldIn.getBlockState(pos.below());
+		return downState.canSustainPlant(worldIn, pos.below(), Direction.UP, this) || mayPlaceOn(downState, worldIn, pos.below());
 	}
 
 	@Override
-	public boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		return state.isIn(Blocks.RED_SAND);
+	public boolean mayPlaceOn(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		return state.is(Blocks.RED_SAND);
 	}
 
 	@Override
@@ -121,20 +121,20 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	}
 
 	@Override
-	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		return true;
 	}
 
 	@Override
-	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(World worldIn, Random rand, BlockPos pos, BlockState state) {
 		return true;
 	}
 
 	@Override
-	public void grow(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
-		int age = state.get(AGE);
-		if (age < 5) world.setBlockState(pos, state.with(AGE, age + 1));
-		else if (world.getBlockState(pos.up()).isAir() && world.getBlockState(pos.down()).isIn(Tags.Blocks.SAND_COLORLESS)) {
+	public void performBonemeal(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
+		int age = state.getValue(AGE);
+		if (age < 5) world.setBlockAndUpdate(pos, state.setValue(AGE, age + 1));
+		else if (world.getBlockState(pos.above()).isAir() && world.getBlockState(pos.below()).is(Tags.Blocks.SAND_COLORLESS)) {
 			placeAt(world, pos, 2);
 		}
 	}
@@ -142,14 +142,14 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
-		boolean flag = worldIn.getBlockState(pos.down()).isIn(Tags.Blocks.SAND_RED);
+		boolean flag = worldIn.getBlockState(pos.below()).is(Tags.Blocks.SAND_RED);
 		int chance = flag ? 5 : 7;
-		if (worldIn.getLightSubtracted(pos.up(), 0) >= 12 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(chance) == 0)) {
-			if (state.get(AGE) < 5) {
-				worldIn.setBlockState(pos, state.with(AGE, state.get(AGE) + 1));
+		if (worldIn.getRawBrightness(pos.above(), 0) >= 12 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(chance) == 0)) {
+			if (state.getValue(AGE) < 5) {
+				worldIn.setBlockAndUpdate(pos, state.setValue(AGE, state.getValue(AGE) + 1));
 			} else if (!flag) {
 				AloeVeraTallBlock tallAloe = (AloeVeraTallBlock) (AtmosphericBlocks.TALL_ALOE_VERA.get());
-				if (tallAloe.getDefaultState().isValidPosition(worldIn, pos) && worldIn.isAirBlock(pos.up())) {
+				if (tallAloe.defaultBlockState().canSurvive(worldIn, pos) && worldIn.isEmptyBlock(pos.above())) {
 					tallAloe.placeAt(worldIn, pos, 2);
 				}
 			}
@@ -164,7 +164,7 @@ public class AloeVeraBlock extends BushBlock implements IGrowable {
 	}
 
 	public void placeAt(IWorld world, BlockPos pos, int flags) {
-		world.setBlockState(pos, AtmosphericBlocks.TALL_ALOE_VERA.get().getDefaultState().with(AloeVeraTallBlock.HALF, DoubleBlockHalf.LOWER), flags);
-		world.setBlockState(pos.up(), AtmosphericBlocks.TALL_ALOE_VERA.get().getDefaultState().with(AloeVeraTallBlock.HALF, DoubleBlockHalf.UPPER), flags);
+		world.setBlock(pos, AtmosphericBlocks.TALL_ALOE_VERA.get().defaultBlockState().setValue(AloeVeraTallBlock.HALF, DoubleBlockHalf.LOWER), flags);
+		world.setBlock(pos.above(), AtmosphericBlocks.TALL_ALOE_VERA.get().defaultBlockState().setValue(AloeVeraTallBlock.HALF, DoubleBlockHalf.UPPER), flags);
 	}
 }

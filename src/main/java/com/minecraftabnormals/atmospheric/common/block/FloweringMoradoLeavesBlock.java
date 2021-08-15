@@ -27,19 +27,19 @@ public class FloweringMoradoLeavesBlock extends AbnormalsLeavesBlock {
 	}
 
 	@Override
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		Random rand = new Random();
-		if (player.getHeldItem(handIn).getItem() == Items.SHEARS) {
-			player.getHeldItem(handIn).damageItem(1, player, (onBroken) -> {
-				onBroken.sendBreakAnimation(handIn);
+		if (player.getItemInHand(handIn).getItem() == Items.SHEARS) {
+			player.getItemInHand(handIn).hurtAndBreak(1, player, (onBroken) -> {
+				onBroken.broadcastBreakEvent(handIn);
 			});
-			worldIn.playSound(null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-			worldIn.setBlockState(pos, BlockUtil.transferAllBlockStates(state, AtmosphericBlocks.MORADO_LEAVES.get().getDefaultState()));
-			spawnAsEntity(worldIn, pos, new ItemStack(AtmosphericItems.YELLOW_BLOSSOMS.get(), 1 + rand.nextInt(3)));
+			worldIn.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+			worldIn.setBlockAndUpdate(pos, BlockUtil.transferAllBlockStates(state, AtmosphericBlocks.MORADO_LEAVES.get().defaultBlockState()));
+			popResource(worldIn, pos, new ItemStack(AtmosphericItems.YELLOW_BLOSSOMS.get(), 1 + rand.nextInt(3)));
 
 			return ActionResultType.SUCCESS;
 		} else {
-			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+			return super.use(state, worldIn, pos, player, handIn, hit);
 		}
 	}
 
@@ -54,8 +54,8 @@ public class FloweringMoradoLeavesBlock extends AbnormalsLeavesBlock {
 		double d2 = (color & 255) / 255.0F;
 
 		if (rand.nextInt(40) == 0) {
-			BlockPos blockpos = pos.down();
-			if (worldIn.isAirBlock(blockpos)) {
+			BlockPos blockpos = pos.below();
+			if (worldIn.isEmptyBlock(blockpos)) {
 				double d3 = ((float) pos.getX() + rand.nextFloat());
 				double d4 = (double) pos.getY() - 0.05D;
 				double d6 = ((float) pos.getZ() + rand.nextFloat());

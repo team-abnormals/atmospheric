@@ -26,7 +26,7 @@ public class YuccaTreeFeatureConfig implements IFeatureConfig {
 			return p_236692_0_.tallFlowerTopProvider;
 		}), BlockStateProvider.CODEC.fieldOf("tall_flower_bottom_provider").forGetter((p_236692_0_) -> {
 			return p_236692_0_.tallFlowerBottomProvider;
-		}), TreeDecorator.field_236874_c_.listOf().fieldOf("decorators").forGetter((p_236688_0_) -> {
+		}), TreeDecorator.CODEC.listOf().fieldOf("decorators").forGetter((p_236688_0_) -> {
 			return p_236688_0_.decorators;
 		}), Codec.BOOL.fieldOf("petrified").orElse(false).forGetter((p_236686_0_) -> {
 			return p_236686_0_.petrified;
@@ -73,7 +73,7 @@ public class YuccaTreeFeatureConfig implements IFeatureConfig {
 		this.forcePlacement = true;
 	}
 
-	public YuccaTreeFeatureConfig func_236685_a_(List<TreeDecorator> p_236685_1_) {
+	public YuccaTreeFeatureConfig withDecorators(List<TreeDecorator> p_236685_1_) {
 		return new YuccaTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.branchProvider, this.bundleProvider, this.flowerProvider, this.tallFlowerTopProvider, this.tallFlowerBottomProvider, p_236685_1_, this.petrified, this.patch, this.baby, this.heightmap);
 	}
 
@@ -118,7 +118,7 @@ public class YuccaTreeFeatureConfig implements IFeatureConfig {
 			this.tallFlowerBottomProvider = tallFlowerBottomProvider;
 		}
 
-		public YuccaTreeFeatureConfig.Builder func_236703_a_(List<TreeDecorator> p_236703_1_) {
+		public YuccaTreeFeatureConfig.Builder decorators(List<TreeDecorator> p_236703_1_) {
 			this.decorators = p_236703_1_;
 			return this;
 		}

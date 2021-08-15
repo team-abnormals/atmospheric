@@ -16,20 +16,20 @@ public class SpittingEffect extends Effect {
 		super(EffectType.BENEFICIAL, 15454786);
 	}
 
-	public void performEffect(LivingEntity entity, int amplifier) {
+	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		Random random = new Random();
-		if (!entity.world.isRemote && entity.getHealth() > 0) {
+		if (!entity.level.isClientSide && entity.getHealth() > 0) {
 			int chance = (6 / (amplifier < 6 ? (amplifier + 1) : 6));
-			if (entity.world.getGameTime() % chance == 0) {
-				entity.getEntityWorld().playSound((PlayerEntity) null, entity.getPosX(), entity.getPosY(), entity.getPosZ(), SoundEvents.ENTITY_LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
-				PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(entity.world, entity, amplifier);
-				passionseed.func_234612_a_(entity, entity.rotationPitch, entity.rotationYaw, 0.0F, amplifier + 1, 1.0F);
-				entity.world.addEntity(passionseed);
+			if (entity.level.getGameTime() % chance == 0) {
+				entity.getCommandSenderWorld().playSound((PlayerEntity) null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.LLAMA_SPIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / 1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F);
+				PassionfruitSeedEntity passionseed = new PassionfruitSeedEntity(entity.level, entity, amplifier);
+				passionseed.shootFromRotation(entity, entity.xRot, entity.yRot, 0.0F, amplifier + 1, 1.0F);
+				entity.level.addFreshEntity(passionseed);
 			}
 		}
 	}
 
-	public boolean isReady(int duration, int amplifier) {
+	public boolean isDurationEffectTick(int duration, int amplifier) {
 		return true;
 	}
 }

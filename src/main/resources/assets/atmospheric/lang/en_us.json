@@ -324,7 +324,6 @@
 
   "item.atmospheric.yucca_fruit": "Yucca Fruit",
   "item.atmospheric.roasted_yucca_fruit": "Roasted Yucca Fruit",
-  "item.atmospheric.yucca_juice": "Yucca Juice",
   "item.atmospheric.aloe_kernels": "Aloe Kernels",
   "item.atmospheric.aloe_leaves": "Aloe Leaves",
   "item.atmospheric.aloe_gel_bottle": "Aloe Gel Bottle",
@@ -334,7 +333,6 @@
   "effect.atmospheric.worsening": "Worsening",
   "effect.atmospheric.spitting": "Spitting",
   "effect.atmospheric.persistence": "Persistence",
-  "effect.atmospheric.gelled": "Gelled",
 
   "biome.atmospheric.rainforest": "Rainforest",
   "biome.atmospheric.rainforest_mountains": "Rainforest Mountains",
@@ -349,6 +347,8 @@
   "biome.atmospheric.rocky_dunes": "Rocky Dunes",
   "biome.atmospheric.rocky_dunes_hills": "Rocky Dunes Hills",
   "biome.atmospheric.petrified_dunes": "Petrified Dunes",
+
+  "biome.atmospheric.hot_springs": "Hot Springs",
 
   "entity.atmospheric.passionfruit_seed": "Passionfruit Seed",
 

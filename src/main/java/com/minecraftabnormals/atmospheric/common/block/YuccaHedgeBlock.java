@@ -2,7 +2,6 @@ package com.minecraftabnormals.atmospheric.common.block;
 
 import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
 import com.minecraftabnormals.abnormals_core.common.blocks.HedgeBlock;
-import com.minecraftabnormals.abnormals_core.common.blocks.LeafCarpetBlock;
 import com.minecraftabnormals.atmospheric.common.block.api.IYuccaPlant;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
@@ -45,7 +44,7 @@ public class YuccaHedgeBlock extends HedgeBlock implements IYuccaPlant {
 	}
 
 	@Override
-	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+	public void entityInside(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		this.onYuccaCollision(state, worldIn, pos, entityIn);
 	}
 }

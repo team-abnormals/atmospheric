@@ -10,8 +10,6 @@ import com.minecraftabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.loot.LootTables;
-import net.minecraft.world.gen.carver.WorldCarver;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.HashSet;
@@ -33,18 +31,25 @@ public class AtmosphericCompat {
 	}
 
 	public static void registerDispenserBehaviors() {
-		DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
-		DispenserBlock.registerDispenseBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
+		DispenserBlock.registerBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
+		DispenserBlock.registerBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
 	}
 
 	public static void registerCarvers() {
 		ForgeRegistries.WORLD_CARVERS.forEach(carver -> {
-			Set<Block> allBlocksToCarve = new HashSet<>(carver.carvableBlocks);
-			allBlocksToCarve.add(AtmosphericBlocks.ARID_SAND.get());
-			allBlocksToCarve.add(AtmosphericBlocks.ARID_SANDSTONE.get());
-			allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SAND.get());
-			allBlocksToCarve.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
-			carver.carvableBlocks = allBlocksToCarve;
+			Set<Block> blocks = new HashSet<>(carver.replaceableBlocks);
+
+			blocks.add(AtmosphericBlocks.ARID_SAND.get());
+			blocks.add(AtmosphericBlocks.ARID_SANDSTONE.get());
+			blocks.add(AtmosphericBlocks.RED_ARID_SAND.get());
+			blocks.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
+
+			blocks.add(AtmosphericBlocks.IVORY_TRAVERTINE.get());
+			blocks.add(AtmosphericBlocks.PEACH_TRAVERTINE.get());
+			blocks.add(AtmosphericBlocks.PERSIMMON_TRAVERTINE.get());
+			blocks.add(AtmosphericBlocks.SAFFRON_TRAVERTINE.get());
+
+			carver.replaceableBlocks = blocks;
 		});
 	}
 
@@ -70,8 +75,10 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.WATER_HYACINTH.get(), 0.65F);
 
 		DataUtil.registerCompostable(AtmosphericItems.PASSIONFRUIT.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericItems.PASSIONFRUIT_TART.get(), 0.85F);
 		DataUtil.registerCompostable(AtmosphericItems.YUCCA_FRUIT.get(), 0.65F);
 		DataUtil.registerCompostable(AtmosphericItems.ROASTED_YUCCA_FRUIT.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_BRANCH.get(), 0.65F);
 
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_LEAVES.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_SAPLING.get(), 0.3F);

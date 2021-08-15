@@ -26,6 +26,7 @@ public class Atmospheric {
 
 	public Atmospheric() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		ModLoadingContext context = ModLoadingContext.get();
 
 		REGISTRY_HELPER.register(bus);
 		AtmosphericFeatures.FEATURES.register(bus);
@@ -33,17 +34,16 @@ public class Atmospheric {
 		AtmosphericParticles.PARTICLES.register(bus);
 		AtmosphericEffects.EFFECTS.register(bus);
 		AtmosphericEffects.POTIONS.register(bus);
-
 		MinecraftForge.EVENT_BUS.register(this);
 
-		bus.addListener(this::setup);
+		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);
 
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
-		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, AtmosphericConfig.CLIENT_SPEC);
+		context.registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
+		context.registerConfig(ModConfig.Type.CLIENT, AtmosphericConfig.CLIENT_SPEC);
 	}
 
-	private void setup(final FMLCommonSetupEvent event) {
+	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			AtmosphericFeatures.Configured.registerConfiguredFeatures();
 			AtmosphericSurfaceBuilders.Configured.registerConfiguredSurfaceBuilders();
@@ -58,7 +58,7 @@ public class Atmospheric {
 		});
 	}
 
-	private void clientSetup(final FMLClientSetupEvent event) {
+	private void clientSetup(FMLClientSetupEvent event) {
 		AtmosphericRender.registerEntityRenderers();
 		event.enqueueWork(() -> {
 			AtmosphericRender.registerBlockColors();

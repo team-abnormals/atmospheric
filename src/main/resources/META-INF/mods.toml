@@ -8,8 +8,10 @@ license = "https://github.com/team-abnormals/atmospheric/blob/main/LICENSE.txt"
     version = "${file.jarVersion}"
     logoFile = "logo.png"
     itemIcon = "atmospheric:passionfruit"
+    configBackground = "atmospheric:textures/block/arid_sand.png"
     authors = "Team Abnormals"
     credits = "bageldotjpg, five"
+    displayURL = "https://www.teamabnormals.com/mods/atmospheric"
     displayName = "Atmospheric"
     description = '''
     Adds two unique biome types with several variants.
@@ -27,13 +29,13 @@ license = "https://github.com/team-abnormals/atmospheric/blob/main/LICENSE.txt"
 [[dependencies.atmospheric]]
     modId = "forge"
     mandatory = true
-    versionRange = "[36.1.0,)"
+    versionRange = "[36.2.0,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.atmospheric]]
     modId = "abnormals_core"
     mandatory = true
-    versionRange = "[3.1.1,)"
+    versionRange = "[3.2.0,)"
     ordering = "AFTER"
     side = "BOTH"

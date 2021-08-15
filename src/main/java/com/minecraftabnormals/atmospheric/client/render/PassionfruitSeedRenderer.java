@@ -25,18 +25,18 @@ public class PassionfruitSeedRenderer extends EntityRenderer<PassionfruitSeedEnt
 	}
 
 	public void render(PassionfruitSeedEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
-		matrixStackIn.push();
+		matrixStackIn.pushPose();
 		matrixStackIn.translate(0.0D, (double) 0.15F, 0.0D);
-		matrixStackIn.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationYaw, entityIn.rotationYaw) - 90.0F));
-		matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationPitch, entityIn.rotationPitch)));
-		this.model.setRotationAngles(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
-		IVertexBuilder ivertexbuilder = bufferIn.getBuffer(this.model.getRenderType(PASSIONFRUIT_SEED_TEXTURE));
-		this.model.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-		matrixStackIn.pop();
+		matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.yRotO, entityIn.yRot) - 90.0F));
+		matrixStackIn.mulPose(Vector3f.ZP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.xRotO, entityIn.xRot)));
+		this.model.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
+		IVertexBuilder ivertexbuilder = bufferIn.getBuffer(this.model.renderType(PASSIONFRUIT_SEED_TEXTURE));
+		this.model.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+		matrixStackIn.popPose();
 		super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
 	}
 
-	public ResourceLocation getEntityTexture(PassionfruitSeedEntity entity) {
+	public ResourceLocation getTextureLocation(PassionfruitSeedEntity entity) {
 		return PASSIONFRUIT_SEED_TEXTURE;
 	}
 }

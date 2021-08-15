@@ -17,16 +17,16 @@ public class DuneRocksFeature extends Feature<BlockStateFeatureConfig> {
 	}
 
 	@Override
-	public boolean generate(ISeedReader reader, ChunkGenerator generator, Random rand, BlockPos pos, BlockStateFeatureConfig config) {
+	public boolean place(ISeedReader reader, ChunkGenerator generator, Random rand, BlockPos pos, BlockStateFeatureConfig config) {
 		while (true) {
 			label46:
 			{
 				if (pos.getY() > 3) {
-					if (reader.isAirBlock(pos.down())) {
+					if (reader.isEmptyBlock(pos.below())) {
 						break label46;
 					}
 
-					Block block = reader.getBlockState(pos.down()).getBlock();
+					Block block = reader.getBlockState(pos.below()).getBlock();
 					if (block != AtmosphericBlocks.ARID_SAND.get() && block != AtmosphericBlocks.RED_ARID_SAND.get()) {
 						break label46;
 					}
@@ -44,19 +44,19 @@ public class DuneRocksFeature extends Feature<BlockStateFeatureConfig> {
 					int k = i1 + rand.nextInt(2);
 					float f = (float) (i + j + k) * 0.333F + 0.5F;
 
-					for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-i, -j, -k), pos.add(i, j, k))) {
-						if (blockpos.distanceSq(pos) <= (double) (f * f)) {
-							reader.setBlockState(blockpos, config.state, 4);
+					for (BlockPos blockpos : BlockPos.betweenClosed(pos.offset(-i, -j, -k), pos.offset(i, j, k))) {
+						if (blockpos.distSqr(pos) <= (double) (f * f)) {
+							reader.setBlock(blockpos, config.state, 4);
 						}
 					}
 
-					pos = pos.add(-(i1 + 1) + rand.nextInt(2 + i1 * 2), -rand.nextInt(2), -(i1 + 1) + rand.nextInt(2 + i1 * 2));
+					pos = pos.offset(-(i1 + 1) + rand.nextInt(2 + i1 * 2), -rand.nextInt(2), -(i1 + 1) + rand.nextInt(2 + i1 * 2));
 				}
 
 				return true;
 			}
 
-			pos = pos.down();
+			pos = pos.below();
 		}
 	}
 }

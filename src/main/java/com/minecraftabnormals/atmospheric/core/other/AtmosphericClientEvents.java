@@ -23,10 +23,10 @@ public class AtmosphericClientEvents {
 		if (name == null || player == null)
 			return;
 
-		if (player.abilities.isCreativeMode && AtmosphericConfig.CLIENT.showUnobtainableDescription.get() && (name.getNamespace().equals(Atmospheric.MOD_ID) || name.getNamespace().equals("abnormals_delight"))) {
+		if (player.abilities.instabuild && AtmosphericConfig.CLIENT.showUnobtainableDescription.get() && (name.getNamespace().equals(Atmospheric.MOD_ID) || name.getNamespace().equals("abnormals_delight"))) {
 			String id = name.getPath();
 			if (id.contains("travertine") || id.contains("aspen") || id.contains("kousa") || id.contains("grimwood") || id.contains("crustose"))
-				event.getToolTip().add(new TranslationTextComponent("tooltip.atmospheric.unobtainable").mergeStyle(TextFormatting.GRAY));
+				event.getToolTip().add(new TranslationTextComponent("tooltip.atmospheric.unobtainable").withStyle(TextFormatting.GRAY));
 		}
 	}
 }

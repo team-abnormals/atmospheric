@@ -28,8 +28,8 @@ public class AtmosphericParticles {
 
 		@SubscribeEvent
 		public static void registerParticleTypes(ParticleFactoryRegisterEvent event) {
-			Minecraft.getInstance().particles.registerFactory(ALOE_BLOSSOM.get(), AloeBlossomParticle.Factory::new);
-			Minecraft.getInstance().particles.registerFactory(MORADO_BLOSSOM.get(), MoradoBlossomParticle.Factory::new);
+			Minecraft.getInstance().particleEngine.register(ALOE_BLOSSOM.get(), AloeBlossomParticle.Factory::new);
+			Minecraft.getInstance().particleEngine.register(MORADO_BLOSSOM.get(), MoradoBlossomParticle.Factory::new);
 		}
 	}
 }
