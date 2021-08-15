@@ -24,8 +24,8 @@ import java.util.List;
 import java.util.Random;
 
 public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
-	private List<Block> brushes = new ArrayList<>();
-	private boolean water = false;
+	private final List<Block> brushes = new ArrayList<>();
+	private final boolean water;
 
 	public RainforestTreeFeature(Codec<BaseTreeFeatureConfig> config, boolean water) {
 		super(config);
@@ -93,7 +93,7 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 						TreeUtil.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);
 						logsPlaced.add(blockpos);
 					}
-					if (rand.nextInt(6) == 0 && k1 > 3 && k1 < height && canopy == false) {
+					if (rand.nextInt(6) == 0 && k1 > 3 && !canopy) {
 						int leafSize = 1 + rand.nextInt(2);
 						for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 							for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
@@ -107,7 +107,7 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				}
 
 				// branches
-				ArrayList<String> directions = new ArrayList<String>();
+				ArrayList<String> directions = new ArrayList<>();
 
 				for (int k2 = 0; k2 < branches; ++k2) {
 					Direction offset = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
@@ -178,9 +178,6 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 							}
 						}
 					}
-
-					logX = position.getX();
-					logZ = position.getZ();
 				}
 
 				if (!brushes.isEmpty()) {
@@ -233,7 +230,7 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				TreeUtil.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);
 				logsPlaced.add(blockpos);
 			}
-			if (rand.nextInt(6) == 0 && canopy == false) {
+			if (rand.nextInt(6) == 0 && !canopy) {
 				int leafSize = 1 + rand.nextInt(2);
 				for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 					for (int j4 = -leafSize; j4 <= leafSize; ++j4) {

@@ -12,10 +12,6 @@ public class BarrelCactusItem extends BlockItem {
 		super(AtmosphericBlocks.BARREL_CACTUS.get(), builder);
 	}
 
-	public ActionResultType useOn(ItemUseContext context) {
-		return ActionResultType.PASS;
-	}
-
 	@Override
 	public EquipmentSlotType getEquipmentSlot(ItemStack stack) {
 		return EquipmentSlotType.HEAD;

@@ -35,7 +35,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "atmospheric:yucca_sapling"
+          "name": "atmospheric:morado_sapling"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "atmospheric:aspen_sapling"
         }
       ]
     },

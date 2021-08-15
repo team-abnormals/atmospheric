@@ -50,6 +50,7 @@ public class AtmosphericFeatures {
 	public static final RegistryObject<Feature<BaseTreeFeatureConfig>> ROSEWOOD_TREE = FEATURES.register("rosewood_tree", () -> new RainforestTreeFeature(BaseTreeFeatureConfig.CODEC, false));
 	public static final RegistryObject<Feature<BaseTreeFeatureConfig>> ROSEWOOD_WATER_TREE = FEATURES.register("rosewood_water_tree", () -> new RainforestTreeFeature(BaseTreeFeatureConfig.CODEC, true));
 	public static final RegistryObject<Feature<YuccaTreeFeatureConfig>> YUCCA_TREE = FEATURES.register("yucca_tree", () -> new YuccaTreeFeature(YuccaTreeFeatureConfig.CODEC));
+	public static final RegistryObject<Feature<BaseTreeFeatureConfig>> ASPEN_TREE = FEATURES.register("aspen_tree", () -> new AspenTreeFeature(BaseTreeFeatureConfig.CODEC));
 
 	public static final RegistryObject<Feature<NoFeatureConfig>> PASSION_VINE = FEATURES.register("passion_vine", () -> new PassionVineFeature(NoFeatureConfig.CODEC));
 	public static final RegistryObject<Feature<BlockClusterFeatureConfig>> BARREL_CACTUS = FEATURES.register("barrel_cactus", () -> new BarrelCactusFeature(BlockClusterFeatureConfig.CODEC));
@@ -74,6 +75,7 @@ public class AtmosphericFeatures {
 		public static final BlockState RED_ARID_SANDSTONE = AtmosphericBlocks.RED_ARID_SANDSTONE.get().defaultBlockState();
 		public static final BlockState RED_ARID_SANDSTONE_WALL = AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get().defaultBlockState();
 		public static final BlockState ASPEN_LOG = AtmosphericBlocks.ASPEN_LOG.get().defaultBlockState();
+		public static final BlockState WATCHFUL_ASPEN_LOG = AtmosphericBlocks.WATCHFUL_ASPEN_LOG.get().defaultBlockState();
 		public static final BlockState ASPEN_LEAVES = AtmosphericBlocks.ASPEN_LEAVES.get().defaultBlockState();
 		public static final BlockState KOUSA_LOG = AtmosphericBlocks.KOUSA_LOG.get().defaultBlockState();
 		public static final BlockState KOUSA_LEAVES = AtmosphericBlocks.KOUSA_LEAVES.get().defaultBlockState();
@@ -117,8 +119,7 @@ public class AtmosphericFeatures {
 		public static final BaseTreeFeatureConfig MORADO_TREE_WITH_MORE_BEEHIVES_CONFIG = MORADO_TREE_CONFIG.withDecorators(ImmutableList.of(Features.Placements.BEEHIVE_005));
 
 		public static final BaseTreeFeatureConfig KOUSA_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(States.KOUSA_LOG), new SimpleBlockStateProvider(States.KOUSA_LEAVES), new FancyFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(4), 4), new FancyTrunkPlacer(3, 11, 0), new TwoLayerFeature(0, 0, 0, OptionalInt.of(4)))).ignoreVines().heightmap(Heightmap.Type.MOTION_BLOCKING).build();
-		public static final BaseTreeFeatureConfig ASPEN_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(States.ASPEN_LOG), new SimpleBlockStateProvider(States.ASPEN_LEAVES), new SpruceFoliagePlacer(FeatureSpread.of(2, 1), FeatureSpread.of(0, 2), FeatureSpread.of(1, 1)), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build();
-		public static final BaseTreeFeatureConfig MEGA_ASPEN_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(States.ASPEN_LOG), new SimpleBlockStateProvider(States.ASPEN_LEAVES), new MegaPineFoliagePlacer(FeatureSpread.fixed(0), FeatureSpread.fixed(0), FeatureSpread.of(13, 4)), new GiantTrunkPlacer(13, 2, 14), new TwoLayerFeature(1, 1, 2))).decorators(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(States.CRUSTOSE)))).build();
+		public static final BaseTreeFeatureConfig ASPEN_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new WeightedBlockStateProvider().add(States.ASPEN_LOG, 3).add(States.WATCHFUL_ASPEN_LOG, 2), new SimpleBlockStateProvider(States.ASPEN_LEAVES), new SpruceFoliagePlacer(FeatureSpread.of(0, 0), FeatureSpread.of(0, 0), FeatureSpread.of(0, 0)), new StraightTrunkPlacer(0, 0, 0), new TwoLayerFeature(0, 0, 0))).ignoreVines().heightmap(Heightmap.Type.MOTION_BLOCKING).build();
 		public static final BaseTreeFeatureConfig GRIMWOOD_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(States.GRIMWOOD_LOG), new SimpleBlockStateProvider(States.GRIMWOOD_LEAVES), new SpruceFoliagePlacer(FeatureSpread.of(2, 1), FeatureSpread.of(0, 2), FeatureSpread.of(1, 1)), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build();
 	}
 

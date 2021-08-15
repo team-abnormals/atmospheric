@@ -25,7 +25,7 @@ public class AtmosphericClientEvents {
 
 		if (player.abilities.instabuild && AtmosphericConfig.CLIENT.showUnobtainableDescription.get() && (name.getNamespace().equals(Atmospheric.MOD_ID) || name.getNamespace().equals("abnormals_delight"))) {
 			String id = name.getPath();
-			if (id.contains("travertine") || id.contains("aspen") || id.contains("kousa") || id.contains("grimwood") || id.contains("crustose"))
+			if (id.contains("travertine") || id.contains("kousa") || id.contains("grimwood") || id.contains("crustose"))
 				event.getToolTip().add(new TranslationTextComponent("tooltip.atmospheric.unobtainable").withStyle(TextFormatting.GRAY));
 		}
 	}

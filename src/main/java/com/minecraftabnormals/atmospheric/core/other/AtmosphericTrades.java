@@ -26,12 +26,13 @@ public class AtmosphericTrades {
 				new AbnormalsTrade(1, AtmosphericBlocks.YUCCA_FLOWER.get().asItem(), 1, 8, 1),
 				new AbnormalsTrade(1, AtmosphericBlocks.WATER_HYACINTH.get().asItem(), 1, 8, 1),
 				new AbnormalsTrade(1, AtmosphericBlocks.GILIA.get().asItem(), 1, 12, 1),
-				new AbnormalsTrade(1, AtmosphericItems.ALOE_KERNELS.get().asItem(), 1, 12, 1),
+				new AbnormalsTrade(1, AtmosphericItems.ALOE_KERNELS.get(), 1, 12, 1),
 				new AbnormalsTrade(3, AtmosphericBlocks.BARREL_CACTUS.get().asItem(), 1, 8, 1),
 
 				new AbnormalsTrade(5, AtmosphericBlocks.ROSEWOOD_SAPLING.get().asItem(), 1, 8, 1),
 				new AbnormalsTrade(5, AtmosphericBlocks.YUCCA_SAPLING.get().asItem(), 1, 8, 1),
-				new AbnormalsTrade(5, AtmosphericBlocks.MORADO_SAPLING.get().asItem(), 1, 8, 1)
+				new AbnormalsTrade(5, AtmosphericBlocks.MORADO_SAPLING.get().asItem(), 1, 8, 1),
+				new AbnormalsTrade(5, AtmosphericBlocks.ASPEN_SAPLING.get().asItem(), 1, 8, 1)
 		);
 	}
 
