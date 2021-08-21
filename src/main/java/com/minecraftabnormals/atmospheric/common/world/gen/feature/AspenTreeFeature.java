@@ -1,5 +1,6 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
+import com.google.common.collect.Lists;
 import com.minecraftabnormals.abnormals_core.core.util.TreeUtil;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
@@ -23,7 +24,7 @@ public class AspenTreeFeature extends Feature<BaseTreeFeatureConfig> {
 
 	@Override
 	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
-		int height = 12 + rand.nextInt(3) + rand.nextInt(3) + rand.nextInt(3);
+		int height = 12 + rand.nextInt(4) + rand.nextInt(5) + rand.nextInt(6);
 		boolean flag = true;
 
 		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getMaxBuildHeight()) {
@@ -59,7 +60,9 @@ public class AspenTreeFeature extends Feature<BaseTreeFeatureConfig> {
 
 				int logX = position.getX();
 				int logZ = position.getZ();
-				int leafHeight = 7 + rand.nextInt(3);
+				int leafHeight = height - 7 - rand.nextInt(3) - rand.nextInt(3);
+				int branchHeight = leafHeight - 2 - rand.nextInt(3);
+				int bonusBranchHeight = branchHeight - 2 - rand.nextInt(3);
 
 				for (int k1 = 0; k1 < height; ++k1) {
 					int logY = position.getY() + k1;
@@ -89,11 +92,18 @@ public class AspenTreeFeature extends Feature<BaseTreeFeatureConfig> {
 								}
 							}
 						}
-					} else if (k1 == leafHeight - 2 && rand.nextInt(3) == 0) {
-						for (Direction direction : Direction.values()) {
-							if (direction.getAxis().getPlane() == Direction.Plane.HORIZONTAL) {
-								TreeUtil.placeLeafAt(worldIn, blockpos.relative(direction), rand, config);
-							}
+					} else if ((k1 == branchHeight && branchHeight > 3 && rand.nextInt(5) != 0) || (k1 == bonusBranchHeight && bonusBranchHeight > 2 && rand.nextInt(3) != 0)) {
+						int branchSize = 1 + rand.nextInt(2);
+						if (rand.nextBoolean())
+							branchSize += 1 + rand.nextInt(2);
+						ArrayList<Direction> usedDirections = Lists.newArrayList();
+						while (usedDirections.size() < branchSize) {
+							Direction randomDirection = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
+							if (!usedDirections.contains(randomDirection))
+								usedDirections.add(randomDirection);
+						}
+						for (Direction direction : usedDirections) {
+							TreeUtil.placeLeafAt(worldIn, blockpos.relative(direction), rand, config);
 						}
 					}
 				}
