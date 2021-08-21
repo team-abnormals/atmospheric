@@ -98,8 +98,8 @@ public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLo
 		if (blockstate.getBlock() == this && blockstate.getValue(HALF) != half) {
 			worldIn.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
 			if (!worldIn.isClientSide && !player.isCreative()) {
-				dropResources(state, worldIn, pos, (TileEntity) null, player, player.getMainHandItem());
-				dropResources(blockstate, worldIn, pos, (TileEntity) null, player, player.getMainHandItem());
+				dropResources(state, worldIn, pos, null, player, player.getMainHandItem());
+				dropResources(blockstate, worldIn, pos, null, player, player.getMainHandItem());
 			}
 			if (blockstate.getValue(HALF) == DoubleBlockHalf.LOWER) {
 				worldIn.destroyBlock(blockpos, false);

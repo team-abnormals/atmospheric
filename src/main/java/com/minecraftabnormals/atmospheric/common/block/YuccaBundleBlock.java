@@ -29,7 +29,7 @@ public class YuccaBundleBlock extends FallingBlock {
 	private void checkFallable(World worldIn, BlockPos pos) {
 		if (worldIn.isEmptyBlock(pos.below()) || isFree(worldIn.getBlockState(pos.below())) && pos.getY() >= 0) {
 			if (!worldIn.isClientSide) {
-				FallingBlockEntity fallingblockentity = new FallingBlockEntity(worldIn, (double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D, worldIn.getBlockState(pos));
+				FallingBlockEntity fallingblockentity = new FallingBlockEntity(worldIn, (double) pos.getX() + 0.5D, pos.getY(), (double) pos.getZ() + 0.5D, worldIn.getBlockState(pos));
 				this.falling(fallingblockentity);
 				worldIn.addFreshEntity(fallingblockentity);
 			}

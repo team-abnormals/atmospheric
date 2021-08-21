@@ -66,10 +66,10 @@ public class AridSandBlock extends FallingBlock implements IGrowable {
 		BlockState blockstate = AtmosphericBlocks.ARID_SPROUTS.get().defaultBlockState();
 
 		label48:
-		for(int i = 0; i < 128; ++i) {
+		for (int i = 0; i < 128; ++i) {
 			BlockPos blockpos1 = blockpos;
 
-			for(int j = 0; j < i / 16; ++j) {
+			for (int j = 0; j < i / 16; ++j) {
 				blockpos1 = blockpos1.offset(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
 				if (!worldIn.getBlockState(blockpos1.below()).is(this) || worldIn.getBlockState(blockpos1).isCollisionShapeFullBlock(worldIn, blockpos1)) {
 					continue label48;
@@ -93,7 +93,7 @@ public class AridSandBlock extends FallingBlock implements IGrowable {
 				if (blockstate1.canSurvive(worldIn, blockpos1)) {
 					worldIn.setBlock(blockpos1, blockstate1, 3);
 					if (blockstate1.is(AtmosphericBlocks.YUCCA_FLOWER.get()) && rand.nextInt(10) == 0) {
-						((IGrowable)blockstate1.getBlock()).performBonemeal(worldIn, rand, blockpos1, blockstate1);
+						((IGrowable) blockstate1.getBlock()).performBonemeal(worldIn, rand, blockpos1, blockstate1);
 					}
 				}
 			}

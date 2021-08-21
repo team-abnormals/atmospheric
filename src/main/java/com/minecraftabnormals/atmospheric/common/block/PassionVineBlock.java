@@ -38,7 +38,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 	protected static final VoxelShape NORTH_AABB = Block.box(0.0D, 0.0D, 15.0D, 16.0D, 16.0D, 16.0D);
 
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		switch ((Direction) state.getValue(FACING)) {
+		switch (state.getValue(FACING)) {
 			case NORTH:
 				return NORTH_AABB;
 			case SOUTH:
@@ -138,7 +138,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 			return ActionResultType.PASS;
 		} else if (i == 4) {
 			popResource(worldIn, pos, new ItemStack(AtmosphericItems.PASSIONFRUIT.get(), 1 + worldIn.random.nextInt(2) + worldIn.random.nextInt(2) + worldIn.random.nextInt(3)));
-			worldIn.playSound((PlayerEntity) null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+			worldIn.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
 			worldIn.setBlock(pos, state.setValue(AGE, Integer.valueOf(1)), 2);
 			return ActionResultType.SUCCESS;
 		} else if (i == 1 && (player.getItemInHand(handIn).getItem() == Items.SHEARS)) {
@@ -150,7 +150,7 @@ public class PassionVineBlock extends Block implements IGrowable {
 			player.getItemInHand(handIn).hurtAndBreak(1, player, (p_213442_1_) -> {
 				p_213442_1_.broadcastBreakEvent(handIn);
 			});
-			worldIn.playSound((PlayerEntity) null, pos, SoundEvents.SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+			worldIn.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
 			worldIn.setBlock(pos, state.setValue(AGE, Integer.valueOf(0)), 2);
 			return ActionResultType.SUCCESS;
 		} else {
@@ -170,13 +170,9 @@ public class PassionVineBlock extends Block implements IGrowable {
 	@Override
 	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		Direction direction = state.getValue(FACING);
-		if (this.canAttachTo(worldIn, pos.relative(direction.getOpposite()), direction)
+		return this.canAttachTo(worldIn, pos.relative(direction.getOpposite()), direction)
 				|| (worldIn.getBlockState(pos.above()).getBlock() == AtmosphericBlocks.PASSION_VINE.get()
-				&& worldIn.getBlockState(pos.above()).getValue(FACING) == state.getValue(FACING))) {
-			return true;
-		} else {
-			return false;
-		}
+				&& worldIn.getBlockState(pos.above()).getValue(FACING) == state.getValue(FACING));
 	}
 
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {

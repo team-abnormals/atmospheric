@@ -10,7 +10,7 @@ public enum PassionVineAttachment implements IStringSerializable {
 
 	private final String name;
 
-	private PassionVineAttachment(String name) {
+	PassionVineAttachment(String name) {
 		this.name = name;
 	}
 

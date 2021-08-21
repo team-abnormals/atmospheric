@@ -26,7 +26,7 @@ public class PassionfruitSeedRenderer extends EntityRenderer<PassionfruitSeedEnt
 
 	public void render(PassionfruitSeedEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
 		matrixStackIn.pushPose();
-		matrixStackIn.translate(0.0D, (double) 0.15F, 0.0D);
+		matrixStackIn.translate(0.0D, 0.15F, 0.0D);
 		matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.yRotO, entityIn.yRot) - 90.0F));
 		matrixStackIn.mulPose(Vector3f.ZP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.xRotO, entityIn.xRot)));
 		this.model.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);

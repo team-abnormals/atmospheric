@@ -44,7 +44,7 @@ public class SurfaceFossilFeature extends Feature<NoFeatureConfig> {
 	public boolean place(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
 		Rotation rotation = Rotation.getRandom(random);
 		int i = random.nextInt(FOSSILS.length);
-		TemplateManager templatemanager = ((ServerWorld) world.getLevel()).getServer().getStructureManager();
+		TemplateManager templatemanager = world.getLevel().getServer().getStructureManager();
 		Template template = templatemanager.getOrCreate(FOSSILS[i]);
 		Template template1 = templatemanager.getOrCreate(FOSSILS_COAL[i]);
 		ChunkPos chunkpos = new ChunkPos(pos);

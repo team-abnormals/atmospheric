@@ -4,8 +4,6 @@ import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.util.ActionResultType;
 
 public class BarrelCactusItem extends BlockItem {
 	public BarrelCactusItem(Properties builder) {

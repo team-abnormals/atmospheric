@@ -30,30 +30,30 @@ public class AtmosphericGeneration {
 		BiomeGenerationSettingsBuilder generation = event.getGeneration();
 		MobSpawnInfoBuilder spawns = event.getSpawns();
 
-		if (biome != null) {
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST_PLATEAU.getKey()))
-				withRainforestFeatures(generation, spawns);
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.RAINFOREST_MOUNTAINS.getKey()))
-				withRainforestMountainsFeatures(generation, spawns);
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.SPARSE_RAINFOREST_PLATEAU.getKey()))
-				withSparseRainforestPlateauFeatures(generation, spawns);
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.RAINFOREST_BASIN.getKey()))
-				withRainforestBasinFeatures(generation, spawns);
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.SPARSE_RAINFOREST_BASIN.getKey()))
-				withSparseRainforestBasinFeatures(generation, spawns);
+		if (biome == null) return;
 
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.DUNES_HILLS.getKey()))
-				withDunesFeatures(generation, spawns);
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES_HILLS.getKey()))
-				withRockyDunesFeatures(generation, spawns);
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.PETRIFIED_DUNES.getKey()))
-				withPetrifiedDunesFeatures(generation, spawns);
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.FLOURISHING_DUNES.getKey()))
-				withFlourishingDunesFeatures(generation, spawns);
+		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST_PLATEAU.getKey()))
+			withRainforestFeatures(generation, spawns);
+		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.RAINFOREST_MOUNTAINS.getKey()))
+			withRainforestMountainsFeatures(generation, spawns);
+		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.SPARSE_RAINFOREST_PLATEAU.getKey()))
+			withSparseRainforestPlateauFeatures(generation, spawns);
+		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.RAINFOREST_BASIN.getKey()))
+			withRainforestBasinFeatures(generation, spawns);
+		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.SPARSE_RAINFOREST_BASIN.getKey()))
+			withSparseRainforestBasinFeatures(generation, spawns);
 
-			if (DataUtil.matchesKeys(biome, AtmosphericBiomes.HOT_SPRINGS.getKey()))
-				withHotSpringsFeatures(generation, spawns);
-		}
+		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.DUNES_HILLS.getKey()))
+			withDunesFeatures(generation, spawns);
+		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES_HILLS.getKey()))
+			withRockyDunesFeatures(generation, spawns);
+		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.PETRIFIED_DUNES.getKey()))
+			withPetrifiedDunesFeatures(generation, spawns);
+		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.FLOURISHING_DUNES.getKey()))
+			withFlourishingDunesFeatures(generation, spawns);
+
+		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.HOT_SPRINGS.getKey()))
+			withHotSpringsFeatures(generation, spawns);
 	}
 
 	@SubscribeEvent
@@ -61,14 +61,14 @@ public class AtmosphericGeneration {
 		ResourceLocation biome = event.getName();
 		BiomeGenerationSettingsBuilder generation = event.getGeneration();
 
-		if (biome != null) {
-			if (DataUtil.matchesKeys(biome, Biomes.DESERT, Biomes.DESERT_HILLS))
-				generation.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_DESERT);
-			if (DataUtil.matchesKeys(biome, Biomes.MODIFIED_WOODED_BADLANDS_PLATEAU, Biomes.WOODED_BADLANDS_PLATEAU))
-				generation.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE);
-			if (DataUtil.matchesKeys(biome, Biomes.SHATTERED_SAVANNA, Biomes.SHATTERED_SAVANNA_PLATEAU))
-				generation.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_SAVANNA);
-		}
+		if (biome == null) return;
+
+		if (DataUtil.matchesKeys(biome, Biomes.DESERT, Biomes.DESERT_HILLS))
+			generation.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_DESERT);
+		if (DataUtil.matchesKeys(biome, Biomes.MODIFIED_WOODED_BADLANDS_PLATEAU, Biomes.WOODED_BADLANDS_PLATEAU))
+			generation.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE);
+		if (DataUtil.matchesKeys(biome, Biomes.SHATTERED_SAVANNA, Biomes.SHATTERED_SAVANNA_PLATEAU))
+			generation.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_SAVANNA);
 	}
 
 	public static void withBaseRainforestFeatures(BiomeGenerationSettingsBuilder builder, MobSpawnInfoBuilder spawns) {

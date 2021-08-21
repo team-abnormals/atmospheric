@@ -100,7 +100,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 			}
 
 			if (!worldIn.isClientSide && state.getValue(AGE) > 3 && Math.random() <= 0.4 && state.getValue(HALF) == DoubleBlockHalf.LOWER && !(entityIn instanceof BeeEntity)) {
-				entityIn.makeStuckInBlock(state, new Vector3d((double) 0.2F, 0.2D, 0.2F));
+				entityIn.makeStuckInBlock(state, new Vector3d(0.2F, 0.2D, 0.2F));
 				entityIn.hurt(AtmosphericDamageSources.ALOE_LEAVES, 1.0F);
 				if (entityIn instanceof ServerPlayerEntity) {
 					ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;

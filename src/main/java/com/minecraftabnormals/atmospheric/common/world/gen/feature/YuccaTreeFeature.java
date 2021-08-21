@@ -78,7 +78,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 					if (config.patch) {
 						for (int j = 0; j < 64; ++j) {
 							BlockPos blockpos = position.offset(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-							if (TreeUtil.isAir(worldIn, blockpos) && blockpos.getY() < 255 && config.flowerProvider.getState(rand, blockpos).canSurvive((IWorldReader) worldIn, blockpos)) {
+							if (TreeUtil.isAir(worldIn, blockpos) && blockpos.getY() < 255 && config.flowerProvider.getState(rand, blockpos).canSurvive(worldIn, blockpos)) {
 								placeFlowerAt(worldIn, blockpos, rand, config);
 							}
 						}
@@ -165,7 +165,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 					if (config.patch) {
 						for (int j = 0; j < 64; ++j) {
 							BlockPos blockpos = position.offset(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-							if (TreeUtil.isAir(worldIn, blockpos) && blockpos.getY() < 255 && config.flowerProvider.getState(rand, blockpos).canSurvive((IWorldReader) worldIn, blockpos)) {
+							if (TreeUtil.isAir(worldIn, blockpos) && blockpos.getY() < 255 && config.flowerProvider.getState(rand, blockpos).canSurvive(worldIn, blockpos)) {
 								placeFlowerAt(worldIn, blockpos, rand, config);
 							}
 						}
