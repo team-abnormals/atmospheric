@@ -32,7 +32,7 @@ public class AtmosphericBiomes {
 	public static final BiomeSubRegistryHelper.KeyedBiome ROCKY_DUNES_HILLS = HELPER.createBiome("rocky_dunes_hills", () -> createDunesBiome(0.45F, 0.45F));
 	public static final BiomeSubRegistryHelper.KeyedBiome PETRIFIED_DUNES = HELPER.createBiome("petrified_dunes", () -> createDunesBiome(0.45F, 0.20F));
 
-	public static final BiomeSubRegistryHelper.KeyedBiome HOT_SPRINGS = HELPER.createBiome("hot_springs", () -> createHotSpringsBiome(0.15F, 0.45F));
+	public static final BiomeSubRegistryHelper.KeyedBiome HOT_SPRINGS = HELPER.createBiome("hot_springs", AtmosphericBiomes::createHotSpringsBiome);
 
 	public static void addBiomeVariants() {
 		BiomeUtil.addHillBiome(RAINFOREST.getKey(), Pair.of(RAINFOREST_BASIN.getKey(), 1), Pair.of(RAINFOREST_PLATEAU.getKey(), 1), Pair.of(SPARSE_RAINFOREST_PLATEAU.getKey(), 1));
@@ -85,10 +85,10 @@ public class AtmosphericBiomes {
 		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.DESERT).depth(depth).scale(scale).temperature(2.0F).downfall(0.0F).specialEffects((new BiomeAmbience.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(14988944).skyColor(getSkyColorWithTemperatureModifier(2.0F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(new MobSpawnInfo.Builder().build()).generationSettings((new BiomeGenerationSettings.Builder()).surfaceBuilder(AtmosphericSurfaceBuilders.Configured.DUNES_WAVES).build()).build();
 	}
 
-	private static Biome createHotSpringsBiome(float depth, float scale) {
+	private static Biome createHotSpringsBiome() {
 		return (new Biome.Builder()).precipitation(Biome.RainType.NONE)
 				.biomeCategory(Biome.Category.TAIGA)
-				.depth(depth).scale(scale)
+				.depth(0.15F).scale(0.45F)
 				.temperature(0.25F)
 				.downfall(0.4F)
 				.specialEffects((new BiomeAmbience.Builder())

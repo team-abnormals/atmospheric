@@ -45,8 +45,10 @@ public class AtmosphericConfig {
 			petrifiedDunesWeight = builder.define("Petrified Dunes weight", 0);
 			builder.pop();
 
+			builder.comment("These biomes are experimental and not ready for use in gameplay").push("experimental");
 			builder.push("hot_springs");
-			hotSpringsWeight = builder.define("Hot Springs weight", 1);
+			hotSpringsWeight = builder.define("Hot Springs weight", 0);
+			builder.pop();
 			builder.pop();
 
 			builder.pop();
