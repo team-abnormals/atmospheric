@@ -78,7 +78,7 @@ public class AtmosphericBiomes {
 	}
 
 	private static Biome createRainforestBiome(float depth, float scale) {
-		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.FOREST).depth(depth).scale(scale).temperature(0.9F).downfall(0.95F).specialEffects((new BiomeAmbience.Builder()).waterColor(6675400).waterFogColor(408635).fogColor(12638463).skyColor(getSkyColorWithTemperatureModifier(0.9F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(new MobSpawnInfo.Builder().build()).generationSettings((new BiomeGenerationSettings.Builder()).surfaceBuilder(ConfiguredSurfaceBuilders.GRASS).build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.JUNGLE).depth(depth).scale(scale).temperature(0.9F).downfall(0.95F).specialEffects((new BiomeAmbience.Builder()).waterColor(6675400).waterFogColor(408635).fogColor(12638463).skyColor(getSkyColorWithTemperatureModifier(0.9F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(new MobSpawnInfo.Builder().build()).generationSettings((new BiomeGenerationSettings.Builder()).surfaceBuilder(ConfiguredSurfaceBuilders.GRASS).build()).build();
 	}
 
 	private static Biome createDunesBiome(float depth, float scale) {
