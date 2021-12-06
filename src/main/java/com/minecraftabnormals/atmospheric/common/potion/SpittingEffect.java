@@ -2,7 +2,6 @@ package com.minecraftabnormals.atmospheric.common.potion;
 
 import com.minecraftabnormals.atmospheric.common.entity.PassionfruitSeedEntity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
 import net.minecraft.util.SoundCategory;
