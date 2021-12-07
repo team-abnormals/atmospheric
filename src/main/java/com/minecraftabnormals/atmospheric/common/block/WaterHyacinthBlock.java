@@ -37,7 +37,7 @@ public class WaterHyacinthBlock extends AbnormalsFlowerBlock implements IWaterLo
 	public static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 
 	public WaterHyacinthBlock(Properties properties) {
-		super(AtmosphericEffects.WORSENING::get, 120, properties);
+		super(AtmosphericEffects.WORSENING, 6, properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false).setValue(HALF, DoubleBlockHalf.UPPER));
 	}
 
