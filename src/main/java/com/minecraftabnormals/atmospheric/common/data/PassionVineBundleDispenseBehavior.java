@@ -2,40 +2,40 @@ package com.minecraftabnormals.atmospheric.common.data;
 
 import com.minecraftabnormals.atmospheric.common.block.PassionVineBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.DispenserBlock;
-import net.minecraft.dispenser.IBlockSource;
-import net.minecraft.dispenser.OptionalDispenseBehavior;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.BlockSource;
+import net.minecraft.core.Direction;
+import net.minecraft.core.dispenser.OptionalDispenseItemBehavior;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
-public class PassionVineBundleDispenseBehavior extends OptionalDispenseBehavior {
+public class PassionVineBundleDispenseBehavior extends OptionalDispenseItemBehavior {
 
-	protected ItemStack execute(IBlockSource source, ItemStack stack) {
+	protected ItemStack execute(BlockSource source, ItemStack stack) {
 		Item item = stack.getItem();
 		if (item instanceof BlockItem) {
 			Direction direction = source.getBlockState().getValue(DispenserBlock.FACING);
-			World worldIn = source.getLevel().getLevel();
+			Level worldIn = source.getLevel().getLevel();
 			BlockPos pos = source.getPos().relative(direction);
 
 			BlockPos nextPos = pos.relative(Direction.DOWN);
-			Block nextBlock = worldIn.getBlockState(nextPos).getBlock();
+			BlockState nextBlock = worldIn.getBlockState(nextPos);
 			int counter = 9;
-			if (direction != Direction.UP && direction != Direction.DOWN && worldIn.getBlockState(pos).getBlock().isAir(worldIn.getBlockState(pos), worldIn, pos)) {
+			if (direction != Direction.UP && direction != Direction.DOWN && worldIn.getBlockState(pos).isAir()) {
 				BlockState vine = AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction);
 				worldIn.setBlockAndUpdate(pos, vine);
 				counter = 8;
 				while (counter > 0) {
-					if (nextBlock.isAir(worldIn.getBlockState(nextPos), worldIn, nextPos)) {
+					if (nextBlock.isAir()) {
 						worldIn.setBlockAndUpdate(nextPos, vine);
 						counter = counter - 1;
 						nextPos = nextPos.relative(Direction.DOWN);
-						nextBlock = worldIn.getBlockState(nextPos).getBlock();
+						nextBlock = worldIn.getBlockState(nextPos);
 					} else {
 						break;
 					}

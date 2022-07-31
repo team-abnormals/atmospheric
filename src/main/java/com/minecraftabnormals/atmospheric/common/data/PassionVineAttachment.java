@@ -1,8 +1,8 @@
 package com.minecraftabnormals.atmospheric.common.data;
 
-import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.StringRepresentable;
 
-public enum PassionVineAttachment implements IStringSerializable {
+public enum PassionVineAttachment implements StringRepresentable {
 	NONE("none"),
 	TOP("top"),
 	BOTTOM("bottom"),

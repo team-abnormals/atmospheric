@@ -1,22 +1,22 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
-import com.minecraftabnormals.abnormals_core.common.blocks.HedgeBlock;
-import com.minecraftabnormals.atmospheric.common.block.api.IYuccaPlant;
+import com.minecraftabnormals.atmospheric.common.block.api.YuccaPlant;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.pathfinding.PathNodeType;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
+import com.teamabnormals.blueprint.common.advancement.EmptyTrigger;
+import com.teamabnormals.blueprint.common.block.HedgeBlock;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 
 import javax.annotation.Nullable;
 
-public class YuccaHedgeBlock extends HedgeBlock implements IYuccaPlant {
+public class YuccaHedgeBlock extends HedgeBlock implements YuccaPlant {
 
 	public YuccaHedgeBlock(Properties properties) {
 		super(properties);
@@ -24,8 +24,8 @@ public class YuccaHedgeBlock extends HedgeBlock implements IYuccaPlant {
 
 	@Nullable
 	@Override
-	public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
-		return PathNodeType.DAMAGE_CACTUS;
+	public BlockPathTypes getAiPathNodeType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+		return BlockPathTypes.DAMAGE_CACTUS;
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class YuccaHedgeBlock extends HedgeBlock implements IYuccaPlant {
 	}
 
 	@Override
-	public void entityInside(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
 		this.onYuccaCollision(state, worldIn, pos, entityIn);
 	}
 }

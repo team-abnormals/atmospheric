@@ -1,21 +1,21 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
-import net.minecraft.world.lighting.LightEngine;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.lighting.LayerLightEngine;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
-import net.minecraftforge.common.ToolType;
+import net.minecraftforge.common.ToolAction;
+import net.minecraftforge.common.ToolActions;
 
 import java.util.Random;
 
@@ -25,35 +25,36 @@ public class CrustoseBlock extends Block {
 		super(properties);
 	}
 
-	private static boolean canBeGrass(BlockState state, IWorldReader world, BlockPos pos) {
+	private static boolean canBeGrass(BlockState state, LevelReader world, BlockPos pos) {
 		BlockPos blockpos = pos.above();
 		BlockState blockstate = world.getBlockState(blockpos);
-		int i = LightEngine.getLightBlockInto(world, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(world, blockpos));
+		int i = LayerLightEngine.getLightBlockInto(world, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(world, blockpos));
 		return i < world.getMaxLightLevel();
 
 	}
 
-	private static boolean canPropagate(BlockState state, IWorldReader world, BlockPos pos) {
+	private static boolean canPropagate(BlockState state, LevelReader world, BlockPos pos) {
 		BlockPos blockpos = pos.above();
 		return canBeGrass(state, world, pos) && !world.getFluidState(blockpos).is(FluidTags.WATER);
 	}
 
-	public BlockState getToolModifiedState(BlockState state, World world, BlockPos pos, PlayerEntity player, ItemStack stack, ToolType toolType) {
-		if (toolType == ToolType.SHOVEL) {
+	@Override
+	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
+		if (toolAction == ToolActions.AXE_STRIP) {
 			return AtmosphericBlocks.CRUSTOSE_PATH.get().defaultBlockState();
-		} else {
-			return super.getToolModifiedState(state, world, pos, player, stack, toolType);
 		}
+		return super.getToolModifiedState(state, context, toolAction, simulate);
 	}
 
 	@Override
-	public boolean canSustainPlant(BlockState state, IBlockReader blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
+	public boolean canSustainPlant(BlockState state, BlockGetter blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
 		final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
 		final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
 		return plantType == PlantType.PLAINS;
 	}
 
-	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+	@Override
+	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
 		if (!worldIn.isClientSide) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading

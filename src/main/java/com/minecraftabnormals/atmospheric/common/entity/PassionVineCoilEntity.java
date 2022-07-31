@@ -3,27 +3,27 @@ package com.minecraftabnormals.atmospheric.common.entity;
 import com.minecraftabnormals.atmospheric.common.block.PassionVineBlock;
 import com.minecraftabnormals.atmospheric.common.block.PassionVineBundleBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.projectile.ProjectileItemEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.particles.IParticleData;
-import net.minecraft.particles.ItemParticleData;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class PassionVineCoilEntity extends ProjectileItemEntity {
+public class PassionVineCoilEntity extends ThrowableItemProjectile {
 
-	public PassionVineCoilEntity(World worldIn, LivingEntity throwerIn) {
+	public PassionVineCoilEntity(Level worldIn, LivingEntity throwerIn) {
 		super(EntityType.SNOWBALL, throwerIn, worldIn);
 	}
 
@@ -32,15 +32,15 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	private IParticleData makeParticle() {
+	private ParticleOptions makeParticle() {
 		ItemStack itemstack = this.getItemRaw();
-		return itemstack.isEmpty() ? ParticleTypes.ITEM_SNOWBALL : new ItemParticleData(ParticleTypes.ITEM, itemstack);
+		return itemstack.isEmpty() ? ParticleTypes.ITEM_SNOWBALL : new ItemParticleOption(ParticleTypes.ITEM, itemstack);
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	public void handleEntityEvent(byte id) {
 		if (id == 3) {
-			IParticleData iparticledata = this.makeParticle();
+			ParticleOptions iparticledata = this.makeParticle();
 			for (int i = 0; i < 8; ++i) {
 				this.level.addParticle(iparticledata, this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
 			}
@@ -49,8 +49,8 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 	}
 
 	@Override
-	protected void onHitBlock(BlockRayTraceResult result) {
-		World worldIn = this.getCommandSenderWorld();
+	protected void onHitBlock(BlockHitResult result) {
+		Level worldIn = this.getCommandSenderWorld();
 		Direction direction = result.getDirection().getAxis().isHorizontal() ? result.getDirection().getOpposite() : this.getOwner().getDirection();
 
 		BlockPos pos = this.blockPosition();
@@ -64,14 +64,14 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 		BlockState nextBlock = worldIn.getBlockState(nextPos);
 
 		int counter;
-		if (!level.getBlockState(pos).isAir(worldIn, pos)) {
+		if (!level.getBlockState(pos).isAir()) {
 			if (level.getBlockState(pos).is(AtmosphericBlocks.PASSION_VINE.get())) {
 				while (true) {
 					if (nextBlock.is(AtmosphericBlocks.PASSION_VINE.get())) {
 						nextPos = nextPos.below();
 						nextBlock = worldIn.getBlockState(nextPos);
 					} else {
-						if (nextBlock.isAir(worldIn, nextPos)) {
+						if (nextBlock.isAir()) {
 							pos = nextPos;
 							nextPos = pos.below();
 							nextBlock = worldIn.getBlockState(nextPos);
@@ -93,7 +93,7 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 			worldIn.setBlockAndUpdate(pos, vine);
 			counter = 7;
 			while (counter > 0) {
-				if (nextBlock.isAir(worldIn, nextPos)) {
+				if (nextBlock.isAir()) {
 					worldIn.setBlockAndUpdate(nextPos, vine);
 					counter = counter - 1;
 					nextPos = nextPos.below();
@@ -121,7 +121,7 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 					worldIn.setBlockAndUpdate(pos, vine);
 					counter = 7;
 					while (counter > 0) {
-						if (nextBlock.isAir(worldIn, nextPos)) {
+						if (nextBlock.isAir()) {
 							worldIn.setBlockAndUpdate(nextPos, vine);
 							counter = counter - 1;
 							nextPos = nextPos.below();
@@ -145,7 +145,7 @@ public class PassionVineCoilEntity extends ProjectileItemEntity {
 	private void removeVine(BlockPos nextPos, boolean doDrops) {
 		if (!this.level.isClientSide) {
 			this.level.broadcastEntityEvent(this, (byte) 3);
-			this.remove();
+			this.discard();
 		}
 		if (doDrops)
 			PassionVineBundleBlock.popResource(this.level, nextPos.relative(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), 8));

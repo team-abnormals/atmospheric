@@ -3,14 +3,14 @@ package com.minecraftabnormals.atmospheric.common.world.gen.feature.config;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.gen.blockstateprovider.BlockStateProvider;
-import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.treedecorator.TreeDecorator;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 
 import java.util.List;
 
-public class YuccaTreeFeatureConfig implements IFeatureConfig {
+public class YuccaTreeFeatureConfig implements FeatureConfiguration {
 	public static final Codec<YuccaTreeFeatureConfig> CODEC = RecordCodecBuilder.create((p_236683_0_) -> {
 		return p_236683_0_.group(BlockStateProvider.CODEC.fieldOf("trunk_provider").forGetter((p_236693_0_) -> {
 			return p_236693_0_.trunkProvider;
@@ -34,7 +34,7 @@ public class YuccaTreeFeatureConfig implements IFeatureConfig {
 			return p_236686_0_.patch;
 		}), Codec.BOOL.fieldOf("baby").orElse(false).forGetter((p_236686_0_) -> {
 			return p_236686_0_.baby;
-		}), Heightmap.Type.CODEC.fieldOf("heightmap").forGetter((p_236684_0_) -> {
+		}), Heightmap.Types.CODEC.fieldOf("heightmap").forGetter((p_236684_0_) -> {
 			return p_236684_0_.heightmap;
 		})).apply(p_236683_0_, YuccaTreeFeatureConfig::new);
 	});
@@ -52,9 +52,9 @@ public class YuccaTreeFeatureConfig implements IFeatureConfig {
 	public final boolean petrified;
 	public final boolean patch;
 	public final boolean baby;
-	public final Heightmap.Type heightmap;
+	public final Heightmap.Types heightmap;
 
-	protected YuccaTreeFeatureConfig(BlockStateProvider trunkProvider, BlockStateProvider leavesProvider, BlockStateProvider branchProvider, BlockStateProvider bundleProvider, BlockStateProvider flowerProvider, BlockStateProvider tallFlowerTopProvider, BlockStateProvider tallFlowerBottomProvider, List<TreeDecorator> decorators, boolean petrified, boolean patch, boolean baby, Heightmap.Type p_i232020_9_) {
+	protected YuccaTreeFeatureConfig(BlockStateProvider trunkProvider, BlockStateProvider leavesProvider, BlockStateProvider branchProvider, BlockStateProvider bundleProvider, BlockStateProvider flowerProvider, BlockStateProvider tallFlowerTopProvider, BlockStateProvider tallFlowerBottomProvider, List<TreeDecorator> decorators, boolean petrified, boolean patch, boolean baby, Heightmap.Types p_i232020_9_) {
 		this.trunkProvider = trunkProvider;
 		this.leavesProvider = leavesProvider;
 		this.branchProvider = branchProvider;
@@ -106,7 +106,7 @@ public class YuccaTreeFeatureConfig implements IFeatureConfig {
 		private boolean petrified;
 		private boolean patch;
 		private boolean baby;
-		private Heightmap.Type heightmap = Heightmap.Type.OCEAN_FLOOR;
+		private Heightmap.Types heightmap = Heightmap.Types.OCEAN_FLOOR;
 
 		public Builder(BlockStateProvider trunkProvider, BlockStateProvider leavesProvider, BlockStateProvider branchProvider, BlockStateProvider bundleProvider, BlockStateProvider flowerProvider, BlockStateProvider tallFlowerTopProvider, BlockStateProvider tallFlowerBottomProvider) {
 			this.trunkProvider = trunkProvider;
@@ -138,7 +138,7 @@ public class YuccaTreeFeatureConfig implements IFeatureConfig {
 			return this;
 		}
 
-		public YuccaTreeFeatureConfig.Builder setHeightmap(Heightmap.Type heightmap) {
+		public YuccaTreeFeatureConfig.Builder setHeightmap(Heightmap.Types heightmap) {
 			this.heightmap = heightmap;
 			return this;
 		}

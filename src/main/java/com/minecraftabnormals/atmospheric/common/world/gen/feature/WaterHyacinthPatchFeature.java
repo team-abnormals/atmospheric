@@ -3,37 +3,40 @@ package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 import com.minecraftabnormals.atmospheric.common.block.WaterHyacinthBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.state.properties.DoubleBlockHalf;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ISeedReader;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 import java.util.Random;
 
-public class WaterHyacinthPatchFeature extends Feature<NoFeatureConfig> {
-	public WaterHyacinthPatchFeature(Codec<NoFeatureConfig> codec) {
+public class WaterHyacinthPatchFeature extends Feature<NoneFeatureConfiguration> {
+	public WaterHyacinthPatchFeature(Codec<NoneFeatureConfiguration> codec) {
 		super(codec);
 	}
 
 	@Override
-	public boolean place(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
+	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
+		WorldGenLevel world = context.level();
+		Random random = context.random();
+		BlockPos pos = context.origin();
+
 		BlockState topState = AtmosphericBlocks.WATER_HYACINTH.get().defaultBlockState();
 		BlockState bottomState = AtmosphericBlocks.WATER_HYACINTH.get().defaultBlockState().setValue(WaterHyacinthBlock.WATERLOGGED, true).setValue(WaterHyacinthBlock.HALF, DoubleBlockHalf.LOWER);
-		BlockPos blockpos = pos;
 		int i = 0;
 
 		int xSpread = 7;
 		int ySpread = 3;
 		int zSpread = 7;
 
-		BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable();
+		BlockPos.MutableBlockPos blockpos$mutable = new BlockPos.MutableBlockPos();
 
 		for (int j = 0; j < 512; ++j) {
-			blockpos$mutable.setWithOffset(blockpos, random.nextInt(xSpread + 1) - random.nextInt(xSpread + 1), random.nextInt(ySpread + 1) - random.nextInt(ySpread + 1), random.nextInt(zSpread + 1) - random.nextInt(zSpread + 1));
+			blockpos$mutable.setWithOffset(pos, random.nextInt(xSpread + 1) - random.nextInt(xSpread + 1), random.nextInt(ySpread + 1) - random.nextInt(ySpread + 1), random.nextInt(zSpread + 1) - random.nextInt(zSpread + 1));
 			BlockPos blockpos1 = blockpos$mutable.below();
 			if (world.isEmptyBlock(blockpos$mutable) && world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {
 				world.setBlock(blockpos$mutable, topState, 2);

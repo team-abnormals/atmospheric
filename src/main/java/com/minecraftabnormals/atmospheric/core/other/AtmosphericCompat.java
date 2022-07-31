@@ -1,15 +1,12 @@
 package com.minecraftabnormals.atmospheric.core.other;
 
-import com.minecraftabnormals.abnormals_core.core.registry.LootInjectionRegistry;
-import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.minecraftabnormals.atmospheric.common.data.PassionVineBundleDispenseBehavior;
 import com.minecraftabnormals.atmospheric.common.data.PassionVineDispenseBehavior;
-import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.DispenserBlock;
-import net.minecraft.loot.LootTables;
+import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.HashSet;
@@ -26,8 +23,8 @@ public class AtmosphericCompat {
 	}
 
 	public static void registerLootInjectors() {
-		LootInjectionRegistry.LootInjector injector = new LootInjectionRegistry.LootInjector(Atmospheric.MOD_ID);
-		injector.addLootInjection(injector.buildLootPool("ruined_portal", 1, 0), LootTables.RUINED_PORTAL);
+//		LootInjectionRegistry.LootInjector injector = new LootInjectionRegistry.LootInjector(Atmospheric.MOD_ID);
+//		injector.addLootInjection(injector.buildLootPool("ruined_portal", 1, 0), BuiltInLootTables.RUINED_PORTAL);
 	}
 
 	public static void registerDispenserBehaviors() {

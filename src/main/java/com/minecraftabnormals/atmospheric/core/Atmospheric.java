@@ -1,15 +1,17 @@
 package com.minecraftabnormals.atmospheric.core;
 
-import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericRender;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericVillagers;
 import com.minecraftabnormals.atmospheric.core.registry.*;
+import com.minecraftabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericConfiguredFeatures;
 import com.minecraftabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
+import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -17,7 +19,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(Atmospheric.MOD_ID)
-@Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class Atmospheric {
 	public static final String MOD_ID = "atmospheric";
 	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> {
@@ -30,10 +32,9 @@ public class Atmospheric {
 
 		REGISTRY_HELPER.register(bus);
 		AtmosphericFeatures.FEATURES.register(bus);
-		AtmosphericStructures.STRUCTURES.register(bus);
-		AtmosphericParticles.PARTICLES.register(bus);
-		AtmosphericEffects.EFFECTS.register(bus);
-		AtmosphericEffects.POTIONS.register(bus);
+		AtmosphericParticleTypes.PARTICLES.register(bus);
+		AtmosphericMobEffects.EFFECTS.register(bus);
+		AtmosphericMobEffects.POTIONS.register(bus);
 		MinecraftForge.EVENT_BUS.register(this);
 
 		bus.addListener(this::commonSetup);
@@ -45,16 +46,11 @@ public class Atmospheric {
 
 	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			AtmosphericFeatures.Configured.registerConfiguredFeatures();
-			AtmosphericSurfaceBuilders.Configured.registerConfiguredSurfaceBuilders();
-			AtmosphericStructures.Configured.registerConfiguredFeatures();
-			AtmosphericStructures.registerNoiseSettings();
 			AtmosphericBiomes.addBiomeTypes();
 			AtmosphericBiomes.registerBiomesToDictionary();
-			AtmosphericBiomes.addBiomeVariants();
 			AtmosphericVillagers.setupVillagerTypes();
 			AtmosphericCompat.registerCompat();
-			AtmosphericEffects.registerBrewingRecipes();
+			AtmosphericMobEffects.registerBrewingRecipes();
 		});
 	}
 

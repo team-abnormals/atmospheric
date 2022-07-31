@@ -1,29 +1,34 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
 import com.google.common.collect.Lists;
-import com.minecraftabnormals.abnormals_core.core.util.TreeUtil;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-import net.minecraft.block.SaplingBlock;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ISeedReader;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
-import net.minecraft.world.gen.feature.Feature;
+import com.teamabnormals.blueprint.core.util.TreeUtil;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class AspenTreeFeature extends Feature<BaseTreeFeatureConfig> {
+public class AspenTreeFeature extends Feature<TreeConfiguration> {
 
-	public AspenTreeFeature(Codec<BaseTreeFeatureConfig> config) {
+	public AspenTreeFeature(Codec<TreeConfiguration> config) {
 		super(config);
 	}
 
 	@Override
-	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
+	public boolean place(FeaturePlaceContext<TreeConfiguration> context) {
+		TreeConfiguration config = context.config();
+		WorldGenLevel worldIn = context.level();
+		Random rand = context.random();
+		BlockPos position = context.origin();
+
 		int height = 12 + rand.nextInt(4) + rand.nextInt(5) + rand.nextInt(6);
 		boolean flag = true;
 
@@ -36,7 +41,7 @@ public class AspenTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				if (j >= position.getY() + 1 + height - 2) {
 					k = 2;
 				}
-				BlockPos.Mutable mutable = new BlockPos.Mutable();
+				BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 
 				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {

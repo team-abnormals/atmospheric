@@ -1,17 +1,17 @@
 package com.minecraftabnormals.atmospheric.common.item;
 
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.UseAction;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.level.Level;
 
 public class AloeGelBottleItem extends Item {
 	public AloeGelBottleItem(Item.Properties properties) {
@@ -19,11 +19,10 @@ public class AloeGelBottleItem extends Item {
 	}
 
 	@Override
-	public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entityLiving) {
+	public ItemStack finishUsingItem(ItemStack stack, Level worldIn, LivingEntity entityLiving) {
 		super.finishUsingItem(stack, worldIn, entityLiving);
 		entityLiving.clearFire();
-		if (entityLiving instanceof ServerPlayerEntity) {
-			ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityLiving;
+		if (entityLiving instanceof ServerPlayer serverplayerentity) {
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverplayerentity, stack);
 			serverplayerentity.awardStat(Stats.ITEM_USED.get(this));
 		}
@@ -31,11 +30,10 @@ public class AloeGelBottleItem extends Item {
 		if (stack.isEmpty()) {
 			return new ItemStack(Items.GLASS_BOTTLE);
 		} else {
-			if (entityLiving instanceof PlayerEntity && !((PlayerEntity) entityLiving).abilities.instabuild) {
+			if (entityLiving instanceof Player player && !((Player) entityLiving).getAbilities().instabuild) {
 				ItemStack itemstack = new ItemStack(Items.GLASS_BOTTLE);
-				PlayerEntity playerentity = (PlayerEntity) entityLiving;
-				if (!playerentity.inventory.add(itemstack)) {
-					playerentity.drop(itemstack, false);
+				if (!player.getInventory().add(itemstack)) {
+					player.drop(itemstack, false);
 				}
 			}
 
@@ -44,13 +42,13 @@ public class AloeGelBottleItem extends Item {
 	}
 
 	@Override
-	public UseAction getUseAnimation(ItemStack stack) {
-		return UseAction.DRINK;
+	public UseAnim getUseAnimation(ItemStack stack) {
+		return UseAnim.DRINK;
 	}
 
 	@Override
-	public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
+	public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
 		playerIn.startUsingItem(handIn);
-		return ActionResult.success(playerIn.getItemInHand(handIn));
+		return InteractionResultHolder.success(playerIn.getItemInHand(handIn));
 	}
 }

@@ -2,31 +2,31 @@ package com.minecraftabnormals.atmospheric.common.block;
 
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.IGrowable;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.pathfinding.PathNodeType;
-import net.minecraft.pathfinding.PathType;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
-import net.minecraft.state.IntegerProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.BonemealableBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
@@ -34,7 +34,7 @@ import net.minecraftforge.common.PlantType;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
+public class BarrelCactusBlock extends Block implements IPlantable, BonemealableBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 
 	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
@@ -56,7 +56,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 
 	@Nullable
 	@Override
-	public BlockState getStateForPlacement(BlockItemUseContext context) {
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos());
 		if (blockstate.getBlock() == this) {
 			return blockstate.setValue(AGE, Math.min(3, blockstate.getValue(AGE) + 1));
@@ -66,12 +66,12 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 	}
 
 	@Override
-	public boolean canBeReplaced(BlockState state, BlockItemUseContext useContext) {
+	public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
 		return useContext.getItemInHand().getItem() == this.asItem() && state.getValue(AGE) < 3 || super.canBeReplaced(state, useContext);
 	}
 
 	@Override
-	public void performBonemeal(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel worldIn, Random rand, BlockPos pos, BlockState state) {
 		int i = state.getValue(AGE);
 		if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(3) == 0)) {
 			worldIn.setBlockAndUpdate(pos, state.setValue(AGE, i + 1));
@@ -79,72 +79,70 @@ public class BarrelCactusBlock extends Block implements IPlantable, IGrowable {
 		}
 	}
 
-	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+	public VoxelShape getCollisionShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		return COLLISION_BY_AGE[state.getValue(AGE)];
 	}
 
-	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		return SHAPE_BY_AGE[state.getValue(AGE)];
 	}
 
 	@Override
-	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		if (!stateIn.canSurvive(worldIn, currentPos)) {
-			worldIn.getBlockTicks().scheduleTick(currentPos, this, 1);
+			worldIn.scheduleTick(currentPos, this, 1);
 		}
 
 		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 
 	@Override
-	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
+	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 		BlockState downState = worldIn.getBlockState(pos.below());
 		return (downState.canSustainPlant(worldIn, pos.below(), Direction.UP, this) || downState.is(Blocks.RED_SAND)) && !worldIn.getBlockState(pos.above()).getMaterial().isLiquid();
 	}
 
-	public void entityInside(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-		if (entityIn instanceof LivingEntity) {
-			LivingEntity living = (LivingEntity) entityIn;
-			living.addEffect(new EffectInstance(Effects.POISON, ((state.getValue(AGE) + 1) * 40)));
+	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
+		if (entityIn instanceof LivingEntity living) {
+			living.addEffect(new MobEffectInstance(MobEffects.POISON, ((state.getValue(AGE) + 1) * 40)));
 		}
 		entityIn.hurt(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.getValue(AGE));
-		if (entityIn instanceof ServerPlayerEntity) {
-			ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
+		if (entityIn instanceof ServerPlayer serverplayerentity) {
 			if (!entityIn.getCommandSenderWorld().isClientSide() && !serverplayerentity.isCreative()) {
 				AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.trigger(serverplayerentity);
 			}
 		}
 	}
 
-	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(AGE);
 	}
 
-	public boolean isPathfindable(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
+	public boolean isPathfindable(BlockState state, BlockGetter worldIn, BlockPos pos, PathComputationType type) {
 		return false;
 	}
 
 	@Override
-	public PlantType getPlantType(IBlockReader world, BlockPos pos) {
+	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
 		return PlantType.DESERT;
 	}
 
 	@Override
-	public BlockState getPlant(IBlockReader world, BlockPos pos) {
+	public BlockState getPlant(BlockGetter world, BlockPos pos) {
 		return defaultBlockState();
 	}
 
 	@Nullable
 	@Override
-	public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
-		return PathNodeType.DAMAGE_CACTUS;
+	public BlockPathTypes getAiPathNodeType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+		return BlockPathTypes.DAMAGE_CACTUS;
 	}
 
-	public boolean isValidBonemealTarget(IBlockReader world, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(BlockGetter world, BlockPos pos, BlockState state, boolean isClient) {
 		return state.getValue(AGE) < 3;
 	}
 
-	public boolean isBonemealSuccess(World worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(Level worldIn, Random rand, BlockPos pos, BlockState state) {
 		return state.getValue(AGE) < 3;
 	}
 }

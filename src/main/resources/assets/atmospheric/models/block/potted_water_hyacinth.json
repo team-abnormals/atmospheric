@@ -1,6 +1,6 @@
 {
     "parent": "block/flower_pot_cross",
     "textures": {
-        "plant": "atmospheric:item/water_hyacinth" }
+        "plant": "atmospheric:item/water_hyacinth"
     }
 }

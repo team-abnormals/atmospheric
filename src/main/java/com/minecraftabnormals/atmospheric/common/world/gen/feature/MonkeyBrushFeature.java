@@ -4,26 +4,30 @@ import com.minecraftabnormals.atmospheric.common.block.MonkeyBrushBlock;
 import com.minecraftabnormals.atmospheric.common.block.WallMonkeyBrushBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-import net.minecraft.block.BlockState;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ISeedReader;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 import java.util.Random;
 
-public class MonkeyBrushFeature extends Feature<NoFeatureConfig> {
-	int temp;
+public class MonkeyBrushFeature extends Feature<NoneFeatureConfiguration> {
+	private final int temp;
 
-	public MonkeyBrushFeature(Codec<NoFeatureConfig> p_i49876_1_, int temperature) {
+	public MonkeyBrushFeature(Codec<NoneFeatureConfiguration> p_i49876_1_, int temperature) {
 		super(p_i49876_1_);
 		temp = temperature;
 	}
 
 	@Override
-	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config) {
+	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
+		WorldGenLevel worldIn = context.level();
+		Random rand = context.random();
+		BlockPos pos = context.origin();
+
 		BlockState blockstate = AtmosphericBlocks.HOT_MONKEY_BRUSH.get().defaultBlockState();
 		if (temp == 3) {
 			blockstate = AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().defaultBlockState();

@@ -1,74 +1,87 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
 import com.mojang.serialization.Codec;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Rotation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MutableBoundingBox;
-import net.minecraft.world.ISeedReader;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
-import net.minecraft.world.gen.feature.template.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.Heightmap.Types;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.FossilFeatureConfiguration;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureManager;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
+import org.apache.commons.lang3.mutable.MutableInt;
 
+import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
-public class SurfaceFossilFeature extends Feature<NoFeatureConfig> {
-	private static final ResourceLocation STRUCTURE_SPINE_01 = new ResourceLocation("fossil/spine_1");
-	private static final ResourceLocation STRUCTURE_SPINE_02 = new ResourceLocation("fossil/spine_2");
-	private static final ResourceLocation STRUCTURE_SPINE_03 = new ResourceLocation("fossil/spine_3");
-	private static final ResourceLocation STRUCTURE_SPINE_04 = new ResourceLocation("fossil/spine_4");
-	private static final ResourceLocation STRUCTURE_SPINE_01_COAL = new ResourceLocation("fossil/spine_1_coal");
-	private static final ResourceLocation STRUCTURE_SPINE_02_COAL = new ResourceLocation("fossil/spine_2_coal");
-	private static final ResourceLocation STRUCTURE_SPINE_03_COAL = new ResourceLocation("fossil/spine_3_coal");
-	private static final ResourceLocation STRUCTURE_SPINE_04_COAL = new ResourceLocation("fossil/spine_4_coal");
-	private static final ResourceLocation STRUCTURE_SKULL_01 = new ResourceLocation("fossil/skull_1");
-	private static final ResourceLocation STRUCTURE_SKULL_02 = new ResourceLocation("fossil/skull_2");
-	private static final ResourceLocation STRUCTURE_SKULL_03 = new ResourceLocation("fossil/skull_3");
-	private static final ResourceLocation STRUCTURE_SKULL_04 = new ResourceLocation("fossil/skull_4");
-	private static final ResourceLocation STRUCTURE_SKULL_01_COAL = new ResourceLocation("fossil/skull_1_coal");
-	private static final ResourceLocation STRUCTURE_SKULL_02_COAL = new ResourceLocation("fossil/skull_2_coal");
-	private static final ResourceLocation STRUCTURE_SKULL_03_COAL = new ResourceLocation("fossil/skull_3_coal");
-	private static final ResourceLocation STRUCTURE_SKULL_04_COAL = new ResourceLocation("fossil/skull_4_coal");
-	private static final ResourceLocation[] FOSSILS = new ResourceLocation[]{STRUCTURE_SPINE_01, STRUCTURE_SPINE_02, STRUCTURE_SPINE_03, STRUCTURE_SPINE_04, STRUCTURE_SKULL_01, STRUCTURE_SKULL_02, STRUCTURE_SKULL_03, STRUCTURE_SKULL_04};
-	private static final ResourceLocation[] FOSSILS_COAL = new ResourceLocation[]{STRUCTURE_SPINE_01_COAL, STRUCTURE_SPINE_02_COAL, STRUCTURE_SPINE_03_COAL, STRUCTURE_SPINE_04_COAL, STRUCTURE_SKULL_01_COAL, STRUCTURE_SKULL_02_COAL, STRUCTURE_SKULL_03_COAL, STRUCTURE_SKULL_04_COAL};
+public class SurfaceFossilFeature extends Feature<FossilFeatureConfiguration> {
 
-	public SurfaceFossilFeature(Codec<NoFeatureConfig> codec) {
+	public SurfaceFossilFeature(Codec<FossilFeatureConfiguration> codec) {
 		super(codec);
 	}
 
-	public boolean place(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
+	public boolean place(FeaturePlaceContext<FossilFeatureConfiguration> context) {
+		Random random = context.random();
+		WorldGenLevel level = context.level();
+		BlockPos origin = context.origin();
 		Rotation rotation = Rotation.getRandom(random);
-		int i = random.nextInt(FOSSILS.length);
-		TemplateManager templatemanager = world.getLevel().getServer().getStructureManager();
-		Template template = templatemanager.getOrCreate(FOSSILS[i]);
-		Template template1 = templatemanager.getOrCreate(FOSSILS_COAL[i]);
-		ChunkPos chunkpos = new ChunkPos(pos);
-		MutableBoundingBox mutableboundingbox = new MutableBoundingBox(chunkpos.getMinBlockX(), 0, chunkpos.getMinBlockZ(), chunkpos.getMaxBlockX(), 256, chunkpos.getMaxBlockZ());
-		PlacementSettings placementsettings = (new PlacementSettings()).setRotation(rotation).setBoundingBox(mutableboundingbox).setRandom(random).addProcessor(BlockIgnoreStructureProcessor.STRUCTURE_AND_AIR);
-		BlockPos blockpos = template.getSize(rotation);
-		int j = random.nextInt(16 - blockpos.getX());
-		int k = random.nextInt(16 - blockpos.getZ());
-		int l = 256;
+		FossilFeatureConfiguration config = context.config();
+		int fossilIndex = random.nextInt(config.fossilStructures.size());
+		StructureManager structureManager = level.getLevel().getServer().getStructureManager();
+		StructureTemplate fossilStructure = structureManager.getOrCreate(config.fossilStructures.get(fossilIndex));
+		StructureTemplate overlayStructure = structureManager.getOrCreate(config.overlayStructures.get(fossilIndex));
+		ChunkPos chunkPos = new ChunkPos(origin);
+		BoundingBox boundingBox = new BoundingBox(chunkPos.getMinBlockX() - 16, level.getMinBuildHeight(), chunkPos.getMinBlockZ() - 16, chunkPos.getMaxBlockX() + 16, level.getMaxBuildHeight(), chunkPos.getMaxBlockZ() + 16);
+		StructurePlaceSettings settings = (new StructurePlaceSettings()).setRotation(rotation).setBoundingBox(boundingBox).setRandom(random);
+		Vec3i size = fossilStructure.getSize(rotation);
+		BlockPos offsetPos = origin.offset(-size.getX() / 2, 0, -size.getZ() / 2);
+		int y = origin.getY();
 
-		for (int i1 = 0; i1 < blockpos.getX(); ++i1) {
-			for (int j1 = 0; j1 < blockpos.getZ(); ++j1) {
-				l = Math.min(l, world.getHeight(Heightmap.Type.WORLD_SURFACE_WG, pos.getX() + i1 + j, pos.getZ() + j1 + k));
+		int i;
+		for (i = 0; i < size.getX(); ++i) {
+			for (int j = 0; j < size.getZ(); ++j) {
+				y = Math.min(y, level.getHeight(Types.OCEAN_FLOOR_WG, offsetPos.getX() + i, offsetPos.getZ() + j));
 			}
 		}
 
-		int k1 = Math.max(l - 15 - random.nextInt(6), 65);
-		BlockPos blockpos1 = template.getZeroPositionWithTransform(pos.offset(j, k1, k), Mirror.NONE, rotation);
-		IntegrityProcessor integrityprocessor = new IntegrityProcessor(0.9F);
-		placementsettings.clearProcessors().addProcessor(integrityprocessor);
-		template.placeInWorld(world, blockpos1, blockpos1, placementsettings, random, 4);
-		placementsettings.popProcessor(integrityprocessor);
-		IntegrityProcessor integrityprocessor1 = new IntegrityProcessor(0.1F);
-		placementsettings.clearProcessors().addProcessor(integrityprocessor1);
-		template1.placeInWorld(world, blockpos1, blockpos1, placementsettings, random, 4);
-		return true;
+		i = Math.max(y - 15 - random.nextInt(10), level.getMinBuildHeight() + 10);
+		BlockPos pos = fossilStructure.getZeroPositionWithTransform(offsetPos.atY(i), Mirror.NONE, rotation);
+		if (countEmptyCorners(level, fossilStructure.getBoundingBox(settings, pos)) > config.maxEmptyCornersAllowed) {
+			return false;
+		} else {
+			settings.clearProcessors();
+			List<StructureProcessor> processors = config.fossilProcessors.value().list();
+			Objects.requireNonNull(settings);
+			processors.forEach(settings::addProcessor);
+			fossilStructure.placeInWorld(level, pos, pos, settings, random, 4);
+			settings.clearProcessors();
+			processors = config.overlayProcessors.value().list();
+			Objects.requireNonNull(settings);
+			processors.forEach(settings::addProcessor);
+			overlayStructure.placeInWorld(level, pos, pos, settings, random, 4);
+			return true;
+		}
+	}
+
+	private static int countEmptyCorners(WorldGenLevel level, BoundingBox boundingBox) {
+		MutableInt mutableInt = new MutableInt(0);
+		boundingBox.forAllCorners((pos) -> {
+			BlockState state = level.getBlockState(pos);
+			if (state.isAir() || state.is(Blocks.LAVA) || state.is(Blocks.WATER)) {
+				mutableInt.add(1);
+			}
+
+		});
+		return mutableInt.getValue();
 	}
 }

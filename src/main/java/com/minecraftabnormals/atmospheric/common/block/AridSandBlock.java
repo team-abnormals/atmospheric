@@ -1,25 +1,25 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FallingBlock;
-import net.minecraft.block.IGrowable;
-import net.minecraft.block.material.Material;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
+import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BonemealableBlock;
+import net.minecraft.world.level.block.FallingBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
 
 import java.util.Random;
 
-public class AridSandBlock extends FallingBlock implements IGrowable {
+public class AridSandBlock extends FallingBlock implements BonemealableBlock {
 	private final int color;
 
 	public AridSandBlock(int color, Properties properties) {
@@ -28,12 +28,12 @@ public class AridSandBlock extends FallingBlock implements IGrowable {
 	}
 
 	@Override
-	public int getDustColor(BlockState state, IBlockReader reader, BlockPos pos) {
+	public int getDustColor(BlockState state, BlockGetter reader, BlockPos pos) {
 		return this.color;
 	}
 
 	@Override
-	public boolean canSustainPlant(BlockState state, IBlockReader blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
+	public boolean canSustainPlant(BlockState state, BlockGetter blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
 		final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
 		final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
 		if (plantType == PlantType.DESERT) {
@@ -51,17 +51,17 @@ public class AridSandBlock extends FallingBlock implements IGrowable {
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(BlockGetter worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		return worldIn.getBlockState(pos.above()).isAir();
 	}
 
 	@Override
-	public boolean isBonemealSuccess(World worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(Level worldIn, Random rand, BlockPos pos, BlockState state) {
 		return true;
 	}
 
 	@Override
-	public void performBonemeal(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel worldIn, Random rand, BlockPos pos, BlockState state) {
 		BlockPos blockpos = pos.above();
 		BlockState blockstate = AtmosphericBlocks.ARID_SPROUTS.get().defaultBlockState();
 
@@ -80,7 +80,7 @@ public class AridSandBlock extends FallingBlock implements IGrowable {
 			if (blockstate2.isAir()) {
 				BlockState blockstate1;
 				if (rand.nextInt(8) == 0) {
-					ResourceLocation biome = worldIn.getBiome(blockpos1).getRegistryName();
+					ResourceLocation biome = worldIn.getBiome(blockpos1).value().getRegistryName();
 					if (DataUtil.matchesKeys(biome, AtmosphericBiomes.FLOURISHING_DUNES.getKey()))
 						blockstate1 = AtmosphericBlocks.GILIA.get().defaultBlockState();
 					else {
@@ -93,7 +93,7 @@ public class AridSandBlock extends FallingBlock implements IGrowable {
 				if (blockstate1.canSurvive(worldIn, blockpos1)) {
 					worldIn.setBlock(blockpos1, blockstate1, 3);
 					if (blockstate1.is(AtmosphericBlocks.YUCCA_FLOWER.get()) && rand.nextInt(10) == 0) {
-						((IGrowable) blockstate1.getBlock()).performBonemeal(worldIn, rand, blockpos1, blockstate1);
+						((BonemealableBlock) blockstate1.getBlock()).performBonemeal(worldIn, rand, blockpos1, blockstate1);
 					}
 				}
 			}

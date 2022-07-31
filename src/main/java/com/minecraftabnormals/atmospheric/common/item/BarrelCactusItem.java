@@ -1,9 +1,11 @@
 package com.minecraftabnormals.atmospheric.common.item;
 
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+
+import net.minecraft.world.item.Item.Properties;
 
 public class BarrelCactusItem extends BlockItem {
 	public BarrelCactusItem(Properties builder) {
@@ -11,7 +13,7 @@ public class BarrelCactusItem extends BlockItem {
 	}
 
 	@Override
-	public EquipmentSlotType getEquipmentSlot(ItemStack stack) {
-		return EquipmentSlotType.HEAD;
+	public EquipmentSlot getEquipmentSlot(ItemStack stack) {
+		return EquipmentSlot.HEAD;
 	}
 }

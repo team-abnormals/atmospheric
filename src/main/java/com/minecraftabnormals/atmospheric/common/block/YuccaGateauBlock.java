@@ -1,33 +1,33 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.HorizontalBlock;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.pathfinding.PathType;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.state.IntegerProperty;
-import net.minecraft.state.StateContainer;
+import com.minecraftabnormals.atmospheric.core.registry.AtmosphericMobEffects;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.Level;
 
-public class YuccaGateauBlock extends HorizontalBlock {
+public class YuccaGateauBlock extends HorizontalDirectionalBlock {
 	public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 9);
 	protected static final VoxelShape[] NORTH_SHAPES = new VoxelShape[]{
 			Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D),
@@ -82,7 +82,7 @@ public class YuccaGateauBlock extends HorizontalBlock {
 		this.registerDefaultState(this.stateDefinition.any().setValue(BITES, 0));
 	}
 
-	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		switch (state.getValue(FACING)) {
 			case NORTH:
 			default:
@@ -96,56 +96,56 @@ public class YuccaGateauBlock extends HorizontalBlock {
 		}
 	}
 
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult p_225533_6_) {
+	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult p_225533_6_) {
 		if (worldIn.isClientSide) {
 			ItemStack itemstack = player.getItemInHand(handIn);
-			if (this.eatCake(worldIn, pos, state, player) == ActionResultType.SUCCESS) {
-				return ActionResultType.SUCCESS;
+			if (this.eatCake(worldIn, pos, state, player) == InteractionResult.SUCCESS) {
+				return InteractionResult.SUCCESS;
 			}
 			if (itemstack.isEmpty()) {
-				return ActionResultType.CONSUME;
+				return InteractionResult.CONSUME;
 			}
 		}
 		return this.eatCake(worldIn, pos, state, player);
 	}
 
-	private ActionResultType eatCake(IWorld worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+	private InteractionResult eatCake(LevelAccessor worldIn, BlockPos pos, BlockState state, Player player) {
 		if (!player.canEat(false)) {
-			return ActionResultType.PASS;
+			return InteractionResult.PASS;
 		} else {
 			player.awardStat(Stats.EAT_CAKE_SLICE);
 			player.getFoodData().eat(1, 0.0F);
-			player.addEffect(new EffectInstance(AtmosphericEffects.PERSISTENCE.get(), 320, 0, true, false, true));
+			player.addEffect(new MobEffectInstance(AtmosphericMobEffects.PERSISTENCE.get(), 320, 0, true, false, true));
 			player.clearFire();
 			int i = state.getValue(BITES);
 			if (i < 9) {
 				worldIn.setBlock(pos, state.setValue(BITES, i + 1), 3);
 			} else {
-				if (player instanceof ServerPlayerEntity) {
-					ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) player;
+				if (player instanceof ServerPlayer) {
+					ServerPlayer serverplayerentity = (ServerPlayer) player;
 					if (!player.getCommandSenderWorld().isClientSide()) {
 						AtmosphericCriteriaTriggers.FINISH_GATEAU.trigger(serverplayerentity);
 					}
 				}
 				worldIn.removeBlock(pos, false);
 			}
-			return ActionResultType.SUCCESS;
+			return InteractionResult.SUCCESS;
 		}
 	}
 
-	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		return facing == Direction.DOWN && !stateIn.canSurvive(worldIn, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 
-	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
+	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 		return worldIn.getBlockState(pos.below()).getMaterial().isSolid();
 	}
 
-	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(BITES, FACING);
 	}
 
-	public int getAnalogOutputSignal(BlockState blockState, World worldIn, BlockPos pos) {
+	public int getAnalogOutputSignal(BlockState blockState, Level worldIn, BlockPos pos) {
 		return (10 - blockState.getValue(BITES)) * 2;
 	}
 
@@ -153,11 +153,11 @@ public class YuccaGateauBlock extends HorizontalBlock {
 		return true;
 	}
 
-	public boolean isPathfindable(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
+	public boolean isPathfindable(BlockState state, BlockGetter worldIn, BlockPos pos, PathComputationType type) {
 		return false;
 	}
 
-	public BlockState getStateForPlacement(BlockItemUseContext context) {
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 }

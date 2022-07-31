@@ -1,12 +1,12 @@
 package com.minecraftabnormals.atmospheric.common.potion;
 
-import net.minecraft.potion.Effect;
-import net.minecraft.potion.EffectType;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 
-public class WorseningEffect extends Effect {
+public class WorseningEffect extends MobEffect {
 
 	public WorseningEffect() {
-		super(EffectType.HARMFUL, 3110759);
+		super(MobEffectCategory.HARMFUL, 3110759);
 	}
 
 }

@@ -1,19 +1,19 @@
 package com.minecraftabnormals.atmospheric.common.potion;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.attributes.Attribute;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.ai.attributes.AttributeModifierManager;
-import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.potion.Effect;
-import net.minecraft.potion.EffectType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.AttributeMap;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 
 import java.util.Map.Entry;
 
-public class PersistenceEffect extends Effect {
+public class PersistenceEffect extends MobEffect {
 	public PersistenceEffect() {
-		super(EffectType.BENEFICIAL, 15494786);
+		super(MobEffectCategory.BENEFICIAL, 15494786);
 	}
 
 	@Override
@@ -22,11 +22,11 @@ public class PersistenceEffect extends Effect {
 	}
 
 	@Override
-	public void addAttributeModifiers(LivingEntity entity, AttributeModifierManager attributeMapIn, int amplifier) {
-		if (entity instanceof PlayerEntity) {
-			int amount = 20 - ((PlayerEntity) entity).getFoodData().getFoodLevel();
+	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMapIn, int amplifier) {
+		if (entity instanceof Player) {
+			int amount = 20 - ((Player) entity).getFoodData().getFoodLevel();
 			for (Entry<Attribute, AttributeModifier> entry : this.getAttributeModifiers().entrySet()) {
-				ModifiableAttributeInstance iattributeinstance = attributeMapIn.getInstance(entry.getKey());
+				AttributeInstance iattributeinstance = attributeMapIn.getInstance(entry.getKey());
 				if (iattributeinstance != null) {
 					AttributeModifier attributemodifier = entry.getValue();
 					iattributeinstance.removeModifier(attributemodifier);
@@ -38,7 +38,7 @@ public class PersistenceEffect extends Effect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		if (entity instanceof PlayerEntity) {
+		if (entity instanceof Player) {
 			this.addAttributeModifiers(entity, entity.getAttributes(), amplifier);
 		}
 	}

@@ -1,8 +1,8 @@
 package com.minecraftabnormals.atmospheric.core.other;
 
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericEffects;
-import net.minecraft.entity.LivingEntity;
+import com.minecraftabnormals.atmospheric.core.registry.AtmosphericMobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,8 +15,8 @@ public class AtmosphericEvents {
 	public static void livingHurt(LivingHurtEvent event) {
 		LivingEntity entity = event.getEntityLiving();
 
-		if (entity.hasEffect(AtmosphericEffects.RELIEF.get())) {
-			int amplifier = entity.getEffect(AtmosphericEffects.RELIEF.get()).getAmplifier();
+		if (entity.hasEffect(AtmosphericMobEffects.RELIEF.get())) {
+			int amplifier = entity.getEffect(AtmosphericMobEffects.RELIEF.get()).getAmplifier();
 			if (!entity.isInvertedHealAndHarm()) {
 				entity.getPersistentData().putInt("PotionHealAmplifier", amplifier);
 				entity.getPersistentData().putFloat("IncomingDamage", event.getAmount());
@@ -29,8 +29,8 @@ public class AtmosphericEvents {
 
 		}
 
-		if (entity.hasEffect(AtmosphericEffects.WORSENING.get())) {
-			int amplifier = entity.getEffect(AtmosphericEffects.WORSENING.get()).getAmplifier();
+		if (entity.hasEffect(AtmosphericMobEffects.WORSENING.get())) {
+			int amplifier = entity.getEffect(AtmosphericMobEffects.WORSENING.get()).getAmplifier();
 			if (!entity.isInvertedHealAndHarm()) {
 				if (event.getAmount() >= (amplifier + 1)) {
 					event.setAmount(event.getAmount() + (amplifier + 1));

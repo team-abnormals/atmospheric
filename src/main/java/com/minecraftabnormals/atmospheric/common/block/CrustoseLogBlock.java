@@ -1,41 +1,42 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
 import com.google.common.base.Supplier;
-import com.minecraftabnormals.abnormals_core.common.blocks.wood.AbnormalsLogBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import com.teamabnormals.blueprint.common.block.wood.LogBlock;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
-import net.minecraft.world.lighting.LightEngine;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.lighting.LayerLightEngine;
 
 import java.util.Random;
 
-public class CrustoseLogBlock extends AbnormalsLogBlock {
+public class CrustoseLogBlock extends LogBlock {
 
 	public CrustoseLogBlock(Supplier<Block> block, Properties properties) {
 		super(block, properties);
 	}
 
-	private static boolean canBeGrass(BlockState state, IWorldReader world, BlockPos pos) {
+	private static boolean canBeGrass(BlockState state, LevelReader world, BlockPos pos) {
 		BlockPos blockpos = pos.above();
 		BlockState blockstate = world.getBlockState(blockpos);
-		int i = LightEngine.getLightBlockInto(world, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(world, blockpos));
+		int i = LayerLightEngine.getLightBlockInto(world, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(world, blockpos));
 		return i < world.getMaxLightLevel();
 
 	}
 
-	private static boolean canPropagate(BlockState state, IWorldReader world, BlockPos pos) {
+	private static boolean canPropagate(BlockState state, LevelReader world, BlockPos pos) {
 		BlockPos blockpos = pos.above();
 		return canBeGrass(state, world, pos)
 				&& !world.getFluidState(blockpos).is(FluidTags.WATER);
 	}
 
-	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+	@Override
+	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
 		if (!worldIn.isClientSide) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading

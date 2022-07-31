@@ -1,6 +1,6 @@
 {
     "parent": "block/flower_pot_cross",
     "textures": {
-        "plant": "atmospheric:block/scalding_monkey_brush" }
+        "plant": "atmospheric:block/scalding_monkey_brush"
     }
 }

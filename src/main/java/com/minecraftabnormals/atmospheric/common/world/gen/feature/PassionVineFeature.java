@@ -4,23 +4,26 @@ import com.minecraftabnormals.atmospheric.common.block.PassionVineBlock;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-import net.minecraft.block.BlockState;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ISeedReader;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 import java.util.Random;
 
-public class PassionVineFeature extends Feature<NoFeatureConfig> {
-	public PassionVineFeature(Codec<NoFeatureConfig> p_i49876_1_) {
+public class PassionVineFeature extends Feature<NoneFeatureConfiguration> {
+	public PassionVineFeature(Codec<NoneFeatureConfiguration> p_i49876_1_) {
 		super(p_i49876_1_);
 	}
 
 	@Override
-	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config) {
+	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
+		WorldGenLevel worldIn = context.level();
+		Random rand = context.random();
+		BlockPos pos = context.origin();
 		int i = 0;
 		for (int j = 0; j < 400; ++j) {
 			Direction direction = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
@@ -45,7 +48,7 @@ public class PassionVineFeature extends Feature<NoFeatureConfig> {
 		return i > 0;
 	}
 
-	private static BlockState getVineState(ISeedReader world, BlockState state, BlockPos pos, Random rand) {
+	private static BlockState getVineState(WorldGenLevel world, BlockState state, BlockPos pos, Random rand) {
 		if (world.getBlockState(pos.relative(state.getValue(PassionVineBlock.FACING).getOpposite())).is(AtmosphericTags.PASSION_VINE_GROWABLE_ON)) {
 			return state.setValue(PassionVineBlock.AGE, 4);
 		} else {

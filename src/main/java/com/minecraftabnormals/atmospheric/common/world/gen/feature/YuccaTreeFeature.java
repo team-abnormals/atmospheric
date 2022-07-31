@@ -1,20 +1,20 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
-import com.minecraftabnormals.abnormals_core.core.util.TreeUtil;
 import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
 import com.mojang.serialization.Codec;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.RotatedPillarBlock;
+import com.teamabnormals.blueprint.core.util.TreeUtil;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ISeedReader;
-import net.minecraft.world.IWorldWriter;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.IWorldGenerationReader;
-import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.level.LevelSimulatedRW;
+import net.minecraft.world.level.LevelWriter;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
 import java.util.Random;
 
@@ -24,7 +24,12 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 	}
 
 	@Override
-	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos position, YuccaTreeFeatureConfig config) {
+	public boolean place(FeaturePlaceContext<YuccaTreeFeatureConfig> context) {
+		YuccaTreeFeatureConfig config = context.config();
+		WorldGenLevel worldIn = context.level();
+		Random rand = context.random();
+		BlockPos position = context.origin();
+
 		if (config.baby) {
 			int height = 2 + rand.nextInt(2) + rand.nextInt(2);
 			boolean flag = true;
@@ -36,7 +41,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 						k = 0;
 					if (j >= position.getY() + 1 + height - 2)
 						k = 2;
-					BlockPos.Mutable blockpos$mutableblockpos = new BlockPos.Mutable();
+					BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 					for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 						for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
 							if (j >= 0 && j < worldIn.getMaxBuildHeight()) {
@@ -77,7 +82,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 					if (config.patch) {
 						for (int j = 0; j < 64; ++j) {
 							BlockPos blockpos = position.offset(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-							if (TreeUtil.isAir(worldIn, blockpos) && blockpos.getY() < 255 && config.flowerProvider.getState(rand, blockpos).canSurvive(worldIn, blockpos)) {
+							if (isAir(worldIn, blockpos) && blockpos.getY() < 255 && config.flowerProvider.getState(rand, blockpos).canSurvive(worldIn, blockpos)) {
 								placeFlowerAt(worldIn, blockpos, rand, config);
 							}
 						}
@@ -104,7 +109,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 						k = 0;
 					if (j >= position.getY() + 1 + height - 2)
 						k = 2;
-					BlockPos.Mutable blockpos$mutableblockpos = new BlockPos.Mutable();
+					BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 					for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 						for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
 							if (j >= 0 && j < worldIn.getMaxBuildHeight()) {
@@ -164,7 +169,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 					if (config.patch) {
 						for (int j = 0; j < 64; ++j) {
 							BlockPos blockpos = position.offset(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-							if (TreeUtil.isAir(worldIn, blockpos) && blockpos.getY() < 255 && config.flowerProvider.getState(rand, blockpos).canSurvive(worldIn, blockpos)) {
+							if (isAir(worldIn, blockpos) && blockpos.getY() < 255 && config.flowerProvider.getState(rand, blockpos).canSurvive(worldIn, blockpos)) {
 								placeFlowerAt(worldIn, blockpos, rand, config);
 							}
 						}
@@ -173,7 +178,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 					if (config.petrified && rand.nextInt(12) == 0) {
 						for (int j = 0; j < 12; ++j) {
 							BlockPos blockpos = position.offset(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
-							if (TreeUtil.isAir(worldIn, blockpos) && blockpos.getY() < 255 && TreeUtil.isInTag(worldIn, blockpos.below(), BlockTags.SAND)) {
+							if (isAir(worldIn, blockpos) && blockpos.getY() < 255 && TreeUtil.isInTag(worldIn, blockpos.below(), BlockTags.SAND)) {
 								TreeUtil.setForcedState(worldIn, blockpos, config.bundleProvider.getState(rand, blockpos));
 							}
 						}
@@ -189,7 +194,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 		}
 	}
 
-	private void createYuccaLeaves(IWorldGenerationReader worldIn, BlockPos newPos, Random rand, boolean square, YuccaTreeFeatureConfig config) {
+	private void createYuccaLeaves(LevelSimulatedRW worldIn, BlockPos newPos, Random rand, boolean square, YuccaTreeFeatureConfig config) {
 		int leafSize = 1;
 		for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 			for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
@@ -206,7 +211,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 		}
 	}
 
-	private BlockPos createYuccaBranch(int height, IWorldGenerationReader worldIn, BlockPos pos, Direction direction, Random rand, YuccaTreeFeatureConfig config) {
+	private BlockPos createYuccaBranch(int height, LevelSimulatedRW worldIn, BlockPos pos, Direction direction, Random rand, YuccaTreeFeatureConfig config) {
 		int logX = pos.getX();
 		int logZ = pos.getZ();
 		int logY = pos.getY() + height - 1;
@@ -244,7 +249,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 		return blockpos.relative(direction);
 	}
 
-	private void createHorizontalLog(int branchLength, IWorldGenerationReader worldIn, BlockPos pos, Direction direction, boolean bundle, Random rand, YuccaTreeFeatureConfig config) {
+	private void createHorizontalLog(int branchLength, LevelSimulatedRW worldIn, BlockPos pos, Direction direction, boolean bundle, Random rand, YuccaTreeFeatureConfig config) {
 		int logX = pos.getX();
 		int logY = pos.getY();
 		int logZ = pos.getZ();
@@ -254,14 +259,14 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 			logZ += direction.getStepZ();
 			BlockPos blockpos1 = new BlockPos(logX, logY, logZ);
 			if (TreeUtil.isAirOrLeaves(worldIn, blockpos1)) {
-				if (!TreeUtil.isAir(worldIn, blockpos1.below()))
+				if (!isAir(worldIn, blockpos1.below()))
 					bundle = false;
 				this.placeLogAt(worldIn, blockpos1, Direction.UP, bundle, rand, config);
 			}
 		}
 	}
 
-	private void placeLogAt(IWorldWriter worldIn, BlockPos pos, Direction direction, boolean bundle, Random rand, YuccaTreeFeatureConfig config) {
+	private void placeLogAt(LevelWriter worldIn, BlockPos pos, Direction direction, boolean bundle, Random rand, YuccaTreeFeatureConfig config) {
 		BlockState logState = config.petrified ? config.trunkProvider.getState(rand, pos) : config.trunkProvider.getState(rand, pos).setValue(RotatedPillarBlock.AXIS, direction.getAxis());
 		TreeUtil.setForcedState(worldIn, pos, logState);
 		if (bundle && !config.petrified) {
@@ -269,7 +274,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 		}
 	}
 
-	private void placeLeafAt(IWorldGenerationReader world, BlockPos pos, Random rand, YuccaTreeFeatureConfig config) {
+	private void placeLeafAt(LevelSimulatedRW world, BlockPos pos, Random rand, YuccaTreeFeatureConfig config) {
 		if (TreeUtil.isAirOrLeaves(world, pos) && !config.petrified) {
 			if (config.leavesProvider.getState(rand, pos).hasProperty(LeavesBlock.DISTANCE)) {
 				TreeUtil.setForcedState(world, pos, config.leavesProvider.getState(rand, pos).setValue(LeavesBlock.DISTANCE, 1));
@@ -282,7 +287,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 		}
 	}
 
-	private void createBabyYuccaLeaves(IWorldGenerationReader worldIn, BlockPos newPos, Random rand, YuccaTreeFeatureConfig config, boolean square) {
+	private void createBabyYuccaLeaves(LevelSimulatedRW worldIn, BlockPos newPos, Random rand, YuccaTreeFeatureConfig config, boolean square) {
 		int leafSize = 1;
 		for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 			for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
@@ -299,9 +304,9 @@ public class YuccaTreeFeature extends Feature<YuccaTreeFeatureConfig> {
 		}
 	}
 
-	private void placeFlowerAt(IWorldGenerationReader world, BlockPos pos, Random rand, YuccaTreeFeatureConfig config) {
-		if (TreeUtil.isAir(world, pos)) {
-			if (!TreeUtil.isAir(world, pos.above())) {
+	private void placeFlowerAt(LevelSimulatedRW world, BlockPos pos, Random rand, YuccaTreeFeatureConfig config) {
+		if (isAir(world, pos)) {
+			if (!isAir(world, pos.above())) {
 				TreeUtil.setForcedState(world, pos, config.flowerProvider.getState(rand, pos));
 			} else if (rand.nextInt(4) == 0) {
 				TreeUtil.setForcedState(world, pos, config.tallFlowerBottomProvider.getState(rand, pos));

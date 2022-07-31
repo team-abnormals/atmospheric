@@ -1,29 +1,35 @@
 package com.minecraftabnormals.atmospheric.client.model;
 
-import com.google.common.collect.ImmutableList;
-import net.minecraft.client.renderer.entity.model.SegmentedModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
+import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
+import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.world.entity.Entity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class PassionfruitSeedModel<T extends Entity> extends SegmentedModel<T> {
-	private final ModelRenderer main = new ModelRenderer(this);
+public class PassionfruitSeedModel<T extends Entity> extends HierarchicalModel<T> {
+	private final ModelPart root;
 
-	public PassionfruitSeedModel() {
-		this(0.0F);
+	public PassionfruitSeedModel(ModelPart modelPart) {
+		this.root = modelPart;
 	}
 
-	public PassionfruitSeedModel(float size) {
-		this.main.texOffs(0, 0).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 2.0F, size);
-		this.main.setPos(0.0F, 0.0F, 0.0F);
+	public static LayerDefinition createBodyLayer() {
+		MeshDefinition meshdefinition = new MeshDefinition();
+		PartDefinition root = meshdefinition.getRoot();
+		root.addOrReplaceChild("main", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 2.0F), PartPose.ZERO);
+		return LayerDefinition.create(meshdefinition, 8, 4);
 	}
 
 	public void setupAnim(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 	}
 
-	public Iterable<ModelRenderer> parts() {
-		return ImmutableList.of(this.main);
+	public ModelPart root() {
+		return this.root;
 	}
 }

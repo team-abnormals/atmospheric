@@ -1,0 +1,9 @@
+{
+  "config": {
+    "start_pool": "atmospheric:arid_shrine",
+    "size": 1
+  },
+  "biomes": "#minecraft:has_structure/village_plains",
+  "adapt_noise": true,
+  "type": "minecraft:village"
+}

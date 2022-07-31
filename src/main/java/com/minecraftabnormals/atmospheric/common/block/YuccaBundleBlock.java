@@ -1,12 +1,12 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FallingBlock;
-import net.minecraft.entity.item.FallingBlockEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.FallingBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.Random;
 
@@ -17,7 +17,7 @@ public class YuccaBundleBlock extends FallingBlock {
 	}
 
 	@Override
-	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
+	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
 		BlockState up = worldIn.getBlockState(pos.above());
 		boolean solidBlocks = up.canOcclude() || (up.getBlock() == AtmosphericBlocks.YUCCA_BRANCH.get() && !up.getValue(YuccaBranchBlock.SNAPPED)); //|| north.isSolid() || east.isSolid() || south.isSolid() || west.isSolid();
 
@@ -26,10 +26,10 @@ public class YuccaBundleBlock extends FallingBlock {
 		}
 	}
 
-	private void checkFallable(World worldIn, BlockPos pos) {
+	private void checkFallable(Level worldIn, BlockPos pos) {
 		if (worldIn.isEmptyBlock(pos.below()) || isFree(worldIn.getBlockState(pos.below())) && pos.getY() >= 0) {
 			if (!worldIn.isClientSide) {
-				FallingBlockEntity fallingblockentity = new FallingBlockEntity(worldIn, (double) pos.getX() + 0.5D, pos.getY(), (double) pos.getZ() + 0.5D, worldIn.getBlockState(pos));
+				FallingBlockEntity fallingblockentity = FallingBlockEntity.fall(worldIn, pos, worldIn.getBlockState(pos));
 				this.falling(fallingblockentity);
 				worldIn.addFreshEntity(fallingblockentity);
 			}
@@ -37,6 +37,6 @@ public class YuccaBundleBlock extends FallingBlock {
 	}
 
 	protected void falling(FallingBlockEntity fallingEntity) {
-		fallingEntity.setHurtsEntities(true);
+		fallingEntity.setHurtsEntities(1.0F, 20);
 	}
 }

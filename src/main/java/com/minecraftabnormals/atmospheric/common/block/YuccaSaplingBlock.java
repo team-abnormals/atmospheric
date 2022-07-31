@@ -1,36 +1,36 @@
 package com.minecraftabnormals.atmospheric.common.block;
 
-import com.minecraftabnormals.abnormals_core.common.advancement.EmptyTrigger;
-import com.minecraftabnormals.abnormals_core.common.blocks.wood.AbnormalsSaplingBlock;
-import com.minecraftabnormals.atmospheric.common.block.api.IYuccaPlant;
+import com.minecraftabnormals.atmospheric.common.block.api.YuccaPlant;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.trees.Tree;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.pathfinding.PathNodeType;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
+import com.teamabnormals.blueprint.common.advancement.EmptyTrigger;
+import com.teamabnormals.blueprint.common.block.wood.BlueprintSaplingBlock;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.IPlantable;
 
 import javax.annotation.Nullable;
 
-public class YuccaSaplingBlock extends AbnormalsSaplingBlock implements IPlantable, IYuccaPlant {
-	public YuccaSaplingBlock(Tree tree, Properties properties) {
+public class YuccaSaplingBlock extends BlueprintSaplingBlock implements IPlantable, YuccaPlant {
+	public YuccaSaplingBlock(AbstractTreeGrower tree, Properties properties) {
 		super(tree, properties);
 	}
 
 	@Override
-	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
+	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 		return worldIn.getBlockState(pos.below()).is(AtmosphericTags.YUCCA_PLANTABLE_ON);
 	}
 
 	@Override
-	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
+	public net.minecraftforge.common.PlantType getPlantType(BlockGetter world, BlockPos pos) {
 		return net.minecraftforge.common.PlantType.DESERT;
 	}
 
@@ -51,12 +51,12 @@ public class YuccaSaplingBlock extends AbnormalsSaplingBlock implements IPlantab
 
 	@Nullable
 	@Override
-	public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
-		return PathNodeType.DAMAGE_CACTUS;
+	public BlockPathTypes getAiPathNodeType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+		return BlockPathTypes.DAMAGE_CACTUS;
 	}
 
 	@Override
-	public void entityInside(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
 		this.onYuccaCollision(state, worldIn, pos, entityIn);
 	}
 }

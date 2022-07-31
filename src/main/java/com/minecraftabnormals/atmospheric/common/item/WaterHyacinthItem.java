@@ -3,42 +3,47 @@ package com.minecraftabnormals.atmospheric.common.item;
 import com.minecraftabnormals.atmospheric.common.block.WaterHyacinthBlock;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.RayTraceContext;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 
 public class WaterHyacinthItem extends BlockItem {
 	public WaterHyacinthItem(Item.Properties builder) {
 		super(AtmosphericBlocks.WATER_HYACINTH.get(), builder);
 	}
 
-	public ActionResultType useOn(ItemUseContext context) {
-		return ActionResultType.PASS;
+	public InteractionResult useOn(UseOnContext context) {
+		return InteractionResult.PASS;
 	}
 
-	public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
+	public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
 		ItemStack itemstack = playerIn.getItemInHand(handIn);
-		RayTraceResult raytraceresult = getPlayerPOVHitResult(worldIn, playerIn, RayTraceContext.FluidMode.SOURCE_ONLY);
-		if (raytraceresult.getType() == RayTraceResult.Type.MISS) {
-			return ActionResult.pass(itemstack);
+		HitResult raytraceresult = getPlayerPOVHitResult(worldIn, playerIn, ClipContext.Fluid.SOURCE_ONLY);
+		if (raytraceresult.getType() == HitResult.Type.MISS) {
+			return InteractionResultHolder.pass(itemstack);
 		} else {
-			if (raytraceresult.getType() == RayTraceResult.Type.BLOCK) {
-				BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult) raytraceresult;
+			if (raytraceresult.getType() == HitResult.Type.BLOCK) {
+				BlockHitResult blockraytraceresult = (BlockHitResult) raytraceresult;
 				BlockPos blockpos = blockraytraceresult.getBlockPos();
 				Direction direction = blockraytraceresult.getDirection();
 				if (!worldIn.mayInteract(playerIn, blockpos) || !playerIn.mayUseItemAt(blockpos.relative(direction), direction, itemstack)) {
-					return ActionResult.fail(itemstack);
+					return InteractionResultHolder.fail(itemstack);
 				}
 
 				BlockPos blockpos1 = blockpos.above();
@@ -48,24 +53,24 @@ public class WaterHyacinthItem extends BlockItem {
 						((WaterHyacinthBlock) AtmosphericBlocks.WATER_HYACINTH.get()).placeAt(worldIn, blockpos1, 18);
 					if (net.minecraftforge.event.ForgeEventFactory.onBlockPlace(playerIn, blocksnapshot, Direction.UP)) {
 						blocksnapshot.restore(true, false);
-						return ActionResult.fail(itemstack);
+						return InteractionResultHolder.fail(itemstack);
 					}
 
-					if (playerIn instanceof ServerPlayerEntity) {
-						CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayerEntity) playerIn, blockpos1, itemstack);
+					if (playerIn instanceof ServerPlayer) {
+						CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayer) playerIn, blockpos1, itemstack);
 					}
 
-					if (!playerIn.abilities.instabuild) {
+					if (!playerIn.getAbilities().instabuild) {
 						itemstack.shrink(1);
 					}
 
 					playerIn.awardStat(Stats.ITEM_USED.get(this));
-					worldIn.playSound(playerIn, blockpos, SoundEvents.LILY_PAD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
-					return ActionResult.success(itemstack);
+					worldIn.playSound(playerIn, blockpos, SoundEvents.LILY_PAD_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+					return InteractionResultHolder.success(itemstack);
 				}
 			}
 
-			return ActionResult.fail(itemstack);
+			return InteractionResultHolder.fail(itemstack);
 		}
 	}
 }

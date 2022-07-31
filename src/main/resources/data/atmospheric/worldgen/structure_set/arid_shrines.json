@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "atmospheric:arid_shrine",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 304972539,
+    "spacing": 32,
+    "separation": 8,
+    "type": "minecraft:random_spread"
+  }
+}

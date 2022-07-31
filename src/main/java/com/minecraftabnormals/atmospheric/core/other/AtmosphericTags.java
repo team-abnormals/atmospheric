@@ -1,12 +1,17 @@
 package com.minecraftabnormals.atmospheric.core.other;
 
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
-import net.minecraft.block.Block;
+import com.teamabnormals.blueprint.core.util.TagUtil;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ITag.INamedTag;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.block.Block;
 
 public class AtmosphericTags {
-	public static final INamedTag<Block> PASSION_VINE_GROWABLE_ON = BlockTags.bind(Atmospheric.MOD_ID + ":passion_vine_growable_on");
-	public static final INamedTag<Block> YUCCA_PLANTABLE_ON = BlockTags.bind(Atmospheric.MOD_ID + ":yucca_plantable_on");
-	public static final INamedTag<Block> YUCCA_LOGS = BlockTags.bind(Atmospheric.MOD_ID + ":yucca_logs");
+	public static final TagKey<Block> PASSION_VINE_GROWABLE_ON = blockTag("passion_vine_growable_on");
+	public static final TagKey<Block> YUCCA_PLANTABLE_ON = blockTag("yucca_plantable_on");
+	public static final TagKey<Block> YUCCA_LOGS = blockTag("yucca_logs");
+
+	private static TagKey<Block> blockTag(String name) {
+		return TagUtil.blockTag(Atmospheric.MOD_ID, name);
+	}
 }

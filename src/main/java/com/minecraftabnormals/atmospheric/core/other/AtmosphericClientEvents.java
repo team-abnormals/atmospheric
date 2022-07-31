@@ -2,11 +2,11 @@ package com.minecraftabnormals.atmospheric.core.other;
 
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.AtmosphericConfig;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,14 +19,14 @@ public class AtmosphericClientEvents {
 	public static void onItemTooltip(ItemTooltipEvent event) {
 		Item item = event.getItemStack().getItem();
 		ResourceLocation name = item.getRegistryName();
-		PlayerEntity player = event.getPlayer();
+		Player player = event.getPlayer();
 		if (name == null || player == null)
 			return;
 
-		if (player.abilities.instabuild && AtmosphericConfig.CLIENT.showUnobtainableDescription.get() && (name.getNamespace().equals(Atmospheric.MOD_ID) || name.getNamespace().equals("abnormals_delight"))) {
+		if (player.getAbilities().instabuild && AtmosphericConfig.CLIENT.showUnobtainableDescription.get() && (name.getNamespace().equals(Atmospheric.MOD_ID) || name.getNamespace().equals("abnormals_delight"))) {
 			String id = name.getPath();
 			if (id.contains("travertine") || id.contains("kousa") || id.contains("grimwood") || id.contains("crustose"))
-				event.getToolTip().add(new TranslationTextComponent("tooltip.atmospheric.unobtainable").withStyle(TextFormatting.GRAY));
+				event.getToolTip().add(new TranslatableComponent("tooltip.atmospheric.unobtainable").withStyle(ChatFormatting.GRAY));
 		}
 	}
 }

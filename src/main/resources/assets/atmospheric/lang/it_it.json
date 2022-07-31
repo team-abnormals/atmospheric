@@ -106,7 +106,7 @@
   "block.atmospheric.yucca_chest": "Baule di yucca",
   "block.atmospheric.yucca_trapped_chest": "Baule trappola di yucca",
   "block.atmospheric.yucca_beehive": "Arnia di yucca",
-  "block.atmospheric.yucca_post": "Palo di yucca,
+  "block.atmospheric.yucca_post": "Palo di yucca",
   "block.atmospheric.stripped_yucca_post": "Palo di yucca scortecciato",
   "block.atmospheric.yucca_hedge": "Siepe di yucca",
 
@@ -206,7 +206,7 @@
   "block.atmospheric.saffron_travertine_stairs": "Scalini di travertino vermiglio",
   "block.atmospheric.saffron_travertine_slab": "Lastra di travertino vermiglio",
   "block.atmospheric.saffron_travertine_wall": "Muretto di travertino vermiglio",
-  "block.atmospheric.saffron_travertine_vertical_slab": "Lastra verticale di travertino vermiglio"
+  "block.atmospheric.saffron_travertine_vertical_slab": "Lastra verticale di travertino vermiglio",
 
   "block.atmospheric.kousa_log": "Tronco di kousa",
   "block.atmospheric.kousa_wood": "Legno di kousa",

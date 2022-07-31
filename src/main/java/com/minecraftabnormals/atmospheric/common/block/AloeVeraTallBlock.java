@@ -4,30 +4,38 @@ import com.minecraftabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericItems;
-import com.minecraftabnormals.atmospheric.core.registry.AtmosphericParticles;
-import net.minecraft.block.*;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.passive.BeeEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.pathfinding.PathNodeType;
-import net.minecraft.state.IntegerProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.DoubleBlockHalf;
-import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
+import com.minecraftabnormals.atmospheric.core.registry.AtmosphericParticleTypes;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.animal.Bee;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.BonemealableBlock;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeHooks;
@@ -37,7 +45,7 @@ import net.minecraftforge.common.Tags;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
+public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableBlock {
 	public static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 	public static final VoxelShape SHAPE_TOP = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 14.0D, 12.0D);
 	public static final IntegerProperty AGE = IntegerProperty.create("age", 6, 8);
@@ -47,14 +55,14 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 		this.registerDefaultState(this.getStateDefinition().any().setValue(AGE, 6).setValue(HALF, DoubleBlockHalf.LOWER));
 	}
 
-	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		Vector3d vec3d = state.getOffset(worldIn, pos);
+	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+		Vec3 vec3d = state.getOffset(worldIn, pos);
 		VoxelShape shape = state.getValue(HALF) == DoubleBlockHalf.UPPER ? SHAPE_TOP : SHAPE;
 		return shape.move(vec3d.x, vec3d.y, vec3d.z);
 	}
 
 	@Override
-	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(HALF, AGE);
 	}
 
@@ -63,7 +71,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 	}
 
 	@Override
-	protected boolean mayPlaceOn(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		BlockState downState = worldIn.getBlockState(pos.below());
 		if (state.getBlock() instanceof AloeVeraTallBlock) {
 			DoubleBlockHalf half = state.getValue(HALF);
@@ -77,14 +85,14 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 	}
 
 	@Override
-	public PlantType getPlantType(IBlockReader world, BlockPos pos) {
+	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
 		return PlantType.DESERT;
 	}
 
-	public void entityInside(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity) {
-			if (!(entityIn instanceof BeeEntity))
-				entityIn.makeStuckInBlock(state, new Vector3d(0.8F, 0.75D, 0.8F));
+			if (!(entityIn instanceof Bee))
+				entityIn.makeStuckInBlock(state, new Vec3(0.8F, 0.75D, 0.8F));
 			Random rand = new Random();
 
 			for (int i = 0; i < 3; i++) {
@@ -96,14 +104,13 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 				double z = pos.getZ() + 0.65D + offsetZ;
 
 				if (state.getValue(HALF) == DoubleBlockHalf.UPPER && worldIn.isClientSide && worldIn.getGameTime() % (9 / (state.getValue(AGE) - 5)) == 0)
-					worldIn.addParticle(AtmosphericParticles.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
+					worldIn.addParticle(AtmosphericParticleTypes.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
 			}
 
-			if (!worldIn.isClientSide && state.getValue(AGE) > 3 && Math.random() <= 0.4 && state.getValue(HALF) == DoubleBlockHalf.LOWER && !(entityIn instanceof BeeEntity)) {
-				entityIn.makeStuckInBlock(state, new Vector3d(0.2F, 0.2D, 0.2F));
+			if (!worldIn.isClientSide && state.getValue(AGE) > 3 && Math.random() <= 0.4 && state.getValue(HALF) == DoubleBlockHalf.LOWER && !(entityIn instanceof Bee)) {
+				entityIn.makeStuckInBlock(state, new Vec3(0.2F, 0.2D, 0.2F));
 				entityIn.hurt(AtmosphericDamageSources.ALOE_LEAVES, 1.0F);
-				if (entityIn instanceof ServerPlayerEntity) {
-					ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entityIn;
+				if (entityIn instanceof ServerPlayer serverplayerentity) {
 					if (!entityIn.getCommandSenderWorld().isClientSide() && !serverplayerentity.isCreative()) {
 						AtmosphericCriteriaTriggers.ALOE_VERA_PRICK.trigger(serverplayerentity);
 					}
@@ -113,13 +120,13 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 	}
 
 	@Override
-	public ItemStack getCloneItemStack(IBlockReader worldIn, BlockPos pos, BlockState state) {
+	public ItemStack getCloneItemStack(BlockGetter worldIn, BlockPos pos, BlockState state) {
 		return new ItemStack(AtmosphericItems.ALOE_KERNELS.get());
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	public void animateTick(BlockState state, World worldIn, BlockPos pos, Random rand) {
+	public void animateTick(BlockState state, Level worldIn, BlockPos pos, Random rand) {
 		double offsetX = rand.nextFloat() * 0.6F;
 		double offsetZ = rand.nextFloat() * 0.45F;
 
@@ -128,11 +135,11 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 		double z = pos.getZ() + 0.65D + offsetZ;
 
 		if (state.getValue(HALF) == DoubleBlockHalf.UPPER && worldIn.isClientSide && worldIn.getGameTime() % (6 / (state.getValue(AGE) - 5)) == 0)
-			worldIn.addParticle(AtmosphericParticles.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
+			worldIn.addParticle(AtmosphericParticleTypes.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
 	}
 
 	@Override
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		int age = state.getValue(AGE);
 		Random rand = new Random();
 
@@ -151,14 +158,14 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 				double z = pos.getZ() + 0.15D + offsetZ;
 
 				if (worldIn.isClientSide)
-					worldIn.addParticle(AtmosphericParticles.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
+					worldIn.addParticle(AtmosphericParticleTypes.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
 			}
 
-			worldIn.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+			worldIn.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
 			popResource(worldIn, pos, new ItemStack(AtmosphericItems.YELLOW_BLOSSOMS.get(), age - 5));
 			popResource(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_KERNELS.get()));
 			if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
-				worldIn.playSound(null, pos, SoundEvents.SLIME_BLOCK_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+				worldIn.playSound(null, pos, SoundEvents.SLIME_BLOCK_BREAK, SoundSource.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
 				worldIn.setBlock(pos.above(), Blocks.AIR.defaultBlockState(), 18);
 				worldIn.setBlock(pos, AtmosphericBlocks.ALOE_VERA.get().defaultBlockState().setValue(AloeVeraBlock.AGE, 2), 18);
 				popResource(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), rand.nextInt(5) + 3));
@@ -167,35 +174,35 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 				worldIn.setBlock(pos, Blocks.AIR.defaultBlockState(), 18);
 			}
 
-			return ActionResultType.SUCCESS;
+			return InteractionResult.SUCCESS;
 		} else {
 			return super.use(state, worldIn, pos, player, handIn, hit);
 		}
 	}
 
 	@Override
-	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
+	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 		return this.mayPlaceOn(state, worldIn, pos);
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(BlockGetter worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		return state.getValue(AGE) < 8;
 	}
 
 	@Override
-	public boolean isBonemealSuccess(World worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(Level worldIn, Random rand, BlockPos pos, BlockState state) {
 		return state.getValue(AGE) < 8;
 	}
 
 	@Nullable
 	@Override
-	public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
-		return PathNodeType.DAMAGE_CACTUS;
+	public BlockPathTypes getAiPathNodeType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+		return BlockPathTypes.DAMAGE_CACTUS;
 	}
 
 	@Override
-	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
+	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
 		if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
 			boolean flag = worldIn.getBlockState(pos.below()).is(Tags.Blocks.SAND_RED);
@@ -208,7 +215,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements IGrowable {
 	}
 
 	@Override
-	public void performBonemeal(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel world, Random rand, BlockPos pos, BlockState state) {
 		int age = state.getValue(AGE);
 		DoubleBlockHalf half = state.getValue(HALF);
 		if (age < 8) {

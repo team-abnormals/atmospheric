@@ -1,12 +1,12 @@
 package com.minecraftabnormals.atmospheric.common.potion;
 
-import net.minecraft.potion.Effect;
-import net.minecraft.potion.EffectType;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 
-public class ReliefEffect extends Effect {
+public class ReliefEffect extends MobEffect {
 
 	public ReliefEffect() {
-		super(EffectType.BENEFICIAL, 15494786);
+		super(MobEffectCategory.BENEFICIAL, 15494786);
 	}
 
 }

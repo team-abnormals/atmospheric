@@ -2,22 +2,27 @@ package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-import net.minecraft.block.Block;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ISeedReader;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
-import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
 
 import java.util.Random;
 
-public class DuneRocksFeature extends Feature<BlockStateFeatureConfig> {
-	public DuneRocksFeature(Codec<BlockStateFeatureConfig> codec) {
+public class DuneRocksFeature extends Feature<BlockStateConfiguration> {
+	public DuneRocksFeature(Codec<BlockStateConfiguration> codec) {
 		super(codec);
 	}
 
 	@Override
-	public boolean place(ISeedReader reader, ChunkGenerator generator, Random rand, BlockPos pos, BlockStateFeatureConfig config) {
+	public boolean place(FeaturePlaceContext<BlockStateConfiguration> context) {
+		BlockStateConfiguration config = context.config();
+		WorldGenLevel reader = context.level();
+		Random rand = context.random();
+		BlockPos pos = context.origin();
+
 		while (true) {
 			label46:
 			{

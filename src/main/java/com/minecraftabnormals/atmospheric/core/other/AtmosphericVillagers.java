@@ -2,8 +2,8 @@ package com.minecraftabnormals.atmospheric.core.other;
 
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBiomes;
-import net.minecraft.entity.merchant.villager.VillagerTrades;
-import net.minecraft.entity.villager.VillagerType;
+import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.npc.VillagerType;
 
 public class AtmosphericVillagers {
 

@@ -1,39 +1,41 @@
 package com.minecraftabnormals.atmospheric.common.world.gen.feature;
 
-import com.minecraftabnormals.abnormals_core.core.util.TreeUtil;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SaplingBlock;
+import com.teamabnormals.blueprint.core.util.TreeUtil;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.ISeedReader;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.IWorldGenerationBaseReader;
-import net.minecraft.world.gen.IWorldGenerationReader;
-import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
-import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
+public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 	private final List<Block> brushes = new ArrayList<>();
 	private final boolean water;
 
-	public RainforestTreeFeature(Codec<BaseTreeFeatureConfig> config, boolean water) {
+	public RainforestTreeFeature(Codec<TreeConfiguration> config, boolean water) {
 		super(config);
 		this.water = water;
 	}
 
 	@Override
-	public boolean place(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
+	public boolean place(FeaturePlaceContext<TreeConfiguration> context) {
+		TreeConfiguration config = context.config();
+		WorldGenLevel worldIn = context.level();
+		Random rand = context.random();
+		BlockPos position = context.origin();
+
 		boolean morado = config.trunkProvider.getState(rand, position).is(AtmosphericBlocks.MORADO_LOG.get());
 		if (rand.nextInt(250) == 0) {
 			if (rand.nextInt(2) == 0)
@@ -59,7 +61,7 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				if (j >= position.getY() + 1 + height - 2) {
 					k = 2;
 				}
-				BlockPos.Mutable blockpos$mutableblockpos = new BlockPos.Mutable();
+				BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 
 				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
@@ -183,7 +185,7 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 				if (!brushes.isEmpty()) {
 					for (BlockPos pos : logsPlaced) {
 						for (Direction direction2 : Direction.values()) {
-							if (TreeUtil.isAir(worldIn, pos.relative(direction2)) && rand.nextInt(3) == 0) {
+							if (isAir(worldIn, pos.relative(direction2)) && rand.nextInt(3) == 0) {
 								worldIn.setBlock(pos.relative(direction2), MonkeyBrushFeature.monkeyBrushState(brushes.get(rand.nextInt(brushes.size())).defaultBlockState(), direction2), 18);
 							}
 						}
@@ -199,7 +201,7 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 		}
 	}
 
-	private void createHorizontalLog(int branchLength, IWorldGenerationReader worldIn, BlockPos pos, Direction direction, Random rand, BaseTreeFeatureConfig config, List<BlockPos> logsPlaced) {
+	private void createHorizontalLog(int branchLength, LevelSimulatedRW worldIn, BlockPos pos, Direction direction, Random rand, TreeConfiguration config, List<BlockPos> logsPlaced) {
 		int logX = pos.getX();
 		int logY = pos.getY();
 		int logZ = pos.getZ();
@@ -217,7 +219,7 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 		}
 	}
 
-	private void createVerticalLog(int branchHeight, IWorldGenerationReader worldIn, BlockPos pos, Random rand, BaseTreeFeatureConfig config, List<BlockPos> logsPlaced) {
+	private void createVerticalLog(int branchHeight, LevelSimulatedRW worldIn, BlockPos pos, Random rand, TreeConfiguration config, List<BlockPos> logsPlaced) {
 		int logX = pos.getX();
 		int logY = pos.getY();
 		int logZ = pos.getZ();
@@ -244,20 +246,18 @@ public class RainforestTreeFeature extends Feature<BaseTreeFeatureConfig> {
 		}
 	}
 
-	public static boolean isAirOrWater(IWorldGenerationBaseReader world, BlockPos pos) {
-		if (!(world instanceof IBlockReader)) {
+	public static boolean isAirOrWater(LevelSimulatedReader world, BlockPos pos) {
+		if (!(world instanceof BlockGetter)) {
 			return world.isStateAtPosition(pos, BlockState::isAir) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
 		} else {
-			return world.isStateAtPosition(pos, state -> state.isAir((IBlockReader) world, pos)) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
+			return world.isStateAtPosition(pos, BlockStateBase::isAir) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
 		}
 	}
 
-	public static boolean isAirOrWaterOrLeaves(IWorldGenerationBaseReader world, BlockPos pos) {
-		if (world instanceof IWorldReader) {
-			return world.isStateAtPosition(pos, state -> state.canBeReplacedByLeaves((IWorldReader) world, pos)) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
+	public static boolean isAirOrWaterOrLeaves(LevelSimulatedReader world, BlockPos pos) {
+		if (world instanceof LevelReader) {
+			return world.isStateAtPosition(pos, state -> state.canBeReplacedByLeaves((LevelReader) world, pos)) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
 		}
-		return world.isStateAtPosition(pos, (state) -> {
-			return isAirOrWater(world, pos) || state.is(BlockTags.LEAVES);
-		});
+		return world.isStateAtPosition(pos, (state) -> isAirOrWater(world, pos) || state.is(BlockTags.LEAVES));
 	}
 }

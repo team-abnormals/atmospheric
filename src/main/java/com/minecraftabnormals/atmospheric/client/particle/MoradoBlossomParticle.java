@@ -1,16 +1,16 @@
 package com.minecraftabnormals.atmospheric.client.particle;
 
 import net.minecraft.client.particle.*;
-import net.minecraft.client.world.ClientWorld;
-import net.minecraft.particles.BasicParticleType;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class MoradoBlossomParticle extends SpriteTexturedParticle {
+public class MoradoBlossomParticle extends TextureSheetParticle {
 	private final float rotSpeed;
 
-	private MoradoBlossomParticle(ClientWorld worldIn, double xCoordIn, double yCoordIn, double zCoordIn, double particleRedIn, double particleGreenIn, double particleBlueIn) {
+	private MoradoBlossomParticle(ClientLevel worldIn, double xCoordIn, double yCoordIn, double zCoordIn, double particleRedIn, double particleGreenIn, double particleBlueIn) {
 		super(worldIn, xCoordIn, yCoordIn, zCoordIn);
 		this.quadSize *= 3.5F;
 		int i = (int) (32.0D / (Math.random() * 0.8D + 0.2D));
@@ -19,8 +19,8 @@ public class MoradoBlossomParticle extends SpriteTexturedParticle {
 		this.roll = (float) Math.random() * ((float) Math.PI * 2F);
 	}
 
-	public IParticleRenderType getRenderType() {
-		return IParticleRenderType.PARTICLE_SHEET_OPAQUE;
+	public ParticleRenderType getRenderType() {
+		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
 	}
 
 	public void tick() {
@@ -44,14 +44,14 @@ public class MoradoBlossomParticle extends SpriteTexturedParticle {
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public static class Factory implements IParticleFactory<BasicParticleType> {
-		private final IAnimatedSprite spriteSet;
+	public static class Factory implements ParticleProvider<SimpleParticleType> {
+		private final SpriteSet spriteSet;
 
-		public Factory(IAnimatedSprite sprite) {
+		public Factory(SpriteSet sprite) {
 			this.spriteSet = sprite;
 		}
 
-		public Particle createParticle(BasicParticleType typeIn, ClientWorld worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
 			MoradoBlossomParticle particle = new MoradoBlossomParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed);
 			particle.pickSprite(this.spriteSet);
 			return particle;
