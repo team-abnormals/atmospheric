@@ -1,19 +1,19 @@
-package com.minecraftabnormals.atmospheric.common.world.gen.feature;
+package com.minecraftabnormals.atmospheric.common.levelgen.feature;
 
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.blueprint.core.util.TreeUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.world.level.*;
+import net.minecraft.world.level.LevelSimulatedRW;
+import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
 import java.util.ArrayList;
@@ -247,17 +247,14 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 	}
 
 	public static boolean isAirOrWater(LevelSimulatedReader world, BlockPos pos) {
-		if (!(world instanceof BlockGetter)) {
-			return world.isStateAtPosition(pos, BlockState::isAir) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
-		} else {
-			return world.isStateAtPosition(pos, BlockStateBase::isAir) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
-		}
+		return isAir(world, pos) || isWater(world, pos);
 	}
 
 	public static boolean isAirOrWaterOrLeaves(LevelSimulatedReader world, BlockPos pos) {
-		if (world instanceof LevelReader) {
-			return world.isStateAtPosition(pos, state -> state.canBeReplacedByLeaves((LevelReader) world, pos)) || world.isStateAtPosition(pos, state -> state.getFluidState().is(FluidTags.WATER));
-		}
-		return world.isStateAtPosition(pos, (state) -> isAirOrWater(world, pos) || state.is(BlockTags.LEAVES));
+		return TreeFeature.isAirOrLeaves(world, pos) || isWater(world, pos);
+	}
+
+	public static boolean isWater(LevelSimulatedReader world, BlockPos pos) {
+		return world.isStateAtPosition(pos, (state) -> state.is(Blocks.WATER));
 	}
 }

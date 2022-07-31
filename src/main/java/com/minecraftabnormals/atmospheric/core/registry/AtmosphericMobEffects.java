@@ -5,13 +5,13 @@ import com.minecraftabnormals.atmospheric.common.potion.ReliefEffect;
 import com.minecraftabnormals.atmospheric.common.potion.SpittingEffect;
 import com.minecraftabnormals.atmospheric.common.potion.WorseningEffect;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.blueprint.core.util.DataUtil;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -36,11 +36,11 @@ public class AtmosphericMobEffects {
 	public static final RegistryObject<Potion> WORSENING_LONG = POTIONS.register("worsening_long", () -> new Potion(new MobEffectInstance(WORSENING.get(), 9600)));
 
 	public static void registerBrewingRecipes() {
-		PotionBrewing.addMix(Potions.AWKWARD, AtmosphericItems.ALOE_LEAVES.get(), RELIEF_NORMAL.get());
-		PotionBrewing.addMix(RELIEF_NORMAL.get(), Items.GLOWSTONE_DUST, RELIEF_STRONG.get());
-		PotionBrewing.addMix(RELIEF_NORMAL.get(), Items.REDSTONE, RELIEF_LONG.get());
-		PotionBrewing.addMix(RELIEF_NORMAL.get(), Items.FERMENTED_SPIDER_EYE, WORSENING_NORMAL.get());
-		PotionBrewing.addMix(WORSENING_NORMAL.get(), Items.GLOWSTONE_DUST, WORSENING_STRONG.get());
-		PotionBrewing.addMix(WORSENING_NORMAL.get(), Items.REDSTONE, WORSENING_LONG.get());
+		DataUtil.addMix(Potions.AWKWARD, AtmosphericItems.ALOE_LEAVES.get(), RELIEF_NORMAL.get());
+		DataUtil.addMix(RELIEF_NORMAL.get(), Items.GLOWSTONE_DUST, RELIEF_STRONG.get());
+		DataUtil.addMix(RELIEF_NORMAL.get(), Items.REDSTONE, RELIEF_LONG.get());
+		DataUtil.addMix(RELIEF_NORMAL.get(), Items.FERMENTED_SPIDER_EYE, WORSENING_NORMAL.get());
+		DataUtil.addMix(WORSENING_NORMAL.get(), Items.GLOWSTONE_DUST, WORSENING_STRONG.get());
+		DataUtil.addMix(WORSENING_NORMAL.get(), Items.REDSTONE, WORSENING_LONG.get());
 	}
 }

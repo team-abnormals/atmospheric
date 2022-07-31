@@ -1,4 +1,4 @@
-package com.minecraftabnormals.atmospheric.common.world.gen.feature;
+package com.minecraftabnormals.atmospheric.common.levelgen.feature;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;

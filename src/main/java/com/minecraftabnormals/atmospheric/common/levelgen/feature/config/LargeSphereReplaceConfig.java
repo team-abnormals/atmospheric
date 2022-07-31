@@ -1,4 +1,4 @@
-package com.minecraftabnormals.atmospheric.common.world.gen.feature.config;
+package com.minecraftabnormals.atmospheric.common.levelgen.feature.config;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

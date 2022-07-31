@@ -1,6 +1,6 @@
-package com.minecraftabnormals.atmospheric.common.world.gen.feature;
+package com.minecraftabnormals.atmospheric.common.levelgen.feature;
 
-import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
+import com.minecraftabnormals.atmospheric.common.levelgen.feature.config.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericTags;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.blueprint.core.util.TreeUtil;

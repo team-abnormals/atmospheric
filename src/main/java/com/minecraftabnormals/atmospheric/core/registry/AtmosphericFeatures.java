@@ -1,14 +1,17 @@
 package com.minecraftabnormals.atmospheric.core.registry;
 
 import com.google.common.collect.ImmutableList;
-import com.minecraftabnormals.atmospheric.common.world.gen.feature.*;
-import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.LargeSphereReplaceConfig;
-import com.minecraftabnormals.atmospheric.common.world.gen.feature.config.YuccaTreeFeatureConfig;
+import com.minecraftabnormals.atmospheric.common.block.YuccaFlowerDoubleBlock;
+import com.minecraftabnormals.atmospheric.common.levelgen.feature.*;
+import com.minecraftabnormals.atmospheric.common.levelgen.feature.config.LargeSphereReplaceConfig;
+import com.minecraftabnormals.atmospheric.common.levelgen.feature.config.YuccaTreeFeatureConfig;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FossilFeatureConfiguration;
@@ -16,8 +19,11 @@ import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration.TreeConfigurationBuilder;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
@@ -27,6 +33,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
+import java.util.OptionalInt;
 import java.util.function.Supplier;
 
 @EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
@@ -56,14 +63,25 @@ public class AtmosphericFeatures {
 		private static final BeehiveDecorator BEEHIVE = new BeehiveDecorator(1.0F);
 
 		public static final TreeConfigurationBuilder ROSEWOOD = createTree(AtmosphericBlocks.ROSEWOOD_LOG.get().defaultBlockState(), AtmosphericBlocks.ROSEWOOD_LEAVES.get().defaultBlockState());
-		public static final TreeConfigurationBuilder ROSEWOOD_0002 = ROSEWOOD.decorators(BEEHIVE_0002);
-		public static final TreeConfigurationBuilder ROSEWOOD_005 = ROSEWOOD.decorators(BEEHIVE_005);
+		public static final TreeConfiguration ROSEWOOD_BEES_0002 = ROSEWOOD.decorators(List.of(BEEHIVE_0002)).build();
+		public static final TreeConfiguration ROSEWOOD_BEES_005 = ROSEWOOD.decorators(List.of(BEEHIVE_005)).build();
+
+		public static final TreeConfigurationBuilder MORADO = createTree(AtmosphericBlocks.MORADO_LOG.get().defaultBlockState(), AtmosphericBlocks.MORADO_LEAVES.get().defaultBlockState());
+		public static final TreeConfiguration MORADO_BEES_0002 = MORADO.decorators(List.of(BEEHIVE_0002)).build();
+		public static final TreeConfiguration MORADO_BEES_005 = MORADO.decorators(List.of(BEEHIVE_005)).build();
+
+		public static final YuccaTreeFeatureConfig.Builder YUCCA = new YuccaTreeFeatureConfig.Builder(BlockStateProvider.simple(AtmosphericBlocks.YUCCA_LOG.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_LEAVES.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_BRANCH.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_BUNDLE.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_FLOWER.get()), BlockStateProvider.simple(AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState().setValue(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.UPPER)), BlockStateProvider.simple(AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState().setValue(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.LOWER)));
+		public static final YuccaTreeFeatureConfig YUCCA_BEES_005 = YUCCA.decorators(List.of(BEEHIVE_005)).build();
+		public static final YuccaTreeFeatureConfig BABY_YUCCA = YUCCA.setBaby().build();
+
+		public static final TreeConfiguration ASPEN = createTree(AtmosphericBlocks.ASPEN_LOG.get().defaultBlockState(), AtmosphericBlocks.ASPEN_LEAVES.get().defaultBlockState()).build();
+		public static final TreeConfiguration GRIMWOOD = (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.GRIMWOOD_LOG.get()), new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.simple(AtmosphericBlocks.GRIMWOOD_LEAVES.get()), new SpruceFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(1, 2)), new TwoLayersFeatureSize(2, 0, 2))).ignoreVines().build();
+		public static final TreeConfiguration KOUSA = (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.KOUSA_LOG.get()), new FancyTrunkPlacer(3, 11, 0), BlockStateProvider.simple(AtmosphericBlocks.KOUSA_LEAVES.get()), new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))).ignoreVines().build();
 
 		private static TreeConfigurationBuilder createTree(BlockState logState, BlockState leavesState) {
 			return new TreeConfigurationBuilder(BlockStateProvider.simple(logState), new StraightTrunkPlacer(0, 0, 0), BlockStateProvider.simple(leavesState), new BlobFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), 0), new TwoLayersFeatureSize(0, 0, 0)).ignoreVines();
 		}
 
-//		public static final YuccaTreeFeatureConfig.Builder YUCCA_TREE_BUILDER = new YuccaTreeFeatureConfig.Builder(BlockStateProvider.simple(States.YUCCA_LOG), BlockStateProvider.simple(States.YUCCA_LEAVES), BlockStateProvider.simple(States.YUCCA_BRANCH), BlockStateProvider.simple(States.YUCCA_BUNDLE), BlockStateProvider.simple(States.YUCCA_FLOWER), BlockStateProvider.simple(States.TALL_YUCCA_FLOWER_TOP), BlockStateProvider.simple(States.TALL_YUCCA_FLOWER_BOTTOM));
 //		public static final YuccaTreeFeatureConfig.Builder ARID_YUCCA_TREE_BUILDER = new YuccaTreeFeatureConfig.Builder(BlockStateProvider.simple(States.ARID_SANDSTONE), BlockStateProvider.simple(States.ARID_SANDSTONE), BlockStateProvider.simple(States.ARID_SANDSTONE_WALL), BlockStateProvider.simple(States.ROASTED_YUCCA_BUNDLE), BlockStateProvider.simple(States.ARID_SANDSTONE_WALL), BlockStateProvider.simple(States.ARID_SANDSTONE_WALL), BlockStateProvider.simple(States.ARID_SANDSTONE_WALL));
 //		public static final YuccaTreeFeatureConfig.Builder RED_ARID_YUCCA_TREE_BUILDER = new YuccaTreeFeatureConfig.Builder(BlockStateProvider.simple(States.RED_ARID_SANDSTONE), BlockStateProvider.simple(States.RED_ARID_SANDSTONE), BlockStateProvider.simple(States.RED_ARID_SANDSTONE_WALL), BlockStateProvider.simple(States.ROASTED_YUCCA_BUNDLE), BlockStateProvider.simple(States.RED_ARID_SANDSTONE_WALL), BlockStateProvider.simple(States.RED_ARID_SANDSTONE_WALL), BlockStateProvider.simple(States.RED_ARID_SANDSTONE_WALL));
 //
@@ -93,7 +111,21 @@ public class AtmosphericFeatures {
 	public static final class AtmosphericConfiguredFeatures {
 		public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, Atmospheric.MOD_ID);
 
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ROSEWOOD_TREE = register("rosewood_tree", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.MAPLE_TREE_CONFIG));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ROSEWOOD = register("rosewood", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.ROSEWOOD.build()));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ROSEWOOD_BEES_0002 = register("rosewood_bees_0002", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.ROSEWOOD_BEES_0002));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ROSEWOOD_BEES_005 = register("rosewood_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.ROSEWOOD_BEES_005));
+
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> MORADO = register("morado", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.MORADO.build()));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> MORADO_BEES_0002 = register("morado_bees_0002", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.MORADO_BEES_0002));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> MORADO_BEES_005 = register("morado_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.MORADO_BEES_005));
+
+		public static final RegistryObject<ConfiguredFeature<YuccaTreeFeatureConfig, ?>> YUCCA = register("yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA.build()));
+		public static final RegistryObject<ConfiguredFeature<YuccaTreeFeatureConfig, ?>> BABY_YUCCA = register("baby_yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.BABY_YUCCA));
+		public static final RegistryObject<ConfiguredFeature<YuccaTreeFeatureConfig, ?>> YUCCA_BEES_005 = register("yucca_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA_BEES_005));
+
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ASPEN = register("aspen", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.ASPEN));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GRIMWOOD = register("grimwood", () -> new ConfiguredFeature<>(Feature.TREE, Configs.GRIMWOOD));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> KOUSA = register("kousa", () -> new ConfiguredFeature<>(Feature.TREE, Configs.KOUSA));
 
 //		public static final ConfiguredFeature<?, ?> PODZOL = AtmosphericFeatures.PODZOL.get().configured(new ProbabilityFeatureConfiguration(0.2F)).decorated(FeatureDecorator.COUNT_NOISE_BIASED.configured(new NoiseCountFactorDecoratorConfiguration(160, 80.0D, 0.3D))).decorated(FeatureDecorator.TOP_SOLID_HEIGHTMAP.configured(DecoratorConfiguration.NONE));
 //		public static final ConfiguredFeature<?, ?> PASSION_VINES = AtmosphericFeatures.PASSION_VINE.get().configured(FeatureConfiguration.NONE).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).count(1);

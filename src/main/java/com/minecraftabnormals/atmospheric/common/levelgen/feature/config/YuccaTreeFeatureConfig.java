@@ -1,4 +1,4 @@
-package com.minecraftabnormals.atmospheric.common.world.gen.feature.config;
+package com.minecraftabnormals.atmospheric.common.levelgen.feature.config;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
@@ -133,7 +133,7 @@ public class YuccaTreeFeatureConfig implements FeatureConfiguration {
 			return this;
 		}
 
-		public YuccaTreeFeatureConfig.Builder isBaby() {
+		public YuccaTreeFeatureConfig.Builder setBaby() {
 			this.baby = true;
 			return this;
 		}

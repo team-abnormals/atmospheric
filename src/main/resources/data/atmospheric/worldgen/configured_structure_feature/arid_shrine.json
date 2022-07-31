@@ -5,5 +5,17 @@
   },
   "biomes": "#minecraft:has_structure/village_plains",
   "adapt_noise": true,
+  "spawn_overrides": {
+    "creature": {
+      "bounding_box": "piece",
+      "spawns": [
+      ]
+    },
+    "monster": {
+      "bounding_box": "piece",
+      "spawns": [
+      ]
+    }
+  },
   "type": "minecraft:village"
 }

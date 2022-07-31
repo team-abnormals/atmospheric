@@ -1,7 +1,7 @@
 package com.minecraftabnormals.atmospheric.core.registry;
 
 import com.minecraftabnormals.atmospheric.common.block.*;
-import com.minecraftabnormals.atmospheric.common.world.gen.trees.*;
+import com.minecraftabnormals.atmospheric.common.block.grower.*;
 import com.minecraftabnormals.atmospheric.core.Atmospheric;
 import com.minecraftabnormals.atmospheric.core.other.AtmosphericProperties;
 import com.minecraftabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
@@ -17,10 +17,10 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.RegistryObject;
 
-@Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class AtmosphericBlocks {
 
 	public static final AtmosphericBlockSubRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER.getBlockSubHelper();
@@ -28,7 +28,7 @@ public class AtmosphericBlocks {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> ROSEWOOD_PLANKS = HELPER.createBlock("rosewood_planks", () -> new PlanksBlock(Block.Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ROSEWOOD_SAPLING = HELPER.createBlock("rosewood_sapling", () -> new BlueprintSaplingBlock(new RosewoodTree(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> ROSEWOOD_SAPLING = HELPER.createBlock("rosewood_sapling", () -> new BlueprintSaplingBlock(new RosewoodTreeGrower(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_ROSEWOOD_LOG = HELPER.createBlock("stripped_rosewood_log", () -> new StrippedLogBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_LOG = HELPER.createBlock("rosewood_log", () -> new LogBlock(STRIPPED_ROSEWOOD_LOG, Block.Properties.copy(Blocks.OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_ROSEWOOD = HELPER.createBlock("stripped_rosewood", () -> new StrippedWoodBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -56,7 +56,7 @@ public class AtmosphericBlocks {
 	public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> ROSEWOOD_CHESTS = HELPER.createCompatChestBlocks("quark", "rosewood", MaterialColor.COLOR_PINK);
 
 	public static final RegistryObject<Block> MORADO_PLANKS = HELPER.createBlock("morado_planks", () -> new PlanksBlock(Block.Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> MORADO_SAPLING = HELPER.createBlock("morado_sapling", () -> new BlueprintSaplingBlock(new MoradoTree(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> MORADO_SAPLING = HELPER.createBlock("morado_sapling", () -> new BlueprintSaplingBlock(new MoradoTreeGrower(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_MORADO_LOG = HELPER.createBlock("stripped_morado_log", () -> new StrippedLogBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> MORADO_LOG = HELPER.createBlock("morado_log", () -> new LogBlock(STRIPPED_MORADO_LOG, Block.Properties.copy(Blocks.OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_MORADO_WOOD = HELPER.createBlock("stripped_morado_wood", () -> new StrippedWoodBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -195,7 +195,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_DOOR = HELPER.createBlock("yucca_door", () -> new WoodDoorBlock(Block.Properties.copy(Blocks.OAK_DOOR)), CreativeModeTab.TAB_REDSTONE);
 	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> YUCCA_SIGNS = HELPER.createSignBlock("yucca", MaterialColor.TERRACOTTA_ORANGE);
 
-	public static final RegistryObject<Block> YUCCA_SAPLING = HELPER.createBlock("yucca_sapling", () -> new YuccaSaplingBlock(new YuccaTree(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_SAPLING = HELPER.createBlock("yucca_sapling", () -> new YuccaSaplingBlock(new YuccaTreeGrower(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_YUCCA_SAPLING = HELPER.createBlockNoItem("potted_yucca_sapling", () -> new FlowerPotBlock(YUCCA_SAPLING.get(), Block.Properties.copy(Blocks.POTTED_ALLIUM)));
 
 	public static final RegistryObject<Block> YUCCA_BRANCH = HELPER.createBlock("yucca_branch", () -> new YuccaBranchBlock(Block.Properties.copy(Blocks.MELON_STEM).sound(SoundType.CROP).randomTicks()), CreativeModeTab.TAB_DECORATIONS);
@@ -256,7 +256,7 @@ public class AtmosphericBlocks {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> KOUSA_PLANKS = HELPER.createBlock("kousa_planks", () -> new PlanksBlock(Block.Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_SAPLING = HELPER.createBlock("kousa_sapling", () -> new BlueprintSaplingBlock(new KousaTree(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_SAPLING = HELPER.createBlock("kousa_sapling", () -> new BlueprintSaplingBlock(new KousaTreeGrower(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_KOUSA_LOG = HELPER.createBlock("stripped_kousa_log", () -> new StrippedLogBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_LOG = HELPER.createBlock("kousa_log", () -> new LogBlock(STRIPPED_KOUSA_LOG, Block.Properties.copy(Blocks.OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_KOUSA_WOOD = HELPER.createBlock("stripped_kousa_wood", () -> new StrippedWoodBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -287,7 +287,7 @@ public class AtmosphericBlocks {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> ASPEN_PLANKS = HELPER.createBlock("aspen_planks", () -> new PlanksBlock(Block.Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ASPEN_SAPLING = HELPER.createBlock("aspen_sapling", () -> new BlueprintSaplingBlock(new AspenTree(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> ASPEN_SAPLING = HELPER.createBlock("aspen_sapling", () -> new BlueprintSaplingBlock(new AspenTreeGrower(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_ASPEN_LOG = HELPER.createBlock("stripped_aspen_log", () -> new StrippedLogBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_LOG = HELPER.createBlock("aspen_log", () -> new LogBlock(STRIPPED_ASPEN_LOG, Block.Properties.copy(Blocks.OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> WATCHFUL_ASPEN_LOG = HELPER.createBlock("watchful_aspen_log", () -> new LogBlock(STRIPPED_ASPEN_LOG, Block.Properties.copy(Blocks.OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -325,7 +325,7 @@ public class AtmosphericBlocks {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> GRIMWOOD_PLANKS = HELPER.createBlock("grimwood_planks", () -> new PlanksBlock(Block.Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> GRIMWOOD_SAPLING = HELPER.createBlock("grimwood_sapling", () -> new BlueprintSaplingBlock(new GrimwoodTree(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> GRIMWOOD_SAPLING = HELPER.createBlock("grimwood_sapling", () -> new BlueprintSaplingBlock(new GrimwoodTreeGrower(), Block.Properties.copy(Blocks.ACACIA_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> STRIPPED_GRIMWOOD_LOG = HELPER.createBlock("stripped_grimwood_log", () -> new StrippedLogBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_LOG = HELPER.createBlock("grimwood_log", () -> new LogBlock(STRIPPED_GRIMWOOD_LOG, Block.Properties.copy(Blocks.OAK_LOG)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_GRIMWOOD = HELPER.createBlock("stripped_grimwood", () -> new StrippedWoodBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), CreativeModeTab.TAB_BUILDING_BLOCKS);

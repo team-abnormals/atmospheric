@@ -2,7 +2,7 @@ package com.minecraftabnormals.atmospheric.common.block;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-import com.minecraftabnormals.atmospheric.common.world.gen.feature.MonkeyBrushFeature;
+import com.minecraftabnormals.atmospheric.common.levelgen.feature.MonkeyBrushFeature;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import com.teamabnormals.blueprint.common.block.BlueprintFlowerBlock;

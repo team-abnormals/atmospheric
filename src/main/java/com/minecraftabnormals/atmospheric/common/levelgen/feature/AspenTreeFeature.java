@@ -1,4 +1,4 @@
-package com.minecraftabnormals.atmospheric.common.world.gen.feature;
+package com.minecraftabnormals.atmospheric.common.levelgen.feature;
 
 import com.google.common.collect.Lists;
 import com.minecraftabnormals.atmospheric.core.registry.AtmosphericBlocks;
