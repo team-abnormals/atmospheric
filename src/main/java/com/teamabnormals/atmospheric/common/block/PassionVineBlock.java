@@ -45,6 +45,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 	protected static final VoxelShape SOUTH_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 1.0D);
 	protected static final VoxelShape NORTH_AABB = Block.box(0.0D, 0.0D, 15.0D, 16.0D, 16.0D, 16.0D);
 
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		switch (state.getValue(FACING)) {
 			case NORTH:
@@ -140,6 +141,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		}
 	}
 
+	@Override
 	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		int i = state.getValue(AGE);
 		boolean flag = i == 4;
@@ -167,6 +169,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		}
 	}
 
+	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(AGE, FACING);
 	}
@@ -182,6 +185,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		return this.canAttachTo(worldIn, pos.relative(direction.getOpposite()), direction) || (worldIn.getBlockState(pos.above()).getBlock() == AtmosphericBlocks.PASSION_VINE.get() && worldIn.getBlockState(pos.above()).getValue(FACING) == state.getValue(FACING));
 	}
 
+	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		if (!stateIn.canSurvive(worldIn, currentPos)) {
 			return Blocks.AIR.defaultBlockState();
@@ -190,6 +194,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		}
 	}
 
+	@Override
 	@Nullable
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		if (!context.replacingClickedOnBlock()) {
@@ -214,14 +219,17 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		return null;
 	}
 
+	@Override
 	public boolean isValidBonemealTarget(BlockGetter worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		return state.getValue(AGE) < 4;
 	}
 
+	@Override
 	public boolean isBonemealSuccess(Level worldIn, Random rand, BlockPos pos, BlockState state) {
 		return true;
 	}
 
+	@Override
 	public void performBonemeal(ServerLevel worldIn, Random rand, BlockPos pos, BlockState state) {
 		int i = Math.min(4, state.getValue(AGE) + 1);
 		worldIn.setBlock(pos, state.setValue(AGE, Integer.valueOf(i)), 2);

@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class AspenTreeGrower extends AbstractTreeGrower {
 
+	@Override
 	@Nullable
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random random, boolean beehive) {
 		return AtmosphericConfiguredFeatures.ASPEN.getHolder().get();

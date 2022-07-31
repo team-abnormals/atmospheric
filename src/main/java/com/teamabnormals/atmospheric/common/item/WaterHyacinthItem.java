@@ -28,10 +28,12 @@ public class WaterHyacinthItem extends BlockItem {
 		super(AtmosphericBlocks.WATER_HYACINTH.get(), builder);
 	}
 
+	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		return InteractionResult.PASS;
 	}
 
+	@Override
 	public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
 		ItemStack itemstack = playerIn.getItemInHand(handIn);
 		HitResult raytraceresult = getPlayerPOVHitResult(worldIn, playerIn, ClipContext.Fluid.SOURCE_ONLY);

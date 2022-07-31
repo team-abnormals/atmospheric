@@ -20,18 +20,22 @@ public record LargeDiskConfiguration(BlockState state, IntProvider radius, int h
 		this.targets = targets;
 	}
 
+	@Override
 	public BlockState state() {
 		return this.state;
 	}
 
+	@Override
 	public IntProvider radius() {
 		return this.radius;
 	}
 
+	@Override
 	public int halfHeight() {
 		return this.halfHeight;
 	}
 
+	@Override
 	public List<BlockState> targets() {
 		return this.targets;
 	}

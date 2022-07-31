@@ -15,6 +15,7 @@ public class SpittingEffect extends MobEffect {
 		super(MobEffectCategory.BENEFICIAL, 15454786);
 	}
 
+	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		Random random = new Random();
 		if (!entity.level.isClientSide && entity.getHealth() > 0) {
@@ -28,6 +29,7 @@ public class SpittingEffect extends MobEffect {
 		}
 	}
 
+	@Override
 	public boolean isDurationEffectTick(int duration, int amplifier) {
 		return true;
 	}

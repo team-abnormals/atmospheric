@@ -21,6 +21,7 @@ public class MonkeyBrushItem extends BlockItem {
 		this.wallBlock = wallBlockIn;
 	}
 
+	@Override
 	@Nullable
 	protected BlockState getPlacementState(BlockPlaceContext context) {
 		BlockState blockstate = this.wallBlock.getStateForPlacement(context);
@@ -39,11 +40,13 @@ public class MonkeyBrushItem extends BlockItem {
 		return blockstate1 != null && iworldreader.isUnobstructed(blockstate1, blockpos, CollisionContext.empty()) ? blockstate1 : null;
 	}
 
+	@Override
 	public void registerBlocks(Map<Block, Item> blockToItemMap, Item itemIn) {
 		super.registerBlocks(blockToItemMap, itemIn);
 		blockToItemMap.put(this.wallBlock, itemIn);
 	}
 
+	@Override
 	public void removeFromBlockToItemMap(Map<Block, Item> blockToItemMap, Item itemIn) {
 		super.removeFromBlockToItemMap(blockToItemMap, itemIn);
 		blockToItemMap.remove(this.wallBlock);

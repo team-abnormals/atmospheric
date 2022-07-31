@@ -30,6 +30,7 @@ public class SurfaceFossilFeature extends Feature<FossilFeatureConfiguration> {
 		super(codec);
 	}
 
+	@Override
 	public boolean place(FeaturePlaceContext<FossilFeatureConfiguration> context) {
 		Random random = context.random();
 		WorldGenLevel level = context.level();

@@ -55,6 +55,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 		this.registerDefaultState(this.getStateDefinition().any().setValue(AGE, 6).setValue(HALF, DoubleBlockHalf.LOWER));
 	}
 
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		Vec3 vec3d = state.getOffset(worldIn, pos);
 		VoxelShape shape = state.getValue(HALF) == DoubleBlockHalf.UPPER ? SHAPE_TOP : SHAPE;
@@ -66,6 +67,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 		builder.add(HALF, AGE);
 	}
 
+	@Override
 	public Block.OffsetType getOffsetType() {
 		return Block.OffsetType.XZ;
 	}
@@ -89,6 +91,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 		return PlantType.DESERT;
 	}
 
+	@Override
 	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity) {
 			if (!(entityIn instanceof Bee))

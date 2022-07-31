@@ -26,6 +26,7 @@ public class PassionfruitSeedRenderer extends EntityRenderer<PassionfruitSeed> {
 		this.model = new PassionfruitSeedModel<>(context.bakeLayer(AtmosphericModelLayers.PASSIONFRUIT_SEED));
 	}
 
+	@Override
 	public void render(PassionfruitSeed entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
 		matrixStackIn.pushPose();
 		matrixStackIn.translate(0.0D, 0.15F, 0.0D);
@@ -38,6 +39,7 @@ public class PassionfruitSeedRenderer extends EntityRenderer<PassionfruitSeed> {
 		super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
 	}
 
+	@Override
 	public ResourceLocation getTextureLocation(PassionfruitSeed entity) {
 		return PASSIONFRUIT_SEED_TEXTURE;
 	}

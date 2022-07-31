@@ -84,6 +84,7 @@ public class WallMonkeyBrushBlock extends BlueprintFlowerBlock implements Boneme
 		return SHAPES.get(state.getValue(FACING));
 	}
 
+	@Override
 	public BlockBehaviour.OffsetType getOffsetType() {
 		return BlockBehaviour.OffsetType.NONE;
 	}

@@ -82,6 +82,7 @@ public class YuccaGateauBlock extends HorizontalDirectionalBlock {
 		this.registerDefaultState(this.stateDefinition.any().setValue(BITES, 0));
 	}
 
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		switch (state.getValue(FACING)) {
 			case NORTH:
@@ -96,6 +97,7 @@ public class YuccaGateauBlock extends HorizontalDirectionalBlock {
 		}
 	}
 
+	@Override
 	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult p_225533_6_) {
 		if (worldIn.isClientSide) {
 			ItemStack itemstack = player.getItemInHand(handIn);
@@ -121,8 +123,7 @@ public class YuccaGateauBlock extends HorizontalDirectionalBlock {
 			if (i < 9) {
 				worldIn.setBlock(pos, state.setValue(BITES, i + 1), 3);
 			} else {
-				if (player instanceof ServerPlayer) {
-					ServerPlayer serverplayerentity = (ServerPlayer) player;
+				if (player instanceof ServerPlayer serverplayerentity) {
 					if (!player.getCommandSenderWorld().isClientSide()) {
 						AtmosphericCriteriaTriggers.FINISH_GATEAU.trigger(serverplayerentity);
 					}
@@ -133,30 +134,37 @@ public class YuccaGateauBlock extends HorizontalDirectionalBlock {
 		}
 	}
 
+	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		return facing == Direction.DOWN && !stateIn.canSurvive(worldIn, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 
+	@Override
 	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 		return worldIn.getBlockState(pos.below()).getMaterial().isSolid();
 	}
 
+	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(BITES, FACING);
 	}
 
+	@Override
 	public int getAnalogOutputSignal(BlockState blockState, Level worldIn, BlockPos pos) {
 		return (10 - blockState.getValue(BITES)) * 2;
 	}
 
+	@Override
 	public boolean hasAnalogOutputSignal(BlockState state) {
 		return true;
 	}
 
+	@Override
 	public boolean isPathfindable(BlockState state, BlockGetter worldIn, BlockPos pos, PathComputationType type) {
 		return false;
 	}
 
+	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}

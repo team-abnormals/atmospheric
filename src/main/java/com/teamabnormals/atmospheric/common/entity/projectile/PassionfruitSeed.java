@@ -36,6 +36,7 @@ public class PassionfruitSeed extends ThrowableProjectile {
 		this.amplifier = amplifier;
 	}
 
+	@Override
 	protected void onHit(HitResult result) {
 		super.onHit(result);
 		if (result.getType() == HitResult.Type.ENTITY) {

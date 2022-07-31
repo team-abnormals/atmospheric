@@ -18,6 +18,7 @@ public class AloeLeavesItem extends Item {
 		super(properties);
 	}
 
+	@Override
 	public ItemStack finishUsingItem(ItemStack stack, Level worldIn, LivingEntity entityLiving) {
 		super.finishUsingItem(stack, worldIn, entityLiving);
 		if (entityLiving instanceof ServerPlayer serverplayerentity) {

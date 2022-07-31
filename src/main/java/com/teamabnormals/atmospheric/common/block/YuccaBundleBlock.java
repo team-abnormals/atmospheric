@@ -36,6 +36,7 @@ public class YuccaBundleBlock extends FallingBlock {
 		}
 	}
 
+	@Override
 	protected void falling(FallingBlockEntity fallingEntity) {
 		fallingEntity.setHurtsEntities(1.0F, 20);
 	}

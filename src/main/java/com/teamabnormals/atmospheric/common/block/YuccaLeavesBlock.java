@@ -36,6 +36,7 @@ public class YuccaLeavesBlock extends BlueprintLeavesBlock implements YuccaPlant
 		return 1;
 	}
 
+	@Override
 	@Deprecated
 	@OnlyIn(Dist.CLIENT)
 	public float getShadeBrightness(BlockState state, BlockGetter worldIn, BlockPos pos) {

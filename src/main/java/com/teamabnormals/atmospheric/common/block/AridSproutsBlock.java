@@ -17,10 +17,12 @@ public class AridSproutsBlock extends BushBlock {
 		super(properties);
 	}
 
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		return SHAPE;
 	}
 
+	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return super.mayPlaceOn(state, worldIn, pos);
 	}
@@ -30,6 +32,7 @@ public class AridSproutsBlock extends BushBlock {
 		return PlantType.DESERT;
 	}
 
+	@Override
 	public BlockBehaviour.OffsetType getOffsetType() {
 		return BlockBehaviour.OffsetType.XZ;
 	}

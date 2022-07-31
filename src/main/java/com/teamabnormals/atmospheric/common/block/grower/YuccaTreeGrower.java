@@ -9,6 +9,7 @@ import java.util.Random;
 
 public class YuccaTreeGrower extends AbstractTreeGrower {
 
+	@Override
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random random, boolean beehive) {
 		if (random.nextInt(10) == 0) {
 			return AtmosphericConfiguredFeatures.BABY_YUCCA.getHolder().get();

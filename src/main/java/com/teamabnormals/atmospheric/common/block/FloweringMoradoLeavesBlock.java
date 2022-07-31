@@ -43,6 +43,7 @@ public class FloweringMoradoLeavesBlock extends BlueprintLeavesBlock {
 		}
 	}
 
+	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void animateTick(BlockState stateIn, Level worldIn, BlockPos pos, Random rand) {
 		super.animateTick(stateIn, worldIn, pos, rand);

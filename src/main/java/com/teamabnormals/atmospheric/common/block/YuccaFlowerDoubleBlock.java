@@ -47,6 +47,7 @@ public class YuccaFlowerDoubleBlock extends BlueprintTallFlowerBlock implements 
 		return BlockPathTypes.DAMAGE_CACTUS;
 	}
 
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		Vec3 vec3d = state.getOffset(worldIn, pos);
 		return SHAPE.move(vec3d.x, vec3d.y, vec3d.z);

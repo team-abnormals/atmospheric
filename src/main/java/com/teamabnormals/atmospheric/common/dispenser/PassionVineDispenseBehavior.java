@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class PassionVineDispenseBehavior extends OptionalDispenseItemBehavior {
 
+	@Override
 	protected ItemStack execute(BlockSource source, ItemStack stack) {
 		Item item = stack.getItem();
 		if (item instanceof BlockItem) {

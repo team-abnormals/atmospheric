@@ -26,9 +26,11 @@ public class PassionfruitSeedModel<T extends Entity> extends HierarchicalModel<T
 		return LayerDefinition.create(meshdefinition, 8, 4);
 	}
 
+	@Override
 	public void setupAnim(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 	}
 
+	@Override
 	public ModelPart root() {
 		return this.root;
 	}

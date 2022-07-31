@@ -79,10 +79,12 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 		}
 	}
 
+	@Override
 	public VoxelShape getCollisionShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		return COLLISION_BY_AGE[state.getValue(AGE)];
 	}
 
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		return SHAPE_BY_AGE[state.getValue(AGE)];
 	}
@@ -102,6 +104,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 		return (downState.canSustainPlant(worldIn, pos.below(), Direction.UP, this) || downState.is(Blocks.RED_SAND)) && !worldIn.getBlockState(pos.above()).getMaterial().isLiquid();
 	}
 
+	@Override
 	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity living) {
 			living.addEffect(new MobEffectInstance(MobEffects.POISON, ((state.getValue(AGE) + 1) * 40)));
@@ -114,10 +117,12 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 		}
 	}
 
+	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(AGE);
 	}
 
+	@Override
 	public boolean isPathfindable(BlockState state, BlockGetter worldIn, BlockPos pos, PathComputationType type) {
 		return false;
 	}
@@ -138,10 +143,12 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 		return BlockPathTypes.DAMAGE_CACTUS;
 	}
 
+	@Override
 	public boolean isValidBonemealTarget(BlockGetter world, BlockPos pos, BlockState state, boolean isClient) {
 		return state.getValue(AGE) < 3;
 	}
 
+	@Override
 	public boolean isBonemealSuccess(Level worldIn, Random rand, BlockPos pos, BlockState state) {
 		return state.getValue(AGE) < 3;
 	}

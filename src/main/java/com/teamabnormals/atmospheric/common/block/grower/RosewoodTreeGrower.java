@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class RosewoodTreeGrower extends AbstractTreeGrower {
 
+	@Override
 	@Nullable
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random random, boolean beehive) {
 		return beehive ? AtmosphericConfiguredFeatures.ROSEWOOD_BEES_005.getHolder().get() : AtmosphericConfiguredFeatures.ROSEWOOD.getHolder().get();

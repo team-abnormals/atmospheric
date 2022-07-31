@@ -51,18 +51,22 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 		return state.is(AtmosphericTags.YUCCA_LOGS);
 	}
 
+	@Override
 	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 		return this.mayPlaceOn(worldIn.getBlockState(pos.above()), worldIn, pos.above());
 	}
 
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		return state.getValue(SNAPPED) ? SHAPE_SNAPPED : SHAPE;
 	}
 
+	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(SNAPPED);
 	}
 
+	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		worldIn.setBlock(currentPos, stateIn.setValue(SNAPPED, !(worldIn.getBlockState(currentPos.below()).getBlock() instanceof YuccaBundleBlock)), 2);
 		return !stateIn.canSurvive(worldIn, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);

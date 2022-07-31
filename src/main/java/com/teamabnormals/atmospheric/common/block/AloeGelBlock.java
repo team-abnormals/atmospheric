@@ -29,7 +29,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import javax.annotation.Nullable;
 
 public class AloeGelBlock extends HalfTransparentBlock {
-
 	public static final BooleanProperty WET = BooleanProperty.create("wet");
 
 	public AloeGelBlock(Properties properties) {
@@ -37,15 +36,18 @@ public class AloeGelBlock extends HalfTransparentBlock {
 		this.registerDefaultState(this.stateDefinition.any().setValue(WET, false));
 	}
 
+	@Override
 	public VoxelShape getCollisionShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		return state.getValue(WET) ? Shapes.block() : Shapes.empty();
 	}
 
+	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return this.defaultBlockState().setValue(WET, this.touchingWater(context.getClickedPos(), context.getLevel()));
 	}
 
 
+	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(WET);
 	}
@@ -54,6 +56,7 @@ public class AloeGelBlock extends HalfTransparentBlock {
 		return false;
 	}
 
+	@Override
 	public boolean isStickyBlock(BlockState state) {
 		return !state.getValue(WET);
 	}
@@ -63,6 +66,7 @@ public class AloeGelBlock extends HalfTransparentBlock {
 		return !state.getValue(WET);
 	}
 
+	@Override
 	public boolean canStickTo(BlockState state, BlockState other) {
 		if (other.getBlock() == Blocks.SLIME_BLOCK) return false;
 		if (other.getBlock() == Blocks.HONEY_BLOCK) return false;
@@ -74,6 +78,7 @@ public class AloeGelBlock extends HalfTransparentBlock {
 		return super.canStickTo(state, other);
 	}
 
+	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		return stateIn.setValue(WET, this.touchingWater(currentPos, worldIn));
 	}
@@ -97,8 +102,7 @@ public class AloeGelBlock extends HalfTransparentBlock {
 	public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
 		if (!state.getValue(WET)) {
 			entity.makeStuckInBlock(state, new Vec3(0.25D, 0.25D, 0.25D));
-			if (entity instanceof LivingEntity) {
-				LivingEntity living = (LivingEntity) entity;
+			if (entity instanceof LivingEntity living) {
 				living.addEffect(new MobEffectInstance(MobEffects.POISON, 150, 0, false, true, true));
 				living.clearFire();
 			}

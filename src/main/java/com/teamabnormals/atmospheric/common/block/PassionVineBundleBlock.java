@@ -26,6 +26,7 @@ public class PassionVineBundleBlock extends Block {
 		super(properties);
 	}
 
+	@Override
 	public void fallOn(Level worldIn, BlockState state, BlockPos pos, Entity entityIn, float fallDistance) {
 		entityIn.causeFallDamage(fallDistance, rand.nextFloat(), DamageSource.FALL);
 	}

@@ -27,6 +27,7 @@ public class PassionVineCoil extends ThrowableItemProjectile {
 		super(EntityType.SNOWBALL, throwerIn, worldIn);
 	}
 
+	@Override
 	protected Item getDefaultItem() {
 		return Items.SNOWBALL;
 	}
@@ -37,6 +38,7 @@ public class PassionVineCoil extends ThrowableItemProjectile {
 		return itemstack.isEmpty() ? ParticleTypes.ITEM_SNOWBALL : new ItemParticleOption(ParticleTypes.ITEM, itemstack);
 	}
 
+	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void handleEntityEvent(byte id) {
 		if (id == 3) {

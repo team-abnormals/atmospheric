@@ -61,6 +61,7 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 		builder.add(AGE);
 	}
 
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		int age = state.getValue(AGE);
 		VoxelShape shape = age >= 4 ? SHAPE_LARGE : age >= 2 ? SHAPE_MEDIUM : SHAPE_SMALL;
@@ -87,6 +88,7 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 		}
 	}
 
+	@Override
 	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
 		if (entityIn instanceof LivingEntity && !(entityIn instanceof Bee)) {
 			double chance = 0.1;
@@ -107,6 +109,7 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 		}
 	}
 
+	@Override
 	public Block.OffsetType getOffsetType() {
 		return Block.OffsetType.XZ;
 	}
