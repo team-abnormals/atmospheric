@@ -4,6 +4,7 @@ import com.teamabnormals.atmospheric.client.renderer.entity.PassionfruitSeedRend
 import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionfruitSeedModel;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericAdvancementModifierProvider;
+import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericChunkGeneratorModifierProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericLootModifierProvider;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBlockTagsProvider;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericEntityTypeTagsProvider;
@@ -96,10 +97,10 @@ public class Atmospheric {
 			generator.addProvider(blockTags);
 			generator.addProvider(new AtmosphericItemTagsProvider(generator, blockTags, existingFileHelper));
 			generator.addProvider(new AtmosphericEntityTypeTagsProvider(generator, existingFileHelper));
-
 			generator.addProvider(new AtmosphericAdvancementProvider(generator, existingFileHelper));
 			generator.addProvider(new AtmosphericAdvancementModifierProvider(generator));
 			generator.addProvider(new AtmosphericLootModifierProvider(generator));
+			generator.addProvider(new AtmosphericChunkGeneratorModifierProvider(generator));
 		}
 	}
 

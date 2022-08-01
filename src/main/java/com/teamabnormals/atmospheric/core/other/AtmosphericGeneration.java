@@ -43,13 +43,13 @@ public class AtmosphericGeneration {
 			sparseRainforestBasin(generation, spawns);
 
 		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.DUNES.getKey()))
-			withDunesFeatures(generation, spawns);
+			dunes(generation, spawns);
 		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.ROCKY_DUNES.getKey()))
 			withRockyDunesFeatures(generation, spawns);
 		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.PETRIFIED_DUNES.getKey()))
 			withPetrifiedDunesFeatures(generation, spawns);
 		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.FLOURISHING_DUNES.getKey()))
-			withFlourishingDunesFeatures(generation, spawns);
+			flourishingDunes(generation, spawns);
 
 		if (DataUtil.matchesKeys(biome, AtmosphericBiomes.HOT_SPRINGS.getKey()))
 			withHotSpringsFeatures(generation, spawns);
@@ -116,7 +116,7 @@ public class AtmosphericGeneration {
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_SPARSE_RAINFOREST_BASIN.getHolder().get());
 	}
 
-	public static void withBaseDunesFeatures(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
+	public static void baseDunes(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
 		BiomeDefaultFeatures.desertSpawns(spawns);
 
 		OverworldBiomes.globalOverworldGeneration(generation);
@@ -129,8 +129,8 @@ public class AtmosphericGeneration {
 		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_ARID_SPROUTS);
 	}
 
-	public static void withDunesFeatures(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
-		withBaseDunesFeatures(generation, spawns);
+	public static void dunes(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
+		baseDunes(generation, spawns);
 		//generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericFeatures.Configured.DUNE_ROCK);
 		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE);
 		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_YUCCA_FLOWER);
@@ -138,8 +138,8 @@ public class AtmosphericGeneration {
 		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_DUNES);
 	}
 
-	public static void withFlourishingDunesFeatures(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
-		withBaseDunesFeatures(generation, spawns);
+	public static void flourishingDunes(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
+		baseDunes(generation, spawns);
 		BiomeDefaultFeatures.addJungleMelons(generation);
 		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_GILIA);
 		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_DUNE_GRASS);
@@ -152,7 +152,7 @@ public class AtmosphericGeneration {
 	}
 
 	public static void withRockyDunesFeatures(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
-		withBaseDunesFeatures(generation, spawns);
+		baseDunes(generation, spawns);
 		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_ROCKY_DUNES);
 		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_ALOE_VERA);
 		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_ROCKY_DUNES);
@@ -160,7 +160,7 @@ public class AtmosphericGeneration {
 	}
 
 	public static void withPetrifiedDunesFeatures(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
-		withBaseDunesFeatures(generation, spawns);
+		baseDunes(generation, spawns);
 		//generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericFeatures.Configured.DUNE_ROCK);
 		//generation.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, AtmosphericFeatures.Configured.FOSSIL_SURFACE);
 		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_PETRIFIED);
