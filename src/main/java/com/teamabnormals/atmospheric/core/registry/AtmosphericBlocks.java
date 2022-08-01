@@ -208,7 +208,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> POTTED_YUCCA_FLOWER = HELPER.createBlockNoItem("potted_yucca_flower", () -> new FlowerPotBlock(YUCCA_FLOWER.get(), Block.Properties.copy(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> TALL_YUCCA_FLOWER = HELPER.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(Block.Properties.copy(Blocks.ROSE_BUSH)), CreativeModeTab.TAB_DECORATIONS);
 
-	public static final RegistryObject<Block> GILIA = HELPER.createBlock("gilia", () -> new GiliaBlock(() -> MobEffects.SLOW_FALLING, 9, Block.Properties.copy(Blocks.POPPY)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> GILIA = HELPER.createBlock("gilia", () -> new GiliaBlock(() -> MobEffects.MOVEMENT_SPEED, 9, Block.Properties.copy(Blocks.POPPY)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_GILIA = HELPER.createBlockNoItem("potted_gilia", () -> new FlowerPotBlock(GILIA.get(), Block.Properties.copy(Blocks.POTTED_ALLIUM)));
 
 	public static final RegistryObject<Block> ARID_SPROUTS = HELPER.createBlock("arid_sprouts", () -> new AridSproutsBlock(AtmosphericProperties.ARID_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
