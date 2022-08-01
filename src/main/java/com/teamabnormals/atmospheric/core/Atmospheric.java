@@ -5,6 +5,9 @@ import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionfruitSe
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericAdvancementModifierProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericLootModifierProvider;
+import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBlockTagsProvider;
+import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericEntityTypeTagsProvider;
+import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericItemTagsProvider;
 import com.teamabnormals.atmospheric.core.other.AtmosphericClientCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericModelLayers;
@@ -89,6 +92,11 @@ public class Atmospheric {
 
 		boolean includeServer = event.includeServer();
 		if (includeServer) {
+			AtmosphericBlockTagsProvider blockTags = new AtmosphericBlockTagsProvider(generator, existingFileHelper);
+			generator.addProvider(blockTags);
+			generator.addProvider(new AtmosphericItemTagsProvider(generator, blockTags, existingFileHelper));
+			generator.addProvider(new AtmosphericEntityTypeTagsProvider(generator, existingFileHelper));
+
 			generator.addProvider(new AtmosphericAdvancementProvider(generator, existingFileHelper));
 			generator.addProvider(new AtmosphericAdvancementModifierProvider(generator));
 			generator.addProvider(new AtmosphericLootModifierProvider(generator));
