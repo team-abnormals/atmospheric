@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.core;
 
 import com.teamabnormals.atmospheric.client.renderer.entity.PassionfruitSeedRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionfruitSeedModel;
+import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericAdvancementModifierProvider;
 import com.teamabnormals.atmospheric.core.other.AtmosphericClientCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
@@ -17,6 +18,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -82,9 +84,11 @@ public class Atmospheric {
 
 	private void dataSetup(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
+		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
 		boolean includeServer = event.includeServer();
 		if (includeServer) {
+			generator.addProvider(new AtmosphericAdvancementProvider(generator, existingFileHelper));
 			generator.addProvider(new AtmosphericAdvancementModifierProvider(generator));
 		}
 	}

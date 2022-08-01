@@ -19,5 +19,10 @@
     "spit_passionfruit": {
       "trigger": "atmospheric:spit_passionfruit"
     }
-  }
+  },
+  "requirements": [
+    [
+      "spit_passionfruit"
+    ]
+  ]
 }
