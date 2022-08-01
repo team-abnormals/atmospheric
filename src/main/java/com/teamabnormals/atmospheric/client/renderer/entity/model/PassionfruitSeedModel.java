@@ -23,7 +23,7 @@ public class PassionfruitSeedModel<T extends Entity> extends HierarchicalModel<T
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition root = meshdefinition.getRoot();
 		root.addOrReplaceChild("main", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 2.0F), PartPose.ZERO);
-		return LayerDefinition.create(meshdefinition, 8, 4);
+		return LayerDefinition.create(meshdefinition, 16, 16);
 	}
 
 	@Override

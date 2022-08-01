@@ -1,5 +1,5 @@
 {
-  "parent": "abnormals_core:block/hedge_post",
+  "parent": "blueprint:block/hedge_post",
   "textures": {
     "log": "atmospheric:block/kousa_log",
     "leaf": "atmospheric:block/kousa_leaves"

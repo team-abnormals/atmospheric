@@ -1,7 +1,7 @@
 package com.teamabnormals.atmospheric.common.block;
 
 import com.google.common.base.Supplier;
-import com.teamabnormals.atmospheric.core.other.AtmosphericTags;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.blueprint.common.block.BlueprintFlowerBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffect;
@@ -17,7 +17,7 @@ public class GiliaBlock extends BlueprintFlowerBlock {
 
 	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return state.is(AtmosphericTags.YUCCA_PLANTABLE_ON);
+		return state.is(AtmosphericBlockTags.YUCCA_PLANTABLE_ON);
 	}
 
 	@Override

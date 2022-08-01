@@ -2,7 +2,7 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
-import com.teamabnormals.atmospheric.core.other.AtmosphericTags;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.common.advancement.EmptyTrigger;
 import net.minecraft.core.BlockPos;
@@ -48,7 +48,7 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 
 	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return state.is(AtmosphericTags.YUCCA_LOGS);
+		return state.is(AtmosphericBlockTags.YUCCA_LOGS);
 	}
 
 	@Override

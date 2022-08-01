@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.core;
 
 import com.teamabnormals.atmospheric.client.renderer.entity.PassionfruitSeedRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionfruitSeedModel;
+import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericAdvancementModifierProvider;
 import com.teamabnormals.atmospheric.core.other.AtmosphericClientCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericModelLayers;
@@ -11,6 +12,7 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.Atmospher
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericPlacedFeatures;
 import com.teamabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
+import net.minecraft.data.DataGenerator;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -24,6 +26,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(Atmospheric.MOD_ID)
@@ -49,6 +52,7 @@ public class Atmospheric {
 
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);
+		bus.addListener(this::dataSetup);
 
 		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
 			bus.addListener(this::registerLayerDefinitions);
@@ -74,6 +78,15 @@ public class Atmospheric {
 			AtmosphericClientCompat.registerBlockColors();
 			AtmosphericClientCompat.registerRenderLayers();
 		});
+	}
+
+	private void dataSetup(GatherDataEvent event) {
+		DataGenerator generator = event.getGenerator();
+
+		boolean includeServer = event.includeServer();
+		if (includeServer) {
+			generator.addProvider(new AtmosphericAdvancementModifierProvider(generator));
+		}
 	}
 
 	@OnlyIn(Dist.CLIENT)

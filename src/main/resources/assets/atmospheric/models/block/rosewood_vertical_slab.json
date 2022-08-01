@@ -1,5 +1,5 @@
 {
-    "parent": "abnormals_core:block/vertical_slab",
+    "parent": "blueprint:block/vertical_slab",
     "textures": {
         "side": "atmospheric:block/rosewood_planks",
         "top": "atmospheric:block/rosewood_planks",

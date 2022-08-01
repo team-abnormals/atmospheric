@@ -1,7 +1,7 @@
 package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
-import com.teamabnormals.atmospheric.core.other.AtmosphericTags;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.blueprint.common.advancement.EmptyTrigger;
 import com.teamabnormals.blueprint.common.block.wood.BlueprintSaplingBlock;
 import net.minecraft.core.BlockPos;
@@ -25,7 +25,7 @@ public class YuccaSaplingBlock extends BlueprintSaplingBlock implements IPlantab
 
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
-		return worldIn.getBlockState(pos.below()).is(AtmosphericTags.YUCCA_PLANTABLE_ON);
+		return worldIn.getBlockState(pos.below()).is(AtmosphericBlockTags.YUCCA_PLANTABLE_ON);
 	}
 
 	@Override

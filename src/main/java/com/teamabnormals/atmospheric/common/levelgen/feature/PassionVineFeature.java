@@ -2,7 +2,7 @@ package com.teamabnormals.atmospheric.common.levelgen.feature;
 
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.common.block.PassionVineBlock;
-import com.teamabnormals.atmospheric.core.other.AtmosphericTags;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -49,7 +49,7 @@ public class PassionVineFeature extends Feature<NoneFeatureConfiguration> {
 	}
 
 	private static BlockState getVineState(WorldGenLevel world, BlockState state, BlockPos pos, Random rand) {
-		if (world.getBlockState(pos.relative(state.getValue(PassionVineBlock.FACING).getOpposite())).is(AtmosphericTags.PASSION_VINE_GROWABLE_ON)) {
+		if (world.getBlockState(pos.relative(state.getValue(PassionVineBlock.FACING).getOpposite())).is(AtmosphericBlockTags.PASSION_VINE_GROWABLE_ON)) {
 			return state.setValue(PassionVineBlock.AGE, 4);
 		} else {
 			return state.setValue(PassionVineBlock.AGE, 1);

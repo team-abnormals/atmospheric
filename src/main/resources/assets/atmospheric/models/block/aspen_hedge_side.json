@@ -1,5 +1,5 @@
 {
-  "parent": "abnormals_core:block/hedge_side",
+  "parent": "blueprint:block/hedge_side",
   "textures": {
     "leaf": "atmospheric:block/aspen_leaves"
   }

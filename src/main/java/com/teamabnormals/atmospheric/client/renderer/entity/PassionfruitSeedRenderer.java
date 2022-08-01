@@ -18,7 +18,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class PassionfruitSeedRenderer extends EntityRenderer<PassionfruitSeed> {
-	private static final ResourceLocation PASSIONFRUIT_SEED_TEXTURE = new ResourceLocation(Atmospheric.MOD_ID, "textures/entity/projectile/passionfruit_seed.png");
+	private static final ResourceLocation PASSIONFRUIT_SEED_TEXTURE = new ResourceLocation(Atmospheric.MOD_ID, "textures/entity/projectiles/passionfruit_seed.png");
 	private final PassionfruitSeedModel<PassionfruitSeed> model;
 
 	public PassionfruitSeedRenderer(EntityRendererProvider.Context context) {

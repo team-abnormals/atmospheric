@@ -2,7 +2,7 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
-import com.teamabnormals.atmospheric.core.other.AtmosphericTags;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.common.advancement.EmptyTrigger;
 import com.teamabnormals.blueprint.common.block.BlueprintTallFlowerBlock;
@@ -36,9 +36,9 @@ public class YuccaFlowerDoubleBlock extends BlueprintTallFlowerBlock implements 
 	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 		BlockState state2 = worldIn.getBlockState(pos.below());
 		if (state.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.UPPER) {
-			return state2.is(AtmosphericTags.YUCCA_PLANTABLE_ON) || state2.getBlock() == AtmosphericBlocks.TALL_YUCCA_FLOWER.get() || state2.getBlock() == AtmosphericBlocks.YUCCA_LEAVES.get() || state2.getBlock() == Blocks.CACTUS;
+			return state2.is(AtmosphericBlockTags.YUCCA_PLANTABLE_ON) || state2.getBlock() == AtmosphericBlocks.TALL_YUCCA_FLOWER.get() || state2.getBlock() == AtmosphericBlocks.YUCCA_LEAVES.get() || state2.getBlock() == Blocks.CACTUS;
 		}
-		return state2.is(AtmosphericTags.YUCCA_PLANTABLE_ON) || state2.getBlock() == AtmosphericBlocks.YUCCA_LEAVES.get() || state2.getBlock() == Blocks.CACTUS;
+		return state2.is(AtmosphericBlockTags.YUCCA_PLANTABLE_ON) || state2.getBlock() == AtmosphericBlocks.YUCCA_LEAVES.get() || state2.getBlock() == Blocks.CACTUS;
 	}
 
 	@Nullable

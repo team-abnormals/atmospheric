@@ -1,30 +1,30 @@
 package com.teamabnormals.atmospheric.core.registry;
 
 import com.teamabnormals.atmospheric.common.effect.PersistenceEffect;
-import com.teamabnormals.atmospheric.common.effect.ReliefEffect;
 import com.teamabnormals.atmospheric.common.effect.SpittingEffect;
-import com.teamabnormals.atmospheric.common.effect.WorseningEffect;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.blueprint.common.effect.BlueprintMobEffect;
 import com.teamabnormals.blueprint.core.util.DataUtil;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-@Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class AtmosphericMobEffects {
 	public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Atmospheric.MOD_ID);
 	public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(ForgeRegistries.POTIONS, Atmospheric.MOD_ID);
 
-	public static final RegistryObject<MobEffect> RELIEF = EFFECTS.register("relief", ReliefEffect::new);
-	public static final RegistryObject<MobEffect> WORSENING = EFFECTS.register("worsening", WorseningEffect::new);
+	public static final RegistryObject<MobEffect> RELIEF = EFFECTS.register("relief", () -> new BlueprintMobEffect(MobEffectCategory.BENEFICIAL, 15494786));
+	public static final RegistryObject<MobEffect> WORSENING = EFFECTS.register("worsening", () -> new BlueprintMobEffect(MobEffectCategory.HARMFUL, 3110759));
 	public static final RegistryObject<MobEffect> SPITTING = EFFECTS.register("spitting", SpittingEffect::new);
 	public static final RegistryObject<MobEffect> PERSISTENCE = EFFECTS.register("persistence", () -> new PersistenceEffect().addAttributeModifier(Attributes.MOVEMENT_SPEED, "7A8BEE59-3D67-4D88-8223-81A15A706AE9", 0.0F, AttributeModifier.Operation.MULTIPLY_TOTAL));
 

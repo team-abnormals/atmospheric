@@ -19,11 +19,11 @@
       "type": "forge:and",
       "values": [
         {
-          "type": "abnormals_core:quark_flag",
+          "type": "blueprint:quark_flag",
           "flag": "vertical_slabs"
         },
         {
-          "type": "abnormals_core:quark_flag",
+          "type": "blueprint:quark_flag",
           "flag": "sandstone_bricks"
         }
       ]

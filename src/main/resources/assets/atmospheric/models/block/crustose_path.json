@@ -1,5 +1,5 @@
 {
-    "parent": "block/grass_path",
+    "parent": "block/dirt_path",
     "textures": {
         "particle": "minecraft:block/dirt",
         "top": "atmospheric:block/crustose_path_top",

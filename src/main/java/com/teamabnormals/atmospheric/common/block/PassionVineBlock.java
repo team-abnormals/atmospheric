@@ -1,6 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.core.other.AtmosphericTags;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.core.BlockPos;
@@ -119,7 +119,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		int i = state.getValue(AGE);
 		Direction direction = state.getValue(FACING);
 		BlockState hanging = worldIn.getBlockState(pos.relative(direction.getOpposite()));
-		if (hanging.is(AtmosphericTags.PASSION_VINE_GROWABLE_ON)) {
+		if (hanging.is(AtmosphericBlockTags.PASSION_VINE_GROWABLE_ON)) {
 			if (i < 4 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 				worldIn.setBlock(pos, state.setValue(AGE, i + 1), 2);
 				net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);

@@ -1,5 +1,5 @@
 {
-    "parent": "abnormals_core:block/vertical_planks",
+    "parent": "blueprint:block/vertical_planks",
     "textures": {
         "all": "atmospheric:block/grimwood_planks"
     }
