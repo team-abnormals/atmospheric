@@ -40,7 +40,7 @@ public class CrustoseBlock extends Block {
 
 	@Override
 	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
-		if (toolAction == ToolActions.AXE_STRIP) {
+		if (toolAction == ToolActions.SHOVEL_FLATTEN) {
 			return AtmosphericBlocks.CRUSTOSE_PATH.get().defaultBlockState();
 		}
 		return super.getToolModifiedState(state, context, toolAction, simulate);
