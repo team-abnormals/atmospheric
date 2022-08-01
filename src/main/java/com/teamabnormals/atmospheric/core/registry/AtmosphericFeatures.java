@@ -9,18 +9,26 @@ import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.Yucc
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.features.VegetationFeatures;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.TreePlacements;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FossilFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration.TreeConfigurationBuilder;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -28,8 +36,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStatePr
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -133,10 +140,12 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ROSEWOOD = register("rosewood", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.ROSEWOOD));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ROSEWOOD_BEES_0002 = register("rosewood_bees_0002", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.ROSEWOOD_BEES_0002));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ROSEWOOD_BEES_005 = register("rosewood_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.ROSEWOOD_BEES_005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> WATER_ROSEWOOD = register("water_rosewood", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_WATER_TREE.get(), Configs.ROSEWOOD));
 
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> MORADO = register("morado", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.MORADO));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> MORADO_BEES_0002 = register("morado_bees_0002", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.MORADO_BEES_0002));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> MORADO_BEES_005 = register("morado_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.MORADO_BEES_005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> WATER_MORADO = register("water_morado", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_WATER_TREE.get(), Configs.MORADO));
 
 		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> YUCCA = register("yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA));
 		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> BABY_YUCCA = register("baby_yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.BABY_YUCCA));
@@ -146,28 +155,22 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GRIMWOOD = register("grimwood", () -> new ConfiguredFeature<>(Feature.TREE, Configs.GRIMWOOD));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> KOUSA = register("kousa", () -> new ConfiguredFeature<>(Feature.TREE, Configs.KOUSA));
 
-//		public static final ConfiguredFeature<?, ?> PODZOL = AtmosphericFeatures.PODZOL.get().configured(new ProbabilityFeatureConfiguration(0.2F)).decorated(FeatureDecorator.COUNT_NOISE_BIASED.configured(new NoiseCountFactorDecoratorConfiguration(160, 80.0D, 0.3D))).decorated(FeatureDecorator.TOP_SOLID_HEIGHTMAP.configured(DecoratorConfiguration.NONE));
-//		public static final ConfiguredFeature<?, ?> PASSION_VINES = AtmosphericFeatures.PASSION_VINE.get().configured(FeatureConfiguration.NONE).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).count(1);
-//		public static final ConfiguredFeature<?, ?> RAINFOREST_BUSH = Feature.TREE.configured(AtmosphericFeatures.Configs.OAK_GROUND_BUSH_CONFIG).decorated(Features.Decorators.HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(2, 0.1F, 1)));
-//
-//		public static final ConfiguredFeature<?, ?> PATCH_WARM_MONKEY_BRUSH = AtmosphericFeatures.WARM_MONKEY_BRUSH.get().configured(FeatureConfiguration.NONE).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).count(3);
-//		public static final ConfiguredFeature<?, ?> PATCH_HOT_MONKEY_BRUSH = AtmosphericFeatures.HOT_MONKEY_BRUSH.get().configured(FeatureConfiguration.NONE).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).count(2);
-//		public static final ConfiguredFeature<?, ?> PATCH_SCALDING_MONKEY_BRUSH = AtmosphericFeatures.SCALDING_MONKEY_BRUSH.get().configured(FeatureConfiguration.NONE).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).count(1);
-//		public static final ConfiguredFeature<?, ?> PATCH_WATER_HYACINTH = AtmosphericFeatures.WATER_HYACINTH_PATCH.get().configured(NoneFeatureConfiguration.NONE).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).count(2);
-//		public static final ConfiguredFeature<?, ?> PATCH_WATER_HYACINTH_SPARSE = AtmosphericFeatures.WATER_HYACINTH_PATCH.get().configured(NoneFeatureConfiguration.NONE).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).count(1);
-//		public static final ConfiguredFeature<?, ?> PATCH_WATERLILLY_RAINFOREST = Feature.RANDOM_PATCH.configured((new RandomPatchConfiguration.GrassConfigurationBuilder(BlockStateProvider.simple(Blocks.LILY_PAD.defaultBlockState()), SimpleBlockPlacer.INSTANCE)).tries(10).build()).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).count(1);
-//
-//		public static final ConfiguredFeature<?, ?> OAK_TREE_RAINFOREST = Feature.RANDOM_SELECTOR.configured(new RandomFeatureConfiguration(ImmutableList.of(Features.FANCY_OAK_BEES_005.weighted(0.33333334F)), Features.OAK_BEES_005)).decorated(Features.Decorators.HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(0, 0.05F, 1)));
-//		public static final ConfiguredFeature<?, ?> ROSEWOOD_TREE = AtmosphericFeatures.ROSEWOOD_TREE.get().configured(AtmosphericFeatures.Configs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).decorated(Features.Decorators.HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(10, 0.1F, 1)));
-//		public static final ConfiguredFeature<?, ?> ROSEWOOD_TREE_EXTRA = AtmosphericFeatures.ROSEWOOD_TREE.get().configured(AtmosphericFeatures.Configs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).decorated(Features.Decorators.HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(13, 0.1F, 1)));
-//		public static final ConfiguredFeature<?, ?> ROSEWOOD_TREE_SPARSE = AtmosphericFeatures.ROSEWOOD_TREE.get().configured(AtmosphericFeatures.Configs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).decorated(Features.Decorators.HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(0, 0.1F, 4)));
-//		public static final ConfiguredFeature<?, ?> ROSEWOOD_WATER_TREE = AtmosphericFeatures.ROSEWOOD_WATER_TREE.get().configured(AtmosphericFeatures.Configs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).decorated(Features.Decorators.TOP_SOLID_HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(32, 0, 0)));
-//		public static final ConfiguredFeature<?, ?> ROSEWOOD_WATER_TREE_SPARSE = AtmosphericFeatures.ROSEWOOD_WATER_TREE.get().configured(AtmosphericFeatures.Configs.ROSEWOOD_TREE_WITH_FEW_BEEHIVES_CONFIG).decorated(Features.Decorators.TOP_SOLID_HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(2, 0, 0)));
-//		public static final ConfiguredFeature<?, ?> MORADO_TREE = AtmosphericFeatures.ROSEWOOD_TREE.get().configured(AtmosphericFeatures.Configs.MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG).decorated(Features.Decorators.HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(1, 0.05F, 1)));
-//		public static final ConfiguredFeature<?, ?> MORADO_TREE_SPARSE = AtmosphericFeatures.ROSEWOOD_TREE.get().configured(AtmosphericFeatures.Configs.MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG).decorated(Features.Decorators.HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(0, 0.05F, 1)));
-//		public static final ConfiguredFeature<?, ?> MORADO_WATER_TREE = AtmosphericFeatures.ROSEWOOD_WATER_TREE.get().configured(AtmosphericFeatures.Configs.MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG).decorated(Features.Decorators.TOP_SOLID_HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(2, 0, 0)));
-//		public static final ConfiguredFeature<?, ?> MORADO_WATER_TREE_SPARSE = AtmosphericFeatures.ROSEWOOD_WATER_TREE.get().configured(AtmosphericFeatures.Configs.MORADO_TREE_WITH_FEW_BEEHIVES_CONFIG).decorated(Features.Decorators.TOP_SOLID_HEIGHTMAP_SQUARE).decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(1, 0, 0)));
-//
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> OAK_BUSH = register("jungle_bush", () -> new ConfiguredFeature<>(Feature.TREE, (new TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(Blocks.OAK_LEAVES), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(0, 0, 0))).build()));
+		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_RAINFOREST = register("trees_rainforest", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(TreePlacements.FANCY_OAK_CHECKED, 0.03333334F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.OAK_BUSH.getHolder().get(), 0.166666667F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.MORADO_BEES_0002.getHolder().get(), 0.1F)), AtmosphericPlacedFeatures.ROSEWOOD_BEES_0002.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_SPARSE_RAINFOREST = register("trees_sparse_rainforest", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.OAK_BUSH.getHolder().get(), 0.5F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.MORADO_BEES_0002.getHolder().get(), 0.05F)), AtmosphericPlacedFeatures.ROSEWOOD_BEES_0002.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_RAINFOREST_BASIN = register("trees_rainforest_basin", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(TreePlacements.FANCY_OAK_CHECKED, 0.03333334F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.OAK_BUSH.getHolder().get(), 0.166666667F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.WATER_MORADO.getHolder().get(), 0.1F)), AtmosphericPlacedFeatures.WATER_ROSEWOOD.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_SPARSE_RAINFOREST_BASIN = register("trees_sparse_rainforest_basin", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.OAK_BUSH.getHolder().get(), 0.5F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.WATER_MORADO.getHolder().get(), 0.05F)), AtmosphericPlacedFeatures.WATER_ROSEWOOD.getHolder().get())));
+
+		public static final RegistryObject<ConfiguredFeature<ProbabilityFeatureConfiguration, ?>> PODZOL = register("podzol", () -> new ConfiguredFeature<>(AtmosphericFeatures.PODZOL.get(), new ProbabilityFeatureConfiguration(0.2F)));
+		public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> PASSION_VINES = register("passion_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.PASSION_VINE.get(), NoneFeatureConfiguration.INSTANCE));
+		public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> PATCH_WATER_HYACINTH = register("patch_water_hyacinth", () -> new ConfiguredFeature<>(AtmosphericFeatures.WATER_HYACINTH_PATCH.get(), NoneFeatureConfiguration.INSTANCE));
+		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_WATERLILY_RAINFOREST = register("patch_waterlily_rainforest", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.LILY_PAD))))));
+
+		public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> WARM_MONKEY_BRUSH = register("warm_monkey_brush", () -> new ConfiguredFeature<>(AtmosphericFeatures.WARM_MONKEY_BRUSH.get(), NoneFeatureConfiguration.INSTANCE));
+		public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> HOT_MONKEY_BRUSH = register("hot_monkey_brush", () -> new ConfiguredFeature<>(AtmosphericFeatures.HOT_MONKEY_BRUSH.get(), NoneFeatureConfiguration.INSTANCE));
+		public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> SCALDING_MONKEY_BRUSH = register("scalding_monkey_brush", () -> new ConfiguredFeature<>(AtmosphericFeatures.SCALDING_MONKEY_BRUSH.get(), NoneFeatureConfiguration.INSTANCE));
+		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> MONKEY_BRUSH = register("monkey_brush", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.SCALDING_MONKEY_BRUSH.getHolder().get(), 0.166666667F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.HOT_MONKEY_BRUSH.getHolder().get(), 0.333333334F)), AtmosphericPlacedFeatures.WARM_MONKEY_BRUSH.getHolder().get())));
+
 //		public static final ConfiguredFeature<?, ?> DUNE_ROCK = AtmosphericFeatures.DUNE_ROCKS.get().configured(new BlockStateConfiguration(AtmosphericBlocks.ARID_SANDSTONE.get().defaultBlockState())).decorated(Features.Decorators.HEIGHTMAP_SQUARE).countRandom(2);
 //		public static final ConfiguredFeature<?, ?> DUNE_ROCK_EXTRA = AtmosphericFeatures.DUNE_ROCKS.get().configured(new BlockStateConfiguration(AtmosphericBlocks.ARID_SANDSTONE.get().defaultBlockState())).decorated(Features.Decorators.HEIGHTMAP_SQUARE).countRandom(3);
 //		public static final ConfiguredFeature<?, ?> DUNE_ROCK_MANY = AtmosphericFeatures.DUNE_ROCKS.get().configured(new BlockStateConfiguration(AtmosphericBlocks.ARID_SANDSTONE.get().defaultBlockState())).decorated(Features.Decorators.HEIGHTMAP_SQUARE).countRandom(6);
@@ -200,6 +203,32 @@ public class AtmosphericFeatures {
 
 	public static final class AtmosphericPlacedFeatures {
 		public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Atmospheric.MOD_ID);
+
+		public static final RegistryObject<PlacedFeature> OAK_BUSH = register("oak_bush", AtmosphericConfiguredFeatures.OAK_BUSH, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+		public static final RegistryObject<PlacedFeature> ROSEWOOD_BEES_0002 = register("rosewood_bees_0002", AtmosphericConfiguredFeatures.ROSEWOOD_BEES_0002, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+		public static final RegistryObject<PlacedFeature> MORADO_BEES_0002 = register("morado_bees_0002", AtmosphericConfiguredFeatures.MORADO_BEES_0002, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+		public static final RegistryObject<PlacedFeature> WATER_ROSEWOOD = register("water_rosewood", AtmosphericConfiguredFeatures.WATER_ROSEWOOD, List.of());
+		public static final RegistryObject<PlacedFeature> WATER_MORADO = register("water_morado", AtmosphericConfiguredFeatures.WATER_MORADO, List.of());
+
+		public static final RegistryObject<PlacedFeature> TREES_RAINFOREST = register("trees_rainforest", AtmosphericConfiguredFeatures.TREES_RAINFOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(30, 0.1F, 1)));
+		public static final RegistryObject<PlacedFeature> TREES_SPARSE_RAINFOREST = register("trees_sparse_rainforest", AtmosphericConfiguredFeatures.TREES_SPARSE_RAINFOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 5)));
+		public static final RegistryObject<PlacedFeature> TREES_RAINFOREST_BASIN = register("trees_rainforest_basin", AtmosphericConfiguredFeatures.TREES_RAINFOREST_BASIN, waterTreePlacement(PlacementUtils.countExtra(50, 0.1F, 1)));
+		public static final RegistryObject<PlacedFeature> TREES_SPARSE_RAINFOREST_BASIN = register("trees_sparse_rainforest_basin", AtmosphericConfiguredFeatures.TREES_SPARSE_RAINFOREST_BASIN, waterTreePlacement(PlacementUtils.countExtra(5, 0.1F, 5)));
+
+		public static final RegistryObject<PlacedFeature> WARM_MONKEY_BRUSH = register("warm_monkey_brush", AtmosphericConfiguredFeatures.WARM_MONKEY_BRUSH, List.of());
+		public static final RegistryObject<PlacedFeature> HOT_MONKEY_BRUSH = register("hot_monkey_brush", AtmosphericConfiguredFeatures.HOT_MONKEY_BRUSH, List.of());
+		public static final RegistryObject<PlacedFeature> SCALDING_MONKEY_BRUSH = register("scalding_monkey_brush", AtmosphericConfiguredFeatures.SCALDING_MONKEY_BRUSH, List.of());
+		public static final RegistryObject<PlacedFeature> MONKEY_BRUSH = register("monkey_brush", AtmosphericConfiguredFeatures.MONKEY_BRUSH, List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+
+		public static final RegistryObject<PlacedFeature> PODZOL = register("bamboo", AtmosphericConfiguredFeatures.PODZOL, List.of(NoiseBasedCountPlacement.of(160, 80.0D, 0.3D), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> PASSION_VINES = register("passion_vines", AtmosphericConfiguredFeatures.PASSION_VINES, List.of(CountPlacement.of(1), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(192)), BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> PATCH_WATER_HYACINTH = register("patch_water_hyacinth", AtmosphericConfiguredFeatures.PATCH_WATER_HYACINTH, List.of(RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> PATCH_WATER_HYACINTH_SPARSE = register("patch_water_hyacinth_sparse", AtmosphericConfiguredFeatures.PATCH_WATER_HYACINTH, List.of(RarityFilter.onAverageOnceEvery(48), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> PATCH_WATERLILY_RAINFOREST = register("patch_waterlily_rainforest", AtmosphericConfiguredFeatures.PATCH_WATERLILY_RAINFOREST, VegetationPlacements.worldSurfaceSquaredWithCount(1));
+
+		private static ImmutableList<PlacementModifier> waterTreePlacement(PlacementModifier modifier) {
+			return ImmutableList.<PlacementModifier>builder().add(modifier).add(InSquarePlacement.spread()).add(SurfaceWaterDepthFilter.forMaxDepth(10)).add(PlacementUtils.HEIGHTMAP_OCEAN_FLOOR).add(BiomeFilter.biome()).build();
+		}
 
 		@SuppressWarnings("unchecked")
 		private static RegistryObject<PlacedFeature> register(String name, RegistryObject<? extends ConfiguredFeature<?, ?>> feature, List<PlacementModifier> placementModifiers) {
