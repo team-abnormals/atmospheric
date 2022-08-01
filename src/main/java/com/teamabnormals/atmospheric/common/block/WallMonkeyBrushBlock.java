@@ -44,6 +44,11 @@ public class WallMonkeyBrushBlock extends BlueprintFlowerBlock implements Boneme
 	}
 
 	@Override
+	public String getDescriptionId() {
+		return this.asItem().getDescriptionId();
+	}
+
+	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return state.is(AtmosphericBlockTags.MONKEY_BRUSH_PLACEABLE);
 	}
