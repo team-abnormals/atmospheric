@@ -17,7 +17,7 @@ public class GiliaBlock extends BlueprintFlowerBlock {
 
 	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return state.is(AtmosphericBlockTags.YUCCA_PLANTABLE_ON);
+		return state.is(AtmosphericBlockTags.YUCCA_PLACEABLE);
 	}
 
 	@Override

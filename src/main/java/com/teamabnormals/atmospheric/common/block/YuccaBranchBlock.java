@@ -33,6 +33,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ForgeHooks;
 
 import java.util.Random;
 
@@ -87,7 +88,7 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 		if (state.getValue(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(6) == 0) && worldIn.getBlockState(pos.below()).isAir()) {
 			worldIn.setBlockAndUpdate(pos, state.setValue(SNAPPED, false));
 			worldIn.setBlockAndUpdate(pos.below(), AtmosphericBlocks.YUCCA_BUNDLE.get().defaultBlockState());
-			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 		}
 	}
 
@@ -100,7 +101,7 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 				worldIn.setBlockAndUpdate(pos, state.setValue(SNAPPED, false));
 				worldIn.setBlockAndUpdate(pos.below(), AtmosphericBlocks.YUCCA_BUNDLE.get().defaultBlockState());
 			}
-			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 		}
 	}
 

@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -24,7 +25,7 @@ public class AridSproutsBlock extends BushBlock {
 
 	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return super.mayPlaceOn(state, worldIn, pos);
+		return state.is(AtmosphericBlockTags.YUCCA_PLACEABLE);
 	}
 
 	@Override

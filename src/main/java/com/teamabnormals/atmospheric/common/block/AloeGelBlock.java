@@ -52,10 +52,6 @@ public class AloeGelBlock extends HalfTransparentBlock {
 		builder.add(WET);
 	}
 
-	public boolean causesSuffocation(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return false;
-	}
-
 	@Override
 	public boolean isStickyBlock(BlockState state) {
 		return !state.getValue(WET);

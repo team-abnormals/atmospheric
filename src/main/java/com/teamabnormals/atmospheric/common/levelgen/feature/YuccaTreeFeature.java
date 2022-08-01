@@ -55,7 +55,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 
 				if (!flag) {
 					return false;
-				} else if (TreeUtil.isInTag(worldIn, position.below(), AtmosphericBlockTags.YUCCA_PLANTABLE_ON) && position.getY() < worldIn.getMaxBuildHeight()) {
+				} else if (TreeUtil.isInTag(worldIn, position.below(), AtmosphericBlockTags.YUCCA_PLACEABLE) && position.getY() < worldIn.getMaxBuildHeight()) {
 					if (!TreeUtil.isInTag(worldIn, position.below(), BlockTags.SAND))
 						TreeUtil.setDirtAt(worldIn, position.below());
 
@@ -123,7 +123,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 
 				if (!flag) {
 					return false;
-				} else if (TreeUtil.isInTag(worldIn, position.below(), AtmosphericBlockTags.YUCCA_PLANTABLE_ON) && position.getY() < worldIn.getMaxBuildHeight()) {
+				} else if (TreeUtil.isInTag(worldIn, position.below(), AtmosphericBlockTags.YUCCA_PLACEABLE) && position.getY() < worldIn.getMaxBuildHeight()) {
 					// base log
 					if (!TreeUtil.isInTag(worldIn, position.below(), BlockTags.SAND))
 						TreeUtil.setDirtAt(worldIn, position.below());

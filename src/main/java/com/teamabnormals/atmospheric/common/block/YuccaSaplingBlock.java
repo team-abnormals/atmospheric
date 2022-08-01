@@ -25,7 +25,7 @@ public class YuccaSaplingBlock extends BlueprintSaplingBlock implements IPlantab
 
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
-		return worldIn.getBlockState(pos.below()).is(AtmosphericBlockTags.YUCCA_PLANTABLE_ON);
+		return worldIn.getBlockState(pos.below()).is(AtmosphericBlockTags.YUCCA_PLACEABLE);
 	}
 
 	@Override

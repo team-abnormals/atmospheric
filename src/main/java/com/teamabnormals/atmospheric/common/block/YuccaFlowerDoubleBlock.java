@@ -36,9 +36,9 @@ public class YuccaFlowerDoubleBlock extends BlueprintTallFlowerBlock implements 
 	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 		BlockState state2 = worldIn.getBlockState(pos.below());
 		if (state.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.UPPER) {
-			return state2.is(AtmosphericBlockTags.YUCCA_PLANTABLE_ON) || state2.getBlock() == AtmosphericBlocks.TALL_YUCCA_FLOWER.get() || state2.getBlock() == AtmosphericBlocks.YUCCA_LEAVES.get() || state2.getBlock() == Blocks.CACTUS;
+			return state2.is(AtmosphericBlockTags.YUCCA_FLOWER_PLACEABLE) || state2.getBlock() == AtmosphericBlocks.TALL_YUCCA_FLOWER.get();
 		}
-		return state2.is(AtmosphericBlockTags.YUCCA_PLANTABLE_ON) || state2.getBlock() == AtmosphericBlocks.YUCCA_LEAVES.get() || state2.getBlock() == Blocks.CACTUS;
+		return state2.is(AtmosphericBlockTags.YUCCA_FLOWER_PLACEABLE);
 	}
 
 	@Nullable

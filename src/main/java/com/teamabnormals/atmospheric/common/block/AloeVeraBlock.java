@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.core.BlockPos;
@@ -10,6 +11,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -117,12 +119,7 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 		BlockState downState = worldIn.getBlockState(pos.below());
-		return downState.canSustainPlant(worldIn, pos.below(), Direction.UP, this) || mayPlaceOn(downState, worldIn, pos.below());
-	}
-
-	@Override
-	public boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return state.is(Blocks.RED_SAND);
+		return downState.is(AtmosphericBlockTags.ALOE_PLACEABLE);
 	}
 
 	@Override
@@ -144,7 +141,7 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 	public void performBonemeal(ServerLevel world, Random rand, BlockPos pos, BlockState state) {
 		int age = state.getValue(AGE);
 		if (age < 5) world.setBlockAndUpdate(pos, state.setValue(AGE, age + 1));
-		else if (world.getBlockState(pos.above()).isAir() && world.getBlockState(pos.below()).is(Tags.Blocks.SAND_COLORLESS)) {
+		else if (world.getBlockState(pos.above()).isAir() && world.getBlockState(pos.below()).is(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON)) {
 			placeAt(world, pos, 2);
 		}
 	}
@@ -152,12 +149,12 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 	@Override
 	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
-		boolean flag = worldIn.getBlockState(pos.below()).is(Tags.Blocks.SAND_RED);
-		int chance = flag ? 5 : 7;
+		boolean flag = worldIn.getBlockState(pos.below()).is(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON);
+		int chance = flag ? 7 : 5;
 		if (worldIn.getRawBrightness(pos.above(), 0) >= 12 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(chance) == 0)) {
 			if (state.getValue(AGE) < 5) {
 				worldIn.setBlockAndUpdate(pos, state.setValue(AGE, state.getValue(AGE) + 1));
-			} else if (!flag) {
+			} else if (flag) {
 				if (AtmosphericBlocks.TALL_ALOE_VERA.get().defaultBlockState().canSurvive(worldIn, pos) && worldIn.isEmptyBlock(pos.above())) {
 					AloeVeraTallBlock.placeAt(worldIn, AtmosphericBlocks.TALL_ALOE_VERA.get().defaultBlockState(), pos, 2);
 				}

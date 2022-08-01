@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -73,7 +74,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	@Override
 	public void performBonemeal(ServerLevel worldIn, Random rand, BlockPos pos, BlockState state) {
 		int i = state.getValue(AGE);
-		if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(3) == 0)) {
+		if (i < 3 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(3) == 0)) {
 			worldIn.setBlockAndUpdate(pos, state.setValue(AGE, i + 1));
 			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 		}
@@ -101,7 +102,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 		BlockState downState = worldIn.getBlockState(pos.below());
-		return (downState.canSustainPlant(worldIn, pos.below(), Direction.UP, this) || downState.is(Blocks.RED_SAND)) && !worldIn.getBlockState(pos.above()).getMaterial().isLiquid();
+		return downState.is(AtmosphericBlockTags.BARREL_CACTUS_PLACEABLE) && !worldIn.getBlockState(pos.above()).getMaterial().isLiquid();
 	}
 
 	@Override

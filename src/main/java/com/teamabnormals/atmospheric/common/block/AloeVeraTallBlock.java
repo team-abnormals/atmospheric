@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericParticleTypes;
@@ -80,7 +81,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 			if (half == DoubleBlockHalf.UPPER) {
 				return downState.getBlock() instanceof AloeVeraTallBlock;
 			} else {
-				return downState.canSustainPlant(worldIn, pos.below(), Direction.UP, this) || downState.is(Blocks.RED_SAND);
+				return downState.is(AtmosphericBlockTags.ALOE_PLACEABLE);
 			}
 		}
 		return super.mayPlaceOn(state, worldIn, pos);
@@ -208,8 +209,8 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
 		super.tick(state, worldIn, pos, random);
 		if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
-			boolean flag = worldIn.getBlockState(pos.below()).is(Tags.Blocks.SAND_RED);
-			if (!flag && state.getValue(AGE) < 8 && worldIn.getRawBrightness(pos.above(), 0) >= 12 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
+			boolean flag = worldIn.getBlockState(pos.below()).is(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON);
+			if (flag && state.getValue(AGE) < 8 && worldIn.getRawBrightness(pos.above(), 0) >= 12 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 				worldIn.setBlockAndUpdate(pos, state.setValue(AGE, state.getValue(AGE) + 1));
 				worldIn.setBlockAndUpdate(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(AGE, state.getValue(AGE) + 1));
 				ForgeHooks.onCropsGrowPost(worldIn, pos, state);
