@@ -14,27 +14,11 @@
               }
             }
           },
-          "atmospheric:rainforest_mountains": {
+          "atmospheric:sparse_rainforest": {
             "trigger": "minecraft:location",
             "conditions": {
               "location": {
-                "biome": "atmospheric:rainforest_mountains"
-              }
-            }
-          },
-          "atmospheric:rainforest_plateau": {
-            "trigger": "minecraft:location",
-            "conditions": {
-              "location": {
-                "biome": "atmospheric:rainforest_plateau"
-              }
-            }
-          },
-          "atmospheric:sparse_rainforest_plateau": {
-            "trigger": "minecraft:location",
-            "conditions": {
-              "location": {
-                "biome": "atmospheric:sparse_rainforest_plateau"
+                "biome": "atmospheric:sparse_rainforest"
               }
             }
           },
@@ -62,14 +46,6 @@
               }
             }
           },
-          "atmospheric:dunes_hills": {
-            "trigger": "minecraft:location",
-            "conditions": {
-              "location": {
-                "biome": "atmospheric:dunes_hills"
-              }
-            }
-          },
           "atmospheric:flourishing_dunes": {
             "trigger": "minecraft:location",
             "conditions": {
@@ -83,14 +59,6 @@
             "conditions": {
               "location": {
                 "biome": "atmospheric:rocky_dunes"
-              }
-            }
-          },
-          "atmospheric:rocky_dunes_hills": {
-            "trigger": "minecraft:location",
-            "conditions": {
-              "location": {
-                "biome": "atmospheric:rocky_dunes_hills"
               }
             }
           },
@@ -116,13 +84,7 @@
             "atmospheric:rainforest"
           ],
           [
-            "atmospheric:rainforest_mountains"
-          ],
-          [
-            "atmospheric:rainforest_plateau"
-          ],
-          [
-            "atmospheric:sparse_rainforest_plateau"
+            "atmospheric:sparse_rainforest"
           ],
           [
             "atmospheric:rainforest_basin"
@@ -134,16 +96,10 @@
             "atmospheric:dunes"
           ],
           [
-            "atmospheric:dunes_hills"
-          ],
-          [
             "atmospheric:flourishing_dunes"
           ],
           [
             "atmospheric:rocky_dunes"
-          ],
-          [
-            "atmospheric:rocky_dunes_hills"
           ],
           [
             "atmospheric:petrified_dunes"
