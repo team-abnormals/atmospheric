@@ -22,58 +22,6 @@
             "then_run": {
               "sequence": [
                 {
-                  "sequence": [
-                    {
-                      "if_true": {
-                        "offset": 0,
-                        "add_surface_depth": false,
-                        "secondary_depth_range": 0,
-                        "surface_type": "ceiling",
-                        "type": "minecraft:stone_depth"
-                      },
-                      "then_run": {
-                        "result_state": {
-                          "Name": "atmospheric:arid_sandstone"
-                        },
-                        "type": "minecraft:block"
-                      },
-                      "type": "minecraft:condition"
-                    },
-                    {
-                      "result_state": {
-                        "Name": "atmospheric:arid_sand"
-                      },
-                      "type": "minecraft:block"
-                    }
-                  ],
-                  "type": "minecraft:sequence"
-                },
-                {
-                  "if_true": {
-                    "offset": -6,
-                    "surface_depth_multiplier": -1,
-                    "add_stone_depth": true,
-                    "type": "minecraft:water"
-                  },
-                  "then_run": {
-                    "if_true": {
-                      "offset": 0,
-                      "add_surface_depth": true,
-                      "secondary_depth_range": 30,
-                      "surface_type": "floor",
-                      "type": "minecraft:stone_depth"
-                    },
-                    "then_run": {
-                      "result_state": {
-                        "Name": "atmospheric:arid_sandstone"
-                      },
-                      "type": "minecraft:block"
-                    },
-                    "type": "minecraft:condition"
-                  },
-                  "type": "minecraft:condition"
-                },
-                {
                   "if_true": {
                     "noise": "minecraft:surface",
                     "min_threshold": 0.0363636389374733,
@@ -83,31 +31,50 @@
                   "then_run": {
                     "sequence": [
                       {
-                        "sequence": [
-                          {
-                            "if_true": {
-                              "offset": 0,
-                              "add_surface_depth": false,
-                              "secondary_depth_range": 0,
-                              "surface_type": "ceiling",
-                              "type": "minecraft:stone_depth"
-                            },
-                            "then_run": {
-                              "result_state": {
-                                "Name": "atmospheric:red_arid_sandstone"
-                              },
-                              "type": "minecraft:block"
-                            },
-                            "type": "minecraft:condition"
+                        "if_true": {
+                          "offset": 0,
+                          "add_surface_depth": false,
+                          "secondary_depth_range": 0,
+                          "surface_type": "floor",
+                          "type": "minecraft:stone_depth"
+                        },
+                        "then_run": {
+                          "if_true": {
+                            "offset": -1,
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false,
+                            "type": "minecraft:water"
                           },
-                          {
-                            "result_state": {
-                              "Name": "atmospheric:red_arid_sand"
-                            },
-                            "type": "minecraft:block"
-                          }
-                        ],
-                        "type": "minecraft:sequence"
+                          "then_run": {
+                            "sequence": [
+                              {
+                                "if_true": {
+                                  "offset": 0,
+                                  "add_surface_depth": false,
+                                  "secondary_depth_range": 0,
+                                  "surface_type": "ceiling",
+                                  "type": "minecraft:stone_depth"
+                                },
+                                "then_run": {
+                                  "result_state": {
+                                    "Name": "atmospheric:red_arid_sandstone"
+                                  },
+                                  "type": "minecraft:block"
+                                },
+                                "type": "minecraft:condition"
+                              },
+                              {
+                                "result_state": {
+                                  "Name": "atmospheric:red_arid_sand"
+                                },
+                                "type": "minecraft:block"
+                              }
+                            ],
+                            "type": "minecraft:sequence"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        "type": "minecraft:condition"
                       },
                       {
                         "if_true": {
@@ -117,20 +84,62 @@
                           "type": "minecraft:water"
                         },
                         "then_run": {
-                          "if_true": {
-                            "offset": 0,
-                            "add_surface_depth": true,
-                            "secondary_depth_range": 30,
-                            "surface_type": "floor",
-                            "type": "minecraft:stone_depth"
-                          },
-                          "then_run": {
-                            "result_state": {
-                              "Name": "atmospheric:red_arid_sandstone"
+                          "sequence": [
+                            {
+                              "if_true": {
+                                "offset": 0,
+                                "add_surface_depth": true,
+                                "secondary_depth_range": 0,
+                                "surface_type": "floor",
+                                "type": "minecraft:stone_depth"
+                              },
+                              "then_run": {
+                                "sequence": [
+                                  {
+                                    "if_true": {
+                                      "offset": 0,
+                                      "add_surface_depth": false,
+                                      "secondary_depth_range": 0,
+                                      "surface_type": "ceiling",
+                                      "type": "minecraft:stone_depth"
+                                    },
+                                    "then_run": {
+                                      "result_state": {
+                                        "Name": "atmospheric:red_arid_sandstone"
+                                      },
+                                      "type": "minecraft:block"
+                                    },
+                                    "type": "minecraft:condition"
+                                  },
+                                  {
+                                    "result_state": {
+                                      "Name": "atmospheric:red_arid_sand"
+                                    },
+                                    "type": "minecraft:block"
+                                  }
+                                ],
+                                "type": "minecraft:sequence"
+                              },
+                              "type": "minecraft:condition"
                             },
-                            "type": "minecraft:block"
-                          },
-                          "type": "minecraft:condition"
+                            {
+                              "if_true": {
+                                "offset": 0,
+                                "add_surface_depth": true,
+                                "secondary_depth_range": 30,
+                                "surface_type": "floor",
+                                "type": "minecraft:stone_depth"
+                              },
+                              "then_run": {
+                                "result_state": {
+                                  "Name": "atmospheric:red_arid_sandstone"
+                                },
+                                "type": "minecraft:block"
+                              },
+                              "type": "minecraft:condition"
+                            }
+                          ],
+                          "type": "minecraft:sequence"
                         },
                         "type": "minecraft:condition"
                       }
@@ -138,6 +147,124 @@
                     "type": "minecraft:sequence"
                   },
                   "type": "minecraft:condition"
+                },
+                {
+                  "sequence": [
+                    {
+                      "if_true": {
+                        "offset": 0,
+                        "add_surface_depth": false,
+                        "secondary_depth_range": 0,
+                        "surface_type": "floor",
+                        "type": "minecraft:stone_depth"
+                      },
+                      "then_run": {
+                        "if_true": {
+                          "offset": -1,
+                          "surface_depth_multiplier": 0,
+                          "add_stone_depth": false,
+                          "type": "minecraft:water"
+                        },
+                        "then_run": {
+                          "sequence": [
+                            {
+                              "if_true": {
+                                "offset": 0,
+                                "add_surface_depth": false,
+                                "secondary_depth_range": 0,
+                                "surface_type": "ceiling",
+                                "type": "minecraft:stone_depth"
+                              },
+                              "then_run": {
+                                "result_state": {
+                                  "Name": "atmospheric:arid_sandstone"
+                                },
+                                "type": "minecraft:block"
+                              },
+                              "type": "minecraft:condition"
+                            },
+                            {
+                              "result_state": {
+                                "Name": "atmospheric:arid_sand"
+                              },
+                              "type": "minecraft:block"
+                            }
+                          ],
+                          "type": "minecraft:sequence"
+                        },
+                        "type": "minecraft:condition"
+                      },
+                      "type": "minecraft:condition"
+                    },
+                    {
+                      "if_true": {
+                        "offset": -6,
+                        "surface_depth_multiplier": -1,
+                        "add_stone_depth": true,
+                        "type": "minecraft:water"
+                      },
+                      "then_run": {
+                        "sequence": [
+                          {
+                            "if_true": {
+                              "offset": 0,
+                              "add_surface_depth": true,
+                              "secondary_depth_range": 0,
+                              "surface_type": "floor",
+                              "type": "minecraft:stone_depth"
+                            },
+                            "then_run": {
+                              "sequence": [
+                                {
+                                  "if_true": {
+                                    "offset": 0,
+                                    "add_surface_depth": false,
+                                    "secondary_depth_range": 0,
+                                    "surface_type": "ceiling",
+                                    "type": "minecraft:stone_depth"
+                                  },
+                                  "then_run": {
+                                    "result_state": {
+                                      "Name": "atmospheric:arid_sandstone"
+                                    },
+                                    "type": "minecraft:block"
+                                  },
+                                  "type": "minecraft:condition"
+                                },
+                                {
+                                  "result_state": {
+                                    "Name": "atmospheric:arid_sand"
+                                  },
+                                  "type": "minecraft:block"
+                                }
+                              ],
+                              "type": "minecraft:sequence"
+                            },
+                            "type": "minecraft:condition"
+                          },
+                          {
+                            "if_true": {
+                              "offset": 0,
+                              "add_surface_depth": true,
+                              "secondary_depth_range": 30,
+                              "surface_type": "floor",
+                              "type": "minecraft:stone_depth"
+                            },
+                            "then_run": {
+                              "result_state": {
+                                "Name": "atmospheric:arid_sandstone"
+                              },
+                              "type": "minecraft:block"
+                            },
+                            "type": "minecraft:condition"
+                          }
+                        ],
+                        "type": "minecraft:sequence"
+                      },
+                      "type": "minecraft:condition"
+                    }
+                  ],
+                  "type": "minecraft:sequence"
                 }
               ],
               "type": "minecraft:sequence"

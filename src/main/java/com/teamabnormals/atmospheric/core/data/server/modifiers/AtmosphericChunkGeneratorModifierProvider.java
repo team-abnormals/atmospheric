@@ -25,32 +25,17 @@ public final class AtmosphericChunkGeneratorModifierProvider extends ChunkGenera
 		RuleSource redAridSand = state(AtmosphericBlocks.RED_ARID_SAND.get().defaultBlockState());
 		RuleSource redAridSandstone = state(AtmosphericBlocks.RED_ARID_SANDSTONE.get().defaultBlockState());
 
-		this.entry("dunes_surface_rule")
-				.selects("minecraft:overworld")
-				.addModifier(new SurfaceRuleModifier(SurfaceRules.ifTrue(
-
-						SurfaceRules.abovePreliminarySurface(),
-						ifTrue(inDunes,
-								sequence(
-										sequence(ifTrue(SurfaceRules.ON_CEILING, aridSandstone), aridSand),
-										ifTrue(waterStartCheck(-6, -1), ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, aridSandstone))
-										ifTrue(
-												noiseCondition(Noises.SURFACE, 0.3F / 8.25F, 2.5F / 8.25F),
-												sequence(
-														sequence(ifTrue(SurfaceRules.ON_CEILING, redAridSandstone), redAridSand),
-														ifTrue(waterStartCheck(-6, -1), ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, redAridSandstone))
-												)
-										)
-								)
-						)
-				), false));
-
-		RuleSource dunesRuleSource = SurfaceRules.sequence(
+		RuleSource aridSandRuleSource = SurfaceRules.sequence(
 				SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, ifTrue(waterBlockCheck(-1, 0), sequence(ifTrue(SurfaceRules.ON_CEILING, aridSandstone), aridSand))),
 				SurfaceRules.ifTrue(waterStartCheck(-6, -1), sequence(SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sequence(ifTrue(SurfaceRules.ON_CEILING, aridSandstone), aridSand)), SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, aridSandstone)))
 		);
 
+		RuleSource redAridSandRuleSource = SurfaceRules.sequence(
+				SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, ifTrue(waterBlockCheck(-1, 0), sequence(ifTrue(SurfaceRules.ON_CEILING, redAridSandstone), redAridSand))),
+				SurfaceRules.ifTrue(waterStartCheck(-6, -1), sequence(SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sequence(ifTrue(SurfaceRules.ON_CEILING, redAridSandstone), redAridSand)), SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, redAridSandstone)))
+		);
 
+		this.entry("dunes_surface_rule").selects("minecraft:overworld").addModifier(new SurfaceRuleModifier(SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), ifTrue(inDunes, sequence(ifTrue(noiseCondition(Noises.SURFACE, 0.3F / 8.25F, 2.5F / 8.25F), redAridSandRuleSource), aridSandRuleSource))), false));
 	}
 
 }
