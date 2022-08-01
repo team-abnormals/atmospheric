@@ -29,9 +29,8 @@ public class AtmosphericAdvancementModifierProvider extends AdvancementModifierP
 
 	@Override
 	protected void registerEntries() {
-		MobEffectsPredicate potions = MobEffectsPredicate.effects().and(AtmosphericMobEffects.RELIEF.get()).and(AtmosphericMobEffects.WORSENING.get());
-		this.entry("nether/all_potions").selects("nether/all_potions").addModifier(new EffectsChangedModifier("all_effects", false, potions));
-		this.entry("nether/all_effects").selects("nether/all_effects").addModifier(new EffectsChangedModifier("all_effects", false, potions.and(AtmosphericMobEffects.PERSISTENCE.get()).and(AtmosphericMobEffects.SPITTING.get())));
+		this.entry("nether/all_potions").selects("nether/all_potions").addModifier(new EffectsChangedModifier("all_effects", false, MobEffectsPredicate.effects().and(AtmosphericMobEffects.RELIEF.get()).and(AtmosphericMobEffects.WORSENING.get())));
+		this.entry("nether/all_effects").selects("nether/all_effects").addModifier(new EffectsChangedModifier("all_effects", false, MobEffectsPredicate.effects().and(AtmosphericMobEffects.RELIEF.get()).and(AtmosphericMobEffects.WORSENING.get()).and(AtmosphericMobEffects.PERSISTENCE.get()).and(AtmosphericMobEffects.SPITTING.get())));
 
 		CriteriaModifier.Builder balancedDiet = CriteriaModifier.builder(this.modId);
 		Collection<RegistryObject<Item>> items = AtmosphericItems.HELPER.getDeferredRegister().getEntries();
@@ -46,7 +45,7 @@ public class AtmosphericAdvancementModifierProvider extends AdvancementModifierP
 		Collection<RegistryObject<Biome>> biomes = AtmosphericBiomes.HELPER.getDeferredRegister().getEntries();
 		biomes.forEach(biome -> {
 			ResourceLocation key = ForgeRegistries.BIOMES.getKey(biome.get());
-			adventuringTime.addCriterion(key.toString(), LocationTrigger.TriggerInstance.located(LocationPredicate.inBiome(ResourceKey.create(Registry.BIOME_REGISTRY, key))));
+			adventuringTime.addCriterion(key.getPath(), LocationTrigger.TriggerInstance.located(LocationPredicate.inBiome(ResourceKey.create(Registry.BIOME_REGISTRY, key))));
 		});
 		this.entry("adventure/adventuring_time").selects("adventure/adventuring_time").addModifier(adventuringTime.requirements(RequirementsStrategy.AND).build());
 

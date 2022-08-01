@@ -1,16 +1,18 @@
 {
-  "advancement": "minecraft:husbandry/balanced_diet",
+  "selector": "minecraft:husbandry/balanced_diet",
+  "priority": "normal",
   "modifiers": [
     {
       "type": "criteria",
       "config": {
-        "mode": "modify",
         "criteria": {
           "atmospheric:passionfruit": {
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "atmospheric:passionfruit"
+                "items": [
+                  "atmospheric:passionfruit"
+                ]
               }
             }
           },
@@ -18,7 +20,9 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "atmospheric:shimmering_passionfruit"
+                "items": [
+                  "atmospheric:shimmering_passionfruit"
+                ]
               }
             }
           },
@@ -26,7 +30,9 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "atmospheric:passionfruit_tart"
+                "items": [
+                  "atmospheric:passionfruit_tart"
+                ]
               }
             }
           },
@@ -34,7 +40,9 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "atmospheric:passionfruit_sorbet"
+                "items": [
+                  "atmospheric:passionfruit_sorbet"
+                ]
               }
             }
           },
@@ -42,7 +50,9 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "atmospheric:yucca_fruit"
+                "items": [
+                  "atmospheric:yucca_fruit"
+                ]
               }
             }
           },
@@ -50,7 +60,9 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "atmospheric:roasted_yucca_fruit"
+                "items": [
+                  "atmospheric:roasted_yucca_fruit"
+                ]
               }
             }
           },
@@ -58,7 +70,9 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "atmospheric:aloe_leaves"
+                "items": [
+                  "atmospheric:aloe_leaves"
+                ]
               }
             }
           },
@@ -66,7 +80,9 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "atmospheric:aloe_gel_bottle"
+                "items": [
+                  "atmospheric:aloe_gel_bottle"
+                ]
               }
             }
           }
@@ -96,7 +112,8 @@
           [
             "atmospheric:aloe_gel_bottle"
           ]
-        ]
+        ],
+        "should_replace_requirements": false
       }
     }
   ]

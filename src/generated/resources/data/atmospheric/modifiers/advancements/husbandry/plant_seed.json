@@ -1,0 +1,28 @@
+{
+  "selector": "minecraft:husbandry/plant_seed",
+  "priority": "normal",
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "atmospheric:aloe_vera": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+              "block": "atmospheric:aloe_vera"
+            }
+          }
+        },
+        "indexed_requirements": [
+          {
+            "index": 0,
+            "replace": false,
+            "requirements": [
+              "atmospheric:aloe_vera"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

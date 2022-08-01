@@ -1,10 +1,10 @@
 {
-  "advancement": "minecraft:adventure/adventuring_time",
+  "selector": "minecraft:adventure/adventuring_time",
+  "priority": "normal",
   "modifiers": [
     {
       "type": "criteria",
       "config": {
-        "mode": "modify",
         "criteria": {
           "atmospheric:rainforest": {
             "trigger": "minecraft:location",
@@ -101,6 +101,14 @@
                 "biome": "atmospheric:petrified_dunes"
               }
             }
+          },
+          "atmospheric:hot_springs": {
+            "trigger": "minecraft:location",
+            "conditions": {
+              "location": {
+                "biome": "atmospheric:hot_springs"
+              }
+            }
           }
         },
         "requirements": [
@@ -139,8 +147,12 @@
           ],
           [
             "atmospheric:petrified_dunes"
+          ],
+          [
+            "atmospheric:hot_springs"
           ]
-        ]
+        ],
+        "should_replace_requirements": false
       }
     }
   ]
