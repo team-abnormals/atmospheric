@@ -15,16 +15,10 @@ import java.util.Set;
 public class AtmosphericCompat {
 
 	public static void registerCompat() {
-		registerLootInjectors();
 		registerDispenserBehaviors();
 		registerCompostables();
 		registerFlammables();
 		registerCarvers();
-	}
-
-	public static void registerLootInjectors() {
-//		LootInjectionRegistry.LootInjector injector = new LootInjectionRegistry.LootInjector(Atmospheric.MOD_ID);
-//		injector.addLootInjection(injector.buildLootPool("ruined_portal", 1, 0), BuiltInLootTables.RUINED_PORTAL);
 	}
 
 	public static void registerDispenserBehaviors() {

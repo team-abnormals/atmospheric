@@ -4,6 +4,7 @@ import com.teamabnormals.atmospheric.client.renderer.entity.PassionfruitSeedRend
 import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionfruitSeedModel;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericAdvancementModifierProvider;
+import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericLootModifierProvider;
 import com.teamabnormals.atmospheric.core.other.AtmosphericClientCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericModelLayers;
@@ -90,6 +91,7 @@ public class Atmospheric {
 		if (includeServer) {
 			generator.addProvider(new AtmosphericAdvancementProvider(generator, existingFileHelper));
 			generator.addProvider(new AtmosphericAdvancementModifierProvider(generator));
+			generator.addProvider(new AtmosphericLootModifierProvider(generator));
 		}
 	}
 
