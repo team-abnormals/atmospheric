@@ -335,17 +335,13 @@
   "effect.atmospheric.persistence": "Persistence",
 
   "biome.atmospheric.rainforest": "Rainforest",
-  "biome.atmospheric.rainforest_mountains": "Rainforest Mountains",
-  "biome.atmospheric.rainforest_plateau": "Rainforest Plateau",
-  "biome.atmospheric.sparse_rainforest_plateau": "Sparse Rainforest Plateau",
+  "biome.atmospheric.sparse_rainforest": "Sparse Rainforest",
   "biome.atmospheric.rainforest_basin": "Rainforest Basin",
   "biome.atmospheric.sparse_rainforest_basin": "Sparse Rainforest Basin",
 
   "biome.atmospheric.dunes": "Dunes",
-  "biome.atmospheric.dunes_hills": "Dunes Hills",
   "biome.atmospheric.flourishing_dunes": "Flourishing Dunes",
   "biome.atmospheric.rocky_dunes": "Rocky Dunes",
-  "biome.atmospheric.rocky_dunes_hills": "Rocky Dunes Hills",
   "biome.atmospheric.petrified_dunes": "Petrified Dunes",
 
   "biome.atmospheric.hot_springs": "Hot Springs",
