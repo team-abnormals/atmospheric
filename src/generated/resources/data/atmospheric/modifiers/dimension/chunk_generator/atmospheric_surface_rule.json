@@ -274,6 +274,201 @@
           "type": "minecraft:condition"
         }
       }
+    },
+    {
+      "type": "surface_rule",
+      "config": {
+        "surface_rule": {
+          "if_true": {
+            "type": "minecraft:above_preliminary_surface"
+          },
+          "then_run": {
+            "if_true": {
+              "biome_is": [
+                "atmospheric:hot_springs"
+              ],
+              "type": "minecraft:biome"
+            },
+            "then_run": {
+              "if_true": {
+                "invert": {
+                  "anchor": {
+                    "absolute": 93
+                  },
+                  "surface_depth_multiplier": 0,
+                  "add_stone_depth": false,
+                  "type": "minecraft:y_above"
+                },
+                "type": "minecraft:not"
+              },
+              "then_run": {
+                "sequence": [
+                  {
+                    "if_true": {
+                      "offset": 0,
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 0,
+                      "surface_type": "floor",
+                      "type": "minecraft:stone_depth"
+                    },
+                    "then_run": {
+                      "sequence": [
+                        {
+                          "if_true": {
+                            "noise": "minecraft:surface",
+                            "min_threshold": 0.1090909093618393,
+                            "max_threshold": 0.23030303418636322,
+                            "type": "minecraft:noise_threshold"
+                          },
+                          "then_run": {
+                            "result_state": {
+                              "Properties": {
+                                "axis": "y"
+                              },
+                              "Name": "atmospheric:saffron_travertine"
+                            },
+                            "type": "minecraft:block"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "if_true": {
+                            "noise": "minecraft:surface",
+                            "min_threshold": 0.04848485067486763,
+                            "max_threshold": 0.2909091114997864,
+                            "type": "minecraft:noise_threshold"
+                          },
+                          "then_run": {
+                            "result_state": {
+                              "Properties": {
+                                "axis": "y"
+                              },
+                              "Name": "atmospheric:persimmon_travertine"
+                            },
+                            "type": "minecraft:block"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "if_true": {
+                            "noise": "minecraft:surface",
+                            "min_threshold": -0.024242425337433815,
+                            "max_threshold": 0.3636363744735718,
+                            "type": "minecraft:noise_threshold"
+                          },
+                          "then_run": {
+                            "result_state": {
+                              "Properties": {
+                                "axis": "y"
+                              },
+                              "Name": "atmospheric:peach_travertine"
+                            },
+                            "type": "minecraft:block"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "result_state": {
+                            "Properties": {
+                              "axis": "y"
+                            },
+                            "Name": "atmospheric:ivory_travertine"
+                          },
+                          "type": "minecraft:block"
+                        }
+                      ],
+                      "type": "minecraft:sequence"
+                    },
+                    "type": "minecraft:condition"
+                  },
+                  {
+                    "if_true": {
+                      "offset": 0,
+                      "add_surface_depth": true,
+                      "secondary_depth_range": 0,
+                      "surface_type": "floor",
+                      "type": "minecraft:stone_depth"
+                    },
+                    "then_run": {
+                      "sequence": [
+                        {
+                          "if_true": {
+                            "noise": "minecraft:surface",
+                            "min_threshold": 0.1090909093618393,
+                            "max_threshold": 0.23030303418636322,
+                            "type": "minecraft:noise_threshold"
+                          },
+                          "then_run": {
+                            "result_state": {
+                              "Properties": {
+                                "axis": "y"
+                              },
+                              "Name": "atmospheric:saffron_travertine"
+                            },
+                            "type": "minecraft:block"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "if_true": {
+                            "noise": "minecraft:surface",
+                            "min_threshold": 0.04848485067486763,
+                            "max_threshold": 0.2909091114997864,
+                            "type": "minecraft:noise_threshold"
+                          },
+                          "then_run": {
+                            "result_state": {
+                              "Properties": {
+                                "axis": "y"
+                              },
+                              "Name": "atmospheric:persimmon_travertine"
+                            },
+                            "type": "minecraft:block"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "if_true": {
+                            "noise": "minecraft:surface",
+                            "min_threshold": -0.024242425337433815,
+                            "max_threshold": 0.3636363744735718,
+                            "type": "minecraft:noise_threshold"
+                          },
+                          "then_run": {
+                            "result_state": {
+                              "Properties": {
+                                "axis": "y"
+                              },
+                              "Name": "atmospheric:peach_travertine"
+                            },
+                            "type": "minecraft:block"
+                          },
+                          "type": "minecraft:condition"
+                        },
+                        {
+                          "result_state": {
+                            "Properties": {
+                              "axis": "y"
+                            },
+                            "Name": "atmospheric:ivory_travertine"
+                          },
+                          "type": "minecraft:block"
+                        }
+                      ],
+                      "type": "minecraft:sequence"
+                    },
+                    "type": "minecraft:condition"
+                  }
+                ],
+                "type": "minecraft:sequence"
+              },
+              "type": "minecraft:condition"
+            },
+            "type": "minecraft:condition"
+          },
+          "type": "minecraft:condition"
+        }
+      }
     }
   ]
 }

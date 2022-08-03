@@ -180,12 +180,12 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
-		BiomeDefaultFeatures.addMossyStoneBlock(generation);
 		BiomeDefaultFeatures.addFerns(generation);
 		BiomeDefaultFeatures.addTaigaTrees(generation);
 		BiomeDefaultFeatures.addGiantTaigaVegetation(generation);
 		BiomeDefaultFeatures.addCommonBerryBushes(generation);
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_OLD_GROWTH_SPRUCE_TAIGA);
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.HOT_SPRINGS_ROCK.getHolder().get());
 	}
 
 	public static void withRainforestFoliage(BiomeGenerationSettings.Builder generation) {
