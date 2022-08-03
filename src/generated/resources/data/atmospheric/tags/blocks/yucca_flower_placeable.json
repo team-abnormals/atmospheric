@@ -3,6 +3,7 @@
   "values": [
     "minecraft:cactus",
     "atmospheric:yucca_leaves",
-    "atmospheric:yucca_hedge"
+    "atmospheric:yucca_hedge",
+    "#atmospheric:yucca_placeable"
   ]
 }

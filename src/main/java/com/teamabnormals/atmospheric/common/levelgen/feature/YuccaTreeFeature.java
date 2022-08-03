@@ -169,7 +169,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 					if (config.patch) {
 						for (int j = 0; j < 64; ++j) {
 							BlockPos blockpos = position.offset(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-							if (isAir(worldIn, blockpos) && blockpos.getY() < 255 && config.flowerProvider.getState(rand, blockpos).canSurvive(worldIn, blockpos)) {
+							if (isAir(worldIn, blockpos) && blockpos.getY() < worldIn.getMaxBuildHeight() && config.flowerProvider.getState(rand, blockpos).canSurvive(worldIn, blockpos)) {
 								placeFlowerAt(worldIn, blockpos, rand, config);
 							}
 						}
@@ -178,7 +178,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 					if (config.petrified && rand.nextInt(12) == 0) {
 						for (int j = 0; j < 12; ++j) {
 							BlockPos blockpos = position.offset(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
-							if (isAir(worldIn, blockpos) && blockpos.getY() < 255 && TreeUtil.isInTag(worldIn, blockpos.below(), BlockTags.SAND)) {
+							if (isAir(worldIn, blockpos) && blockpos.getY() < worldIn.getMaxBuildHeight() && TreeUtil.isInTag(worldIn, blockpos.below(), BlockTags.SAND)) {
 								TreeUtil.setForcedState(worldIn, blockpos, config.bundleProvider.getState(rand, blockpos));
 							}
 						}

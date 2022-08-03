@@ -40,23 +40,23 @@ public class SurfaceFossilFeature extends Feature<FossilFeatureConfiguration> {
 		int fossilIndex = random.nextInt(config.fossilStructures.size());
 		StructureManager structureManager = level.getLevel().getServer().getStructureManager();
 		StructureTemplate fossilStructure = structureManager.getOrCreate(config.fossilStructures.get(fossilIndex));
-		StructureTemplate overlayStructure = structureManager.getOrCreate(config.overlayStructures.get(fossilIndex));
 		ChunkPos chunkPos = new ChunkPos(origin);
 		BoundingBox boundingBox = new BoundingBox(chunkPos.getMinBlockX() - 16, level.getMinBuildHeight(), chunkPos.getMinBlockZ() - 16, chunkPos.getMaxBlockX() + 16, level.getMaxBuildHeight(), chunkPos.getMaxBlockZ() + 16);
 		StructurePlaceSettings settings = (new StructurePlaceSettings()).setRotation(rotation).setBoundingBox(boundingBox).setRandom(random);
 		Vec3i size = fossilStructure.getSize(rotation);
 		BlockPos offsetPos = origin.offset(-size.getX() / 2, 0, -size.getZ() / 2);
-		int y = origin.getY();
+		int y = level.getMaxBuildHeight();
 
 		int i;
 		for (i = 0; i < size.getX(); ++i) {
 			for (int j = 0; j < size.getZ(); ++j) {
-				y = Math.min(y, level.getHeight(Types.OCEAN_FLOOR_WG, offsetPos.getX() + i, offsetPos.getZ() + j));
+				y = Math.min(y, level.getHeight(Types.WORLD_SURFACE_WG, offsetPos.getX() + i, offsetPos.getZ() + j));
 			}
 		}
 
-		i = Math.max(y - 15 - random.nextInt(10), level.getMinBuildHeight() + 10);
+		i = Math.max(y - random.nextInt(10), level.getMinBuildHeight() + 64);
 		BlockPos pos = fossilStructure.getZeroPositionWithTransform(offsetPos.atY(i), Mirror.NONE, rotation);
+
 		if (countEmptyCorners(level, fossilStructure.getBoundingBox(settings, pos)) > config.maxEmptyCornersAllowed) {
 			return false;
 		} else {
@@ -65,11 +65,6 @@ public class SurfaceFossilFeature extends Feature<FossilFeatureConfiguration> {
 			Objects.requireNonNull(settings);
 			processors.forEach(settings::addProcessor);
 			fossilStructure.placeInWorld(level, pos, pos, settings, random, 4);
-			settings.clearProcessors();
-			processors = config.overlayProcessors.value().list();
-			Objects.requireNonNull(settings);
-			processors.forEach(settings::addProcessor);
-			overlayStructure.placeInWorld(level, pos, pos, settings, random, 4);
 			return true;
 		}
 	}

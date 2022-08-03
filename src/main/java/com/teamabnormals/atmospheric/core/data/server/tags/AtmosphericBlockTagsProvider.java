@@ -31,7 +31,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(AtmosphericBlockTags.ALOE_PLACEABLE).addTag(BlockTags.SAND);
 		this.tag(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON).addTag(Tags.Blocks.SAND_COLORLESS);
 		this.tag(AtmosphericBlockTags.YUCCA_PLACEABLE).addTag(BlockTags.SAND).addTag(BlockTags.DIRT);
-		this.tag(AtmosphericBlockTags.YUCCA_FLOWER_PLACEABLE).add(Blocks.CACTUS, AtmosphericBlocks.YUCCA_LEAVES.get(), AtmosphericBlocks.YUCCA_HEDGE.get());
+		this.tag(AtmosphericBlockTags.YUCCA_FLOWER_PLACEABLE).add(Blocks.CACTUS, AtmosphericBlocks.YUCCA_LEAVES.get(), AtmosphericBlocks.YUCCA_HEDGE.get()).addTag(AtmosphericBlockTags.YUCCA_PLACEABLE);
 		this.tag(AtmosphericBlockTags.BARREL_CACTUS_PLACEABLE).addTag(BlockTags.SAND);
 	}
 }

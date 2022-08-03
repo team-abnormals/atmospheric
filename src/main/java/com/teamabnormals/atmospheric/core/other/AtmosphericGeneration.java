@@ -63,15 +63,15 @@ public class AtmosphericGeneration {
 		if (biome == null) return;
 
 		if (DataUtil.matchesKeys(biome, Biomes.DESERT)) {
-			//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_DESERT);
+			generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.DESERT_YUCCA_TREES.getHolder().get());
 		}
 
 		if (DataUtil.matchesKeys(biome, Biomes.WOODED_BADLANDS)) {
-			//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE);
+			generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_DUNES.getHolder().get());
 		}
 
 		if (DataUtil.matchesKeys(biome, Biomes.WINDSWEPT_SAVANNA)) {
-			//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_SAVANNA);
+			generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.WINDSWEPT_SAVANNA_YUCCA_TREES.getHolder().get());
 		}
 	}
 
@@ -125,46 +125,46 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 		BiomeDefaultFeatures.addFossilDecoration(generation);
-		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_ARID_SPROUTS);
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_2);
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_ARID_SPROUTS.getHolder().get());
 	}
 
 	public static void dunes(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
 		baseDunes(generation, spawns);
-		//generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericFeatures.Configured.DUNE_ROCK);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_YUCCA_FLOWER);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_ALOE_VERA);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_DUNES);
+		generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericPlacedFeatures.DUNE_ROCK.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_DUNES.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_YUCCA_FLOWER.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_ALOE_VERA.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_BARREL_CACTUS_DUNES.getHolder().get());
 	}
 
 	public static void flourishingDunes(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
 		baseDunes(generation, spawns);
-		BiomeDefaultFeatures.addJungleMelons(generation);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_GILIA);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_DUNE_GRASS);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_BEEHIVE);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_BABY);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_YUCCA_FLOWER_EXTRA);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_ALOE_VERA_EXTRA);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_FLOURISHING_DUNES);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.DUNE_ROCK_EXTRA);
+		generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericPlacedFeatures.DUNE_ROCK_EXTRA.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_MELON_DUNES.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.FLOWER_FLOURISHING_DUNES.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_DUNE_GRASS.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.FLOURISHING_DUNES_YUCCA_TREES.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_FLOURISHING_DUNES.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_YUCCA_FLOWER_EXTRA.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_ALOE_VERA_EXTRA.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_BARREL_CACTUS_FLOURISHING_DUNES.getHolder().get());
 	}
 
 	public static void withRockyDunesFeatures(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
 		baseDunes(generation, spawns);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_ROCKY_DUNES);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_ALOE_VERA);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_ROCKY_DUNES);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.DUNE_ROCK_MANY);
+		generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericPlacedFeatures.DUNE_ROCK_MANY.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_ROCKY_DUNES.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_ALOE_VERA.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_BARREL_CACTUS_ROCKY_DUNES.getHolder().get());
 	}
 
 	public static void withPetrifiedDunesFeatures(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
 		baseDunes(generation, spawns);
-		//generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericFeatures.Configured.DUNE_ROCK);
-		//generation.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, AtmosphericFeatures.Configured.FOSSIL_SURFACE);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.YUCCA_TREE_PETRIFIED);
-		//generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericFeatures.Configured.PATCH_BARREL_CACTUS_PETRIFIED_DUNES);
+		generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericPlacedFeatures.DUNE_ROCK.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, AtmosphericPlacedFeatures.FOSSIL_DUNES.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_PETRIFIED_DUNES.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_BARREL_CACTUS_PETRIFIED_DUNES.getHolder().get());
 	}
 
 	public static void withHotSpringsFeatures(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {

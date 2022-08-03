@@ -31,7 +31,7 @@ public class CoarseDirtPatchFeature extends Feature<LargeDiskConfiguration> {
 			return false;
 		} else {
 			int i = 0;
-			int j = rand.nextInt(config.radius().sample(rand) - 2) + 2;
+			int j = 2 + rand.nextInt(Math.max(config.radius().sample(rand) - 2, 1));
 
 			for (int k = pos.getX() - j; k <= pos.getX() + j; ++k) {
 				for (int l = pos.getZ() - j; l <= pos.getZ() + j; ++l) {
