@@ -108,6 +108,7 @@ public class AtmosphericGeneration {
 	public static void rainforestBasin(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
 		AtmosphericGeneration.baseRainforest(generation, spawns);
 		AtmosphericGeneration.withRainforestBasinWaterFoliage(generation);
+		generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericPlacedFeatures.OCEAN_FLOOR_RAISER.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_RAINFOREST_BASIN.getHolder().get());
 	}
 

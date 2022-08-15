@@ -10,6 +10,7 @@ import com.teamabnormals.atmospheric.common.levelgen.feature.*;
 import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.LargeDiskConfiguration;
 import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.YuccaTreeConfiguration;
 import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.YuccaTreeConfiguration.YuccaTreeConfigurationBuilder;
+import com.teamabnormals.atmospheric.common.levelgen.placement.InSquareCenterPlacement;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -74,6 +75,8 @@ public class AtmosphericFeatures {
 	public static final RegistryObject<Feature<TreeConfiguration>> ROSEWOOD_WATER_TREE = FEATURES.register("rosewood_water_tree", () -> new RainforestTreeFeature(TreeConfiguration.CODEC, true));
 	public static final RegistryObject<Feature<YuccaTreeConfiguration>> YUCCA_TREE = FEATURES.register("yucca_tree", () -> new YuccaTreeFeature(YuccaTreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> ASPEN_TREE = FEATURES.register("aspen_tree", () -> new AspenTreeFeature(TreeConfiguration.CODEC));
+
+	public static final RegistryObject<Feature<NoneFeatureConfiguration>> OCEAN_FLOOR_RAISER = FEATURES.register("ocean_floor_raiser", () -> new OceanFloorRaiserFeature(NoneFeatureConfiguration.CODEC));
 
 	public static final class Configs {
 		private static final BeehiveDecorator BEEHIVE_0002 = new BeehiveDecorator(0.002F);
@@ -187,6 +190,7 @@ public class AtmosphericFeatures {
 
 		public static final RegistryObject<ConfiguredFeature<BlockStateConfiguration, ?>> HOT_SPRINGS_ROCK = register("hot_springs_rock", () -> new ConfiguredFeature<>(Feature.FOREST_ROCK, new BlockStateConfiguration(Blocks.MOSSY_COBBLESTONE.defaultBlockState())));
 
+		public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> OCEAN_FLOOR_RAISER = register("ocean_floor_raiser", () -> new ConfiguredFeature<>(AtmosphericFeatures.OCEAN_FLOOR_RAISER.get(), NoneFeatureConfiguration.INSTANCE));
 
 		private static <FC extends FeatureConfiguration, F extends Feature<FC>> RegistryObject<ConfiguredFeature<FC, ?>> register(String name, Supplier<ConfiguredFeature<FC, F>> feature) {
 			return CONFIGURED_FEATURES.register(name, feature);
@@ -258,6 +262,8 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> FOSSIL_DUNES = register("fossil_dunes", AtmosphericConfiguredFeatures.SURFACE_FOSSIL, List.of(RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(256)), BiomeFilter.biome()));
 
 		public static final RegistryObject<PlacedFeature> HOT_SPRINGS_ROCK = register("hot_springs_rock", AtmosphericConfiguredFeatures.HOT_SPRINGS_ROCK, List.of(BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlock(Blocks.GRASS_BLOCK, new BlockPos(0, -1, 0))), CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+
+		public static final RegistryObject<PlacedFeature> OCEAN_FLOOR_RAISER = register("ocean_floor_raiser", AtmosphericConfiguredFeatures.OCEAN_FLOOR_RAISER, List.of(InSquareCenterPlacement.INSTANCE, PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome()));
 
 		private static ImmutableList<PlacementModifier> waterTreePlacement(PlacementModifier modifier) {
 			return ImmutableList.<PlacementModifier>builder().add(modifier).add(InSquarePlacement.spread()).add(SurfaceWaterDepthFilter.forMaxDepth(10)).add(PlacementUtils.HEIGHTMAP_OCEAN_FLOOR).add(BiomeFilter.biome()).build();

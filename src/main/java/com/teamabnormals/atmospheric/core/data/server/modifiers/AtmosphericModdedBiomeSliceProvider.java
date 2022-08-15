@@ -36,7 +36,6 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 		private final Climate.Parameter[] temperatures = new Climate.Parameter[]{Climate.Parameter.span(-1.0F, -0.45F), Climate.Parameter.span(-0.45F, -0.15F), Climate.Parameter.span(-0.15F, 0.2F), Climate.Parameter.span(0.2F, 0.55F), Climate.Parameter.span(0.55F, 1.0F)};
 		private final Climate.Parameter[] humidities = new Climate.Parameter[]{Climate.Parameter.span(-1.0F, -0.35F), Climate.Parameter.span(-0.35F, -0.1F), Climate.Parameter.span(-0.1F, 0.1F), Climate.Parameter.span(0.1F, 0.3F), Climate.Parameter.span(0.3F, 1.0F)};
 		private final Climate.Parameter[] erosions = new Climate.Parameter[]{Climate.Parameter.span(-1.0F, -0.78F), Climate.Parameter.span(-0.78F, -0.375F), Climate.Parameter.span(-0.375F, -0.2225F), Climate.Parameter.span(-0.2225F, 0.05F), Climate.Parameter.span(0.05F, 0.45F), Climate.Parameter.span(0.45F, 0.55F), Climate.Parameter.span(0.55F, 1.0F)};
-		private final Climate.Parameter UNFROZEN_RANGE = Climate.Parameter.span(this.temperatures[1], this.temperatures[4]);
 		private final Climate.Parameter coastContinentalness = Climate.Parameter.span(-0.19F, -0.11F);
 		private final Climate.Parameter inlandContinentalness = Climate.Parameter.span(-0.11F, 0.55F);
 		private final Climate.Parameter nearInlandContinentalness = Climate.Parameter.span(-0.11F, 0.03F);
@@ -56,7 +55,10 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 		}
 
 		private void addOffCoastBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
-			this.addSurfaceBiome(consumer, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.2F, -0.19F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, VANILLA);
+			this.addSurfaceBiome(consumer, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.2F, -0.35F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, VANILLA);
+			this.addSurfaceBiome(consumer, Climate.Parameter.span(-1.0F, 0.2F), this.FULL_RANGE, Climate.Parameter.span(-0.35F, -0.19F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, VANILLA);
+			this.addSurfaceBiome(consumer, this.temperatures[3], Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(-0.35F, -0.19F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
+			this.addSurfaceBiome(consumer, this.temperatures[4], Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(-0.35F, -0.19F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, VANILLA);
 		}
 
 		private void addInlandBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
@@ -138,8 +140,8 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 			this.addSurfaceBiome(consumer, this.FULL_RANGE, this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), weirdness, 0.0F, VANILLA);
 
 			this.addSurfaceBiome(consumer, Climate.Parameter.span(-1.0F, 0.2F), FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, VANILLA);
-			this.addSurfaceBiome(consumer, this.temperatures[3], Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
-			this.addSurfaceBiome(consumer, this.temperatures[4], FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, VANILLA);
+			this.addSurfaceBiome(consumer, Climate.Parameter.span(0.2F, 0.6F), Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
+			this.addSurfaceBiome(consumer, Climate.Parameter.span(0.6F, 1.0F), FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, VANILLA);
 
 			for (int i = 0; i < this.temperatures.length; ++i) {
 				Climate.Parameter climate$parameter = this.temperatures[i];
@@ -190,8 +192,8 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 			this.addSurfaceBiome(consumer, this.FULL_RANGE, this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), weirdness, 0.0F, VANILLA);
 
 			this.addSurfaceBiome(consumer, Climate.Parameter.span(-1.0F, 0.2F), FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, VANILLA);
-			this.addSurfaceBiome(consumer, this.temperatures[3], Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
-			this.addSurfaceBiome(consumer, this.temperatures[4], FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, VANILLA);
+			this.addSurfaceBiome(consumer, Climate.Parameter.span(0.2F, 0.6F), Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
+			this.addSurfaceBiome(consumer, Climate.Parameter.span(0.6F, 1.0F), FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, VANILLA);
 
 			for (int i = 0; i < this.temperatures.length; ++i) {
 				Climate.Parameter climate$parameter = this.temperatures[i];
@@ -223,8 +225,8 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 
 		private void addValleys(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, Climate.Parameter weirdness) {
 			this.addRiverBiomes(consumer, Climate.Parameter.span(-1.0F, 0.2F), FULL_RANGE, weirdness, VANILLA);
-			this.addRiverBiomes(consumer, this.temperatures[3], Climate.Parameter.span(0.1F, 1.0F), weirdness, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
-			this.addRiverBiomes(consumer, this.temperatures[4], FULL_RANGE, weirdness, VANILLA);
+			this.addRiverBiomes(consumer, Climate.Parameter.span(0.2F, 0.6F), Climate.Parameter.span(0.1F, 1.0F), weirdness, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
+			this.addRiverBiomes(consumer, Climate.Parameter.span(0.6F, 1.0F), FULL_RANGE, weirdness, VANILLA);
 
 			for (int temperatureIndex = 0; temperatureIndex < this.temperatures.length; ++temperatureIndex) {
 				Climate.Parameter temperature = this.temperatures[temperatureIndex];

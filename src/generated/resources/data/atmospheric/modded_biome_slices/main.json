@@ -26,7 +26,7 @@
           ],
           "continentalness": [
             -1.2,
-            -0.19
+            -0.35
           ]
         },
         "biome": "blueprint:original_source_marker"
@@ -53,6 +53,168 @@
           ],
           "continentalness": [
             -1.2,
+            -0.35
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -1.0,
+            1.0
+          ],
+          "depth": 0.0,
+          "weirdness": [
+            -1.0,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            -1.0,
+            0.2
+          ],
+          "humidity": [
+            -1.0,
+            1.0
+          ],
+          "continentalness": [
+            -0.35,
+            -0.19
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -1.0,
+            1.0
+          ],
+          "depth": 1.0,
+          "weirdness": [
+            -1.0,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            -1.0,
+            0.2
+          ],
+          "humidity": [
+            -1.0,
+            1.0
+          ],
+          "continentalness": [
+            -0.35,
+            -0.19
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -1.0,
+            1.0
+          ],
+          "depth": 0.0,
+          "weirdness": [
+            -1.0,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            1.0
+          ],
+          "continentalness": [
+            -0.35,
+            -0.19
+          ]
+        },
+        "biome": "atmospheric:rainforest_basin"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -1.0,
+            1.0
+          ],
+          "depth": 1.0,
+          "weirdness": [
+            -1.0,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            1.0
+          ],
+          "continentalness": [
+            -0.35,
+            -0.19
+          ]
+        },
+        "biome": "atmospheric:rainforest_basin"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -1.0,
+            1.0
+          ],
+          "depth": 0.0,
+          "weirdness": [
+            -1.0,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "humidity": [
+            0.1,
+            1.0
+          ],
+          "continentalness": [
+            -0.35,
+            -0.19
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -1.0,
+            1.0
+          ],
+          "depth": 1.0,
+          "weirdness": [
+            -1.0,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "humidity": [
+            0.1,
+            1.0
+          ],
+          "continentalness": [
+            -0.35,
             -0.19
           ]
         },
@@ -180,7 +342,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -207,7 +369,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -233,7 +395,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -260,7 +422,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -69516,7 +69678,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -69543,7 +69705,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -69569,7 +69731,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -69596,7 +69758,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -88902,7 +89064,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -88929,7 +89091,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -88955,7 +89117,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -88982,7 +89144,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -103050,7 +103212,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -103077,7 +103239,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -103104,7 +103266,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -103131,7 +103293,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -103158,7 +103320,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -103185,7 +103347,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -103212,7 +103374,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -103239,7 +103401,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -103266,7 +103428,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -103293,7 +103455,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -103319,7 +103481,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -103346,7 +103508,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -103373,7 +103535,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -103400,7 +103562,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -103427,7 +103589,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -103454,7 +103616,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -103481,7 +103643,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -103508,7 +103670,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -103535,7 +103697,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -103562,7 +103724,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -105048,7 +105210,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -105075,7 +105237,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -105101,7 +105263,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -105128,7 +105290,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -119034,7 +119196,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -119061,7 +119223,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -119087,7 +119249,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -119114,7 +119276,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -187020,7 +187182,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -187047,7 +187209,7 @@
           "offset": 0.0,
           "temperature": [
             0.2,
-            0.55
+            0.6
           ],
           "humidity": [
             0.1,
@@ -187073,7 +187235,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [
@@ -187100,7 +187262,7 @@
           ],
           "offset": 0.0,
           "temperature": [
-            0.55,
+            0.6,
             1.0
           ],
           "humidity": [

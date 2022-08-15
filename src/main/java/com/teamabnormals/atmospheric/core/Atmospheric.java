@@ -53,6 +53,8 @@ public class Atmospheric {
 		AtmosphericFeatures.FEATURES.register(bus);
 		AtmosphericConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
 		AtmosphericPlacedFeatures.PLACED_FEATURES.register(bus);
+		AtmosphericNoiseParameters.NOISE_PARAMETERS.register(bus);
+		AtmosphericPlacementModifierTypes.PLACEMENT_MODIFIER_TYPES.register(bus);
 		AtmosphericParticleTypes.PARTICLES.register(bus);
 		AtmosphericMobEffects.EFFECTS.register(bus);
 		AtmosphericMobEffects.POTIONS.register(bus);

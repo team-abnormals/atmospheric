@@ -15,6 +15,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraftforge.common.Tags;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +79,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 
 			if (!flag) {
 				return false;
-			} else if (TreeUtil.isValidGround(worldIn, position.below(), (SaplingBlock) AtmosphericBlocks.ROSEWOOD_SAPLING.get()) && position.getY() < worldIn.getMaxBuildHeight() - branches - 1) {
+			} else if ((TreeUtil.isValidGround(worldIn, position.below(), (SaplingBlock) AtmosphericBlocks.ROSEWOOD_SAPLING.get()) || worldIn.getBlockState(position.below()).is(Tags.Blocks.GRAVEL)) && position.getY() < worldIn.getMaxBuildHeight() - branches - 1) {
 				// base log
 				if (!this.water)
 					TreeUtil.setDirtAt(worldIn, position.below());
