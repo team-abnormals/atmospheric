@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:rosewood_chest",
+    "atmospheric:morado_chest",
+    "atmospheric:yucca_chest",
+    "atmospheric:kousa_chest",
+    "atmospheric:aspen_chest",
+    "atmospheric:grimwood_chest"
+  ]
+}

@@ -3,15 +3,20 @@ package com.teamabnormals.atmospheric.core.data.server.tags;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
+import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.Tags.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import static com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags.*;
-import static com.teamabnormals.atmospheric.core.registry.AtmosphericItems.*;
+import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.*;
 
 public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 
@@ -47,8 +52,26 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 		this.copy(BlockTags.TALL_FLOWERS, ItemTags.TALL_FLOWERS);
 		this.copy(BlockTags.FLOWERS, ItemTags.FLOWERS);
 		this.copy(BlockTags.STANDING_SIGNS, ItemTags.SIGNS);
-		this.tag(ItemTags.BOATS).add(ROSEWOOD_BOAT.get(), MORADO_BOAT.get(), YUCCA_BOAT.get(), KOUSA_BOAT.get(), ASPEN_BOAT.get(), GRIMWOOD_BOAT.get());
-		this.tag(ItemTags.PIGLIN_LOVED).add(SHIMMERING_PASSIONFRUIT.get(), AtmosphericBlocks.SHIMMERING_PASSIONFRUIT_CRATE.get().asItem());
+		this.tag(ItemTags.FLOWERS).add(AtmosphericItems.YELLOW_BLOSSOMS.get());
+		this.tag(ItemTags.BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.get(), AtmosphericItems.MORADO_BOAT.get(), AtmosphericItems.YUCCA_BOAT.get(), AtmosphericItems.KOUSA_BOAT.get(), AtmosphericItems.ASPEN_BOAT.get(), AtmosphericItems.GRIMWOOD_BOAT.get());
+		this.tag(ItemTags.PIGLIN_LOVED).add(AtmosphericItems.SHIMMERING_PASSIONFRUIT.get(), AtmosphericBlocks.SHIMMERING_PASSIONFRUIT_CRATE.get().asItem());
 
+		this.copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
+		this.copy(Tags.Blocks.CHESTS_TRAPPED, Tags.Items.CHESTS_TRAPPED);
+		this.copy(Tags.Blocks.FENCE_GATES_WOODEN, Tags.Items.FENCE_GATES_WOODEN);
+		this.copy(Tags.Blocks.FENCES_WOODEN, Tags.Items.FENCES_WOODEN);
+		this.copy(Tags.Blocks.SAND_COLORLESS, Tags.Items.SAND_COLORLESS);
+		this.copy(Tags.Blocks.SAND_RED, Tags.Items.SAND_RED);
+		this.copy(Tags.Blocks.SANDSTONE, Tags.Items.SANDSTONE);
+		this.tag(Tags.Items.BOOKSHELVES).add(ROSEWOOD_BOOKSHELF.get().asItem(), MORADO_BOOKSHELF.get().asItem(), YUCCA_BOOKSHELF.get().asItem(), KOUSA_BOOKSHELF.get().asItem(), ASPEN_BOOKSHELF.get().asItem(), GRIMWOOD_BOOKSHELF.get().asItem());
+		this.tag(FRUITS).addTag(FRUITS_PASSIONFRUIT);
+		this.tag(FRUITS_PASSIONFRUIT).add(AtmosphericItems.PASSIONFRUIT.get());
+
+		this.copy(BlueprintBlockTags.LADDERS, BlueprintItemTags.LADDERS);
+		this.copy(BlueprintBlockTags.HEDGES, BlueprintItemTags.HEDGES);
+		this.copy(BlueprintBlockTags.VERTICAL_SLABS, BlueprintItemTags.VERTICAL_SLABS);
+		this.copy(BlueprintBlockTags.WOODEN_VERTICAL_SLABS, BlueprintItemTags.WOODEN_VERTICAL_SLABS);
+		this.tag(BlueprintItemTags.BOATABLE_CHESTS).add(ROSEWOOD_CHESTS.getFirst().get().asItem(), MORADO_CHESTS.getFirst().get().asItem(), YUCCA_CHESTS.getFirst().get().asItem(), KOUSA_CHESTS.getFirst().get().asItem(), ASPEN_CHESTS.getFirst().get().asItem(), GRIMWOOD_CHESTS.getFirst().get().asItem());
+		this.tag(BlueprintItemTags.REVERTABLE_CHESTS).add(ROSEWOOD_CHESTS.getFirst().get().asItem(), MORADO_CHESTS.getFirst().get().asItem(), YUCCA_CHESTS.getFirst().get().asItem(), KOUSA_CHESTS.getFirst().get().asItem(), ASPEN_CHESTS.getFirst().get().asItem(), GRIMWOOD_CHESTS.getFirst().get().asItem());
 	}
 }

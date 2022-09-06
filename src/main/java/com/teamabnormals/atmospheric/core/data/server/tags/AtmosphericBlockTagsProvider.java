@@ -1,6 +1,8 @@
 package com.teamabnormals.atmospheric.core.data.server.tags;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
+import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
@@ -64,5 +66,19 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(YUCCA_PLACEABLE).addTag(BlockTags.SAND).addTag(BlockTags.DIRT);
 		this.tag(YUCCA_FLOWER_PLACEABLE).add(Blocks.CACTUS, YUCCA_LEAVES.get(), YUCCA_HEDGE.get()).addTag(YUCCA_PLACEABLE);
 		this.tag(BARREL_CACTUS_PLACEABLE).addTag(BlockTags.SAND);
+
+		this.tag(Tags.Blocks.CHESTS_WOODEN).add(ROSEWOOD_CHESTS.getFirst().get(), ROSEWOOD_CHESTS.getSecond().get(), MORADO_CHESTS.getFirst().get(), MORADO_CHESTS.getSecond().get(), YUCCA_CHESTS.getFirst().get(), YUCCA_CHESTS.getSecond().get(), KOUSA_CHESTS.getFirst().get(), KOUSA_CHESTS.getSecond().get(), ASPEN_CHESTS.getFirst().get(), ASPEN_CHESTS.getSecond().get(), GRIMWOOD_CHESTS.getFirst().get(), GRIMWOOD_CHESTS.getSecond().get());
+		this.tag(Tags.Blocks.CHESTS_TRAPPED).add(ROSEWOOD_CHESTS.getSecond().get(), MORADO_CHESTS.getSecond().get(), YUCCA_CHESTS.getSecond().get(), KOUSA_CHESTS.getSecond().get(), ASPEN_CHESTS.getSecond().get(), GRIMWOOD_CHESTS.getSecond().get());
+		this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(ROSEWOOD_FENCE_GATE.get(), MORADO_FENCE_GATE.get(), YUCCA_FENCE_GATE.get(), KOUSA_FENCE_GATE.get(), ASPEN_FENCE_GATE.get(), GRIMWOOD_FENCE_GATE.get());
+		this.tag(Tags.Blocks.FENCES_WOODEN).add(ROSEWOOD_FENCE.get(), MORADO_FENCE.get(), YUCCA_FENCE.get(), KOUSA_FENCE.get(), ASPEN_FENCE.get(), GRIMWOOD_FENCE.get());
+		this.tag(Tags.Blocks.SAND_COLORLESS).add(ARID_SAND.get());
+		this.tag(Tags.Blocks.SAND_RED).add(RED_ARID_SAND.get());
+		this.tag(Tags.Blocks.SANDSTONE).add(ARID_SANDSTONE.get(), CUT_ARID_SANDSTONE.get(), CHISELED_ARID_SANDSTONE.get(), SMOOTH_ARID_SANDSTONE.get(), RED_ARID_SANDSTONE.get(), CUT_RED_ARID_SANDSTONE.get(), CHISELED_RED_ARID_SANDSTONE.get(), SMOOTH_RED_ARID_SANDSTONE.get());
+
+		//this.tag(BlueprintBlockTags.LEAF_PILES).add(ROSEWOOD_LEAF_PILE.get(), MORADO_LEAF_PILE.get(), FLOWERING_MORADO_LEAF_PILE.get(), YUCCA_LEAF_PILE.get(), KOUSA_LEAF_PILE.get(), ASPEN_LEAF_PILE.get(), GRIMWOOD_LEAF_PILE.get());
+		this.tag(BlueprintBlockTags.LADDERS).add(ROSEWOOD_LADDER.get(), MORADO_LADDER.get(), YUCCA_LADDER.get(), KOUSA_LADDER.get(), ASPEN_LADDER.get(), GRIMWOOD_LADDER.get());
+		this.tag(BlueprintBlockTags.VERTICAL_SLABS).add(ARID_SANDSTONE_VERTICAL_SLAB.get(), SMOOTH_ARID_SANDSTONE_VERTICAL_SLAB.get(), CUT_ARID_SANDSTONE_VERTICAL_SLAB.get(), ARID_SANDSTONE_BRICK_VERTICAL_SLAB.get(), RED_ARID_SANDSTONE_VERTICAL_SLAB.get(), SMOOTH_RED_ARID_SANDSTONE_VERTICAL_SLAB.get(), CUT_RED_ARID_SANDSTONE_VERTICAL_SLAB.get(), RED_ARID_SANDSTONE_BRICK_VERTICAL_SLAB.get(), IVORY_TRAVERTINE_VERTICAL_SLAB.get(), PEACH_TRAVERTINE_VERTICAL_SLAB.get(), PERSIMMON_TRAVERTINE_VERTICAL_SLAB.get(), SAFFRON_TRAVERTINE_VERTICAL_SLAB.get());
+		this.tag(BlueprintBlockTags.WOODEN_VERTICAL_SLABS).add(ROSEWOOD_VERTICAL_SLAB.get(), MORADO_VERTICAL_SLAB.get(), YUCCA_VERTICAL_SLAB.get(), KOUSA_VERTICAL_SLAB.get(), ASPEN_VERTICAL_SLAB.get(), GRIMWOOD_VERTICAL_SLAB.get());
+		this.tag(BlueprintBlockTags.HEDGES).add(ROSEWOOD_HEDGE.get(), MORADO_HEDGE.get(), FLOWERING_MORADO_HEDGE.get(), YUCCA_HEDGE.get(), KOUSA_HEDGE.get(), ASPEN_HEDGE.get(), GRIMWOOD_HEDGE.get());
 	}
 }

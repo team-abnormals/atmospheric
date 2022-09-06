@@ -13,6 +13,9 @@ public class AtmosphericItemTags {
 	public static final TagKey<Item> KOUSA_LOGS = itemTag("kousa_logs");
 	public static final TagKey<Item> GRIMWOOD_LOGS = itemTag("grimwood_logs");
 
+	public static final TagKey<Item> FRUITS = TagUtil.itemTag("forge", "fruits");
+	public static final TagKey<Item> FRUITS_PASSIONFRUIT = TagUtil.itemTag("forge", "fruits/passionfruit");
+
 	private static TagKey<Item> itemTag(String name) {
 		return TagUtil.itemTag(Atmospheric.MOD_ID, name);
 	}
