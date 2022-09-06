@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.core.other;
 
+import com.teamabnormals.blueprint.core.util.PropertyUtil.WoodSetProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
@@ -11,6 +12,12 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 
 public class AtmosphericProperties {
+	public static final WoodSetProperties ROSEWOOD = WoodSetProperties.builder(MaterialColor.TERRACOTTA_MAGENTA).build();
+	public static final WoodSetProperties MORADO = WoodSetProperties.builder(MaterialColor.COLOR_RED).build();
+	public static final WoodSetProperties YUCCA = WoodSetProperties.builder(MaterialColor.COLOR_ORANGE).build();
+	public static final WoodSetProperties KOUSA = WoodSetProperties.builder(MaterialColor.TERRACOTTA_CYAN).build();
+	public static final WoodSetProperties ASPEN = WoodSetProperties.builder(MaterialColor.GOLD).build();
+	public static final WoodSetProperties GRIMWOOD = WoodSetProperties.builder(MaterialColor.TERRACOTTA_BLACK).build();
 
 	public static final BlockBehaviour.Properties ARID_SAND = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.SAND).strength(0.5F).sound(SoundType.SAND);
 	public static final BlockBehaviour.Properties RED_ARID_SAND = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_ORANGE).strength(0.5F).sound(SoundType.SAND);
