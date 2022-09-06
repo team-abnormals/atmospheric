@@ -3,13 +3,9 @@ package com.teamabnormals.atmospheric.core.data.server.tags;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
-import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
-import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class AtmosphericItemTagsProvider extends ItemTagsProvider {

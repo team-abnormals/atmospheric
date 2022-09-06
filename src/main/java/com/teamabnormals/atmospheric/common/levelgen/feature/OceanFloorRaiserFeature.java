@@ -110,6 +110,7 @@ public class OceanFloorRaiserFeature extends Feature<NoneFeatureConfiguration> {
 		}
 	}
 
-	private static record DampeningPoint(int x, int z) {}
+	private static record DampeningPoint(int x, int z) {
+	}
 
 }
