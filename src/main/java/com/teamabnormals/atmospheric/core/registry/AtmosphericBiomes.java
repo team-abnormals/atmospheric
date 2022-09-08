@@ -1,14 +1,12 @@
 package com.teamabnormals.atmospheric.core.registry;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.AtmosphericConfig;
 import com.teamabnormals.blueprint.core.util.registry.BiomeSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.BiomeSubRegistryHelper.KeyedBiome;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.biome.*;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
-import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
@@ -26,20 +24,6 @@ public class AtmosphericBiomes {
 	public static final KeyedBiome PETRIFIED_DUNES = HELPER.createBiome("petrified_dunes", () -> createDunesBiome());
 
 	public static final KeyedBiome HOT_SPRINGS = HELPER.createBiome("hot_springs", AtmosphericBiomes::createHotSpringsBiome);
-
-	public static void registerBiomesToDictionary() {
-		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RAINFOREST.getKey(), AtmosphericConfig.COMMON.rainforestWeight.get()));
-		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(SPARSE_RAINFOREST.getKey(), AtmosphericConfig.COMMON.sparseRainforestPlateauWeight.get()));
-		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RAINFOREST_BASIN.getKey(), AtmosphericConfig.COMMON.rainforestBasinWeight.get()));
-		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(SPARSE_RAINFOREST_BASIN.getKey(), AtmosphericConfig.COMMON.sparseRainforestBasinWeight.get()));
-
-		BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(DUNES.getKey(), AtmosphericConfig.COMMON.dunesWeight.get()));
-		BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(FLOURISHING_DUNES.getKey(), AtmosphericConfig.COMMON.flourishingDunesWeight.get()));
-		BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(ROCKY_DUNES.getKey(), AtmosphericConfig.COMMON.rockyDunesWeight.get()));
-		BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(PETRIFIED_DUNES.getKey(), AtmosphericConfig.COMMON.petrifiedDunesWeight.get()));
-
-		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(HOT_SPRINGS.getKey(), AtmosphericConfig.COMMON.hotSpringsWeight.get()));
-	}
 
 	public static void addBiomeTypes() {
 		BiomeDictionary.addTypes(RAINFOREST.getKey(), Type.JUNGLE, Type.FOREST, Type.OVERWORLD);

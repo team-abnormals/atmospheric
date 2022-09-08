@@ -76,7 +76,6 @@ public class Atmospheric {
 	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			AtmosphericBiomes.addBiomeTypes();
-			AtmosphericBiomes.registerBiomesToDictionary();
 			AtmosphericVillagers.setupVillagerTypes();
 			AtmosphericCompat.registerCompat();
 			AtmosphericMobEffects.registerBrewingRecipes();
