@@ -1,6 +1,25 @@
 {
   "parent": "blueprint:block/tinted_leaf_pile",
   "textures": {
-    "all": "atmospheric:block/morado_leaves"
-  }
+    "all": "atmospheric:block/morado_leaves",
+    "overlay": "atmospheric:block/flowering_morado_leaves_overlay"
+  },
+  "elements": [
+    {
+      "from": [ 0, 0, 0.1 ],
+      "to": [ 16, 16, 0.1 ],
+      "faces": {
+        "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#all", "tintindex": 0 },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#all", "tintindex": 0}
+      }
+    },
+    {
+      "from": [ 0, 0, 0.1 ],
+      "to": [ 16, 16, 0.1 ],
+      "faces": {
+        "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#overlay" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay" }
+      }
+    }
+  ]
 }

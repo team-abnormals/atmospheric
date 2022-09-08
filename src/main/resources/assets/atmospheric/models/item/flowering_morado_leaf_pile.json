@@ -1,6 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "atmospheric:block/flowering_morado_leaves"
+        "layer0": "atmospheric:block/flowering_morado_leaves",
+        "layer1": "atmospheric:block/flowering_morado_leaves_overlay"
     }
 }
