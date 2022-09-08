@@ -3,7 +3,7 @@
     "start_pool": "atmospheric:arid_shrine",
     "size": 1
   },
-  "biomes": "#minecraft:has_structure/village_plains",
+  "biomes": "#atmospheric:has_structure/arid_shrine",
   "adapt_noise": true,
   "spawn_overrides": {
     "creature": {

@@ -7,6 +7,7 @@ import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericAdvan
 import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericChunkGeneratorModifierProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericLootModifierProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericModdedBiomeSliceProvider;
+import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBiomeTagsProvider;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBlockTagsProvider;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericEntityTypeTagsProvider;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericItemTagsProvider;
@@ -99,6 +100,7 @@ public class Atmospheric {
 			generator.addProvider(blockTags);
 			generator.addProvider(new AtmosphericItemTagsProvider(generator, blockTags, existingFileHelper));
 			generator.addProvider(new AtmosphericEntityTypeTagsProvider(generator, existingFileHelper));
+			generator.addProvider(new AtmosphericBiomeTagsProvider(generator, existingFileHelper));
 			generator.addProvider(new AtmosphericAdvancementProvider(generator, existingFileHelper));
 			generator.addProvider(new AtmosphericAdvancementModifierProvider(generator));
 			generator.addProvider(new AtmosphericLootModifierProvider(generator));

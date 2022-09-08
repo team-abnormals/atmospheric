@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:dunes",
+    "atmospheric:flourishing_dunes",
+    "atmospheric:rocky_dunes",
+    "atmospheric:petrified_dunes"
+  ]
+}
