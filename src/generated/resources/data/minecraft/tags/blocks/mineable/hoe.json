@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:rosewood_leaves",
+    "atmospheric:rosewood_leaf_pile",
+    "atmospheric:rosewood_leaf_carpet",
+    "atmospheric:morado_leaves",
+    "atmospheric:morado_leaf_pile",
+    "atmospheric:morado_leaf_carpet",
+    "atmospheric:flowering_morado_leaves",
+    "atmospheric:flowering_morado_leaf_pile",
+    "atmospheric:flowering_morado_leaf_carpet",
+    "atmospheric:yucca_leaves",
+    "atmospheric:yucca_leaf_pile",
+    "atmospheric:yucca_leaf_carpet",
+    "atmospheric:kousa_leaves",
+    "atmospheric:kousa_leaf_pile",
+    "atmospheric:kousa_leaf_carpet",
+    "atmospheric:aspen_leaves",
+    "atmospheric:aspen_leaf_pile",
+    "atmospheric:aspen_leaf_carpet",
+    "atmospheric:grimwood_leaves",
+    "atmospheric:grimwood_leaf_pile",
+    "atmospheric:grimwood_leaf_carpet",
+    "atmospheric:passion_vine",
+    "atmospheric:passion_vine_bundle",
+    "atmospheric:yucca_bundle",
+    "atmospheric:roasted_yucca_bundle",
+    "atmospheric:aloe_bundle"
+  ]
+}

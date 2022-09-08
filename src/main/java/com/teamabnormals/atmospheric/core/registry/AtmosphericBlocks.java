@@ -102,13 +102,13 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> WATER_HYACINTH = HELPER.createBlockNoItem("water_hyacinth", () -> new WaterHyacinthBlock(Block.Properties.of(Material.PLANT).noCollission().strength(0F).sound(SoundType.VINE)));
 
-	public static final RegistryObject<Block> WARM_WALL_MONKEY_BRUSH = HELPER.createBlockNoItem("warm_wall_monkey_brush", () -> new WallMonkeyBrushBlock(Block.Properties.copy(Blocks.ALLIUM)));
-	public static final RegistryObject<Block> HOT_WALL_MONKEY_BRUSH = HELPER.createBlockNoItem("hot_wall_monkey_brush", () -> new WallMonkeyBrushBlock(Block.Properties.copy(Blocks.ALLIUM)));
-	public static final RegistryObject<Block> SCALDING_WALL_MONKEY_BRUSH = HELPER.createBlockNoItem("scalding_wall_monkey_brush", () -> new WallMonkeyBrushBlock(Block.Properties.copy(Blocks.ALLIUM)));
+	public static final RegistryObject<Block> WARM_WALL_MONKEY_BRUSH = HELPER.createBlockNoItem("warm_wall_monkey_brush", () -> new WallMonkeyBrushBlock(PropertyUtil.FLOWER));
+	public static final RegistryObject<Block> HOT_WALL_MONKEY_BRUSH = HELPER.createBlockNoItem("hot_wall_monkey_brush", () -> new WallMonkeyBrushBlock(PropertyUtil.FLOWER));
+	public static final RegistryObject<Block> SCALDING_WALL_MONKEY_BRUSH = HELPER.createBlockNoItem("scalding_wall_monkey_brush", () -> new WallMonkeyBrushBlock(PropertyUtil.FLOWER));
 
-	public static final RegistryObject<Block> WARM_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("warm_monkey_brush", () -> new MonkeyBrushBlock(Block.Properties.copy(Blocks.ALLIUM)), WARM_WALL_MONKEY_BRUSH::get, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> HOT_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("hot_monkey_brush", () -> new MonkeyBrushBlock(Block.Properties.copy(Blocks.ALLIUM)), HOT_WALL_MONKEY_BRUSH::get, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("scalding_monkey_brush", () -> new MonkeyBrushBlock(Block.Properties.copy(Blocks.ALLIUM)), SCALDING_WALL_MONKEY_BRUSH::get, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> WARM_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("warm_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.FLOWER), WARM_WALL_MONKEY_BRUSH::get, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> HOT_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("hot_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.FLOWER), HOT_WALL_MONKEY_BRUSH::get, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("scalding_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.FLOWER), SCALDING_WALL_MONKEY_BRUSH::get, CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> POTTED_WARM_MONKEY_BRUSH = HELPER.createBlockNoItem("potted_warm_monkey_brush", () -> new FlowerPotBlock(WARM_MONKEY_BRUSH.get(), Block.Properties.copy(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_HOT_MONKEY_BRUSH = HELPER.createBlockNoItem("potted_hot_monkey_brush", () -> new FlowerPotBlock(HOT_MONKEY_BRUSH.get(), Block.Properties.copy(Blocks.POTTED_ALLIUM)));
@@ -269,8 +269,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> STRIPPED_KOUSA_WOOD = HELPER.createBlock("stripped_kousa_wood", () -> new StrippedWoodBlock(AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_LOG = HELPER.createBlock("kousa_log", () -> new LogBlock(STRIPPED_KOUSA_LOG, AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_WOOD = HELPER.createBlock("kousa_wood", () -> new WoodBlock(STRIPPED_KOUSA_WOOD, AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LEAVES = HELPER.createBlock("kousa_leaves", () -> new BlueprintLeavesBlock(AtmosphericProperties.KOUSA.leaves()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> KOUSA_SAPLING = HELPER.createBlock("kousa_sapling", () -> new BlueprintSaplingBlock(new KousaTreeGrower(), PropertyUtil.SAPLING), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_LEAVES = HELPER.createBlock("kousa_leaves", () -> new YuccaLeavesBlock(AtmosphericProperties.KOUSA.leaves()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_SAPLING = HELPER.createBlock("kousa_sapling", () -> new YuccaSaplingBlock(new KousaTreeGrower(), PropertyUtil.SAPLING), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_KOUSA_SAPLING = HELPER.createBlockNoItem("potted_kousa_sapling", () -> new FlowerPotBlock(KOUSA_SAPLING.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> KOUSA_PLANKS = HELPER.createBlock("kousa_planks", () -> new PlanksBlock(AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_STAIRS = HELPER.createBlock("kousa_stairs", () -> new WoodStairBlock(KOUSA_PLANKS.get().defaultBlockState(), AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -294,8 +294,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> KOUSA_VERTICAL_SLAB = HELPER.createCompatFuelBlock("quark", "kousa_vertical_slab", () -> new VerticalSlabBlock(AtmosphericProperties.KOUSA.planks()), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_KOUSA_POST = HELPER.createCompatFuelBlock("quark", "stripped_kousa_post", () -> new WoodPostBlock(AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_POST = HELPER.createCompatFuelBlock("quark", "kousa_post", () -> new WoodPostBlock(STRIPPED_KOUSA_POST, AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LEAF_CARPET = HELPER.createCompatBlock("quark", "kousa_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.KOUSA.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> KOUSA_HEDGE = HELPER.createCompatFuelBlock("quark", "kousa_hedge", () -> new HedgeBlock(AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_LEAF_CARPET = HELPER.createCompatBlock("quark", "kousa_leaf_carpet", () -> new YuccaLeafCarpetBlock(AtmosphericProperties.KOUSA.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_HEDGE = HELPER.createCompatFuelBlock("quark", "kousa_hedge", () -> new YuccaHedgeBlock(AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

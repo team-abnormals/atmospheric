@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "atmospheric:rosewood_leaf_pile",
+    "atmospheric:morado_leaf_pile",
+    "atmospheric:flowering_morado_leaf_pile",
+    "atmospheric:yucca_leaf_pile",
+    "atmospheric:kousa_leaf_pile",
+    "atmospheric:aspen_leaf_pile",
+    "atmospheric:grimwood_leaf_pile"
+  ]
+}
