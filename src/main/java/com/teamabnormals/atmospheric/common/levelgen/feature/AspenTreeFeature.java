@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.core.util.TreeUtil;
@@ -13,8 +14,8 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class AspenTreeFeature extends Feature<TreeConfiguration> {
 
@@ -61,7 +62,7 @@ public class AspenTreeFeature extends Feature<TreeConfiguration> {
 			} else if (TreeUtil.isValidGround(worldIn, position.below(), (SaplingBlock) AtmosphericBlocks.ASPEN_SAPLING.get()) && position.getY() < worldIn.getMaxBuildHeight()) {
 				// base log
 				TreeUtil.setDirtAt(worldIn, position.below());
-				List<BlockPos> logsPlaced = new ArrayList<>();
+				Set<BlockPos> logsPlaced = Sets.newHashSet();
 
 				int logX = position.getX();
 				int logZ = position.getZ();
@@ -74,7 +75,7 @@ public class AspenTreeFeature extends Feature<TreeConfiguration> {
 					BlockPos blockpos = new BlockPos(logX, logY, logZ);
 					if (TreeUtil.isAirOrLeaves(worldIn, blockpos)) {
 						TreeUtil.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);
-						logsPlaced.add(blockpos);
+						logsPlaced.add(blockpos.immutable());
 					}
 
 					if (k1 >= leafHeight) {
@@ -113,7 +114,8 @@ public class AspenTreeFeature extends Feature<TreeConfiguration> {
 					}
 				}
 
-				TreeUtil.placeLeafAt(worldIn, new BlockPos(logX, height + 4, logZ), rand, config);
+				TreeUtil.placeLeafAt(worldIn, position.offset(0, height, 0), rand, config);
+				TreeUtil.updateLeaves(worldIn, logsPlaced);
 
 				return true;
 			} else {

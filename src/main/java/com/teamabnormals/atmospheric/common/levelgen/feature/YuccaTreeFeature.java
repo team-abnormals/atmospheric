@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature;
 
+import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.YuccaTreeConfiguration;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
@@ -10,15 +11,17 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.LevelSimulatedRW;
 import net.minecraft.world.level.LevelWriter;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
 import java.util.Random;
+import java.util.Set;
 
 public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
+	private final Set<BlockPos> logPosSet = Sets.newHashSet();
+
 	public YuccaTreeFeature(Codec<YuccaTreeConfiguration> config) {
 		super(config);
 	}
@@ -67,7 +70,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 						logY = position.getY() + k1;
 						BlockPos blockpos = new BlockPos(logX, logY, logZ);
 						if (TreeUtil.isAirOrLeaves(worldIn, blockpos)) {
-							TreeUtil.setForcedState(worldIn, blockpos, config.trunkProvider.getState(rand, blockpos));
+							this.placeLogAt(worldIn, blockpos, Direction.UP, false, rand, config);
 						}
 					}
 
@@ -88,6 +91,8 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 						}
 					}
 
+					System.out.println(logPosSet);
+					TreeUtil.updateLeaves(worldIn, this.logPosSet);
 					return true;
 				} else {
 					return false;
@@ -128,8 +133,9 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 					if (!TreeUtil.isInTag(worldIn, position.below(), BlockTags.SAND))
 						TreeUtil.setDirtAt(worldIn, position.below());
 					for (int ja = 0; ja < reduction; ++ja) {
-						if (config.petrified)
+						if (config.petrified) {
 							this.placeLogAt(worldIn, position.below(ja), Direction.UP, false, rand, config);
+						}
 					}
 
 					int logX = position.getX();
@@ -184,6 +190,8 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 						}
 					}
 
+					System.out.println(logPosSet);
+					TreeUtil.updateLeaves(worldIn, logPosSet);
 					return true;
 				} else {
 					return false;
@@ -269,6 +277,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 	private void placeLogAt(LevelWriter worldIn, BlockPos pos, Direction direction, boolean bundle, Random rand, YuccaTreeConfiguration config) {
 		BlockState logState = config.petrified ? config.trunkProvider.getState(rand, pos) : config.trunkProvider.getState(rand, pos).setValue(RotatedPillarBlock.AXIS, direction.getAxis());
 		TreeUtil.setForcedState(worldIn, pos, logState);
+		logPosSet.add(pos.immutable());
 		if (bundle && !config.petrified) {
 			TreeUtil.setForcedState(worldIn, pos.below(), config.branchProvider.getState(rand, pos.below()));
 		}
@@ -276,11 +285,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 
 	private void placeLeafAt(LevelSimulatedRW world, BlockPos pos, Random rand, YuccaTreeConfiguration config) {
 		if (TreeUtil.isAirOrLeaves(world, pos) && !config.petrified) {
-			if (config.leavesProvider.getState(rand, pos).hasProperty(LeavesBlock.DISTANCE)) {
-				TreeUtil.setForcedState(world, pos, config.leavesProvider.getState(rand, pos).setValue(LeavesBlock.DISTANCE, 1));
-			} else {
-				TreeUtil.setForcedState(world, pos, config.leavesProvider.getState(rand, pos));
-			}
+			TreeUtil.setForcedState(world, pos, config.leavesProvider.getState(rand, pos));
 		}
 		if (rand.nextInt(8) == 0 && !config.petrified) {
 			placeFlowerAt(world, pos.above(), rand, config);
