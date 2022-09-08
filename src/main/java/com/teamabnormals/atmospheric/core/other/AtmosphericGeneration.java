@@ -67,7 +67,7 @@ public class AtmosphericGeneration {
 		}
 
 		if (DataUtil.matchesKeys(biome, Biomes.WOODED_BADLANDS)) {
-			generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_DUNES.getHolder().get());
+			generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_WOODED_BADLANDS.getHolder().get());
 		}
 
 		if (DataUtil.matchesKeys(biome, Biomes.WINDSWEPT_SAVANNA)) {
