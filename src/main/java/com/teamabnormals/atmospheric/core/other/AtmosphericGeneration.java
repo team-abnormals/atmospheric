@@ -110,12 +110,14 @@ public class AtmosphericGeneration {
 		AtmosphericGeneration.withRainforestBasinWaterFoliage(generation);
 		generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericPlacedFeatures.OCEAN_FLOOR_RAISER.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_RAINFOREST_BASIN.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.OAK_RAINFOREST_BASIN.getHolder().get());
 	}
 
 	public static void sparseRainforestBasin(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
 		AtmosphericGeneration.baseRainforest(generation, spawns);
 		AtmosphericGeneration.withSparseRainforestBasinWaterFoliage(generation);
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_SPARSE_RAINFOREST_BASIN.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.OAK_RAINFOREST_BASIN.getHolder().get());
 	}
 
 	public static void baseDunes(BiomeGenerationSettingsBuilder generation, MobSpawnSettingsBuilder spawns) {
