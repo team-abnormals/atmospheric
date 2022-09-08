@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "boatload",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "large_boat",
+        "pattern": [
+          "#B#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "atmospheric:yucca_planks"
+          },
+          "B": {
+            "item": "atmospheric:yucca_boat"
+          }
+        },
+        "result": {
+          "item": "atmospheric:large_yucca_boat"
+        }
+      }
+    }
+  ]
+}

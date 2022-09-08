@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "boatload",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "large_boat",
+        "pattern": [
+          "#B#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "atmospheric:kousa_planks"
+          },
+          "B": {
+            "item": "atmospheric:kousa_boat"
+          }
+        },
+        "result": {
+          "item": "atmospheric:large_kousa_boat"
+        }
+      }
+    }
+  ]
+}

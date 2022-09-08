@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "atmospheric:item/rosewood_furnace_boat"
+  }
+}
