@@ -195,7 +195,6 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addSavannaGrass(generation);
 		BiomeDefaultFeatures.addJungleGrass(generation);
 		BiomeDefaultFeatures.addJungleVines(generation);
-		BiomeDefaultFeatures.addDefaultFlowers(generation);
 		BiomeDefaultFeatures.addForestFlowers(generation);
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PODZOL.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PASSION_VINES.getHolder().get());
