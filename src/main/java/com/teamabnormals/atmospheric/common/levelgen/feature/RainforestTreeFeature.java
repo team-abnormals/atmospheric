@@ -103,7 +103,9 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 						for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 							for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
 								if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-									TreeUtil.placeLeafAt(level, blockpos.offset(k3, 0, j4), rand, config);
+									if (!level.isStateAtPosition(blockpos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
+										TreeUtil.placeLeafAt(level, blockpos.offset(k3, 0, j4), rand, config);
+									}
 								}
 							}
 						}
@@ -146,7 +148,9 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 					for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 						for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
 							if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-								TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), rand, config);
+								if (!level.isStateAtPosition(currentPos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
+									TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), rand, config);
+								}
 							}
 						}
 					}
@@ -156,7 +160,9 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 					for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
 						for (int j4 = -leafSizeTop; j4 <= leafSizeTop; ++j4) {
 							if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
-								TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), rand, config);
+								if (!level.isStateAtPosition(currentPos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
+									TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), rand, config);
+								}
 							}
 						}
 					}
@@ -165,7 +171,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
 							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
 								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
-									if (rand.nextBoolean())
+									if (rand.nextBoolean() && !level.isStateAtPosition(currentPos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER))))
 										TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), rand, config);
 								}
 							}
@@ -177,7 +183,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
 							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
 								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
-									if (rand.nextBoolean())
+									if (rand.nextBoolean() && !level.isStateAtPosition(currentPos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER))))
 										TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), rand, config);
 								}
 							}
@@ -205,7 +211,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 		}
 	}
 
-	private void createHorizontalLog(int branchLength, LevelSimulatedRW worldIn, BlockPos pos, Direction direction, Random rand, TreeConfiguration config, Set<BlockPos> logsPlaced) {
+	private void createHorizontalLog(int branchLength, LevelSimulatedRW worldIn, BlockPos pos, Direction direction, Random random, TreeConfiguration config, Set<BlockPos> logsPlaced) {
 		int logX = pos.getX();
 		int logY = pos.getY();
 		int logZ = pos.getZ();
@@ -217,13 +223,13 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 
 			BlockPos blockpos1 = new BlockPos(logX, logY, logZ);
 			if (!this.water ? TreeUtil.isAirOrLeaves(worldIn, blockpos1) : isAirOrWaterOrLeaves(worldIn, blockpos1)) {
-				TreeUtil.placeDirectionalLogAt(worldIn, blockpos1, direction, rand, config);
+				TreeUtil.placeDirectionalLogAt(worldIn, blockpos1, direction, random, config);
 				logsPlaced.add(blockpos1.immutable());
 			}
 		}
 	}
 
-	private void createVerticalLog(int branchHeight, LevelSimulatedRW worldIn, BlockPos pos, Random rand, TreeConfiguration config, Set<BlockPos> logsPlaced) {
+	private void createVerticalLog(int branchHeight, LevelSimulatedRW level, BlockPos pos, Random random, TreeConfiguration config, Set<BlockPos> logsPlaced) {
 		int logX = pos.getX();
 		int logY = pos.getY();
 		int logZ = pos.getZ();
@@ -232,16 +238,16 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 		for (int k1 = 0; k1 < branchHeight; ++k1) {
 			logY += 1;
 			BlockPos blockpos = new BlockPos(logX, logY, logZ);
-			if (!this.water ? TreeUtil.isAirOrLeaves(worldIn, blockpos) : isAirOrWaterOrLeaves(worldIn, blockpos)) {
-				TreeUtil.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);
+			if (!this.water ? TreeUtil.isAirOrLeaves(level, blockpos) : isAirOrWaterOrLeaves(level, blockpos)) {
+				TreeUtil.placeDirectionalLogAt(level, blockpos, Direction.UP, random, config);
 				logsPlaced.add(blockpos.immutable());
 			}
-			if (rand.nextInt(6) == 0 && !canopy) {
-				int leafSize = 1 + rand.nextInt(2);
+			if (random.nextInt(6) == 0 && !canopy) {
+				int leafSize = 1 + random.nextInt(2);
 				for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 					for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
-						if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-							TreeUtil.placeLeafAt(worldIn, blockpos.offset(k3, 0, j4), rand, config);
+						if ((Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) && !level.isStateAtPosition(blockpos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
+							TreeUtil.placeLeafAt(level, blockpos.offset(k3, 0, j4), random, config);
 						}
 					}
 				}
