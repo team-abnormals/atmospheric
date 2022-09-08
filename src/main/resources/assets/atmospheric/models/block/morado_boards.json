@@ -1,5 +1,5 @@
 {
-  "parent": "blueprint:block/template_boards_horizontal",
+  "parent": "blueprint:block/template_boards",
   "textures": {
     "all": "atmospheric:block/morado_boards"
   }
