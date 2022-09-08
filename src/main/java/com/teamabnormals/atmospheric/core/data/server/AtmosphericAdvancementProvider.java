@@ -36,11 +36,11 @@ public class AtmosphericAdvancementProvider extends AdvancementProvider {
 				.save(consumer, Atmospheric.MOD_ID + ":husbandry/spit_passionfruit");
 
 		createAdvancement("finish_gateau", "husbandry", new ResourceLocation("husbandry/plant_seed"), AtmosphericBlocks.YUCCA_GATEAU.get(), FrameType.TASK, true, true, false)
-				.addCriterion("finish_gateau", AtmosphericCriteriaTriggers.SPIT_PASSIONFRUIT.createInstance())
+				.addCriterion("finish_gateau", AtmosphericCriteriaTriggers.FINISH_GATEAU.createInstance())
 				.save(consumer, Atmospheric.MOD_ID + ":husbandry/finish_gateau");
 
 		createAdvancement("put_out_fire", "husbandry", new ResourceLocation("husbandry/root"), AtmosphericItems.ALOE_LEAVES.get(), FrameType.TASK, true, true, false)
-				.addCriterion("put_out_fire", AtmosphericCriteriaTriggers.SPIT_PASSIONFRUIT.createInstance())
+				.addCriterion("put_out_fire", AtmosphericCriteriaTriggers.PUT_OUT_FIRE.createInstance())
 				.save(consumer, Atmospheric.MOD_ID + ":husbandry/put_out_fire");
 	}
 

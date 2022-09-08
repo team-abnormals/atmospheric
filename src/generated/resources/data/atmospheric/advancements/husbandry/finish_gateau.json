@@ -17,7 +17,7 @@
   },
   "criteria": {
     "finish_gateau": {
-      "trigger": "atmospheric:spit_passionfruit"
+      "trigger": "atmospheric:finish_gateau"
     }
   },
   "requirements": [

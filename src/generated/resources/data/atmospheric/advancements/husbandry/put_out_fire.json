@@ -17,7 +17,7 @@
   },
   "criteria": {
     "put_out_fire": {
-      "trigger": "atmospheric:spit_passionfruit"
+      "trigger": "atmospheric:put_out_fire"
     }
   },
   "requirements": [
