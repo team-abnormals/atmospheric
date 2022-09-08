@@ -1,26 +1,52 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "S S",
-    "SPS",
-    "S S"
-  ],
-  "key": {
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "P": {
-      "item": "atmospheric:grimwood_planks"
-    }
-  },
-  "result": {
-    "item": "atmospheric:grimwood_ladder",
-    "count": 4
-  },
-  "conditions": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "type": "blueprint:quark_flag",
-       "flag": "variant_ladders"
+      "conditions": [
+        {
+          "values": [
+            {
+              "type": "blueprint:and",
+              "values": [
+                {
+                  "type": "forge:mod_loaded",
+                  "modid": "woodworks"
+                },
+                {
+                  "type": "woodworks:config",
+                  "value": "wooden_ladders"
+                }
+              ]
+            },
+            {
+              "flag": "variant_ladders",
+              "type": "blueprint:quark_flag"
+            }
+          ],
+          "type": "forge:or"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "wooden_ladder",
+        "pattern": [
+          "S S",
+          "S#S",
+          "S S"
+        ],
+        "key": {
+          "#": {
+            "item": "atmospheric:grimwood_planks"
+          },
+          "S": {
+            "item": "minecraft:stick"
+          }
+        },
+        "result": {
+          "item": "atmospheric:grimwood_ladder",
+          "count": 4
+        }
+      }
     }
   ]
 }

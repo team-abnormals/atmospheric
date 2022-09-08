@@ -12,29 +12,27 @@
             },
             {
               "type": "woodworks:config",
-              "value": "wooden_beehives"
+              "value": "wooden_boards"
             }
           ]
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "group": "wooden_beehive",
+        "group": "wooden_boards",
         "pattern": [
-          "###",
-          "HHH",
-          "###"
+          "#",
+          "#",
+          "#"
         ],
         "key": {
           "#": {
-            "item": "atmospheric:grimwood_planks"
-          },
-          "H": {
-            "item": "minecraft:honeycomb"
+            "item": "atmospheric:aspen_planks"
           }
         },
         "result": {
-          "item": "atmospheric:grimwood_beehive"
+          "item": "atmospheric:aspen_boards",
+          "count": 3
         }
       }
     }

@@ -1,25 +1,42 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "PPP",
-    "HHH",
-    "PPP"
-  ],
-  "key": {
-    "P": {
-      "item": "atmospheric:rosewood_planks"
-    },
-    "H": {
-      "item": "minecraft:honeycomb"
-    }
-  },
-  "result": {
-    "item": "atmospheric:rosewood_beehive"
-  },
-  "conditions": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "buzzier_bees"
+      "conditions": [
+        {
+          "type": "blueprint:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "wooden_beehives"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "wooden_beehive",
+        "pattern": [
+          "###",
+          "HHH",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "atmospheric:rosewood_planks"
+          },
+          "H": {
+            "item": "minecraft:honeycomb"
+          }
+        },
+        "result": {
+          "item": "atmospheric:rosewood_beehive"
+        }
+      }
     }
   ]
 }

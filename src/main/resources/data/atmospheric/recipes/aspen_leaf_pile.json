@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "leaf_pile",
+  "ingredients": [
+    {
+      "item": "atmospheric:aspen_leaves"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:aspen_leaf_pile",
+    "count": 4
+  }
+}

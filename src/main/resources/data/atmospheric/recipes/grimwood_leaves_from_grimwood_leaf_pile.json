@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "leaves",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:grimwood_leaf_pile"
+    }
+  },
+  "result": {
+    "item": "atmospheric:grimwood_leaves"
+  }
+}

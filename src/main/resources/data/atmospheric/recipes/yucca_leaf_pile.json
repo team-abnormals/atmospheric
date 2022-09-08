@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "leaf_pile",
+  "ingredients": [
+    {
+      "item": "atmospheric:yucca_leaves"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:yucca_leaf_pile",
+    "count": 4
+  }
+}
