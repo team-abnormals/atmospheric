@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "atmospheric:block/kousa_boards_horizontal",
+      "y": 270
+    },
+    "axis=y": {
+      "model": "atmospheric:block/kousa_boards"
+    },
+    "axis=z": {
+      "model": "atmospheric:block/kousa_boards_horizontal"
+    }
+  }
+}

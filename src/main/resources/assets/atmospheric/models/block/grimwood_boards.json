@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/template_boards",
+  "textures": {
+    "all": "atmospheric:block/grimwood_boards"
+  }
+}

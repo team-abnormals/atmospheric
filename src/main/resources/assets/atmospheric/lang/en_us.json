@@ -16,7 +16,8 @@
   "block.atmospheric.rosewood_leaves": "Rosewood Leaves",
   "block.atmospheric.rosewood_sign": "Rosewood Sign",
   "block.atmospheric.rosewood_wall_sign": "Rosewood Wall Sign",
-
+  "block.atmospheric.rosewood_boards": "Rosewood Boards",
+  "block.atmospheric.rosewood_leaf_pile": "Pile of Rosewood Leaves",
   "block.atmospheric.rosewood_bookshelf": "Rosewood Bookshelf",
   "block.atmospheric.rosewood_vertical_slab": "Rosewood Vertical Slab",
   "block.atmospheric.vertical_rosewood_planks": "Vertical Rosewood Planks",
@@ -47,7 +48,9 @@
   "block.atmospheric.flowering_morado_leaves": "Flowering Morado Leaves",
   "block.atmospheric.morado_sign": "Morado Sign",
   "block.atmospheric.morado_wall_sign": "Morado Wall Sign",
-
+  "block.atmospheric.morado_boards": "Morado Boards",
+  "block.atmospheric.morado_leaf_pile": "Pile of Morado Leaves",
+  "block.atmospheric.flowering_morado_leaf_pile": "Pile of Flowering Morado Leaves",
   "block.atmospheric.morado_bookshelf": "Morado Bookshelf",
   "block.atmospheric.morado_vertical_slab": "Morado Vertical Slab",
   "block.atmospheric.vertical_morado_planks": "Vertical Morado Planks",
@@ -61,7 +64,7 @@
   "block.atmospheric.stripped_morado_post": "Stripped Morado Post",
   "block.atmospheric.morado_hedge": "Morado Hedge",
   "block.atmospheric.flowering_morado_hedge": "Flowering Morado Hedge",
-
+  
   "block.atmospheric.warm_monkey_brush": "Warm Monkey Brush",
   "block.atmospheric.hot_monkey_brush": "Hot Monkey Brush",
   "block.atmospheric.scalding_monkey_brush": "Scalding Monkey Brush",
@@ -97,7 +100,8 @@
   "block.atmospheric.yucca_leaves": "Yucca Leaves",
   "block.atmospheric.yucca_sign": "Yucca Sign",
   "block.atmospheric.yucca_wall_sign": "Yucca Wall Sign",
-
+  "block.atmospheric.yucca_boards": "Yucca Boards",
+  "block.atmospheric.yucca_leaf_pile": "Pile of Yucca Leaves",
   "block.atmospheric.yucca_bookshelf": "Yucca Bookshelf",
   "block.atmospheric.yucca_vertical_slab": "Yucca Vertical Slab",
   "block.atmospheric.vertical_yucca_planks": "Vertical Yucca Planks",
@@ -226,7 +230,8 @@
   "block.atmospheric.kousa_leaves": "Kousa Leaves",
   "block.atmospheric.kousa_sign": "Kousa Sign",
   "block.atmospheric.kousa_wall_sign": "Kousa Wall Sign",
-
+  "block.atmospheric.kousa_boards": "Kousa Boards",
+  "block.atmospheric.kousa_leaf_pile": "Pile of Kousa Leaves",
   "block.atmospheric.kousa_bookshelf": "Kousa Bookshelf",
   "block.atmospheric.kousa_vertical_slab": "Kousa Vertical Slab",
   "block.atmospheric.vertical_kousa_planks": "Vertical Kousa Planks",
@@ -264,7 +269,8 @@
   "block.atmospheric.aspen_leaves": "Aspen Leaves",
   "block.atmospheric.aspen_sign": "Aspen Sign",
   "block.atmospheric.aspen_wall_sign": "Aspen Wall Sign",
-
+  "block.atmospheric.aspen_boards": "Aspen Boards",
+  "block.atmospheric.aspen_leaf_pile": "Pile of Aspen Leaves",
   "block.atmospheric.aspen_bookshelf": "Aspen Bookshelf",
   "block.atmospheric.aspen_vertical_slab": "Aspen Vertical Slab",
   "block.atmospheric.vertical_aspen_planks": "Vertical Aspen Planks",
@@ -296,7 +302,8 @@
   "block.atmospheric.grimwood_leaves": "Grimwood Leaves",
   "block.atmospheric.grimwood_sign": "Grimwood Sign",
   "block.atmospheric.grimwood_wall_sign": "Grimwood Wall Sign",
-
+  "block.atmospheric.grimwood_boards": "Grimwood Boards",
+  "block.atmospheric.grimwood_leaf_pile": "Pile of Grimwood Leaves",
   "block.atmospheric.grimwood_bookshelf": "Grimwood Bookshelf",
   "block.atmospheric.grimwood_vertical_slab": "Grimwood Vertical Slab",
   "block.atmospheric.vertical_grimwood_planks": "Vertical Grimwood Planks",

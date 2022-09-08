@@ -144,7 +144,9 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_ROSEWOOD_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_HEDGE.get(), 5, 20);
-
+		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_LEAF_PILE.get(), 30, 60);
+		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_BOARDS.get(), 5, 20);
+		
 		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.FLOWERING_MORADO_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_LOG.get(), 5, 5);
@@ -166,6 +168,9 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_MORADO_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_HEDGE.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.FLOWERING_MORADO_HEDGE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_LEAF_PILE.get(), 30, 60);
+		DataUtil.registerFlammable(AtmosphericBlocks.FLOWERING_MORADO_LEAF_PILE.get(), 30, 60);
+		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_BOARDS.get(), 5, 20);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_LOG.get(), 5, 5);
@@ -185,6 +190,8 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_YUCCA_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_HEDGE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_LEAF_PILE.get(), 30, 60);
+		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_BOARDS.get(), 5, 20);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_LOG.get(), 5, 5);
@@ -204,6 +211,8 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_KOUSA_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_HEDGE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_LEAF_PILE.get(), 30, 60);
+		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_BOARDS.get(), 5, 20);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_LOG.get(), 5, 5);
@@ -225,6 +234,8 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_ASPEN_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_HEDGE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_LEAF_PILE.get(), 30, 60);
+		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_BOARDS.get(), 5, 20);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_LOG.get(), 5, 5);
@@ -244,5 +255,7 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.STRIPPED_GRIMWOOD_POST.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_HEDGE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_LEAF_PILE.get(), 30, 60);
+		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_BOARDS.get(), 5, 20);
 	}
 }
