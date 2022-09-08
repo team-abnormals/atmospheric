@@ -20,7 +20,7 @@ import java.util.Random;
 import java.util.Set;
 
 public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
-	private final Set<BlockPos> logPosSet = Sets.newHashSet();
+	private Set<BlockPos> logPosSet;
 
 	public YuccaTreeFeature(Codec<YuccaTreeConfiguration> config) {
 		super(config);
@@ -33,6 +33,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 		Random rand = context.random();
 		BlockPos position = context.origin();
 
+		this.logPosSet = Sets.newHashSet();
 		if (config.baby) {
 			int height = 2 + rand.nextInt(2) + rand.nextInt(2);
 			boolean flag = true;
@@ -85,7 +86,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 					if (config.patch) {
 						for (int j = 0; j < 64; ++j) {
 							BlockPos blockpos = position.offset(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-							if (isAir(worldIn, blockpos) && blockpos.getY() < 255 && config.flowerProvider.getState(rand, blockpos).canSurvive(worldIn, blockpos)) {
+							if (isAir(worldIn, blockpos) && blockpos.getY() < worldIn.getMaxBuildHeight() && config.flowerProvider.getState(rand, blockpos).canSurvive(worldIn, blockpos)) {
 								placeFlowerAt(worldIn, blockpos, rand, config);
 							}
 						}
