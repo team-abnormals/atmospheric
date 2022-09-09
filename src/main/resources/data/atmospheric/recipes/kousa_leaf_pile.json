@@ -1,13 +1,35 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "leaf_pile",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "atmospheric:kousa_leaves"
+      "conditions": [
+        {
+          "type": "blueprint:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "leaf_piles"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "group": "leaf_pile",
+        "ingredients": [
+          {
+            "item": "atmospheric:kousa_leaves"
+          }
+        ],
+        "result": {
+          "count": 4,
+          "item": "atmospheric:kousa_leaf_pile"
+        }
+      }
     }
-  ],
-  "result": {
-    "item": "atmospheric:kousa_leaf_pile",
-    "count": 4
-  }
+  ]
 }
