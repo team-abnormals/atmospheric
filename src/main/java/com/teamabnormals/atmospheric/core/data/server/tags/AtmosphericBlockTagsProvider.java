@@ -11,6 +11,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 import static com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags.*;
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.*;
+import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.STRIPPED_GRIMWOOD;
 
 public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 
@@ -81,12 +82,12 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(BlockTags.STAIRS).add(ARID_SANDSTONE_STAIRS.get(), SMOOTH_ARID_SANDSTONE_STAIRS.get(), ARID_SANDSTONE_BRICK_STAIRS.get(), RED_ARID_SANDSTONE_STAIRS.get(), SMOOTH_RED_ARID_SANDSTONE_STAIRS.get(), RED_ARID_SANDSTONE_BRICK_STAIRS.get(), IVORY_TRAVERTINE_STAIRS.get(), PEACH_TRAVERTINE_STAIRS.get(), PERSIMMON_TRAVERTINE_STAIRS.get(), SAFFRON_TRAVERTINE_STAIRS.get());
 		this.tag(BlockTags.WALLS).add(ARID_SANDSTONE_WALL.get(), ARID_SANDSTONE_BRICK_WALL.get(), RED_ARID_SANDSTONE_WALL.get(), RED_ARID_SANDSTONE_BRICK_WALL.get(), IVORY_TRAVERTINE_WALL.get(), PEACH_TRAVERTINE_WALL.get(), PERSIMMON_TRAVERTINE_WALL.get(), SAFFRON_TRAVERTINE_WALL.get());
 
-		this.tag(ROSEWOOD_LOGS).add(ROSEWOOD_LOG.get(), ROSEWOOD.get(), STRIPPED_ROSEWOOD_LOG.get(), ROSEWOOD.get());
-		this.tag(MORADO_LOGS).add(MORADO_LOG.get(), MORADO_WOOD.get(), STRIPPED_MORADO_LOG.get(), MORADO_WOOD.get());
-		this.tag(YUCCA_LOGS).add(YUCCA_LOG.get(), YUCCA_WOOD.get(), STRIPPED_YUCCA_LOG.get(), YUCCA_WOOD.get());
-		this.tag(ASPEN_LOGS).add(ASPEN_LOG.get(), ASPEN_WOOD.get(), STRIPPED_ASPEN_LOG.get(), ASPEN_WOOD.get(), WATCHFUL_ASPEN_LOG.get(), WATCHFUL_ASPEN_WOOD.get(), CRUSTOSE_LOG.get(), CRUSTOSE_WOOD.get());
-		this.tag(KOUSA_LOGS).add(KOUSA_LOG.get(), KOUSA_WOOD.get(), STRIPPED_KOUSA_LOG.get(), KOUSA_WOOD.get());
-		this.tag(GRIMWOOD_LOGS).add(GRIMWOOD_LOG.get(), GRIMWOOD.get(), STRIPPED_GRIMWOOD_LOG.get(), GRIMWOOD.get());
+		this.tag(ROSEWOOD_LOGS).add(ROSEWOOD_LOG.get(), ROSEWOOD.get(), STRIPPED_ROSEWOOD_LOG.get(), STRIPPED_ROSEWOOD.get());
+		this.tag(MORADO_LOGS).add(MORADO_LOG.get(), MORADO_WOOD.get(), STRIPPED_MORADO_LOG.get(), STRIPPED_MORADO_WOOD.get());
+		this.tag(YUCCA_LOGS).add(YUCCA_LOG.get(), YUCCA_WOOD.get(), STRIPPED_YUCCA_LOG.get(), STRIPPED_YUCCA_WOOD.get());
+		this.tag(ASPEN_LOGS).add(ASPEN_LOG.get(), ASPEN_WOOD.get(), STRIPPED_ASPEN_LOG.get(), STRIPPED_ASPEN_WOOD.get(), WATCHFUL_ASPEN_LOG.get(), WATCHFUL_ASPEN_WOOD.get(), CRUSTOSE_LOG.get(), CRUSTOSE_WOOD.get());
+		this.tag(KOUSA_LOGS).add(KOUSA_LOG.get(), KOUSA_WOOD.get(), STRIPPED_KOUSA_LOG.get(), STRIPPED_KOUSA_WOOD.get());
+		this.tag(GRIMWOOD_LOGS).add(GRIMWOOD_LOG.get(), GRIMWOOD.get(), STRIPPED_GRIMWOOD_LOG.get(), STRIPPED_GRIMWOOD.get());
 
 		this.tag(MONKEY_BRUSH_PLACEABLE).addTag(BlockTags.DIRT).addTag(BlockTags.LOGS_THAT_BURN);
 		this.tag(PASSION_VINE_GROWABLE_ON).add(ROSEWOOD_LEAVES.get()).addTag(ROSEWOOD_LOGS);
