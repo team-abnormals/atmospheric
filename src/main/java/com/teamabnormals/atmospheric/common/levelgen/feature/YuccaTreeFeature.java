@@ -190,7 +190,6 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 						}
 					}
 
-					System.out.println(logPosSet);
 					TreeUtil.updateLeaves(worldIn, logPosSet);
 					return true;
 				} else {
