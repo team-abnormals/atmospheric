@@ -185,10 +185,10 @@
 	"block.atmospheric.saffron_travertine_vertical_slab": "Vertikale Safrantravertinstufe",	
 	
 	"item.atmospheric.spring_water": "Quellwasser",
-	"item.atmospheric.combustive_tonic": "Entzündendes Tonic",
-	"item.atmospheric.charged_tonic": "Geladenes Tonic",
+	"item.atmospheric.combustive_tonic": "Entzündendes Tonikum",
+	"item.atmospheric.charged_tonic": "Geladenes Tonikum",
 
-	"biome.atmospheric.hot_springs": "Thermalquelle",
+	"biome.atmospheric.hot_springs": "Thermalquellen",
 	
 	"death.attack.fumarole": "%1$s versuchte einen Geysir zu umarmen",
 	"death.attack.fumarole.player": "%1$s versuchte beim Versuch, %2$s zu entkommen, einen Geysir zu umarmen",
@@ -324,14 +324,14 @@
 	"death.attack.aloeLeaves": "%1$s wurde durch Aloeblätter gepikt",
 	"death.attack.aloeLeaves.player": "%1$s wurde beim Versuch, %2$s zu entkommen, durch Aloeblätter gepikt",
 	
-	"advancements.husbandry.finish_gateau.title": "Sollen sie doch Kuchen essen?",
+	"advancements.husbandry.finish_gateau.title": "Sollen sie doch Kuchen essen!",
 	"advancements.husbandry.finish_gateau.description": "Iss die letzte Scheibe der Yuccatorte",
 	
 	"advancements.adventure.dunes_pricks.title": "Einwürfelig schneiden",
 	"advancements.adventure.dunes_pricks.description": "Werde durch alle naturalen Dünenblocken gepikt",
 	
 	"advancements.husbandry.put_out_fire.title": "Brandopfer",
-	"advancements.husbandry.put_out_fire.description": "Hör auf mit den Aloeblättern zu brennen",
+	"advancements.husbandry.put_out_fire.description": "Lösche dich, indem du Aloenblätter verspeist",
   
   "_comment4": "START OF THE KOUSA SECTION",
   
@@ -371,17 +371,17 @@
   
   "_comment5": "START OF THE ASPEN SECTION",
   
-	"block.atmospheric.crustose": "Krustenblock",
-	"block.atmospheric.crustose_path": "Krustenpfad",
-	"block.atmospheric.crustose_log": "Krustenstamm",
-	"block.atmospheric.crustose_wood": "Krustenholz",
+	"block.atmospheric.crustose": "Lichenblock",
+	"block.atmospheric.crustose_path": "Lichenpfad",
+	"block.atmospheric.crustose_log": "Lichenstamm",
+	"block.atmospheric.crustose_wood": "Lichenholz",
   
 	"block.atmospheric.aspen_log": "Espenstamm",
 	"block.atmospheric.aspen_wood": "Espenholz",
 	"block.atmospheric.stripped_aspen_log": "Entrindeter Espenstamm",
 	"block.atmospheric.stripped_aspen_wood": "Entrindetes Espenholz",
-	"block.atmospheric.watchful_aspen_log": "Wachsamespenstamm",
-	"block.atmospheric.watchful_aspen_wood": "Wachsamespenholz",
+	"block.atmospheric.watchful_aspen_log": "Wachsamer Espenstamm",
+	"block.atmospheric.watchful_aspen_wood": "Wachsames Espenholz",
 	"block.atmospheric.aspen_planks": "Espenholzbretter",
 	"block.atmospheric.aspen_stairs": "Espenholztreppe",
 	"block.atmospheric.aspen_slab": "Espenholzstufe",
