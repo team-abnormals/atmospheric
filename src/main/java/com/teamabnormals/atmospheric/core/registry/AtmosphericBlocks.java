@@ -46,7 +46,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_TRAPDOOR = HELPER.createBlock("rosewood_trapdoor", () -> new WoodTrapDoorBlock(AtmosphericProperties.ROSEWOOD.trapdoor()), CreativeModeTab.TAB_REDSTONE);
 	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> ROSEWOOD_SIGNS = HELPER.createSignBlock("rosewood", MaterialColor.TERRACOTTA_MAGENTA);
 
-	public static final RegistryObject<Block> ROSEWOOD_BOARDS = HELPER.createCompatBlock("woodworks", "rosewood_boards", () -> new RotatedPillarBlock(AtmosphericProperties.ROSEWOOD.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ROSEWOOD_BOARDS = HELPER.createCompatFuelBlock("woodworks", "rosewood_boards", () -> new RotatedPillarBlock(AtmosphericProperties.ROSEWOOD.planks()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_BOOKSHELF = HELPER.createCompatFuelBlock("woodworks", "rosewood_bookshelf", () -> new BookshelfBlock(AtmosphericProperties.ROSEWOOD.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ROSEWOOD_LADDER = HELPER.createCompatFuelBlock("woodworks", "rosewood_ladder", () -> new BlueprintLadderBlock(AtmosphericProperties.ROSEWOOD.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> ROSEWOOD_BEEHIVE = HELPER.createCompatBlock("woodworks", "rosewood_beehive", () -> new BlueprintBeehiveBlock(AtmosphericProperties.ROSEWOOD.beehive()), CreativeModeTab.TAB_DECORATIONS);
@@ -78,7 +78,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> MORADO_TRAPDOOR = HELPER.createBlock("morado_trapdoor", () -> new WoodTrapDoorBlock(AtmosphericProperties.MORADO.trapdoor()), CreativeModeTab.TAB_REDSTONE);
 	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> MORADO_SIGNS = HELPER.createSignBlock("morado", MaterialColor.COLOR_RED);
 
-	public static final RegistryObject<Block> MORADO_BOARDS = HELPER.createCompatBlock("woodworks", "morado_boards", () -> new RotatedPillarBlock(AtmosphericProperties.MORADO.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> MORADO_BOARDS = HELPER.createCompatFuelBlock("woodworks", "morado_boards", () -> new RotatedPillarBlock(AtmosphericProperties.MORADO.planks()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> MORADO_BOOKSHELF = HELPER.createCompatFuelBlock("woodworks", "morado_bookshelf", () -> new BookshelfBlock(AtmosphericProperties.MORADO.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> MORADO_LADDER = HELPER.createCompatFuelBlock("woodworks", "morado_ladder", () -> new BlueprintLadderBlock(AtmosphericProperties.MORADO.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> MORADO_BEEHIVE = HELPER.createCompatBlock("woodworks", "morado_beehive", () -> new BlueprintBeehiveBlock(AtmosphericProperties.MORADO.beehive()), CreativeModeTab.TAB_DECORATIONS);
@@ -205,7 +205,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> YUCCA_TRAPDOOR = HELPER.createBlock("yucca_trapdoor", () -> new WoodTrapDoorBlock(AtmosphericProperties.YUCCA.trapdoor()), CreativeModeTab.TAB_REDSTONE);
 	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> YUCCA_SIGNS = HELPER.createSignBlock("yucca", MaterialColor.COLOR_ORANGE);
 
-	public static final RegistryObject<Block> YUCCA_BOARDS = HELPER.createCompatBlock("woodworks", "yucca_boards", () -> new RotatedPillarBlock(AtmosphericProperties.YUCCA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> YUCCA_BOARDS = HELPER.createCompatFuelBlock("woodworks", "yucca_boards", () -> new RotatedPillarBlock(AtmosphericProperties.YUCCA.planks()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_BOOKSHELF = HELPER.createCompatFuelBlock("woodworks", "yucca_bookshelf", () -> new BookshelfBlock(AtmosphericProperties.YUCCA.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> YUCCA_LADDER = HELPER.createCompatFuelBlock("woodworks", "yucca_ladder", () -> new BlueprintLadderBlock(AtmosphericProperties.YUCCA.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> YUCCA_BEEHIVE = HELPER.createCompatBlock("woodworks", "yucca_beehive", () -> new BlueprintBeehiveBlock(AtmosphericProperties.YUCCA.beehive()), CreativeModeTab.TAB_DECORATIONS);
@@ -283,7 +283,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> KOUSA_TRAPDOOR = HELPER.createBlock("kousa_trapdoor", () -> new WoodTrapDoorBlock(AtmosphericProperties.KOUSA.trapdoor()), CreativeModeTab.TAB_REDSTONE);
 	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> KOUSA_SIGNS = HELPER.createSignBlock("kousa", MaterialColor.TERRACOTTA_CYAN);
 
-	public static final RegistryObject<Block> KOUSA_BOARDS = HELPER.createCompatBlock("woodworks", "kousa_boards", () -> new RotatedPillarBlock(AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_BOARDS = HELPER.createCompatFuelBlock("woodworks", "kousa_boards", () -> new RotatedPillarBlock(AtmosphericProperties.KOUSA.planks()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_BOOKSHELF = HELPER.createCompatFuelBlock("woodworks", "kousa_bookshelf", () -> new BookshelfBlock(AtmosphericProperties.KOUSA.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> KOUSA_LADDER = HELPER.createCompatFuelBlock("woodworks", "kousa_ladder", () -> new BlueprintLadderBlock(AtmosphericProperties.KOUSA.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> KOUSA_BEEHIVE = HELPER.createCompatBlock("woodworks", "kousa_beehive", () -> new BlueprintBeehiveBlock(AtmosphericProperties.KOUSA.beehive()), CreativeModeTab.TAB_DECORATIONS);
@@ -319,7 +319,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_TRAPDOOR = HELPER.createBlock("aspen_trapdoor", () -> new WoodTrapDoorBlock(AtmosphericProperties.ASPEN.trapdoor()), CreativeModeTab.TAB_REDSTONE);
 	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> ASPEN_SIGNS = HELPER.createSignBlock("aspen", MaterialColor.GOLD);
 
-	public static final RegistryObject<Block> ASPEN_BOARDS = HELPER.createCompatBlock("woodworks", "aspen_boards", () -> new RotatedPillarBlock(AtmosphericProperties.ASPEN.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> ASPEN_BOARDS = HELPER.createCompatFuelBlock("woodworks", "aspen_boards", () -> new RotatedPillarBlock(AtmosphericProperties.ASPEN.planks()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_BOOKSHELF = HELPER.createCompatFuelBlock("woodworks", "aspen_bookshelf", () -> new BookshelfBlock(AtmosphericProperties.ASPEN.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_LADDER = HELPER.createCompatFuelBlock("woodworks", "aspen_ladder", () -> new BlueprintLadderBlock(AtmosphericProperties.ASPEN.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_BEEHIVE = HELPER.createCompatBlock("woodworks", "aspen_beehive", () -> new BlueprintBeehiveBlock(AtmosphericProperties.ASPEN.beehive()), CreativeModeTab.TAB_DECORATIONS);
@@ -358,7 +358,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> GRIMWOOD_TRAPDOOR = HELPER.createBlock("grimwood_trapdoor", () -> new WoodTrapDoorBlock(AtmosphericProperties.GRIMWOOD.trapdoor()), CreativeModeTab.TAB_REDSTONE);
 	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> GRIMWOOD_SIGNS = HELPER.createSignBlock("grimwood", MaterialColor.TERRACOTTA_BLACK);
 
-	public static final RegistryObject<Block> GRIMWOOD_BOARDS = HELPER.createCompatBlock("woodworks", "grimwood_boards", () -> new RotatedPillarBlock(AtmosphericProperties.GRIMWOOD.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> GRIMWOOD_BOARDS = HELPER.createCompatFuelBlock("woodworks", "grimwood_boards", () -> new RotatedPillarBlock(AtmosphericProperties.GRIMWOOD.planks()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_BOOKSHELF = HELPER.createCompatFuelBlock("woodworks", "grimwood_bookshelf", () -> new BookshelfBlock(AtmosphericProperties.GRIMWOOD.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> GRIMWOOD_LADDER = HELPER.createCompatFuelBlock("woodworks", "grimwood_ladder", () -> new BlueprintLadderBlock(AtmosphericProperties.GRIMWOOD.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> GRIMWOOD_BEEHIVE = HELPER.createCompatBlock("woodworks", "grimwood_beehive", () -> new BlueprintBeehiveBlock(AtmosphericProperties.GRIMWOOD.beehive()), CreativeModeTab.TAB_DECORATIONS);
