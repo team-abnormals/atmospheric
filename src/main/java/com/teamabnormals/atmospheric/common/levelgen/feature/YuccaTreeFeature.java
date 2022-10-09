@@ -38,7 +38,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 			int height = 2 + rand.nextInt(2) + rand.nextInt(2);
 			boolean flag = true;
 
-			if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getMaxBuildHeight()) {
+			if (position.getY() > worldIn.getMinBuildHeight() && position.getY() + height + 1 <= worldIn.getMaxBuildHeight()) {
 				for (int j = position.getY(); j <= position.getY() + 1 + height; ++j) {
 					int k = 1;
 					if (j == position.getY())

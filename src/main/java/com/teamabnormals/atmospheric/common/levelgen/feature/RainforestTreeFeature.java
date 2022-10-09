@@ -55,7 +55,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 		int height = 4 + rand.nextInt(2) + rand.nextInt(3) + (!morado ? rand.nextInt(3) : -1);
 		boolean flag = true;
 
-		if (position.getY() >= 1 && position.getY() + height + 1 <= level.getMaxBuildHeight()) {
+		if (position.getY() > level.getMinBuildHeight() && position.getY() + height + 1 <= level.getMaxBuildHeight()) {
 			for (int j = position.getY(); j <= position.getY() + 1 + height; ++j) {
 				int k = 1;
 				if (j == position.getY()) {

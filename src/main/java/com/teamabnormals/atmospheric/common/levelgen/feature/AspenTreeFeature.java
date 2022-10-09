@@ -33,7 +33,7 @@ public class AspenTreeFeature extends Feature<TreeConfiguration> {
 		int height = 12 + rand.nextInt(4) + rand.nextInt(5) + rand.nextInt(6);
 		boolean flag = true;
 
-		if (position.getY() >= 1 && position.getY() + height + 1 <= worldIn.getMaxBuildHeight()) {
+		if (position.getY() > worldIn.getMinBuildHeight() && position.getY() + height + 1 <= worldIn.getMaxBuildHeight()) {
 			for (int j = position.getY(); j <= position.getY() + 1 + height; ++j) {
 				int k = 1;
 				if (j == position.getY()) {
