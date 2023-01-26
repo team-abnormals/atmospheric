@@ -1,11 +1,11 @@
 {
-  "name": "atmospheric:arid_shrine",
+  "name": "atmospheric:arid_shrine/top_pool",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "atmospheric:arid_shrine/arid_shrine",
+        "location": "atmospheric:arid_shrine/arid_shrine_top",
         "processors": "atmospheric:arid_shrine",
         "projection": "rigid",
         "element_type": "minecraft:legacy_single_pool_element"
