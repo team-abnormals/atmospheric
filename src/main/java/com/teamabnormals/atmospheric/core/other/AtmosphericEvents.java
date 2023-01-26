@@ -1,10 +1,13 @@
 package com.teamabnormals.atmospheric.core.other;
 
+import com.teamabnormals.atmospheric.common.block.PassionVineBundleBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -41,6 +44,12 @@ public class AtmosphericEvents {
 				entity.getPersistentData().putBoolean("Heal", true);
 			}
 		}
+	}
+
+	@SubscribeEvent
+	public static void breakSpead(BreakSpeed event) {
+		if (event.getState().getBlock() instanceof PassionVineBundleBlock && event.getPlayer().getMainHandItem().getItem() == Items.SHEARS)
+			event.setNewSpeed(15.0F);
 	}
 
 	@SubscribeEvent
