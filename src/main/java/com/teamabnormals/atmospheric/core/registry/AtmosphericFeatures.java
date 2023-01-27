@@ -213,12 +213,12 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> PETRIFIED_YUCCA = register("petrified_yucca", AtmosphericConfiguredFeatures.PETRIFIED_YUCCA, List.of());
 		public static final RegistryObject<PlacedFeature> RED_PETRIFIED_YUCCA = register("red_petrified_yucca", AtmosphericConfiguredFeatures.RED_PETRIFIED_YUCCA, List.of());
 
-		public static final RegistryObject<PlacedFeature> TREES_RAINFOREST = register("trees_rainforest", AtmosphericConfiguredFeatures.TREES_RAINFOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(30, 0.1F, 1)));
-		public static final RegistryObject<PlacedFeature> BUSHES_SPARSE_RAINFOREST = register("bushes_sparse_rainforest", AtmosphericConfiguredFeatures.OAK_BUSH, VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1F, 3)));
-		public static final RegistryObject<PlacedFeature> TREES_SPARSE_RAINFOREST = register("trees_sparse_rainforest", AtmosphericConfiguredFeatures.TREES_SPARSE_RAINFOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 30)));
+		public static final RegistryObject<PlacedFeature> TREES_RAINFOREST = register("trees_rainforest", AtmosphericConfiguredFeatures.TREES_RAINFOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(30, 0.1F, 1), Blocks.OAK_SAPLING));
+		public static final RegistryObject<PlacedFeature> BUSHES_SPARSE_RAINFOREST = register("bushes_sparse_rainforest", AtmosphericConfiguredFeatures.OAK_BUSH, VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1F, 3), Blocks.OAK_SAPLING));
+		public static final RegistryObject<PlacedFeature> TREES_SPARSE_RAINFOREST = register("trees_sparse_rainforest", AtmosphericConfiguredFeatures.TREES_SPARSE_RAINFOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 30), Blocks.OAK_SAPLING));
 		public static final RegistryObject<PlacedFeature> TREES_RAINFOREST_BASIN = register("trees_rainforest_basin", AtmosphericConfiguredFeatures.TREES_RAINFOREST_BASIN, waterTreePlacement(PlacementUtils.countExtra(50, 0.1F, 1)));
 		public static final RegistryObject<PlacedFeature> TREES_SPARSE_RAINFOREST_BASIN = register("trees_sparse_rainforest_basin", AtmosphericConfiguredFeatures.TREES_RAINFOREST_BASIN, waterTreePlacement(PlacementUtils.countExtra(5, 0.1F, 5)));
-		public static final RegistryObject<PlacedFeature> OAK_RAINFOREST_BASIN = register("oak_rainforest_basin", AtmosphericConfiguredFeatures.TREES_RAINFOREST_BASIN, waterTreePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
+		public static final RegistryObject<PlacedFeature> OAK_RAINFOREST_BASIN = register("oak_rainforest_basin", AtmosphericConfiguredFeatures.OAK_RAINFOREST_BASIN, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), Blocks.OAK_SAPLING));
 
 		public static final RegistryObject<PlacedFeature> TREES_DUNES = register("trees_dunes", AtmosphericConfiguredFeatures.TREES_DUNES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.25F, 1)));
 		public static final RegistryObject<PlacedFeature> TREES_FLOURISHING_DUNES = register("trees_flourishing_dunes", AtmosphericConfiguredFeatures.TREES_FLOURISHING_DUNES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.05F, 1)));
