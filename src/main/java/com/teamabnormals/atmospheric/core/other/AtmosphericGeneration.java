@@ -35,30 +35,30 @@ public class AtmosphericGeneration {
 
 	public static void rainforest(BiomeGenerationSettings.Builder generation) {
 		baseRainforest(generation);
-		AtmosphericGeneration.withRainforestWaterFoliage(generation);
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_RAINFOREST.getHolder().get());
+		AtmosphericGeneration.withRainforestWaterFoliage(generation);
 	}
 
 	public static void sparseRainforest(BiomeGenerationSettings.Builder generation) {
 		baseRainforest(generation);
-		AtmosphericGeneration.withRainforestWaterFoliage(generation);
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_SPARSE_RAINFOREST.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.BUSHES_SPARSE_RAINFOREST.getHolder().get());
+		AtmosphericGeneration.withRainforestWaterFoliage(generation);
 	}
 
 	public static void rainforestBasin(BiomeGenerationSettings.Builder generation) {
 		baseRainforest(generation);
-		AtmosphericGeneration.withRainforestBasinWaterFoliage(generation);
 		generation.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, AtmosphericPlacedFeatures.OCEAN_FLOOR_RAISER.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_RAINFOREST_BASIN.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.OAK_RAINFOREST_BASIN.getHolder().get());
+		AtmosphericGeneration.withRainforestBasinWaterFoliage(generation);
 	}
 
 	public static void sparseRainforestBasin(BiomeGenerationSettings.Builder generation) {
 		baseRainforest(generation);
-		AtmosphericGeneration.withSparseRainforestBasinWaterFoliage(generation);
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_SPARSE_RAINFOREST_BASIN.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.OAK_RAINFOREST_BASIN.getHolder().get());
+		AtmosphericGeneration.withSparseRainforestBasinWaterFoliage(generation);
 	}
 
 	public static void baseDunes(BiomeGenerationSettings.Builder generation) {
