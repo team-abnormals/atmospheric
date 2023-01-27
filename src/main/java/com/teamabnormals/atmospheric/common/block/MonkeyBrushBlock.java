@@ -7,6 +7,7 @@ import com.teamabnormals.blueprint.common.block.BlueprintFlowerBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -21,8 +22,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IPlantable;
-
-import java.util.Random;
 
 public class MonkeyBrushBlock extends BlueprintFlowerBlock implements BonemealableBlock, IPlantable {
 	public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.VERTICAL);
@@ -73,12 +72,12 @@ public class MonkeyBrushBlock extends BlueprintFlowerBlock implements Bonemealab
 	}
 
 	@Override
-	public boolean isBonemealSuccess(Level world, Random random, BlockPos blockPos, BlockState blockState) {
+	public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos blockPos, BlockState blockState) {
 		return true;
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel world, Random random, BlockPos blockPos, BlockState state) {
+	public void performBonemeal(ServerLevel world, RandomSource random, BlockPos blockPos, BlockState state) {
 		for (int x = 0; x < 64; ++x) {
 			for (int y = 0; y < x / 16; ++y) {
 				blockPos = blockPos.offset(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);

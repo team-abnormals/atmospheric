@@ -10,6 +10,7 @@ import com.teamabnormals.blueprint.common.block.BlueprintFlowerBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -17,7 +18,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -29,7 +29,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IPlantable;
 
 import java.util.Map;
-import java.util.Random;
 
 public class WallMonkeyBrushBlock extends BlueprintFlowerBlock implements BonemealableBlock, IPlantable {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -88,22 +87,17 @@ public class WallMonkeyBrushBlock extends BlueprintFlowerBlock implements Boneme
 	}
 
 	@Override
-	public BlockBehaviour.OffsetType getOffsetType() {
-		return BlockBehaviour.OffsetType.NONE;
-	}
-
-	@Override
 	public boolean isValidBonemealTarget(BlockGetter worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		return worldIn.getBlockState(pos.above()).isAir();
 	}
 
 	@Override
-	public boolean isBonemealSuccess(Level world, Random random, BlockPos blockPos, BlockState blockState) {
+	public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos blockPos, BlockState blockState) {
 		return true;
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel world, Random random, BlockPos blockPos, BlockState state) {
+	public void performBonemeal(ServerLevel world, RandomSource random, BlockPos blockPos, BlockState state) {
 		for (int x = 0; x < 64; ++x) {
 			if (state.getBlock() == AtmosphericBlocks.WARM_WALL_MONKEY_BRUSH.get())
 				state = AtmosphericBlocks.WARM_MONKEY_BRUSH.get().defaultBlockState();

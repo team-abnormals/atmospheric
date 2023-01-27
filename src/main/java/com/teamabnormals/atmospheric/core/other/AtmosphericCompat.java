@@ -5,12 +5,7 @@ import com.teamabnormals.atmospheric.common.dispenser.PassionVineDispenseBehavio
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class AtmosphericCompat {
 
@@ -18,30 +13,11 @@ public class AtmosphericCompat {
 		registerDispenserBehaviors();
 		registerCompostables();
 		registerFlammables();
-		registerCarvers();
 	}
 
 	public static void registerDispenserBehaviors() {
 		DispenserBlock.registerBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
 		DispenserBlock.registerBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
-	}
-
-	public static void registerCarvers() {
-		ForgeRegistries.WORLD_CARVERS.forEach(carver -> {
-			Set<Block> blocks = new HashSet<>(carver.replaceableBlocks);
-
-			blocks.add(AtmosphericBlocks.ARID_SAND.get());
-			blocks.add(AtmosphericBlocks.ARID_SANDSTONE.get());
-			blocks.add(AtmosphericBlocks.RED_ARID_SAND.get());
-			blocks.add(AtmosphericBlocks.RED_ARID_SANDSTONE.get());
-
-			blocks.add(AtmosphericBlocks.IVORY_TRAVERTINE.get());
-			blocks.add(AtmosphericBlocks.PEACH_TRAVERTINE.get());
-			blocks.add(AtmosphericBlocks.PERSIMMON_TRAVERTINE.get());
-			blocks.add(AtmosphericBlocks.SAFFRON_TRAVERTINE.get());
-
-			carver.replaceableBlocks = blocks;
-		});
 	}
 
 	public static void registerCompostables() {
@@ -146,7 +122,7 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_HEDGE.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_LEAF_PILE.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_BOARDS.get(), 5, 20);
-		
+
 		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.FLOWERING_MORADO_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.MORADO_LOG.get(), 5, 5);

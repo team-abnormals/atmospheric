@@ -1,23 +1,23 @@
 {
   "parent": "minecraft:husbandry/plant_seed",
+  "criteria": {
+    "finish_gateau": {
+      "trigger": "atmospheric:finish_gateau"
+    }
+  },
   "display": {
-    "icon": {
-      "item": "atmospheric:yucca_gateau"
-    },
-    "title": {
-      "translate": "advancements.atmospheric.husbandry.finish_gateau.title"
-    },
+    "announce_to_chat": true,
     "description": {
       "translate": "advancements.atmospheric.husbandry.finish_gateau.description"
     },
     "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "atmospheric:yucca_gateau"
+    },
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "criteria": {
-    "finish_gateau": {
-      "trigger": "atmospheric:finish_gateau"
+    "title": {
+      "translate": "advancements.atmospheric.husbandry.finish_gateau.title"
     }
   },
   "requirements": [

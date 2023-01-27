@@ -1,23 +1,23 @@
 {
   "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "put_out_fire": {
+      "trigger": "atmospheric:put_out_fire"
+    }
+  },
   "display": {
-    "icon": {
-      "item": "atmospheric:aloe_leaves"
-    },
-    "title": {
-      "translate": "advancements.atmospheric.husbandry.put_out_fire.title"
-    },
+    "announce_to_chat": true,
     "description": {
       "translate": "advancements.atmospheric.husbandry.put_out_fire.description"
     },
     "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "atmospheric:aloe_leaves"
+    },
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "criteria": {
-    "put_out_fire": {
-      "trigger": "atmospheric:put_out_fire"
+    "title": {
+      "translate": "advancements.atmospheric.husbandry.put_out_fire.title"
     }
   },
   "requirements": [

@@ -8,7 +8,7 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.advancements.AdvancementProvider;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -46,8 +46,8 @@ public class AtmosphericAdvancementProvider extends AdvancementProvider {
 
 	private static Advancement.Builder createAdvancement(String name, String category, ResourceLocation parent, ItemLike icon, FrameType frame, boolean showToast, boolean announceToChat, boolean hidden) {
 		return Advancement.Builder.advancement().parent(Advancement.Builder.advancement().build(parent)).display(icon,
-				new TranslatableComponent("advancements." + Atmospheric.MOD_ID + "." + category + "." + name + ".title"),
-				new TranslatableComponent("advancements." + Atmospheric.MOD_ID + "." + category + "." + name + ".description"),
+				Component.translatable("advancements." + Atmospheric.MOD_ID + "." + category + "." + name + ".title"),
+				Component.translatable("advancements." + Atmospheric.MOD_ID + "." + category + "." + name + ".description"),
 				null, frame, showToast, announceToChat, hidden);
 	}
 }

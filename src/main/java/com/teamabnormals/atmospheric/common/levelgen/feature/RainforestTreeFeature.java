@@ -6,22 +6,26 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.core.util.TreeUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedRW;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraftforge.common.Tags;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
+import java.util.function.BiConsumer;
 
 public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 	private final List<Block> brushes = new ArrayList<>();
@@ -36,7 +40,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 	public boolean place(FeaturePlaceContext<TreeConfiguration> context) {
 		TreeConfiguration config = context.config();
 		WorldGenLevel level = context.level();
-		Random rand = context.random();
+		RandomSource rand = context.random();
 		BlockPos position = context.origin();
 
 		boolean morado = config.trunkProvider.getState(rand, position).is(AtmosphericBlocks.MORADO_LOG.get());
@@ -68,7 +72,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 
 				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
-						if (j >= 0 && j < level.getMaxBuildHeight()) {
+						if (j >= level.getMinBuildHeight() && j < level.getMaxBuildHeight()) {
 							if (!this.water ? !TreeUtil.isAirOrLeaves(level, blockpos$mutableblockpos.set(l, j, i1)) : !isAirOrWaterOrLeaves(level, blockpos$mutableblockpos.set(l, j, i1))) {
 								flag = false;
 							}
@@ -194,7 +198,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 				if (!brushes.isEmpty()) {
 					for (BlockPos pos : logsPlaced) {
 						for (Direction direction2 : Direction.values()) {
-							if (isAir(level, pos.relative(direction2)) && rand.nextInt(3) == 0) {
+							if (level.isStateAtPosition(pos.relative(direction2), BlockStateBase::isAir) && rand.nextInt(3) == 0) {
 								level.setBlock(pos.relative(direction2), MonkeyBrushFeature.monkeyBrushState(brushes.get(rand.nextInt(brushes.size())).defaultBlockState(), direction2), 18);
 							}
 						}
@@ -202,6 +206,18 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 				}
 
 				TreeUtil.updateLeaves(level, logsPlaced);
+
+				Set<BlockPos> set3 = Sets.newHashSet();
+				BiConsumer<BlockPos, BlockState> biconsumer3 = (p_225290_, p_225291_) -> {
+					set3.add(p_225290_.immutable());
+					level.setBlock(p_225290_, p_225291_, 19);
+				};
+
+				if (!config.decorators.isEmpty()) {
+					TreeDecorator.Context decoratorContext = new TreeDecorator.Context(level, biconsumer3, rand, logsPlaced, Sets.newHashSet(), Sets.newHashSet());
+					config.decorators.forEach((decorator) -> decorator.place(decoratorContext));
+				}
+
 				return true;
 			} else {
 				return false;
@@ -211,7 +227,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 		}
 	}
 
-	private void createHorizontalLog(int branchLength, LevelSimulatedRW worldIn, BlockPos pos, Direction direction, Random random, TreeConfiguration config, Set<BlockPos> logsPlaced) {
+	private void createHorizontalLog(int branchLength, LevelSimulatedRW worldIn, BlockPos pos, Direction direction, RandomSource random, TreeConfiguration config, Set<BlockPos> logsPlaced) {
 		int logX = pos.getX();
 		int logY = pos.getY();
 		int logZ = pos.getZ();
@@ -229,7 +245,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 		}
 	}
 
-	private void createVerticalLog(int branchHeight, LevelSimulatedRW level, BlockPos pos, Random random, TreeConfiguration config, Set<BlockPos> logsPlaced) {
+	private void createVerticalLog(int branchHeight, LevelSimulatedRW level, BlockPos pos, RandomSource random, TreeConfiguration config, Set<BlockPos> logsPlaced) {
 		int logX = pos.getX();
 		int logY = pos.getY();
 		int logZ = pos.getZ();
@@ -254,10 +270,6 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 				canopy = true;
 			}
 		}
-	}
-
-	public static boolean isAirOrWater(LevelSimulatedReader world, BlockPos pos) {
-		return isAir(world, pos) || isWater(world, pos);
 	}
 
 	public static boolean isAirOrWaterOrLeaves(LevelSimulatedReader world, BlockPos pos) {

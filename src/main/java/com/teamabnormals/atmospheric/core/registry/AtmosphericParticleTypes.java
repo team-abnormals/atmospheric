@@ -3,10 +3,9 @@ package com.teamabnormals.atmospheric.core.registry;
 import com.teamabnormals.atmospheric.client.particle.AloeBlossomParticle;
 import com.teamabnormals.atmospheric.client.particle.MoradoBlossomParticle;
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.DeferredRegister;
@@ -27,9 +26,9 @@ public class AtmosphericParticleTypes {
 	public static class RegisterParticleFactories {
 
 		@SubscribeEvent
-		public static void registerParticleTypes(ParticleFactoryRegisterEvent event) {
-			Minecraft.getInstance().particleEngine.register(ALOE_BLOSSOM.get(), AloeBlossomParticle.Factory::new);
-			Minecraft.getInstance().particleEngine.register(MORADO_BLOSSOM.get(), MoradoBlossomParticle.Factory::new);
+		public static void registerParticleTypes(RegisterParticleProvidersEvent event) {
+			event.register(ALOE_BLOSSOM.get(), AloeBlossomParticle.Factory::new);
+			event.register(MORADO_BLOSSOM.get(), MoradoBlossomParticle.Factory::new);
 		}
 	}
 }

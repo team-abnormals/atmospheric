@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -32,7 +33,6 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public class BarrelCactusBlock extends Block implements IPlantable, BonemealableBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
@@ -71,7 +71,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel worldIn, Random rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel worldIn, RandomSource rand, BlockPos pos, BlockState state) {
 		int i = state.getValue(AGE);
 		if (i < 3 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(3) == 0)) {
 			worldIn.setBlockAndUpdate(pos, state.setValue(AGE, i + 1));
@@ -139,7 +139,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 
 	@Nullable
 	@Override
-	public BlockPathTypes getAiPathNodeType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+	public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
 		return BlockPathTypes.DAMAGE_CACTUS;
 	}
 
@@ -149,7 +149,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	}
 
 	@Override
-	public boolean isBonemealSuccess(Level worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(Level worldIn, RandomSource rand, BlockPos pos, BlockState state) {
 		return state.getValue(AGE) < 3;
 	}
 }

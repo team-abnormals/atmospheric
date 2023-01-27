@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.common.levelgen.feature;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -21,7 +22,7 @@ public class PodzolFeature extends Feature<ProbabilityFeatureConfiguration> {
 	public boolean place(FeaturePlaceContext<ProbabilityFeatureConfiguration> context) {
 		ProbabilityFeatureConfiguration config = context.config();
 		WorldGenLevel worldIn = context.level();
-		Random rand = context.random();
+		RandomSource rand = context.random();
 		BlockPos pos = context.origin();
 		int i = 0;
 		BlockPos.MutableBlockPos blockpos$mutable = pos.mutable();

@@ -6,6 +6,7 @@ import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -22,7 +23,7 @@ public class PassionVineFeature extends Feature<NoneFeatureConfiguration> {
 	@Override
 	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
 		WorldGenLevel worldIn = context.level();
-		Random rand = context.random();
+		RandomSource rand = context.random();
 		BlockPos pos = context.origin();
 		int i = 0;
 		for (int j = 0; j < 400; ++j) {
@@ -48,7 +49,7 @@ public class PassionVineFeature extends Feature<NoneFeatureConfiguration> {
 		return i > 0;
 	}
 
-	private static BlockState getVineState(WorldGenLevel world, BlockState state, BlockPos pos, Random rand) {
+	private static BlockState getVineState(WorldGenLevel world, BlockState state, BlockPos pos, RandomSource rand) {
 		if (world.getBlockState(pos.relative(state.getValue(PassionVineBlock.FACING).getOpposite())).is(AtmosphericBlockTags.PASSION_VINE_GROWABLE_ON)) {
 			return state.setValue(PassionVineBlock.AGE, 4);
 		} else {

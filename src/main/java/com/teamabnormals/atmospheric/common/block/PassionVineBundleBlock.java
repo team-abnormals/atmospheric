@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.common.block;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -17,10 +18,9 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public class PassionVineBundleBlock extends Block {
-	protected final Random rand = new Random();
+	protected final RandomSource rand = RandomSource.create();
 
 	public PassionVineBundleBlock(Properties properties) {
 		super(properties);

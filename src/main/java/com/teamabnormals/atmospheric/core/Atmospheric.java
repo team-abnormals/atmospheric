@@ -3,10 +3,7 @@ package com.teamabnormals.atmospheric.core;
 import com.teamabnormals.atmospheric.client.renderer.entity.PassionfruitSeedRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionfruitSeedModel;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
-import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericAdvancementModifierProvider;
-import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericChunkGeneratorModifierProvider;
-import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericLootModifierProvider;
-import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericModdedBiomeSliceProvider;
+import com.teamabnormals.atmospheric.core.data.server.modifiers.*;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBiomeTagsProvider;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBlockTagsProvider;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericEntityTypeTagsProvider;
@@ -26,6 +23,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -35,7 +33,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(Atmospheric.MOD_ID)
@@ -76,7 +73,6 @@ public class Atmospheric {
 
 	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			AtmosphericBiomes.addBiomeTypes();
 			AtmosphericVillagers.setupVillagerTypes();
 			AtmosphericCompat.registerCompat();
 			AtmosphericMobEffects.registerBrewingRecipes();
@@ -95,18 +91,17 @@ public class Atmospheric {
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
 		boolean includeServer = event.includeServer();
-		if (includeServer) {
-			AtmosphericBlockTagsProvider blockTags = new AtmosphericBlockTagsProvider(generator, existingFileHelper);
-			generator.addProvider(blockTags);
-			generator.addProvider(new AtmosphericItemTagsProvider(generator, blockTags, existingFileHelper));
-			generator.addProvider(new AtmosphericEntityTypeTagsProvider(generator, existingFileHelper));
-			generator.addProvider(new AtmosphericBiomeTagsProvider(generator, existingFileHelper));
-			generator.addProvider(new AtmosphericAdvancementProvider(generator, existingFileHelper));
-			generator.addProvider(new AtmosphericAdvancementModifierProvider(generator));
-			generator.addProvider(new AtmosphericLootModifierProvider(generator));
-			generator.addProvider(new AtmosphericChunkGeneratorModifierProvider(generator));
-			generator.addProvider(new AtmosphericModdedBiomeSliceProvider(generator));
-		}
+		AtmosphericBlockTagsProvider blockTags = new AtmosphericBlockTagsProvider(generator, existingFileHelper);
+		generator.addProvider(includeServer, blockTags);
+		generator.addProvider(includeServer, new AtmosphericItemTagsProvider(generator, blockTags, existingFileHelper));
+		generator.addProvider(includeServer, new AtmosphericEntityTypeTagsProvider(generator, existingFileHelper));
+		generator.addProvider(includeServer, new AtmosphericBiomeTagsProvider(generator, existingFileHelper));
+		generator.addProvider(includeServer, new AtmosphericAdvancementProvider(generator, existingFileHelper));
+		generator.addProvider(includeServer, new AtmosphericAdvancementModifierProvider(generator));
+		generator.addProvider(includeServer, new AtmosphericLootModifierProvider(generator));
+		generator.addProvider(includeServer, new AtmosphericChunkGeneratorModifierProvider(generator));
+		generator.addProvider(includeServer, new AtmosphericModdedBiomeSliceProvider(generator));
+		generator.addProvider(includeServer, AtmosphericBiomeModifierProvider.create(generator, existingFileHelper));
 	}
 
 	@OnlyIn(Dist.CLIENT)

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#atmospheric:has_feature/yucca_tree/savanna",
+  "features": "atmospheric:windswept_savanna_yucca_trees",
+  "step": "vegetal_decoration"
+}

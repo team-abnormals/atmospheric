@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.common.block.WaterHyacinthBlock;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -22,7 +23,7 @@ public class WaterHyacinthPatchFeature extends Feature<NoneFeatureConfiguration>
 	@Override
 	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
 		WorldGenLevel world = context.level();
-		Random random = context.random();
+		RandomSource random = context.random();
 		BlockPos pos = context.origin();
 
 		BlockState topState = AtmosphericBlocks.WATER_HYACINTH.get().defaultBlockState();

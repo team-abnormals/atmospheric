@@ -1,23 +1,23 @@
 {
   "parent": "minecraft:husbandry/plant_seed",
+  "criteria": {
+    "spit_passionfruit": {
+      "trigger": "atmospheric:spit_passionfruit"
+    }
+  },
   "display": {
-    "icon": {
-      "item": "atmospheric:passionfruit"
-    },
-    "title": {
-      "translate": "advancements.atmospheric.husbandry.spit_passionfruit.title"
-    },
+    "announce_to_chat": true,
     "description": {
       "translate": "advancements.atmospheric.husbandry.spit_passionfruit.description"
     },
     "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "atmospheric:passionfruit"
+    },
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "criteria": {
-    "spit_passionfruit": {
-      "trigger": "atmospheric:spit_passionfruit"
+    "title": {
+      "translate": "advancements.atmospheric.husbandry.spit_passionfruit.title"
     }
   },
   "requirements": [

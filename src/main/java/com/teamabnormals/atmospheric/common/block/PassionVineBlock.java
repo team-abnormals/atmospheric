@@ -9,6 +9,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -33,7 +34,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public class PassionVineBlock extends Block implements BonemealableBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -70,7 +70,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 	}
 
 	@Override
-	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
+	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
 		super.tick(state, worldIn, pos, random);
 		int i = state.getValue(AGE);
 
@@ -115,7 +115,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 	}
 	*/
 
-	public void attemptGrowFruit(BlockState state, Level worldIn, BlockPos pos, Random random) {
+	public void attemptGrowFruit(BlockState state, Level worldIn, BlockPos pos, RandomSource random) {
 		int i = state.getValue(AGE);
 		Direction direction = state.getValue(FACING);
 		BlockState hanging = worldIn.getBlockState(pos.relative(direction.getOpposite()));
@@ -132,7 +132,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		}
 	}
 
-	public void attemptGrowDown(BlockState state, Level worldIn, BlockPos pos, Random random) {
+	public void attemptGrowDown(BlockState state, Level worldIn, BlockPos pos, RandomSource random) {
 		if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 			BlockState below = worldIn.getBlockState(pos.below());
 			if (below.getBlock() == Blocks.AIR) {
@@ -225,12 +225,12 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 	}
 
 	@Override
-	public boolean isBonemealSuccess(Level worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(Level worldIn, RandomSource rand, BlockPos pos, BlockState state) {
 		return true;
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel worldIn, Random rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel worldIn, RandomSource rand, BlockPos pos, BlockState state) {
 		int i = Math.min(4, state.getValue(AGE) + 1);
 		worldIn.setBlock(pos, state.setValue(AGE, Integer.valueOf(i)), 2);
 	}

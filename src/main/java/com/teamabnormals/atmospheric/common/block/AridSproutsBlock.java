@@ -32,9 +32,4 @@ public class AridSproutsBlock extends BushBlock {
 	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
 		return PlantType.DESERT;
 	}
-
-	@Override
-	public BlockBehaviour.OffsetType getOffsetType() {
-		return BlockBehaviour.OffsetType.XZ;
-	}
 }

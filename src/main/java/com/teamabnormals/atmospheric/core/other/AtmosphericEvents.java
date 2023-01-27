@@ -5,7 +5,7 @@ import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,7 +16,7 @@ public class AtmosphericEvents {
 
 	@SubscribeEvent
 	public static void livingHurt(LivingHurtEvent event) {
-		LivingEntity entity = event.getEntityLiving();
+		LivingEntity entity = event.getEntity();
 
 		if (entity.hasEffect(AtmosphericMobEffects.RELIEF.get())) {
 			int amplifier = entity.getEffect(AtmosphericMobEffects.RELIEF.get()).getAmplifier();
@@ -48,18 +48,19 @@ public class AtmosphericEvents {
 
 	@SubscribeEvent
 	public static void breakSpead(BreakSpeed event) {
-		if (event.getState().getBlock() instanceof PassionVineBundleBlock && event.getPlayer().getMainHandItem().getItem() == Items.SHEARS)
+		if (event.getState().getBlock() instanceof PassionVineBundleBlock && event.getEntity().getMainHandItem().getItem() == Items.SHEARS)
 			event.setNewSpeed(15.0F);
 	}
 
 	@SubscribeEvent
-	public static void livingTick(LivingUpdateEvent event) {
-		float damage = event.getEntity().getPersistentData().getFloat("IncomingDamage");
-		int amplifierHeal = event.getEntity().getPersistentData().getInt("PotionHealAmplifier");
-		if (event.getEntity().getPersistentData().getBoolean("Heal")) {
+	public static void livingTick(LivingTickEvent event) {
+		LivingEntity entity = event.getEntity();
+		float damage = entity.getPersistentData().getFloat("IncomingDamage");
+		int amplifierHeal = entity.getPersistentData().getInt("PotionHealAmplifier");
+		if (entity.getPersistentData().getBoolean("Heal")) {
 			if (damage >= (amplifierHeal + 1)) {
-				event.getEntityLiving().heal((amplifierHeal + 1));
-				event.getEntityLiving().getPersistentData().putBoolean("Heal", false);
+				entity.heal((amplifierHeal + 1));
+				entity.getPersistentData().putBoolean("Heal", false);
 			}
 		}
 	}

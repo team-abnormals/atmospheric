@@ -2,13 +2,14 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBiomes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.blueprint.core.util.DataUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,8 +17,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
-
-import java.util.Random;
 
 public class AridSandBlock extends FallingBlock implements BonemealableBlock {
 	private final int color;
@@ -56,12 +55,12 @@ public class AridSandBlock extends FallingBlock implements BonemealableBlock {
 	}
 
 	@Override
-	public boolean isBonemealSuccess(Level worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(Level worldIn, RandomSource rand, BlockPos pos, BlockState state) {
 		return true;
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel worldIn, Random rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel worldIn, RandomSource rand, BlockPos pos, BlockState state) {
 		BlockPos blockpos = pos.above();
 		BlockState blockstate = AtmosphericBlocks.ARID_SPROUTS.get().defaultBlockState();
 
@@ -80,8 +79,8 @@ public class AridSandBlock extends FallingBlock implements BonemealableBlock {
 			if (blockstate2.isAir()) {
 				BlockState blockstate1;
 				if (rand.nextInt(8) == 0) {
-					ResourceLocation biome = worldIn.getBiome(blockpos1).value().getRegistryName();
-					if (DataUtil.matchesKeys(biome, AtmosphericBiomes.FLOURISHING_DUNES.getKey()))
+					Holder<Biome> biome = worldIn.getBiome(blockpos1);
+					if (biome.is(AtmosphericBiomes.FLOURISHING_DUNES.getKey()))
 						blockstate1 = AtmosphericBlocks.GILIA.get().defaultBlockState();
 					else {
 						blockstate1 = AtmosphericBlocks.YUCCA_FLOWER.get().defaultBlockState();

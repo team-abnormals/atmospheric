@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.LargeDiskConfiguration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
@@ -24,7 +25,7 @@ public class CoarseDirtPatchFeature extends Feature<LargeDiskConfiguration> {
 	public boolean place(FeaturePlaceContext<LargeDiskConfiguration> context) {
 		LargeDiskConfiguration config = context.config();
 		WorldGenLevel worldIn = context.level();
-		Random rand = context.random();
+		RandomSource rand = context.random();
 		BlockPos pos = context.origin();
 
 		if (worldIn.getFluidState(pos).is(FluidTags.WATER)) {

@@ -1,35 +1,35 @@
 {
   "parent": "minecraft:adventure/root",
-  "display": {
-    "icon": {
-      "item": "atmospheric:yucca_flower"
-    },
-    "title": {
-      "translate": "advancements.atmospheric.adventure.dunes_pricks.title"
-    },
-    "description": {
-      "translate": "advancements.atmospheric.adventure.dunes_pricks.description"
-    },
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
-    "yucca_flower": {
-      "trigger": "atmospheric:yucca_flower_prick"
-    },
-    "yucca_leaves": {
-      "trigger": "atmospheric:yucca_leaves_prick"
-    },
-    "yucca_branch": {
-      "trigger": "atmospheric:yucca_branch_prick"
-    },
     "aloe_vera": {
       "trigger": "atmospheric:aloe_vera_prick"
     },
     "barrel_cactus": {
       "trigger": "atmospheric:barrel_cactus_prick"
+    },
+    "yucca_branch": {
+      "trigger": "atmospheric:yucca_branch_prick"
+    },
+    "yucca_flower": {
+      "trigger": "atmospheric:yucca_flower_prick"
+    },
+    "yucca_leaves": {
+      "trigger": "atmospheric:yucca_leaves_prick"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.atmospheric.adventure.dunes_pricks.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "atmospheric:yucca_flower"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.atmospheric.adventure.dunes_pricks.title"
     }
   },
   "requirements": [

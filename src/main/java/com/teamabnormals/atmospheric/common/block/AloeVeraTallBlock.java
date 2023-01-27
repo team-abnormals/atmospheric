@@ -11,6 +11,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -42,7 +43,6 @@ import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.PlantType;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableBlock {
 	public static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
@@ -64,11 +64,6 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(HALF, AGE);
-	}
-
-	@Override
-	public Block.OffsetType getOffsetType() {
-		return Block.OffsetType.XZ;
 	}
 
 	@Override
@@ -95,7 +90,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 		if (entityIn instanceof LivingEntity) {
 			if (!(entityIn instanceof Bee))
 				entityIn.makeStuckInBlock(state, new Vec3(0.8F, 0.75D, 0.8F));
-			Random rand = new Random();
+			RandomSource rand = RandomSource.create();
 
 			for (int i = 0; i < 3; i++) {
 				double offsetX = rand.nextFloat() * 0.6F;
@@ -128,7 +123,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	public void animateTick(BlockState state, Level worldIn, BlockPos pos, Random rand) {
+	public void animateTick(BlockState state, Level worldIn, BlockPos pos, RandomSource rand) {
 		double offsetX = rand.nextFloat() * 0.6F;
 		double offsetZ = rand.nextFloat() * 0.45F;
 
@@ -143,7 +138,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	@Override
 	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		int age = state.getValue(AGE);
-		Random rand = new Random();
+		RandomSource rand = RandomSource.create();
 
 		if (player.getItemInHand(handIn).getItem() == Items.SHEARS) {
 
@@ -193,18 +188,18 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	}
 
 	@Override
-	public boolean isBonemealSuccess(Level worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(Level worldIn, RandomSource rand, BlockPos pos, BlockState state) {
 		return state.getValue(AGE) < 8;
 	}
 
 	@Nullable
 	@Override
-	public BlockPathTypes getAiPathNodeType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+	public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
 		return BlockPathTypes.DAMAGE_CACTUS;
 	}
 
 	@Override
-	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
+	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
 		super.tick(state, worldIn, pos, random);
 		if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
 			boolean flag = worldIn.getBlockState(pos.below()).is(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON);
@@ -217,7 +212,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel world, Random rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel world, RandomSource rand, BlockPos pos, BlockState state) {
 		int age = state.getValue(AGE);
 		DoubleBlockHalf half = state.getValue(HALF);
 		if (age < 8) {

@@ -1,82 +1,152 @@
 {
-  "selector": "minecraft:adventure/adventuring_time",
-  "priority": "normal",
   "modifiers": [
     {
       "type": "criteria",
       "config": {
         "criteria": {
-          "atmospheric:rainforest": {
-            "trigger": "minecraft:location",
-            "conditions": {
-              "location": {
-                "biome": "atmospheric:rainforest"
-              }
-            }
-          },
-          "atmospheric:sparse_rainforest": {
-            "trigger": "minecraft:location",
-            "conditions": {
-              "location": {
-                "biome": "atmospheric:sparse_rainforest"
-              }
-            }
-          },
-          "atmospheric:rainforest_basin": {
-            "trigger": "minecraft:location",
-            "conditions": {
-              "location": {
-                "biome": "atmospheric:rainforest_basin"
-              }
-            }
-          },
-          "atmospheric:sparse_rainforest_basin": {
-            "trigger": "minecraft:location",
-            "conditions": {
-              "location": {
-                "biome": "atmospheric:sparse_rainforest_basin"
-              }
-            }
-          },
           "atmospheric:dunes": {
-            "trigger": "minecraft:location",
             "conditions": {
-              "location": {
-                "biome": "atmospheric:dunes"
-              }
-            }
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:dunes"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
           },
           "atmospheric:flourishing_dunes": {
-            "trigger": "minecraft:location",
             "conditions": {
-              "location": {
-                "biome": "atmospheric:flourishing_dunes"
-              }
-            }
-          },
-          "atmospheric:rocky_dunes": {
-            "trigger": "minecraft:location",
-            "conditions": {
-              "location": {
-                "biome": "atmospheric:rocky_dunes"
-              }
-            }
-          },
-          "atmospheric:petrified_dunes": {
-            "trigger": "minecraft:location",
-            "conditions": {
-              "location": {
-                "biome": "atmospheric:petrified_dunes"
-              }
-            }
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:flourishing_dunes"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
           },
           "atmospheric:hot_springs": {
-            "trigger": "minecraft:location",
             "conditions": {
-              "location": {
-                "biome": "atmospheric:hot_springs"
-              }
-            }
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:hot_springs"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
+          "atmospheric:petrified_dunes": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:petrified_dunes"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
+          "atmospheric:rainforest": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:rainforest"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
+          "atmospheric:rainforest_basin": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:rainforest_basin"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
+          "atmospheric:rocky_dunes": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:rocky_dunes"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
+          "atmospheric:sparse_rainforest": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:sparse_rainforest"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
+          "atmospheric:sparse_rainforest_basin": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:sparse_rainforest_basin"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
           }
         },
         "requirements": [
@@ -111,5 +181,7 @@
         "should_replace_requirements": false
       }
     }
-  ]
+  ],
+  "priority": "normal",
+  "selector": "minecraft:adventure/adventuring_time"
 }

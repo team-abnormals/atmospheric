@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.core.data.server.tags;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -11,7 +12,6 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 import static com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags.*;
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.*;
-import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.STRIPPED_GRIMWOOD;
 
 public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 
@@ -53,6 +53,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		);
 
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(ARID_SAND.get(), RED_ARID_SAND.get(), CRUSTOSE.get(), CRUSTOSE_PATH.get());
+		this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES).add(AtmosphericBlocks.ARID_SAND.get(), AtmosphericBlocks.ARID_SANDSTONE.get(), AtmosphericBlocks.RED_ARID_SAND.get(), AtmosphericBlocks.RED_ARID_SANDSTONE.get(), AtmosphericBlocks.IVORY_TRAVERTINE.get(), AtmosphericBlocks.PEACH_TRAVERTINE.get(), AtmosphericBlocks.PERSIMMON_TRAVERTINE.get(), AtmosphericBlocks.SAFFRON_TRAVERTINE.get());
 
 		this.tag(BlockTags.BEE_GROWABLES).add(PASSION_VINE.get());
 		this.tag(BlockTags.BEEHIVES).add(ROSEWOOD_BEEHIVE.get(), MORADO_BEEHIVE.get(), YUCCA_BEEHIVE.get(), KOUSA_BEEHIVE.get(), ASPEN_BEEHIVE.get(), GRIMWOOD_BEEHIVE.get());

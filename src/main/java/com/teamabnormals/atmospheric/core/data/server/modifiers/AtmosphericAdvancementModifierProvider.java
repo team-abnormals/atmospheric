@@ -40,7 +40,7 @@ public class AtmosphericAdvancementModifierProvider extends AdvancementModifierP
 		CriteriaModifier.Builder adventuringTime = CriteriaModifier.builder(this.modId);
 		AtmosphericBiomes.HELPER.getDeferredRegister().getEntries().forEach(biome -> {
 			ResourceLocation key = ForgeRegistries.BIOMES.getKey(biome.get());
-			adventuringTime.addCriterion(key.getPath(), LocationTrigger.TriggerInstance.located(LocationPredicate.inBiome(ResourceKey.create(Registry.BIOME_REGISTRY, key))));
+			adventuringTime.addCriterion(key.getPath(), PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(ResourceKey.create(Registry.BIOME_REGISTRY, key))));
 		});
 		this.entry("adventure/adventuring_time").selects("adventure/adventuring_time").addModifier(adventuringTime.requirements(RequirementsStrategy.AND).build());
 

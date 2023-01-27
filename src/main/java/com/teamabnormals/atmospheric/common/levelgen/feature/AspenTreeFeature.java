@@ -7,15 +7,19 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.core.util.TreeUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
+import java.util.function.BiConsumer;
 
 public class AspenTreeFeature extends Feature<TreeConfiguration> {
 
@@ -27,7 +31,7 @@ public class AspenTreeFeature extends Feature<TreeConfiguration> {
 	public boolean place(FeaturePlaceContext<TreeConfiguration> context) {
 		TreeConfiguration config = context.config();
 		WorldGenLevel worldIn = context.level();
-		Random rand = context.random();
+		RandomSource rand = context.random();
 		BlockPos position = context.origin();
 
 		int height = 12 + rand.nextInt(4) + rand.nextInt(5) + rand.nextInt(6);
@@ -46,7 +50,7 @@ public class AspenTreeFeature extends Feature<TreeConfiguration> {
 
 				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
-						if (j >= 0 && j < worldIn.getMaxBuildHeight()) {
+						if (j >= worldIn.getMinBuildHeight() && j < worldIn.getMaxBuildHeight()) {
 							if (!TreeUtil.isAirOrLeaves(worldIn, mutable.set(l, j, i1))) {
 								flag = false;
 							}
@@ -116,6 +120,17 @@ public class AspenTreeFeature extends Feature<TreeConfiguration> {
 
 				TreeUtil.placeLeafAt(worldIn, position.offset(0, height, 0), rand, config);
 				TreeUtil.updateLeaves(worldIn, logsPlaced);
+
+				Set<BlockPos> set3 = Sets.newHashSet();
+				BiConsumer<BlockPos, BlockState> biconsumer3 = (p_225290_, p_225291_) -> {
+					set3.add(p_225290_.immutable());
+					worldIn.setBlock(p_225290_, p_225291_, 19);
+				};
+
+				if (!config.decorators.isEmpty()) {
+					TreeDecorator.Context decoratorContext = new TreeDecorator.Context(worldIn, biconsumer3, rand, logsPlaced, Sets.newHashSet(), Sets.newHashSet());
+					config.decorators.forEach((decorator) -> decorator.place(decoratorContext));
+				}
 
 				return true;
 			} else {

@@ -8,6 +8,7 @@ import com.teamabnormals.blueprint.core.util.BlockUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -19,8 +20,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-import java.util.Random;
-
 public class FloweringMoradoLeavesBlock extends BlueprintLeavesBlock {
 	public FloweringMoradoLeavesBlock(Properties properties) {
 		super(properties);
@@ -28,7 +27,7 @@ public class FloweringMoradoLeavesBlock extends BlueprintLeavesBlock {
 
 	@Override
 	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
-		Random rand = new Random();
+		RandomSource rand = RandomSource.create();
 		if (player.getItemInHand(handIn).getItem() == Items.SHEARS) {
 			player.getItemInHand(handIn).hurtAndBreak(1, player, (onBroken) -> {
 				onBroken.broadcastBreakEvent(handIn);
@@ -45,7 +44,7 @@ public class FloweringMoradoLeavesBlock extends BlueprintLeavesBlock {
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void animateTick(BlockState stateIn, Level worldIn, BlockPos pos, Random rand) {
+	public void animateTick(BlockState stateIn, Level worldIn, BlockPos pos, RandomSource rand) {
 		super.animateTick(stateIn, worldIn, pos, rand);
 
 		int color = worldIn.getBiome(pos).value().getFoliageColor();

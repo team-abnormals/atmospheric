@@ -3,11 +3,10 @@ package com.teamabnormals.atmospheric.common.effect;
 import com.teamabnormals.atmospheric.common.entity.projectile.PassionfruitSeed;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
-
-import java.util.Random;
 
 public class SpittingEffect extends MobEffect {
 
@@ -17,7 +16,7 @@ public class SpittingEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		Random random = new Random();
+		RandomSource random = RandomSource.create();
 		if (!entity.level.isClientSide && entity.getHealth() > 0) {
 			int chance = (6 / (amplifier < 6 ? (amplifier + 1) : 6));
 			if (entity.level.getGameTime() % chance == 0) {
