@@ -20,12 +20,14 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 	@Override
 	public void addTags() {
 		this.tag(BiomeTags.IS_JUNGLE).addTag(AtmosphericBiomeTags.IS_RAINFOREST);
-		this.tag(BiomeTags.IS_FOREST).addTag(AtmosphericBiomeTags.IS_RAINFOREST);
 		this.tag(BiomeTags.HAS_MINESHAFT).addTags(AtmosphericBiomeTags.IS_RAINFOREST, AtmosphericBiomeTags.IS_DUNES);
 		this.tag(BiomeTags.IS_OVERWORLD).addTags(AtmosphericBiomeTags.IS_RAINFOREST, AtmosphericBiomeTags.IS_DUNES);
 		this.tag(BiomeTags.STRONGHOLD_BIASED_TO).addTags(AtmosphericBiomeTags.IS_RAINFOREST, AtmosphericBiomeTags.IS_DUNES);
 
 		this.tag(BlueprintBiomeTags.IS_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES);
+		this.tag(BiomeTags.HAS_RUINED_PORTAL_DESERT).addTags(AtmosphericBiomeTags.IS_DUNES);
+		this.tag(BiomeTags.SPAWNS_WARM_VARIANT_FROGS).addTags(AtmosphericBiomeTags.IS_DUNES);
+		this.tag(BiomeTags.WATER_ON_MAP_OUTLINES).add(RAINFOREST_BASIN.get(), SPARSE_RAINFOREST_BASIN.get());
 
 		this.tag(AtmosphericBiomeTags.IS_RAINFOREST).add(RAINFOREST.get(), SPARSE_RAINFOREST.get(), RAINFOREST_BASIN.get(), SPARSE_RAINFOREST_BASIN.get());
 		this.tag(AtmosphericBiomeTags.IS_DUNES).add(DUNES.get(), FLOURISHING_DUNES.get(), ROCKY_DUNES.get(), PETRIFIED_DUNES.get());
