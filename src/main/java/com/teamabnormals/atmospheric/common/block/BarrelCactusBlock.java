@@ -105,14 +105,14 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	}
 
 	@Override
-	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
-		if (entityIn instanceof LivingEntity living) {
+	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entity) {
+		if (entity instanceof LivingEntity living && state.getValue(AGE) != 0) {
 			living.addEffect(new MobEffectInstance(MobEffects.POISON, ((state.getValue(AGE) + 1) * 40)));
 		}
-		entityIn.hurt(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.getValue(AGE));
-		if (entityIn instanceof ServerPlayer serverplayerentity) {
-			if (!entityIn.getCommandSenderWorld().isClientSide() && !serverplayerentity.isCreative()) {
-				AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.trigger(serverplayerentity);
+		entity.hurt(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.getValue(AGE));
+		if (entity instanceof ServerPlayer serverPlayer) {
+			if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative()) {
+				AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.trigger(serverPlayer);
 			}
 		}
 	}

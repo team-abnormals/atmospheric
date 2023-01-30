@@ -1,6 +1,4 @@
 {
-	"credit": "Made with Blockbench",
-	"parent": "block/block",
 	"ambientocclusion": false,
 	"textures": {
 		"flowerpot": "block/flower_pot",
