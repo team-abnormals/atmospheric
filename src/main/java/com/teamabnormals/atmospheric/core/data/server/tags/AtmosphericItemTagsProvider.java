@@ -52,6 +52,7 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 		this.copy(BlockTags.FLOWERS, ItemTags.FLOWERS);
 		this.copy(BlockTags.STANDING_SIGNS, ItemTags.SIGNS);
 		this.copy(BlockTags.OVERWORLD_NATURAL_LOGS, ItemTags.OVERWORLD_NATURAL_LOGS);
+		this.copy(BlockTags.DIRT, ItemTags.DIRT);
 		this.tag(ItemTags.FLOWERS).add(AtmosphericItems.YELLOW_BLOSSOMS.get());
 		this.tag(ItemTags.BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.getFirst().get(), AtmosphericItems.MORADO_BOAT.getFirst().get(), AtmosphericItems.YUCCA_BOAT.getFirst().get(), AtmosphericItems.KOUSA_BOAT.getFirst().get(), AtmosphericItems.ASPEN_BOAT.getFirst().get(), AtmosphericItems.GRIMWOOD_BOAT.getFirst().get());
 		this.tag(ItemTags.CHEST_BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.getSecond().get(), AtmosphericItems.MORADO_BOAT.getSecond().get(), AtmosphericItems.YUCCA_BOAT.getSecond().get(), AtmosphericItems.KOUSA_BOAT.getSecond().get(), AtmosphericItems.ASPEN_BOAT.getSecond().get(), AtmosphericItems.GRIMWOOD_BOAT.getSecond().get());
