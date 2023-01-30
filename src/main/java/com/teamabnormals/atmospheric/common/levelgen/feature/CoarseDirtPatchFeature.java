@@ -13,8 +13,6 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
-import java.util.Random;
-
 public class CoarseDirtPatchFeature extends Feature<LargeDiskConfiguration> {
 
 	public CoarseDirtPatchFeature(Codec<LargeDiskConfiguration> codec) {

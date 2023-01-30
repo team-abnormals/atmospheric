@@ -24,7 +24,6 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public class YuccaFlowerBlock extends BlueprintFlowerBlock implements BonemealableBlock, YuccaPlant {
 

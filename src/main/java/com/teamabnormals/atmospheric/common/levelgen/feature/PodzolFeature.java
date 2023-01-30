@@ -10,8 +10,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.ProbabilityFeatureConfiguration;
 
-import java.util.Random;
-
 public class PodzolFeature extends Feature<ProbabilityFeatureConfiguration> {
 
 	public PodzolFeature(Codec<ProbabilityFeatureConfiguration> p_i49919_1_) {

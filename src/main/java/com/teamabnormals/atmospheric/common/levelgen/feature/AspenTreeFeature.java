@@ -17,7 +17,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Set;
 import java.util.function.BiConsumer;
 

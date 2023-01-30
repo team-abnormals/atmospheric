@@ -36,8 +36,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
 
-import java.util.Random;
-
 public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, YuccaPlant {
 	protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 16.0D, 11.0D);
 	protected static final VoxelShape SHAPE_SNAPPED = Block.box(5.0D, 6.0D, 5.0D, 11.0D, 16.0D, 11.0D);

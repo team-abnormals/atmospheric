@@ -13,8 +13,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-import java.util.Random;
-
 public class PassionVineFeature extends Feature<NoneFeatureConfiguration> {
 	public PassionVineFeature(Codec<NoneFeatureConfiguration> p_i49876_1_) {
 		super(p_i49876_1_);

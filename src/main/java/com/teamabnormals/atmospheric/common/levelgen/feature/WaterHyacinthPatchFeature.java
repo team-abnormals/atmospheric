@@ -13,8 +13,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-import java.util.Random;
-
 public class WaterHyacinthPatchFeature extends Feature<NoneFeatureConfiguration> {
 	public WaterHyacinthPatchFeature(Codec<NoneFeatureConfiguration> codec) {
 		super(codec);
