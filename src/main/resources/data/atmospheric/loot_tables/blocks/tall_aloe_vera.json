@@ -5,38 +5,43 @@
       "rolls": 1.0,
       "entries": [
         {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "atmospheric:tall_aloe_vera",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:uniform_bonus_count",
+              "parameters": {
+                "bonusMultiplier": 0.5
+              }
+            }
+          ],
+          "name": "atmospheric:aloe_leaves"
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
           "type": "minecraft:alternatives",
           "children": [
-            {
-              "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:block_state_property",
-                  "block": "atmospheric:tall_aloe_vera",
-                  "properties": {
-                    "half": "lower"
-                  }
-                }
-              ],
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "min": 1,
-                    "max": 2
-                  }
-                },
-                {
-                  "function": "minecraft:apply_bonus",
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:uniform_bonus_count",
-                  "parameters": {
-                    "bonusMultiplier": 0.5
-                  }
-                }
-              ],
-              "name": "atmospheric:aloe_leaves"
-            },
             {
               "type": "minecraft:item",
               "name": "atmospheric:yellow_blossoms",
@@ -45,7 +50,8 @@
                   "condition": "minecraft:block_state_property",
                   "block": "atmospheric:tall_aloe_vera",
                   "properties": {
-                    "age": "6"
+                    "age": "6",
+                    "half": "lower"
                   }
                 }
               ],
@@ -64,7 +70,8 @@
                   "condition": "minecraft:block_state_property",
                   "block": "atmospheric:tall_aloe_vera",
                   "properties": {
-                    "age": "7"
+                    "age": "7",
+                    "half": "lower"
                   }
                 }
               ],
@@ -83,7 +90,8 @@
                   "condition": "minecraft:block_state_property",
                   "block": "atmospheric:tall_aloe_vera",
                   "properties": {
-                    "age": "8"
+                    "age": "8",
+                    "half": "lower"
                   }
                 }
               ],
@@ -100,9 +108,20 @@
     },
     {
       "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "atmospheric:tall_aloe_vera",
+          "properties": {
+            "age": 8,
+            "half": "lower"
+          }
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
+
           "functions": [
             {
               "function": "minecraft:apply_bonus",
@@ -115,15 +134,6 @@
             }
           ],
           "name": "atmospheric:aloe_kernels"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:block_state_property",
-          "block": "atmospheric:tall_aloe_vera",
-          "properties": {
-            "half": "lower"
-          }
         }
       ]
     },
@@ -140,7 +150,7 @@
           "condition": "minecraft:block_state_property",
           "block": "atmospheric:tall_aloe_vera",
           "properties": {
-            "half": "upper"
+            "half": "lower"
           }
         }
       ]
