@@ -2,21 +2,24 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1,
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": [
+              "minecraft:shears"
+            ]
+          }
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "name": "atmospheric:arid_sprouts"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:match_tool",
-          "predicate": {
-            "item": "minecraft:shears"
-          }
-        }
-      ]
+      "rolls": 1
     }
   ]
 }
