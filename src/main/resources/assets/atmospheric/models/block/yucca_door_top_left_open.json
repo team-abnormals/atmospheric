@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "textures": {
+    "bottom": "atmospheric:block/yucca_door_bottom",
+    "top": "atmospheric:block/yucca_door_top"
+  }
+}

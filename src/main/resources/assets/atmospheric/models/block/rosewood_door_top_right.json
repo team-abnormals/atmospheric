@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "atmospheric:block/rosewood_door_bottom",
+    "top": "atmospheric:block/rosewood_door_top"
+  }
+}

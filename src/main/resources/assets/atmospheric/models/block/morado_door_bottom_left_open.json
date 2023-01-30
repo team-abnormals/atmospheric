@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "atmospheric:block/morado_door_bottom",
+    "top": "atmospheric:block/morado_door_top"
+  }
+}

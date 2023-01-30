@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "atmospheric:block/kousa_door_bottom",
+    "top": "atmospheric:block/kousa_door_top"
+  }
+}

@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_top",
-    "textures": {
-        "bottom": "atmospheric:block/morado_door_bottom",
-        "top": "atmospheric:block/morado_door_top"
-    }
-}
