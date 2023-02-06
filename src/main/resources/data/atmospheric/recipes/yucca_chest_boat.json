@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "chest_boat",
+  "ingredients": [
+    {
+      "tag": "forge:chests/wooden"
+    },
+    {
+      "item": "atmospheric:yucca_boat"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:yucca_chest_boat"
+  }
+}
