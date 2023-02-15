@@ -92,8 +92,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> MORADO_LEAF_CARPET = HELPER.createCompatBlock("quark", "morado_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.MORADO.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> MORADO_HEDGE = HELPER.createCompatFuelBlock("quark", "morado_hedge", () -> new HedgeBlock(AtmosphericProperties.MORADO.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
-	public static final RegistryObject<Block> FLOWERING_MORADO_LEAVES = HELPER.createBlock("flowering_morado_leaves", () -> new FloweringMoradoLeavesBlock(AtmosphericProperties.createLeaves()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> FLOWERING_MORADO_LEAF_CARPET = HELPER.createCompatBlock("quark", "flowering_morado_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.createLeafCarpet()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> FLOWERING_MORADO_LEAVES = HELPER.createBlock("flowering_morado_leaves", () -> new FloweringMoradoLeavesBlock(AtmosphericProperties.MORADO.leaves()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> FLOWERING_MORADO_LEAF_CARPET = HELPER.createCompatBlock("quark", "flowering_morado_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.MORADO.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> FLOWERING_MORADO_HEDGE = HELPER.createCompatFuelBlock("quark", "flowering_morado_hedge", () -> new HedgeBlock(AtmosphericProperties.MORADO.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> FLOWERING_MORADO_LEAF_PILE = HELPER.createCompatBlock("woodworks", "flowering_morado_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.MORADO.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 
