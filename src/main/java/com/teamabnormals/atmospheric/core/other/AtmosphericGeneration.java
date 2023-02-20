@@ -27,7 +27,6 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addJungleGrass(generation);
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
-		BiomeDefaultFeatures.addJungleVines(generation);
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PODZOL.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PASSION_VINES.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.MONKEY_BRUSH.getHolder().get());
