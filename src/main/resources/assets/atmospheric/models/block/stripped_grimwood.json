@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "atmospheric:block/stripped_grimwood_log",
-        "side": "atmospheric:block/stripped_grimwood_log"
-    }
-}

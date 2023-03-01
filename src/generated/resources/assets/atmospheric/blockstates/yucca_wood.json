@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "atmospheric:block/yucca_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "atmospheric:block/yucca_wood"
+    },
+    "axis=z": {
+      "model": "atmospheric:block/yucca_wood_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "type=double": {
+      "model": "atmospheric:block/morado_planks"
+    },
+    "type=east": {
+      "model": "atmospheric:block/morado_vertical_slab",
+      "uvlock": true,
+      "y": 90
+    },
+    "type=north": {
+      "model": "atmospheric:block/morado_vertical_slab",
+      "uvlock": true
+    },
+    "type=south": {
+      "model": "atmospheric:block/morado_vertical_slab",
+      "uvlock": true,
+      "y": 180
+    },
+    "type=west": {
+      "model": "atmospheric:block/morado_vertical_slab",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/vertical_planks",
+  "textures": {
+    "all": "atmospheric:block/laurel_planks"
+  }
+}

@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "powered=false": { "model": "atmospheric:block/kousa_pressure_plate" },
-        "powered=true": { "model": "atmospheric:block/kousa_pressure_plate_down" }
-    }
-}

@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/leaf_carpet",
+  "textures": {
+    "all": "atmospheric:block/dry_laurel_leaves"
+  }
+}

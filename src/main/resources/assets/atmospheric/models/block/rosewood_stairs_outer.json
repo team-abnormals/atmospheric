@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "atmospheric:block/rosewood_planks",
-        "top": "atmospheric:block/rosewood_planks",
-        "side": "atmospheric:block/rosewood_planks"
-    }
-}

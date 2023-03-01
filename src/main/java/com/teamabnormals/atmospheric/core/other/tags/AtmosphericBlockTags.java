@@ -20,6 +20,7 @@ public class AtmosphericBlockTags {
 	public static final TagKey<Block> YUCCA_PLACEABLE = blockTag("yucca_placeable");
 	public static final TagKey<Block> YUCCA_FLOWER_PLACEABLE = blockTag("yucca_flower_placeable");
 	public static final TagKey<Block> BARREL_CACTUS_PLACEABLE = blockTag("barrel_cactus_placeable");
+	public static final TagKey<Block> SNOWY_BAMBOO_PLANTABLE_ON = blockTag("snowy_bamboo_plantable_on");
 
 	private static TagKey<Block> blockTag(String name) {
 		return TagUtil.blockTag(Atmospheric.MOD_ID, name);

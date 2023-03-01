@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "atmospheric:block/yucca_planks",
+    "side": "atmospheric:block/yucca_planks",
+    "top": "atmospheric:block/yucca_planks"
+  }
+}

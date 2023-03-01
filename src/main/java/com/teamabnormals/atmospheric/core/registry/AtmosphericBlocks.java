@@ -16,6 +16,8 @@ import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour.OffsetType;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -265,40 +267,6 @@ public class AtmosphericBlocks {
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static final RegistryObject<Block> STRIPPED_KOUSA_LOG = HELPER.createBlock("stripped_kousa_log", () -> new StrippedLogBlock(AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> STRIPPED_KOUSA_WOOD = HELPER.createBlock("stripped_kousa_wood", () -> new StrippedWoodBlock(AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LOG = HELPER.createBlock("kousa_log", () -> new LogBlock(STRIPPED_KOUSA_LOG, AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_WOOD = HELPER.createBlock("kousa_wood", () -> new WoodBlock(STRIPPED_KOUSA_WOOD, AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LEAVES = HELPER.createBlock("kousa_leaves", () -> new BlueprintLeavesBlock(AtmosphericProperties.KOUSA.leaves()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> KOUSA_SAPLING = HELPER.createBlock("kousa_sapling", () -> new BlueprintSaplingBlock(new KousaTreeGrower(), PropertyUtil.SAPLING), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> POTTED_KOUSA_SAPLING = HELPER.createBlockNoItem("potted_kousa_sapling", () -> new FlowerPotBlock(KOUSA_SAPLING.get(), PropertyUtil.FLOWER_POT));
-	public static final RegistryObject<Block> KOUSA_PLANKS = HELPER.createBlock("kousa_planks", () -> new PlanksBlock(AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_STAIRS = HELPER.createBlock("kousa_stairs", () -> new WoodStairBlock(KOUSA_PLANKS.get().defaultBlockState(), AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_SLAB = HELPER.createBlock("kousa_slab", () -> new WoodSlabBlock(AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_PRESSURE_PLATE = HELPER.createBlock("kousa_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, AtmosphericProperties.KOUSA.pressurePlate()), CreativeModeTab.TAB_REDSTONE);
-	public static final RegistryObject<Block> KOUSA_BUTTON = HELPER.createBlock("kousa_button", () -> new BlueprintWoodButtonBlock(AtmosphericProperties.KOUSA.button()), CreativeModeTab.TAB_REDSTONE);
-	public static final RegistryObject<Block> KOUSA_FENCE = HELPER.createFuelBlock("kousa_fence", () -> new WoodFenceBlock(AtmosphericProperties.KOUSA.planks()), 300, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> KOUSA_FENCE_GATE = HELPER.createFuelBlock("kousa_fence_gate", () -> new WoodFenceGateBlock(AtmosphericProperties.KOUSA.planks()), 300, CreativeModeTab.TAB_REDSTONE);
-	public static final RegistryObject<Block> KOUSA_DOOR = HELPER.createBlock("kousa_door", () -> new WoodDoorBlock(AtmosphericProperties.KOUSA.door()), CreativeModeTab.TAB_REDSTONE);
-	public static final RegistryObject<Block> KOUSA_TRAPDOOR = HELPER.createBlock("kousa_trapdoor", () -> new WoodTrapDoorBlock(AtmosphericProperties.KOUSA.trapdoor()), CreativeModeTab.TAB_REDSTONE);
-	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> KOUSA_SIGNS = HELPER.createSignBlock("kousa", MaterialColor.TERRACOTTA_CYAN);
-
-	public static final RegistryObject<Block> KOUSA_BOARDS = HELPER.createCompatFuelBlock("woodworks", "kousa_boards", () -> new RotatedPillarBlock(AtmosphericProperties.KOUSA.planks()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_BOOKSHELF = HELPER.createCompatFuelBlock("woodworks", "kousa_bookshelf", () -> new BookshelfBlock(AtmosphericProperties.KOUSA.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LADDER = HELPER.createCompatFuelBlock("woodworks", "kousa_ladder", () -> new BlueprintLadderBlock(AtmosphericProperties.KOUSA.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> KOUSA_BEEHIVE = HELPER.createCompatBlock("woodworks", "kousa_beehive", () -> new BlueprintBeehiveBlock(AtmosphericProperties.KOUSA.beehive()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> KOUSA_LEAF_PILE = HELPER.createCompatBlock("woodworks", "kousa_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.KOUSA.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-	public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> KOUSA_CHESTS = HELPER.createCompatChestBlocks("woodworks", "kousa", MaterialColor.TERRACOTTA_CYAN);
-
-	public static final RegistryObject<Block> VERTICAL_KOUSA_PLANKS = HELPER.createCompatBlock("quark", "vertical_kousa_planks", () -> new Block(AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_VERTICAL_SLAB = HELPER.createCompatFuelBlock("quark", "kousa_vertical_slab", () -> new VerticalSlabBlock(AtmosphericProperties.KOUSA.planks()), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> STRIPPED_KOUSA_POST = HELPER.createCompatFuelBlock("quark", "stripped_kousa_post", () -> new WoodPostBlock(AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_POST = HELPER.createCompatFuelBlock("quark", "kousa_post", () -> new WoodPostBlock(STRIPPED_KOUSA_POST, AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> KOUSA_LEAF_CARPET = HELPER.createCompatBlock("quark", "kousa_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.KOUSA.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> KOUSA_HEDGE = HELPER.createCompatFuelBlock("quark", "kousa_hedge", () -> new HedgeBlock(AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_DECORATIONS);
-
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 	public static final RegistryObject<Block> STRIPPED_ASPEN_LOG = HELPER.createBlock("stripped_aspen_log", () -> new StrippedLogBlock(AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_ASPEN_WOOD = HELPER.createBlock("stripped_aspen_wood", () -> new StrippedWoodBlock(AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_LOG = HELPER.createBlock("aspen_log", () -> new LogBlock(STRIPPED_ASPEN_LOG, AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -333,10 +301,102 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_LEAF_CARPET = HELPER.createCompatBlock("quark", "aspen_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.ASPEN.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_HEDGE = HELPER.createCompatFuelBlock("quark", "aspen_hedge", () -> new HedgeBlock(AtmosphericProperties.ASPEN.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
+	public static final RegistryObject<Block> AGAVE = HELPER.createBlock("agave", () -> new BushBlock(AtmosphericProperties.ARID_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CRUSTOSE_SPROUTS = HELPER.createBlock("crustose_sprouts", () -> new BushBlock(AtmosphericProperties.ARID_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+
 	public static final RegistryObject<Block> CRUSTOSE = HELPER.createBlock("crustose", () -> new CrustoseBlock(Block.Properties.copy(Blocks.DIRT).randomTicks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> CRUSTOSE_PATH = HELPER.createBlock("crustose_path", () -> new DirtPathBlock(AtmosphericProperties.CRUSTOSE_PATH), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CRUSTOSE_LOG = HELPER.createBlock("crustose_log", () -> new CrustoseLogBlock(ASPEN_LOG::get, AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> CRUSTOSE_WOOD = HELPER.createBlock("crustose_wood", () -> new CrustoseLogBlock(ASPEN_WOOD::get, AtmosphericProperties.ASPEN.log().randomTicks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public static final RegistryObject<Block> STRIPPED_LAUREL_LOG = HELPER.createBlock("stripped_laurel_log", () -> new StrippedLogBlock(AtmosphericProperties.LAUREL.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> STRIPPED_LAUREL_WOOD = HELPER.createBlock("stripped_laurel_wood", () -> new StrippedWoodBlock(AtmosphericProperties.LAUREL.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_LOG = HELPER.createBlock("laurel_log", () -> new LogBlock(STRIPPED_LAUREL_LOG, AtmosphericProperties.LAUREL.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_WOOD = HELPER.createBlock("laurel_wood", () -> new WoodBlock(STRIPPED_LAUREL_WOOD, AtmosphericProperties.LAUREL.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_LEAVES = HELPER.createBlock("laurel_leaves", () -> new BlueprintLeavesBlock(AtmosphericProperties.LAUREL.leaves()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> LAUREL_SAPLING = HELPER.createBlock("laurel_sapling", () -> new BlueprintSaplingBlock(new YuccaTreeGrower(), PropertyUtil.SAPLING), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> POTTED_LAUREL_SAPLING = HELPER.createBlockNoItem("potted_laurel_sapling", () -> new FlowerPotBlock(LAUREL_SAPLING.get(), PropertyUtil.FLOWER_POT));
+	public static final RegistryObject<Block> LAUREL_PLANKS = HELPER.createBlock("laurel_planks", () -> new PlanksBlock(AtmosphericProperties.LAUREL.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_STAIRS = HELPER.createBlock("laurel_stairs", () -> new WoodStairBlock(LAUREL_PLANKS.get().defaultBlockState(), AtmosphericProperties.LAUREL.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_SLAB = HELPER.createBlock("laurel_slab", () -> new WoodSlabBlock(AtmosphericProperties.LAUREL.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_PRESSURE_PLATE = HELPER.createBlock("laurel_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, AtmosphericProperties.LAUREL.pressurePlate()), CreativeModeTab.TAB_REDSTONE);
+	public static final RegistryObject<Block> LAUREL_BUTTON = HELPER.createBlock("laurel_button", () -> new BlueprintWoodButtonBlock(AtmosphericProperties.LAUREL.button()), CreativeModeTab.TAB_REDSTONE);
+	public static final RegistryObject<Block> LAUREL_FENCE = HELPER.createFuelBlock("laurel_fence", () -> new WoodFenceBlock(AtmosphericProperties.LAUREL.planks()), 300, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> LAUREL_FENCE_GATE = HELPER.createFuelBlock("laurel_fence_gate", () -> new WoodFenceGateBlock(AtmosphericProperties.LAUREL.planks()), 300, CreativeModeTab.TAB_REDSTONE);
+	public static final RegistryObject<Block> LAUREL_DOOR = HELPER.createBlock("laurel_door", () -> new WoodDoorBlock(AtmosphericProperties.LAUREL.door()), CreativeModeTab.TAB_REDSTONE);
+	public static final RegistryObject<Block> LAUREL_TRAPDOOR = HELPER.createBlock("laurel_trapdoor", () -> new WoodTrapDoorBlock(AtmosphericProperties.LAUREL.trapdoor()), CreativeModeTab.TAB_REDSTONE);
+	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> LAUREL_SIGNS = HELPER.createSignBlock("laurel", MaterialColor.TERRACOTTA_CYAN);
+
+	public static final RegistryObject<Block> LAUREL_BOARDS = HELPER.createCompatFuelBlock("woodworks", "laurel_boards", () -> new RotatedPillarBlock(AtmosphericProperties.LAUREL.planks()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_BOOKSHELF = HELPER.createCompatFuelBlock("woodworks", "laurel_bookshelf", () -> new BookshelfBlock(AtmosphericProperties.LAUREL.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_LADDER = HELPER.createCompatFuelBlock("woodworks", "laurel_ladder", () -> new BlueprintLadderBlock(AtmosphericProperties.LAUREL.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> LAUREL_BEEHIVE = HELPER.createCompatBlock("woodworks", "laurel_beehive", () -> new BlueprintBeehiveBlock(AtmosphericProperties.LAUREL.beehive()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> LAUREL_LEAF_PILE = HELPER.createCompatBlock("woodworks", "laurel_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.LAUREL.leafPile()), CreativeModeTab.TAB_DECORATIONS);
+	public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> LAUREL_CHESTS = HELPER.createCompatChestBlocks("woodworks", "laurel", MaterialColor.TERRACOTTA_CYAN);
+
+	public static final RegistryObject<Block> VERTICAL_LAUREL_PLANKS = HELPER.createCompatBlock("quark", "vertical_laurel_planks", () -> new Block(AtmosphericProperties.LAUREL.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_VERTICAL_SLAB = HELPER.createCompatFuelBlock("quark", "laurel_vertical_slab", () -> new VerticalSlabBlock(AtmosphericProperties.LAUREL.planks()), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> STRIPPED_LAUREL_POST = HELPER.createCompatFuelBlock("quark", "stripped_laurel_post", () -> new WoodPostBlock(AtmosphericProperties.LAUREL.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_POST = HELPER.createCompatFuelBlock("quark", "laurel_post", () -> new WoodPostBlock(STRIPPED_LAUREL_POST, AtmosphericProperties.LAUREL.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> LAUREL_LEAF_CARPET = HELPER.createCompatBlock("quark", "laurel_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.LAUREL.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> LAUREL_HEDGE = HELPER.createCompatFuelBlock("quark", "laurel_hedge", () -> new HedgeBlock(AtmosphericProperties.LAUREL.log()), 300, CreativeModeTab.TAB_DECORATIONS);
+
+	public static final RegistryObject<Block> DRY_LAUREL_LEAVES = HELPER.createBlock("dry_laurel_leaves", () -> new BlueprintLeavesBlock(AtmosphericProperties.LAUREL.leaves()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DRY_LAUREL_SAPLING = HELPER.createBlock("dry_laurel_sapling", () -> new BlueprintSaplingBlock(new YuccaTreeGrower(), PropertyUtil.SAPLING), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> POTTED_DRY_LAUREL_SAPLING = HELPER.createBlockNoItem("potted_dry_laurel_sapling", () -> new FlowerPotBlock(DRY_LAUREL_SAPLING.get(), PropertyUtil.FLOWER_POT));
+	public static final RegistryObject<Block> DRY_LAUREL_LEAF_PILE = HELPER.createCompatBlock("woodworks", "dry_laurel_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.LAUREL.leafPile()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DRY_LAUREL_LEAF_CARPET = HELPER.createCompatBlock("quark", "dry_laurel_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.LAUREL.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DRY_LAUREL_HEDGE = HELPER.createCompatFuelBlock("quark", "dry_laurel_hedge", () -> new HedgeBlock(AtmosphericProperties.LAUREL.log()), 300, CreativeModeTab.TAB_DECORATIONS);
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public static final RegistryObject<Block> STRIPPED_KOUSA_LOG = HELPER.createBlock("stripped_kousa_log", () -> new StrippedLogBlock(AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> STRIPPED_KOUSA_WOOD = HELPER.createBlock("stripped_kousa_wood", () -> new StrippedWoodBlock(AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_LOG = HELPER.createBlock("kousa_log", () -> new LogBlock(STRIPPED_KOUSA_LOG, AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_WOOD = HELPER.createBlock("kousa_wood", () -> new WoodBlock(STRIPPED_KOUSA_WOOD, AtmosphericProperties.KOUSA.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_LEAVES = HELPER.createBlock("kousa_leaves", () -> new BlueprintLeavesBlock(AtmosphericProperties.KOUSA.leaves()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_SAPLING = HELPER.createBlock("kousa_sapling", () -> new BlueprintSaplingBlock(new KousaTreeGrower(), PropertyUtil.SAPLING), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> POTTED_KOUSA_SAPLING = HELPER.createBlockNoItem("potted_kousa_sapling", () -> new FlowerPotBlock(KOUSA_SAPLING.get(), PropertyUtil.FLOWER_POT));
+	public static final RegistryObject<Block> KOUSA_PLANKS = HELPER.createBlock("kousa_planks", () -> new PlanksBlock(AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_STAIRS = HELPER.createBlock("kousa_stairs", () -> new WoodStairBlock(KOUSA_PLANKS.get().defaultBlockState(), AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_SLAB = HELPER.createBlock("kousa_slab", () -> new WoodSlabBlock(AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_PRESSURE_PLATE = HELPER.createBlock("kousa_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, AtmosphericProperties.KOUSA.pressurePlate()), CreativeModeTab.TAB_REDSTONE);
+	public static final RegistryObject<Block> KOUSA_BUTTON = HELPER.createBlock("kousa_button", () -> new BlueprintWoodButtonBlock(AtmosphericProperties.KOUSA.button()), CreativeModeTab.TAB_REDSTONE);
+	public static final RegistryObject<Block> KOUSA_FENCE = HELPER.createFuelBlock("kousa_fence", () -> new WoodFenceBlock(AtmosphericProperties.KOUSA.planks()), 300, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_FENCE_GATE = HELPER.createFuelBlock("kousa_fence_gate", () -> new WoodFenceGateBlock(AtmosphericProperties.KOUSA.planks()), 300, CreativeModeTab.TAB_REDSTONE);
+	public static final RegistryObject<Block> KOUSA_DOOR = HELPER.createBlock("kousa_door", () -> new WoodDoorBlock(AtmosphericProperties.KOUSA.door()), CreativeModeTab.TAB_REDSTONE);
+	public static final RegistryObject<Block> KOUSA_TRAPDOOR = HELPER.createBlock("kousa_trapdoor", () -> new WoodTrapDoorBlock(AtmosphericProperties.KOUSA.trapdoor()), CreativeModeTab.TAB_REDSTONE);
+	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> KOUSA_SIGNS = HELPER.createSignBlock("kousa", MaterialColor.TERRACOTTA_CYAN);
+
+	public static final RegistryObject<Block> KOUSA_BOARDS = HELPER.createCompatFuelBlock("woodworks", "kousa_boards", () -> new RotatedPillarBlock(AtmosphericProperties.KOUSA.planks()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_BOOKSHELF = HELPER.createCompatFuelBlock("woodworks", "kousa_bookshelf", () -> new BookshelfBlock(AtmosphericProperties.KOUSA.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_LADDER = HELPER.createCompatFuelBlock("woodworks", "kousa_ladder", () -> new BlueprintLadderBlock(AtmosphericProperties.KOUSA.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_BEEHIVE = HELPER.createCompatBlock("woodworks", "kousa_beehive", () -> new BlueprintBeehiveBlock(AtmosphericProperties.KOUSA.beehive()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_LEAF_PILE = HELPER.createCompatBlock("woodworks", "kousa_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.KOUSA.leafPile()), CreativeModeTab.TAB_DECORATIONS);
+	public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> KOUSA_CHESTS = HELPER.createCompatChestBlocks("woodworks", "kousa", MaterialColor.TERRACOTTA_CYAN);
+
+	public static final RegistryObject<Block> VERTICAL_KOUSA_PLANKS = HELPER.createCompatBlock("quark", "vertical_kousa_planks", () -> new Block(AtmosphericProperties.KOUSA.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_VERTICAL_SLAB = HELPER.createCompatFuelBlock("quark", "kousa_vertical_slab", () -> new VerticalSlabBlock(AtmosphericProperties.KOUSA.planks()), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> STRIPPED_KOUSA_POST = HELPER.createCompatFuelBlock("quark", "stripped_kousa_post", () -> new WoodPostBlock(AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_POST = HELPER.createCompatFuelBlock("quark", "kousa_post", () -> new WoodPostBlock(STRIPPED_KOUSA_POST, AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> KOUSA_LEAF_CARPET = HELPER.createCompatBlock("quark", "kousa_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.KOUSA.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_HEDGE = HELPER.createCompatFuelBlock("quark", "kousa_hedge", () -> new HedgeBlock(AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_DECORATIONS);
+
+	public static final RegistryObject<BambooSaplingBlock> SNOWY_BAMBOO_SAPLING = HELPER.createBlockNoItem("snowy_bamboo_sapling", () -> new SnowyBambooSaplingBlock(Properties.of(Material.BAMBOO_SAPLING).instabreak().noCollission().strength(1.0F).sound(SoundType.BAMBOO_SAPLING).offsetType(OffsetType.XZ)));
+	public static final RegistryObject<BambooBlock> SNOWY_BAMBOO = HELPER.createBlockNoItem("snowy_bamboo", () -> new SnowyBambooBlock(Properties.of(Material.BAMBOO, MaterialColor.PLANT).instabreak().strength(1.0F).sound(SoundType.BAMBOO).noOcclusion().dynamicShape().offsetType(OffsetType.XZ)));
+
+	public static final RegistryObject<Block> HANGING_CURRANT = HELPER.createBlock("hanging_currant", () -> new YuccaBranchBlock(Block.Properties.copy(Blocks.MELON_STEM).sound(SoundType.CROP).randomTicks()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CURRANT_STALK = HELPER.createFuelBlock("currant_stalk", () -> new RotatedPillarBlock(AtmosphericProperties.CURRANT.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CURRANT_STALK_BUNDLE = HELPER.createFuelBlock("currant_stalk_bundle", () -> new RotatedPillarBlock(AtmosphericProperties.CURRANT.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CURRANT_LEAVES = HELPER.createBlock("currant_leaves", () -> new BlueprintLeavesBlock(AtmosphericProperties.CURRANT.leaves()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CURRANT_SEEDLING = HELPER.createBlock("currant_seedling", () -> new BlueprintSaplingBlock(new YuccaTreeGrower(), PropertyUtil.SAPLING), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> POTTED_CURRANT_SEEDLING = HELPER.createBlockNoItem("potted_currant_sapling", () -> new FlowerPotBlock(CURRANT_SEEDLING.get(), PropertyUtil.FLOWER_POT));
+	public static final RegistryObject<Block> CURRANT_LEAF_PILE = HELPER.createCompatBlock("woodworks", "currant_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.CURRANT.leafPile()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CURRANT_LEAF_CARPET = HELPER.createCompatBlock("quark", "currant_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.CURRANT.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CURRANT_HEDGE = HELPER.createCompatFuelBlock("quark", "currant_hedge", () -> new HedgeBlock(AtmosphericProperties.CURRANT.log()), 300, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CURRANT_BASKET = HELPER.createCompatBlock("quark", "currant_basket", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_CYAN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

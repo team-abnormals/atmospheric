@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "atmospheric:block/morado_planks",
+    "side": "atmospheric:block/morado_bookshelf"
+  }
+}

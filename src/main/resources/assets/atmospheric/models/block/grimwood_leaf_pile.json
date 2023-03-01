@@ -1,6 +1,0 @@
-{
-  "parent": "blueprint:block/leaf_pile",
-  "textures": {
-    "all": "atmospheric:block/grimwood_leaves"
-  }
-}

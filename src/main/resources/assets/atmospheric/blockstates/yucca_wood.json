@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":    { "model": "atmospheric:block/yucca_wood" },
-        "axis=z":     { "model": "atmospheric:block/yucca_wood", "x": 90 },
-        "axis=x":     { "model": "atmospheric:block/yucca_wood", "x": 90, "y": 90 }
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "atmospheric:block/yucca_slab" },
-        "type=top": { "model": "atmospheric:block/yucca_slab_top" },
-        "type=double": { "model": "atmospheric:block/yucca_planks" }
-    }
-}

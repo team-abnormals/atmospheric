@@ -11,8 +11,10 @@ public class AtmosphericProperties {
 	public static final WoodSetProperties ROSEWOOD = WoodSetProperties.builder(MaterialColor.TERRACOTTA_MAGENTA).build();
 	public static final WoodSetProperties MORADO = WoodSetProperties.builder(MaterialColor.COLOR_RED).build();
 	public static final WoodSetProperties YUCCA = WoodSetProperties.builder(MaterialColor.COLOR_ORANGE).build();
-	public static final WoodSetProperties KOUSA = WoodSetProperties.builder(MaterialColor.TERRACOTTA_CYAN).build();
 	public static final WoodSetProperties ASPEN = WoodSetProperties.builder(MaterialColor.GOLD).build();
+	public static final WoodSetProperties LAUREL = WoodSetProperties.builder(MaterialColor.TERRACOTTA_YELLOW).build();
+	public static final WoodSetProperties KOUSA = WoodSetProperties.builder(MaterialColor.TERRACOTTA_CYAN).build();
+	public static final WoodSetProperties CURRANT = WoodSetProperties.builder(MaterialColor.TERRACOTTA_GRAY).build();
 	public static final WoodSetProperties GRIMWOOD = WoodSetProperties.builder(MaterialColor.TERRACOTTA_BLACK).build();
 
 	public static final Block.Properties ARID_SAND = Block.Properties.of(Material.SAND, MaterialColor.SAND).strength(0.5F).sound(SoundType.SAND);

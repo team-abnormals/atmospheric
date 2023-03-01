@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "atmospheric:block/laurel_planks"
+  }
+}

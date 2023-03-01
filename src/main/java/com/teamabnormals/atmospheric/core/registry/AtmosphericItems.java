@@ -34,6 +34,8 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> ALOE_LEAVES = HELPER.createItem("aloe_leaves", () -> new AloeLeavesItem(new Item.Properties().food(AtmosphericFoods.ALOE_LEAVES).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> ALOE_GEL_BOTTLE = HELPER.createItem("aloe_gel_bottle", () -> new AloeGelBottleItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(AtmosphericFoods.ALOE_GEL).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
 
+	public static final RegistryObject<Item> CURRANT = HELPER.createItem("currant", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
+
 	public static final RegistryObject<Item> WATER_HYACINTH = HELPER.createItem("water_hyacinth", () -> new WaterHyacinthItem(new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 	public static final RegistryObject<Item> BARREL_CACTUS = HELPER.createItem("barrel_cactus", () -> new BarrelCactusItem(new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 
@@ -57,6 +59,10 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> ASPEN_FURNACE_BOAT = HELPER.createItem("aspen_furnace_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.ASPEN_FURNACE_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
 	public static final RegistryObject<Item> LARGE_ASPEN_BOAT = HELPER.createItem("large_aspen_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.LARGE_ASPEN_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
 
+	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> LAUREL_BOAT = HELPER.createBoatAndChestBoatItem("laurel", AtmosphericBlocks.LAUREL_PLANKS);
+	public static final RegistryObject<Item> LAUREL_FURNACE_BOAT = HELPER.createItem("laurel_furnace_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.LAUREL_FURNACE_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
+	public static final RegistryObject<Item> LARGE_LAUREL_BOAT = HELPER.createItem("large_laurel_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.LARGE_LAUREL_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
+	
 	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> GRIMWOOD_BOAT = HELPER.createBoatAndChestBoatItem("grimwood", AtmosphericBlocks.GRIMWOOD_PLANKS);
 	public static final RegistryObject<Item> GRIMWOOD_FURNACE_BOAT = HELPER.createItem("grimwood_furnace_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.GRIMWOOD_FURNACE_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
 	public static final RegistryObject<Item> LARGE_GRIMWOOD_BOAT = HELPER.createItem("large_grimwood_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.LARGE_GRIMWOOD_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
@@ -69,6 +75,8 @@ public class AtmosphericItems {
 
 		public static final FoodProperties YUCCA_FRUIT = new FoodProperties.Builder().nutrition(1).saturationMod(0.3F).build();
 		public static final FoodProperties ROASTED_YUCCA_FRUIT = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(() -> new MobEffectInstance(AtmosphericMobEffects.PERSISTENCE.get(), 560, 0, false, false, true), 1.0F).build();
+
+		public static final FoodProperties CURRANT = new FoodProperties.Builder().nutrition(1).saturationMod(0.3F).build(); //TODO: food values
 
 		public static final FoodProperties ALOE_LEAVES = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).alwaysEat().build();
 		public static final FoodProperties ALOE_GEL = new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).alwaysEat().build();

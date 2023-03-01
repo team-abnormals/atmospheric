@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "atmospheric:block/morado_slab"
+    },
+    "type=double": {
+      "model": "atmospheric:block/morado_planks"
+    },
+    "type=top": {
+      "model": "atmospheric:block/morado_slab_top"
+    }
+  }
+}

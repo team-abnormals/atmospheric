@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "atmospheric:block/laurel_boards_horizontal",
+      "y": 270
+    },
+    "axis=y": {
+      "model": "atmospheric:block/laurel_boards"
+    },
+    "axis=z": {
+      "model": "atmospheric:block/laurel_boards_horizontal"
+    }
+  }
+}

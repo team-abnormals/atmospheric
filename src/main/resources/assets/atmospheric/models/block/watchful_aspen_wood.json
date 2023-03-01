@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "atmospheric:block/watchful_aspen_log",
-        "side": "atmospheric:block/watchful_aspen_log"
-    }
-}

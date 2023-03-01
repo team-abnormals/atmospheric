@@ -2,6 +2,8 @@ package com.teamabnormals.atmospheric.core;
 
 import com.teamabnormals.atmospheric.client.renderer.entity.PassionfruitSeedRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionfruitSeedModel;
+import com.teamabnormals.atmospheric.core.data.client.AtmosphericBlockStateProvider;
+import com.teamabnormals.atmospheric.core.data.client.AtmosphericItemModelProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.*;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBiomeTagsProvider;
@@ -88,20 +90,24 @@ public class Atmospheric {
 
 	private void dataSetup(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
-		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		ExistingFileHelper helper = event.getExistingFileHelper();
 
 		boolean includeServer = event.includeServer();
-		AtmosphericBlockTagsProvider blockTags = new AtmosphericBlockTagsProvider(generator, existingFileHelper);
+		AtmosphericBlockTagsProvider blockTags = new AtmosphericBlockTagsProvider(generator, helper);
 		generator.addProvider(includeServer, blockTags);
-		generator.addProvider(includeServer, new AtmosphericItemTagsProvider(generator, blockTags, existingFileHelper));
-		generator.addProvider(includeServer, new AtmosphericEntityTypeTagsProvider(generator, existingFileHelper));
-		generator.addProvider(includeServer, new AtmosphericBiomeTagsProvider(generator, existingFileHelper));
-		generator.addProvider(includeServer, new AtmosphericAdvancementProvider(generator, existingFileHelper));
+		generator.addProvider(includeServer, new AtmosphericItemTagsProvider(generator, blockTags, helper));
+		generator.addProvider(includeServer, new AtmosphericEntityTypeTagsProvider(generator, helper));
+		generator.addProvider(includeServer, new AtmosphericBiomeTagsProvider(generator, helper));
+		generator.addProvider(includeServer, new AtmosphericAdvancementProvider(generator, helper));
 		generator.addProvider(includeServer, new AtmosphericAdvancementModifierProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericLootModifierProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericChunkGeneratorModifierProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericModdedBiomeSliceProvider(generator));
-		generator.addProvider(includeServer, AtmosphericBiomeModifierProvider.create(generator, existingFileHelper));
+		generator.addProvider(includeServer, AtmosphericBiomeModifierProvider.create(generator, helper));
+
+		boolean includeClient = event.includeClient();
+		generator.addProvider(includeClient, new AtmosphericBlockStateProvider(generator, helper));
+		generator.addProvider(includeServer, new AtmosphericItemModelProvider(generator, helper));
 	}
 
 	@OnlyIn(Dist.CLIENT)

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "atmospheric:block/grimwood_sapling"
+  }
+}

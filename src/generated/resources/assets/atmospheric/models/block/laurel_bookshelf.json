@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "atmospheric:block/laurel_planks",
+    "side": "atmospheric:block/laurel_bookshelf"
+  }
+}

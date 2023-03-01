@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "atmospheric:block/currant_stalk_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "atmospheric:block/currant_stalk"
+    },
+    "axis=z": {
+      "model": "atmospheric:block/currant_stalk_horizontal",
+      "x": 90
+    }
+  }
+}

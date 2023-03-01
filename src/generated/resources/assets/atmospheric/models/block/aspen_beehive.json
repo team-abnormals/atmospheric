@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "atmospheric:block/aspen_beehive_end",
+    "front": "atmospheric:block/aspen_beehive_front",
+    "particle": "atmospheric:block/aspen_beehive_side",
+    "side": "atmospheric:block/aspen_beehive_side",
+    "top": "atmospheric:block/aspen_beehive_end"
+  }
+}

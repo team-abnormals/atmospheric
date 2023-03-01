@@ -1,0 +1,85 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "atmospheric:block/stripped_kousa_post"
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/stripped_kousa_post",
+        "x": 90
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/stripped_kousa_post",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "blueprint:block/chain_small"
+      },
+      "when": {
+        "chain_down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "blueprint:block/chain_small_top"
+      },
+      "when": {
+        "chain_up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "blueprint:block/chain_small_top",
+        "x": 90
+      },
+      "when": {
+        "chain_north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "blueprint:block/chain_small",
+        "x": 90
+      },
+      "when": {
+        "chain_south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "blueprint:block/chain_small",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "chain_west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "blueprint:block/chain_small_top",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "chain_east": "true"
+      }
+    }
+  ]
+}

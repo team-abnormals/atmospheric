@@ -82,11 +82,22 @@ public class AtmosphericClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_POST.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_LEAF_PILE.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_LEAVES.get(), RenderType.cutoutMipped());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_SAPLING.get(), RenderType.cutoutMipped());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_LEAF_CARPET.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_SAPLING.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_LEAF_CARPET.get(), RenderType.cutoutMipped());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_HEDGE.get(), RenderType.cutoutMipped());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_KOUSA_SAPLING.get(), RenderType.cutout());
 
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.SNOWY_BAMBOO_SAPLING.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.SNOWY_BAMBOO.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.HANGING_CURRANT.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.CURRANT_LEAF_PILE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.CURRANT_LEAVES.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.CURRANT_SEEDLING.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.CURRANT_LEAF_CARPET.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.CURRANT_HEDGE.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_CURRANT_SEEDLING.get(), RenderType.cutout());
+		
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ASPEN_LADDER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ASPEN_POST.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.STRIPPED_ASPEN_POST.get(), RenderType.cutout());
@@ -97,6 +108,21 @@ public class AtmosphericClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ASPEN_SAPLING.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_ASPEN_SAPLING.get(), RenderType.cutout());
 
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_LADDER.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_POST.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_LEAF_PILE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_LEAVES.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_SAPLING.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_LEAF_CARPET.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_HEDGE.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_LAUREL_SAPLING.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.DRY_LAUREL_LEAF_PILE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.DRY_LAUREL_LEAVES.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.DRY_LAUREL_SAPLING.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.DRY_LAUREL_LEAF_CARPET.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.DRY_LAUREL_HEDGE.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_DRY_LAUREL_SAPLING.get(), RenderType.cutout());
+		
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GRIMWOOD_LADDER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GRIMWOOD_POST.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.STRIPPED_GRIMWOOD_POST.get(), RenderType.cutout());
@@ -133,5 +159,8 @@ public class AtmosphericClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_FLOWER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_GILIA.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_WATER_HYACINTH.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.AGAVE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.CRUSTOSE_SPROUTS.get(), RenderType.cutout());
 	}
 }

@@ -101,6 +101,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(YUCCA_PLACEABLE).addTag(BlockTags.SAND).addTag(BlockTags.DIRT);
 		this.tag(YUCCA_FLOWER_PLACEABLE).add(Blocks.CACTUS, YUCCA_LEAVES.get(), YUCCA_HEDGE.get()).addTag(YUCCA_PLACEABLE);
 		this.tag(BARREL_CACTUS_PLACEABLE).addTag(BlockTags.SAND);
+		this.tag(SNOWY_BAMBOO_PLANTABLE_ON).add(Blocks.SNOW_BLOCK, SNOWY_BAMBOO.get(), SNOWY_BAMBOO_SAPLING.get());
 
 		this.tag(Tags.Blocks.CHESTS_WOODEN).add(ROSEWOOD_CHESTS.getFirst().get(), ROSEWOOD_CHESTS.getSecond().get(), MORADO_CHESTS.getFirst().get(), MORADO_CHESTS.getSecond().get(), YUCCA_CHESTS.getFirst().get(), YUCCA_CHESTS.getSecond().get(), KOUSA_CHESTS.getFirst().get(), KOUSA_CHESTS.getSecond().get(), ASPEN_CHESTS.getFirst().get(), ASPEN_CHESTS.getSecond().get(), GRIMWOOD_CHESTS.getFirst().get(), GRIMWOOD_CHESTS.getSecond().get());
 		this.tag(Tags.Blocks.CHESTS_TRAPPED).add(ROSEWOOD_CHESTS.getSecond().get(), MORADO_CHESTS.getSecond().get(), YUCCA_CHESTS.getSecond().get(), KOUSA_CHESTS.getSecond().get(), ASPEN_CHESTS.getSecond().get(), GRIMWOOD_CHESTS.getSecond().get());
