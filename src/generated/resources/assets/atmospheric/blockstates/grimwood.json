@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "atmospheric:block/grimwood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "atmospheric:block/grimwood"
+    },
+    "axis=z": {
+      "model": "atmospheric:block/grimwood_horizontal",
+      "x": 90
+    }
+  }
+}

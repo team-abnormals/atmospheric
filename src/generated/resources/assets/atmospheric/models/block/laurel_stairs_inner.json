@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "atmospheric:block/laurel_planks",
+    "side": "atmospheric:block/laurel_planks",
+    "top": "atmospheric:block/laurel_planks"
+  }
+}

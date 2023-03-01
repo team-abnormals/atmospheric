@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "atmospheric:block/rosewood_sapling"
+  }
+}

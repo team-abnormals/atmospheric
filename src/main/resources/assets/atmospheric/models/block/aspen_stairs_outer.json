@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "atmospheric:block/aspen_planks",
-        "top": "atmospheric:block/aspen_planks",
-        "side": "atmospheric:block/aspen_planks"
-    }
-}

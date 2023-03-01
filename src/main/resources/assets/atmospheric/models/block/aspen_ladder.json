@@ -1,8 +1,0 @@
-{
-    "parent": "block/ladder",
-    "ambientocclusion": false,
-    "textures": {
-        "particle": "atmospheric:block/aspen_ladder",
-        "texture": "atmospheric:block/aspen_ladder"
-    }
-}

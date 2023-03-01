@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "atmospheric:block/kousa_planks",
-        "side": "atmospheric:block/kousa_bookshelf"
-    }
-}

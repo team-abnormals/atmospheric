@@ -1,0 +1,7 @@
+{
+  "parent": "blueprint:block/hedge_post",
+  "textures": {
+    "leaf": "atmospheric:block/currant_leaves",
+    "log": "atmospheric:block/laurel_log"
+  }
+}

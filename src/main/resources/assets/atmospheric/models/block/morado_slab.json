@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "atmospheric:block/morado_planks",
-        "top": "atmospheric:block/morado_planks",
-        "side": "atmospheric:block/morado_planks"
-    }
-}

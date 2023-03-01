@@ -1,0 +1,7 @@
+{
+  "parent": "block/bamboo1_age0",
+  "textures": {
+    "all": "atmospheric:block/snowy_bamboo_stalk",
+    "particle": "atmospheric:block/snowy_bamboo_stalk"
+  }
+}

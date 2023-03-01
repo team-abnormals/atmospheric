@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "atmospheric:block/yucca_log",
-        "side": "atmospheric:block/yucca_log"
-    }
-}

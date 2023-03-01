@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/post",
+  "textures": {
+    "texture": "atmospheric:block/laurel_log"
+  }
+}

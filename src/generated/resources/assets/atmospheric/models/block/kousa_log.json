@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "atmospheric:block/kousa_log_top",
+    "side": "atmospheric:block/kousa_log"
+  }
+}

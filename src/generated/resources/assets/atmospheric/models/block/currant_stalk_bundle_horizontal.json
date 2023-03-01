@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "atmospheric:block/currant_stalk_bundle_top",
+    "side": "atmospheric:block/currant_stalk_bundle"
+  }
+}

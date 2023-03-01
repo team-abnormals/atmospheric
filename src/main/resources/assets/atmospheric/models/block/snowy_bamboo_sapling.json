@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "atmospheric:block/snowy_bamboo_stage0"
+  }
+}

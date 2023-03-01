@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/leaf_carpet",
+  "textures": {
+    "all": "atmospheric:block/kousa_leaves"
+  }
+}

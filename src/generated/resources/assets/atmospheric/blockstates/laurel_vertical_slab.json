@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "type=double": {
+      "model": "atmospheric:block/laurel_planks"
+    },
+    "type=east": {
+      "model": "atmospheric:block/laurel_vertical_slab",
+      "uvlock": true,
+      "y": 90
+    },
+    "type=north": {
+      "model": "atmospheric:block/laurel_vertical_slab",
+      "uvlock": true
+    },
+    "type=south": {
+      "model": "atmospheric:block/laurel_vertical_slab",
+      "uvlock": true,
+      "y": 180
+    },
+    "type=west": {
+      "model": "atmospheric:block/laurel_vertical_slab",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}

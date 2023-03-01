@@ -24,6 +24,16 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "atmospheric:currant": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "atmospheric:currant"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "atmospheric:passionfruit": {
             "conditions": {
               "item": {
@@ -109,6 +119,9 @@
           ],
           [
             "atmospheric:aloe_gel_bottle"
+          ],
+          [
+            "atmospheric:currant"
           ]
         ],
         "should_replace_requirements": false

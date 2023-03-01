@@ -1,8 +1,0 @@
-{
-    "parent": "blueprint:block/vertical_slab",
-    "textures": {
-        "side": "atmospheric:block/morado_planks",
-        "top": "atmospheric:block/morado_planks",
-        "bottom": "atmospheric:block/morado_planks"
-    }
-}

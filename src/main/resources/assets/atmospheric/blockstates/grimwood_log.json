@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":    { "model": "atmospheric:block/grimwood_log" },
-        "axis=z":     { "model": "atmospheric:block/grimwood_log", "x": 90 },
-        "axis=x":     { "model": "atmospheric:block/grimwood_log", "x": 90, "y": 90 }
-    }
-}

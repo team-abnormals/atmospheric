@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/ladder",
+  "textures": {
+    "particle": "atmospheric:block/rosewood_ladder",
+    "texture": "atmospheric:block/rosewood_ladder"
+  }
+}

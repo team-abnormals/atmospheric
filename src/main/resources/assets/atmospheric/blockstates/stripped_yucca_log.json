@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":    { "model": "atmospheric:block/stripped_yucca_log" },
-        "axis=z":     { "model": "atmospheric:block/stripped_yucca_log", "x": 90 },
-        "axis=x":     { "model": "atmospheric:block/stripped_yucca_log", "x": 90, "y": 90 }
-    }
-}

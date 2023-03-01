@@ -1,8 +1,0 @@
-{
-    "parent": "block/ladder",
-    "ambientocclusion": false,
-    "textures": {
-        "particle": "atmospheric:block/kousa_ladder",
-        "texture": "atmospheric:block/kousa_ladder"
-    }
-}

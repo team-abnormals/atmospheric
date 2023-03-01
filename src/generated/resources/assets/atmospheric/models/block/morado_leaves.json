@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "atmospheric:block/morado_leaves"
+  }
+}

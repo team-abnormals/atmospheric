@@ -1,0 +1,8 @@
+{
+  "parent": "block/bamboo_small_leaves",
+  "ambientocclusion": false,
+  "textures": {
+    "texture": "atmospheric:block/snowy_bamboo_small_leaves",
+    "particle": "atmospheric:block/snowy_bamboo_small_leaves"
+  }
+}
