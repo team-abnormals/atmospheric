@@ -12,6 +12,7 @@ public class AtmosphericBlockTags {
 	public static final TagKey<Block> ASPEN_LOGS = blockTag("aspen_logs");
 	public static final TagKey<Block> KOUSA_LOGS = blockTag("kousa_logs");
 	public static final TagKey<Block> GRIMWOOD_LOGS = blockTag("grimwood_logs");
+	public static final TagKey<Block> LAUREL_LOGS = blockTag("laurel_logs");
 
 	public static final TagKey<Block> MONKEY_BRUSH_PLACEABLE = blockTag("monkey_brush_placeable");
 	public static final TagKey<Block> PASSION_VINE_GROWABLE_ON = blockTag("passion_vine_growable_on");
@@ -21,6 +22,7 @@ public class AtmosphericBlockTags {
 	public static final TagKey<Block> YUCCA_FLOWER_PLACEABLE = blockTag("yucca_flower_placeable");
 	public static final TagKey<Block> BARREL_CACTUS_PLACEABLE = blockTag("barrel_cactus_placeable");
 	public static final TagKey<Block> SNOWY_BAMBOO_PLANTABLE_ON = blockTag("snowy_bamboo_plantable_on");
+	public static final TagKey<Block> CRUSTOSE_SPROUTS_PLACEABLE = blockTag("crustose_sprouts_placeable");
 
 	private static TagKey<Block> blockTag(String name) {
 		return TagUtil.blockTag(Atmospheric.MOD_ID, name);

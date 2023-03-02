@@ -6,6 +6,8 @@
     "atmospheric:yucca_hedge",
     "atmospheric:kousa_hedge",
     "atmospheric:aspen_hedge",
-    "atmospheric:grimwood_hedge"
+    "atmospheric:grimwood_hedge",
+    "atmospheric:laurel_hedge",
+    "atmospheric:dry_laurel_hedge"
   ]
 }

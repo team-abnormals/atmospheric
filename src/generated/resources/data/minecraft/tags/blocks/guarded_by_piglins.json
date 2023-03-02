@@ -12,6 +12,8 @@
     "atmospheric:aspen_chest",
     "atmospheric:aspen_trapped_chest",
     "atmospheric:grimwood_chest",
-    "atmospheric:grimwood_trapped_chest"
+    "atmospheric:grimwood_trapped_chest",
+    "atmospheric:laurel_chest",
+    "atmospheric:laurel_trapped_chest"
   ]
 }

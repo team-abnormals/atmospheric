@@ -12,6 +12,7 @@ public class AtmosphericItemTags {
 	public static final TagKey<Item> ASPEN_LOGS = itemTag("aspen_logs");
 	public static final TagKey<Item> KOUSA_LOGS = itemTag("kousa_logs");
 	public static final TagKey<Item> GRIMWOOD_LOGS = itemTag("grimwood_logs");
+	public static final TagKey<Item> LAUREL_LOGS = itemTag("laurel_logs");
 
 	public static final TagKey<Item> FRUITS = TagUtil.itemTag("forge", "fruits");
 	public static final TagKey<Item> FRUITS_PASSIONFRUIT = TagUtil.itemTag("forge", "fruits/passionfruit");

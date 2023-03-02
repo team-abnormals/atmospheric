@@ -190,6 +190,9 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_LEAF_PILE.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_BOARDS.get(), 5, 20);
 
+		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_STALK.get(), 5, 1000);
+		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get(), 5, 1000);
+
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_LOG.get(), 5, 5);
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_WOOD.get(), 5, 5);

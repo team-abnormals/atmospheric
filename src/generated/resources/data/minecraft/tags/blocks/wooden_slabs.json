@@ -5,6 +5,7 @@
     "atmospheric:yucca_slab",
     "atmospheric:kousa_slab",
     "atmospheric:aspen_slab",
-    "atmospheric:grimwood_slab"
+    "atmospheric:grimwood_slab",
+    "atmospheric:laurel_slab"
   ]
 }
