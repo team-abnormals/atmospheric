@@ -6,6 +6,7 @@
     "atmospheric:aspen_log",
     "atmospheric:watchful_aspen_log",
     "atmospheric:kousa_log",
-    "atmospheric:grimwood_log"
+    "atmospheric:grimwood_log",
+    "atmospheric:laurel_log"
   ]
 }

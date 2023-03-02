@@ -1,6 +1,5 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.google.common.base.Supplier;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.common.block.wood.LogBlock;
 import net.minecraft.core.BlockPos;
@@ -8,30 +7,34 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LayerLightEngine;
 
-public class CrustoseLogBlock extends LogBlock {
+import java.util.function.Supplier;
+
+public class CrustoseLogBlock extends LogBlock implements BonemealableBlock {
 
 	public CrustoseLogBlock(Supplier<Block> block, Properties properties) {
 		super(block, properties);
 	}
 
 	private static boolean canBeGrass(BlockState state, LevelReader world, BlockPos pos) {
-		BlockPos blockpos = pos.above();
-		BlockState blockstate = world.getBlockState(blockpos);
-		int i = LayerLightEngine.getLightBlockInto(world, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(world, blockpos));
+		BlockPos abovePos = pos.above();
+		BlockState blockstate = world.getBlockState(abovePos);
+		int i = LayerLightEngine.getLightBlockInto(world, state, pos, blockstate, abovePos, Direction.UP, blockstate.getLightBlock(world, abovePos));
 		return i < world.getMaxLightLevel();
 
 	}
 
 	private static boolean canPropagate(BlockState state, LevelReader world, BlockPos pos) {
 		BlockPos blockpos = pos.above();
-		return canBeGrass(state, world, pos)
-				&& !world.getFluidState(blockpos).is(FluidTags.WATER);
+		return canBeGrass(state, world, pos) && !world.getFluidState(blockpos).is(FluidTags.WATER);
 	}
 
 	@Override
@@ -57,4 +60,35 @@ public class CrustoseLogBlock extends LogBlock {
 		}
 	}
 
+	@Override
+	public boolean isValidBonemealTarget(BlockGetter worldIn, BlockPos pos, BlockState state, boolean isClient) {
+		return worldIn.getBlockState(pos.above()).isAir();
+	}
+
+	@Override
+	public boolean isBonemealSuccess(Level worldIn, RandomSource rand, BlockPos pos, BlockState state) {
+		return true;
+	}
+
+	@Override
+	public void performBonemeal(ServerLevel worldIn, RandomSource rand, BlockPos pos, BlockState state) {
+		BlockPos blockpos = pos.above();
+		BlockState blockstate = AtmosphericBlocks.CRUSTOSE_SPROUTS.get().defaultBlockState();
+
+		label48:
+		for (int i = 0; i < 128; ++i) {
+			BlockPos blockpos1 = blockpos;
+
+			for (int j = 0; j < i / 16; ++j) {
+				blockpos1 = blockpos1.offset(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
+				if (!worldIn.getBlockState(blockpos1.below()).is(this) || worldIn.getBlockState(blockpos1).isCollisionShapeFullBlock(worldIn, blockpos1)) {
+					continue label48;
+				}
+			}
+
+			if (worldIn.getBlockState(blockpos1).isAir() && blockstate.canSurvive(worldIn, blockpos1)) {
+				worldIn.setBlock(blockpos1, blockstate, 3);
+			}
+		}
+	}
 }

@@ -51,6 +51,7 @@ public class Atmospheric {
 
 		REGISTRY_HELPER.register(bus);
 		AtmosphericFeatures.FEATURES.register(bus);
+		AtmosphericFeatures.TREE_DECORATOR_TYPES.register(bus);
 		AtmosphericConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
 		AtmosphericPlacedFeatures.PLACED_FEATURES.register(bus);
 		AtmosphericNoiseParameters.NOISE_PARAMETERS.register(bus);

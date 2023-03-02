@@ -8,9 +8,11 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LayerLightEngine;
 import net.minecraftforge.common.IPlantable;
@@ -18,7 +20,7 @@ import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 
-public class CrustoseBlock extends Block {
+public class CrustoseBlock extends Block implements BonemealableBlock {
 
 	public CrustoseBlock(Properties properties) {
 		super(properties);
@@ -55,8 +57,7 @@ public class CrustoseBlock extends Block {
 	@Override
 	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
 		if (!worldIn.isClientSide) {
-			if (!worldIn.isAreaLoaded(pos, 3))
-				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
+			if (!worldIn.isAreaLoaded(pos, 3)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
 			if (!canBeGrass(state, worldIn, pos)) {
 				worldIn.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
 			} else {
@@ -75,4 +76,36 @@ public class CrustoseBlock extends Block {
 		}
 	}
 
+
+	@Override
+	public boolean isValidBonemealTarget(BlockGetter worldIn, BlockPos pos, BlockState state, boolean isClient) {
+		return worldIn.getBlockState(pos.above()).isAir();
+	}
+
+	@Override
+	public boolean isBonemealSuccess(Level worldIn, RandomSource rand, BlockPos pos, BlockState state) {
+		return true;
+	}
+
+	@Override
+	public void performBonemeal(ServerLevel worldIn, RandomSource rand, BlockPos pos, BlockState state) {
+		BlockPos blockpos = pos.above();
+		BlockState blockstate = AtmosphericBlocks.CRUSTOSE_SPROUTS.get().defaultBlockState();
+
+		label48:
+		for (int i = 0; i < 128; ++i) {
+			BlockPos blockpos1 = blockpos;
+
+			for (int j = 0; j < i / 16; ++j) {
+				blockpos1 = blockpos1.offset(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
+				if (!worldIn.getBlockState(blockpos1.below()).is(this) || worldIn.getBlockState(blockpos1).isCollisionShapeFullBlock(worldIn, blockpos1)) {
+					continue label48;
+				}
+			}
+
+			if (worldIn.getBlockState(blockpos1).isAir() && blockstate.canSurvive(worldIn, blockpos1)) {
+				worldIn.setBlock(blockpos1, blockstate, 3);
+			}
+		}
+	}
 }
