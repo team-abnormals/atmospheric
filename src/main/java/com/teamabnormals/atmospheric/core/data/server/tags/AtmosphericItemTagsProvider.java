@@ -55,8 +55,8 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 		this.copy(BlockTags.OVERWORLD_NATURAL_LOGS, ItemTags.OVERWORLD_NATURAL_LOGS);
 		this.copy(BlockTags.DIRT, ItemTags.DIRT);
 		this.tag(ItemTags.FLOWERS).add(AtmosphericItems.YELLOW_BLOSSOMS.get());
-		this.tag(ItemTags.BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.getFirst().get(), AtmosphericItems.MORADO_BOAT.getFirst().get(), AtmosphericItems.YUCCA_BOAT.getFirst().get(), AtmosphericItems.KOUSA_BOAT.getFirst().get(), AtmosphericItems.ASPEN_BOAT.getFirst().get(), AtmosphericItems.GRIMWOOD_BOAT.getFirst().get());
-		this.tag(ItemTags.CHEST_BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.getSecond().get(), AtmosphericItems.MORADO_BOAT.getSecond().get(), AtmosphericItems.YUCCA_BOAT.getSecond().get(), AtmosphericItems.KOUSA_BOAT.getSecond().get(), AtmosphericItems.ASPEN_BOAT.getSecond().get(), AtmosphericItems.GRIMWOOD_BOAT.getSecond().get());
+		this.tag(ItemTags.BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.getFirst().get(), AtmosphericItems.MORADO_BOAT.getFirst().get(), AtmosphericItems.YUCCA_BOAT.getFirst().get(), AtmosphericItems.KOUSA_BOAT.getFirst().get(), AtmosphericItems.ASPEN_BOAT.getFirst().get(), AtmosphericItems.GRIMWOOD_BOAT.getFirst().get(), AtmosphericItems.LAUREL_BOAT.getFirst().get());
+		this.tag(ItemTags.CHEST_BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.getSecond().get(), AtmosphericItems.MORADO_BOAT.getSecond().get(), AtmosphericItems.YUCCA_BOAT.getSecond().get(), AtmosphericItems.KOUSA_BOAT.getSecond().get(), AtmosphericItems.ASPEN_BOAT.getSecond().get(), AtmosphericItems.GRIMWOOD_BOAT.getSecond().get(), AtmosphericItems.LAUREL_BOAT.getSecond().get());
 		this.tag(ItemTags.PIGLIN_LOVED).add(AtmosphericItems.SHIMMERING_PASSIONFRUIT.get(), AtmosphericBlocks.SHIMMERING_PASSIONFRUIT_CRATE.get().asItem());
 
 		this.copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
@@ -66,7 +66,7 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 		this.copy(Tags.Blocks.SAND_COLORLESS, Tags.Items.SAND_COLORLESS);
 		this.copy(Tags.Blocks.SAND_RED, Tags.Items.SAND_RED);
 		this.copy(Tags.Blocks.SANDSTONE, Tags.Items.SANDSTONE);
-		this.tag(Tags.Items.BOOKSHELVES).add(ROSEWOOD_BOOKSHELF.get().asItem(), MORADO_BOOKSHELF.get().asItem(), YUCCA_BOOKSHELF.get().asItem(), KOUSA_BOOKSHELF.get().asItem(), ASPEN_BOOKSHELF.get().asItem(), GRIMWOOD_BOOKSHELF.get().asItem());
+		this.tag(Tags.Items.BOOKSHELVES).add(ROSEWOOD_BOOKSHELF.get().asItem(), MORADO_BOOKSHELF.get().asItem(), YUCCA_BOOKSHELF.get().asItem(), KOUSA_BOOKSHELF.get().asItem(), ASPEN_BOOKSHELF.get().asItem(), GRIMWOOD_BOOKSHELF.get().asItem(), LAUREL_BOOKSHELF.get().asItem());
 		this.tag(FRUITS).addTag(FRUITS_PASSIONFRUIT);
 		this.tag(FRUITS_PASSIONFRUIT).add(AtmosphericItems.PASSIONFRUIT.get());
 
@@ -74,7 +74,7 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 		this.copy(BlueprintBlockTags.HEDGES, BlueprintItemTags.HEDGES);
 		this.copy(BlueprintBlockTags.VERTICAL_SLABS, BlueprintItemTags.VERTICAL_SLABS);
 		this.copy(BlueprintBlockTags.WOODEN_VERTICAL_SLABS, BlueprintItemTags.WOODEN_VERTICAL_SLABS);
-		this.tag(BlueprintItemTags.BOATABLE_CHESTS).add(ROSEWOOD_CHESTS.getFirst().get().asItem(), MORADO_CHESTS.getFirst().get().asItem(), YUCCA_CHESTS.getFirst().get().asItem(), KOUSA_CHESTS.getFirst().get().asItem(), ASPEN_CHESTS.getFirst().get().asItem(), GRIMWOOD_CHESTS.getFirst().get().asItem());
-		this.tag(BlueprintItemTags.REVERTABLE_CHESTS).add(ROSEWOOD_CHESTS.getFirst().get().asItem(), MORADO_CHESTS.getFirst().get().asItem(), YUCCA_CHESTS.getFirst().get().asItem(), KOUSA_CHESTS.getFirst().get().asItem(), ASPEN_CHESTS.getFirst().get().asItem(), GRIMWOOD_CHESTS.getFirst().get().asItem());
+		this.tag(BlueprintItemTags.BOATABLE_CHESTS).add(ROSEWOOD_CHESTS.getFirst().get().asItem(), MORADO_CHESTS.getFirst().get().asItem(), YUCCA_CHESTS.getFirst().get().asItem(), KOUSA_CHESTS.getFirst().get().asItem(), ASPEN_CHESTS.getFirst().get().asItem(), GRIMWOOD_CHESTS.getFirst().get().asItem(), LAUREL_CHESTS.getFirst().get().asItem());
+		this.tag(BlueprintItemTags.REVERTABLE_CHESTS).add(ROSEWOOD_CHESTS.getFirst().get().asItem(), MORADO_CHESTS.getFirst().get().asItem(), YUCCA_CHESTS.getFirst().get().asItem(), KOUSA_CHESTS.getFirst().get().asItem(), ASPEN_CHESTS.getFirst().get().asItem(), GRIMWOOD_CHESTS.getFirst().get().asItem(), LAUREL_CHESTS.getFirst().get().asItem());
 	}
 }
