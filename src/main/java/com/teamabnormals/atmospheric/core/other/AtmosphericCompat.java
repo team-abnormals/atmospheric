@@ -73,6 +73,25 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.GRIMWOOD_LEAVES.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.GRIMWOOD_SAPLING.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.GRIMWOOD_LEAF_CARPET.get(), 0.3F);
+		
+		DataUtil.registerCompostable(AtmosphericBlocks.LAUREL_LEAVES.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericBlocks.LAUREL_SAPLING.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericBlocks.LAUREL_LEAF_CARPET.get(), 0.3F);
+		
+		DataUtil.registerCompostable(AtmosphericBlocks.DRY_LAUREL_LEAVES.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericBlocks.DRY_LAUREL_SAPLING.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericBlocks.DRY_LAUREL_LEAF_CARPET.get(), 0.3F);
+
+		DataUtil.registerCompostable(AtmosphericBlocks.AGAVE.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericBlocks.CRUSTOSE_SPROUTS.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericItems.CURRANT.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericBlocks.HANGING_CURRANT.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_LEAVES.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_SEEDLING.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_LEAF_CARPET.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_BASKET.get(), 1.0F);
+		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_STALK.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get(), 1.0F);
 
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_BUNDLE.get(), 0.85F);
 		DataUtil.registerCompostable(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get(), 0.85F);
@@ -101,6 +120,14 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_BRANCH.get(), 5, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(), 5, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.BARREL_CACTUS.get(), 5, 60);
+
+		DataUtil.registerFlammable(AtmosphericBlocks.SNOWY_BAMBOO.get(), 60, 60);
+		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_STALK.get(), 5, 1000);
+		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get(), 5, 1000);
+		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_BASKET.get(), 5, 20);
+
+		DataUtil.registerFlammable(AtmosphericBlocks.CRUSTOSE_SPROUTS.get(), 60, 100);
+		DataUtil.registerFlammable(AtmosphericBlocks.AGAVE.get(), 60, 100);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_LOG.get(), 5, 5);
@@ -189,9 +216,6 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_HEDGE.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_LEAF_PILE.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.KOUSA_BOARDS.get(), 5, 20);
-
-		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_STALK.get(), 5, 1000);
-		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get(), 5, 1000);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.ASPEN_LOG.get(), 5, 5);
