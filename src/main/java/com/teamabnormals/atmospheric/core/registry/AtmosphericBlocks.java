@@ -384,8 +384,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> KOUSA_LEAF_CARPET = HELPER.createCompatBlock("quark", "kousa_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.KOUSA.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> KOUSA_HEDGE = HELPER.createCompatFuelBlock("quark", "kousa_hedge", () -> new HedgeBlock(AtmosphericProperties.KOUSA.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
-	public static final RegistryObject<BambooSaplingBlock> SNOWY_BAMBOO_SAPLING = HELPER.createBlockNoItem("snowy_bamboo_sapling", () -> new SnowyBambooSaplingBlock(Properties.of(Material.BAMBOO_SAPLING).instabreak().noCollission().strength(1.0F).sound(SoundType.BAMBOO_SAPLING).offsetType(OffsetType.XZ)));
-	public static final RegistryObject<BambooBlock> SNOWY_BAMBOO = HELPER.createBlockNoItem("snowy_bamboo", () -> new SnowyBambooBlock(Properties.of(Material.BAMBOO, MaterialColor.PLANT).instabreak().strength(1.0F).sound(SoundType.BAMBOO).noOcclusion().dynamicShape().offsetType(OffsetType.XZ)));
+	public static final RegistryObject<BambooSaplingBlock> SNOWY_BAMBOO_SAPLING = HELPER.createBlockNoItem("snowy_bamboo_sapling", () -> new SnowyBambooSaplingBlock(Properties.of(Material.BAMBOO_SAPLING).randomTicks().instabreak().noCollission().strength(1.0F).sound(SoundType.BAMBOO_SAPLING).offsetType(OffsetType.XZ)));
+	public static final RegistryObject<BambooBlock> SNOWY_BAMBOO = HELPER.createBlockNoItem("snowy_bamboo", () -> new SnowyBambooBlock(Properties.of(Material.BAMBOO, MaterialColor.PLANT).randomTicks().instabreak().strength(1.0F).sound(SoundType.BAMBOO).noOcclusion().dynamicShape().offsetType(OffsetType.XZ)));
 
 	public static final RegistryObject<Block> HANGING_CURRANT = HELPER.createBlock("hanging_currant", () -> new HangingCurrantBlock(Block.Properties.copy(Blocks.MELON_STEM).sound(SoundType.CROP).randomTicks()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CURRANT_STALK = HELPER.createFuelBlock("currant_stalk", () -> new CurrantStalkBlock(AtmosphericProperties.CURRANT.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
