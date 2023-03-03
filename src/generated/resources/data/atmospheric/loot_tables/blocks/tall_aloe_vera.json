@@ -62,7 +62,7 @@
                   }
                 }
               ],
-              "count": 6.0,
+              "count": 1.0,
               "function": "minecraft:set_count"
             },
             {
@@ -77,7 +77,7 @@
                   }
                 }
               ],
-              "count": 7.0,
+              "count": 2.0,
               "function": "minecraft:set_count"
             },
             {
@@ -92,7 +92,7 @@
                   }
                 }
               ],
-              "count": 8.0,
+              "count": 3.0,
               "function": "minecraft:set_count"
             }
           ],
@@ -105,7 +105,7 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "atmospheric:aloe_vera",
+          "block": "atmospheric:tall_aloe_vera",
           "condition": "minecraft:block_state_property",
           "properties": {
             "age": "8",
