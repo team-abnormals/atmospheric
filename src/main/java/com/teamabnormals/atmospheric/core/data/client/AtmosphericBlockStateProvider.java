@@ -118,7 +118,7 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.logBlock(CURRANT_STALK_BUNDLE.get());
 		this.leavesBlock(CURRANT_LEAVES.get());
 		this.crossBlockWithPot(CURRANT_SEEDLING.get(), POTTED_CURRANT_SEEDLING.get());
-		this.leavesCompat(CURRANT_LEAVES.get(), LAUREL_LOG.get(), CURRANT_LEAF_PILE.get(), CURRANT_HEDGE.get(), CURRANT_LEAF_CARPET.get());
+		this.leavesCompat(CURRANT_LEAVES.get(), CURRANT_STALK.get(), CURRANT_LEAF_PILE.get(), CURRANT_HEDGE.get(), CURRANT_LEAF_CARPET.get());
 
 		this.blockFamily(AtmosphericBlockFamilies.GRIMWOOD_PLANKS_FAMILY, GRIMWOOD_VERTICAL_SLAB.get());
 		this.logBlocks(GRIMWOOD_LOG.get(), GRIMWOOD.get());
