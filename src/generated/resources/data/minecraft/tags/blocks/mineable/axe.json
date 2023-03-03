@@ -73,6 +73,14 @@
     "atmospheric:arid_sprouts",
     "atmospheric:yucca_branch",
     "atmospheric:aloe_vera",
-    "atmospheric:tall_aloe_vera"
+    "atmospheric:tall_aloe_vera",
+    "atmospheric:agave",
+    "atmospheric:crustose_sprouts",
+    "atmospheric:snowy_bamboo",
+    "atmospheric:hanging_currant",
+    "atmospheric:currant_stalk",
+    "atmospheric:currant_stalk_bundle",
+    "atmospheric:currant_basket",
+    "atmospheric:currant_hedge"
   ]
 }
