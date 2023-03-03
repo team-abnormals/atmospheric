@@ -1,142 +1,78 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.blueprint.core.util.TreeUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Direction.Plane;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
-import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 
 import java.util.ArrayList;
-import java.util.Set;
-import java.util.function.BiConsumer;
 
-public class AspenTreeFeature extends Feature<TreeConfiguration> {
+public class AspenTreeFeature extends AtmosphericTreeFeature {
 
 	public AspenTreeFeature(Codec<TreeConfiguration> config) {
 		super(config);
 	}
 
 	@Override
-	public boolean place(FeaturePlaceContext<TreeConfiguration> context) {
+	public void doPlace(FeaturePlaceContext<TreeConfiguration> context) {
 		TreeConfiguration config = context.config();
-		WorldGenLevel worldIn = context.level();
-		RandomSource rand = context.random();
-		BlockPos position = context.origin();
+		RandomSource random = context.random();
+		BlockPos origin = context.origin();
 
-		int height = 12 + rand.nextInt(4) + rand.nextInt(5) + rand.nextInt(6);
-		boolean flag = true;
+		int trunkHeight = config.trunkPlacer.getTreeHeight(random);
+		int leafHeight = trunkHeight - 7 - random.nextInt(3) - random.nextInt(3);
+		int branchHeight = leafHeight - 2 - random.nextInt(3);
+		int bonusBranchHeight = branchHeight - 2 - random.nextInt(3);
 
-		if (position.getY() > worldIn.getMinBuildHeight() && position.getY() + height + 1 <= worldIn.getMaxBuildHeight()) {
-			for (int j = position.getY(); j <= position.getY() + 1 + height; ++j) {
-				int k = 1;
-				if (j == position.getY()) {
-					k = 0;
+		for (int y = 0; y < trunkHeight; y++) {
+			BlockPos pos = origin.above(y);
+			this.addLog(pos);
+
+			if (y >= leafHeight) {
+				for (Direction direction : Plane.HORIZONTAL) {
+					this.addFoliage(pos.relative(direction));
+					BlockPos offsetPos = pos.relative(direction).relative(direction.getClockWise());
+					if (y > leafHeight && y < trunkHeight - 1 && (random.nextInt(4) != 0 || !this.foliagePositions.contains(offsetPos.below()))) {
+						this.addFoliage(offsetPos);
+					}
 				}
-				if (j >= position.getY() + 1 + height - 2) {
-					k = 2;
-				}
-				BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 
-				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
-					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
-						if (j >= worldIn.getMinBuildHeight() && j < worldIn.getMaxBuildHeight()) {
-							if (!TreeUtil.isAirOrLeaves(worldIn, mutable.set(l, j, i1))) {
-								flag = false;
+				if (y > leafHeight + 1 && y < trunkHeight - 2) {
+					for (int i = -2; i <= 2; ++i) {
+						for (int k = -2; k <= 2; ++k) {
+							if ((Math.abs(i) != 2 || Math.abs(k) != 2) && random.nextBoolean()) {
+								this.addFoliage(pos.offset(i, 0, k));
 							}
-						} else {
-							flag = false;
 						}
 					}
+				}
+			} else if ((y == branchHeight && branchHeight > 3 && random.nextInt(5) != 0) || (y == bonusBranchHeight && bonusBranchHeight > 2 && random.nextInt(3) != 0)) {
+				int branchSize = 1 + random.nextInt(2);
+				if (random.nextBoolean())
+					branchSize += 1 + random.nextInt(2);
+				ArrayList<Direction> usedDirections = Lists.newArrayList();
+				while (usedDirections.size() < branchSize) {
+					Direction randomDirection = Plane.HORIZONTAL.getRandomDirection(random);
+					if (!usedDirections.contains(randomDirection))
+						usedDirections.add(randomDirection);
+				}
+				for (Direction direction : usedDirections) {
+					this.addFoliage(pos.relative(direction));
 				}
 			}
-
-			if (!flag) {
-				return false;
-			} else if (TreeUtil.isValidGround(worldIn, position.below(), (SaplingBlock) AtmosphericBlocks.ASPEN_SAPLING.get()) && position.getY() < worldIn.getMaxBuildHeight()) {
-				// base log
-				TreeUtil.setDirtAt(worldIn, position.below());
-				Set<BlockPos> logsPlaced = Sets.newHashSet();
-
-				int logX = position.getX();
-				int logZ = position.getZ();
-				int leafHeight = height - 7 - rand.nextInt(3) - rand.nextInt(3);
-				int branchHeight = leafHeight - 2 - rand.nextInt(3);
-				int bonusBranchHeight = branchHeight - 2 - rand.nextInt(3);
-
-				for (int k1 = 0; k1 < height; ++k1) {
-					int logY = position.getY() + k1;
-					BlockPos blockpos = new BlockPos(logX, logY, logZ);
-					if (TreeUtil.isAirOrLeaves(worldIn, blockpos)) {
-						TreeUtil.placeDirectionalLogAt(worldIn, blockpos, Direction.UP, rand, config);
-						logsPlaced.add(blockpos.immutable());
-					}
-
-					if (k1 >= leafHeight) {
-						for (Direction direction : Direction.values()) {
-							if (direction.getAxis().getPlane() == Direction.Plane.HORIZONTAL) {
-								TreeUtil.placeLeafAt(worldIn, blockpos.relative(direction), rand, config);
-								BlockPos offsetPos = blockpos.relative(direction).relative(direction.getClockWise());
-								if (k1 > leafHeight && k1 < height - 1 && (rand.nextInt(4) != 0 || worldIn.getBlockState(offsetPos.below()).isAir()))
-									TreeUtil.placeLeafAt(worldIn, offsetPos, rand, config);
-							}
-						}
-
-						// Third layer of leaves
-						if (k1 > leafHeight + 1 && k1 < height - 2) {
-							for (int k3 = -2; k3 <= 2; ++k3) {
-								for (int j4 = -2; j4 <= 2; ++j4) {
-									if ((Math.abs(k3) != 2 || Math.abs(j4) != 2) && rand.nextBoolean()) {
-										TreeUtil.placeLeafAt(worldIn, blockpos.offset(k3, 0, j4), rand, config);
-									}
-								}
-							}
-						}
-					} else if ((k1 == branchHeight && branchHeight > 3 && rand.nextInt(5) != 0) || (k1 == bonusBranchHeight && bonusBranchHeight > 2 && rand.nextInt(3) != 0)) {
-						int branchSize = 1 + rand.nextInt(2);
-						if (rand.nextBoolean())
-							branchSize += 1 + rand.nextInt(2);
-						ArrayList<Direction> usedDirections = Lists.newArrayList();
-						while (usedDirections.size() < branchSize) {
-							Direction randomDirection = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
-							if (!usedDirections.contains(randomDirection))
-								usedDirections.add(randomDirection);
-						}
-						for (Direction direction : usedDirections) {
-							TreeUtil.placeLeafAt(worldIn, blockpos.relative(direction), rand, config);
-						}
-					}
-				}
-
-				TreeUtil.placeLeafAt(worldIn, position.offset(0, height, 0), rand, config);
-				TreeUtil.updateLeaves(worldIn, logsPlaced);
-
-				Set<BlockPos> set3 = Sets.newHashSet();
-				BiConsumer<BlockPos, BlockState> biconsumer3 = (p_225290_, p_225291_) -> {
-					set3.add(p_225290_.immutable());
-					worldIn.setBlock(p_225290_, p_225291_, 19);
-				};
-
-				if (!config.decorators.isEmpty()) {
-					TreeDecorator.Context decoratorContext = new TreeDecorator.Context(worldIn, biconsumer3, rand, logsPlaced, Sets.newHashSet(), Sets.newHashSet());
-					config.decorators.forEach((decorator) -> decorator.place(decoratorContext));
-				}
-
-				return true;
-			} else {
-				return false;
-			}
-		} else {
-			return false;
 		}
+
+		this.addFoliage(origin.above(trunkHeight));
+	}
+
+	@Override
+	public Block getSapling() {
+		return AtmosphericBlocks.ASPEN_SAPLING.get();
 	}
 }

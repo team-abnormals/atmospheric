@@ -13,6 +13,6 @@ public class KousaTreeGrower extends AbstractTreeGrower {
 	@Override
 	@Nullable
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean beehive) {
-		return AtmosphericConfiguredFeatures.KOUSA.getHolder().get();
+		return random.nextInt(10) == 0 ? AtmosphericConfiguredFeatures.BABY_KOUSA.getHolder().get() : AtmosphericConfiguredFeatures.KOUSA.getHolder().get();
 	}
 }

@@ -34,7 +34,7 @@ public class KousaTreeFeature extends AtmosphericTreeFeature {
 		ArrayList<Direction> branchDirections = Lists.newArrayList();
 		Plane.HORIZONTAL.forEach(branchDirections::add);
 
-		int branches = 2 + random.nextInt(3) - random.nextInt(2);
+		int branches = 2 + random.nextInt(3) - (random.nextBoolean() ? random.nextInt(2) : 0);
 		if (branches < 3) {
 			this.addLog(origin.above(trunkHeight));
 			this.createLeafBalloon(origin.above(trunkHeight));
