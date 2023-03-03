@@ -86,7 +86,7 @@ public abstract class AtmosphericTreeFeature extends Feature<TreeConfiguration> 
 
 	public void addSpecialLog(BlockPos pos, BlockState state) {
 		this.addLog(pos);
-		this.specialLogPositions.put(pos, state);
+		this.specialLogPositions.put(pos.immutable(), state);
 	}
 
 	public void addFoliage(BlockPos pos) {
