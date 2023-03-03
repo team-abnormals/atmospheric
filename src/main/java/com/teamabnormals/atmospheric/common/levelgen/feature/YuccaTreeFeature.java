@@ -120,7 +120,7 @@ public class YuccaTreeFeature extends Feature<YuccaTreeConfiguration> {
 					BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 					for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
 						for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
-							if (j >= 0 && j < worldIn.getMaxBuildHeight()) {
+							if (j >= worldIn.getMinBuildHeight() && j < worldIn.getMaxBuildHeight()) {
 								if (!TreeUtil.isAirOrLeaves(worldIn, blockpos$mutableblockpos.set(l, j, i1)))
 									flag = false;
 							} else

@@ -32,7 +32,12 @@ public class AtmosphericTrades {
 				new BlueprintTrade(5, AtmosphericBlocks.ROSEWOOD_SAPLING.get().asItem(), 1, 8, 1),
 				new BlueprintTrade(5, AtmosphericBlocks.YUCCA_SAPLING.get().asItem(), 1, 8, 1),
 				new BlueprintTrade(5, AtmosphericBlocks.MORADO_SAPLING.get().asItem(), 1, 8, 1),
-				new BlueprintTrade(5, AtmosphericBlocks.ASPEN_SAPLING.get().asItem(), 1, 8, 1)
+				new BlueprintTrade(5, AtmosphericBlocks.ASPEN_SAPLING.get().asItem(), 1, 8, 1),
+				new BlueprintTrade(5, AtmosphericBlocks.KOUSA_SAPLING.get().asItem(), 1, 8, 1),
+				new BlueprintTrade(5, AtmosphericBlocks.GRIMWOOD_SAPLING.get().asItem(), 1, 8, 1),
+				new BlueprintTrade(5, AtmosphericBlocks.LAUREL_SAPLING.get().asItem(), 1, 8, 1),
+				new BlueprintTrade(5, AtmosphericBlocks.DRY_LAUREL_SAPLING.get().asItem(), 1, 8, 1),
+				new BlueprintTrade(5, AtmosphericBlocks.CURRANT_SEEDLING.get().asItem(), 1, 8, 1)
 		);
 	}
 

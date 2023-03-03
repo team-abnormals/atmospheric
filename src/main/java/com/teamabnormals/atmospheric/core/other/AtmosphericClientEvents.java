@@ -10,10 +10,10 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Atmospheric.MOD_ID, value = Dist.CLIENT)
 public class AtmosphericClientEvents {
 
 	@SubscribeEvent
@@ -26,7 +26,7 @@ public class AtmosphericClientEvents {
 
 		if (player.getAbilities().instabuild && AtmosphericConfig.CLIENT.showUnobtainableDescription.get() && (name.getNamespace().equals(Atmospheric.MOD_ID) || name.getNamespace().equals("abnormals_delight"))) {
 			String id = name.getPath();
-			if (id.contains("travertine") || id.contains("kousa") || id.contains("grimwood") || id.contains("crustose"))
+			if (id.contains("travertine"))
 				event.getToolTip().add(Component.translatable("tooltip.atmospheric.unobtainable").withStyle(ChatFormatting.GRAY));
 		}
 	}

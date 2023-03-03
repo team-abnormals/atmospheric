@@ -40,38 +40,38 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 	public boolean place(FeaturePlaceContext<TreeConfiguration> context) {
 		TreeConfiguration config = context.config();
 		WorldGenLevel level = context.level();
-		RandomSource rand = context.random();
-		BlockPos position = context.origin();
+		RandomSource random = context.random();
+		BlockPos origin = context.origin();
 
-		boolean morado = config.trunkProvider.getState(rand, position).is(AtmosphericBlocks.MORADO_LOG.get());
-		if (rand.nextInt(250) == 0) {
-			if (rand.nextInt(2) == 0)
+		boolean morado = config.trunkProvider.getState(random, origin).is(AtmosphericBlocks.MORADO_LOG.get());
+		if (random.nextInt(250) == 0) {
+			if (random.nextInt(2) == 0)
 				brushes.add(AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
-			if (rand.nextInt(3) == 0)
+			if (random.nextInt(3) == 0)
 				brushes.add(AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
-			if (rand.nextInt(4) == 0)
+			if (random.nextInt(4) == 0)
 				brushes.add(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get());
 		} else {
 			brushes.clear();
 		}
 
-		int branches = 2 + rand.nextInt(3) - (!morado ? 0 : 1);
-		int height = 4 + rand.nextInt(2) + rand.nextInt(3) + (!morado ? rand.nextInt(3) : -1);
+		int branches = 2 + random.nextInt(3) - (!morado ? 0 : 1);
+		int height = !morado ? 4 + random.nextInt(3) + random.nextInt(3) : 2 + random.nextInt(2);
 		boolean flag = true;
 
-		if (position.getY() > level.getMinBuildHeight() && position.getY() + height + 1 <= level.getMaxBuildHeight()) {
-			for (int j = position.getY(); j <= position.getY() + 1 + height; ++j) {
+		if (origin.getY() > level.getMinBuildHeight() && origin.getY() + height + 1 <= level.getMaxBuildHeight()) {
+			for (int j = origin.getY(); j <= origin.getY() + 1 + height; ++j) {
 				int k = 1;
-				if (j == position.getY()) {
+				if (j == origin.getY()) {
 					k = 0;
 				}
-				if (j >= position.getY() + 1 + height - 2) {
+				if (j >= origin.getY() + 1 + height - 2) {
 					k = 2;
 				}
 				BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 
-				for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l) {
-					for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1) {
+				for (int l = origin.getX() - k; l <= origin.getX() + k && flag; ++l) {
+					for (int i1 = origin.getZ() - k; i1 <= origin.getZ() + k && flag; ++i1) {
 						if (j >= level.getMinBuildHeight() && j < level.getMaxBuildHeight()) {
 							if (!this.water ? !TreeUtil.isAirOrLeaves(level, blockpos$mutableblockpos.set(l, j, i1)) : !isAirOrWaterOrLeaves(level, blockpos$mutableblockpos.set(l, j, i1))) {
 								flag = false;
@@ -85,30 +85,30 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 
 			if (!flag) {
 				return false;
-			} else if ((TreeUtil.isValidGround(level, position.below(), (SaplingBlock) AtmosphericBlocks.ROSEWOOD_SAPLING.get()) || level.getBlockState(position.below()).is(Tags.Blocks.GRAVEL)) && position.getY() < level.getMaxBuildHeight() - branches - 1) {
+			} else if ((TreeUtil.isValidGround(level, origin.below(), (SaplingBlock) AtmosphericBlocks.ROSEWOOD_SAPLING.get()) || level.getBlockState(origin.below()).is(Tags.Blocks.GRAVEL)) && origin.getY() < level.getMaxBuildHeight() - branches - 1) {
 				// base log
 				if (!this.water)
-					TreeUtil.setDirtAt(level, position.below());
+					TreeUtil.setDirtAt(level, origin.below());
 				Set<BlockPos> logsPlaced = Sets.newHashSet();
 
-				int logX = position.getX();
-				int logZ = position.getZ();
+				int logX = origin.getX();
+				int logZ = origin.getZ();
 				boolean canopy = false;
 
 				for (int k1 = 0; k1 < height; ++k1) {
-					int logY = position.getY() + k1;
+					int logY = origin.getY() + k1;
 					BlockPos blockpos = new BlockPos(logX, logY, logZ);
 					if (!this.water ? TreeUtil.isAirOrLeaves(level, blockpos) : isAirOrWaterOrLeaves(level, blockpos)) {
-						TreeUtil.placeDirectionalLogAt(level, blockpos, Direction.UP, rand, config);
+						TreeUtil.placeDirectionalLogAt(level, blockpos, Direction.UP, random, config);
 						logsPlaced.add(blockpos.immutable());
 					}
-					if (rand.nextInt(6) == 0 && k1 > 3 && !canopy) {
-						int leafSize = 1 + rand.nextInt(2);
+					if (random.nextInt(6) == 0 && k1 > 3 && !canopy) {
+						int leafSize = 1 + random.nextInt(2);
 						for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 							for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
 								if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
 									if (!level.isStateAtPosition(blockpos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
-										TreeUtil.placeLeafAt(level, blockpos.offset(k3, 0, j4), rand, config);
+										TreeUtil.placeLeafAt(level, blockpos.offset(k3, 0, j4), random, config);
 									}
 								}
 							}
@@ -121,39 +121,39 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 				ArrayList<String> directions = new ArrayList<>();
 
 				for (int k2 = 0; k2 < branches; ++k2) {
-					Direction offset = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
+					Direction offset = Direction.Plane.HORIZONTAL.getRandomDirection(random);
 
 					while (directions.contains(offset.toString())) {
-						offset = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
+						offset = Direction.Plane.HORIZONTAL.getRandomDirection(random);
 					}
 					directions.add(offset.toString());
-					int turns = 1 + rand.nextInt(3);
+					int turns = 1 + random.nextInt(3);
 
-					BlockPos currentPos = position.above(height - 1);
+					BlockPos currentPos = origin.above(height - 1);
 					int branchLength = 0;
 					int branchHeight = 0;
 
 					for (int k4 = 0; k4 < turns; ++k4) {
-						branchLength = !morado ? 1 + rand.nextInt(2) + rand.nextInt(2) : 1 + rand.nextInt(2);
-						branchHeight = !morado ? 1 + rand.nextInt(3) + rand.nextInt(2) : 1 + rand.nextInt(3);
-						createHorizontalLog(branchLength, level, currentPos, offset, rand, config, logsPlaced);
-						createVerticalLog(branchHeight, level, currentPos.relative(offset, branchLength), rand, config, logsPlaced);
+						branchLength = !morado ? 1 + random.nextInt(2) + random.nextInt(2) : 1 + random.nextInt(2);
+						branchHeight = !morado ? 1 + random.nextInt(3) + random.nextInt(2) : 1 + random.nextInt(2);
+						createHorizontalLog(branchLength, level, currentPos, offset, random, config, logsPlaced);
+						createVerticalLog(branchHeight, level, currentPos.relative(offset, branchLength), random, config, logsPlaced);
 						currentPos = currentPos.relative(offset, branchLength).relative(Direction.UP, branchHeight);
 					}
 
-					int leafSize = 2 + rand.nextInt(2);
+					int leafSize = 2 + random.nextInt(2);
 					int leafSizeTop = 0;
 					if (leafSize == 2) {
 						leafSizeTop = leafSize - 1;
 					} else {
-						leafSizeTop = leafSize - 1 - rand.nextInt(2);
+						leafSizeTop = leafSize - 1 - random.nextInt(2);
 					}
 					// first layer of leaves
 					for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
 						for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
 							if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
 								if (!level.isStateAtPosition(currentPos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
-									TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), rand, config);
+									TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), random, config);
 								}
 							}
 						}
@@ -165,30 +165,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 						for (int j4 = -leafSizeTop; j4 <= leafSizeTop; ++j4) {
 							if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
 								if (!level.isStateAtPosition(currentPos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
-									TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), rand, config);
-								}
-							}
-						}
-					}
-
-					if (morado) {
-						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
-							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
-								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
-									if (rand.nextBoolean() && !level.isStateAtPosition(currentPos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER))))
-										TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), rand, config);
-								}
-							}
-						}
-					}
-
-					if (morado) {
-						currentPos = currentPos.below(2);
-						for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
-							for (int j4 = -leafSizeTop - 1; j4 <= leafSizeTop + 1; ++j4) {
-								if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
-									if (rand.nextBoolean() && !level.isStateAtPosition(currentPos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER))))
-										TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), rand, config);
+									TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), random, config);
 								}
 							}
 						}
@@ -198,8 +175,8 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 				if (!brushes.isEmpty()) {
 					for (BlockPos pos : logsPlaced) {
 						for (Direction direction2 : Direction.values()) {
-							if (level.isStateAtPosition(pos.relative(direction2), BlockStateBase::isAir) && rand.nextInt(3) == 0) {
-								level.setBlock(pos.relative(direction2), MonkeyBrushFeature.monkeyBrushState(brushes.get(rand.nextInt(brushes.size())).defaultBlockState(), direction2), 18);
+							if (level.isStateAtPosition(pos.relative(direction2), BlockStateBase::isAir) && random.nextInt(3) == 0) {
+								level.setBlock(pos.relative(direction2), MonkeyBrushFeature.monkeyBrushState(brushes.get(random.nextInt(brushes.size())).defaultBlockState(), direction2), 18);
 							}
 						}
 					}
@@ -214,7 +191,7 @@ public class RainforestTreeFeature extends Feature<TreeConfiguration> {
 				};
 
 				if (!config.decorators.isEmpty()) {
-					TreeDecorator.Context decoratorContext = new TreeDecorator.Context(level, biconsumer3, rand, logsPlaced, Sets.newHashSet(), Sets.newHashSet());
+					TreeDecorator.Context decoratorContext = new TreeDecorator.Context(level, biconsumer3, random, logsPlaced, Sets.newHashSet(), Sets.newHashSet());
 					config.decorators.forEach((decorator) -> decorator.place(decoratorContext));
 				}
 
