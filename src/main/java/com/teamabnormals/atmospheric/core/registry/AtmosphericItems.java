@@ -76,7 +76,7 @@ public class AtmosphericItems {
 		public static final FoodProperties YUCCA_FRUIT = new FoodProperties.Builder().nutrition(1).saturationMod(0.3F).build();
 		public static final FoodProperties ROASTED_YUCCA_FRUIT = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(() -> new MobEffectInstance(AtmosphericMobEffects.PERSISTENCE.get(), 560, 0, false, false, true), 1.0F).build();
 
-		public static final FoodProperties CURRANT = new FoodProperties.Builder().nutrition(1).saturationMod(0.3F).build(); //TODO: food values
+		public static final FoodProperties CURRANT = new FoodProperties.Builder().nutrition(1).saturationMod(0.5F).build();
 
 		public static final FoodProperties ALOE_LEAVES = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).alwaysEat().build();
 		public static final FoodProperties ALOE_GEL = new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).alwaysEat().build();
