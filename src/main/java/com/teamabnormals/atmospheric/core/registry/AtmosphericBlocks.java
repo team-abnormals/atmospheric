@@ -104,13 +104,13 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> WATER_HYACINTH = HELPER.createBlockNoItem("water_hyacinth", () -> new WaterHyacinthBlock(Block.Properties.of(Material.PLANT).noCollission().strength(0F).sound(SoundType.VINE)));
 
-	public static final RegistryObject<Block> WARM_WALL_MONKEY_BRUSH = HELPER.createBlockNoItem("warm_wall_monkey_brush", () -> new WallMonkeyBrushBlock(PropertyUtil.FLOWER));
-	public static final RegistryObject<Block> HOT_WALL_MONKEY_BRUSH = HELPER.createBlockNoItem("hot_wall_monkey_brush", () -> new WallMonkeyBrushBlock(PropertyUtil.FLOWER));
-	public static final RegistryObject<Block> SCALDING_WALL_MONKEY_BRUSH = HELPER.createBlockNoItem("scalding_wall_monkey_brush", () -> new WallMonkeyBrushBlock(PropertyUtil.FLOWER));
+	public static final RegistryObject<Block> WARM_MONKEY_BRUSH = HELPER.createBlockNoItem("warm_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.FLOWER));
+	public static final RegistryObject<Block> HOT_MONKEY_BRUSH = HELPER.createBlockNoItem("hot_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.FLOWER));
+	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH = HELPER.createBlockNoItem("scalding_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.FLOWER));
 
-	public static final RegistryObject<Block> WARM_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("warm_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.FLOWER), WARM_WALL_MONKEY_BRUSH::get, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> HOT_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("hot_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.FLOWER), HOT_WALL_MONKEY_BRUSH::get, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("scalding_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.FLOWER), SCALDING_WALL_MONKEY_BRUSH::get, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> WARM_WALL_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("warm_monkey_brush", "warm_wall_monkey_brush", WARM_MONKEY_BRUSH, () -> new WallMonkeyBrushBlock(PropertyUtil.FLOWER.lootFrom(WARM_MONKEY_BRUSH)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> HOT_WALL_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("hot_monkey_brush", "hot_wall_monkey_brush", HOT_MONKEY_BRUSH, () -> new WallMonkeyBrushBlock(PropertyUtil.FLOWER.lootFrom(HOT_MONKEY_BRUSH)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> SCALDING_WALL_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("scalding_monkey_brush", "scalding_wall_monkey_brush", SCALDING_MONKEY_BRUSH, () -> new WallMonkeyBrushBlock(PropertyUtil.FLOWER.lootFrom(SCALDING_MONKEY_BRUSH)), CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> POTTED_WARM_MONKEY_BRUSH = HELPER.createBlockNoItem("potted_warm_monkey_brush", () -> new FlowerPotBlock(WARM_MONKEY_BRUSH.get(), Block.Properties.copy(Blocks.POTTED_ALLIUM)));
 	public static final RegistryObject<Block> POTTED_HOT_MONKEY_BRUSH = HELPER.createBlockNoItem("potted_hot_monkey_brush", () -> new FlowerPotBlock(HOT_MONKEY_BRUSH.get(), Block.Properties.copy(Blocks.POTTED_ALLIUM)));
