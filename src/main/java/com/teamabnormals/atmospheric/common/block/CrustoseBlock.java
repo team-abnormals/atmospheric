@@ -4,39 +4,23 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.lighting.LayerLightEngine;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 
-public class CrustoseBlock extends Block implements BonemealableBlock {
+public class CrustoseBlock extends Block implements BonemealableBlock, Crustose {
 
 	public CrustoseBlock(Properties properties) {
 		super(properties);
-	}
-
-	private static boolean canBeGrass(BlockState state, LevelReader world, BlockPos pos) {
-		BlockPos blockpos = pos.above();
-		BlockState blockstate = world.getBlockState(blockpos);
-		int i = LayerLightEngine.getLightBlockInto(world, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(world, blockpos));
-		return i < world.getMaxLightLevel();
-
-	}
-
-	private static boolean canPropagate(BlockState state, LevelReader world, BlockPos pos) {
-		BlockPos blockpos = pos.above();
-		return canBeGrass(state, world, pos) && !world.getFluidState(blockpos).is(FluidTags.WATER);
 	}
 
 	@Override
@@ -48,38 +32,21 @@ public class CrustoseBlock extends Block implements BonemealableBlock {
 	}
 
 	@Override
-	public boolean canSustainPlant(BlockState state, BlockGetter blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
+	public boolean canSustainPlant(BlockState state, BlockGetter level, BlockPos pos, Direction direction, IPlantable plantable) {
 		final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
-		final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
+		final PlantType plantType = plantable.getPlantType(level, plantPos);
 		return plantType == PlantType.PLAINS;
 	}
 
 	@Override
-	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
-		if (!worldIn.isClientSide) {
-			if (!worldIn.isAreaLoaded(pos, 3)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			if (!canBeGrass(state, worldIn, pos)) {
-				worldIn.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
-			} else {
-				if (worldIn.getMaxLocalRawBrightness(pos.above()) >= 9) {
-					BlockState blockstate = this.defaultBlockState();
-					for (int i = 0; i < 4; ++i) {
-						BlockPos blockpos = pos.offset(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
-						if (worldIn.getBlockState(blockpos).getBlock() == Blocks.DIRT && canPropagate(blockstate, worldIn, blockpos)) {
-							worldIn.setBlockAndUpdate(blockpos, this.defaultBlockState());
-						} else if (worldIn.getBlockState(blockpos).getBlock() == AtmosphericBlocks.ASPEN_LOG.get() && canPropagate(blockstate, worldIn, blockpos)) {
-							worldIn.setBlockAndUpdate(blockpos, AtmosphericBlocks.CRUSTOSE_LOG.get().defaultBlockState().setValue(CrustoseLogBlock.AXIS, worldIn.getBlockState(blockpos).getValue(CrustoseLogBlock.AXIS)));
-						}
-					}
-				}
-			}
-		}
+	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+		this.randomCrustoseTick(state, level, pos, random);
 	}
 
 
 	@Override
-	public boolean isValidBonemealTarget(BlockGetter worldIn, BlockPos pos, BlockState state, boolean isClient) {
-		return worldIn.getBlockState(pos.above()).isAir();
+	public boolean isValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState state, boolean isClient) {
+		return this.isCrustoseValidBonemealTarget(level, pos, state, isClient);
 	}
 
 	@Override
@@ -88,24 +55,12 @@ public class CrustoseBlock extends Block implements BonemealableBlock {
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel worldIn, RandomSource rand, BlockPos pos, BlockState state) {
-		BlockPos blockpos = pos.above();
-		BlockState blockstate = AtmosphericBlocks.CRUSTOSE_SPROUTS.get().defaultBlockState();
+	public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
+		this.performCrustoseBonemeal(this, level, random, pos, state);
+	}
 
-		label48:
-		for (int i = 0; i < 128; ++i) {
-			BlockPos blockpos1 = blockpos;
-
-			for (int j = 0; j < i / 16; ++j) {
-				blockpos1 = blockpos1.offset(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
-				if (!worldIn.getBlockState(blockpos1.below()).is(this) || worldIn.getBlockState(blockpos1).isCollisionShapeFullBlock(worldIn, blockpos1)) {
-					continue label48;
-				}
-			}
-
-			if (worldIn.getBlockState(blockpos1).isAir() && blockstate.canSurvive(worldIn, blockpos1)) {
-				worldIn.setBlock(blockpos1, blockstate, 3);
-			}
-		}
+	@Override
+	public Block getUnspreadBlock() {
+		return Blocks.DIRT;
 	}
 }

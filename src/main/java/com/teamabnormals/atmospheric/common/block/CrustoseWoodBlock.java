@@ -1,7 +1,7 @@
 package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.blueprint.common.block.wood.LogBlock;
+import com.teamabnormals.blueprint.common.block.wood.WoodBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -13,12 +13,11 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.function.Supplier;
 
-public class CrustoseLogBlock extends LogBlock implements BonemealableBlock, Crustose {
+public class CrustoseWoodBlock extends WoodBlock implements BonemealableBlock, Crustose {
 
-	public CrustoseLogBlock(Supplier<Block> block, Properties properties) {
+	public CrustoseWoodBlock(Supplier<Block> block, Properties properties) {
 		super(block, properties);
 	}
-
 
 	@Override
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
@@ -43,6 +42,6 @@ public class CrustoseLogBlock extends LogBlock implements BonemealableBlock, Cru
 
 	@Override
 	public Block getUnspreadBlock() {
-		return AtmosphericBlocks.ASPEN_LOG.get();
+		return AtmosphericBlocks.ASPEN_WOOD.get();
 	}
 }
