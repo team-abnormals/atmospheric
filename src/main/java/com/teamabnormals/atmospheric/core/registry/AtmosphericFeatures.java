@@ -80,6 +80,8 @@ public class AtmosphericFeatures {
 	public static final RegistryObject<Feature<TreeConfiguration>> ROSEWOOD_WATER_TREE = FEATURES.register("rosewood_water_tree", () -> new RainforestTreeFeature(TreeConfiguration.CODEC, true));
 	public static final RegistryObject<Feature<YuccaTreeConfiguration>> YUCCA_TREE = FEATURES.register("yucca_tree", () -> new YuccaTreeFeature(YuccaTreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> ASPEN_TREE = FEATURES.register("aspen_tree", () -> new AspenTreeFeature(TreeConfiguration.CODEC));
+	public static final RegistryObject<Feature<TreeConfiguration>> KOUSA_TREE = FEATURES.register("kousa_tree", () -> new KousaTreeFeature(TreeConfiguration.CODEC));
+	public static final RegistryObject<Feature<TreeConfiguration>> GRIMWOOD_TREE = FEATURES.register("grimwood_tree", () -> new GrimwoodTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> LAUREL_TREE = FEATURES.register("laurel_tree", () -> new LaurelTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> CURRANT_TREE = FEATURES.register("currant_tree", () -> new CurrantTreeFeature(TreeConfiguration.CODEC));
 
@@ -110,8 +112,8 @@ public class AtmosphericFeatures {
 		public static final YuccaTreeConfiguration RED_PETRIFIED_YUCCA = new YuccaTreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get())).isPetrified().build();
 
 		public static final TreeConfiguration ASPEN = createCustomTree(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(AtmosphericBlocks.ASPEN_LOG.get().defaultBlockState(), 3).add(AtmosphericBlocks.WATCHFUL_ASPEN_LOG.get().defaultBlockState(), 2).build()), BlockStateProvider.simple(AtmosphericBlocks.ASPEN_LEAVES.get())).build();
-		public static final TreeConfiguration GRIMWOOD = (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.GRIMWOOD_LOG.get()), new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.simple(AtmosphericBlocks.GRIMWOOD_LEAVES.get()), new SpruceFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(1, 2)), new TwoLayersFeatureSize(2, 0, 2))).ignoreVines().build();
-		public static final TreeConfiguration KOUSA = (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.KOUSA_LOG.get()), new FancyTrunkPlacer(3, 11, 0), BlockStateProvider.simple(AtmosphericBlocks.KOUSA_LEAVES.get()), new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))).ignoreVines().build();
+		public static final TreeConfiguration GRIMWOOD = createCustomTree(AtmosphericBlocks.GRIMWOOD_LOG.get(), new StraightTrunkPlacer(2, 1, 0), AtmosphericBlocks.GRIMWOOD_LEAVES.get()).build();
+		public static final TreeConfiguration KOUSA = createCustomTree(AtmosphericBlocks.KOUSA_LOG.get(), new StraightTrunkPlacer(4, 2, 1), AtmosphericBlocks.KOUSA_LEAVES.get()).build();
 		public static final TreeConfiguration LAUREL = createCustomTree(AtmosphericBlocks.LAUREL_LOG.get(), new StraightTrunkPlacer(3, 1, 0), AtmosphericBlocks.LAUREL_LEAVES.get()).build();
 		public static final TreeConfiguration DRY_LAUREL = createCustomTree(AtmosphericBlocks.LAUREL_LOG.get(), new StraightTrunkPlacer(3, 1, 0), AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).forceDirt().build();
 		public static final TreeConfiguration CURRANT = createCustomTree(AtmosphericBlocks.CURRANT_STALK.get(), new StraightTrunkPlacer(3, 0, 0), AtmosphericBlocks.CURRANT_LEAVES.get()).decorators(List.of(new HangingCurrantTreeDecorator(0.20F))).build();
@@ -171,8 +173,8 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> RED_PETRIFIED_YUCCA = register("red_petrified_yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.RED_PETRIFIED_YUCCA));
 
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ASPEN = register("aspen", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.ASPEN));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GRIMWOOD = register("grimwood", () -> new ConfiguredFeature<>(Feature.TREE, Configs.GRIMWOOD));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> KOUSA = register("kousa", () -> new ConfiguredFeature<>(Feature.TREE, Configs.KOUSA));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GRIMWOOD = register("grimwood", () -> new ConfiguredFeature<>(AtmosphericFeatures.GRIMWOOD_TREE.get(), Configs.GRIMWOOD));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> KOUSA = register("kousa", () -> new ConfiguredFeature<>(AtmosphericFeatures.KOUSA_TREE.get(), Configs.KOUSA));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL = register("laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL = register("dry_laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> CURRANT = register("currant", () -> new ConfiguredFeature<>(AtmosphericFeatures.CURRANT_TREE.get(), Configs.CURRANT));
