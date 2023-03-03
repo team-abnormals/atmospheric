@@ -33,7 +33,7 @@ public class BabyTreeFeature extends AtmosphericTreeFeature {
 
 	@Override
 	public Block getSapling() {
-		return AtmosphericBlocks.YUCCA_SAPLING.get();
+		return AtmosphericBlocks.KOUSA_SAPLING.get();
 	}
 
 	private void createLeafLayer(BlockPos pos, RandomSource random, boolean square) {
