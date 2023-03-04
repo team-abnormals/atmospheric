@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AtmosphericClientCompat {
+
 	public static void registerBlockColors() {
 		BlockColors blockColors = Minecraft.getInstance().getBlockColors();
 		ItemColors itemColors = Minecraft.getInstance().getItemColors();
@@ -89,6 +90,7 @@ public class AtmosphericClientCompat {
 
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.SNOWY_BAMBOO_SAPLING.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.SNOWY_BAMBOO.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_SNOWY_BAMBOO.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.HANGING_CURRANT.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.CURRANT_LEAF_PILE.get(), RenderType.cutout());

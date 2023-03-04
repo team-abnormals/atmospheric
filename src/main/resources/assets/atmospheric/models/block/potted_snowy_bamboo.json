@@ -1,0 +1,10 @@
+{
+    "parent": "block/potted_bamboo",
+    "textures": {
+        "particle": "block/flower_pot",
+        "flowerpot": "block/flower_pot",
+        "dirt": "block/dirt",
+        "bamboo": "atmospheric:block/snowy_bamboo_stalk",
+        "leaf": "atmospheric:block/snowy_bamboo_singleleaf"
+    }
+}
