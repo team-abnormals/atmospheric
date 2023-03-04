@@ -389,14 +389,14 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> POTTED_SNOWY_BAMBOO = HELPER.createBlockNoItem("potted_snowy_bamboo", () -> new PottedSnowyBambooBlock(SNOWY_BAMBOO.get(), PropertyUtil.FLOWER_POT));
 
 	public static final RegistryObject<Block> HANGING_CURRANT = HELPER.createBlock("hanging_currant", () -> new HangingCurrantBlock(Block.Properties.copy(Blocks.MELON_STEM).sound(SoundType.CROP).randomTicks()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> CURRANT_STALK = HELPER.createFuelBlock("currant_stalk", () -> new CurrantStalkBlock(AtmosphericProperties.CURRANT.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CURRANT_STALK_BUNDLE = HELPER.createFuelBlock("currant_stalk_bundle", () -> new CurrantStalkBundleBlock(AtmosphericProperties.CURRANT.log()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CURRANT_STALK = HELPER.createFuelBlock("currant_stalk", () -> new CurrantStalkBlock(AtmosphericProperties.CURRANT.log()), 50, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CURRANT_STALK_BUNDLE = HELPER.createFuelBlock("currant_stalk_bundle", () -> new CurrantStalkBundleBlock(AtmosphericProperties.CURRANT.log()), 450, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> CURRANT_LEAVES = HELPER.createBlock("currant_leaves", () -> new CurrantLeavesBlock(AtmosphericProperties.CURRANT.leaves()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CURRANT_SEEDLING = HELPER.createBlock("currant_seedling", () -> new CurrantSeedlingBlock(PropertyUtil.SAPLING), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_CURRANT_SEEDLING = HELPER.createBlockNoItem("potted_currant_sapling", () -> new FlowerPotBlock(CURRANT_SEEDLING.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> CURRANT_LEAF_PILE = HELPER.createCompatBlock("woodworks", "currant_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.CURRANT.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CURRANT_LEAF_CARPET = HELPER.createCompatBlock("quark", "currant_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.CURRANT.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> CURRANT_HEDGE = HELPER.createCompatFuelBlock("quark", "currant_hedge", () -> new HedgeBlock(AtmosphericProperties.CURRANT.log()), 300, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CURRANT_HEDGE = HELPER.createCompatFuelBlock("quark", "currant_hedge", () -> new HedgeBlock(AtmosphericProperties.CURRANT.log()), 50, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CURRANT_BASKET = HELPER.createCompatBlock("quark", "currant_basket", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_CYAN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
