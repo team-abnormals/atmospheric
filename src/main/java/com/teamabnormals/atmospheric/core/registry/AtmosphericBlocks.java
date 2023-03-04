@@ -302,6 +302,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_HEDGE = HELPER.createCompatFuelBlock("quark", "aspen_hedge", () -> new HedgeBlock(AtmosphericProperties.ASPEN.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> AGAVE = HELPER.createBlock("agave", () -> new AgaveBlock(AtmosphericProperties.AGAVE), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> POTTED_AGAVE = HELPER.createBlockNoItem("potted_agave", () -> new FlowerPotBlock(AGAVE.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> CRUSTOSE_SPROUTS = HELPER.createBlock("crustose_sprouts", () -> new CrustoseSproutsBlock(AtmosphericProperties.CRUSTOSE_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> CRUSTOSE = HELPER.createBlock("crustose", () -> new CrustoseBlock(Block.Properties.copy(Blocks.GRASS_BLOCK).randomTicks()), CreativeModeTab.TAB_BUILDING_BLOCKS);

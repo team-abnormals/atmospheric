@@ -90,7 +90,7 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.logCompat(ASPEN_LOG.get(), STRIPPED_ASPEN_LOG.get(), ASPEN_POST.get(), STRIPPED_ASPEN_POST.get());
 		this.leavesCompat(ASPEN_LEAVES.get(), ASPEN_LOG.get(), ASPEN_LEAF_PILE.get(), ASPEN_HEDGE.get(), ASPEN_LEAF_CARPET.get());
 
-		this.crossBlock(AGAVE.get());
+		this.crossBlockWithCustomPot(AGAVE.get(), POTTED_AGAVE.get());
 		this.crossBlock(CRUSTOSE_SPROUTS.get());
 
 		this.blockFamily(AtmosphericBlockFamilies.LAUREL_PLANKS_FAMILY, LAUREL_VERTICAL_SLAB.get());
@@ -232,6 +232,11 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 	public void crossBlockWithPot(Block cross, Block flowerPot) {
 		this.crossBlock(cross);
 		this.simpleBlock(flowerPot, models().singleTexture(name(flowerPot), new ResourceLocation("block/flower_pot_cross"), "plant", blockTexture(cross)));
+	}
+
+	public void crossBlockWithCustomPot(Block cross, Block flowerPot) {
+		this.crossBlock(cross);
+		this.simpleBlock(flowerPot, models().singleTexture(name(flowerPot), new ResourceLocation("block/flower_pot_cross"), "plant", blockTexture(flowerPot)));
 	}
 
 	public void crossBlock(Block cross) {

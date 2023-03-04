@@ -109,6 +109,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropSelf(ROASTED_YUCCA_CASK.get());
 
 			this.add(AGAVE.get(), BlockLoot::createShearsOnlyDrop);
+			this.dropPottedContents(POTTED_AGAVE.get());
 			this.add(CRUSTOSE_SPROUTS.get(), BlockLoot::createShearsOnlyDrop);
 			this.add(CRUSTOSE.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
 			this.add(CRUSTOSE_LOG.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
