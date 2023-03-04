@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:vertical_laurel_planks"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:laurel_planks"
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+       "flag": "vertical_planks"
+    }
+  ]
+}

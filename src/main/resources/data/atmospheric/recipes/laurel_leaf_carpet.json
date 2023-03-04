@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:laurel_leaves"
+    }
+  },
+  "result": {
+    "item": "atmospheric:laurel_leaf_carpet",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+       "flag": "leaf_carpet"
+    }
+  ]
+} 

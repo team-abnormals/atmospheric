@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "atmospheric:laurel_logs"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:laurel_planks",
+    "count": 4
+  }
+}

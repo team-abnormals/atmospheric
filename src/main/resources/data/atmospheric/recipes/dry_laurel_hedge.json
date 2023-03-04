@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L",
+    "W"
+  ],
+  "key": {
+    "L": {
+      "item": "atmospheric:dry_laurel_leaves"
+    },
+    "W": {
+      "tag": "atmospheric:laurel_logs"
+    }
+  },
+  "result": {
+    "item": "atmospheric:dry_laurel_hedge",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "hedges"
+    }
+  ]
+} 

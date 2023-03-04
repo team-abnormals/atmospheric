@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:currant_basket"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:currant",
+    "count": 9
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+       "flag": "apple_crate"
+    }
+  ]
+}

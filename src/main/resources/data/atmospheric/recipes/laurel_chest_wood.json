@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "laurel_chest",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "atmospheric:laurel_logs"
+    }
+  },
+  "result": {
+    "item": "atmospheric:laurel_chest",
+    "count": 4
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "wood_to_chest_recipes"
+        },
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "variant_chests"
+        }
+      ]
+    }
+  ]
+} 

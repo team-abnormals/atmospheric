@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "atmospheric:currant_stalk_bundle"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:currant_stalk",
+    "count": 9
+  }
+}

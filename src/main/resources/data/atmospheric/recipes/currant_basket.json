@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:currant"
+    }
+  },
+  "result": {
+    "item": "atmospheric:currant_basket",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+       "flag": "apple_crate"
+    }
+  ]
+}
