@@ -132,7 +132,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropSelf(CURRANT_LEAF_CARPET.get());
 			this.add(CURRANT_LEAF_PILE.get(), AtmosphericBlockLoot::createLeafPileDrops);
 			this.add(CURRANT_LEAVES.get(), block -> createSilkTouchOrShearsDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, CURRANT_LEAVES_STICK_CHANCES))));
-			this.dropSelf(SNOWY_BAMBOO.get());
+			this.dropOther(SNOWY_BAMBOO.get(), Items.BAMBOO);
 			this.dropOther(SNOWY_BAMBOO_SAPLING.get(), Items.BAMBOO);
 			this.dropPottedContents(POTTED_SNOWY_BAMBOO.get());
 
