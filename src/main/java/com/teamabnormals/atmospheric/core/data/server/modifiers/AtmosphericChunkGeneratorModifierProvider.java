@@ -6,7 +6,9 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.common.world.modification.chunk.ChunkGeneratorModifierProvider;
 import com.teamabnormals.blueprint.common.world.modification.chunk.modifiers.SurfaceRuleModifier;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
+import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 
 import static net.minecraft.world.level.levelgen.SurfaceRules.*;
@@ -21,6 +23,10 @@ public final class AtmosphericChunkGeneratorModifierProvider extends ChunkGenera
 	protected void registerEntries() {
 		ConditionSource inDunes = isBiome(AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.FLOURISHING_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.PETRIFIED_DUNES.getKey());
 		ConditionSource inHotSprings = isBiome(AtmosphericBiomes.HOT_SPRINGS.getKey());
+
+		RuleSource crustose = state(AtmosphericBlocks.CRUSTOSE.get().defaultBlockState());
+		RuleSource coarseDirt = state(Blocks.COARSE_DIRT.defaultBlockState());
+		RuleSource dirt = state(Blocks.DIRT.defaultBlockState());
 
 		RuleSource aridSand = state(AtmosphericBlocks.ARID_SAND.get().defaultBlockState());
 		RuleSource aridSandstone = state(AtmosphericBlocks.ARID_SANDSTONE.get().defaultBlockState());
@@ -47,11 +53,15 @@ public final class AtmosphericChunkGeneratorModifierProvider extends ChunkGenera
 
 		this.entry("atmospheric_surface_rule").selects("minecraft:overworld")
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(inDunes, sequence(ifTrue(noiseRange(0.3F, 2.5F), redAridSandRuleSource), aridSandRuleSource))), false))
+				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isBiome(AtmosphericBiomes.ASPEN_PARKLAND.getKey()), ifTrue(ON_FLOOR, ifTrue(waterBlockCheck(-1, 0),
+						sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, -0.909D, -0.5454D), coarseDirt),
+						SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, -0.1818D, 0.1818D), coarseDirt),
+						SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.5454D, 0.909D), coarseDirt),
+						SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(0, 0), crustose), dirt)))))), false))
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(inHotSprings, ifTrue(not(yBlockCheck(VerticalAnchor.absolute(93), 0)), sequence(hotSpringsRuleSource, hotSpringsRuleSource2)))), false));
 	}
 
 	private static ConditionSource noiseRange(float low, float high) {
 		return noiseCondition(Noises.SURFACE, low / 8.25F, high / 8.25F);
 	}
-
 }

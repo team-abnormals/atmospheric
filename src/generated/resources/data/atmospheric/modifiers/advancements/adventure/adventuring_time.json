@@ -4,6 +4,22 @@
       "type": "criteria",
       "config": {
         "criteria": {
+          "atmospheric:aspen_parkland": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:aspen_parkland"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
           "atmospheric:dunes": {
             "conditions": {
               "player": [
@@ -173,6 +189,9 @@
           ],
           [
             "atmospheric:petrified_dunes"
+          ],
+          [
+            "atmospheric:aspen_parkland"
           ],
           [
             "atmospheric:hot_springs"
