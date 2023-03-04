@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.block.AloeVeraBlock;
 import com.teamabnormals.atmospheric.common.block.AloeVeraTallBlock;
+import com.teamabnormals.atmospheric.common.block.BarrelCactusBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
@@ -430,7 +431,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 		}
 
 		protected static LootTable.Builder createBarrelCactusDrops(Block block) {
-			return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(applyExplosionDecay(block, LootItem.lootTableItem(block).apply(List.of(1, 2, 3), (val) -> SetItemCountFunction.setCount(ConstantValue.exactly((float) val)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CandleBlock.CANDLES, val)))))));
+			return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(applyExplosionDecay(block, LootItem.lootTableItem(block).apply(List.of(1, 2, 3), (val) -> SetItemCountFunction.setCount(ConstantValue.exactly((float) val)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BarrelCactusBlock.AGE, val)))))));
 		}
 
 		protected static Builder createLeafPileDrops(Block block) {

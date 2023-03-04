@@ -14,7 +14,7 @@
                   "block": "atmospheric:barrel_cactus",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "candles": "1"
+                    "age": "1"
                   }
                 }
               ],
@@ -28,7 +28,7 @@
                   "block": "atmospheric:barrel_cactus",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "candles": "2"
+                    "age": "2"
                   }
                 }
               ],
@@ -42,7 +42,7 @@
                   "block": "atmospheric:barrel_cactus",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "candles": "3"
+                    "age": "3"
                   }
                 }
               ],
