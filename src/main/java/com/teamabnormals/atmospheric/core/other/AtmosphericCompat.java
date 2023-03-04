@@ -73,11 +73,11 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.GRIMWOOD_LEAVES.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.GRIMWOOD_SAPLING.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.GRIMWOOD_LEAF_CARPET.get(), 0.3F);
-		
+
 		DataUtil.registerCompostable(AtmosphericBlocks.LAUREL_LEAVES.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.LAUREL_SAPLING.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.LAUREL_LEAF_CARPET.get(), 0.3F);
-		
+
 		DataUtil.registerCompostable(AtmosphericBlocks.DRY_LAUREL_LEAVES.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.DRY_LAUREL_SAPLING.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.DRY_LAUREL_LEAF_CARPET.get(), 0.3F);

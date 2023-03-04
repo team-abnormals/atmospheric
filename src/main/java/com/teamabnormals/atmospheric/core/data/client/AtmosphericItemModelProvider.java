@@ -46,7 +46,7 @@ public class AtmosphericItemModelProvider extends ItemModelProvider {
 		for (RegistryObject<Item> item : items)
 			generatedItem(item.get());
 	}
-	
+
 	private void generatedItem(ItemLike... items) {
 		for (ItemLike item : items)
 			item(item, "generated");
