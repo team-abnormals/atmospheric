@@ -44,13 +44,28 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 		private final ResourceKey<Biome> VANILLA = BlueprintBiomes.ORIGINAL_SOURCE_MARKER.getKey();
 		private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{
 				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-				{AtmosphericBiomes.ASPEN_PARKLAND.getKey(), VANILLA, VANILLA, VANILLA, VANILLA},
-				{AtmosphericBiomes.ASPEN_PARKLAND.getKey(), VANILLA, VANILLA, AtmosphericBiomes.SPARSE_RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()},
+				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey(), AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
+				{VANILLA, VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
+				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.SPARSE_RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()},
 				{AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.FLOURISHING_DUNES.getKey(), AtmosphericBiomes.FLOURISHING_DUNES.getKey()}};
-		private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, VANILLA, null, null}, {null, null, null, null, VANILLA}, {VANILLA, null, null, VANILLA, null}, {null, null, VANILLA, null, null}, {null, null, null, null, null}};
-		private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()}, {AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey()}};
-		private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, null, null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, VANILLA, VANILLA, null}, {null, null, null, null, AtmosphericBiomes.SPARSE_RAINFOREST.getKey()}, {AtmosphericBiomes.PETRIFIED_DUNES.getKey(), AtmosphericBiomes.PETRIFIED_DUNES.getKey(), null, null, null}};
+		private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
+				{VANILLA, null, VANILLA, null, null},
+				{null, null, null, null, VANILLA},
+				{VANILLA, null, null, VANILLA, null},
+				{null, null, VANILLA, null, null},
+				{null, null, null, null, null}};
+		private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
+				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey(), AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
+				{VANILLA, VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
+				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()},
+				{AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey()}};
+		private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
+				{VANILLA, null, null, null, null},
+				{null, null, VANILLA, VANILLA, VANILLA},
+				{null, null, VANILLA, VANILLA, null},
+				{null, null, null, null, AtmosphericBiomes.SPARSE_RAINFOREST.getKey()},
+				{AtmosphericBiomes.PETRIFIED_DUNES.getKey(), AtmosphericBiomes.PETRIFIED_DUNES.getKey(), null, null, null}};
 		private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {null, null, null, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()}, {null, null, null, null, null}};
 
 		private void addBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {

@@ -13,6 +13,6 @@ public class AspenTreeGrower extends AbstractTreeGrower {
 	@Override
 	@Nullable
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean beehive) {
-		return AtmosphericConfiguredFeatures.ASPEN.getHolder().get();
+		return beehive ? AtmosphericConfiguredFeatures.ASPEN_BEES_005.getHolder().get() : AtmosphericConfiguredFeatures.ASPEN.getHolder().get();
 	}
 }
