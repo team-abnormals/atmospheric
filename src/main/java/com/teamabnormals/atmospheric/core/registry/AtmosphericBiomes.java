@@ -34,6 +34,7 @@ public class AtmosphericBiomes {
 	public static final KeyedBiome PETRIFIED_DUNES = HELPER.createBiome("petrified_dunes", AtmosphericBiomes::petrifiedDunes);
 
 	public static final KeyedBiome ASPEN_PARKLAND = HELPER.createBiome("aspen_parkland", AtmosphericBiomes::aspenParkland);
+	public static final KeyedBiome KOUSA_JUNGLE = HELPER.createBiome("kousa_jungle", AtmosphericBiomes::kousaJungle);
 	public static final KeyedBiome HOT_SPRINGS = HELPER.createBiome("hot_springs", AtmosphericBiomes::hotSprings);
 
 	private static Biome rainforest() {
@@ -109,8 +110,8 @@ public class AtmosphericBiomes {
 
 	private static Biome aspenParkland() {
 		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
-		OverworldBiomes.globalOverworldGeneration(generation);
 
+		OverworldBiomes.globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addDefaultOres(generation);
 		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
 		BiomeDefaultFeatures.addDefaultFlowers(generation);
@@ -131,6 +132,33 @@ public class AtmosphericBiomes {
 
 		// 0.6, 0.6
 		return biome(Biome.Precipitation.RAIN, 2.0F, 0.0F, spawns, generation, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+	}
+
+	private static Biome kousaJungle() {
+		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
+
+		OverworldBiomes.globalOverworldGeneration(generation);
+		BiomeDefaultFeatures.addMossyStoneBlock(generation);
+		BiomeDefaultFeatures.addFerns(generation);
+		BiomeDefaultFeatures.addDefaultOres(generation);
+		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+		BiomeDefaultFeatures.addDefaultFlowers(generation);
+		BiomeDefaultFeatures.addTaigaGrass(generation);
+		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.CURRANT.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_KOUSA_JUNGLE.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.SNOWY_BAMBOO.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PASSION_VINES.getHolder().get());
+
+		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+		BiomeDefaultFeatures.farmAnimals(spawns);
+		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4));
+		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));
+		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 8, 2, 4));
+		BiomeDefaultFeatures.commonSpawns(spawns);
+
+		return biome(Biome.Precipitation.SNOW, -0.25F, 0.5F, spawns, generation, null);
 	}
 
 	private static Biome biome(Biome.Precipitation precipitation, float temperature, float downfall, MobSpawnSettings.Builder spawns, BiomeGenerationSettings.Builder generation, @Nullable Music music) {

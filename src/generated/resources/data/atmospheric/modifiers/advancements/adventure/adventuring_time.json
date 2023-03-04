@@ -68,6 +68,22 @@
             },
             "trigger": "minecraft:location"
           },
+          "atmospheric:kousa_jungle": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:kousa_jungle"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
           "atmospheric:petrified_dunes": {
             "conditions": {
               "player": [
@@ -192,6 +208,9 @@
           ],
           [
             "atmospheric:aspen_parkland"
+          ],
+          [
+            "atmospheric:kousa_jungle"
           ],
           [
             "atmospheric:hot_springs"
