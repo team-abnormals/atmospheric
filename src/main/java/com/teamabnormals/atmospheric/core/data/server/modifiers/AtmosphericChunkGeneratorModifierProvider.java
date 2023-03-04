@@ -53,11 +53,7 @@ public final class AtmosphericChunkGeneratorModifierProvider extends ChunkGenera
 
 		this.entry("atmospheric_surface_rule").selects("minecraft:overworld")
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(inDunes, sequence(ifTrue(noiseRange(0.3F, 2.5F), redAridSandRuleSource), aridSandRuleSource))), false))
-				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isBiome(AtmosphericBiomes.ASPEN_PARKLAND.getKey()), ifTrue(ON_FLOOR, ifTrue(waterBlockCheck(-1, 0),
-						sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, -0.909D, -0.5454D), coarseDirt),
-						SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, -0.1818D, 0.1818D), coarseDirt),
-						SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.5454D, 0.909D), coarseDirt),
-						SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(0, 0), crustose), dirt)))))), false))
+				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isBiome(AtmosphericBiomes.ASPEN_PARKLAND.getKey()), ifTrue(ON_FLOOR, ifTrue(waterBlockCheck(-1, 0), sequence(ifTrue(waterBlockCheck(0, 0), coarseDirt), dirt))))), false))
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(inHotSprings, ifTrue(not(yBlockCheck(VerticalAnchor.absolute(93), 0)), sequence(hotSpringsRuleSource, hotSpringsRuleSource2)))), false));
 	}
 

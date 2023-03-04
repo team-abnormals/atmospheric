@@ -13,6 +13,7 @@ import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.Yucc
 import com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators.HangingCurrantTreeDecorator;
 import com.teamabnormals.atmospheric.common.levelgen.placement.InSquareCenterPlacement;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -83,6 +84,9 @@ public class AtmosphericFeatures {
 	public static final RegistryObject<Feature<TreeConfiguration>> CURRANT_TREE = FEATURES.register("currant_tree", () -> new CurrantTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> BABY_TREE = FEATURES.register("baby_tree", () -> new BabyTreeFeature(TreeConfiguration.CODEC));
 
+	public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> CRUSTOSE = FEATURES.register("crustose", () -> new CrustoseFeature(ProbabilityFeatureConfiguration.CODEC));
+	public static final RegistryObject<Feature<SimpleBlockConfiguration>> FALLEN_LOG = FEATURES.register("fallen_log", () -> new FallenLogFeature(SimpleBlockConfiguration.CODEC));
+
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> OCEAN_FLOOR_RAISER = FEATURES.register("ocean_floor_raiser", () -> new OceanFloorRaiserFeature(NoneFeatureConfiguration.CODEC));
 
 	public static final RegistryObject<TreeDecoratorType<?>> HANGING_CURRANT = TREE_DECORATOR_TYPES.register("hanging_currant", () -> new TreeDecoratorType<>(HangingCurrantTreeDecorator.CODEC));
@@ -109,8 +113,11 @@ public class AtmosphericFeatures {
 		public static final YuccaTreeConfiguration PETRIFIED_YUCCA = new YuccaTreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE.get()), BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE.get()), BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get()), BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE_WALL.get())).isPetrified().build();
 		public static final YuccaTreeConfiguration RED_PETRIFIED_YUCCA = new YuccaTreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get())).isPetrified().build();
 
-		public static final TreeConfiguration ASPEN = createCustomTree(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(AtmosphericBlocks.ASPEN_LOG.get().defaultBlockState(), 3).add(AtmosphericBlocks.WATCHFUL_ASPEN_LOG.get().defaultBlockState(), 2).build()), new StraightTrunkPlacer(13, 5, 6), BlockStateProvider.simple(AtmosphericBlocks.ASPEN_LEAVES.get())).build();
-		public static final TreeConfiguration ASPEN_WITH_VINES = createCustomTree(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(AtmosphericBlocks.ASPEN_LOG.get().defaultBlockState(), 3).add(AtmosphericBlocks.WATCHFUL_ASPEN_LOG.get().defaultBlockState(), 2).build()), new StraightTrunkPlacer(13, 5, 6), BlockStateProvider.simple(AtmosphericBlocks.ASPEN_LEAVES.get())).decorators(ImmutableList.of(new LeaveVineDecorator(0.25F))).build();
+		public static final TreeConfiguration ASPEN = createAspen().build();
+		public static final TreeConfiguration ASPEN_BEES_0002 = createAspen().decorators(List.of(BEEHIVE_0002)).build();
+		public static final TreeConfiguration ASPEN_BEES_005 = createAspen().decorators(List.of(BEEHIVE_005)).build();
+		public static final TreeConfiguration ASPEN_WITH_VINES = createAspen().decorators(ImmutableList.of(BEEHIVE_0002, new LeaveVineDecorator(0.25F))).build();
+
 		public static final TreeConfiguration GRIMWOOD = createCustomTree(AtmosphericBlocks.GRIMWOOD_LOG.get(), new StraightTrunkPlacer(2, 1, 0), AtmosphericBlocks.GRIMWOOD_LEAVES.get()).build();
 		public static final TreeConfiguration KOUSA = createCustomTree(AtmosphericBlocks.KOUSA_LOG.get(), new StraightTrunkPlacer(4, 2, 1), AtmosphericBlocks.KOUSA_LEAVES.get()).build();
 		public static final TreeConfiguration BABY_KOUSA = createCustomTree(AtmosphericBlocks.KOUSA_LOG.get(), new StraightTrunkPlacer(2, 1, 1), AtmosphericBlocks.KOUSA_LEAVES.get()).build();
@@ -128,6 +135,10 @@ public class AtmosphericFeatures {
 
 		private static YuccaTreeConfigurationBuilder createYucca() {
 			return new YuccaTreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.YUCCA_LOG.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_LEAVES.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_BRANCH.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_BUNDLE.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_FLOWER.get()), BlockStateProvider.simple(AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState().setValue(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.UPPER)), BlockStateProvider.simple(AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState().setValue(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.LOWER)));
+		}
+
+		private static TreeConfigurationBuilder createAspen() {
+			return createCustomTree(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(AtmosphericBlocks.ASPEN_LOG.get().defaultBlockState(), 4).add(AtmosphericBlocks.WATCHFUL_ASPEN_LOG.get().defaultBlockState(), 1).build()), new StraightTrunkPlacer(13, 5, 6), BlockStateProvider.simple(AtmosphericBlocks.ASPEN_LEAVES.get()));
 		}
 
 		private static TreeConfigurationBuilder createCustomTree(BlockStateProvider logProvider, TrunkPlacer trunkPlacer, BlockStateProvider leavesProvider) {
@@ -174,7 +185,9 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> RED_PETRIFIED_YUCCA = register("red_petrified_yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.RED_PETRIFIED_YUCCA));
 
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ASPEN = register("aspen", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.ASPEN));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ASPEN_WITH_VINES = register("aspen_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.ASPEN));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ASPEN_BEES_0002 = register("aspen_bees_0002", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.ASPEN_BEES_0002));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ASPEN_BEES_005 = register("aspen_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.ASPEN_BEES_005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ASPEN_WITH_VINES = register("aspen_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.ASPEN_WITH_VINES));
 
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GRIMWOOD = register("grimwood", () -> new ConfiguredFeature<>(AtmosphericFeatures.GRIMWOOD_TREE.get(), Configs.GRIMWOOD));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> KOUSA = register("kousa", () -> new ConfiguredFeature<>(AtmosphericFeatures.KOUSA_TREE.get(), Configs.KOUSA));
@@ -217,8 +230,11 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_TALL_ALOE_VERA = register("patch_tall_aloe_vera", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.TALL_ALOE_VERA.get().defaultBlockState().setValue(AloeVeraTallBlock.AGE, 8))), List.of(AtmosphericBlocks.ARID_SAND.get()))));
 		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> PATCH_ALOE_VERA = register("patch_aloe_vera", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.PATCH_TALL_ALOE_VERA.getHolder().get(), 0.5F)), AtmosphericPlacedFeatures.PATCH_SHORT_ALOE_VERA.getHolder().get())));
 
-		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_ASPEN_PARKLAND = register("trees_aspen_parkland", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.MORADO_BUSH.getHolder().get(), 0.10F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.DRY_LAUREL.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.ASPEN_WITH_VINES.getHolder().get(), 0.15F)), AtmosphericPlacedFeatures.ASPEN.getHolder().get())));
-		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_AGAVE = register("patch_agave", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(512, 12, 5, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.AGAVE.get()))))));
+		public static final RegistryObject<ConfiguredFeature<ProbabilityFeatureConfiguration, ?>> CRUSTOSE = register("crustose", () -> new ConfiguredFeature<>(AtmosphericFeatures.CRUSTOSE.get(), new ProbabilityFeatureConfiguration(0.1F)));
+		public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> FALLEN_CRUSTOSE_LOG = register("fallen_crustose_log", () -> new ConfiguredFeature<>(AtmosphericFeatures.FALLEN_LOG.get(), new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.CRUSTOSE_LOG.get()))));
+		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_ASPEN_PARKLAND = register("trees_aspen_parkland", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.MORADO_BUSH.getHolder().get(), 0.10F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.DRY_LAUREL.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.ASPEN_WITH_VINES.getHolder().get(), 0.1F)), AtmosphericPlacedFeatures.ASPEN_BEES_0002.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> SINGLE_AGAVE = register("single_agave", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.AGAVE.get()))));
+		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_AGAVE_LARGE = register("patch_agave_large", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(512, 12, 5, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.AGAVE.get()))))));
 		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_CRUSTOSE_SPROUTS = register("patch_crustose_sprouts", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simpleRandomPatchConfiguration(32, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.CRUSTOSE_SPROUTS.get()))))));
 
 		public static final RegistryObject<ConfiguredFeature<BlockStateConfiguration, ?>> HOT_SPRINGS_ROCK = register("hot_springs_rock", () -> new ConfiguredFeature<>(Feature.FOREST_ROCK, new BlockStateConfiguration(Blocks.MOSSY_COBBLESTONE.defaultBlockState())));
@@ -247,7 +263,7 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> PETRIFIED_YUCCA = register("petrified_yucca", AtmosphericConfiguredFeatures.PETRIFIED_YUCCA, List.of());
 		public static final RegistryObject<PlacedFeature> RED_PETRIFIED_YUCCA = register("red_petrified_yucca", AtmosphericConfiguredFeatures.RED_PETRIFIED_YUCCA, List.of());
 
-		public static final RegistryObject<PlacedFeature> ASPEN = register("aspen", AtmosphericConfiguredFeatures.ASPEN, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+		public static final RegistryObject<PlacedFeature> ASPEN_BEES_0002 = register("aspen_bees_0002", AtmosphericConfiguredFeatures.ASPEN_BEES_0002, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 		public static final RegistryObject<PlacedFeature> ASPEN_WITH_VINES = register("aspen_with_vines", AtmosphericConfiguredFeatures.ASPEN_WITH_VINES, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 		public static final RegistryObject<PlacedFeature> DRY_LAUREL = register("dry_laurel", AtmosphericConfiguredFeatures.DRY_LAUREL, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 
@@ -273,7 +289,7 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> SCALDING_MONKEY_BRUSH = register("scalding_monkey_brush", AtmosphericConfiguredFeatures.SCALDING_MONKEY_BRUSH, List.of());
 		public static final RegistryObject<PlacedFeature> MONKEY_BRUSH = register("monkey_brush", AtmosphericConfiguredFeatures.MONKEY_BRUSH, List.of(RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
-		public static final RegistryObject<PlacedFeature> PODZOL = register("bamboo", AtmosphericConfiguredFeatures.PODZOL, List.of(NoiseBasedCountPlacement.of(160, 80.0D, 0.3D), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> PODZOL = register("podzol", AtmosphericConfiguredFeatures.PODZOL, List.of(NoiseBasedCountPlacement.of(160, 80.0D, 0.3D), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PASSION_VINES = register("passion_vines", AtmosphericConfiguredFeatures.PASSION_VINES, List.of(CountPlacement.of(1), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(192)), BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_WATER_HYACINTH = register("patch_water_hyacinth", AtmosphericConfiguredFeatures.PATCH_WATER_HYACINTH, List.of(RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_WATER_HYACINTH_SPARSE = register("patch_water_hyacinth_sparse", AtmosphericConfiguredFeatures.PATCH_WATER_HYACINTH, List.of(RarityFilter.onAverageOnceEvery(48), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
@@ -302,7 +318,10 @@ public class AtmosphericFeatures {
 
 		public static final RegistryObject<PlacedFeature> FOSSIL_DUNES = register("fossil_dunes", AtmosphericConfiguredFeatures.SURFACE_FOSSIL, List.of(RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(256)), BiomeFilter.biome()));
 
-		public static final RegistryObject<PlacedFeature> PATCH_AGAVE = register("patch_agave", AtmosphericConfiguredFeatures.PATCH_AGAVE, List.of(RarityFilter.onAverageOnceEvery(48), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> CRUSTOSE = register("crustose", AtmosphericConfiguredFeatures.CRUSTOSE, List.of(CountPlacement.of(128), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> FALLEN_CRUSTOSE_LOG = register("fallen_crustose_log", AtmosphericConfiguredFeatures.FALLEN_CRUSTOSE_LOG, List.of(CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> SINGLE_AGAVE = register("single_agave", AtmosphericConfiguredFeatures.SINGLE_AGAVE, List.of(RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> PATCH_AGAVE_LARGE = register("patch_agave_large", AtmosphericConfiguredFeatures.PATCH_AGAVE_LARGE, List.of(RarityFilter.onAverageOnceEvery(48), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_CRUSTOSE_SPROUTS = register("patch_crustose_sprouts", AtmosphericConfiguredFeatures.PATCH_CRUSTOSE_SPROUTS, VegetationPlacements.worldSurfaceSquaredWithCount(4));
 		public static final RegistryObject<PlacedFeature> TREES_ASPEN_PARKLAND = register("trees_aspen_parkland", AtmosphericConfiguredFeatures.TREES_ASPEN_PARKLAND, VegetationPlacements.treePlacement(PlacementUtils.countExtra(12, 0.1F, 1)));
 
