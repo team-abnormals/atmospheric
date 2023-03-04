@@ -13,7 +13,6 @@ import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.Yucc
 import com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators.HangingCurrantTreeDecorator;
 import com.teamabnormals.atmospheric.common.levelgen.placement.InSquareCenterPlacement;
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;

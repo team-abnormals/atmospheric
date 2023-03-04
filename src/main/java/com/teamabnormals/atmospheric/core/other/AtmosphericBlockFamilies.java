@@ -1,7 +1,6 @@
 package com.teamabnormals.atmospheric.core.other;
 
 import net.minecraft.data.BlockFamily;
-import net.minecraft.world.level.block.Blocks;
 
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.*;
 

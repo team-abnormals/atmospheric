@@ -62,7 +62,7 @@ public class AtmosphericItems {
 	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> LAUREL_BOAT = HELPER.createBoatAndChestBoatItem("laurel", AtmosphericBlocks.LAUREL_PLANKS);
 	public static final RegistryObject<Item> LAUREL_FURNACE_BOAT = HELPER.createItem("laurel_furnace_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.LAUREL_FURNACE_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
 	public static final RegistryObject<Item> LARGE_LAUREL_BOAT = HELPER.createItem("large_laurel_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.LARGE_LAUREL_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
-	
+
 	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> GRIMWOOD_BOAT = HELPER.createBoatAndChestBoatItem("grimwood", AtmosphericBlocks.GRIMWOOD_PLANKS);
 	public static final RegistryObject<Item> GRIMWOOD_FURNACE_BOAT = HELPER.createItem("grimwood_furnace_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.GRIMWOOD_FURNACE_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
 	public static final RegistryObject<Item> LARGE_GRIMWOOD_BOAT = HELPER.createItem("large_grimwood_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.LARGE_GRIMWOOD_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
