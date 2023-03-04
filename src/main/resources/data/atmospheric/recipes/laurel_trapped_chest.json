@@ -1,0 +1,46 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "type": "blueprint:and",
+              "values": [
+                {
+                  "type": "forge:mod_loaded",
+                  "modid": "woodworks"
+                },
+                {
+                  "type": "woodworks:config",
+                  "value": "wooden_chests"
+                }
+              ]
+            },
+            {
+              "flag": "variant_chests",
+              "type": "blueprint:quark_flag"
+            }
+          ],
+          "type": "forge:or"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "group": "wooden_trapped_chest",
+        "ingredients": [
+          {
+            "item": "atmospheric:laurel_chest"
+          },
+          {
+            "item": "minecraft:tripwire_hook"
+          }
+        ],
+        "result": {
+          "item": "atmospheric:laurel_trapped_chest"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:laurel_planks"
+    }
+  },
+  "result": {
+    "item": "atmospheric:vertical_laurel_planks",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+       "flag": "vertical_planks"
+    }
+  ]
+}

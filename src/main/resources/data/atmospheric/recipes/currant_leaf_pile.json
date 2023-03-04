@@ -1,0 +1,35 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "blueprint:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "leaf_piles"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "group": "leaf_pile",
+        "ingredients": [
+          {
+            "item": "atmospheric:currant_leaves"
+          }
+        ],
+        "result": {
+          "count": 4,
+          "item": "atmospheric:currant_leaf_pile"
+        }
+      }
+    }
+  ]
+}

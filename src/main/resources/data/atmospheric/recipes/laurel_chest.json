@@ -1,0 +1,48 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "type": "blueprint:and",
+              "values": [
+                {
+                  "type": "forge:mod_loaded",
+                  "modid": "woodworks"
+                },
+                {
+                  "type": "woodworks:config",
+                  "value": "wooden_chests"
+                }
+              ]
+            },
+            {
+              "flag": "variant_chests",
+              "type": "blueprint:quark_flag"
+            }
+          ],
+          "type": "forge:or"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "wooden_chest",
+        "pattern": [
+          "###",
+          "# #",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "atmospheric:laurel_planks"
+          }
+        },
+        "result": {
+          "item": "atmospheric:laurel_chest"
+        }
+      }
+    }
+  ]
+}

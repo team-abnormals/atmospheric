@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L",
+    "W"
+  ],
+  "key": {
+    "L": {
+      "item": "atmospheric:currant_leaves"
+    },
+    "W": {
+      "item": "atmospheric:currant_stalk"
+    }
+  },
+  "result": {
+    "item": "atmospheric:currant_hedge",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "hedges"
+    }
+  ]
+} 

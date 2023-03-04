@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:laurel_slab"
+    }
+  },
+  "result": {
+    "item": "atmospheric:laurel_vertical_slab",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+       "flag": "vertical_slabs"
+    }
+  ]
+}
