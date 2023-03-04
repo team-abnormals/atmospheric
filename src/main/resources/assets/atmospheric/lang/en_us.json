@@ -432,8 +432,9 @@
   "biome.atmospheric.rocky_dunes": "Rocky Dunes",
   "biome.atmospheric.petrified_dunes": "Petrified Dunes",
 
-  "biome.atmospheric.hot_springs": "Hot Springs",
   "biome.atmospheric.aspen_parkland": "Aspen Parkland",
+  "biome.atmospheric.kousa_jungle": "Kousa Jungle",
+  "biome.atmospheric.hot_springs": "Hot Springs",
 
   "entity.atmospheric.passionfruit_seed": "Passionfruit Seed",
 

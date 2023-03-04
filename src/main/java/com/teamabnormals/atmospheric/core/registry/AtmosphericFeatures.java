@@ -86,6 +86,8 @@ public class AtmosphericFeatures {
 	public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> CRUSTOSE = FEATURES.register("crustose", () -> new CrustoseFeature(ProbabilityFeatureConfiguration.CODEC));
 	public static final RegistryObject<Feature<SimpleBlockConfiguration>> FALLEN_LOG = FEATURES.register("fallen_log", () -> new FallenLogFeature(SimpleBlockConfiguration.CODEC));
 
+	public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> SNOWY_BAMBOO = FEATURES.register("snowy_bamboo", () -> new SnowyBambooFeature(ProbabilityFeatureConfiguration.CODEC));
+
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> OCEAN_FLOOR_RAISER = FEATURES.register("ocean_floor_raiser", () -> new OceanFloorRaiserFeature(NoneFeatureConfiguration.CODEC));
 
 	public static final RegistryObject<TreeDecoratorType<?>> HANGING_CURRANT = TREE_DECORATOR_TYPES.register("hanging_currant", () -> new TreeDecoratorType<>(HangingCurrantTreeDecorator.CODEC));
@@ -236,6 +238,9 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_AGAVE_LARGE = register("patch_agave_large", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(512, 12, 5, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.AGAVE.get()))))));
 		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_CRUSTOSE_SPROUTS = register("patch_crustose_sprouts", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simpleRandomPatchConfiguration(32, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.CRUSTOSE_SPROUTS.get()))))));
 
+		public static final RegistryObject<ConfiguredFeature<ProbabilityFeatureConfiguration, ?>> SNOWY_BAMBOO = register("snowy_bamboo", () -> new ConfiguredFeature<>(AtmosphericFeatures.SNOWY_BAMBOO.get(), new ProbabilityFeatureConfiguration(1.0F)));
+		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_KOUSA_JUNGLE = register("trees_kousa_jungle", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(TreePlacements.BIRCH_CHECKED, 0.3F)), AtmosphericPlacedFeatures.KOUSA.getHolder().get())));
+
 		public static final RegistryObject<ConfiguredFeature<BlockStateConfiguration, ?>> HOT_SPRINGS_ROCK = register("hot_springs_rock", () -> new ConfiguredFeature<>(Feature.FOREST_ROCK, new BlockStateConfiguration(Blocks.MOSSY_COBBLESTONE.defaultBlockState())));
 
 		public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> OCEAN_FLOOR_RAISER = register("ocean_floor_raiser", () -> new ConfiguredFeature<>(AtmosphericFeatures.OCEAN_FLOOR_RAISER.get(), NoneFeatureConfiguration.INSTANCE));
@@ -265,6 +270,8 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> ASPEN_BEES_0002 = register("aspen_bees_0002", AtmosphericConfiguredFeatures.ASPEN_BEES_0002, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 		public static final RegistryObject<PlacedFeature> ASPEN_WITH_VINES = register("aspen_with_vines", AtmosphericConfiguredFeatures.ASPEN_WITH_VINES, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 		public static final RegistryObject<PlacedFeature> DRY_LAUREL = register("dry_laurel", AtmosphericConfiguredFeatures.DRY_LAUREL, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+
+		public static final RegistryObject<PlacedFeature> KOUSA = register("kousa", AtmosphericConfiguredFeatures.KOUSA, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 
 		public static final RegistryObject<PlacedFeature> TREES_RAINFOREST = register("trees_rainforest", AtmosphericConfiguredFeatures.TREES_RAINFOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(30, 0.1F, 1), Blocks.OAK_SAPLING));
 		public static final RegistryObject<PlacedFeature> BUSHES_SPARSE_RAINFOREST = register("bushes_sparse_rainforest", AtmosphericConfiguredFeatures.OAK_BUSH, VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1F, 3), Blocks.OAK_SAPLING));
@@ -323,6 +330,10 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> PATCH_AGAVE_LARGE = register("patch_agave_large", AtmosphericConfiguredFeatures.PATCH_AGAVE_LARGE, List.of(RarityFilter.onAverageOnceEvery(48), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_CRUSTOSE_SPROUTS = register("patch_crustose_sprouts", AtmosphericConfiguredFeatures.PATCH_CRUSTOSE_SPROUTS, VegetationPlacements.worldSurfaceSquaredWithCount(4));
 		public static final RegistryObject<PlacedFeature> TREES_ASPEN_PARKLAND = register("trees_aspen_parkland", AtmosphericConfiguredFeatures.TREES_ASPEN_PARKLAND, VegetationPlacements.treePlacement(PlacementUtils.countExtra(12, 0.1F, 1)));
+
+		public static final RegistryObject<PlacedFeature> SNOWY_BAMBOO = register("snowy_bamboo", AtmosphericConfiguredFeatures.SNOWY_BAMBOO, List.of(NoiseBasedCountPlacement.of(160, 70.0D, 0.2D), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> TREES_KOUSA_JUNGLE = register("trees_kousa_jungle", AtmosphericConfiguredFeatures.TREES_KOUSA_JUNGLE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.1F, 1)));
+		public static final RegistryObject<PlacedFeature> CURRANT = register("currant", AtmosphericConfiguredFeatures.CURRANT, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 5)));
 
 		public static final RegistryObject<PlacedFeature> HOT_SPRINGS_ROCK = register("hot_springs_rock", AtmosphericConfiguredFeatures.HOT_SPRINGS_ROCK, List.of(BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.GRASS_BLOCK)), CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
