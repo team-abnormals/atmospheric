@@ -1,0 +1,8 @@
+{
+  "parent": "blueprint:block/vertical_slab",
+  "textures": {
+    "bottom": "atmospheric:block/polished_dolerite",
+    "side": "atmospheric:block/polished_dolerite",
+    "top": "atmospheric:block/polished_dolerite"
+  }
+}

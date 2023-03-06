@@ -9,6 +9,8 @@
     "atmospheric:ivory_travertine_stairs",
     "atmospheric:peach_travertine_stairs",
     "atmospheric:persimmon_travertine_stairs",
-    "atmospheric:saffron_travertine_stairs"
+    "atmospheric:saffron_travertine_stairs",
+    "atmospheric:dolerite_stairs",
+    "atmospheric:polished_dolerite_stairs"
   ]
 }

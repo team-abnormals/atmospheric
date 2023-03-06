@@ -13,6 +13,10 @@ public class AtmosphericBlockFamilies {
 	public static final BlockFamily KOUSA_PLANKS_FAMILY = new BlockFamily.Builder(KOUSA_PLANKS.get()).button(KOUSA_BUTTON.get()).fence(KOUSA_FENCE.get()).fenceGate(KOUSA_FENCE_GATE.get()).pressurePlate(KOUSA_PRESSURE_PLATE.get()).sign(KOUSA_SIGNS.getFirst().get(), KOUSA_SIGNS.getSecond().get()).slab(KOUSA_SLAB.get()).stairs(KOUSA_STAIRS.get()).door(KOUSA_DOOR.get()).trapdoor(KOUSA_TRAPDOOR.get()).recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks").getFamily();
 	public static final BlockFamily GRIMWOOD_PLANKS_FAMILY = new BlockFamily.Builder(GRIMWOOD_PLANKS.get()).button(GRIMWOOD_BUTTON.get()).fence(GRIMWOOD_FENCE.get()).fenceGate(GRIMWOOD_FENCE_GATE.get()).pressurePlate(GRIMWOOD_PRESSURE_PLATE.get()).sign(GRIMWOOD_SIGNS.getFirst().get(), GRIMWOOD_SIGNS.getSecond().get()).slab(GRIMWOOD_SLAB.get()).stairs(GRIMWOOD_STAIRS.get()).door(GRIMWOOD_DOOR.get()).trapdoor(GRIMWOOD_TRAPDOOR.get()).recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks").getFamily();
 
+
+	public static final BlockFamily DOLERITE_FAMILY = new BlockFamily.Builder(DOLERITE.get()).slab(DOLERITE_SLAB.get()).stairs(DOLERITE_STAIRS.get()).wall(DOLERITE_WALL.get()).getFamily();
+	public static final BlockFamily POLISHED_DOLERITE_FAMILY = new BlockFamily.Builder(POLISHED_DOLERITE.get()).slab(POLISHED_DOLERITE_SLAB.get()).stairs(POLISHED_DOLERITE_STAIRS.get()).getFamily();
+
 	public static final BlockFamily ARID_SANDSTONE_FAMILY = new BlockFamily.Builder(ARID_SANDSTONE.get()).wall(ARID_SANDSTONE_WALL.get()).stairs(ARID_SANDSTONE_STAIRS.get()).slab(ARID_SANDSTONE_SLAB.get()).chiseled(CHISELED_ARID_SANDSTONE.get()).cut(CUT_ARID_SANDSTONE.get()).dontGenerateRecipe().getFamily();
 	public static final BlockFamily CUT_ARID_SANDSTONE_FAMILY = new BlockFamily.Builder(CUT_ARID_SANDSTONE.get()).slab(CUT_ARID_SANDSTONE_SLAB.get()).getFamily();
 	public static final BlockFamily SMOOTH_ARID_SANDSTONE_FAMILY = new BlockFamily.Builder(SMOOTH_ARID_SANDSTONE.get()).slab(SMOOTH_ARID_SANDSTONE_SLAB.get()).stairs(SMOOTH_ARID_SANDSTONE_STAIRS.get()).getFamily();

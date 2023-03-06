@@ -32,6 +32,7 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 		this.copy(AtmosphericBlockTags.KOUSA_LOGS, KOUSA_LOGS);
 		this.copy(AtmosphericBlockTags.GRIMWOOD_LOGS, GRIMWOOD_LOGS);
 		this.copy(AtmosphericBlockTags.LAUREL_LOGS, LAUREL_LOGS);
+		this.copy(AtmosphericBlockTags.TRAVERTINE, TRAVERTINE);
 
 		this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
 		this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);

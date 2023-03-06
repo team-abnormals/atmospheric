@@ -11,6 +11,8 @@
     "atmospheric:ivory_travertine_vertical_slab",
     "atmospheric:peach_travertine_vertical_slab",
     "atmospheric:persimmon_travertine_vertical_slab",
-    "atmospheric:saffron_travertine_vertical_slab"
+    "atmospheric:saffron_travertine_vertical_slab",
+    "atmospheric:dolerite_vertical_slab",
+    "atmospheric:polished_dolerite_vertical_slab"
   ]
 }

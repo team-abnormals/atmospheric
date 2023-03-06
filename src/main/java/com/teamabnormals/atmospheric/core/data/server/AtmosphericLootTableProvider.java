@@ -206,6 +206,16 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropSelf(CUT_SAFFRON_TRAVERTINE.get());
 			this.dropSelf(CHISELED_SAFFRON_TRAVERTINE.get());
 
+			this.dropSelf(DOLERITE.get());
+			this.dropSelf(DOLERITE_STAIRS.get());
+			this.add(DOLERITE_SLAB.get(), BlockLoot::createSlabItemTable);
+			this.add(DOLERITE_VERTICAL_SLAB.get(), AtmosphericBlockLoot::createVerticalSlabItemTable);
+			this.dropSelf(DOLERITE_WALL.get());
+			this.dropSelf(POLISHED_DOLERITE.get());
+			this.dropSelf(POLISHED_DOLERITE_STAIRS.get());
+			this.add(POLISHED_DOLERITE_SLAB.get(), BlockLoot::createSlabItemTable);
+			this.add(POLISHED_DOLERITE_VERTICAL_SLAB.get(), AtmosphericBlockLoot::createVerticalSlabItemTable);
+
 			this.dropSelf(ROSEWOOD_PLANKS.get());
 			this.dropSelf(VERTICAL_ROSEWOOD_PLANKS.get());
 			this.dropSelf(ROSEWOOD_LOG.get());
