@@ -238,8 +238,9 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_AGAVE_LARGE = register("patch_agave_large", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(512, 12, 5, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.AGAVE.get()))))));
 		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_GOLDEN_GROWTHS = register("patch_golden_growths", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simpleRandomPatchConfiguration(32, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.GOLDEN_GROWTHS.get()))))));
 
-		public static final RegistryObject<ConfiguredFeature<ProbabilityFeatureConfiguration, ?>> SNOWY_BAMBOO = register("snowy_bamboo", () -> new ConfiguredFeature<>(AtmosphericFeatures.SNOWY_BAMBOO.get(), new ProbabilityFeatureConfiguration(1.0F)));
+		public static final RegistryObject<ConfiguredFeature<ProbabilityFeatureConfiguration, ?>> SNOWY_BAMBOO = register("snowy_bamboo", () -> new ConfiguredFeature<>(AtmosphericFeatures.SNOWY_BAMBOO.get(), new ProbabilityFeatureConfiguration(0.1F)));
 		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_KOUSA_JUNGLE = register("trees_kousa_jungle", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(TreePlacements.BIRCH_CHECKED, 0.3F)), AtmosphericPlacedFeatures.KOUSA.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_LARGE_FERN = register("patch_large_fern", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.LARGE_FERN)))));
 
 		public static final RegistryObject<ConfiguredFeature<BlockStateConfiguration, ?>> HOT_SPRINGS_ROCK = register("hot_springs_rock", () -> new ConfiguredFeature<>(Feature.FOREST_ROCK, new BlockStateConfiguration(Blocks.MOSSY_COBBLESTONE.defaultBlockState())));
 
@@ -330,10 +331,11 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> PATCH_AGAVE_LARGE = register("patch_agave_large", AtmosphericConfiguredFeatures.PATCH_AGAVE_LARGE, List.of(RarityFilter.onAverageOnceEvery(48), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_GOLDEN_GROWTHS = register("patch_golden_growths", AtmosphericConfiguredFeatures.PATCH_GOLDEN_GROWTHS, VegetationPlacements.worldSurfaceSquaredWithCount(4));
 		public static final RegistryObject<PlacedFeature> TREES_ASPEN_PARKLAND = register("trees_aspen_parkland", AtmosphericConfiguredFeatures.TREES_ASPEN_PARKLAND, VegetationPlacements.treePlacement(PlacementUtils.countExtra(12, 0.1F, 1)));
+		public static final RegistryObject<PlacedFeature> PATCH_LARGE_FERN_KOUSA = register("patch_large_fern_kousa", AtmosphericConfiguredFeatures.PATCH_LARGE_FERN, List.of(RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
-		public static final RegistryObject<PlacedFeature> SNOWY_BAMBOO = register("snowy_bamboo", AtmosphericConfiguredFeatures.SNOWY_BAMBOO, List.of(NoiseBasedCountPlacement.of(160, 70.0D, 0.2D), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
-		public static final RegistryObject<PlacedFeature> TREES_KOUSA_JUNGLE = register("trees_kousa_jungle", AtmosphericConfiguredFeatures.TREES_KOUSA_JUNGLE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.1F, 1)));
-		public static final RegistryObject<PlacedFeature> CURRANT = register("currant", AtmosphericConfiguredFeatures.CURRANT, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 5)));
+		public static final RegistryObject<PlacedFeature> SNOWY_BAMBOO = register("snowy_bamboo", AtmosphericConfiguredFeatures.SNOWY_BAMBOO, List.of(NoiseBasedCountPlacement.of(60, 2.0D, 0.0D), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> TREES_KOUSA_JUNGLE = register("trees_kousa_jungle", AtmosphericConfiguredFeatures.TREES_KOUSA_JUNGLE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
+		public static final RegistryObject<PlacedFeature> CURRANT = register("currant", AtmosphericConfiguredFeatures.CURRANT, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.025F, 8)));
 
 		public static final RegistryObject<PlacedFeature> HOT_SPRINGS_ROCK = register("hot_springs_rock", AtmosphericConfiguredFeatures.HOT_SPRINGS_ROCK, List.of(BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.GRASS_BLOCK)), CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
