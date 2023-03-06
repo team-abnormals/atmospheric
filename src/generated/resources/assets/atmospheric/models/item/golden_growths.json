@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "atmospheric:block/crustose_sprouts"
+    "layer0": "atmospheric:block/golden_growths"
   }
 }

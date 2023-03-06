@@ -9,10 +9,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class CrustoseSproutsBlock extends BushBlock {
+public class GoldenGrowthsBlock extends BushBlock {
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 
-	public CrustoseSproutsBlock(Properties properties) {
+	public GoldenGrowthsBlock(Properties properties) {
 		super(properties);
 	}
 
@@ -23,6 +23,6 @@ public class CrustoseSproutsBlock extends BushBlock {
 
 	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return state.is(AtmosphericBlockTags.CRUSTOSE_SPROUTS_PLACEABLE);
+		return state.is(AtmosphericBlockTags.GOLDEN_GROWTHS_PLACEABLE);
 	}
 }

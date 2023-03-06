@@ -22,7 +22,7 @@ public class AtmosphericProperties {
 	public static final Block.Properties RED_ARID_SAND = Block.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_ORANGE).strength(0.5F).sound(SoundType.SAND);
 
 	public static final Block.Properties AGAVE = Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.TERRACOTTA_CYAN).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ);
-	public static final Block.Properties CRUSTOSE_SPROUTS = Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.GOLD).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ);
+	public static final Block.Properties GOLDEN_GROWTHS = Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.GOLD).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ);
 	public static final Block.Properties CRUSTOSE_PATH = Block.Properties.of(Material.DIRT, MaterialColor.GOLD).strength(0.65F).sound(SoundType.GRASS).isViewBlocking(PropertyUtil::never).isViewBlocking(PropertyUtil::never);
 	public static final Block.Properties ARID_SPROUTS = Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.SAND).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ);
 

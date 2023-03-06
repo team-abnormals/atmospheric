@@ -261,7 +261,8 @@
 
   "block.atmospheric.agave": "Agave",
   "block.atmospheric.potted_agave": "Potted Agave",
-  "block.atmospheric.crustose_sprouts": "Crustose Sprouts",
+  "block.atmospheric.golden_growths": "Golden Growths",
+  "block.atmospheric.potted_golden_growths": "Potted Golden Growths",
 
   "block.atmospheric.crustose": "Crustose",
   "block.atmospheric.crustose_path": "Crustose Path",

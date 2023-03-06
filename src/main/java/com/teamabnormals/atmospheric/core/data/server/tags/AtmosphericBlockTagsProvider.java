@@ -29,7 +29,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 				GRIMWOOD_BOARDS.get(), GRIMWOOD_BOOKSHELF.get(), GRIMWOOD_LADDER.get(), GRIMWOOD_BEEHIVE.get(), GRIMWOOD_CHESTS.getFirst().get(), GRIMWOOD_CHESTS.getSecond().get(), GRIMWOOD_HEDGE.get(), GRIMWOOD_POST.get(), STRIPPED_GRIMWOOD_POST.get(),
 				LAUREL_BOARDS.get(), LAUREL_BOOKSHELF.get(), LAUREL_LADDER.get(), LAUREL_BEEHIVE.get(), LAUREL_CHESTS.getFirst().get(), LAUREL_CHESTS.getSecond().get(), LAUREL_HEDGE.get(), DRY_LAUREL_HEDGE.get(), LAUREL_POST.get(), STRIPPED_LAUREL_POST.get(),
 				PASSIONFRUIT_CRATE.get(), SHIMMERING_PASSIONFRUIT_CRATE.get(), YUCCA_CASK.get(), ROASTED_YUCCA_CASK.get(), BARREL_CACTUS_BATCH.get(),
-				ARID_SPROUTS.get(), YUCCA_BRANCH.get(), ALOE_VERA.get(), TALL_ALOE_VERA.get(), AGAVE.get(), CRUSTOSE_SPROUTS.get(),
+				ARID_SPROUTS.get(), YUCCA_BRANCH.get(), ALOE_VERA.get(), TALL_ALOE_VERA.get(), AGAVE.get(), GOLDEN_GROWTHS.get(),
 				SNOWY_BAMBOO.get(), HANGING_CURRANT.get(), CURRANT_STALK.get(), CURRANT_STALK_BUNDLE.get(), CURRANT_BASKET.get(), CURRANT_HEDGE.get()
 		);
 
@@ -62,7 +62,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(BlockTags.BEE_GROWABLES).add(PASSION_VINE.get());
 		this.tag(BlockTags.BEEHIVES).add(ROSEWOOD_BEEHIVE.get(), MORADO_BEEHIVE.get(), YUCCA_BEEHIVE.get(), KOUSA_BEEHIVE.get(), ASPEN_BEEHIVE.get(), GRIMWOOD_BEEHIVE.get());
 		this.tag(BlockTags.CLIMBABLE).add(PASSION_VINE.get(), ROSEWOOD_LADDER.get(), MORADO_LADDER.get(), YUCCA_LADDER.get(), KOUSA_LADDER.get(), ASPEN_LADDER.get(), GRIMWOOD_LADDER.get());
-		this.tag(BlockTags.FLOWER_POTS).add(POTTED_ROSEWOOD_SAPLING.get(), POTTED_MORADO_SAPLING.get(), POTTED_YUCCA_SAPLING.get(), POTTED_KOUSA_SAPLING.get(), POTTED_ASPEN_SAPLING.get(), POTTED_GRIMWOOD_SAPLING.get(), POTTED_LAUREL_SAPLING.get(), POTTED_DRY_LAUREL_SAPLING.get(), POTTED_WARM_MONKEY_BRUSH.get(), POTTED_HOT_MONKEY_BRUSH.get(), POTTED_SCALDING_MONKEY_BRUSH.get(), POTTED_WATER_HYACINTH.get(), POTTED_YUCCA_FLOWER.get(), POTTED_BARREL_CACTUS.get(), POTTED_GILIA.get(), POTTED_CURRANT_SEEDLING.get(), POTTED_SNOWY_BAMBOO.get(), POTTED_AGAVE.get());
+		this.tag(BlockTags.FLOWER_POTS).add(POTTED_ROSEWOOD_SAPLING.get(), POTTED_MORADO_SAPLING.get(), POTTED_YUCCA_SAPLING.get(), POTTED_KOUSA_SAPLING.get(), POTTED_ASPEN_SAPLING.get(), POTTED_GRIMWOOD_SAPLING.get(), POTTED_LAUREL_SAPLING.get(), POTTED_DRY_LAUREL_SAPLING.get(), POTTED_WARM_MONKEY_BRUSH.get(), POTTED_HOT_MONKEY_BRUSH.get(), POTTED_SCALDING_MONKEY_BRUSH.get(), POTTED_WATER_HYACINTH.get(), POTTED_YUCCA_FLOWER.get(), POTTED_BARREL_CACTUS.get(), POTTED_GILIA.get(), POTTED_CURRANT_SEEDLING.get(), POTTED_SNOWY_BAMBOO.get(), POTTED_AGAVE.get(), POTTED_GOLDEN_GROWTHS.get());
 		this.tag(BlockTags.FLOWERS).add(FLOWERING_MORADO_LEAVES.get());
 		this.tag(BlockTags.GUARDED_BY_PIGLINS).add(SHIMMERING_PASSIONFRUIT_CRATE.get(), ROSEWOOD_CHESTS.getFirst().get(), ROSEWOOD_CHESTS.getSecond().get(), MORADO_CHESTS.getFirst().get(), MORADO_CHESTS.getSecond().get(), YUCCA_CHESTS.getFirst().get(), YUCCA_CHESTS.getSecond().get(), KOUSA_CHESTS.getFirst().get(), KOUSA_CHESTS.getSecond().get(), ASPEN_CHESTS.getFirst().get(), ASPEN_CHESTS.getSecond().get(), GRIMWOOD_CHESTS.getFirst().get(), GRIMWOOD_CHESTS.getSecond().get(), LAUREL_CHESTS.getFirst().get(), LAUREL_CHESTS.getSecond().get());
 		this.tag(BlockTags.LEAVES).add(ROSEWOOD_LEAVES.get(), MORADO_LEAVES.get(), FLOWERING_MORADO_LEAVES.get(), YUCCA_LEAVES.get(), KOUSA_LEAVES.get(), ASPEN_LEAVES.get(), GRIMWOOD_LEAVES.get(), LAUREL_LEAVES.get(), DRY_LAUREL_LEAVES.get());
@@ -85,7 +85,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(ROSEWOOD_LOG.get(), MORADO_LOG.get(), YUCCA_LOG.get(), ASPEN_LOG.get(), WATCHFUL_ASPEN_LOG.get(), KOUSA_LOG.get(), GRIMWOOD_LOG.get(), LAUREL_LOG.get());
 		this.tag(BlockTags.SCULK_REPLACEABLE).add(ARID_SANDSTONE.get(), RED_ARID_SANDSTONE.get(), IVORY_TRAVERTINE.get(), PEACH_TRAVERTINE.get(), PERSIMMON_TRAVERTINE.get(), SAFFRON_TRAVERTINE.get());
 		this.tag(BlockTags.DIRT).add(CRUSTOSE.get());
-		this.tag(BlockTags.REPLACEABLE_PLANTS).add(AGAVE.get(), CRUSTOSE_SPROUTS.get(), ARID_SPROUTS.get());
+		this.tag(BlockTags.REPLACEABLE_PLANTS).add(AGAVE.get(), GOLDEN_GROWTHS.get(), ARID_SPROUTS.get());
 		this.tag(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE).add(CURRANT_STALK.get());
 		this.tag(BlockTags.ANIMALS_SPAWNABLE_ON).add(CRUSTOSE.get());
 
@@ -109,7 +109,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(YUCCA_FLOWER_PLACEABLE).add(Blocks.CACTUS, YUCCA_LEAVES.get(), YUCCA_HEDGE.get()).addTag(YUCCA_PLACEABLE);
 		this.tag(BARREL_CACTUS_PLACEABLE).addTag(BlockTags.SAND);
 		this.tag(SNOWY_BAMBOO_PLANTABLE_ON).add(Blocks.SNOW_BLOCK, SNOWY_BAMBOO.get(), SNOWY_BAMBOO_SAPLING.get());
-		this.tag(CRUSTOSE_SPROUTS_PLACEABLE).add(CRUSTOSE.get(), CRUSTOSE_LOG.get(), CRUSTOSE_WOOD.get()).addTag(BlockTags.DIRT);
+		this.tag(GOLDEN_GROWTHS_PLACEABLE).add(CRUSTOSE.get(), CRUSTOSE_LOG.get(), CRUSTOSE_WOOD.get()).addTag(BlockTags.DIRT);
 
 		this.tag(Tags.Blocks.CHESTS_WOODEN).add(ROSEWOOD_CHESTS.getFirst().get(), ROSEWOOD_CHESTS.getSecond().get(), MORADO_CHESTS.getFirst().get(), MORADO_CHESTS.getSecond().get(), YUCCA_CHESTS.getFirst().get(), YUCCA_CHESTS.getSecond().get(), KOUSA_CHESTS.getFirst().get(), KOUSA_CHESTS.getSecond().get(), ASPEN_CHESTS.getFirst().get(), ASPEN_CHESTS.getSecond().get(), GRIMWOOD_CHESTS.getFirst().get(), GRIMWOOD_CHESTS.getSecond().get(), LAUREL_CHESTS.getFirst().get(), LAUREL_CHESTS.getSecond().get());
 		this.tag(Tags.Blocks.CHESTS_TRAPPED).add(ROSEWOOD_CHESTS.getSecond().get(), MORADO_CHESTS.getSecond().get(), YUCCA_CHESTS.getSecond().get(), KOUSA_CHESTS.getSecond().get(), ASPEN_CHESTS.getSecond().get(), GRIMWOOD_CHESTS.getSecond().get(), LAUREL_CHESTS.getSecond().get());

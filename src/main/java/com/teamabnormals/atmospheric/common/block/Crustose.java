@@ -63,7 +63,7 @@ public interface Crustose {
 
 	default void performCrustoseBonemeal(Block block, ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
 		BlockPos abovePos = pos.above();
-		BlockState crustoseSprouts = AtmosphericBlocks.CRUSTOSE_SPROUTS.get().defaultBlockState();
+		BlockState crustoseSprouts = AtmosphericBlocks.GOLDEN_GROWTHS.get().defaultBlockState();
 
 		label48:
 		for (int i = 0; i < 128; ++i) {
