@@ -36,7 +36,7 @@ public class SnowyBambooFeature extends Feature<ProbabilityFeatureConfiguration>
 		BlockPos.MutableBlockPos snowPos = origin.mutable();
 
 		if (level.isEmptyBlock(bambooPos)) {
-			if (Blocks.BAMBOO.defaultBlockState().canSurvive(level, bambooPos)) {
+			if (Blocks.BAMBOO.defaultBlockState().canSurvive(level, bambooPos) || level.getBlockState(bambooPos.below()).is(Blocks.SNOW_BLOCK)) {
 				level.setBlock(bambooPos.below(), Blocks.SNOW_BLOCK.defaultBlockState(), 2);
 
 				int j = random.nextInt(12) + 5;

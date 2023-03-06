@@ -115,7 +115,7 @@ public class AtmosphericBiomes {
 		BiomeDefaultFeatures.addDefaultOres(generation);
 		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
 		BiomeDefaultFeatures.addDefaultFlowers(generation);
-		BiomeDefaultFeatures.addForestGrass(generation);
+		BiomeDefaultFeatures.addShatteredSavannaGrass(generation);
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
@@ -130,7 +130,6 @@ public class AtmosphericBiomes {
 		BiomeDefaultFeatures.commonSpawns(spawns);
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 1, 1));
 
-		// 0.6, 0.6
 		return biome(Biome.Precipitation.RAIN, 2.0F, 0.0F, spawns, generation, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 	}
 
@@ -139,23 +138,22 @@ public class AtmosphericBiomes {
 
 		OverworldBiomes.globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addMossyStoneBlock(generation);
-		BiomeDefaultFeatures.addFerns(generation);
 		BiomeDefaultFeatures.addDefaultOres(generation);
 		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
 		BiomeDefaultFeatures.addDefaultFlowers(generation);
 		BiomeDefaultFeatures.addTaigaGrass(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_LARGE_FERN_KOUSA.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.CURRANT.getHolder().get());
-		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_KOUSA_JUNGLE.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.SNOWY_BAMBOO.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_KOUSA_JUNGLE.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PASSION_VINES.getHolder().get());
 
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
 		BiomeDefaultFeatures.farmAnimals(spawns);
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4));
-		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));
-		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 8, 2, 4));
+		spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 2, 1, 3));
 		BiomeDefaultFeatures.commonSpawns(spawns);
 
 		return biome(Biome.Precipitation.SNOW, -0.25F, 0.5F, spawns, generation, null);
