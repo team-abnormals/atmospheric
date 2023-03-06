@@ -43,7 +43,8 @@ public class AtmosphericTrades {
 
 	@SubscribeEvent
 	public static void onVillagerTradesEvent(VillagerTradesEvent event) {
-		if (event.getType().equals(VillagerProfession.FARMER)) {
+		VillagerProfession profession = event.getType();
+		if (profession.equals(VillagerProfession.FARMER)) {
 			TradeUtil.addVillagerTrades(event, 2,
 					new BlueprintTrade(1, AtmosphericItems.PASSIONFRUIT_TART.get(), 4, 12, 5),
 					new BlueprintTrade(AtmosphericItems.ALOE_LEAVES.get(), 4, 1, 16, 15),
@@ -56,6 +57,15 @@ public class AtmosphericTrades {
 
 			TradeUtil.addVillagerTrades(event, 4,
 					new BlueprintTrade(3, AtmosphericItems.YUCCA_GATEAU.get(), 1, 12, 15)
+			);
+		}
+
+		if (profession.equals(VillagerProfession.MASON)) {
+			TradeUtil.addVillagerTrades(event, 3,
+					new BlueprintTrade(1, AtmosphericBlocks.IVORY_TRAVERTINE.get().asItem(), 4, 16, 10),
+					new BlueprintTrade(1, AtmosphericBlocks.PEACH_TRAVERTINE.get().asItem(), 4, 16, 10),
+					new BlueprintTrade(1, AtmosphericBlocks.PERSIMMON_TRAVERTINE.get().asItem(), 4, 16, 10),
+					new BlueprintTrade(1, AtmosphericBlocks.SAFFRON_TRAVERTINE.get().asItem(), 4, 16, 10)
 			);
 		}
 	}
