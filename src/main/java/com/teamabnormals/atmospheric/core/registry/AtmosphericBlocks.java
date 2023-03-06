@@ -303,7 +303,8 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> AGAVE = HELPER.createBlock("agave", () -> new AgaveBlock(AtmosphericProperties.AGAVE), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_AGAVE = HELPER.createBlockNoItem("potted_agave", () -> new FlowerPotBlock(AGAVE.get(), PropertyUtil.FLOWER_POT));
-	public static final RegistryObject<Block> CRUSTOSE_SPROUTS = HELPER.createBlock("crustose_sprouts", () -> new CrustoseSproutsBlock(AtmosphericProperties.CRUSTOSE_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> GOLDEN_GROWTHS = HELPER.createBlock("golden_growths", () -> new GoldenGrowthsBlock(AtmosphericProperties.GOLDEN_GROWTHS), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> POTTED_GOLDEN_GROWTHS = HELPER.createBlockNoItem("potted_golden_growths", () -> new FlowerPotBlock(GOLDEN_GROWTHS.get(), PropertyUtil.FLOWER_POT));
 
 	public static final RegistryObject<Block> CRUSTOSE = HELPER.createBlock("crustose", () -> new CrustoseBlock(Block.Properties.copy(Blocks.GRASS_BLOCK).randomTicks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> CRUSTOSE_PATH = HELPER.createBlock("crustose_path", () -> new DirtPathBlock(AtmosphericProperties.CRUSTOSE_PATH), CreativeModeTab.TAB_DECORATIONS);

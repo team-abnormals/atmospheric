@@ -91,7 +91,7 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.leavesCompat(ASPEN_LEAVES.get(), ASPEN_LOG.get(), ASPEN_LEAF_PILE.get(), ASPEN_HEDGE.get(), ASPEN_LEAF_CARPET.get());
 
 		this.crossBlockWithCustomPot(AGAVE.get(), POTTED_AGAVE.get());
-		this.crossBlock(CRUSTOSE_SPROUTS.get());
+		this.crossBlockWithCustomPot(GOLDEN_GROWTHS.get(), POTTED_GOLDEN_GROWTHS.get());
 
 		this.blockFamily(AtmosphericBlockFamilies.LAUREL_PLANKS_FAMILY, LAUREL_VERTICAL_SLAB.get());
 		this.logBlocks(LAUREL_LOG.get(), LAUREL_WOOD.get());

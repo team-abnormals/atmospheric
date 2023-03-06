@@ -66,7 +66,12 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				{null, null, VANILLA, VANILLA, null},
 				{null, null, null, null, AtmosphericBiomes.SPARSE_RAINFOREST.getKey()},
 				{AtmosphericBiomes.PETRIFIED_DUNES.getKey(), AtmosphericBiomes.PETRIFIED_DUNES.getKey(), null, null, null}};
-		private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {null, null, null, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()}, {null, null, null, null, null}};
+		private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
+				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+				{null, null, null, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()},
+				{null, null, null, null, null}};
 
 		private void addBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
 			this.addOffCoastBiomes(consumer);
