@@ -26,10 +26,11 @@ public class AtmosphericProperties {
 	public static final Block.Properties CRUSTOSE_PATH = Block.Properties.of(Material.DIRT, MaterialColor.GOLD).strength(0.65F).sound(SoundType.GRASS).isViewBlocking(PropertyUtil::never).isViewBlocking(PropertyUtil::never);
 	public static final Block.Properties ARID_SPROUTS = Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.SAND).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ);
 
-	public static final Block.Properties IVORY_TRAVERTINE = Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).strength(1.5F, 6.0F);
-	public static final Block.Properties PEACH_TRAVERTINE = Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_PINK).strength(1.5F, 6.0F);
-	public static final Block.Properties PERSIMMON_TRAVERTINE = Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_ORANGE).strength(1.5F, 6.0F);
-	public static final Block.Properties SAFFRON_TRAVERTINE = Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED).strength(1.5F, 6.0F);
+	public static final Block.Properties IVORY_TRAVERTINE = Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
+	public static final Block.Properties PEACH_TRAVERTINE = Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_PINK).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
+	public static final Block.Properties PERSIMMON_TRAVERTINE = Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_ORANGE).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
+	public static final Block.Properties SAFFRON_TRAVERTINE = Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
+	public static final Block.Properties DOLERITE = Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
 
 	public static final Block.Properties ALOE_VERA = Block.Properties.of(Material.PLANT).noCollission().instabreak().randomTicks().sound(SoundType.CROP);
 }

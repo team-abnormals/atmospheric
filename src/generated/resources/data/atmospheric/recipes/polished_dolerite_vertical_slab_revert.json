@@ -1,0 +1,24 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_slabs"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "atmospheric:polished_dolerite_slab"
+          }
+        ],
+        "result": {
+          "item": "atmospheric:polished_dolerite_vertical_slab"
+        }
+      }
+    }
+  ]
+}

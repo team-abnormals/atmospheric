@@ -212,6 +212,16 @@
   "block.atmospheric.saffron_travertine_wall": "Saffron Travertine Wall",
   "block.atmospheric.saffron_travertine_vertical_slab": "Saffron Travertine Vertical Slab",
 
+  "block.atmospheric.dolerite": "Dolerite",
+  "block.atmospheric.dolerite_slab": "Dolerite Slab",
+  "block.atmospheric.dolerite_stairs": "Dolerite Stairs",
+  "block.atmospheric.dolerite_wall": "Dolerite Wall",
+  "block.atmospheric.dolerite_vertical_slab": "Dolerite Vertical Slab",
+  "block.atmospheric.polished_dolerite": "Polished Dolerite",
+  "block.atmospheric.polished_dolerite_slab": "Polished Dolerite Slab",
+  "block.atmospheric.polished_dolerite_stairs": "Polished Dolerite Stairs",
+  "block.atmospheric.polished_dolerite_vertical_slab": "Polished Dolerite Vertical Slab",
+
   "block.atmospheric.kousa_log": "Kousa Log",
   "block.atmospheric.kousa_wood": "Kousa Wood",
   "block.atmospheric.stripped_kousa_log": "Stripped Kousa Log",

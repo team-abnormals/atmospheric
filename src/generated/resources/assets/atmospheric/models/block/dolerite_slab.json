@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "atmospheric:block/dolerite",
+    "side": "atmospheric:block/dolerite",
+    "top": "atmospheric:block/dolerite"
+  }
+}

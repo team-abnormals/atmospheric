@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_slabs"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "count": 2,
+        "ingredient": {
+          "item": "atmospheric:dolerite"
+        },
+        "result": "atmospheric:polished_dolerite_vertical_slab"
+      }
+    }
+  ]
+}

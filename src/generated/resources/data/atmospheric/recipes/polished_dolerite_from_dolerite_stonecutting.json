@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "atmospheric:dolerite"
+  },
+  "result": "atmospheric:polished_dolerite"
+}

@@ -6,6 +6,7 @@ import com.teamabnormals.atmospheric.core.data.client.AtmosphericBlockStateProvi
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericItemModelProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericLootTableProvider;
+import com.teamabnormals.atmospheric.core.data.server.AtmosphericRecipeProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.*;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBiomeTagsProvider;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBlockTagsProvider;
@@ -101,6 +102,7 @@ public class Atmospheric {
 		generator.addProvider(includeServer, new AtmosphericEntityTypeTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new AtmosphericBiomeTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new AtmosphericLootTableProvider(generator));
+		generator.addProvider(includeServer, new AtmosphericRecipeProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericAdvancementProvider(generator, helper));
 		generator.addProvider(includeServer, new AtmosphericAdvancementModifierProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericLootModifierProvider(generator));

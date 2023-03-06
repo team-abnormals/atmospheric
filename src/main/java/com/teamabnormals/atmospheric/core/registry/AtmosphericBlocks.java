@@ -15,6 +15,7 @@ import com.teamabnormals.blueprint.common.block.wood.*;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour.OffsetType;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
@@ -156,6 +157,16 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> PEACH_TRAVERTINE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "peach_travertine_vertical_slab", () -> new DirectionalVerticalSlabBlock(AtmosphericProperties.PEACH_TRAVERTINE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> PERSIMMON_TRAVERTINE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "persimmon_travertine_vertical_slab", () -> new DirectionalVerticalSlabBlock(AtmosphericProperties.PERSIMMON_TRAVERTINE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SAFFRON_TRAVERTINE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "saffron_travertine_vertical_slab", () -> new DirectionalVerticalSlabBlock(AtmosphericProperties.SAFFRON_TRAVERTINE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+	public static final RegistryObject<Block> DOLERITE = HELPER.createBlock("dolerite", () -> new InjectedBlock(Items.POLISHED_ANDESITE, AtmosphericProperties.DOLERITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> DOLERITE_STAIRS = HELPER.createBlock("dolerite_stairs", () -> new StairBlock(() -> DOLERITE.get().defaultBlockState(), AtmosphericProperties.DOLERITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> DOLERITE_SLAB = HELPER.createBlock("dolerite_slab", () -> new SlabBlock(AtmosphericProperties.DOLERITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> DOLERITE_WALL = HELPER.createBlock("dolerite_wall", () -> new WallBlock(AtmosphericProperties.DOLERITE), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DOLERITE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "dolerite_vertical_slab", () -> new VerticalSlabBlock(AtmosphericProperties.DOLERITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> POLISHED_DOLERITE = HELPER.createBlock("polished_dolerite", () -> new InjectedBlock(Items.POLISHED_ANDESITE, AtmosphericProperties.DOLERITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> POLISHED_DOLERITE_STAIRS = HELPER.createBlock("polished_dolerite_stairs", () -> new StairBlock(() -> POLISHED_DOLERITE.get().defaultBlockState(), AtmosphericProperties.DOLERITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> POLISHED_DOLERITE_SLAB = HELPER.createBlock("polished_dolerite_slab", () -> new SlabBlock(AtmosphericProperties.DOLERITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> POLISHED_DOLERITE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "polished_dolerite_vertical_slab", () -> new VerticalSlabBlock(AtmosphericProperties.DOLERITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

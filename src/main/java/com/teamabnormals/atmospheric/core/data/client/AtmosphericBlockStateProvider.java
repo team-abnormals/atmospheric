@@ -44,6 +44,9 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 
 	@Override
 	protected void registerStatesAndModels() {
+		this.blockFamily(AtmosphericBlockFamilies.DOLERITE_FAMILY, DOLERITE_VERTICAL_SLAB.get());
+		this.blockFamily(AtmosphericBlockFamilies.POLISHED_DOLERITE_FAMILY, POLISHED_DOLERITE_VERTICAL_SLAB.get());
+
 		this.blockFamily(AtmosphericBlockFamilies.ROSEWOOD_PLANKS_FAMILY, ROSEWOOD_VERTICAL_SLAB.get());
 		this.logBlocks(ROSEWOOD_LOG.get(), ROSEWOOD.get());
 		this.logBlocks(STRIPPED_ROSEWOOD_LOG.get(), STRIPPED_ROSEWOOD.get());

@@ -14,6 +14,7 @@ public class AtmosphericItemTags {
 	public static final TagKey<Item> GRIMWOOD_LOGS = itemTag("grimwood_logs");
 	public static final TagKey<Item> LAUREL_LOGS = itemTag("laurel_logs");
 
+	public static final TagKey<Item> TRAVERTINE = itemTag("travertine");
 	public static final TagKey<Item> FRUITS = TagUtil.itemTag("forge", "fruits");
 	public static final TagKey<Item> FRUITS_PASSIONFRUIT = TagUtil.itemTag("forge", "fruits/passionfruit");
 
