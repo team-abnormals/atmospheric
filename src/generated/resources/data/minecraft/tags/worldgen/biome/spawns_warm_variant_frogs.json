@@ -1,5 +1,6 @@
 {
   "values": [
+    "#atmospheric:is_rainforest",
     "#atmospheric:is_dunes"
   ]
 }
