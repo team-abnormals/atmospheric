@@ -2218,7 +2218,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -2245,7 +2245,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -2272,7 +2272,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -2299,7 +2299,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -2380,7 +2380,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -2407,7 +2407,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -2434,7 +2434,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -2461,7 +2461,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -2542,7 +2542,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -2569,7 +2569,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -2650,7 +2650,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -2677,7 +2677,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -2812,7 +2812,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -2839,7 +2839,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -3946,7 +3946,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -3973,7 +3973,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -6808,7 +6808,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -6835,7 +6835,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -6862,7 +6862,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -6889,7 +6889,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -6916,7 +6916,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -6943,7 +6943,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -6970,7 +6970,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -6997,7 +6997,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -7024,7 +7024,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -7051,7 +7051,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -7078,7 +7078,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -7105,7 +7105,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -7132,7 +7132,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -7159,7 +7159,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -7240,7 +7240,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -7267,7 +7267,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -7348,7 +7348,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -7375,7 +7375,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -21010,7 +21010,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -21037,7 +21037,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -21280,7 +21280,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -21307,7 +21307,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -21388,7 +21388,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -21415,7 +21415,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -21496,7 +21496,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -21523,7 +21523,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -21550,7 +21550,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -21577,7 +21577,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -21658,7 +21658,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -21685,7 +21685,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -22738,7 +22738,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -22765,7 +22765,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -22846,7 +22846,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -22873,7 +22873,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -25222,7 +25222,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25249,7 +25249,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25384,7 +25384,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -25411,7 +25411,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -25492,7 +25492,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25519,7 +25519,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25546,7 +25546,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -25573,7 +25573,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -25600,7 +25600,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -25627,7 +25627,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -25654,7 +25654,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -25681,7 +25681,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -25708,7 +25708,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25735,7 +25735,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25762,7 +25762,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25789,7 +25789,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25870,7 +25870,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25897,7 +25897,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -38506,7 +38506,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -38533,7 +38533,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -38614,7 +38614,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -38641,7 +38641,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -38722,7 +38722,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -38749,7 +38749,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -38884,7 +38884,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -38911,7 +38911,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -39748,7 +39748,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -39775,7 +39775,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -39856,7 +39856,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -39883,7 +39883,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -41962,7 +41962,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -41989,7 +41989,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42070,7 +42070,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42097,7 +42097,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42124,7 +42124,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -42151,7 +42151,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -42178,7 +42178,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -42205,7 +42205,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -42232,7 +42232,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -42259,7 +42259,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -42286,7 +42286,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42313,7 +42313,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42448,7 +42448,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42475,7 +42475,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -53410,7 +53410,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -53437,7 +53437,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -53680,7 +53680,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -53707,7 +53707,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -53788,7 +53788,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -53815,7 +53815,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -53896,7 +53896,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -53923,7 +53923,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -53950,7 +53950,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -53977,7 +53977,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -54058,7 +54058,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -54085,7 +54085,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -55138,7 +55138,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -55165,7 +55165,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -55246,7 +55246,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -55273,7 +55273,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -57622,7 +57622,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -57649,7 +57649,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -57784,7 +57784,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -57811,7 +57811,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -57892,7 +57892,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -57919,7 +57919,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -57946,7 +57946,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -57973,7 +57973,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -58000,7 +58000,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -58027,7 +58027,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -58054,7 +58054,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -58081,7 +58081,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -58108,7 +58108,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58135,7 +58135,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58162,7 +58162,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58189,7 +58189,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58270,7 +58270,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58297,7 +58297,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -71554,7 +71554,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -71581,7 +71581,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -71608,7 +71608,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -71635,7 +71635,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -71716,7 +71716,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -71743,7 +71743,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -71770,7 +71770,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -71797,7 +71797,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -71878,7 +71878,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -71905,7 +71905,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -71986,7 +71986,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -72013,7 +72013,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -72148,7 +72148,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -72175,7 +72175,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -73282,7 +73282,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -73309,7 +73309,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -76144,7 +76144,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76171,7 +76171,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76198,7 +76198,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -76225,7 +76225,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -76252,7 +76252,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76279,7 +76279,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76306,7 +76306,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -76333,7 +76333,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -76360,7 +76360,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -76387,7 +76387,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -76414,7 +76414,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -76441,7 +76441,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -76468,7 +76468,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -76495,7 +76495,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -76576,7 +76576,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76603,7 +76603,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76684,7 +76684,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76711,7 +76711,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -90346,7 +90346,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -90373,7 +90373,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -90454,7 +90454,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -90481,7 +90481,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -90508,7 +90508,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -90535,7 +90535,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -90616,7 +90616,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -90643,7 +90643,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -90724,7 +90724,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -90751,7 +90751,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -90778,7 +90778,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -90805,7 +90805,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -90886,7 +90886,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -90913,7 +90913,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -93748,7 +93748,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -93775,7 +93775,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -93802,7 +93802,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -93829,7 +93829,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -93856,7 +93856,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -93883,7 +93883,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -93910,7 +93910,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -93937,7 +93937,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -94018,7 +94018,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94045,7 +94045,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94126,7 +94126,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94153,7 +94153,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94180,7 +94180,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -94207,7 +94207,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -103846,7 +103846,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -103873,7 +103873,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104170,7 +104170,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104197,7 +104197,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -106492,7 +106492,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -106519,7 +106519,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -106600,7 +106600,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -106627,7 +106627,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -106654,7 +106654,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -106681,7 +106681,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -106762,7 +106762,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -106789,7 +106789,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -106816,7 +106816,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -106843,7 +106843,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -106870,7 +106870,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -106897,7 +106897,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -106924,7 +106924,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -106951,7 +106951,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -107032,7 +107032,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -107059,7 +107059,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -109894,7 +109894,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -109921,7 +109921,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -109948,7 +109948,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -109975,7 +109975,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110002,7 +110002,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110029,7 +110029,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110056,7 +110056,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110083,7 +110083,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110164,7 +110164,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110191,7 +110191,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110218,7 +110218,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -110245,7 +110245,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -110272,7 +110272,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110299,7 +110299,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110326,7 +110326,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110353,7 +110353,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -120964,7 +120964,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -120991,7 +120991,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -121018,7 +121018,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -121045,7 +121045,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -121126,7 +121126,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121153,7 +121153,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121180,7 +121180,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -121207,7 +121207,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -121234,7 +121234,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121261,7 +121261,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121288,7 +121288,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121315,7 +121315,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121342,7 +121342,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -121369,7 +121369,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -121450,7 +121450,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121477,7 +121477,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121504,7 +121504,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -121531,7 +121531,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -122584,7 +122584,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -122611,7 +122611,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -125230,7 +125230,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125257,7 +125257,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125338,7 +125338,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125365,7 +125365,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125392,7 +125392,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -125419,7 +125419,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -125500,7 +125500,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125527,7 +125527,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125554,7 +125554,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -125581,7 +125581,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -125608,7 +125608,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125635,7 +125635,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125662,7 +125662,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125689,7 +125689,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125716,7 +125716,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125743,7 +125743,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125824,7 +125824,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125851,7 +125851,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -138514,7 +138514,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -138541,7 +138541,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -138784,7 +138784,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -138811,7 +138811,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -138892,7 +138892,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -138919,7 +138919,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -139000,7 +139000,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139027,7 +139027,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139054,7 +139054,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139081,7 +139081,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139162,7 +139162,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139189,7 +139189,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -140242,7 +140242,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -140269,7 +140269,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -140350,7 +140350,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -140377,7 +140377,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -142726,7 +142726,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -142753,7 +142753,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -142888,7 +142888,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -142915,7 +142915,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -142996,7 +142996,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143023,7 +143023,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143104,40 +143104,13 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
             0.3
           ],
           "depth": 0.0,
-          "erosion": [
-            -0.2225,
-            0.05
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            -0.45,
-            -0.15
-          ],
-          "weirdness": [
-            0.4,
-            0.5666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:aspen_parkland",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            0.3
-          ],
-          "depth": 1.0,
           "erosion": [
             -0.2225,
             0.05
@@ -143161,10 +143134,10 @@
         "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
-            0.3,
-            1.0
+            0.03,
+            0.3
           ],
-          "depth": 0.0,
+          "depth": 1.0,
           "erosion": [
             -0.2225,
             0.05
@@ -143191,6 +143164,33 @@
             0.3,
             1.0
           ],
+          "depth": 0.0,
+          "erosion": [
+            -0.2225,
+            0.05
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            -0.45,
+            -0.15
+          ],
+          "weirdness": [
+            0.4,
+            0.5666
+          ]
+        }
+      },
+      {
+        "biome": "blueprint:original_source_marker",
+        "parameters": {
+          "continentalness": [
+            0.3,
+            1.0
+          ],
           "depth": 1.0,
           "erosion": [
             -0.2225,
@@ -143212,7 +143212,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143239,7 +143239,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143266,7 +143266,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143293,7 +143293,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143374,7 +143374,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143401,7 +143401,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156010,7 +156010,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156037,7 +156037,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156118,7 +156118,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -156145,7 +156145,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -156226,7 +156226,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156253,7 +156253,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156388,7 +156388,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156415,7 +156415,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -157252,7 +157252,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -157279,7 +157279,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -157360,7 +157360,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -157387,7 +157387,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -159466,7 +159466,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159493,7 +159493,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159574,7 +159574,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159601,7 +159601,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159682,7 +159682,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -159709,7 +159709,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -159790,7 +159790,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159817,7 +159817,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159952,7 +159952,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159979,7 +159979,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -170914,7 +170914,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -170941,7 +170941,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171184,7 +171184,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171211,7 +171211,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171292,7 +171292,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -171319,7 +171319,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -171400,7 +171400,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171427,7 +171427,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171454,7 +171454,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171481,7 +171481,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171562,7 +171562,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171589,7 +171589,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -172642,7 +172642,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -172669,7 +172669,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -172750,7 +172750,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -172777,7 +172777,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -175126,7 +175126,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175153,7 +175153,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175288,7 +175288,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -175315,7 +175315,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -175396,7 +175396,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175423,7 +175423,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175504,40 +175504,13 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
             0.3
           ],
           "depth": 0.0,
-          "erosion": [
-            -0.2225,
-            0.05
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            -0.45,
-            -0.15
-          ],
-          "weirdness": [
-            0.7666,
-            0.9333
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:aspen_parkland",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            0.3
-          ],
-          "depth": 1.0,
           "erosion": [
             -0.2225,
             0.05
@@ -175561,10 +175534,10 @@
         "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
-            0.3,
-            1.0
+            0.03,
+            0.3
           ],
-          "depth": 0.0,
+          "depth": 1.0,
           "erosion": [
             -0.2225,
             0.05
@@ -175591,6 +175564,33 @@
             0.3,
             1.0
           ],
+          "depth": 0.0,
+          "erosion": [
+            -0.2225,
+            0.05
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            -0.45,
+            -0.15
+          ],
+          "weirdness": [
+            0.7666,
+            0.9333
+          ]
+        }
+      },
+      {
+        "biome": "blueprint:original_source_marker",
+        "parameters": {
+          "continentalness": [
+            0.3,
+            1.0
+          ],
           "depth": 1.0,
           "erosion": [
             -0.2225,
@@ -175612,7 +175612,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175639,7 +175639,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175666,7 +175666,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175693,7 +175693,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175774,7 +175774,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175801,7 +175801,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -188950,7 +188950,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -188977,7 +188977,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -189004,7 +189004,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -189031,7 +189031,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -189112,7 +189112,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189139,7 +189139,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189166,7 +189166,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -189193,7 +189193,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -189220,7 +189220,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189247,7 +189247,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189274,7 +189274,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189301,7 +189301,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189328,7 +189328,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -189355,7 +189355,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -189436,7 +189436,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189463,7 +189463,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189490,7 +189490,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -189517,7 +189517,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -190570,7 +190570,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -190597,7 +190597,7 @@
         }
       },
       {
-        "biome": "atmospheric:kousa_jungle",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -193216,7 +193216,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193243,7 +193243,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193324,7 +193324,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193351,7 +193351,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193378,7 +193378,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193405,7 +193405,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193486,7 +193486,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193513,7 +193513,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193540,7 +193540,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193567,7 +193567,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193594,7 +193594,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193621,7 +193621,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193648,7 +193648,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193675,7 +193675,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193702,7 +193702,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193729,7 +193729,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193810,7 +193810,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193837,7 +193837,7 @@
         }
       },
       {
-        "biome": "atmospheric:aspen_parkland",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
