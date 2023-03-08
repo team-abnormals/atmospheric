@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.common.block;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -107,7 +108,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	@Override
 	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entity) {
 		if (entity instanceof LivingEntity living && state.getValue(AGE) != 0) {
-			living.addEffect(new MobEffectInstance(MobEffects.POISON, ((state.getValue(AGE) + 1) * 40)));
+			living.addEffect(new MobEffectInstance(AtmosphericMobEffects.WORSENING.get(), ((state.getValue(AGE) + 1) * 40)));
 		}
 		entity.hurt(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.getValue(AGE));
 		if (entity instanceof ServerPlayer serverPlayer) {
