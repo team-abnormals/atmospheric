@@ -46,7 +46,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.KOUSA_JUNGLE.getKey(), VANILLA},
 				{VANILLA, VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
-				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.SPARSE_RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()},
+				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()},
 				{AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.FLOURISHING_DUNES.getKey(), AtmosphericBiomes.FLOURISHING_DUNES.getKey()}};
 		private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
 				{VANILLA, null, VANILLA, null, null},
@@ -311,7 +311,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				return VANILLA;
 			} else {
 				if (temperatureIndex == 3 && humidityIndex > 2) return weirdness.max() >= 0L ? AtmosphericBiomes.RAINFOREST_BASIN.getKey() : AtmosphericBiomes.SPARSE_RAINFOREST_BASIN.getKey();
-				return temperatureIndex == 4 ? AtmosphericBiomes.DUNES.getKey() : VANILLA;
+				return VANILLA;
 			}
 		}
 
