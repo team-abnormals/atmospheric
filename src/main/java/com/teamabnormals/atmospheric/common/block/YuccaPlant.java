@@ -29,10 +29,8 @@ public interface YuccaPlant {
 					if (!entity.isCrouching()) {
 						livingEntity.knockback(this.getKnockbackForce(), -Mth.sin((float) (entity.getYRot() * Math.PI / 180.0F)), Mth.cos((float) (entity.getYRot() * Math.PI / 180.0F)));
 					}
-					if (!livingEntity.getItemBySlot(EquipmentSlot.HEAD).is(AtmosphericItems.BARREL_CACTUS.get())) {
-						entity.hurt(this.getDamageSource(), 1.0F);
-					}
 
+					entity.hurt(this.getDamageSource(), !livingEntity.getItemBySlot(EquipmentSlot.HEAD).is(AtmosphericItems.BARREL_CACTUS.get()) ? 1.0F : 0.0F);
 					if (entity instanceof ServerPlayer serverPlayer) {
 						if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative() && this.getCriteriaTrigger() != null) {
 							this.getCriteriaTrigger().trigger(serverPlayer);
