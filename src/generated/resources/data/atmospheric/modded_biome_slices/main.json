@@ -14368,7 +14368,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -14395,7 +14395,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -14476,7 +14476,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -14503,7 +14503,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -14530,7 +14530,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -14557,7 +14557,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -14638,7 +14638,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -14665,7 +14665,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -14692,7 +14692,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -14719,7 +14719,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -14800,7 +14800,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -14827,7 +14827,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -14908,7 +14908,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -14935,7 +14935,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -15509,87 +15509,6 @@
             -0.11
           ],
           "depth": 0.0,
-          "erosion": [
-            0.05,
-            0.45
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "weirdness": [
-            -1.0,
-            -0.9333
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:sparse_rainforest_basin",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            -0.11
-          ],
-          "depth": 1.0,
-          "erosion": [
-            0.05,
-            0.45
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "weirdness": [
-            -1.0,
-            -0.9333
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rainforest",
-        "parameters": {
-          "continentalness": [
-            -0.11,
-            1.0
-          ],
-          "depth": 0.0,
-          "erosion": [
-            0.05,
-            0.45
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "weirdness": [
-            -1.0,
-            -0.9333
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rainforest",
-        "parameters": {
-          "continentalness": [
-            -0.11,
-            1.0
-          ],
-          "depth": 1.0,
           "erosion": [
             0.05,
             0.45
@@ -15616,6 +15535,87 @@
             -0.19,
             -0.11
           ],
+          "depth": 1.0,
+          "erosion": [
+            0.05,
+            0.45
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "weirdness": [
+            -1.0,
+            -0.9333
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rainforest",
+        "parameters": {
+          "continentalness": [
+            -0.11,
+            1.0
+          ],
+          "depth": 0.0,
+          "erosion": [
+            0.05,
+            0.45
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "weirdness": [
+            -1.0,
+            -0.9333
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rainforest",
+        "parameters": {
+          "continentalness": [
+            -0.11,
+            1.0
+          ],
+          "depth": 1.0,
+          "erosion": [
+            0.05,
+            0.45
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "weirdness": [
+            -1.0,
+            -0.9333
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:sparse_rainforest_basin",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            -0.11
+          ],
           "depth": 0.0,
           "erosion": [
             0.45,
@@ -16258,7 +16258,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -16285,7 +16285,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -16366,7 +16366,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -16393,7 +16393,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -16528,7 +16528,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -16555,7 +16555,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -17014,7 +17014,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -17041,7 +17041,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -17122,7 +17122,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -17149,7 +17149,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -17284,7 +17284,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -17311,7 +17311,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -17770,7 +17770,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -17797,7 +17797,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -17878,7 +17878,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -17905,7 +17905,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -18040,7 +18040,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -18067,7 +18067,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -18526,7 +18526,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -18553,7 +18553,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -18634,7 +18634,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -18661,7 +18661,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -18796,7 +18796,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -18823,7 +18823,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -19282,7 +19282,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -19309,40 +19309,13 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
             -0.11
           ],
           "depth": 1.0,
-          "erosion": [
-            0.05,
-            0.45
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -1.0,
-            -0.9333
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.11,
-            1.0
-          ],
-          "depth": 0.0,
           "erosion": [
             0.05,
             0.45
@@ -19369,6 +19342,33 @@
             -0.11,
             1.0
           ],
+          "depth": 0.0,
+          "erosion": [
+            0.05,
+            0.45
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -1.0,
+            -0.9333
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.11,
+            1.0
+          ],
           "depth": 1.0,
           "erosion": [
             0.05,
@@ -19390,7 +19390,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -19417,7 +19417,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -19552,7 +19552,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -19579,7 +19579,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -32242,7 +32242,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -32269,7 +32269,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -32404,7 +32404,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -32431,7 +32431,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -32512,7 +32512,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -32539,7 +32539,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -32620,40 +32620,13 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
             0.3
           ],
           "depth": 0.0,
-          "erosion": [
-            -0.2225,
-            0.05
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:sparse_rainforest",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            0.3
-          ],
-          "depth": 1.0,
           "erosion": [
             -0.2225,
             0.05
@@ -32677,10 +32650,10 @@
         "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
-            0.3,
-            1.0
+            0.03,
+            0.3
           ],
-          "depth": 0.0,
+          "depth": 1.0,
           "erosion": [
             -0.2225,
             0.05
@@ -32707,6 +32680,33 @@
             0.3,
             1.0
           ],
+          "depth": 0.0,
+          "erosion": [
+            -0.2225,
+            0.05
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rainforest",
+        "parameters": {
+          "continentalness": [
+            0.3,
+            1.0
+          ],
           "depth": 1.0,
           "erosion": [
             -0.2225,
@@ -32728,7 +32728,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -32755,7 +32755,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -32782,7 +32782,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -32809,7 +32809,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -32890,7 +32890,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -32917,7 +32917,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -47902,7 +47902,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -47929,7 +47929,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -48010,7 +48010,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -48037,7 +48037,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -48118,7 +48118,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -48145,7 +48145,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -48226,7 +48226,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -48253,7 +48253,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -48388,7 +48388,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -48415,7 +48415,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -64642,7 +64642,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -64669,7 +64669,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -64804,7 +64804,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -64831,7 +64831,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -64912,7 +64912,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -64939,7 +64939,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -65020,40 +65020,13 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
             0.3
           ],
           "depth": 0.0,
-          "erosion": [
-            -0.2225,
-            0.05
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "weirdness": [
-            -0.5666,
-            -0.4
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:sparse_rainforest",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            0.3
-          ],
-          "depth": 1.0,
           "erosion": [
             -0.2225,
             0.05
@@ -65077,10 +65050,10 @@
         "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
-            0.3,
-            1.0
+            0.03,
+            0.3
           ],
-          "depth": 0.0,
+          "depth": 1.0,
           "erosion": [
             -0.2225,
             0.05
@@ -65107,6 +65080,33 @@
             0.3,
             1.0
           ],
+          "depth": 0.0,
+          "erosion": [
+            -0.2225,
+            0.05
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "weirdness": [
+            -0.5666,
+            -0.4
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rainforest",
+        "parameters": {
+          "continentalness": [
+            0.3,
+            1.0
+          ],
           "depth": 1.0,
           "erosion": [
             -0.2225,
@@ -65128,7 +65128,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -65155,7 +65155,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -65182,7 +65182,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -65209,7 +65209,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -65290,7 +65290,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -65317,7 +65317,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -83704,7 +83704,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -83731,7 +83731,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -83812,7 +83812,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -83839,7 +83839,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -83866,7 +83866,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -83893,7 +83893,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -83974,7 +83974,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -84001,7 +84001,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -84028,7 +84028,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -84055,7 +84055,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -84136,7 +84136,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -84163,7 +84163,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -84244,7 +84244,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -84271,7 +84271,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -85594,7 +85594,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -85621,7 +85621,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -85702,7 +85702,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -85729,7 +85729,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -85864,7 +85864,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -85891,7 +85891,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -86350,7 +86350,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -86377,7 +86377,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -86458,7 +86458,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -86485,7 +86485,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -86620,7 +86620,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -86647,7 +86647,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -87106,7 +87106,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -87133,7 +87133,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -87214,7 +87214,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -87241,7 +87241,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -87376,7 +87376,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -87403,7 +87403,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -87862,7 +87862,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -87889,7 +87889,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -87970,7 +87970,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -87997,7 +87997,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -88132,7 +88132,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -88159,7 +88159,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -88618,7 +88618,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -88645,7 +88645,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -88726,7 +88726,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -88753,7 +88753,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -88888,7 +88888,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -88915,7 +88915,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -99148,7 +99148,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -99175,7 +99175,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -99202,7 +99202,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -99229,7 +99229,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -99256,7 +99256,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -99283,7 +99283,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -99310,7 +99310,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -99337,7 +99337,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -99418,7 +99418,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -99445,7 +99445,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -99479,141 +99479,6 @@
             -0.11
           ],
           "depth": 0.0,
-          "erosion": [
-            0.45,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "weirdness": [
-            -0.2666,
-            -0.05
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:sparse_rainforest_basin",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            -0.11
-          ],
-          "depth": 1.0,
-          "erosion": [
-            0.45,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "weirdness": [
-            -0.2666,
-            -0.05
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:sparse_rainforest",
-        "parameters": {
-          "continentalness": [
-            -0.11,
-            0.03
-          ],
-          "depth": 0.0,
-          "erosion": [
-            0.45,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "weirdness": [
-            -0.2666,
-            -0.05
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:sparse_rainforest",
-        "parameters": {
-          "continentalness": [
-            -0.11,
-            0.03
-          ],
-          "depth": 1.0,
-          "erosion": [
-            0.45,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "weirdness": [
-            -0.2666,
-            -0.05
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:sparse_rainforest",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 0.0,
-          "erosion": [
-            0.45,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "weirdness": [
-            -0.2666,
-            -0.05
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:sparse_rainforest",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 1.0,
           "erosion": [
             0.45,
             0.55
@@ -99640,6 +99505,141 @@
             -0.19,
             -0.11
           ],
+          "depth": 1.0,
+          "erosion": [
+            0.45,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "weirdness": [
+            -0.2666,
+            -0.05
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rainforest",
+        "parameters": {
+          "continentalness": [
+            -0.11,
+            0.03
+          ],
+          "depth": 0.0,
+          "erosion": [
+            0.45,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "weirdness": [
+            -0.2666,
+            -0.05
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rainforest",
+        "parameters": {
+          "continentalness": [
+            -0.11,
+            0.03
+          ],
+          "depth": 1.0,
+          "erosion": [
+            0.45,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "weirdness": [
+            -0.2666,
+            -0.05
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rainforest",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
+          "depth": 0.0,
+          "erosion": [
+            0.45,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "weirdness": [
+            -0.2666,
+            -0.05
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rainforest",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
+          "depth": 1.0,
+          "erosion": [
+            0.45,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "weirdness": [
+            -0.2666,
+            -0.05
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:sparse_rainforest_basin",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            -0.11
+          ],
           "depth": 0.0,
           "erosion": [
             0.55,
@@ -100444,7 +100444,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -100471,7 +100471,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -100552,7 +100552,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -100579,7 +100579,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -100714,7 +100714,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -100741,7 +100741,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -100984,7 +100984,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101011,7 +101011,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101092,7 +101092,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101119,7 +101119,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101254,7 +101254,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101281,7 +101281,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101524,7 +101524,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101551,7 +101551,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101632,7 +101632,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101659,7 +101659,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101794,7 +101794,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -101821,7 +101821,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102064,7 +102064,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102091,7 +102091,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102172,7 +102172,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102199,7 +102199,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102334,7 +102334,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102361,7 +102361,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102604,7 +102604,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102631,7 +102631,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102712,7 +102712,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102739,7 +102739,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102874,7 +102874,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -102901,7 +102901,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -104710,7 +104710,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104737,7 +104737,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -115294,7 +115294,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -115321,7 +115321,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -115348,7 +115348,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -115375,7 +115375,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -115402,7 +115402,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -115429,7 +115429,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -115456,7 +115456,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -115483,7 +115483,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -115564,7 +115564,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -115591,7 +115591,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -115726,7 +115726,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -115753,7 +115753,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -116590,7 +116590,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -116617,7 +116617,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -116860,7 +116860,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -116887,7 +116887,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -117130,7 +117130,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -117157,7 +117157,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -117400,7 +117400,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -117427,7 +117427,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -117670,7 +117670,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -117697,7 +117697,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -117940,7 +117940,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -117967,7 +117967,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -118210,7 +118210,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -118237,7 +118237,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -118480,7 +118480,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -118507,7 +118507,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -118750,7 +118750,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -118777,7 +118777,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -119020,7 +119020,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -119047,7 +119047,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -132250,7 +132250,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -132277,7 +132277,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -132358,7 +132358,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -132385,7 +132385,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -132412,7 +132412,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -132439,7 +132439,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -132520,7 +132520,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -132547,7 +132547,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -132574,7 +132574,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -132601,7 +132601,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -132628,7 +132628,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -132655,7 +132655,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -132844,7 +132844,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -132871,7 +132871,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -149746,7 +149746,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -149773,7 +149773,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -149908,7 +149908,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -149935,7 +149935,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -150016,7 +150016,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -150043,7 +150043,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -150124,7 +150124,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -150151,7 +150151,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -150232,7 +150232,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -150259,7 +150259,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -150394,7 +150394,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -150421,7 +150421,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -165406,7 +165406,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -165433,7 +165433,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -165514,7 +165514,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -165541,7 +165541,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -165622,7 +165622,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -165649,7 +165649,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -165730,7 +165730,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -165757,7 +165757,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -165892,7 +165892,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -165919,7 +165919,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -182146,7 +182146,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -182173,7 +182173,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -182308,7 +182308,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -182335,7 +182335,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -182416,7 +182416,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -182443,7 +182443,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -182524,7 +182524,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -182551,7 +182551,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -182632,7 +182632,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -182659,7 +182659,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -182794,7 +182794,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -182821,7 +182821,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -200236,7 +200236,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -200263,7 +200263,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -200344,7 +200344,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -200371,7 +200371,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -200398,7 +200398,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -200425,7 +200425,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -200506,7 +200506,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -200533,7 +200533,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -200560,7 +200560,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -200587,7 +200587,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -200614,7 +200614,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -200641,7 +200641,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -200830,7 +200830,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -200857,7 +200857,7 @@
         }
       },
       {
-        "biome": "atmospheric:sparse_rainforest",
+        "biome": "atmospheric:rainforest",
         "parameters": {
           "continentalness": [
             -0.19,
