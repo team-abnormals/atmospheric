@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.common.block;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,6 +13,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -110,10 +112,18 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 		if (entity instanceof LivingEntity living && state.getValue(AGE) != 0) {
 			living.addEffect(new MobEffectInstance(AtmosphericMobEffects.WORSENING.get(), ((state.getValue(AGE) + 1) * 40)));
 		}
-		entity.hurt(AtmosphericDamageSources.BARREL_CACTUS, 0.5F * state.getValue(AGE));
-		if (entity instanceof ServerPlayer serverPlayer) {
-			if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative()) {
-				AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.trigger(serverPlayer);
+
+		if (worldIn.getGameTime() % 20 == 0) {
+			float damage = 0.5F * state.getValue(AGE);
+			if (entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.HEAD).is(AtmosphericItems.BARREL_CACTUS.get())) {
+				damage /= 2.0F;
+			}
+
+			entity.hurt(AtmosphericDamageSources.BARREL_CACTUS, damage);
+			if (entity instanceof ServerPlayer serverPlayer) {
+				if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative()) {
+					AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.trigger(serverPlayer);
+				}
 			}
 		}
 	}
