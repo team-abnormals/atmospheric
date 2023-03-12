@@ -168,11 +168,11 @@
           "conditions": [
             {
               "chances": [
-                0.02,
-                0.022222223,
-                0.025,
-                0.033333335,
-                0.1
+                0.04,
+                0.044444446,
+                0.05,
+                0.06666667,
+                0.2
               ],
               "condition": "minecraft:table_bonus",
               "enchantment": "minecraft:fortune"
@@ -192,7 +192,7 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "minecraft:stick"
+          "name": "atmospheric:yellow_blossoms"
         }
       ],
       "rolls": 1.0
