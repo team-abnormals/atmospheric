@@ -6,6 +6,7 @@ import com.teamabnormals.atmospheric.common.block.AloeVeraBlock;
 import com.teamabnormals.atmospheric.common.block.AloeVeraTallBlock;
 import com.teamabnormals.atmospheric.common.block.BarrelCactusBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
@@ -119,8 +120,8 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.add(GOLDEN_GROWTHS.get(), BlockLoot::createShearsOnlyDrop);
 			this.dropPottedContents(POTTED_GOLDEN_GROWTHS.get());
 			this.add(CRUSTOSE.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
-			this.add(CRUSTOSE_LOG.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
-			this.add(CRUSTOSE_WOOD.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
+			this.add(CRUSTOSE_LOG.get(), (block) -> createSingleItemTableWithSilkTouch(block, ASPEN_LOG.get()));
+			this.add(CRUSTOSE_WOOD.get(), (block) -> createSingleItemTableWithSilkTouch(block, ASPEN_WOOD.get()));
 			this.dropOther(CRUSTOSE_PATH.get(), Blocks.DIRT);
 
 			this.dropSelf(CURRANT_STALK.get());
