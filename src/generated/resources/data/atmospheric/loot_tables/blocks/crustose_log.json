@@ -33,7 +33,7 @@
                   "condition": "minecraft:survives_explosion"
                 }
               ],
-              "name": "minecraft:dirt"
+              "name": "atmospheric:aspen_log"
             }
           ]
         }
