@@ -7,6 +7,7 @@ import com.teamabnormals.atmospheric.core.data.client.AtmosphericItemModelProvid
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericLootTableProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericRecipeProvider;
+import com.teamabnormals.atmospheric.core.data.server.AtmosphericStructureRepaletterProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.*;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBiomeTagsProvider;
 import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBlockTagsProvider;
@@ -50,6 +51,7 @@ public class Atmospheric {
 	public Atmospheric() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		ModLoadingContext context = ModLoadingContext.get();
+		MinecraftForge.EVENT_BUS.register(this);
 
 		REGISTRY_HELPER.register(bus);
 		AtmosphericFeatures.FEATURES.register(bus);
@@ -61,7 +63,7 @@ public class Atmospheric {
 		AtmosphericParticleTypes.PARTICLES.register(bus);
 		AtmosphericMobEffects.EFFECTS.register(bus);
 		AtmosphericMobEffects.POTIONS.register(bus);
-		MinecraftForge.EVENT_BUS.register(this);
+		AtmosphericLootConditions.LOOT_CONDITION_TYPES.register(bus);
 
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);
@@ -106,6 +108,7 @@ public class Atmospheric {
 		generator.addProvider(includeServer, new AtmosphericAdvancementProvider(generator, helper));
 		generator.addProvider(includeServer, new AtmosphericAdvancementModifierProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericLootModifierProvider(generator));
+		generator.addProvider(includeServer, new AtmosphericStructureRepaletterProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericChunkGeneratorModifierProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericModdedBiomeSliceProvider(generator));
 		generator.addProvider(includeServer, AtmosphericBiomeModifierProvider.create(generator, helper));

@@ -1,0 +1,18 @@
+{
+  "type": "blueprint:simple",
+  "priority": "high",
+  "replaces_block": "minecraft:jungle_door",
+  "replaces_with": "atmospheric:yucca_door",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "atmospheric:config",
+        "value": "yucca_desert_villages"
+      }
+    ],
+    "config": [
+      "minecraft:village_desert"
+    ]
+  }
+}

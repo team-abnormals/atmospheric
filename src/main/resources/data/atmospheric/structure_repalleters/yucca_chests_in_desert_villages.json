@@ -1,0 +1,27 @@
+{
+  "type": "blueprint:simple",
+  "priority": "high",
+  "replaces_block": "woodworks:jungle_chest",
+  "replaces_with": "atmospheric:yucca_chest",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "blueprint:and",
+        "values": [
+          {
+            "type": "atmospheric:config",
+            "value": "yucca_desert_villages"
+          },
+          {
+            "type": "forge:mod_loaded",
+            "modid": "woodworks"
+          }
+        ]
+      }
+    ],
+    "config": [
+      "minecraft:village_desert"
+    ]
+  }
+}
