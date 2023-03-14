@@ -1,0 +1,18 @@
+{
+  "type": "blueprint:simple",
+  "priority": "high",
+  "replaces_block": "minecraft:dark_oak_log",
+  "replaces_with": "atmospheric:grimwood_log",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "atmospheric:config",
+        "value": "grimwood_ancient_cities"
+      }
+    ],
+    "config": [
+      "minecraft:ancient_city"
+    ]
+  }
+}

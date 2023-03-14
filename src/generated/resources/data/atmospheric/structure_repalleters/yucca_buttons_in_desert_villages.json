@@ -1,0 +1,18 @@
+{
+  "type": "blueprint:simple",
+  "priority": "high",
+  "replaces_block": "minecraft:jungle_button",
+  "replaces_with": "atmospheric:yucca_button",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "atmospheric:config",
+        "value": "yucca_desert_villages"
+      }
+    ],
+    "config": [
+      "minecraft:village_desert"
+    ]
+  }
+}
