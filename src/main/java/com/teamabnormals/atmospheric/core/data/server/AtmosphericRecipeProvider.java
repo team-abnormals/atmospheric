@@ -52,7 +52,7 @@ public class AtmosphericRecipeProvider extends RecipeProvider {
 	}
 
 	public static void conditionalStonecuttingRecipe(Consumer<FinishedRecipe> consumer, ICondition condition, ItemLike output, ItemLike input, int count) {
-		conditionalRecipe(consumer, condition, SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), output, count).unlockedBy(getHasName(input), has(input)), new ResourceLocation(Atmospheric.MOD_ID, getConversionRecipeName(output, input) + "_stonecutting"));
+		conditionalRecipe(consumer, condition, SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), output, count).unlockedBy(getHasName(input), has(input)), Atmospheric.location(getConversionRecipeName(output, input) + "_stonecutting"));
 	}
 
 	public static void verticalSlabRecipes(Consumer<FinishedRecipe> consumer, BlockFamily family, ItemLike verticalSlab) {
@@ -61,7 +61,7 @@ public class AtmosphericRecipeProvider extends RecipeProvider {
 	}
 
 	private static ResourceLocation getModConversionRecipeName(ItemLike result, ItemLike input) {
-		return new ResourceLocation(Atmospheric.MOD_ID, getItemName(result) + "_from_" + getItemName(input));
+		return Atmospheric.location(getConversionRecipeName(result, input));
 	}
 
 	public static void conditionalRecipe(Consumer<FinishedRecipe> consumer, ICondition condition, RecipeBuilder recipe) {

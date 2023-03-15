@@ -23,6 +23,7 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.Atmospher
 import com.teamabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -126,5 +127,9 @@ public class Atmospheric {
 	@OnlyIn(Dist.CLIENT)
 	private void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(AtmosphericEntityTypes.PASSIONFRUIT_SEED.get(), PassionfruitSeedRenderer::new);
+	}
+
+	public static ResourceLocation location(String path) {
+		return new ResourceLocation(MOD_ID, path);
 	}
 }

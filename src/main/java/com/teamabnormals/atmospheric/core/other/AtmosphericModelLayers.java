@@ -12,6 +12,6 @@ public class AtmosphericModelLayers {
 	}
 
 	public static ModelLayerLocation register(String name, String layer) {
-		return new ModelLayerLocation(new ResourceLocation(Atmospheric.MOD_ID, name), layer);
+		return new ModelLayerLocation(Atmospheric.location(name), layer);
 	}
 }

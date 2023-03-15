@@ -1,11 +1,12 @@
 {
   "required": true,
   "package": "com.teamabnormals.atmospheric.core.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "refmap": "atmospheric.refmap.json",
   "mixins": [
-    "BambooBlockMixin"
+    "BambooBlockMixin",
+    "RabbitMixin"
   ],
   "injectors": {
     "defaultRequire": 1

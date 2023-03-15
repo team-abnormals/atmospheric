@@ -55,6 +55,6 @@ public final class AtmosphericStructureRepaletterProvider extends StructureRepal
 	}
 
 	private static ConditionedResourceSelector selector(ForgeConfigSpec.ConfigValue<?> value, String key, ResourceLocation... structures) {
-		return new ConditionedResourceSelector(new NamesResourceSelector(structures), new ConfigValueCondition(new ResourceLocation(Atmospheric.MOD_ID, "config"), value, key, Maps.newHashMap(), false));
+		return new ConditionedResourceSelector(new NamesResourceSelector(structures), new ConfigValueCondition(Atmospheric.location("config"), value, key, Maps.newHashMap(), false));
 	}
 }
