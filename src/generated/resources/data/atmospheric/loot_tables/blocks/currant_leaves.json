@@ -68,7 +68,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "minecraft:stick"
+              "name": "atmospheric:currant_stalk"
             }
           ]
         }

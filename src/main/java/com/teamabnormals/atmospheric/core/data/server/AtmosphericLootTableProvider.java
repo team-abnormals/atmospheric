@@ -6,7 +6,6 @@ import com.teamabnormals.atmospheric.common.block.AloeVeraBlock;
 import com.teamabnormals.atmospheric.common.block.AloeVeraTallBlock;
 import com.teamabnormals.atmospheric.common.block.BarrelCactusBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
@@ -77,8 +76,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 		private static final LootItemCondition.Builder HAS_NO_SHEARS_OR_SILK_TOUCH = HAS_SHEARS_OR_SILK_TOUCH.invert();
 
 		private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
-		private static final float[] NORMAL_LEAVES_STICK_CHANCES = new float[]{0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F};
-		private static final float[] CURRANT_LEAVES_STICK_CHANCES = new float[]{0.04F, 0.044444446F, 0.05F, 0.066666670F, 0.2F};
+		private static final float[] CURRANT_LEAVES_STALK_CHANCES = new float[]{0.04F, 0.044444446F, 0.05F, 0.066666670F, 0.2F};
 
 		@Override
 		public void addTables() {
@@ -107,7 +105,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropPottedContents(POTTED_GILIA.get());
 			this.dropSelf(YUCCA_FLOWER.get());
 			this.dropPottedContents(POTTED_YUCCA_FLOWER.get());
-			this.add(TALL_YUCCA_FLOWER.get(), block -> createDoublePlantShearsDrop(YUCCA_FLOWER.get()));
+			this.add(TALL_YUCCA_FLOWER.get(), block -> LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(block).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))));
 			this.add(YUCCA_GATEAU.get(), noDrop());
 			this.add(YUCCA_BRANCH.get(), (block) -> createShearsDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))));
 			this.add(YUCCA_BUNDLE.get(), (block) -> createSilkTouchDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(AtmosphericItems.YUCCA_FRUIT.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 6.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)).apply(LimitCount.limitCount(IntRange.upperBound(8))))));
@@ -133,7 +131,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropSelf(CURRANT_HEDGE.get());
 			this.dropSelf(CURRANT_LEAF_CARPET.get());
 			this.add(CURRANT_LEAF_PILE.get(), AtmosphericBlockLoot::createLeafPileDrops);
-			this.add(CURRANT_LEAVES.get(), block -> createSilkTouchOrShearsDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, CURRANT_LEAVES_STICK_CHANCES))));
+			this.add(CURRANT_LEAVES.get(), block -> createSilkTouchOrShearsDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(CURRANT_STALK.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, CURRANT_LEAVES_STALK_CHANCES))));
 			this.dropOther(SNOWY_BAMBOO.get(), Items.BAMBOO);
 			this.dropOther(SNOWY_BAMBOO_SAPLING.get(), Items.BAMBOO);
 			this.dropPottedContents(POTTED_SNOWY_BAMBOO.get());
@@ -282,7 +280,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropSelf(FLOWERING_MORADO_HEDGE.get());
 			this.dropSelf(FLOWERING_MORADO_LEAF_CARPET.get());
 			this.add(FLOWERING_MORADO_LEAF_PILE.get(), AtmosphericBlockLoot::createLeafPileDrops);
-			this.add(FLOWERING_MORADO_LEAVES.get(), block -> createLeavesDrops(block, MORADO_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(AtmosphericItems.YELLOW_BLOSSOMS.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, CURRANT_LEAVES_STICK_CHANCES)))));
+			this.add(FLOWERING_MORADO_LEAVES.get(), block -> createLeavesDrops(block, MORADO_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(AtmosphericItems.YELLOW_BLOSSOMS.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, CURRANT_LEAVES_STALK_CHANCES)))));
 
 			this.dropSelf(YUCCA_PLANKS.get());
 			this.dropSelf(VERTICAL_YUCCA_PLANKS.get());
