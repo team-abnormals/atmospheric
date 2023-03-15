@@ -358,12 +358,12 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> LAUREL_LEAF_CARPET = HELPER.createCompatBlock("quark", "laurel_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.LAUREL.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> LAUREL_HEDGE = HELPER.createCompatFuelBlock("quark", "laurel_hedge", () -> new HedgeBlock(AtmosphericProperties.LAUREL.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
-	public static final RegistryObject<Block> DRY_LAUREL_LEAVES = HELPER.createBlock("dry_laurel_leaves", () -> new BlueprintLeavesBlock(AtmosphericProperties.LAUREL.leaves()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> DRY_LAUREL_SAPLING = HELPER.createBlock("dry_laurel_sapling", () -> new BlueprintSaplingBlock(new DryLaurelTreeGrower(), AtmosphericProperties.LAUREL.sapling()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DRY_LAUREL_LEAVES = HELPER.createBlock("dry_laurel_leaves", () -> new BlueprintLeavesBlock(AtmosphericProperties.DRY_LAUREL.leaves()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DRY_LAUREL_SAPLING = HELPER.createBlock("dry_laurel_sapling", () -> new BlueprintSaplingBlock(new DryLaurelTreeGrower(), AtmosphericProperties.DRY_LAUREL.sapling()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_DRY_LAUREL_SAPLING = HELPER.createBlockNoItem("potted_dry_laurel_sapling", () -> new FlowerPotBlock(DRY_LAUREL_SAPLING.get(), PropertyUtil.flowerPot()));
-	public static final RegistryObject<Block> DRY_LAUREL_LEAF_PILE = HELPER.createCompatBlock("woodworks", "dry_laurel_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.LAUREL.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> DRY_LAUREL_LEAF_CARPET = HELPER.createCompatBlock("quark", "dry_laurel_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.LAUREL.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> DRY_LAUREL_HEDGE = HELPER.createCompatFuelBlock("quark", "dry_laurel_hedge", () -> new HedgeBlock(AtmosphericProperties.LAUREL.log()), 300, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DRY_LAUREL_LEAF_PILE = HELPER.createCompatBlock("woodworks", "dry_laurel_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.DRY_LAUREL.leafPile()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DRY_LAUREL_LEAF_CARPET = HELPER.createCompatBlock("quark", "dry_laurel_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.DRY_LAUREL.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DRY_LAUREL_HEDGE = HELPER.createCompatFuelBlock("quark", "dry_laurel_hedge", () -> new HedgeBlock(AtmosphericProperties.DRY_LAUREL.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
