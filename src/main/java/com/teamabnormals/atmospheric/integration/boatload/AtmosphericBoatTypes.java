@@ -6,7 +6,6 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.boatload.common.item.FurnaceBoatItem;
 import com.teamabnormals.boatload.common.item.LargeBoatItem;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
 import java.util.function.Supplier;
