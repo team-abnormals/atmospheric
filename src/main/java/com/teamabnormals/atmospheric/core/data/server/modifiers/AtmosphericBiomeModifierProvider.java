@@ -45,7 +45,7 @@ public class AtmosphericBiomeModifierProvider {
 	}
 
 	private static void addModifier(HashMap<ResourceLocation, BiomeModifier> modifiers, String name, BiomeModifier modifier) {
-		modifiers.put(new ResourceLocation(Atmospheric.MOD_ID, name), modifier);
+		modifiers.put(Atmospheric.location(name), modifier);
 	}
 
 	@SafeVarargs
