@@ -94,22 +94,16 @@ public class WaterHyacinthBlock extends BlueprintFlowerBlock implements SimpleWa
 	}
 
 	@Override
-	public void playerWillDestroy(Level worldIn, BlockPos pos, BlockState state, Player player) {
-		DoubleBlockHalf half = state.getValue(HALF);
-		BlockPos blockpos = half == DoubleBlockHalf.LOWER ? pos.above() : pos.below();
-		BlockState blockstate = worldIn.getBlockState(blockpos);
-		if (blockstate.getBlock() == this && blockstate.getValue(HALF) != half) {
-			worldIn.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
-			if (!worldIn.isClientSide && !player.isCreative()) {
-				dropResources(state, worldIn, pos, null, player, player.getMainHandItem());
-				dropResources(blockstate, worldIn, pos, null, player, player.getMainHandItem());
-			}
-			if (blockstate.getValue(HALF) == DoubleBlockHalf.LOWER) {
-				worldIn.destroyBlock(blockpos, false);
+	public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+		if (!level.isClientSide) {
+			if (player.isCreative()) {
+				preventCreativeDropFromBottomPart(level, pos, state, player);
+			} else {
+				dropResources(state, level, pos, null, player, player.getMainHandItem());
 			}
 		}
 
-		super.playerWillDestroy(worldIn, pos, state, player);
+		super.playerWillDestroy(level, pos, state, player);
 	}
 
 	@Override
@@ -119,11 +113,11 @@ public class WaterHyacinthBlock extends BlueprintFlowerBlock implements SimpleWa
 
 	protected static void preventCreativeDropFromBottomPart(Level world, BlockPos pos, BlockState state, Player player) {
 		DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
-		if (doubleblockhalf == DoubleBlockHalf.UPPER) {
-			BlockPos blockpos = pos.below();
+		if (doubleblockhalf == DoubleBlockHalf.LOWER) {
+			BlockPos blockpos = pos.above();
 			BlockState blockstate = world.getBlockState(blockpos);
-			if (blockstate.getBlock() == state.getBlock() && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER) {
-				world.setBlock(blockpos, Blocks.WATER.defaultBlockState(), 35);
+			if (blockstate.getBlock() == state.getBlock() && blockstate.getValue(HALF) == DoubleBlockHalf.UPPER) {
+				world.setBlock(blockpos, blockstate.hasProperty(BlockStateProperties.WATERLOGGED) && blockstate.getValue(BlockStateProperties.WATERLOGGED) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState(), 35);
 				world.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
 			}
 		}
