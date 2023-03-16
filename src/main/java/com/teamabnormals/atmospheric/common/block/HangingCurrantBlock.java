@@ -48,8 +48,7 @@ public class HangingCurrantBlock extends BushBlock implements Fallable {
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState otherState, boolean bool) {
 		if (!level.isClientSide() && !bool) {
-			FallingBlockEntity fallingCurrant = FallingBlockEntity.fall(level, pos, this.defaultBlockState());
-			level.addFreshEntity(fallingCurrant);
+			FallingBlockEntity.fall(level, pos, this.defaultBlockState());
 		}
 		super.onRemove(state, level, pos, otherState, bool);
 	}
