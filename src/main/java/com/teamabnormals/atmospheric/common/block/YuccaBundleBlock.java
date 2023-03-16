@@ -2,10 +2,12 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -18,7 +20,7 @@ public class YuccaBundleBlock extends FallingBlock {
 	@Override
 	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
 		BlockState up = worldIn.getBlockState(pos.above());
-		boolean solidBlocks = up.canOcclude() || (up.getBlock() == AtmosphericBlocks.YUCCA_BRANCH.get() && !up.getValue(YuccaBranchBlock.SNAPPED)); //|| north.isSolid() || east.isSolid() || south.isSolid() || west.isSolid();
+		boolean solidBlocks = Block.isFaceFull(up.getCollisionShape(worldIn, pos.above()), Direction.DOWN) || (up.is(AtmosphericBlocks.YUCCA_BRANCH.get()) && !up.getValue(YuccaBranchBlock.SNAPPED)); //|| north.isSolid() || east.isSolid() || south.isSolid() || west.isSolid();
 
 		if (!solidBlocks && !worldIn.isClientSide) {
 			this.checkFallable(worldIn, pos);
@@ -30,7 +32,6 @@ public class YuccaBundleBlock extends FallingBlock {
 			if (!worldIn.isClientSide) {
 				FallingBlockEntity fallingblockentity = FallingBlockEntity.fall(worldIn, pos, worldIn.getBlockState(pos));
 				this.falling(fallingblockentity);
-				worldIn.addFreshEntity(fallingblockentity);
 			}
 		}
 	}
