@@ -284,8 +284,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> STRIPPED_ASPEN_WOOD = HELPER.createBlock("stripped_aspen_wood", () -> new StrippedWoodBlock(AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_LOG = HELPER.createBlock("aspen_log", () -> new LogBlock(STRIPPED_ASPEN_LOG, AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_WOOD = HELPER.createBlock("aspen_wood", () -> new WoodBlock(STRIPPED_ASPEN_WOOD, AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> WATCHFUL_ASPEN_LOG = HELPER.createBlock("watchful_aspen_log", () -> new LogBlock(STRIPPED_ASPEN_LOG, AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> WATCHFUL_ASPEN_WOOD = HELPER.createBlock("watchful_aspen_wood", () -> new WoodBlock(STRIPPED_ASPEN_WOOD, AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> WATCHFUL_ASPEN_LOG = HELPER.createBlock("watchful_aspen_log", () -> new LogBlock(ASPEN_LOG, AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> WATCHFUL_ASPEN_WOOD = HELPER.createBlock("watchful_aspen_wood", () -> new WoodBlock(ASPEN_WOOD, AtmosphericProperties.ASPEN.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> ASPEN_LEAVES = HELPER.createBlock("aspen_leaves", () -> new BlueprintLeavesBlock(AtmosphericProperties.ASPEN.leaves()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_SAPLING = HELPER.createBlock("aspen_sapling", () -> new BlueprintSaplingBlock(new AspenTreeGrower(), AtmosphericProperties.ASPEN.sapling()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_ASPEN_SAPLING = HELPER.createBlockNoItem("potted_aspen_sapling", () -> new FlowerPotBlock(ASPEN_SAPLING.get(), PropertyUtil.flowerPot()));
