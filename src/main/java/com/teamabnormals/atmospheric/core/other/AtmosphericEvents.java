@@ -1,6 +1,5 @@
 package com.teamabnormals.atmospheric.core.other;
 
-import com.teamabnormals.atmospheric.common.block.PassionVineBundleBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
@@ -8,10 +7,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.Snowball;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -70,8 +70,19 @@ public class AtmosphericEvents {
 
 	@SubscribeEvent
 	public static void breakSpead(BreakSpeed event) {
-		if (event.getState().getBlock() instanceof PassionVineBundleBlock && event.getEntity().getMainHandItem().getItem() == Items.SHEARS)
-			event.setNewSpeed(15.0F);
+		if (event.getEntity().getMainHandItem().is(Tags.Items.SHEARS)) {
+			BlockState state = event.getState();
+			if (state.is(AtmosphericBlocks.PASSION_VINE_BUNDLE.get())) {
+				event.setNewSpeed(15.0F);
+			}
+			if (state.is(AtmosphericBlocks.CURRANT_STALK.get())) {
+				event.setNewSpeed(10.0F);
+			}
+
+			if (state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get())) {
+				event.setNewSpeed(5.0F);
+			}
+		}
 	}
 
 	@SubscribeEvent
