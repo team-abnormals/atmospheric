@@ -7,6 +7,7 @@
   "mixins": [
     "BambooBlockMixin",
     "FallingBlockEntityMixin",
+    "PistonBaseBlockMixin",
     "RabbitMixin"
   ],
   "injectors": {

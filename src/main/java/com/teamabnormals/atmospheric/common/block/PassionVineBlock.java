@@ -32,6 +32,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ForgeHooks;
 
 import javax.annotation.Nullable;
 
@@ -120,20 +121,20 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		Direction direction = state.getValue(FACING);
 		BlockState hanging = worldIn.getBlockState(pos.relative(direction.getOpposite()));
 		if (hanging.is(AtmosphericBlockTags.PASSION_VINE_GROWABLE_ON)) {
-			if (i < 4 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
+			if (i < 4 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 				worldIn.setBlock(pos, state.setValue(AGE, i + 1), 2);
-				net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+				ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 			}
 		} else {
-			if (i < 1 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
+			if (i < 1 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 				worldIn.setBlock(pos, state.setValue(AGE, i + 1), 2);
-				net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+				ForgeHooks.onCropsGrowPost(worldIn, pos, state);
 			}
 		}
 	}
 
 	public void attemptGrowDown(BlockState state, Level worldIn, BlockPos pos, RandomSource random) {
-		if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
+		if (ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
 			BlockState below = worldIn.getBlockState(pos.below());
 			if (below.getBlock() == Blocks.AIR) {
 				worldIn.setBlockAndUpdate(pos.below(), AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(AGE, Integer.valueOf(0)).setValue(FACING, state.getValue(FACING)));
