@@ -6,7 +6,6 @@
   "refmap": "atmospheric.refmap.json",
   "mixins": [
     "BambooBlockMixin",
-    "FallingBlockEntityMixin",
     "PistonBaseBlockMixin",
     "RabbitMixin"
   ],

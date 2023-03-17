@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.blueprint.common.entity.BlueprintFallingBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -48,7 +49,7 @@ public class HangingCurrantBlock extends BushBlock implements Fallable {
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState otherState, boolean bool) {
 		if (!level.isClientSide() && !bool) {
-			FallingBlockEntity.fall(level, pos, this.defaultBlockState());
+			BlueprintFallingBlockEntity.fall(level, pos, this.defaultBlockState());
 		}
 		super.onRemove(state, level, pos, otherState, bool);
 	}
