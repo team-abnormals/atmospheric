@@ -122,6 +122,7 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.BARREL_CACTUS.get(), 5, 60);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.SNOWY_BAMBOO.get(), 60, 60);
+		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_SEEDLING.get(), 60, 100);
 		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_STALK.get(), 5, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get(), 5, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.CURRANT_BASKET.get(), 5, 20);
