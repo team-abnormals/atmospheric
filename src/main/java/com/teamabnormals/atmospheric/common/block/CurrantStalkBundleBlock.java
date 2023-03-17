@@ -29,7 +29,7 @@ public class CurrantStalkBundleBlock extends RotatedPillarBlock {
 		if (!level.isClientSide()) {
 			level.destroyBlock(pos, true);
 			CurrantStalkBundleBlock.breakLeaves(level, pos);
-			breakStalks(state, level, pos);
+			this.breakStalks(state, level, pos);
 		}
 	}
 
@@ -37,7 +37,7 @@ public class CurrantStalkBundleBlock extends RotatedPillarBlock {
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 		if (!level.isClientSide()) {
 			CurrantStalkBundleBlock.breakLeaves(level, pos);
-			breakStalks(state, level, pos);
+			this.breakStalks(state, level, pos);
 			level.destroyBlock(pos, true);
 		}
 	}
@@ -60,7 +60,7 @@ public class CurrantStalkBundleBlock extends RotatedPillarBlock {
 	public void destroy(LevelAccessor level, BlockPos pos, BlockState state) {
 		if (!level.isClientSide()) {
 			breakLeaves(level, pos);
-			breakStalks(state, (Level) level, pos);
+			this.breakStalks(state, (Level) level, pos);
 		}
 		super.destroy(level, pos, state);
 	}
@@ -87,7 +87,7 @@ public class CurrantStalkBundleBlock extends RotatedPillarBlock {
 
 	@Override
 	public PushReaction getPistonPushReaction(BlockState state) {
-		return PushReaction.NORMAL;
+		return PushReaction.DESTROY;
 	}
 
 	public boolean isValidDirection(BlockState state, Direction direction) {
