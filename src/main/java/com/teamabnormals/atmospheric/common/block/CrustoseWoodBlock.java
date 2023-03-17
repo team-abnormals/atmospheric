@@ -24,7 +24,6 @@ public class CrustoseWoodBlock extends WoodBlock implements BonemealableBlock, C
 		this.randomCrustoseTick(state, level, pos, random);
 	}
 
-
 	@Override
 	public boolean isValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState state, boolean isClient) {
 		return this.isCrustoseValidBonemealTarget(level, pos, state, isClient);

@@ -19,7 +19,6 @@ public class CrustoseLogBlock extends LogBlock implements BonemealableBlock, Cru
 		super(block, properties);
 	}
 
-
 	@Override
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 		this.randomCrustoseTick(state, level, pos, random);
