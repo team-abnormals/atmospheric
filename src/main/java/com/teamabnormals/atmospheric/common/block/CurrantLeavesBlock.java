@@ -27,7 +27,7 @@ public class CurrantLeavesBlock extends BlueprintLeavesBlock {
 	@Override
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 //		level.setBlock(pos, updateDistance(state, level, pos), 3);
-		CurrantStalkBlock.breakNeighbors(level, pos);
+		CurrantStalkBlock.breakLeaves(level, pos);
 		level.destroyBlock(pos, true);
 	}
 

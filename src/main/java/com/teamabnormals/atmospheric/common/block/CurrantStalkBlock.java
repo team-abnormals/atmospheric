@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -56,6 +57,11 @@ public class CurrantStalkBlock extends CurrantStalkBundleBlock implements Simple
 		}
 
 		return super.updateShape(state, direction, offsetState, level, pos, offsetPos);
+	}
+
+	@Override
+	public boolean isPathfindable(BlockState p_48906_, BlockGetter p_48907_, BlockPos p_48908_, PathComputationType p_48909_) {
+		return false;
 	}
 
 	@Override
