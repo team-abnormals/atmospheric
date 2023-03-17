@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -15,10 +16,21 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.common.Tags;
 
+import javax.annotation.Nullable;
+
 public class CurrantStalkBundleBlock extends RotatedPillarBlock {
 
 	public CurrantStalkBundleBlock(Properties properties) {
 		super(properties);
+	}
+
+	@Override
+	public void onCaughtFire(BlockState state, Level level, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter) {
+		if (!level.isClientSide()) {
+			level.destroyBlock(pos, true);
+			CurrantStalkBundleBlock.breakLeaves(level, pos);
+			breakStalks(state, level, pos);
+		}
 	}
 
 	@Override
