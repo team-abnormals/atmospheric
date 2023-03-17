@@ -357,8 +357,8 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropSelf(ASPEN_WOOD.get());
 			this.dropSelf(STRIPPED_ASPEN_LOG.get());
 			this.dropSelf(STRIPPED_ASPEN_WOOD.get());
-			this.dropSelf(WATCHFUL_ASPEN_LOG.get());
-			this.dropSelf(WATCHFUL_ASPEN_WOOD.get());
+			this.add(WATCHFUL_ASPEN_LOG.get(), (block) -> createSingleItemTableWithSilkTouch(block, ASPEN_LOG.get()));
+			this.add(WATCHFUL_ASPEN_WOOD.get(), (block) -> createSingleItemTableWithSilkTouch(block, ASPEN_WOOD.get()));
 			this.dropSelf(ASPEN_SIGNS.getFirst().get());
 			this.dropSelf(ASPEN_PRESSURE_PLATE.get());
 			this.dropSelf(ASPEN_TRAPDOOR.get());
