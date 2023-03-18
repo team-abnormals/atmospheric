@@ -12,6 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import java.util.Map.Entry;
 
 public class PersistenceEffect extends MobEffect {
+
 	public PersistenceEffect() {
 		super(MobEffectCategory.BENEFICIAL, 15494786);
 	}
