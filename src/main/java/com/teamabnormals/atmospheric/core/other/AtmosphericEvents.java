@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.core.other;
 
+import com.teamabnormals.atmospheric.common.block.YuccaBundleBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
@@ -79,7 +80,7 @@ public class AtmosphericEvents {
 				event.setNewSpeed(10.0F);
 			}
 
-			if (state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get())) {
+			if (state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get()) || state.getBlock() instanceof YuccaBundleBlock) {
 				event.setNewSpeed(5.0F);
 			}
 		}
