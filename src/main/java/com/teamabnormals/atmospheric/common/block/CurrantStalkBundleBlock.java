@@ -44,7 +44,7 @@ public class CurrantStalkBundleBlock extends RotatedPillarBlock {
 
 	@Override
 	public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
-		if (player.getMainHandItem().is(Tags.Items.SHEARS) || EnchantmentHelper.getTagEnchantmentLevel(Enchantments.SILK_TOUCH, player.getMainHandItem()) != 0) {
+		if (player.getMainHandItem().is(Tags.Items.SHEARS) || EnchantmentHelper.getTagEnchantmentLevel(Enchantments.SILK_TOUCH, player.getMainHandItem()) != 0 || player.isCreative()) {
 			this.playerWillDestroy(level, pos, state, player);
 			level.setBlock(pos, fluid.createLegacyBlock(), level.isClientSide ? 11 : 3);
 			if (!player.isCreative()) {
