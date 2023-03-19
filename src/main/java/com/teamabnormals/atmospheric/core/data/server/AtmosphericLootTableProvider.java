@@ -6,6 +6,7 @@ import com.teamabnormals.atmospheric.common.block.AloeVeraBlock;
 import com.teamabnormals.atmospheric.common.block.AloeVeraTallBlock;
 import com.teamabnormals.atmospheric.common.block.BarrelCactusBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
@@ -19,6 +20,7 @@ import net.minecraft.data.loot.ChestLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -33,6 +35,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.LimitCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
@@ -499,6 +502,18 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 							.add(LootItem.lootTableItem(YUCCA_BRANCH.get()))
 					)
 			);
+
+			consumer.accept(Atmospheric.location("chests/kousa_sanctum_fire"), LootTable.lootTable()
+					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+							.add(LootItem.lootTableItem(Items.FLINT_AND_STEEL))));
+
+			consumer.accept(Atmospheric.location("chests/kousa_sanctum_trap"), LootTable.lootTable()
+					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+							.add(LootItem.lootTableItem(Items.SPLASH_POTION)).apply(SetPotionFunction.setPotion(Potions.HARMING))));
+
+			consumer.accept(Atmospheric.location("chests/kousa_sanctum"), LootTable.lootTable()
+					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+							.add(LootItem.lootTableItem(CURRANT_SEEDLING.get()))));
 		}
 	}
 }

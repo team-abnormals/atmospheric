@@ -6,7 +6,7 @@
       "weight": 1,
       "element": {
         "location": "atmospheric:arid_shrine/arid_shrine_bottom",
-        "processors": "atmospheric:arid_shrine",
+        "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:legacy_single_pool_element"
       }

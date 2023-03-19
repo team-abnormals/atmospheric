@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "atmospheric:kousa_sanctum",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 502973253,
+    "spacing": 32,
+    "separation": 8,
+    "type": "minecraft:random_spread"
+  }
+}

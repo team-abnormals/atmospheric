@@ -9,6 +9,7 @@ public class AtmosphericBiomeTags {
 	public static final TagKey<Biome> IS_RAINFOREST = biomeTag("is_rainforest");
 	public static final TagKey<Biome> IS_DUNES = biomeTag("is_dunes");
 	public static final TagKey<Biome> HAS_ARID_SHRINE = biomeTag("has_structure/arid_shrine");
+	public static final TagKey<Biome> HAS_KOUSA_SANCTUM = biomeTag("has_structure/kousa_sanctum");
 	public static final TagKey<Biome> ONLY_ALLOWS_YELLOW_RABBITS = biomeTag("only_allows_yellow_rabbits");
 
 	public static final TagKey<Biome> HAS_DESERT_YUCCA_TREES = biomeTag("has_feature/yucca_tree/desert");
