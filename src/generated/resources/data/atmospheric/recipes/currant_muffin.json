@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:fruits/currant"
+    },
+    {
+      "tag": "forge:fruits/currant"
+    },
+    {
+      "tag": "forge:fruits/currant"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:eggs"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:currant_muffin"
+  }
+}

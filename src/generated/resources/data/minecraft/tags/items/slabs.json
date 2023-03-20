@@ -13,6 +13,8 @@
     "atmospheric:persimmon_travertine_slab",
     "atmospheric:saffron_travertine_slab",
     "atmospheric:dolerite_slab",
-    "atmospheric:polished_dolerite_slab"
+    "atmospheric:polished_dolerite_slab",
+    "atmospheric:carmine_shingle_slab",
+    "atmospheric:carmine_pavement_slab"
   ]
 }

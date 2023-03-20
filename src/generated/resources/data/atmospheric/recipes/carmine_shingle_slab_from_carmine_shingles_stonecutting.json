@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "atmospheric:carmine_shingles"
+  },
+  "result": "atmospheric:carmine_shingle_slab"
+}

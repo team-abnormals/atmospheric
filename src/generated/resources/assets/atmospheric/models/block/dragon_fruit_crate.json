@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "atmospheric:block/dragon_fruit_crate_bottom",
+    "side": "atmospheric:block/dragon_fruit_crate_side",
+    "top": "atmospheric:block/dragon_fruit_crate_top"
+  }
+}

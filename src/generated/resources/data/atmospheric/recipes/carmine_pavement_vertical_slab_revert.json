@@ -1,0 +1,24 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_slabs"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "atmospheric:carmine_pavement_slab"
+          }
+        ],
+        "result": {
+          "item": "atmospheric:carmine_pavement_vertical_slab"
+        }
+      }
+    }
+  ]
+}

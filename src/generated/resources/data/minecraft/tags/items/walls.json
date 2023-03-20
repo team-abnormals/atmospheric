@@ -8,6 +8,8 @@
     "atmospheric:peach_travertine_wall",
     "atmospheric:persimmon_travertine_wall",
     "atmospheric:saffron_travertine_wall",
-    "atmospheric:dolerite_wall"
+    "atmospheric:dolerite_wall",
+    "atmospheric:carmine_shingle_wall",
+    "atmospheric:carmine_pavement_wall"
   ]
 }

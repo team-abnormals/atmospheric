@@ -11,6 +11,8 @@
     "atmospheric:persimmon_travertine_stairs",
     "atmospheric:saffron_travertine_stairs",
     "atmospheric:dolerite_stairs",
-    "atmospheric:polished_dolerite_stairs"
+    "atmospheric:polished_dolerite_stairs",
+    "atmospheric:carmine_shingle_stairs",
+    "atmospheric:carmine_pavement_stairs"
   ]
 }

@@ -134,6 +134,25 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropOther(SNOWY_BAMBOO_SAPLING.get(), Items.BAMBOO);
 			this.dropPottedContents(POTTED_SNOWY_BAMBOO.get());
 
+			this.dropSelf(CARMINE_BLOCK.get());
+			this.dropSelf(CARMINE_SHINGLES.get());
+			this.dropSelf(CARMINE_SHINGLE_STAIRS.get());
+			this.dropSelf(CARMINE_SHINGLE_WALL.get());
+			this.add(CARMINE_SHINGLE_SLAB.get(), BlockLoot::createSlabItemTable);
+			this.add(CARMINE_SHINGLE_VERTICAL_SLAB.get(), AtmosphericBlockLoot::createVerticalSlabItemTable);
+			this.dropSelf(CHISELED_CARMINE_SHINGLES.get());
+			this.dropSelf(CARMINE_PAVEMENT.get());
+			this.dropSelf(CARMINE_PAVEMENT_STAIRS.get());
+			this.dropSelf(CARMINE_PAVEMENT_WALL.get());
+			this.add(CARMINE_PAVEMENT_SLAB.get(), BlockLoot::createSlabItemTable);
+			this.add(CARMINE_PAVEMENT_VERTICAL_SLAB.get(), AtmosphericBlockLoot::createVerticalSlabItemTable);
+			this.dropSelf(FIRETHORN.get());
+			this.dropPottedContents(POTTED_FIRETHORN.get());
+			this.dropSelf(FORSYTHIA.get());
+			this.dropPottedContents(POTTED_FORSYTHIA.get());
+			this.dropSelf(DRAGON_FRUIT_CRATE.get());
+			this.dropSelf(GOLDEN_DRAGON_FRUIT_CRATE.get());
+
 			this.dropSelf(ARID_SAND.get());
 			this.dropSelf(ARID_SANDSTONE.get());
 			this.dropSelf(ARID_SANDSTONE_STAIRS.get());

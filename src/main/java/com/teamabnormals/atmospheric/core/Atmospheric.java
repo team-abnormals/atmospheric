@@ -17,6 +17,7 @@ import com.teamabnormals.atmospheric.core.other.AtmosphericClientCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericModelLayers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericVillagers;
+import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBannerPatternTagsProvider;
 import com.teamabnormals.atmospheric.core.registry.*;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericConfiguredFeatures;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericPlacedFeatures;
@@ -65,6 +66,7 @@ public class Atmospheric {
 		AtmosphericMobEffects.EFFECTS.register(bus);
 		AtmosphericMobEffects.POTIONS.register(bus);
 		AtmosphericLootConditions.LOOT_CONDITION_TYPES.register(bus);
+		AtmosphericBannerPatterns.BANNER_PATTERNS.register(bus);
 
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);
@@ -104,6 +106,7 @@ public class Atmospheric {
 		generator.addProvider(includeServer, new AtmosphericItemTagsProvider(generator, blockTags, helper));
 		generator.addProvider(includeServer, new AtmosphericEntityTypeTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new AtmosphericBiomeTagsProvider(generator, helper));
+		generator.addProvider(includeServer, new AtmosphericBannerPatternTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new AtmosphericLootTableProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericRecipeProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericAdvancementProvider(generator, helper));

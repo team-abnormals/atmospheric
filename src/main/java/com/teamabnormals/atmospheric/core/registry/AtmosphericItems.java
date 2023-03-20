@@ -3,7 +3,9 @@ package com.teamabnormals.atmospheric.core.registry;
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.item.*;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBannerPatternTags;
 import com.teamabnormals.atmospheric.integration.boatload.AtmosphericBoatTypes;
+import com.teamabnormals.blueprint.common.item.BlueprintBannerPatternItem;
 import com.teamabnormals.blueprint.core.util.registry.AbstractSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -23,21 +25,34 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> PASSIONFRUIT_TART = HELPER.createItem("passionfruit_tart", () -> new Item(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT_TART).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> PASSIONFRUIT_SORBET = HELPER.createItem("passionfruit_sorbet", () -> new BowlFoodItem(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT_SORBET).stacksTo(1).craftRemainder(Items.BOWL).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> PASSION_VINE_COIL = HELPER.createItem("passion_vine_coil", () -> new PassionVineCoilItem(new Item.Properties().stacksTo(16).tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> WATER_HYACINTH = HELPER.createItem("water_hyacinth", () -> new WaterHyacinthItem(new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 
 	public static final RegistryObject<Item> YELLOW_BLOSSOMS = HELPER.createItem("yellow_blossoms", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
 	public static final RegistryObject<Item> YUCCA_FRUIT = HELPER.createItem("yucca_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.YUCCA_FRUIT).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> ROASTED_YUCCA_FRUIT = HELPER.createItem("roasted_yucca_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.ROASTED_YUCCA_FRUIT).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> YUCCA_GATEAU = HELPER.createItem("yucca_gateau", () -> new BlockItem(AtmosphericBlocks.YUCCA_GATEAU.get(), new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
-
+	public static final RegistryObject<Item> BARREL_CACTUS = HELPER.createItem("barrel_cactus", () -> new BarrelCactusItem(new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 	public static final RegistryObject<Item> ALOE_KERNELS = HELPER.createItem("aloe_kernels", () -> new ItemNameBlockItem(AtmosphericBlocks.ALOE_VERA.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> ALOE_LEAVES = HELPER.createItem("aloe_leaves", () -> new AloeLeavesItem(new Item.Properties().food(AtmosphericFoods.ALOE_LEAVES).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> ALOE_GEL_BOTTLE = HELPER.createItem("aloe_gel_bottle", () -> new AloeGelBottleItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(AtmosphericFoods.ALOE_GEL).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
 
 	public static final RegistryObject<Item> CURRANT = HELPER.createItem("currant", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> CURRANT_MUFFIN = HELPER.createItem("currant_muffin", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
 
-	public static final RegistryObject<Item> WATER_HYACINTH = HELPER.createItem("water_hyacinth", () -> new WaterHyacinthItem(new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
-	public static final RegistryObject<Item> BARREL_CACTUS = HELPER.createItem("barrel_cactus", () -> new BarrelCactusItem(new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+	public static final RegistryObject<Item> CARMINE_HUSK = HELPER.createItem("carmine_husk", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+	public static final RegistryObject<Item> COCHINEAL_BANNER_PATTERN = HELPER.createItem("cochineal_banner_pattern", () -> new BlueprintBannerPatternItem(AtmosphericBannerPatternTags.PATTERN_ITEM_COCHINEAL, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
+
+	public static final RegistryObject<Item> DRAGON_ROOTS = HELPER.createItem("dragon_roots", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> DRAGON_FRUIT = HELPER.createItem("dragon_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> GOLDEN_DRAGON_FRUIT = HELPER.createItem("golden_dragon_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> ENDER_DRAGON_FRUIT = HELPER.createItem("ender_dragon_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
+
+	public static final RegistryObject<Item> ORANGE = HELPER.createItem("orange", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> ORANGE_PUDDING = HELPER.createItem("orange_pudding", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> ORANGE_SORBET = HELPER.createItem("orange_sorbet", () -> new BowlFoodItem(new Item.Properties().food(AtmosphericFoods.CURRANT).stacksTo(1).craftRemainder(Items.BOWL).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> CANDIED_ORANGE_SLICES = HELPER.createItem("candied_orange_slices", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> BLOOD_ORANGE = HELPER.createItem("blood_orange", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
 
 	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> ROSEWOOD_BOAT = HELPER.createBoatAndChestBoatItem("rosewood", AtmosphericBlocks.ROSEWOOD_PLANKS);
 	public static final RegistryObject<Item> ROSEWOOD_FURNACE_BOAT = HELPER.createItem("rosewood_furnace_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.ROSEWOOD_FURNACE_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));

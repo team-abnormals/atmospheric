@@ -72,6 +72,18 @@
     "atmospheric:red_arid_sandstone_brick_slab",
     "atmospheric:red_arid_sandstone_brick_stairs",
     "atmospheric:red_arid_sandstone_brick_wall",
-    "atmospheric:red_arid_sandstone_brick_vertical_slab"
+    "atmospheric:red_arid_sandstone_brick_vertical_slab",
+    "atmospheric:carmine_block",
+    "atmospheric:carmine_shingles",
+    "atmospheric:carmine_shingle_slab",
+    "atmospheric:carmine_shingle_stairs",
+    "atmospheric:carmine_shingle_wall",
+    "atmospheric:carmine_shingle_vertical_slab",
+    "atmospheric:chiseled_carmine_shingles",
+    "atmospheric:carmine_pavement",
+    "atmospheric:carmine_pavement_slab",
+    "atmospheric:carmine_pavement_stairs",
+    "atmospheric:carmine_pavement_wall",
+    "atmospheric:carmine_pavement_vertical_slab"
   ]
 }

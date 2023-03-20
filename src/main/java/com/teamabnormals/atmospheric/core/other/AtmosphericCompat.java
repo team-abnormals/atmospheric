@@ -68,6 +68,8 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.BARREL_CACTUS.get(), 0.5F);
 
 		DataUtil.registerCompostable(AtmosphericBlocks.GILIA.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericBlocks.FIRETHORN.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericBlocks.FORSYTHIA.get(), 0.65F);
 
 		DataUtil.registerCompostable(AtmosphericBlocks.ARID_SPROUTS.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericItems.ALOE_KERNELS.get(), 0.3F);
@@ -112,6 +114,8 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_CASK.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.ROASTED_YUCCA_CASK.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.BARREL_CACTUS_BATCH.get(), 1.0F);
+		DataUtil.registerCompostable(AtmosphericBlocks.DRAGON_FRUIT_CRATE.get(), 1.0F);
+		DataUtil.registerCompostable(AtmosphericBlocks.GOLDEN_DRAGON_FRUIT_CRATE.get(), 1.0F);
 	}
 
 	public static void registerFlammables() {

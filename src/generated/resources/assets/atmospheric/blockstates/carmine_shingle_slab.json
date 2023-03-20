@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "atmospheric:block/carmine_shingle_slab"
+    },
+    "type=double": {
+      "model": "atmospheric:block/carmine_shingles"
+    },
+    "type=top": {
+      "model": "atmospheric:block/carmine_shingle_slab_top"
+    }
+  }
+}

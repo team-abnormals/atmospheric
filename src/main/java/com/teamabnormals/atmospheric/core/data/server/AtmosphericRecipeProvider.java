@@ -4,23 +4,33 @@ import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericBlockFamilies;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.Blueprint;
 import com.teamabnormals.blueprint.core.api.conditions.QuarkFlagRecipeCondition;
+import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.BlockFamily.Variant;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import net.minecraftforge.common.crafting.conditions.NotCondition;
 
+import javax.annotation.Nullable;
 import java.util.function.Consumer;
 
 public class AtmosphericRecipeProvider extends RecipeProvider {
+	public static final NotCondition NEAPOLITAN_NOT_LOADED = new NotCondition(new ModLoadedCondition("neapolitan"));
+
 	public static final QuarkFlagRecipeCondition VERTICAL_SLABS = quarkFlag("vertical_slabs");
+	public static final QuarkFlagRecipeCondition APPLE_CRATE = quarkFlag("apple_crate");
+	public static final QuarkFlagRecipeCondition GOLDEN_APPLE_CRATE = quarkFlag("golden_apple_crate");
 
 	public AtmosphericRecipeProvider(DataGenerator generator) {
 		super(generator);
@@ -28,6 +38,44 @@ public class AtmosphericRecipeProvider extends RecipeProvider {
 
 	@Override
 	public void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+		oneToOneConversionRecipe(consumer, Items.RED_DYE, AtmosphericItems.CARMINE_HUSK.get(), "red_dye");
+		oneToOneConversionRecipe(consumer, Items.RED_DYE, AtmosphericBlocks.FIRETHORN.get(), "red_dye");
+		oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, AtmosphericBlocks.FORSYTHIA.get(), "yellow_dye");
+
+		ShapelessRecipeBuilder.shapeless(AtmosphericItems.CURRANT_MUFFIN.get()).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(Items.SUGAR).requires(BlueprintItemTags.EGGS).unlockedBy("has_currant", has(AtmosphericItemTags.FRUITS_CURRANT)).save(consumer);
+
+		nineBlockStorageRecipes(consumer, AtmosphericItems.CARMINE_HUSK.get(), AtmosphericBlocks.CARMINE_BLOCK.get());
+		ShapedRecipeBuilder.shaped(AtmosphericBlocks.CARMINE_SHINGLES.get(), 8).define('#', AtmosphericItems.CARMINE_HUSK.get()).define('S', Blocks.STONE_BRICKS).pattern("###").pattern("#S#").pattern("###").unlockedBy("has_carmine_husk", has(AtmosphericItems.CARMINE_HUSK.get())).save(consumer);
+		ShapedRecipeBuilder.shaped(AtmosphericBlocks.CARMINE_PAVEMENT.get(), 8).define('#', AtmosphericItems.CARMINE_HUSK.get()).define('S', Blocks.SMOOTH_STONE).pattern("###").pattern("#S#").pattern("###").unlockedBy("has_carmine_husk", has(AtmosphericItems.CARMINE_HUSK.get())).save(consumer);
+
+		generateRecipes(consumer, AtmosphericBlockFamilies.CARMINE_SHINGLES_FAMILY);
+		verticalSlabRecipes(consumer, AtmosphericBlockFamilies.CARMINE_SHINGLES_FAMILY, AtmosphericBlocks.CARMINE_SHINGLE_VERTICAL_SLAB.get());
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CARMINE_SHINGLE_SLAB.get(), AtmosphericBlocks.CARMINE_SHINGLES.get(), 2);
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CARMINE_SHINGLE_STAIRS.get(), AtmosphericBlocks.CARMINE_SHINGLES.get());
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CARMINE_SHINGLE_WALL.get(), AtmosphericBlocks.CARMINE_SHINGLES.get());
+		conditionalStonecuttingRecipe(consumer, VERTICAL_SLABS, AtmosphericBlocks.CARMINE_SHINGLE_VERTICAL_SLAB.get(), AtmosphericBlocks.CARMINE_SHINGLES.get(), 2);
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CHISELED_CARMINE_SHINGLES.get(), AtmosphericBlocks.CARMINE_SHINGLES.get());
+
+		generateRecipes(consumer, AtmosphericBlockFamilies.CARMINE_PAVEMENT_FAMILY);
+		verticalSlabRecipes(consumer, AtmosphericBlockFamilies.CARMINE_PAVEMENT_FAMILY, AtmosphericBlocks.CARMINE_PAVEMENT_VERTICAL_SLAB.get());
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CARMINE_PAVEMENT_SLAB.get(), AtmosphericBlocks.CARMINE_PAVEMENT.get(), 2);
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CARMINE_PAVEMENT_STAIRS.get(), AtmosphericBlocks.CARMINE_PAVEMENT.get());
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CARMINE_PAVEMENT_WALL.get(), AtmosphericBlocks.CARMINE_PAVEMENT.get());
+		conditionalStonecuttingRecipe(consumer, VERTICAL_SLABS, AtmosphericBlocks.CARMINE_PAVEMENT_VERTICAL_SLAB.get(), AtmosphericBlocks.CARMINE_PAVEMENT.get(), 2);
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CARMINE_PAVEMENT.get(), AtmosphericBlocks.CARMINE_SHINGLES.get());
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CARMINE_PAVEMENT_SLAB.get(), AtmosphericBlocks.CARMINE_SHINGLES.get(), 2);
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CARMINE_PAVEMENT_STAIRS.get(), AtmosphericBlocks.CARMINE_SHINGLES.get());
+		stonecutterResultFromBase(consumer, AtmosphericBlocks.CARMINE_PAVEMENT_WALL.get(), AtmosphericBlocks.CARMINE_SHINGLES.get());
+		conditionalStonecuttingRecipe(consumer, VERTICAL_SLABS, AtmosphericBlocks.CARMINE_PAVEMENT_VERTICAL_SLAB.get(), AtmosphericBlocks.CARMINE_SHINGLES.get(), 2);
+
+		ShapelessRecipeBuilder.shapeless(AtmosphericItems.COCHINEAL_BANNER_PATTERN.get()).requires(Items.PAPER).requires(AtmosphericItems.CARMINE_HUSK.get()).unlockedBy("has_carmine_husk", has(AtmosphericItems.CARMINE_HUSK.get())).save(consumer);
+		ShapedRecipeBuilder.shaped(AtmosphericItems.GOLDEN_DRAGON_FRUIT.get()).define('#', Items.GOLD_INGOT).define('X', AtmosphericItems.DRAGON_FRUIT.get()).pattern("###").pattern("#X#").pattern("###").unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT)).save(consumer);
+		conditionalNineBlockStorageRecipes(consumer, APPLE_CRATE, AtmosphericItems.DRAGON_FRUIT.get(), AtmosphericBlocks.DRAGON_FRUIT_CRATE.get());
+		conditionalNineBlockStorageRecipes(consumer, GOLDEN_APPLE_CRATE, AtmosphericItems.GOLDEN_DRAGON_FRUIT.get(), AtmosphericBlocks.GOLDEN_DRAGON_FRUIT_CRATE.get());
+		ShapelessRecipeBuilder.shapeless(AtmosphericItems.CANDIED_ORANGE_SLICES.get()).requires(AtmosphericItemTags.FRUITS_ORANGE).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FRUITS_ORANGE)).save(consumer);
+		ShapelessRecipeBuilder.shapeless(AtmosphericItems.ORANGE_PUDDING.get()).requires(AtmosphericItemTags.FRUITS_ORANGE).requires(Items.SWEET_BERRIES).requires(Items.COCOA_BEANS).requires(BlueprintItemTags.EGGS).requires(BlueprintItemTags.MILK).unlockedBy("has_orange", has(AtmosphericItemTags.FRUITS_ORANGE)).save(consumer);
+		conditionalRecipe(consumer, NEAPOLITAN_NOT_LOADED, ShapelessRecipeBuilder.shapeless(AtmosphericItems.ORANGE_SORBET.get()).requires(Items.BOWL).requires(AtmosphericItemTags.FRUITS_ORANGE).requires(Blocks.ICE).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FRUITS_ORANGE)));
+
 		ShapelessRecipeBuilder.shapeless(AtmosphericBlocks.DOLERITE.get(), 2).requires(AtmosphericItemTags.TRAVERTINE).requires(Blocks.COBBLESTONE).unlockedBy("has_travertine", has(AtmosphericItemTags.TRAVERTINE)).save(consumer);
 		generateRecipes(consumer, AtmosphericBlockFamilies.DOLERITE_FAMILY);
 		verticalSlabRecipes(consumer, AtmosphericBlockFamilies.DOLERITE_FAMILY, AtmosphericBlocks.DOLERITE_VERTICAL_SLAB.get());
@@ -60,8 +108,25 @@ public class AtmosphericRecipeProvider extends RecipeProvider {
 		conditionalRecipe(consumer, VERTICAL_SLABS, ShapelessRecipeBuilder.shapeless(verticalSlab).requires(family.get(Variant.SLAB)).unlockedBy(getHasName(verticalSlab), has(verticalSlab)), new ResourceLocation(RecipeBuilder.getDefaultRecipeId(verticalSlab) + "_revert"));
 	}
 
+	public static void oneToOneConversionRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike input, @Nullable String group) {
+		oneToOneConversionRecipe(consumer, output, input, group, 1);
+	}
+
+	public static void oneToOneConversionRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike input, @Nullable String group, int count) {
+		ShapelessRecipeBuilder.shapeless(output, count).requires(input).group(group).unlockedBy(getHasName(input), has(input)).save(consumer, getModConversionRecipeName(output, input));
+	}
+
 	private static ResourceLocation getModConversionRecipeName(ItemLike result, ItemLike input) {
 		return Atmospheric.location(getConversionRecipeName(result, input));
+	}
+
+	public static void conditionalNineBlockStorageRecipes(Consumer<FinishedRecipe> consumer, ICondition condition, ItemLike item, ItemLike storage) {
+		conditionalNineBlockStorageRecipes(consumer, condition, item, storage, Atmospheric.MOD_ID + ":" + getSimpleRecipeName(storage), null, Atmospheric.MOD_ID + ":" + getSimpleRecipeName(item), null);
+	}
+
+	protected static void conditionalNineBlockStorageRecipes(Consumer<FinishedRecipe> consumer, ICondition condition, ItemLike item, ItemLike storage, String storageLocation, @Nullable String itemGroup, String itemLocation, @Nullable String storageGroup) {
+		conditionalRecipe(consumer, condition, ShapelessRecipeBuilder.shapeless(item, 9).requires(storage).group(storageGroup).unlockedBy(getHasName(storage), has(storage)), getModConversionRecipeName(item, storage));
+		conditionalRecipe(consumer, condition, ShapedRecipeBuilder.shaped(storage).define('#', item).pattern("###").pattern("###").pattern("###").group(itemGroup).unlockedBy(getHasName(item), has(item)), new ResourceLocation(storageLocation));
 	}
 
 	public static void conditionalRecipe(Consumer<FinishedRecipe> consumer, ICondition condition, RecipeBuilder recipe) {

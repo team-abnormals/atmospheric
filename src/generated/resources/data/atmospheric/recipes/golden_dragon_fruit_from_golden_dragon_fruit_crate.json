@@ -1,0 +1,25 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "golden_apple_crate"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "atmospheric:golden_dragon_fruit_crate"
+          }
+        ],
+        "result": {
+          "count": 9,
+          "item": "atmospheric:golden_dragon_fruit"
+        }
+      }
+    }
+  ]
+}

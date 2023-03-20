@@ -164,6 +164,8 @@ public class AtmosphericClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.YUCCA_FLOWER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.YUCCA_BRANCH.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.FIRETHORN.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.FORSYTHIA.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ALOE_VERA.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.TALL_ALOE_VERA.get(), RenderType.cutout());
@@ -175,6 +177,8 @@ public class AtmosphericClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_FLOWER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_GILIA.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_WATER_HYACINTH.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_FIRETHORN.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_FORSYTHIA.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.AGAVE.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_AGAVE.get(), RenderType.cutout());

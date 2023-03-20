@@ -13,6 +13,8 @@
     "atmospheric:persimmon_travertine_vertical_slab",
     "atmospheric:saffron_travertine_vertical_slab",
     "atmospheric:dolerite_vertical_slab",
-    "atmospheric:polished_dolerite_vertical_slab"
+    "atmospheric:polished_dolerite_vertical_slab",
+    "atmospheric:carmine_shingle_vertical_slab",
+    "atmospheric:carmine_pavement_vertical_slab"
   ]
 }

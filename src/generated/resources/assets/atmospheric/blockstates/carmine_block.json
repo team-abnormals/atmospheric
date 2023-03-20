@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "atmospheric:block/carmine_block",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "atmospheric:block/carmine_block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "atmospheric:block/carmine_block",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "atmospheric:block/carmine_block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "atmospheric:block/carmine_block"
+    },
+    "facing=west": {
+      "model": "atmospheric:block/carmine_block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

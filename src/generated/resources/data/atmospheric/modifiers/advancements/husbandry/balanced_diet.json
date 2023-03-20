@@ -24,11 +24,101 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "atmospheric:blood_orange": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "atmospheric:blood_orange"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "atmospheric:candied_orange_slices": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "atmospheric:candied_orange_slices"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "atmospheric:currant": {
             "conditions": {
               "item": {
                 "items": [
                   "atmospheric:currant"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "atmospheric:currant_muffin": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "atmospheric:currant_muffin"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "atmospheric:dragon_fruit": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "atmospheric:dragon_fruit"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "atmospheric:ender_dragon_fruit": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "atmospheric:ender_dragon_fruit"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "atmospheric:golden_dragon_fruit": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "atmospheric:golden_dragon_fruit"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "atmospheric:orange": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "atmospheric:orange"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "atmospheric:orange_pudding": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "atmospheric:orange_pudding"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "atmospheric:orange_sorbet": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "atmospheric:orange_sorbet"
                 ]
               }
             },
@@ -122,6 +212,33 @@
           ],
           [
             "atmospheric:currant"
+          ],
+          [
+            "atmospheric:currant_muffin"
+          ],
+          [
+            "atmospheric:dragon_fruit"
+          ],
+          [
+            "atmospheric:golden_dragon_fruit"
+          ],
+          [
+            "atmospheric:ender_dragon_fruit"
+          ],
+          [
+            "atmospheric:orange"
+          ],
+          [
+            "atmospheric:orange_pudding"
+          ],
+          [
+            "atmospheric:orange_sorbet"
+          ],
+          [
+            "atmospheric:candied_orange_slices"
+          ],
+          [
+            "atmospheric:blood_orange"
           ]
         ],
         "should_replace_requirements": false

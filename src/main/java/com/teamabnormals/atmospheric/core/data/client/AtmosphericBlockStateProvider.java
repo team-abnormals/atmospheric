@@ -131,6 +131,14 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.planksCompat(GRIMWOOD_PLANKS.get(), GRIMWOOD_BOARDS.get(), GRIMWOOD_LADDER.get(), GRIMWOOD_BOOKSHELF.get(), GRIMWOOD_BEEHIVE.get(), GRIMWOOD_CHESTS, VERTICAL_GRIMWOOD_PLANKS.get());
 		this.logCompat(GRIMWOOD_LOG.get(), STRIPPED_GRIMWOOD_LOG.get(), GRIMWOOD_POST.get(), STRIPPED_GRIMWOOD_POST.get());
 		this.leavesCompat(GRIMWOOD_LEAVES.get(), GRIMWOOD_LOG.get(), GRIMWOOD_LEAF_PILE.get(), GRIMWOOD_HEDGE.get(), GRIMWOOD_LEAF_CARPET.get());
+
+		this.directionalBlock(CARMINE_BLOCK.get());
+		this.blockFamily(AtmosphericBlockFamilies.CARMINE_SHINGLES_FAMILY, CARMINE_SHINGLE_VERTICAL_SLAB.get());
+		this.blockFamily(AtmosphericBlockFamilies.CARMINE_PAVEMENT_FAMILY, CARMINE_PAVEMENT_VERTICAL_SLAB.get());
+		this.crossBlockWithPot(FIRETHORN.get(), POTTED_FIRETHORN.get());
+		this.crossBlockWithPot(FORSYTHIA.get(), POTTED_FORSYTHIA.get());
+		this.cubeBottomTopBlock(DRAGON_FRUIT_CRATE.get());
+		this.cubeBottomTopBlock(GOLDEN_DRAGON_FRUIT_CRATE.get(), DRAGON_FRUIT_CRATE.get());
 	}
 
 	public void block(Block block) {
@@ -245,6 +253,21 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 	public void crossBlock(Block cross) {
 		this.simpleBlock(cross, models().cross(name(cross), blockTexture(cross)));
 		this.generatedItem(cross, "block");
+	}
+
+	public void cubeBottomTopBlock(Block block) {
+		this.simpleBlock(block, models().cubeBottomTop(name(block), suffix(blockTexture(block), "_side"), suffix(blockTexture(block), "_bottom"), suffix(blockTexture(block), "_top")));
+		this.blockItem(block);
+	}
+
+	public void directionalBlock(Block block) {
+		this.directionalBlock(block, models().cubeBottomTop(name(block), suffix(blockTexture(block), "_side"), suffix(blockTexture(block), "_bottom"), suffix(blockTexture(block), "_top")));
+		this.blockItem(block);
+	}
+
+	public void cubeBottomTopBlock(Block block, Block parent) {
+		this.simpleBlock(block, models().cubeBottomTop(name(block), suffix(blockTexture(parent), "_side"), suffix(blockTexture(parent), "_bottom"), suffix(blockTexture(block), "_top")));
+		this.blockItem(block);
 	}
 
 	public void bookshelfBlock(Block planks, Block bookshelf) {

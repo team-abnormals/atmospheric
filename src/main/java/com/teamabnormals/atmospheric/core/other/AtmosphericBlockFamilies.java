@@ -12,8 +12,7 @@ public class AtmosphericBlockFamilies {
 	public static final BlockFamily LAUREL_PLANKS_FAMILY = new BlockFamily.Builder(LAUREL_PLANKS.get()).button(LAUREL_BUTTON.get()).fence(LAUREL_FENCE.get()).fenceGate(LAUREL_FENCE_GATE.get()).pressurePlate(LAUREL_PRESSURE_PLATE.get()).sign(LAUREL_SIGNS.getFirst().get(), LAUREL_SIGNS.getSecond().get()).slab(LAUREL_SLAB.get()).stairs(LAUREL_STAIRS.get()).door(LAUREL_DOOR.get()).trapdoor(LAUREL_TRAPDOOR.get()).recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks").getFamily();
 	public static final BlockFamily KOUSA_PLANKS_FAMILY = new BlockFamily.Builder(KOUSA_PLANKS.get()).button(KOUSA_BUTTON.get()).fence(KOUSA_FENCE.get()).fenceGate(KOUSA_FENCE_GATE.get()).pressurePlate(KOUSA_PRESSURE_PLATE.get()).sign(KOUSA_SIGNS.getFirst().get(), KOUSA_SIGNS.getSecond().get()).slab(KOUSA_SLAB.get()).stairs(KOUSA_STAIRS.get()).door(KOUSA_DOOR.get()).trapdoor(KOUSA_TRAPDOOR.get()).recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks").getFamily();
 	public static final BlockFamily GRIMWOOD_PLANKS_FAMILY = new BlockFamily.Builder(GRIMWOOD_PLANKS.get()).button(GRIMWOOD_BUTTON.get()).fence(GRIMWOOD_FENCE.get()).fenceGate(GRIMWOOD_FENCE_GATE.get()).pressurePlate(GRIMWOOD_PRESSURE_PLATE.get()).sign(GRIMWOOD_SIGNS.getFirst().get(), GRIMWOOD_SIGNS.getSecond().get()).slab(GRIMWOOD_SLAB.get()).stairs(GRIMWOOD_STAIRS.get()).door(GRIMWOOD_DOOR.get()).trapdoor(GRIMWOOD_TRAPDOOR.get()).recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks").getFamily();
-
-
+	
 	public static final BlockFamily DOLERITE_FAMILY = new BlockFamily.Builder(DOLERITE.get()).slab(DOLERITE_SLAB.get()).stairs(DOLERITE_STAIRS.get()).wall(DOLERITE_WALL.get()).getFamily();
 	public static final BlockFamily POLISHED_DOLERITE_FAMILY = new BlockFamily.Builder(POLISHED_DOLERITE.get()).slab(POLISHED_DOLERITE_SLAB.get()).stairs(POLISHED_DOLERITE_STAIRS.get()).getFamily();
 
@@ -25,4 +24,8 @@ public class AtmosphericBlockFamilies {
 	public static final BlockFamily CUT_RED_ARID_SANDSTONE_FAMILY = new BlockFamily.Builder(CUT_RED_ARID_SANDSTONE.get()).slab(CUT_RED_ARID_SANDSTONE_SLAB.get()).getFamily();
 	public static final BlockFamily SMOOTH_RED_ARID_SANDSTONE_FAMILY = new BlockFamily.Builder(SMOOTH_RED_ARID_SANDSTONE.get()).slab(SMOOTH_RED_ARID_SANDSTONE_SLAB.get()).stairs(SMOOTH_RED_ARID_SANDSTONE_STAIRS.get()).getFamily();
 	public static final BlockFamily RED_ARID_SANDSTONE_BRICKS_FAMILY = new BlockFamily.Builder(RED_ARID_SANDSTONE_BRICKS.get()).wall(RED_ARID_SANDSTONE_BRICK_WALL.get()).stairs(RED_ARID_SANDSTONE_BRICK_STAIRS.get()).slab(RED_ARID_SANDSTONE_BRICK_SLAB.get()).dontGenerateRecipe().getFamily();
+
+	public static final BlockFamily CARMINE_SHINGLES_FAMILY = new BlockFamily.Builder(CARMINE_SHINGLES.get()).slab(CARMINE_SHINGLE_SLAB.get()).stairs(CARMINE_SHINGLE_STAIRS.get()).wall(CARMINE_SHINGLE_WALL.get()).chiseled(CHISELED_CARMINE_SHINGLES.get()).getFamily();
+	public static final BlockFamily CARMINE_PAVEMENT_FAMILY = new BlockFamily.Builder(CARMINE_PAVEMENT.get()).slab(CARMINE_PAVEMENT_SLAB.get()).stairs(CARMINE_PAVEMENT_STAIRS.get()).wall(CARMINE_PAVEMENT_WALL.get()).getFamily();
+
 }
