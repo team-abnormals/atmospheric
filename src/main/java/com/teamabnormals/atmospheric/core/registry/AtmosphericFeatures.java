@@ -340,7 +340,7 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> DEAD_GRIMWOOD = register("dead_grimwood", AtmosphericConfiguredFeatures.DEAD_GRIMWOOD, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 		public static final RegistryObject<PlacedFeature> DEAD_CURRANT = register("dead_currant", AtmosphericConfiguredFeatures.DEAD_CURRANT, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.2F, 15)));
 		public static final RegistryObject<PlacedFeature> TREES_GRIMWOODS = register("trees_grimwoods", AtmosphericConfiguredFeatures.TREES_GRIMWOODS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(15, 0.1F, 3)));
-		public static final RegistryObject<PlacedFeature> OMINOUS_BLOCK = register("ominous_block", AtmosphericConfiguredFeatures.OMINOUS_BLOCK, List.of(RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> OMINOUS_BLOCK = register("ominous_block", AtmosphericConfiguredFeatures.OMINOUS_BLOCK, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.GRASS), RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
 		public static final RegistryObject<PlacedFeature> TREES_LAUREL_FOREST = register("trees_laurel_forest", AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
 		public static final RegistryObject<PlacedFeature> COARSE_DIRT_GRIMWOODS = register("coarse_dirt_grimwoods", AtmosphericConfiguredFeatures.COARSE_DIRT, List.of(CountPlacement.of(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
