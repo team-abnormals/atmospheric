@@ -115,7 +115,6 @@ public class AtmosphericBiomes {
 
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
 		BiomeDefaultFeatures.commonSpawns(spawns);
-		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
 
 		return biome(Biome.Precipitation.RAIN, 0.25F, 0.0F, 9539946, 8882547, 5403055, 1250099, 9866116, spawns, generation, null);
 	}
