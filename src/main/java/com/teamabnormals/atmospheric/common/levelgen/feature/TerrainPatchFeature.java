@@ -38,7 +38,7 @@ public abstract class TerrainPatchFeature extends Feature<ProbabilityFeatureConf
 					int k1 = i1 - pos.getZ();
 					if (j1 * j1 + k1 * k1 <= k * k) {
 						blockpos$mutable.set(l, worldIn.getHeight(Heightmap.Types.WORLD_SURFACE, l, i1) - 1, i1);
-						if (isDirt(worldIn.getBlockState(blockpos$mutable))) {
+						if (canReplace(worldIn.getBlockState(blockpos$mutable))) {
 							worldIn.setBlock(blockpos$mutable, state, 2);
 						}
 					}
@@ -50,5 +50,9 @@ public abstract class TerrainPatchFeature extends Feature<ProbabilityFeatureConf
 		}
 
 		return i > 0;
+	}
+
+	public boolean canReplace(BlockState state) {
+		return isDirt(state);
 	}
 }

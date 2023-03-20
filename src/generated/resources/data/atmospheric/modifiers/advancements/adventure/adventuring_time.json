@@ -211,6 +211,22 @@
               ]
             },
             "trigger": "minecraft:location"
+          },
+          "atmospheric:spiny_thicket": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:spiny_thicket"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
           }
         },
         "requirements": [
@@ -237,6 +253,9 @@
           ],
           [
             "atmospheric:petrified_dunes"
+          ],
+          [
+            "atmospheric:spiny_thicket"
           ],
           [
             "atmospheric:aspen_parkland"

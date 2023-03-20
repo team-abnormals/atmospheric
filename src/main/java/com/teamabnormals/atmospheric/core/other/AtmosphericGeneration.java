@@ -97,6 +97,23 @@ public class AtmosphericGeneration {
 		}
 	}
 
+	public static void spinyThicket(BiomeGenerationSettings.Builder generation) {
+		OverworldBiomes.globalOverworldGeneration(generation);
+		BiomeDefaultFeatures.addDefaultOres(generation);
+		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+		BiomeDefaultFeatures.addSavannaExtraGrass(generation);
+		BiomeDefaultFeatures.addDefaultMushrooms(generation);
+		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_CACTUS_DESERT);
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.DIRT_SPINY_THICKET.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_SPINY_THICKET.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_FLOURISHING_DUNES.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_BARREL_CACTUS_FLOURISHING_DUNES.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.SINGLE_YUCCA_FLOWER.getHolder().get());
+	}
+
 	public static void aspenParkland(BiomeGenerationSettings.Builder generation) {
 		OverworldBiomes.globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addDefaultOres(generation);
@@ -141,7 +158,7 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
-		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.COARSE_DIRT.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.COARSE_DIRT_GRIMWOODS.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_GRIMWOODS.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.DEAD_CURRANT.getHolder().get());
 	}
@@ -157,7 +174,7 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
-		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.COARSE_DIRT.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.COARSE_DIRT_LAUREL_FOREST.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_LARGE_FERN_KOUSA.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_LAUREL_FOREST.getHolder().get());
 	}

@@ -286,6 +286,276 @@
             "if_true": {
               "type": "minecraft:biome",
               "biome_is": [
+                "atmospheric:spiny_thicket"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 0.30303030303030304,
+                    "min_threshold": 0.012121212301832256,
+                    "noise": "minecraft:surface"
+                  },
+                  "then_run": {
+                    "type": "minecraft:sequence",
+                    "sequence": [
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:stone_depth",
+                          "add_surface_depth": false,
+                          "offset": 0,
+                          "secondary_depth_range": 0,
+                          "surface_type": "floor"
+                        },
+                        "then_run": {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:water",
+                            "add_stone_depth": false,
+                            "offset": -1,
+                            "surface_depth_multiplier": 0
+                          },
+                          "then_run": {
+                            "type": "minecraft:sequence",
+                            "sequence": [
+                              {
+                                "type": "minecraft:condition",
+                                "if_true": {
+                                  "type": "minecraft:stone_depth",
+                                  "add_surface_depth": false,
+                                  "offset": 0,
+                                  "secondary_depth_range": 0,
+                                  "surface_type": "ceiling"
+                                },
+                                "then_run": {
+                                  "type": "minecraft:block",
+                                  "result_state": {
+                                    "Name": "atmospheric:red_arid_sandstone"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "atmospheric:red_arid_sand"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:water",
+                          "add_stone_depth": true,
+                          "offset": -6,
+                          "surface_depth_multiplier": -1
+                        },
+                        "then_run": {
+                          "type": "minecraft:sequence",
+                          "sequence": [
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:stone_depth",
+                                "add_surface_depth": true,
+                                "offset": 0,
+                                "secondary_depth_range": 0,
+                                "surface_type": "floor"
+                              },
+                              "then_run": {
+                                "type": "minecraft:sequence",
+                                "sequence": [
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:stone_depth",
+                                      "add_surface_depth": false,
+                                      "offset": 0,
+                                      "secondary_depth_range": 0,
+                                      "surface_type": "ceiling"
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "atmospheric:red_arid_sandstone"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:block",
+                                    "result_state": {
+                                      "Name": "atmospheric:red_arid_sand"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:stone_depth",
+                                "add_surface_depth": true,
+                                "offset": 0,
+                                "secondary_depth_range": 30,
+                                "surface_type": "floor"
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "atmospheric:red_arid_sandstone"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:sequence",
+                  "sequence": [
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:stone_depth",
+                        "add_surface_depth": false,
+                        "offset": 0,
+                        "secondary_depth_range": 0,
+                        "surface_type": "floor"
+                      },
+                      "then_run": {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:water",
+                          "add_stone_depth": false,
+                          "offset": -1,
+                          "surface_depth_multiplier": 0
+                        },
+                        "then_run": {
+                          "type": "minecraft:sequence",
+                          "sequence": [
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:stone_depth",
+                                "add_surface_depth": false,
+                                "offset": 0,
+                                "secondary_depth_range": 0,
+                                "surface_type": "ceiling"
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:red_sandstone"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:red_sand"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:water",
+                        "add_stone_depth": true,
+                        "offset": -6,
+                        "surface_depth_multiplier": -1
+                      },
+                      "then_run": {
+                        "type": "minecraft:sequence",
+                        "sequence": [
+                          {
+                            "type": "minecraft:condition",
+                            "if_true": {
+                              "type": "minecraft:stone_depth",
+                              "add_surface_depth": true,
+                              "offset": 0,
+                              "secondary_depth_range": 0,
+                              "surface_type": "floor"
+                            },
+                            "then_run": {
+                              "type": "minecraft:sequence",
+                              "sequence": [
+                                {
+                                  "type": "minecraft:condition",
+                                  "if_true": {
+                                    "type": "minecraft:stone_depth",
+                                    "add_surface_depth": false,
+                                    "offset": 0,
+                                    "secondary_depth_range": 0,
+                                    "surface_type": "ceiling"
+                                  },
+                                  "then_run": {
+                                    "type": "minecraft:block",
+                                    "result_state": {
+                                      "Name": "minecraft:red_sandstone"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "minecraft:block",
+                                  "result_state": {
+                                    "Name": "minecraft:red_sand"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "minecraft:condition",
+                            "if_true": {
+                              "type": "minecraft:stone_depth",
+                              "add_surface_depth": true,
+                              "offset": 0,
+                              "secondary_depth_range": 30,
+                              "surface_type": "floor"
+                            },
+                            "then_run": {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:red_sandstone"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "surface_rule",
+      "config": {
+        "surface_rule": {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "minecraft:above_preliminary_surface"
+          },
+          "then_run": {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
                 "atmospheric:aspen_parkland"
               ]
             },

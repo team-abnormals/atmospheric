@@ -30,6 +30,7 @@ public class AtmosphericBiomes {
 	public static final KeyedBiome FLOURISHING_DUNES = HELPER.createBiome("flourishing_dunes", () -> dunes(false, true));
 	public static final KeyedBiome ROCKY_DUNES = HELPER.createBiome("rocky_dunes", () -> dunes(true, false));
 	public static final KeyedBiome PETRIFIED_DUNES = HELPER.createBiome("petrified_dunes", () -> dunes(true, true));
+	public static final KeyedBiome SPINY_THICKET = HELPER.createBiome("spiny_thicket", AtmosphericBiomes::spinyThicket);
 
 	public static final KeyedBiome ASPEN_PARKLAND = HELPER.createBiome("aspen_parkland", AtmosphericBiomes::aspenParkland);
 	public static final KeyedBiome KOUSA_JUNGLE = HELPER.createBiome("kousa_jungle", AtmosphericBiomes::kousaJungle);
@@ -59,6 +60,16 @@ public class AtmosphericBiomes {
 		BiomeDefaultFeatures.desertSpawns(spawns);
 
 		return biome(Precipitation.NONE, 2.0F, 0.0F, 14988944, spawns, generation, null);
+	}
+
+	private static Biome spinyThicket() {
+		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
+		AtmosphericGeneration.spinyThicket(generation);
+
+		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+		BiomeDefaultFeatures.desertSpawns(spawns);
+
+		return biome(Precipitation.NONE, 2.0F, 0.85F, 14988944, spawns, generation, null);
 	}
 
 	private static Biome aspenParkland() {
