@@ -10,16 +10,17 @@ import com.teamabnormals.atmospheric.common.levelgen.feature.*;
 import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.LargeDiskConfiguration;
 import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.YuccaTreeConfiguration;
 import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.YuccaTreeConfiguration.YuccaTreeConfigurationBuilder;
-import com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators.HangingCurrantTreeDecorator;
+import com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators.CobwebDecorator;
+import com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators.HangingCurrantDecorator;
 import com.teamabnormals.atmospheric.common.levelgen.placement.InSquareCenterPlacement;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Direction.Plane;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.ProcessorLists;
 import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
@@ -30,6 +31,7 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -96,7 +98,8 @@ public class AtmosphericFeatures {
 
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> OCEAN_FLOOR_RAISER = FEATURES.register("ocean_floor_raiser", () -> new OceanFloorRaiserFeature(NoneFeatureConfiguration.CODEC));
 
-	public static final RegistryObject<TreeDecoratorType<?>> HANGING_CURRANT = TREE_DECORATOR_TYPES.register("hanging_currant", () -> new TreeDecoratorType<>(HangingCurrantTreeDecorator.CODEC));
+	public static final RegistryObject<TreeDecoratorType<?>> HANGING_CURRANT = TREE_DECORATOR_TYPES.register("hanging_currant", () -> new TreeDecoratorType<>(HangingCurrantDecorator.CODEC));
+	public static final RegistryObject<TreeDecoratorType<?>> COBWEB = TREE_DECORATOR_TYPES.register("cobweb", () -> new TreeDecoratorType<>(CobwebDecorator.CODEC));
 
 	public static final class Configs {
 		private static final BeehiveDecorator BEEHIVE_0002 = new BeehiveDecorator(0.002F);
@@ -127,11 +130,11 @@ public class AtmosphericFeatures {
 
 		public static final TreeConfiguration KOUSA = createCustomTree(AtmosphericBlocks.KOUSA_LOG.get(), new StraightTrunkPlacer(4, 2, 1), AtmosphericBlocks.KOUSA_LEAVES.get()).build();
 		public static final TreeConfiguration BABY_KOUSA = createCustomTree(AtmosphericBlocks.KOUSA_LOG.get(), new StraightTrunkPlacer(2, 1, 1), AtmosphericBlocks.KOUSA_LEAVES.get()).build();
-		public static final TreeConfiguration CURRANT = createCustomTree(AtmosphericBlocks.CURRANT_STALK.get(), new StraightTrunkPlacer(3, 0, 0), AtmosphericBlocks.CURRANT_LEAVES.get()).decorators(List.of(new HangingCurrantTreeDecorator(0.20F))).build();
+		public static final TreeConfiguration CURRANT = createCustomTree(AtmosphericBlocks.CURRANT_STALK.get(), new StraightTrunkPlacer(3, 0, 0), AtmosphericBlocks.CURRANT_LEAVES.get()).decorators(List.of(new HangingCurrantDecorator(0.20F))).build();
 		public static final TreeConfiguration DEAD_CURRANT = createCustomTree(AtmosphericBlocks.CURRANT_STALK.get(), new StraightTrunkPlacer(3, 0, 0), Blocks.AIR).build();
 
 		public static final TreeConfiguration GRIMWOOD = createCustomTree(AtmosphericBlocks.GRIMWOOD_LOG.get(), new StraightTrunkPlacer(2, 1, 0), AtmosphericBlocks.GRIMWOOD_LEAVES.get()).build();
-		public static final TreeConfiguration DEAD_GRIMWOOD = createCustomTree(AtmosphericBlocks.GRIMWOOD_LOG.get(), new StraightTrunkPlacer(2, 1, 0), Blocks.AIR).build();
+		public static final TreeConfiguration DEAD_GRIMWOOD = createCustomTree(AtmosphericBlocks.GRIMWOOD_LOG.get(), new StraightTrunkPlacer(2, 1, 0), Blocks.AIR).decorators(List.of(new CobwebDecorator(0.025F))).build();
 
 		public static final TreeConfiguration LAUREL = createCustomTree(AtmosphericBlocks.LAUREL_LOG.get(), new StraightTrunkPlacer(3, 1, 0), AtmosphericBlocks.LAUREL_LEAVES.get()).build();
 		public static final TreeConfiguration LAUREL_WITH_VINES = createCustomTree(AtmosphericBlocks.LAUREL_LOG.get(), new StraightTrunkPlacer(3, 1, 0), AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(new LeaveVineDecorator(0.15F))).build();
@@ -168,6 +171,21 @@ public class AtmosphericFeatures {
 
 		private static TreeConfigurationBuilder createCustomTree(BlockStateProvider logProvider, TrunkPlacer trunkPlacer, BlockStateProvider leavesProvider) {
 			return new TreeConfigurationBuilder(logProvider, trunkPlacer, leavesProvider, new BlobFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), 0), new TwoLayersFeatureSize(0, 0, 0)).ignoreVines();
+		}
+
+		private static WeightedStateProvider ominousGrimwoodsBlocks() {
+			SimpleWeightedRandomList.Builder<BlockState> builder = SimpleWeightedRandomList.builder();
+			builder.add(Blocks.TORCH.defaultBlockState(), 12);
+			builder.add(Blocks.LANTERN.defaultBlockState(), 12);
+
+			for (Direction direction : Plane.HORIZONTAL) {
+				builder.add(Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.FACING, direction), 1);
+				builder.add(Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.LIT, false).setValue(CampfireBlock.FACING, direction), 2);
+				builder.add(Blocks.CARVED_PUMPKIN.defaultBlockState().setValue(CampfireBlock.FACING, direction), 1);
+				builder.add(Blocks.JACK_O_LANTERN.defaultBlockState().setValue(CampfireBlock.FACING, direction), 2);
+			}
+
+			return new WeightedStateProvider(builder.build());
 		}
 	}
 
@@ -262,6 +280,7 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_LARGE_FERN = register("patch_large_fern", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.LARGE_FERN)))));
 
 		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_GRIMWOODS = register("trees_grimwoods", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.OAK_BUSH.getHolder().get(), 0.1F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.GRIMWOOD.getHolder().get(), 0.01F)), AtmosphericPlacedFeatures.DEAD_GRIMWOOD.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> OMINOUS_BLOCK = register("ominous_block", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(Configs.ominousGrimwoodsBlocks())));
 
 		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_LAUREL_FOREST = register("trees_laurel_forest", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.DRY_LAUREL_WITH_VINES.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.DRY_LAUREL.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.LAUREL_WITH_VINES.getHolder().get(), 0.45F)), AtmosphericPlacedFeatures.LAUREL.getHolder().get())));
 		public static final RegistryObject<ConfiguredFeature<ProbabilityFeatureConfiguration, ?>> COARSE_DIRT = register("coarse_dirt", () -> new ConfiguredFeature<>(AtmosphericFeatures.COARSE_DIRT.get(), new ProbabilityFeatureConfiguration(0.1F)));
@@ -321,6 +340,7 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> DEAD_GRIMWOOD = register("dead_grimwood", AtmosphericConfiguredFeatures.DEAD_GRIMWOOD, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 		public static final RegistryObject<PlacedFeature> DEAD_CURRANT = register("dead_currant", AtmosphericConfiguredFeatures.DEAD_CURRANT, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.2F, 15)));
 		public static final RegistryObject<PlacedFeature> TREES_GRIMWOODS = register("trees_grimwoods", AtmosphericConfiguredFeatures.TREES_GRIMWOODS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(15, 0.1F, 3)));
+		public static final RegistryObject<PlacedFeature> OMINOUS_BLOCK = register("ominous_block", AtmosphericConfiguredFeatures.OMINOUS_BLOCK, List.of(RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
 		public static final RegistryObject<PlacedFeature> TREES_LAUREL_FOREST = register("trees_laurel_forest", AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
 		public static final RegistryObject<PlacedFeature> COARSE_DIRT_GRIMWOODS = register("coarse_dirt_grimwoods", AtmosphericConfiguredFeatures.COARSE_DIRT, List.of(CountPlacement.of(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));

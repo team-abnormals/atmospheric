@@ -8,11 +8,11 @@ import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
-public class HangingCurrantTreeDecorator extends TreeDecorator {
-	public static final Codec<HangingCurrantTreeDecorator> CODEC = Codec.floatRange(0.0F, 1.0F).fieldOf("probability").xmap(HangingCurrantTreeDecorator::new, (decorator) -> decorator.probability).codec();
+public class HangingCurrantDecorator extends TreeDecorator {
+	public static final Codec<HangingCurrantDecorator> CODEC = Codec.floatRange(0.0F, 1.0F).fieldOf("probability").xmap(HangingCurrantDecorator::new, (decorator) -> decorator.probability).codec();
 	private final float probability;
 
-	public HangingCurrantTreeDecorator(float probability) {
+	public HangingCurrantDecorator(float probability) {
 		this.probability = probability;
 	}
 
