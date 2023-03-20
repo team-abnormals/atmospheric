@@ -40,7 +40,7 @@ public class LaurelTreeFeature extends AtmosphericTreeFeature {
 
 	@Override
 	public Block getSapling() {
-		return AtmosphericBlocks.LAUREL_SAPLING.get();
+		return AtmosphericBlocks.YUCCA_SAPLING.get();
 	}
 
 	private void createBranch(BlockPos pos, Direction direction, RandomSource random) {
