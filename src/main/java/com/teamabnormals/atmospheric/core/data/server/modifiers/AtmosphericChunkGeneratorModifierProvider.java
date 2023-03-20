@@ -53,7 +53,6 @@ public final class AtmosphericChunkGeneratorModifierProvider extends ChunkGenera
 		this.entry("atmospheric_surface_rule").selects("minecraft:overworld")
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(inDunes, sequence(ifTrue(noiseRange(0.3F, 2.5F), redAridSandRuleSource), aridSandRuleSource))), false))
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isBiome(AtmosphericBiomes.ASPEN_PARKLAND.getKey()), ifTrue(ON_FLOOR, ifTrue(waterBlockCheck(-1, 0), sequence(ifTrue(waterBlockCheck(0, 0), coarseDirt), dirt))))), false))
-				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isBiome(AtmosphericBiomes.GRIMWOODS.getKey()), ifTrue(ON_FLOOR, sequence(ifTrue(noiseRange(-0.25D, 1.25D), coarseDirt))))), false))
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(inHotSprings, ifTrue(not(yBlockCheck(VerticalAnchor.absolute(93), 0)), sequence(hotSpringsRuleSource, hotSpringsRuleSource2)))), false));
 	}
 

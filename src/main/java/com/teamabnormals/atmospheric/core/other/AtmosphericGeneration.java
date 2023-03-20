@@ -6,10 +6,7 @@ import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
-import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
@@ -144,8 +141,25 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.COARSE_DIRT.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_GRIMWOODS.getHolder().get());
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.DEAD_CURRANT.getHolder().get());
+	}
+
+	public static void laurelForest(BiomeGenerationSettings.Builder generation) {
+		OverworldBiomes.globalOverworldGeneration(generation);
+		BiomeDefaultFeatures.addDefaultOres(generation);
+		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+		BiomeDefaultFeatures.addDefaultFlowers(generation);
+		BiomeDefaultFeatures.addSavannaGrass(generation);
+		BiomeDefaultFeatures.addTaigaGrass(generation);
+		BiomeDefaultFeatures.addDefaultMushrooms(generation);
+		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.COARSE_DIRT.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.PATCH_LARGE_FERN_KOUSA.getHolder().get());
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.TREES_LAUREL_FOREST.getHolder().get());
 	}
 
 	public static void hotSprings(BiomeGenerationSettings.Builder generation) {

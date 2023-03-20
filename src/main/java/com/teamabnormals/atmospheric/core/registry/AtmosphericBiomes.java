@@ -34,6 +34,7 @@ public class AtmosphericBiomes {
 	public static final KeyedBiome ASPEN_PARKLAND = HELPER.createBiome("aspen_parkland", AtmosphericBiomes::aspenParkland);
 	public static final KeyedBiome KOUSA_JUNGLE = HELPER.createBiome("kousa_jungle", AtmosphericBiomes::kousaJungle);
 	public static final KeyedBiome GRIMWOODS = HELPER.createBiome("grimwoods", AtmosphericBiomes::grimwoods);
+	public static final KeyedBiome LAUREL_FOREST = HELPER.createBiome("laurel_forest", AtmosphericBiomes::laurelForest);
 
 	public static final KeyedBiome HOT_SPRINGS = HELPER.createBiome("hot_springs", AtmosphericBiomes::hotSprings);
 
@@ -94,6 +95,18 @@ public class AtmosphericBiomes {
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
 
 		return biome(Biome.Precipitation.RAIN, 0.25F, 0.0F, 9539946, 7040342, 5403055, 1250099, 8022879, spawns, generation, null);
+	}
+
+	private static Biome laurelForest() {
+		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
+		AtmosphericGeneration.laurelForest(generation);
+
+		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+		BiomeDefaultFeatures.commonSpawns(spawns);
+		BiomeDefaultFeatures.farmAnimals(spawns);
+		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
+
+		return biome(Biome.Precipitation.RAIN, 0.85F, 0.5F, spawns, generation, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 	}
 
 	private static Biome hotSprings() {

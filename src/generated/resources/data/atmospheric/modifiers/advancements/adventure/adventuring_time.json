@@ -100,6 +100,22 @@
             },
             "trigger": "minecraft:location"
           },
+          "atmospheric:laurel_forest": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:laurel_forest"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
           "atmospheric:petrified_dunes": {
             "conditions": {
               "player": [
@@ -230,6 +246,9 @@
           ],
           [
             "atmospheric:grimwoods"
+          ],
+          [
+            "atmospheric:laurel_forest"
           ],
           [
             "atmospheric:hot_springs"
