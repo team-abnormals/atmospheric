@@ -103,7 +103,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropPottedContents(POTTED_GILIA.get());
 			this.dropSelf(YUCCA_FLOWER.get());
 			this.dropPottedContents(POTTED_YUCCA_FLOWER.get());
-			this.add(TALL_YUCCA_FLOWER.get(), block -> LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(block).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))));
+			this.add(TALL_YUCCA_FLOWER.get(), block -> LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(YUCCA_FLOWER.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))));
 			this.add(YUCCA_GATEAU.get(), noDrop());
 			this.add(YUCCA_BRANCH.get(), (block) -> createShearsDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))));
 			this.add(YUCCA_BUNDLE.get(), (block) -> createSilkTouchOrShearsDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(AtmosphericItems.YUCCA_FRUIT.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 6.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)).apply(LimitCount.limitCount(IntRange.upperBound(8))))));
