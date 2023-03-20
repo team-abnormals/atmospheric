@@ -29,8 +29,15 @@ public abstract class AtmosphericTreeFeature extends Feature<TreeConfiguration> 
 	public HashMap<BlockPos, BlockState> specialLogPositions;
 	public HashMap<BlockPos, BlockState> specialFoliagePositions;
 
+	public boolean placeDirt;
+
 	public AtmosphericTreeFeature(Codec<TreeConfiguration> config) {
+		this(true, config);
+	}
+
+	public AtmosphericTreeFeature(boolean placeDirt, Codec<TreeConfiguration> config) {
 		super(config);
+		this.placeDirt = placeDirt;
 	}
 
 	@Override
@@ -56,11 +63,18 @@ public abstract class AtmosphericTreeFeature extends Feature<TreeConfiguration> 
 				if (!TreeFeature.validTreePos(level, foliagePos) || foliagePos.getY() > level.getMaxBuildHeight()) return false;
 			}
 
-			setDirtAt(level, random, origin.below(), config);
+			if (this.placeDirt) {
+				setDirtAt(level, random, origin.below(), config);
+			}
+
 			this.logPositions.forEach(logPos -> TreeUtil.setForcedState(level, logPos, this.specialLogPositions.getOrDefault(logPos, config.trunkProvider.getState(random, logPos))));
 			this.foliagePositions.forEach(foliagePos -> {
-				if (TreeFeature.validTreePos(level, foliagePos))
-					TreeUtil.setForcedState(level, foliagePos, this.specialFoliagePositions.getOrDefault(foliagePos, config.foliageProvider.getState(random, foliagePos)));
+				if (TreeFeature.validTreePos(level, foliagePos)) {
+					BlockState state = this.specialFoliagePositions.getOrDefault(foliagePos, config.foliageProvider.getState(random, foliagePos));
+					if (!state.isAir()) {
+						TreeUtil.setForcedState(level, foliagePos, state);
+					}
+				}
 			});
 
 			TreeUtil.updateLeaves(level, this.logPositions);

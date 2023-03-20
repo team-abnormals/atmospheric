@@ -52,6 +52,22 @@
             },
             "trigger": "minecraft:location"
           },
+          "atmospheric:grimwoods": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:grimwoods"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
           "atmospheric:hot_springs": {
             "conditions": {
               "player": [
@@ -211,6 +227,9 @@
           ],
           [
             "atmospheric:kousa_jungle"
+          ],
+          [
+            "atmospheric:grimwoods"
           ],
           [
             "atmospheric:hot_springs"

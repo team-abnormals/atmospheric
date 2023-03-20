@@ -11,7 +11,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 public class CurrantTreeFeature extends AtmosphericTreeFeature {
 
 	public CurrantTreeFeature(Codec<TreeConfiguration> config) {
-		super(config);
+		super(false, config);
 	}
 
 	@Override

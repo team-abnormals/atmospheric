@@ -26,8 +26,8 @@
                   "type": "minecraft:condition",
                   "if_true": {
                     "type": "minecraft:noise_threshold",
-                    "max_threshold": 0.3030303120613098,
-                    "min_threshold": 0.0363636389374733,
+                    "max_threshold": 0.30303030303030304,
+                    "min_threshold": 0.03636363780859745,
                     "noise": "minecraft:surface"
                   },
                   "then_run": {
@@ -351,6 +351,56 @@
             "if_true": {
               "type": "minecraft:biome",
               "biome_is": [
+                "atmospheric:grimwoods"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "add_surface_depth": false,
+                "offset": 0,
+                "secondary_depth_range": 0,
+                "surface_type": "floor"
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold": 0.15151515151515152,
+                      "min_threshold": -0.030303030303030304,
+                      "noise": "minecraft:surface"
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:coarse_dirt"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "surface_rule",
+      "config": {
+        "surface_rule": {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "minecraft:above_preliminary_surface"
+          },
+          "then_run": {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
                 "atmospheric:hot_springs"
               ]
             },
@@ -386,8 +436,8 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 0.23030303418636322,
-                            "min_threshold": 0.1090909093618393,
+                            "max_threshold": 0.23030302741310812,
+                            "min_threshold": 0.10909090620098692,
                             "noise": "minecraft:surface"
                           },
                           "then_run": {
@@ -404,8 +454,8 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 0.2909091114997864,
-                            "min_threshold": 0.04848485067486763,
+                            "max_threshold": 0.2909091024687796,
+                            "min_threshold": 0.048484849207329025,
                             "noise": "minecraft:surface"
                           },
                           "then_run": {
@@ -422,8 +472,8 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 0.3636363744735718,
-                            "min_threshold": -0.024242425337433815,
+                            "max_threshold": 0.36363636363636365,
+                            "min_threshold": -0.024242424603664513,
                             "noise": "minecraft:surface"
                           },
                           "then_run": {
@@ -464,8 +514,8 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 0.23030303418636322,
-                            "min_threshold": 0.1090909093618393,
+                            "max_threshold": 0.23030302741310812,
+                            "min_threshold": 0.10909090620098692,
                             "noise": "minecraft:surface"
                           },
                           "then_run": {
@@ -482,8 +532,8 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 0.2909091114997864,
-                            "min_threshold": 0.04848485067486763,
+                            "max_threshold": 0.2909091024687796,
+                            "min_threshold": 0.048484849207329025,
                             "noise": "minecraft:surface"
                           },
                           "then_run": {
@@ -500,8 +550,8 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 0.3636363744735718,
-                            "min_threshold": -0.024242425337433815,
+                            "max_threshold": 0.36363636363636365,
+                            "min_threshold": -0.024242424603664513,
                             "noise": "minecraft:surface"
                           },
                           "then_run": {
