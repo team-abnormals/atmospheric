@@ -17,6 +17,8 @@ public class AtmosphericItemTags {
 	public static final TagKey<Item> TRAVERTINE = itemTag("travertine");
 	public static final TagKey<Item> FRUITS = TagUtil.itemTag("forge", "fruits");
 	public static final TagKey<Item> FRUITS_PASSIONFRUIT = TagUtil.itemTag("forge", "fruits/passionfruit");
+	public static final TagKey<Item> FRUITS_CURRANT = TagUtil.itemTag("forge", "fruits/currant");
+	public static final TagKey<Item> SEEDS_ALOE_VERA = TagUtil.itemTag("forge", "seeds/aloe_vera");
 
 	private static TagKey<Item> itemTag(String name) {
 		return TagUtil.itemTag(Atmospheric.MOD_ID, name);
