@@ -6,10 +6,8 @@ import com.mojang.serialization.Codec;
 import com.teamabnormals.blueprint.core.util.TreeUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -113,12 +111,8 @@ public abstract class AtmosphericTreeFeature extends Feature<TreeConfiguration> 
 	}
 
 	public static void setDirtAt(WorldGenLevel level, RandomSource random, BlockPos pos, TreeConfiguration config) {
-		if (config.forceDirt || !isDirt(level, pos)) {
+		if (config.forceDirt || level.isStateAtPosition(pos, Feature::isDirt)) {
 			TreeUtil.setForcedState(level, pos, config.dirtProvider.getState(random, pos));
 		}
-	}
-
-	public static boolean isDirt(LevelSimulatedReader level, BlockPos pos) {
-		return level.isStateAtPosition(pos, (state) -> Feature.isDirt(state) && !state.is(Blocks.GRASS_BLOCK) && !state.is(Blocks.MYCELIUM));
 	}
 }

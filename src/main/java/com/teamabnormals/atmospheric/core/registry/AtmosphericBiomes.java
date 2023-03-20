@@ -81,7 +81,7 @@ public class AtmosphericBiomes {
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
 		BiomeDefaultFeatures.desertSpawns(spawns);
 
-		return biome(Precipitation.NONE, 2.0F, 0.0F, 14988944, spawns, generation, null);
+		return biome(Precipitation.NONE, 2.0F, 0.0F, 13021599, spawns, generation, null);
 	}
 
 	private static Biome aspenParkland() {
@@ -117,7 +117,7 @@ public class AtmosphericBiomes {
 		BiomeDefaultFeatures.commonSpawns(spawns);
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
 
-		return biome(Biome.Precipitation.RAIN, 0.25F, 0.0F, 9539946, 7040342, 5403055, 1250099, 8022879, spawns, generation, null);
+		return biome(Biome.Precipitation.RAIN, 0.25F, 0.0F, 9539946, 8882547, 5403055, 1250099, 9866116, spawns, generation, null);
 	}
 
 	private static Biome laurelForest() {
@@ -129,7 +129,7 @@ public class AtmosphericBiomes {
 		BiomeDefaultFeatures.farmAnimals(spawns);
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
 
-		return biome(Biome.Precipitation.RAIN, 0.85F, 0.5F, spawns, generation, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+		return biomeWithGrass(Biome.Precipitation.RAIN, 0.85F, 0.5F, 12249691, 10009673, spawns, generation, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 	}
 
 	private static Biome hotSprings() {
@@ -160,6 +160,10 @@ public class AtmosphericBiomes {
 
 	private static Biome biome(Precipitation precipitation, float temperature, float downfall, int waterColor, int waterFogColor, int fogColor, MobSpawnSettings.Builder spawns, BiomeGenerationSettings.Builder generation, @Nullable Music music) {
 		return (new Biome.BiomeBuilder()).precipitation(precipitation).temperature(temperature).downfall(downfall).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor).fogColor(fogColor).skyColor(calculateSkyColor(temperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music).build()).mobSpawnSettings(spawns.build()).generationSettings(generation.build()).build();
+	}
+
+	private static Biome biomeWithGrass(Precipitation precipitation, float temperature, float downfall, int grassColor, int foliageColor, MobSpawnSettings.Builder spawns, BiomeGenerationSettings.Builder generation, @Nullable Music music) {
+		return (new Biome.BiomeBuilder()).precipitation(precipitation).temperature(temperature).downfall(downfall).specialEffects((new BiomeSpecialEffects.Builder()).grassColorOverride(grassColor).foliageColorOverride(foliageColor).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(temperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music).build()).mobSpawnSettings(spawns.build()).generationSettings(generation.build()).build();
 	}
 
 	private static Biome biome(Precipitation precipitation, float temperature, float downfall, int grassColor, int foliageColor, int waterColor, int waterFogColor, int fogColor, MobSpawnSettings.Builder spawns, BiomeGenerationSettings.Builder generation, @Nullable Music music) {
