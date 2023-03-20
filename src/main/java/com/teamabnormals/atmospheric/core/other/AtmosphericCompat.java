@@ -5,7 +5,13 @@ import com.teamabnormals.atmospheric.common.dispenser.PassionVineDispenseBehavio
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.minecraft.world.entity.animal.Chicken;
+import net.minecraft.world.entity.animal.Parrot;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraftforge.common.crafting.CompoundIngredient;
+
+import java.util.Collections;
 
 public class AtmosphericCompat {
 
@@ -13,6 +19,12 @@ public class AtmosphericCompat {
 		registerDispenserBehaviors();
 		registerCompostables();
 		registerFlammables();
+		registerAnimalFoods();
+	}
+
+	public static void registerAnimalFoods() {
+		Chicken.FOOD_ITEMS = CompoundIngredient.of(Chicken.FOOD_ITEMS, Ingredient.of(AtmosphericItems.ALOE_KERNELS.get()));
+		Collections.addAll(Parrot.TAME_FOOD, AtmosphericItems.ALOE_KERNELS.get());
 	}
 
 	public static void registerDispenserBehaviors() {
