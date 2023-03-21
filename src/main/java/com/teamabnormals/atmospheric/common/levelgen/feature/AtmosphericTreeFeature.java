@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -54,18 +55,21 @@ public abstract class AtmosphericTreeFeature extends Feature<TreeConfiguration> 
 			this.doPlace(context);
 
 			for (BlockPos logPos : this.logPositions) {
-				if (!TreeFeature.validTreePos(level, logPos) || logPos.getY() > level.getMaxBuildHeight()) return false;
+				if (!TreeFeature.validTreePos(level, logPos) || logPos.getY() > level.getMaxBuildHeight() || (logPos.getY() == origin.getY() && !TreeUtil.isValidGround(level, logPos.below(), (SaplingBlock) this.getSapling())))
+					return false;
 			}
 
 			for (BlockPos foliagePos : this.foliagePositions) {
-				if (!TreeFeature.validTreePos(level, foliagePos) || foliagePos.getY() > level.getMaxBuildHeight()) return false;
+				if (!TreeFeature.validTreePos(level, foliagePos) || foliagePos.getY() > level.getMaxBuildHeight())
+					return false;
 			}
 
-			if (this.placeDirt) {
-				setDirtAt(level, random, origin.below(), config);
-			}
-
-			this.logPositions.forEach(logPos -> TreeUtil.setForcedState(level, logPos, this.specialLogPositions.getOrDefault(logPos, config.trunkProvider.getState(random, logPos))));
+			this.logPositions.forEach(logPos -> {
+				TreeUtil.setForcedState(level, logPos, this.specialLogPositions.getOrDefault(logPos, config.trunkProvider.getState(random, logPos)));
+				if (logPos.getY() == origin.getY() && this.placeDirt) {
+					setDirtAt(level, random, logPos.below(), config);
+				}
+			});
 			this.foliagePositions.forEach(foliagePos -> {
 				if (TreeFeature.validTreePos(level, foliagePos)) {
 					BlockState state = this.specialFoliagePositions.getOrDefault(foliagePos, config.foliageProvider.getState(random, foliagePos));
@@ -111,7 +115,7 @@ public abstract class AtmosphericTreeFeature extends Feature<TreeConfiguration> 
 	}
 
 	public static void setDirtAt(WorldGenLevel level, RandomSource random, BlockPos pos, TreeConfiguration config) {
-		if (config.forceDirt || level.isStateAtPosition(pos, Feature::isDirt)) {
+		if (config.forceDirt || level.isStateAtPosition(pos, state -> state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.MYCELIUM))) {
 			TreeUtil.setForcedState(level, pos, config.dirtProvider.getState(random, pos));
 		}
 	}
