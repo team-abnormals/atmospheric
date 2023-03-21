@@ -4,14 +4,12 @@ import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericItems.*;
 
@@ -24,29 +22,24 @@ public class AtmosphericItemModelProvider extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		this.generatedItem(
-				ROSEWOOD_BOAT.getFirst(), ROSEWOOD_BOAT.getSecond(), ROSEWOOD_FURNACE_BOAT, LARGE_ROSEWOOD_BOAT,
-				MORADO_BOAT.getFirst(), MORADO_BOAT.getSecond(), MORADO_FURNACE_BOAT, LARGE_MORADO_BOAT,
-				YUCCA_BOAT.getFirst(), YUCCA_BOAT.getSecond(), YUCCA_FURNACE_BOAT, LARGE_YUCCA_BOAT,
-				ASPEN_BOAT.getFirst(), ASPEN_BOAT.getSecond(), ASPEN_FURNACE_BOAT, LARGE_ASPEN_BOAT,
-				LAUREL_BOAT.getFirst(), LAUREL_BOAT.getSecond(), LAUREL_FURNACE_BOAT, LARGE_LAUREL_BOAT,
-				KOUSA_BOAT.getFirst(), KOUSA_BOAT.getSecond(), KOUSA_FURNACE_BOAT, LARGE_KOUSA_BOAT,
-				GRIMWOOD_BOAT.getFirst(), GRIMWOOD_BOAT.getSecond(), GRIMWOOD_FURNACE_BOAT, LARGE_GRIMWOOD_BOAT
-		);
+				ROSEWOOD_BOAT.getFirst().get(), ROSEWOOD_BOAT.getSecond().get(), ROSEWOOD_FURNACE_BOAT.get(), LARGE_ROSEWOOD_BOAT.get(),
+				MORADO_BOAT.getFirst().get(), MORADO_BOAT.getSecond().get(), MORADO_FURNACE_BOAT.get(), LARGE_MORADO_BOAT.get(),
+				YUCCA_BOAT.getFirst().get(), YUCCA_BOAT.getSecond().get(), YUCCA_FURNACE_BOAT.get(), LARGE_YUCCA_BOAT.get(),
+				ASPEN_BOAT.getFirst().get(), ASPEN_BOAT.getSecond().get(), ASPEN_FURNACE_BOAT.get(), LARGE_ASPEN_BOAT.get(),
+				LAUREL_BOAT.getFirst().get(), LAUREL_BOAT.getSecond().get(), LAUREL_FURNACE_BOAT.get(), LARGE_LAUREL_BOAT.get(),
+				KOUSA_BOAT.getFirst().get(), KOUSA_BOAT.getSecond().get(), KOUSA_FURNACE_BOAT.get(), LARGE_KOUSA_BOAT.get(),
+				GRIMWOOD_BOAT.getFirst().get(), GRIMWOOD_BOAT.getSecond().get(), GRIMWOOD_FURNACE_BOAT.get(), LARGE_GRIMWOOD_BOAT.get()
+				);
 
-		this.generatedItem(AtmosphericBlocks.PASSION_VINE.get(), AtmosphericBlocks.YUCCA_GATEAU.get());
+		this.generatedItem(AtmosphericBlocks.YUCCA_GATEAU.get());
 		this.handheldItem(AtmosphericBlocks.YUCCA_BRANCH.get());
 		this.generatedItem(
-				PASSIONFRUIT, SHIMMERING_PASSIONFRUIT, PASSIONFRUIT_SORBET, PASSIONFRUIT_TART, PASSION_VINE_COIL,
-				ALOE_GEL_BOTTLE, ALOE_KERNELS, ALOE_LEAVES, YELLOW_BLOSSOMS, YUCCA_FRUIT, ROASTED_YUCCA_FRUIT,
-				CURRANT, CURRANT_MUFFIN,
-				CARMINE_HUSK, COCHINEAL_BANNER_PATTERN, DRAGON_ROOTS, DRAGON_FRUIT, GOLDEN_DRAGON_FRUIT, ENDER_DRAGON_FRUIT,
-				ORANGE, ORANGE_PUDDING, ORANGE_SORBET, CANDIED_ORANGE_SLICES, BLOOD_ORANGE
+				PASSIONFRUIT.get(), SHIMMERING_PASSIONFRUIT.get(), PASSIONFRUIT_SORBET.get(), PASSIONFRUIT_TART.get(), PASSION_VINE_COIL.get(),
+				ALOE_GEL_BOTTLE.get(), ALOE_KERNELS.get(), ALOE_LEAVES.get(), YELLOW_BLOSSOMS.get(), YUCCA_FRUIT.get(), ROASTED_YUCCA_FRUIT.get(),
+				CURRANT.get(), CURRANT_MUFFIN.get(),
+				CARMINE_HUSK.get(), COCHINEAL_BANNER_PATTERN.get(), DRAGON_ROOTS.get(), DRAGON_FRUIT.get(), GOLDEN_DRAGON_FRUIT.get(), ENDER_DRAGON_FRUIT.get(),
+				ORANGE.get(), ORANGE_PUDDING.get(), ORANGE_SORBET.get(), CANDIED_ORANGE_SLICES.get(), BLOOD_ORANGE.get()
 		);
-	}
-
-	private void generatedItem(RegistryObject<Item>... items) {
-		for (RegistryObject<Item> item : items)
-			generatedItem(item.get());
 	}
 
 	private void generatedItem(ItemLike... items) {

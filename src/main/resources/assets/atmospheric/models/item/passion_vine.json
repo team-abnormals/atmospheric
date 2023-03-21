@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "atmospheric:item/passion_vine"
+    "layer0": "atmospheric:block/passion_vine_middle_stage0"
   }
 }
