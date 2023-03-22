@@ -9,9 +9,9 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.PlantType;
 
-public class GiliaBlock extends BlueprintFlowerBlock {
+public class DesertFlowerBlock extends BlueprintFlowerBlock {
 
-	public GiliaBlock(Supplier<MobEffect> effect, int effectDuration, Properties properties) {
+	public DesertFlowerBlock(Supplier<MobEffect> effect, int effectDuration, Properties properties) {
 		super(effect, effectDuration, properties);
 	}
 

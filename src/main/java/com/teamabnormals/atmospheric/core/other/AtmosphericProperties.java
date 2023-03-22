@@ -33,5 +33,7 @@ public class AtmosphericProperties {
 	public static final Block.Properties SAFFRON_TRAVERTINE = Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
 	public static final Block.Properties DOLERITE = Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
 
+	public static final Block.Properties CARMINE_BLOCK = Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED).sound(SoundType.TUFF).strength(0.5F);
+
 	public static final Block.Properties ALOE_VERA = Block.Properties.of(Material.PLANT).noCollission().instabreak().randomTicks().sound(SoundType.CROP);
 }

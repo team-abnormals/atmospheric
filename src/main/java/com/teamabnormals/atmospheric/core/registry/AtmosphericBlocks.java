@@ -241,7 +241,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> POTTED_YUCCA_FLOWER = HELPER.createBlockNoItem("potted_yucca_flower", () -> new FlowerPotBlock(YUCCA_FLOWER.get(), PropertyUtil.flowerPot()));
 	public static final RegistryObject<Block> TALL_YUCCA_FLOWER = HELPER.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(Block.Properties.copy(Blocks.ROSE_BUSH)), CreativeModeTab.TAB_DECORATIONS);
 
-	public static final RegistryObject<Block> GILIA = HELPER.createBlock("gilia", () -> new GiliaBlock(() -> MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> GILIA = HELPER.createBlock("gilia", () -> new DesertFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_GILIA = HELPER.createBlockNoItem("potted_gilia", () -> new FlowerPotBlock(GILIA.get(), PropertyUtil.flowerPot()));
 
 	public static final RegistryObject<Block> ARID_SPROUTS = HELPER.createBlock("arid_sprouts", () -> new AridSproutsBlock(AtmosphericProperties.ARID_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
@@ -448,23 +448,23 @@ public class AtmosphericBlocks {
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static final RegistryObject<Block> CARMINE_BLOCK = HELPER.createBlock("carmine_block", () -> new CarmineBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CARMINE_SHINGLES = HELPER.createBlock("carmine_shingles", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CARMINE_SHINGLE_STAIRS = HELPER.createBlock("carmine_shingle_stairs", () -> new StairBlock(() -> CARMINE_BLOCK.get().defaultBlockState(), Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CARMINE_SHINGLE_SLAB = HELPER.createBlock("carmine_shingle_slab", () -> new SlabBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CARMINE_SHINGLE_WALL = HELPER.createBlock("carmine_shingle_wall", () -> new WallBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CARMINE_BLOCK = HELPER.createBlock("carmine_block", () -> new CarmineBlock(AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CARMINE_SHINGLES = HELPER.createBlock("carmine_shingles", () -> new Block(AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CARMINE_SHINGLE_STAIRS = HELPER.createBlock("carmine_shingle_stairs", () -> new StairBlock(() -> CARMINE_BLOCK.get().defaultBlockState(), AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CARMINE_SHINGLE_SLAB = HELPER.createBlock("carmine_shingle_slab", () -> new SlabBlock(AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CARMINE_SHINGLE_WALL = HELPER.createBlock("carmine_shingle_wall", () -> new WallBlock(AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CARMINE_SHINGLE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "carmine_shingle_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(CARMINE_SHINGLES.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CHISELED_CARMINE_SHINGLES = HELPER.createBlock("chiseled_carmine_shingles", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CARMINE_PAVEMENT = HELPER.createBlock("carmine_pavement", () -> new Block(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CARMINE_PAVEMENT_STAIRS = HELPER.createBlock("carmine_pavement_stairs", () -> new StairBlock(() -> CARMINE_BLOCK.get().defaultBlockState(), Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CARMINE_PAVEMENT_SLAB = HELPER.createBlock("carmine_pavement_slab", () -> new SlabBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CARMINE_PAVEMENT_WALL = HELPER.createBlock("carmine_pavement_wall", () -> new WallBlock(Properties.copy(Blocks.END_STONE)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CHISELED_CARMINE_SHINGLES = HELPER.createBlock("chiseled_carmine_shingles", () -> new Block(AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CARMINE_PAVEMENT = HELPER.createBlock("carmine_pavement", () -> new Block(AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CARMINE_PAVEMENT_STAIRS = HELPER.createBlock("carmine_pavement_stairs", () -> new StairBlock(() -> CARMINE_BLOCK.get().defaultBlockState(), AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CARMINE_PAVEMENT_SLAB = HELPER.createBlock("carmine_pavement_slab", () -> new SlabBlock(AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CARMINE_PAVEMENT_WALL = HELPER.createBlock("carmine_pavement_wall", () -> new WallBlock(AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CARMINE_PAVEMENT_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "carmine_pavement_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(CARMINE_PAVEMENT.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-	public static final RegistryObject<Block> FIRETHORN = HELPER.createBlock("firethorn", () -> new GiliaBlock(() -> MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> FIRETHORN = HELPER.createBlock("firethorn", () -> new DesertFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_FIRETHORN = HELPER.createBlockNoItem("potted_firethorn", () -> new FlowerPotBlock(FIRETHORN.get(), PropertyUtil.flowerPot()));
 
-	public static final RegistryObject<Block> FORSYTHIA = HELPER.createBlock("forsythia", () -> new GiliaBlock(() -> MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> FORSYTHIA = HELPER.createBlock("forsythia", () -> new DesertFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_FORSYTHIA = HELPER.createBlockNoItem("potted_forsythia", () -> new FlowerPotBlock(FORSYTHIA.get(), PropertyUtil.flowerPot()));
 
 	public static final RegistryObject<Block> DRAGON_FRUIT_CRATE = HELPER.createCompatBlock("quark", "dragon_fruit_crate", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_MAGENTA).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
