@@ -45,7 +45,8 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 				LAUREL_LEAVES.get(), LAUREL_LEAF_PILE.get(), LAUREL_LEAF_CARPET.get(),
 				DRY_LAUREL_LEAVES.get(), DRY_LAUREL_LEAF_PILE.get(), DRY_LAUREL_LEAF_CARPET.get(),
 				CURRANT_LEAVES.get(), CURRANT_LEAF_PILE.get(), CURRANT_LEAF_CARPET.get(),
-				PASSION_VINE.get(), PASSION_VINE_BUNDLE.get(), YUCCA_BUNDLE.get(), ROASTED_YUCCA_BUNDLE.get(), ALOE_BUNDLE.get()
+				PASSION_VINE.get(), PASSION_VINE_BUNDLE.get(),
+				YUCCA_BUNDLE.get(), ROASTED_YUCCA_BUNDLE.get(), ALOE_BUNDLE.get(), YUCCA_FLOWER.get(), TALL_YUCCA_FLOWER.get()
 		);
 
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(

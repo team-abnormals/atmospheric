@@ -237,9 +237,9 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROASTED_YUCCA_BUNDLE = HELPER.createBlock("roasted_yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.copy(Blocks.MELON).randomTicks()), CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> YUCCA_GATEAU = HELPER.createBlockNoItem("yucca_gateau", () -> new YuccaGateauBlock(Block.Properties.copy(Blocks.CAKE)));
-	public static final RegistryObject<Block> YUCCA_FLOWER = HELPER.createBlock("yucca_flower", () -> new YuccaFlowerBlock(AtmosphericMobEffects.PERSISTENCE::get, 15, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_FLOWER = HELPER.createBlock("yucca_flower", () -> new YuccaFlowerBlock(AtmosphericMobEffects.PERSISTENCE::get, 15, AtmosphericProperties.YUCCA_FLOWER), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_YUCCA_FLOWER = HELPER.createBlockNoItem("potted_yucca_flower", () -> new FlowerPotBlock(YUCCA_FLOWER.get(), PropertyUtil.flowerPot()));
-	public static final RegistryObject<Block> TALL_YUCCA_FLOWER = HELPER.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(Block.Properties.copy(Blocks.ROSE_BUSH)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> TALL_YUCCA_FLOWER = HELPER.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(AtmosphericProperties.YUCCA_FLOWER), CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> GILIA = HELPER.createBlock("gilia", () -> new DesertFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_GILIA = HELPER.createBlockNoItem("potted_gilia", () -> new FlowerPotBlock(GILIA.get(), PropertyUtil.flowerPot()));

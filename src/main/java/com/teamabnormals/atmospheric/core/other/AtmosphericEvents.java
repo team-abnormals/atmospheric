@@ -74,7 +74,7 @@ public class AtmosphericEvents {
 	public static void breakSpead(BreakSpeed event) {
 		if (event.getEntity().getMainHandItem().is(Tags.Items.SHEARS)) {
 			BlockState state = event.getState();
-			if (state.is(AtmosphericBlocks.PASSION_VINE_BUNDLE.get())) {
+			if (state.is(AtmosphericBlocks.PASSION_VINE_BUNDLE.get()) || state.is(AtmosphericBlocks.YUCCA_FLOWER.get()) || state.is(AtmosphericBlocks.TALL_YUCCA_FLOWER.get())) {
 				event.setNewSpeed(15.0F);
 			}
 			if (state.is(AtmosphericBlocks.CURRANT_STALK.get())) {
