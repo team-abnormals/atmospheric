@@ -38,7 +38,7 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> ALOE_GEL_BOTTLE = HELPER.createItem("aloe_gel_bottle", () -> new AloeGelBottleItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(AtmosphericFoods.ALOE_GEL).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
 
 	public static final RegistryObject<Item> CURRANT = HELPER.createItem("currant", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
-	public static final RegistryObject<Item> CURRANT_MUFFIN = HELPER.createItem("currant_muffin", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> CURRANT_MUFFIN = HELPER.createItem("currant_muffin", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT_MUFFIN).tab(CreativeModeTab.TAB_FOOD)));
 
 	public static final RegistryObject<Item> CARMINE_HUSK = HELPER.createItem("carmine_husk", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 	public static final RegistryObject<Item> COCHINEAL_BANNER_PATTERN = HELPER.createItem("cochineal_banner_pattern", () -> new BlueprintBannerPatternItem(AtmosphericBannerPatternTags.PATTERN_ITEM_COCHINEAL, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
@@ -83,17 +83,18 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> LARGE_GRIMWOOD_BOAT = HELPER.createItem("large_grimwood_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.LARGE_GRIMWOOD_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
 
 	public static final class AtmosphericFoods {
-		public static final FoodProperties PASSIONFRUIT = new FoodProperties.Builder().nutrition(1).saturationMod(0.0F).fast().alwaysEat().effect(() -> new MobEffectInstance(AtmosphericMobEffects.SPITTING.get(), 140, 0, false, false, false), 1.0F).build();
-		public static final FoodProperties SHIMMERING_PASSIONFRUIT = new FoodProperties.Builder().nutrition(3).saturationMod(0.0F).fast().alwaysEat().effect(() -> new MobEffectInstance(AtmosphericMobEffects.SPITTING.get(), 140, 1, false, false, false), 1.0F).build();
+		public static final FoodProperties PASSIONFRUIT = new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).fast().alwaysEat().effect(() -> new MobEffectInstance(AtmosphericMobEffects.SPITTING.get(), 140, 0, false, false, false), 1.0F).build();
+		public static final FoodProperties SHIMMERING_PASSIONFRUIT = new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).fast().alwaysEat().effect(() -> new MobEffectInstance(AtmosphericMobEffects.SPITTING.get(), 140, 1, false, false, false), 1.0F).build();
 		public static final FoodProperties PASSIONFRUIT_TART = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build();
-		public static final FoodProperties PASSIONFRUIT_SORBET = new FoodProperties.Builder().nutrition(15).saturationMod(0.5F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, false, true), 1.0F).build();
+		public static final FoodProperties PASSIONFRUIT_SORBET = new FoodProperties.Builder().nutrition(15).saturationMod(0.6F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, false, true), 1.0F).build();
 
 		public static final FoodProperties YUCCA_FRUIT = new FoodProperties.Builder().nutrition(1).saturationMod(0.3F).build();
-		public static final FoodProperties ROASTED_YUCCA_FRUIT = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).effect(() -> new MobEffectInstance(AtmosphericMobEffects.PERSISTENCE.get(), 560, 0, false, false, true), 1.0F).build();
+		public static final FoodProperties ROASTED_YUCCA_FRUIT = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(() -> new MobEffectInstance(AtmosphericMobEffects.PERSISTENCE.get(), 560, 0, false, false, true), 1.0F).build();
 
-		public static final FoodProperties CURRANT = new FoodProperties.Builder().nutrition(1).saturationMod(0.5F).build();
+		public static final FoodProperties CURRANT = new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).build();
+		public static final FoodProperties CURRANT_MUFFIN = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build();
 
 		public static final FoodProperties ALOE_LEAVES = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).alwaysEat().build();
-		public static final FoodProperties ALOE_GEL = new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).alwaysEat().build();
+		public static final FoodProperties ALOE_GEL = new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).alwaysEat().build();
 	}
 }
