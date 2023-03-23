@@ -17,7 +17,12 @@ import java.util.List;
 
 public class AtmosphericClientCompat {
 
-	public static void registerBlockColors() {
+	public static void registerCompat() {
+		registerBlockColors();
+		registerRenderLayers();
+	}
+
+	private static void registerBlockColors() {
 		BlockColors blockColors = Minecraft.getInstance().getBlockColors();
 		ItemColors itemColors = Minecraft.getInstance().getItemColors();
 
@@ -44,7 +49,7 @@ public class AtmosphericClientCompat {
 		DataUtil.registerBlockItemColor(itemColors, (color, items) -> FoliageColor.get(0.5D, 1.0D), foliageColors);
 	}
 
-	public static void registerRenderLayers() {
+	private static void registerRenderLayers() {
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ROSEWOOD_LADDER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ROSEWOOD_POST.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.STRIPPED_ROSEWOOD_POST.get(), RenderType.cutout());

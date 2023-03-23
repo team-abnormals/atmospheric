@@ -7,7 +7,7 @@ import net.minecraft.world.entity.npc.VillagerType;
 
 public class AtmosphericVillagers {
 
-	public static void setupVillagerTypes() {
+	public static void registerVillagerTypes() {
 		VillagerTrades.TRADES.isEmpty();
 		VillagerType dunes = VillagerType.register(Atmospheric.MOD_ID + ":dunes");
 

@@ -9,15 +9,11 @@ import com.teamabnormals.atmospheric.core.data.server.AtmosphericLootTableProvid
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericRecipeProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericStructureRepaletterProvider;
 import com.teamabnormals.atmospheric.core.data.server.modifiers.*;
-import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBiomeTagsProvider;
-import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBlockTagsProvider;
-import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericEntityTypeTagsProvider;
-import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericItemTagsProvider;
+import com.teamabnormals.atmospheric.core.data.server.tags.*;
 import com.teamabnormals.atmospheric.core.other.AtmosphericClientCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericModelLayers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericVillagers;
-import com.teamabnormals.atmospheric.core.data.server.tags.AtmosphericBannerPatternTagsProvider;
 import com.teamabnormals.atmospheric.core.registry.*;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericConfiguredFeatures;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericPlacedFeatures;
@@ -46,9 +42,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 @EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class Atmospheric {
 	public static final String MOD_ID = "atmospheric";
-	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> {
-		helper.putSubHelper(ForgeRegistries.BLOCKS, new AtmosphericBlockSubRegistryHelper(helper));
-	});
+	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> helper.putSubHelper(ForgeRegistries.BLOCKS, new AtmosphericBlockSubRegistryHelper(helper)));
 
 	public Atmospheric() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -83,7 +77,7 @@ public class Atmospheric {
 
 	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			AtmosphericVillagers.setupVillagerTypes();
+			AtmosphericVillagers.registerVillagerTypes();
 			AtmosphericCompat.registerCompat();
 			AtmosphericMobEffects.registerBrewingRecipes();
 		});
@@ -91,8 +85,7 @@ public class Atmospheric {
 
 	private void clientSetup(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
-			AtmosphericClientCompat.registerBlockColors();
-			AtmosphericClientCompat.registerRenderLayers();
+			AtmosphericClientCompat.registerCompat();
 		});
 	}
 
