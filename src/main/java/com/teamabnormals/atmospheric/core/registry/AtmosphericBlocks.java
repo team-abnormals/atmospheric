@@ -118,8 +118,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> POTTED_SCALDING_MONKEY_BRUSH = HELPER.createBlockNoItem("potted_scalding_monkey_brush", () -> new FlowerPotBlock(SCALDING_MONKEY_BRUSH.get(), PropertyUtil.flowerPot()));
 	public static final RegistryObject<Block> POTTED_WATER_HYACINTH = HELPER.createBlockNoItem("potted_water_hyacinth", () -> new FlowerPotBlock(WATER_HYACINTH.get(), PropertyUtil.flowerPot()));
 
-	public static final RegistryObject<Block> PASSIONFRUIT_CRATE = HELPER.createCompatBlock("quark", "passionfruit_crate", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> SHIMMERING_PASSIONFRUIT_CRATE = HELPER.createCompatBlock("quark", "shimmering_passionfruit_crate", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.GOLD).lightLevel((state) -> 7).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> PASSION_FRUIT_CRATE = HELPER.createCompatBlock("quark", "passion_fruit_crate", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> SHIMMERING_PASSION_FRUIT_CRATE = HELPER.createCompatBlock("quark", "shimmering_passion_fruit_crate", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.GOLD).lightLevel((state) -> 7).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -80,8 +80,8 @@
 	"block.atmospheric.water_hyacinth": "Aguapé",
   	"block.atmospheric.potted_water_hyacinth": "Aguapé envasado",
 
-	"block.atmospheric.passionfruit_crate": "Caixote de maracujás",
-	"block.atmospheric.shimmering_passionfruit_crate": "Caixote de maracujás cintilantes",
+	"block.atmospheric.passion_fruit_crate": "Caixote de maracujás",
+	"block.atmospheric.shimmering_passion_fruit_crate": "Caixote de maracujás cintilantes",
 	
 "_comment2": "START OF THE DUNES SECTION",
 
@@ -338,10 +338,10 @@
         "item.atmospheric.aspen_boat": "Bote de álamo",
         "item.atmospheric.grimwood_boat": "Bote de madeira-sombria",
 	
-	"item.atmospheric.passionfruit": "Maracujá",
-        "item.atmospheric.shimmering_passionfruit": "Maracujá cintilante",
-        "item.atmospheric.passionfruit_tart": "Tarte de maracujá",
-        "item.atmospheric.passionfruit_sorbet": "Sorbet de maracujá",
+	"item.atmospheric.passion_fruit": "Maracujá",
+        "item.atmospheric.shimmering_passion_fruit": "Maracujá cintilante",
+        "item.atmospheric.passion_fruit_tart": "Tarte de maracujá",
+        "item.atmospheric.passion_fruit_sorbet": "Sorbet de maracujá",
         "item.atmospheric.passion_vine_coil": "Rolo de trepadeira de maracujá",
 	
 	"item.atmospheric.yucca_fruit": "Fruta yucca",
@@ -374,10 +374,10 @@
 	
 	"biome.atmospheric.hot_springs": "Fontes termais",
 	
-	"entity.atmospheric.passionfruit_seed": "Semente de maracujá",
+	"entity.atmospheric.passion_fruit_seed": "Semente de maracujá",
 	
-        "death.attack.passionfruitSeed": "%1$s foi bombardeado(a) até a morte pelas sementes de %2$s",
-	"death.attack.shimmeringPassionfruitSeed": "%1$s foi bombardeado(a) até a morte pelas sementes de %2$s",
+        "death.attack.passionFruitSeed": "%1$s foi bombardeado(a) até a morte pelas sementes de %2$s",
+	"death.attack.shimmeringPassionFruitSeed": "%1$s foi bombardeado(a) até a morte pelas sementes de %2$s",
 	"death.attack.yuccaSapling": "%1$s foi fatiado(a) por uma muda de yucca",
 	"death.attack.yuccaSapling.player": "%1$s foi fatiado(a) por uma muda de yucca enquanto tentava fugir de %2$s",
 	"death.attack.yuccaFlower": "%1$s foi fatiado(a) por uma flor de yucca",
@@ -391,8 +391,8 @@
 	"death.attack.aloeLeaves": "%1$s foi espetado(a) por folhas de babosa",
 	"death.attack.aloeLeaves.player": "%1$s foi espetado(a) por folhas de babosa enquanto tentava fugir de %2$s",
 	
-        "advancements.husbandry.spit_passionfruit.title": "Cusparada",
-	"advancements.husbandry.spit_passionfruit.description": "Acerte um inimigo com sementes de maracujá",
+        "advancements.husbandry.spit_passion_fruit.title": "Cusparada",
+	"advancements.husbandry.spit_passion_fruit.description": "Acerte um inimigo com sementes de maracujá",
 	"advancements.husbandry.finish_gateau.title": "Que comam... bolo?",
 	"advancements.husbandry.finish_gateau.description": "Coma a última fatia de yucca gateau",
         "advancements.adventure.dunes_pricks.title": "Cortado e repicado",

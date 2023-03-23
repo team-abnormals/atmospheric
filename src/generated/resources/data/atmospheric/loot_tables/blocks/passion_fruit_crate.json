@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atmospheric:shimmering_passionfruit_crate"
+          "name": "atmospheric:passion_fruit_crate"
         }
       ],
       "rolls": 1.0

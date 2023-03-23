@@ -32,15 +32,15 @@
 	"block.atmospheric.vertical_rosewood_planks": "Standin'' Planks o'' Love",
 	"block.atmospheric.rosewood_ladder": "Climbin'' Planks o'' Love",
 	"block.atmospheric.rosewood_leaf_carpet": "Fallen Leaves o' Love",
-	"block.atmospheric.passionfruit_crate": "Crate o' Mouthfire",
-	"block.atmospheric.shimmering_passionfruit_crate": "Crate o'' Glimmerin'' Mouthfire",
+	"block.atmospheric.passion_fruit_crate": "Crate o' Mouthfire",
+	"block.atmospheric.shimmering_passion_fruit_crate": "Crate o'' Glimmerin'' Mouthfire",
 	
 	"item.atmospheric.rosewood_boat": "Vessel o' Love",
-	"item.atmospheric.passionfruit": "Mouthfire",
-	"item.atmospheric.passionfruit_seed": "Mouthfire Bullet",
-	"item.atmospheric.shimmering_passionfruit": "Glimmerin' Mouthfire",
-	"item.atmospheric.passionfruit_tart": "Tart o' Paradise",
-	"item.atmospheric.passionfruit_sorbet": "Rum Slush",
+	"item.atmospheric.passion_fruit": "Mouthfire",
+	"item.atmospheric.passion_fruit_seed": "Mouthfire Bullet",
+	"item.atmospheric.shimmering_passion_fruit": "Glimmerin' Mouthfire",
+	"item.atmospheric.passion_fruit_tart": "Tart o' Paradise",
+	"item.atmospheric.passion_fruit_sorbet": "Rum Slush",
 	"item.atmospheric.passion_vine_coil": "Coil o' Pretty Swingers",
 	
 	"effect.atmospheric.relief": "Paradise",
@@ -84,11 +84,11 @@
 	"biome.atmospheric.rosewood_plateau": "Flat o' Paradise",
 	"biome.atmospheric.rosewood_forest_plateau": "Flat o' Paradise Woods",
 	
-	"death.attack.passionfruitSeed": "Pirate %1$s brought a gun to a swordfight agai'st pirate %2$s",
-	"death.attack.shimmeringPassionfruitSeed": "Pirate %2$s lost a gunfight in paradise against pirate %1$s",
+	"death.attack.passionFruitSeed": "Pirate %1$s brought a gun to a swordfight agai'st pirate %2$s",
+	"death.attack.shimmeringPassionFruitSeed": "Pirate %2$s lost a gunfight in paradise against pirate %1$s",
 	
-	"advancements.husbandry.spit_passionfruit.title": "Fire in the hole!",
-	"advancements.husbandry.spit_passionfruit.description": "Blast a scurvy dog with yer mouthfire",
+	"advancements.husbandry.spit_passion_fruit.title": "Fire in the hole!",
+	"advancements.husbandry.spit_passion_fruit.description": "Blast a scurvy dog with yer mouthfire",
 
   "_comment2": "START OF THE SPRINGS SECTION",
 

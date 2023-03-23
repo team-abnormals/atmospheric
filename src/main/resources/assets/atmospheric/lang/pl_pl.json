@@ -80,8 +80,8 @@
     "block.atmospheric.water_hyacinth": "Wodny hiacynt",
     "block.atmospheric.potted_water_hyacinth": "Wodny hiacynt w doniczce",
   
-	"block.atmospheric.passionfruit_crate": "Skrzynka marakui",
-	"block.atmospheric.shimmering_passionfruit_crate": "Skrzynka lśniącej marakui",
+	"block.atmospheric.passion_fruit_crate": "Skrzynka marakui",
+	"block.atmospheric.shimmering_passion_fruit_crate": "Skrzynka lśniącej marakui",
   
 	"block.atmospheric.yucca_log": "Jukkowy pień",
 	"block.atmospheric.yucca_wood": "Jukkowe drewno",
@@ -341,10 +341,10 @@
 	"item.atmospheric.grimwood_chest_boat": "Ponuropniowa łódka ze skrzynią",
 	"item.atmospheric.large_grimwood_boat": "Wielka ponuropniowa łódka",
     
-    "item.atmospheric.passionfruit": "Marakuja",
-	"item.atmospheric.shimmering_passionfruit": "Lśniąca marakuja",
-	"item.atmospheric.passionfruit_tart": "Tarta z marakui",
-	"item.atmospheric.passionfruit_sorbet": "Sorbet z marakui",
+    "item.atmospheric.passion_fruit": "Marakuja",
+	"item.atmospheric.shimmering_passion_fruit": "Lśniąca marakuja",
+	"item.atmospheric.passion_fruit_tart": "Tarta z marakui",
+	"item.atmospheric.passion_fruit_sorbet": "Sorbet z marakui",
 	"item.atmospheric.passion_vine_coil": "Zwitka męczennicy",
     
     "item.atmospheric.yucca_fruit": "Owoc jukki",
@@ -371,10 +371,10 @@
 
 	"biome.atmospheric.hot_springs": "Gorące źródła",
 
-	"entity.atmospheric.passionfruit_seed": "Nasiono marakui",
+	"entity.atmospheric.passion_fruit_seed": "Nasiono marakui",
     
-    "death.attack.atmospheric.passionfruitSeed": "Gracz %1$s został zbombardowany nasionami przez %2$s",
-	"death.attack.atmospheric.shimmeringPassionfruitSeed": "Gracz %1$s został olśniewająco zbombardowany nasionami przez %2$s",
+    "death.attack.atmospheric.passionFruitSeed": "Gracz %1$s został zbombardowany nasionami przez %2$s",
+	"death.attack.atmospheric.shimmeringPassionFruitSeed": "Gracz %1$s został olśniewająco zbombardowany nasionami przez %2$s",
     "death.attack.atmospheric.yuccaSapling": "Gracz %1$s został pocięty przez sadzonkę jukki",
 	"death.attack.atmospheric.yuccaSapling.player": "Gracz %1$s został pocięty przez sadzonkę jukki podczas walki z %2$s",
 	"death.attack.atmospheric.yuccaFlower": "Gracz %1$s został pocięty przez kwiat jukki",
@@ -388,8 +388,8 @@
 	"death.attack.atmospheric.aloeLeaves": "Gracz %1$s został pokłuty przez liście aloesu",
 	"death.attack.atmospheric.aloeLeaves.player": "Gracz %1$s został pokłuty przez liście aloesu podczas walki z %2$s",
     
-    "advancements.atmospheric.husbandry.spit_passionfruit.title": "Strzały ostrzegawcze",
-	"advancements.atmospheric.husbandry.spit_passionfruit.description": "Traf we wroga plując nasionami marakui",
+    "advancements.atmospheric.husbandry.spit_passion_fruit.title": "Strzały ostrzegawcze",
+	"advancements.atmospheric.husbandry.spit_passion_fruit.description": "Traf we wroga plując nasionami marakui",
     "advancements.atmospheric.husbandry.finish_gateau.title": "Ostatni kawałek jest mój",
 	"advancements.atmospheric.husbandry.finish_gateau.description": "Zjedz ostatni kawałek jukkowego ciasta",
 	"advancements.atmospheric.adventure.dunes_pricks.title": "Cięta riposta",

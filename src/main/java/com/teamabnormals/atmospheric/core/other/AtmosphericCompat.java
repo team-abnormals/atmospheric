@@ -53,8 +53,8 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.PASSION_VINE_BUNDLE.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.WATER_HYACINTH.get(), 0.65F);
 
-		DataUtil.registerCompostable(AtmosphericItems.PASSIONFRUIT.get(), 0.65F);
-		DataUtil.registerCompostable(AtmosphericItems.PASSIONFRUIT_TART.get(), 0.85F);
+		DataUtil.registerCompostable(AtmosphericItems.PASSION_FRUIT.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericItems.PASSION_FRUIT_TART.get(), 0.85F);
 		DataUtil.registerCompostable(AtmosphericItems.YUCCA_FRUIT.get(), 0.65F);
 		DataUtil.registerCompostable(AtmosphericItems.ROASTED_YUCCA_FRUIT.get(), 0.65F);
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_BRANCH.get(), 0.65F);
@@ -110,7 +110,7 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_BUNDLE.get(), 0.85F);
 		DataUtil.registerCompostable(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get(), 0.85F);
 
-		DataUtil.registerCompostable(AtmosphericBlocks.PASSIONFRUIT_CRATE.get(), 1.0F);
+		DataUtil.registerCompostable(AtmosphericBlocks.PASSION_FRUIT_CRATE.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_CASK.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.ROASTED_YUCCA_CASK.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.BARREL_CACTUS_BATCH.get(), 1.0F);
@@ -122,8 +122,8 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.PASSION_VINE.get(), 15, 100);
 		DataUtil.registerFlammable(AtmosphericBlocks.PASSION_VINE_BUNDLE.get(), 60, 20);
 
-		DataUtil.registerFlammable(AtmosphericBlocks.PASSIONFRUIT_CRATE.get(), 5, 20);
-		DataUtil.registerFlammable(AtmosphericBlocks.SHIMMERING_PASSIONFRUIT_CRATE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.PASSION_FRUIT_CRATE.get(), 5, 20);
+		DataUtil.registerFlammable(AtmosphericBlocks.SHIMMERING_PASSION_FRUIT_CRATE.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.YUCCA_CASK.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.ROASTED_YUCCA_CASK.get(), 5, 20);
 

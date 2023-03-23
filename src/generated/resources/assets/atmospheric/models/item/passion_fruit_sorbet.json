@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "atmospheric:item/shimmering_passionfruit"
+    "layer0": "atmospheric:item/passion_fruit_sorbet"
   }
 }

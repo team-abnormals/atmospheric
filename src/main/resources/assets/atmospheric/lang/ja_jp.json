@@ -77,8 +77,8 @@
   "block.atmospheric.water_hyacinth": "ホテイアオイ",
   "block.atmospheric.potted_water_hyacinth": "植えられたホテイアオイ",
 
-  "block.atmospheric.passionfruit_crate": "クダモノトケイソウの木箱",
-  "block.atmospheric.shimmering_passionfruit_crate": "きらめくクダモノトケイソウの木箱",
+  "block.atmospheric.passion_fruit_crate": "クダモノトケイソウの木箱",
+  "block.atmospheric.shimmering_passion_fruit_crate": "きらめくクダモノトケイソウの木箱",
 
   "block.atmospheric.yucca_log": "ユッカの原木",
   "block.atmospheric.yucca_wood": "ユッカの木",
@@ -316,10 +316,10 @@
   "item.atmospheric.aspen_boat": "ヤマナラシのボート",
   "item.atmospheric.grimwood_boat": "グリムウッドのボート",
 
-  "item.atmospheric.passionfruit": "クダモノトケイソウ",
-  "item.atmospheric.shimmering_passionfruit": "かがやくクダモノトケイソウ",
-  "item.atmospheric.passionfruit_tart": "クダモノトケイソウのタルト",
-  "item.atmospheric.passionfruit_sorbet": "クダモノトケイソウのシャーベット",
+  "item.atmospheric.passion_fruit": "クダモノトケイソウ",
+  "item.atmospheric.shimmering_passion_fruit": "かがやくクダモノトケイソウ",
+  "item.atmospheric.passion_fruit_tart": "クダモノトケイソウのタルト",
+  "item.atmospheric.passion_fruit_sorbet": "クダモノトケイソウのシャーベット",
   "item.atmospheric.passion_vine_coil": "トケイソウのツタのコイル",
 
   "item.atmospheric.yucca_fruit": "ユッカフルーツ",
@@ -356,10 +356,10 @@
 
   "biome.atmospheric.hot_springs": "温泉",
 
-  "entity.atmospheric.passionfruit_seed": "クダモノトケイソウの種",
+  "entity.atmospheric.passion_fruit_seed": "クダモノトケイソウの種",
 
-  "death.attack.atmospheric.passionfruitSeed": "%1$sは%2$sの種の弾幕の犠牲になった",
-  "death.attack.atmospheric.shimmeringPassionfruitSeed": "%1$sは%2$sの種の激しい弾幕の犠牲になった",
+  "death.attack.atmospheric.passionFruitSeed": "%1$sは%2$sの種の弾幕の犠牲になった",
+  "death.attack.atmospheric.shimmeringPassionFruitSeed": "%1$sは%2$sの種の激しい弾幕の犠牲になった",
   "death.attack.atmospheric.yuccaSapling": "%1$sはユッカの苗木に切られた",
   "death.attack.atmospheric.yuccaSapling.player": "%1$sは%2$sから逃げようとしてユッカの苗木に切られた",
   "death.attack.atmospheric.yuccaFlower": "%1$sはユッカの花に切られた",
@@ -373,8 +373,8 @@
   "death.attack.atmospheric.aloeLeaves": "%1$sはアロエの葉に刺された",
   "death.attack.atmospheric.aloeLeaves.player": "%1$sは%2$sから逃げようとしてアロエの葉に刺された",
 
-  "advancements.husbandry.spit_passionfruit.title": "吐き出す！",
-  "advancements.husbandry.spit_passionfruit.description": "クダモノトケイソウを食べて、クダモノトケイソウの種を的に当てる",
+  "advancements.husbandry.spit_passion_fruit.title": "吐き出す！",
+  "advancements.husbandry.spit_passion_fruit.description": "クダモノトケイソウを食べて、クダモノトケイソウの種を的に当てる",
   "advancements.husbandry.finish_gateau.title": "ケーキ(?)を食べればいいじゃない",
   "advancements.husbandry.finish_gateau.description": "ユッカのケーキの最後の切れ端を食べる",
   "advancements.adventure.dunes_pricks.title": "細かく分けられた",

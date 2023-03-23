@@ -31,9 +31,9 @@ public class AtmosphericAdvancementProvider extends AdvancementProvider {
 				.addCriterion("barrel_cactus", AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.createInstance())
 				.save(consumer, Atmospheric.MOD_ID + ":adventure/dunes_pricks");
 
-		createAdvancement("spit_passionfruit", "husbandry", new ResourceLocation("husbandry/plant_seed"), AtmosphericItems.PASSIONFRUIT.get(), FrameType.TASK, true, true, false)
-				.addCriterion("spit_passionfruit", AtmosphericCriteriaTriggers.SPIT_PASSIONFRUIT.createInstance())
-				.save(consumer, Atmospheric.MOD_ID + ":husbandry/spit_passionfruit");
+		createAdvancement("spit_passion_fruit", "husbandry", new ResourceLocation("husbandry/plant_seed"), AtmosphericItems.PASSION_FRUIT.get(), FrameType.TASK, true, true, false)
+				.addCriterion("spit_passion_fruit", AtmosphericCriteriaTriggers.SPIT_PASSION_FRUIT.createInstance())
+				.save(consumer, Atmospheric.MOD_ID + ":husbandry/spit_passion_fruit");
 
 		createAdvancement("finish_gateau", "husbandry", new ResourceLocation("husbandry/plant_seed"), AtmosphericBlocks.YUCCA_GATEAU.get(), FrameType.TASK, true, true, false)
 				.addCriterion("finish_gateau", AtmosphericCriteriaTriggers.FINISH_GATEAU.createInstance())

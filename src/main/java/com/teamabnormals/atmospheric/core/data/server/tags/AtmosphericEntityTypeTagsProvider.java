@@ -15,6 +15,6 @@ public class AtmosphericEntityTypeTagsProvider extends EntityTypeTagsProvider {
 
 	@Override
 	public void addTags() {
-		this.tag(EntityTypeTags.IMPACT_PROJECTILES).add(AtmosphericEntityTypes.PASSIONFRUIT_SEED.get());
+		this.tag(EntityTypeTags.IMPACT_PROJECTILES).add(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get());
 	}
 }

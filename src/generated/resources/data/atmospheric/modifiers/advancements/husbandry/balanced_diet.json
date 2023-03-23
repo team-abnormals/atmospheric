@@ -114,31 +114,31 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "atmospheric:passionfruit": {
+          "atmospheric:passion_fruit": {
             "conditions": {
               "item": {
                 "items": [
-                  "atmospheric:passionfruit"
+                  "atmospheric:passion_fruit"
                 ]
               }
             },
             "trigger": "minecraft:consume_item"
           },
-          "atmospheric:passionfruit_sorbet": {
+          "atmospheric:passion_fruit_sorbet": {
             "conditions": {
               "item": {
                 "items": [
-                  "atmospheric:passionfruit_sorbet"
+                  "atmospheric:passion_fruit_sorbet"
                 ]
               }
             },
             "trigger": "minecraft:consume_item"
           },
-          "atmospheric:passionfruit_tart": {
+          "atmospheric:passion_fruit_tart": {
             "conditions": {
               "item": {
                 "items": [
-                  "atmospheric:passionfruit_tart"
+                  "atmospheric:passion_fruit_tart"
                 ]
               }
             },
@@ -154,11 +154,11 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "atmospheric:shimmering_passionfruit": {
+          "atmospheric:shimmering_passion_fruit": {
             "conditions": {
               "item": {
                 "items": [
-                  "atmospheric:shimmering_passionfruit"
+                  "atmospheric:shimmering_passion_fruit"
                 ]
               }
             },
@@ -177,16 +177,16 @@
         },
         "requirements": [
           [
-            "atmospheric:passionfruit"
+            "atmospheric:passion_fruit"
           ],
           [
-            "atmospheric:shimmering_passionfruit"
+            "atmospheric:shimmering_passion_fruit"
           ],
           [
-            "atmospheric:passionfruit_tart"
+            "atmospheric:passion_fruit_tart"
           ],
           [
-            "atmospheric:passionfruit_sorbet"
+            "atmospheric:passion_fruit_sorbet"
           ],
           [
             "atmospheric:yucca_fruit"

@@ -77,8 +77,8 @@
   "block.atmospheric.water_hyacinth": "Giacinto d'acqua",
   "block.atmospheric.potted_water_hyacinth": "Vaso con giacinto d'acqua",
 
-  "block.atmospheric.passionfruit_crate": "Cassa di frutto della passione",
-  "block.atmospheric.shimmering_passionfruit_crate": "Cassa di frutto della passione scintillante",
+  "block.atmospheric.passion_fruit_crate": "Cassa di frutto della passione",
+  "block.atmospheric.shimmering_passion_fruit_crate": "Cassa di frutto della passione scintillante",
 
   "block.atmospheric.yucca_log": "Tronco di yucca",
   "block.atmospheric.yucca_wood": "Legno di yucca",
@@ -316,10 +316,10 @@
   "item.atmospheric.aspen_boat": "Barca di aspen",
   "item.atmospheric.grimwood_boat": "Barca cupa",
 
-  "item.atmospheric.passionfruit": "Frutto della passione",
-  "item.atmospheric.shimmering_passionfruit": "Frutto della passione",
-  "item.atmospheric.passionfruit_tart": "Crostata di frutto della passione",
-  "item.atmospheric.passionfruit_sorbet": "Sorbetto di frutto della passione",
+  "item.atmospheric.passion_fruit": "Frutto della passione",
+  "item.atmospheric.shimmering_passion_fruit": "Frutto della passione",
+  "item.atmospheric.passion_fruit_tart": "Crostata di frutto della passione",
+  "item.atmospheric.passion_fruit_sorbet": "Sorbetto di frutto della passione",
   "item.atmospheric.passion_vine_coil": "Passiflora in bobina",
 
   "item.atmospheric.yucca_fruit": "Frutto di yucca",
@@ -352,10 +352,10 @@
 
   "biome.atmospheric.hot_springs": "Sorgenti termali",
 
-  "entity.atmospheric.passionfruit_seed": "Seme del frutto della passione",
+  "entity.atmospheric.passion_fruit_seed": "Seme del frutto della passione",
 
-  "death.attack.atmospheric.passionfruitSeed": "%1$s è stato/a bombardato/a a morte dai semi di %2$s",
-  "death.attack.atmospheric.shimmeringPassionfruitSeed": "%1$s è stato/a bombardato/a passionatamente a morte dai semi di %2$s",
+  "death.attack.atmospheric.passionFruitSeed": "%1$s è stato/a bombardato/a a morte dai semi di %2$s",
+  "death.attack.atmospheric.shimmeringPassionFruitSeed": "%1$s è stato/a bombardato/a passionatamente a morte dai semi di %2$s",
   "death.attack.atmospheric.yuccaSapling": "%1$s è stato/a affettato/a da un arboscello di yucca",
   "death.attack.atmospheric.yuccaSapling.player": "%1$s è stato/a affettato/a da un arboscello di yucca fuggendo da %2$s",
   "death.attack.atmospheric.yuccaFlower": "%1$s è stato/a affettato/a da un fiore di yucca",
@@ -369,8 +369,8 @@
   "death.attack.atmospheric.aloeLeaves": "%1$s è morto/a punzecchiato/a da foglie di aloe",
   "death.attack.atmospheric.aloeLeaves.player": "%1$s è finito/a contro delle foglie di aloe fuggendo da %2$s",
 
-  "advancements.atmospheric.husbandry.spit_passionfruit.title": "Spit-take",
-  "advancements.atmospheric.husbandry.spit_passionfruit.description": "Colpisci un nemico con dei semi del frutto della passione",
+  "advancements.atmospheric.husbandry.spit_passion_fruit.title": "Spit-take",
+  "advancements.atmospheric.husbandry.spit_passion_fruit.description": "Colpisci un nemico con dei semi del frutto della passione",
   "advancements.atmospheric.husbandry.finish_gateau.title": "Che mangino... torte?",
   "advancements.atmospheric.husbandry.finish_gateau.description": "Mangia l'ultima fetta di una torta di yucca",
   "advancements.atmospheric.adventure.dunes_pricks.title": "Tagliato a cubetti",

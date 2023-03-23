@@ -34,7 +34,7 @@ public class AtmosphericItemModelProvider extends ItemModelProvider {
 		this.generatedItem(AtmosphericBlocks.YUCCA_GATEAU.get());
 		this.handheldItem(AtmosphericBlocks.YUCCA_BRANCH.get());
 		this.generatedItem(
-				PASSIONFRUIT.get(), SHIMMERING_PASSIONFRUIT.get(), PASSIONFRUIT_SORBET.get(), PASSIONFRUIT_TART.get(), PASSION_VINE_COIL.get(),
+				PASSION_FRUIT.get(), SHIMMERING_PASSION_FRUIT.get(), PASSION_FRUIT_SORBET.get(), PASSION_FRUIT_TART.get(), PASSION_VINE_COIL.get(),
 				ALOE_GEL_BOTTLE.get(), ALOE_KERNELS.get(), ALOE_LEAVES.get(), YELLOW_BLOSSOMS.get(), YUCCA_FRUIT.get(), ROASTED_YUCCA_FRUIT.get(),
 				CURRANT.get(), CURRANT_MUFFIN.get(),
 				CARMINE_HUSK.get(), COCHINEAL_BANNER_PATTERN.get(), AtmosphericBlocks.DRAGON_ROOTS.get().asItem(), DRAGON_FRUIT.get(), GOLDEN_DRAGON_FRUIT.get(), ENDER_DRAGON_FRUIT.get(),

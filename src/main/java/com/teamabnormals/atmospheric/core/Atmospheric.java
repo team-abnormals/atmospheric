@@ -1,7 +1,7 @@
 package com.teamabnormals.atmospheric.core;
 
-import com.teamabnormals.atmospheric.client.renderer.entity.PassionfruitSeedRenderer;
-import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionfruitSeedModel;
+import com.teamabnormals.atmospheric.client.renderer.entity.PassionFruitSeedRenderer;
+import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionFruitSeedModel;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericBlockStateProvider;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericItemModelProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
@@ -117,12 +117,12 @@ public class Atmospheric {
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		event.registerLayerDefinition(AtmosphericModelLayers.PASSIONFRUIT_SEED, PassionfruitSeedModel::createBodyLayer);
+		event.registerLayerDefinition(AtmosphericModelLayers.PASSION_FRUIT_SEED, PassionFruitSeedModel::createBodyLayer);
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-		event.registerEntityRenderer(AtmosphericEntityTypes.PASSIONFRUIT_SEED.get(), PassionfruitSeedRenderer::new);
+		event.registerEntityRenderer(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get(), PassionFruitSeedRenderer::new);
 	}
 
 	public static ResourceLocation location(String path) {

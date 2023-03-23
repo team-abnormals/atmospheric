@@ -12,10 +12,10 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class PassionfruitSeedModel<T extends Entity> extends HierarchicalModel<T> {
+public class PassionFruitSeedModel<T extends Entity> extends HierarchicalModel<T> {
 	private final ModelPart root;
 
-	public PassionfruitSeedModel(ModelPart modelPart) {
+	public PassionFruitSeedModel(ModelPart modelPart) {
 		this.root = modelPart;
 	}
 

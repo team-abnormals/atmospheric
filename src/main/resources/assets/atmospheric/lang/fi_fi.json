@@ -77,8 +77,8 @@
   "block.atmospheric.water_hyacinth": "Vesihyasintti",
   "block.atmospheric.potted_water_hyacinth": "Istutettu vesihyasintti",
 
-  "block.atmospheric.passionfruit_crate": "Laatikko passionhedelmiä",
-  "block.atmospheric.shimmering_passionfruit_crate": "Laatikko kimaltelevia passionhedelmiä",
+  "block.atmospheric.passion_fruit_crate": "Laatikko passionhedelmiä",
+  "block.atmospheric.shimmering_passion_fruit_crate": "Laatikko kimaltelevia passionhedelmiä",
   
   "block.atmospheric.yucca_log": "Jukkahalko",
   "block.atmospheric.yucca_wood": "Jukkapuu",
@@ -316,10 +316,10 @@
   "item.atmospheric.aspen_boat": "Haapavene",
   "item.atmospheric.grimwood_boat": "Synkkäpuuvene",
   
-  "item.atmospheric.passionfruit": "Passionhedelmä",
-  "item.atmospheric.shimmering_passionfruit": "Kimaltelevia passionhedelmä",
-  "item.atmospheric.passionfruit_tart": "Passionhedelmätorttu",
-  "item.atmospheric.passionfruit_sorbet": "Passionhedelmäsorbetti",
+  "item.atmospheric.passion_fruit": "Passionhedelmä",
+  "item.atmospheric.shimmering_passion_fruit": "Kimaltelevia passionhedelmä",
+  "item.atmospheric.passion_fruit_tart": "Passionhedelmätorttu",
+  "item.atmospheric.passion_fruit_sorbet": "Passionhedelmäsorbetti",
   "item.atmospheric.passion_vine_coil": "Passionköynnösvyyhti",
   
   "item.atmospheric.yucca_fruit": "Jukan hedelmä",
@@ -350,10 +350,10 @@
 
   "biome.atmospheric.hot_springs": "Kuumat lähteet",
 
-  "entity.atmospheric.passionfruit_seed": "Passionhedelmän siemen",
+  "entity.atmospheric.passion_fruit_seed": "Passionhedelmän siemen",
 
-  "death.attack.passionfruitSeed": "%1$s kuoli pelaajan %2$s's siementulitukseen",
-  "death.attack.shimmeringPassionfruitSeed": "%1$s kuoli pelaajan %2$s's siementulitukseen",
+  "death.attack.passionFruitSeed": "%1$s kuoli pelaajan %2$s's siementulitukseen",
+  "death.attack.shimmeringPassionFruitSeed": "%1$s kuoli pelaajan %2$s's siementulitukseen",
   "death.attack.yuccaSapling": "Jukan taimi viipaloi pelaajan %1$s kuoliaaksi",
   "death.attack.yuccaSapling.player": "Jukan taimi viipaloi pelaajan %1$s kuoliaaksi tämän paetessa olentoa %2$s",
   "death.attack.yuccaFlower": "Jukan kukka viipaloi pelaajan %1$s kuoliaaksi",
@@ -367,8 +367,8 @@
   "death.attack.aloeLeaves": "Aaloen lehdet pistelivät pelaajan %1$s kuoliaaksi",
   "death.attack.aloeLeaves.player": "Aaloen lehdet pistelivät pelaajan %1$s kuoliaaksi tämän paetessa olentoa %2$s",
 
-  "advancements.husbandry.spit_passionfruit.title": "Sylkytuli",
-  "advancements.husbandry.spit_passionfruit.description": "Sylje passionhedelmän siemeniä vihollista päin",
+  "advancements.husbandry.spit_passion_fruit.title": "Sylkytuli",
+  "advancements.husbandry.spit_passion_fruit.description": "Sylje passionhedelmän siemeniä vihollista päin",
   "advancements.husbandry.finish_gateau.title": "Käskekää heidän syödä... kakkuja?",
   "advancements.husbandry.finish_gateau.description": "Syö jukkaleivoksen viimeinen viipale",
   "advancements.adventure.dunes_pricks.title": "Viipaloitu",

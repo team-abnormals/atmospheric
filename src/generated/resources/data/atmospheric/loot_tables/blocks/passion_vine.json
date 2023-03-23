@@ -20,7 +20,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atmospheric:passionfruit"
+          "name": "atmospheric:passion_fruit"
         }
       ],
       "functions": [

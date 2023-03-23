@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "atmospheric:shimmering_passionfruit_crate"
+      "item": "atmospheric:passion_fruit_crate"
     }
   ],
   "result": {
-    "item": "atmospheric:shimmering_passionfruit",
+    "item": "atmospheric:passion_fruit",
     "count": 9
   },
   "conditions": [
     {
       "type": "blueprint:quark_flag",
-       "flag": "golden_apple_crate"
+       "flag": "apple_crate"
     }
   ]
 }

@@ -15,8 +15,8 @@ public class AtmosphericDamageSources {
 	public static final DamageSource BARREL_CACTUS = createDamageSource("barrelCactus");
 	public static final DamageSource ALOE_LEAVES = createDamageSource("aloeLeaves");
 
-	public static DamageSource causePassionfruitSeedDamage(Entity source, @Nullable Entity indirectEntityIn) {
-		return (new IndirectEntityDamageSource(Atmospheric.MOD_ID + ".passionfruitSeed", source, indirectEntityIn)).setProjectile();
+	public static DamageSource causePassionFruitSeedDamage(Entity source, @Nullable Entity indirectEntityIn) {
+		return (new IndirectEntityDamageSource(Atmospheric.MOD_ID + ".passionFruitSeed", source, indirectEntityIn)).setProjectile();
 	}
 
 	private static DamageSource createDamageSource(String name) {

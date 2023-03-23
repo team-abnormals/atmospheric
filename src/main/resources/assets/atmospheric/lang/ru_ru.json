@@ -72,15 +72,15 @@
   "block.atmospheric.water_hyacinth": "Водяной гиацинт",
   "block.atmospheric.potted_water_hyacinth": "Водяной гиацинт в горшке",
   
-    "block.atmospheric.passionfruit_crate": "Ящик маракуйи",
-	"block.atmospheric.shimmering_passionfruit_crate": "Ящик сияющей маракуйи",
+    "block.atmospheric.passion_fruit_crate": "Ящик маракуйи",
+	"block.atmospheric.shimmering_passion_fruit_crate": "Ящик сияющей маракуйи",
 	
 	"item.atmospheric.rosewood_boat": "Палисандровая лодка",
-	"item.atmospheric.passionfruit": "Маракуйя",
-	"item.atmospheric.passionfruit_seed": "Семя маракуйи",
-	"item.atmospheric.shimmering_passionfruit": "Сияющая маракуйя",
-	"item.atmospheric.passionfruit_tart": "Пирог из маракуйи",
-	"item.atmospheric.passionfruit_sorbet": "Шербет из маракуйи",
+	"item.atmospheric.passion_fruit": "Маракуйя",
+	"item.atmospheric.passion_fruit_seed": "Семя маракуйи",
+	"item.atmospheric.shimmering_passion_fruit": "Сияющая маракуйя",
+	"item.atmospheric.passion_fruit_tart": "Пирог из маракуйи",
+	"item.atmospheric.passion_fruit_sorbet": "Шербет из маракуйи",
 	"item.atmospheric.passion_vine_coil": "Пассифлоровый виток",
 	"item.atmospheric.yellow_blossoms": "Жёлтые цветы",
 	
@@ -127,13 +127,13 @@
 	"biome.atmospheric.rainforest_basin": "Водоём тропического леса",
 	"biome.atmospheric.sparse_rainforest_basin": "Редкий водоём тропического леса",
 	
-	"entity.atmospheric.passionfruit_seed": "Маракуйевое семечко",
+	"entity.atmospheric.passion_fruit_seed": "Маракуйевое семечко",
 	
-	"death.attack.passionfruitSeed": "%1$s закидан семенами %2$s",
-	"death.attack.shimmeringPassionfruitSeed": "%1$s яростно закидан семенами %2$s",
+	"death.attack.passionFruitSeed": "%1$s закидан семенами %2$s",
+	"death.attack.shimmeringPassionFruitSeed": "%1$s яростно закидан семенами %2$s",
 	
-	"advancements.husbandry.spit_passionfruit.title": "Маракуйевый орёл",
-	"advancements.husbandry.spit_passionfruit.description": "Нанесите урон врагу семенами маракуйи",
+	"advancements.husbandry.spit_passion_fruit.title": "Маракуйевый орёл",
+	"advancements.husbandry.spit_passion_fruit.description": "Нанесите урон врагу семенами маракуйи",
 
   "_comment2": "START OF THE SPRINGS SECTION",
 

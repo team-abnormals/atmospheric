@@ -15,24 +15,24 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.network.PlayMessages;
 
-public class PassionfruitSeed extends ThrowableProjectile {
+public class PassionFruitSeed extends ThrowableProjectile {
 	private int amplifier = 0;
 
-	public PassionfruitSeed(EntityType<? extends PassionfruitSeed> type, Level worldIn) {
+	public PassionFruitSeed(EntityType<? extends PassionFruitSeed> type, Level worldIn) {
 		super(type, worldIn);
 	}
 
-	public PassionfruitSeed(PlayMessages.SpawnEntity spawnEntity, Level world) {
-		this(AtmosphericEntityTypes.PASSIONFRUIT_SEED.get(), world);
+	public PassionFruitSeed(PlayMessages.SpawnEntity spawnEntity, Level world) {
+		this(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get(), world);
 	}
 
-	public PassionfruitSeed(Level worldIn, LivingEntity throwerIn, int amplifier) {
-		super(AtmosphericEntityTypes.PASSIONFRUIT_SEED.get(), throwerIn, worldIn);
+	public PassionFruitSeed(Level worldIn, LivingEntity throwerIn, int amplifier) {
+		super(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get(), throwerIn, worldIn);
 		this.amplifier = amplifier;
 	}
 
-	public PassionfruitSeed(Level worldIn, double x, double y, double z, int amplifier) {
-		super(AtmosphericEntityTypes.PASSIONFRUIT_SEED.get(), x, y, z, worldIn);
+	public PassionFruitSeed(Level worldIn, double x, double y, double z, int amplifier) {
+		super(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get(), x, y, z, worldIn);
 		this.amplifier = amplifier;
 	}
 
@@ -41,10 +41,10 @@ public class PassionfruitSeed extends ThrowableProjectile {
 		super.onHit(result);
 		if (result.getType() == HitResult.Type.ENTITY) {
 			Entity entity = ((EntityHitResult) result).getEntity();
-			entity.hurt(AtmosphericDamageSources.causePassionfruitSeedDamage(this, this.getOwner()), 0.5F + amplifier);
+			entity.hurt(AtmosphericDamageSources.causePassionFruitSeedDamage(this, this.getOwner()), 0.5F + amplifier);
 			if (this.getOwner() instanceof ServerPlayer serverplayerentity) {
 				if (!entity.getCommandSenderWorld().isClientSide()) {
-					AtmosphericCriteriaTriggers.SPIT_PASSIONFRUIT.trigger(serverplayerentity);
+					AtmosphericCriteriaTriggers.SPIT_PASSION_FRUIT.trigger(serverplayerentity);
 				}
 			}
 		}

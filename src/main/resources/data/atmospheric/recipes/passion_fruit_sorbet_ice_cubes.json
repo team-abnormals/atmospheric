@@ -5,7 +5,7 @@
       "item": "minecraft:bowl"
     },
     {
-      "tag": "forge:fruits/passionfruit"
+      "tag": "forge:fruits/passion_fruit"
     },
     {
       "item": "neapolitan:ice_cubes"
@@ -15,7 +15,7 @@
     }
   ],
   "result": {
-    "item": "atmospheric:passionfruit_sorbet"
+    "item": "atmospheric:passion_fruit_sorbet"
   },
   "conditions": [
     {

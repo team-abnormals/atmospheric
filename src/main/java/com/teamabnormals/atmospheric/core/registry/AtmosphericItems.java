@@ -20,10 +20,10 @@ import net.minecraftforge.registries.RegistryObject;
 public class AtmosphericItems {
 	public static final ItemSubRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER.getItemSubHelper();
 
-	public static final RegistryObject<Item> PASSIONFRUIT = HELPER.createItem("passionfruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT).tab(CreativeModeTab.TAB_FOOD)));
-	public static final RegistryObject<Item> SHIMMERING_PASSIONFRUIT = HELPER.createItem("shimmering_passionfruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.SHIMMERING_PASSIONFRUIT).tab(CreativeModeTab.TAB_FOOD)));
-	public static final RegistryObject<Item> PASSIONFRUIT_TART = HELPER.createItem("passionfruit_tart", () -> new Item(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT_TART).tab(CreativeModeTab.TAB_FOOD)));
-	public static final RegistryObject<Item> PASSIONFRUIT_SORBET = HELPER.createItem("passionfruit_sorbet", () -> new BowlFoodItem(new Item.Properties().food(AtmosphericFoods.PASSIONFRUIT_SORBET).stacksTo(1).craftRemainder(Items.BOWL).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> PASSION_FRUIT = HELPER.createItem("passion_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.PASSION_FRUIT).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> SHIMMERING_PASSION_FRUIT = HELPER.createItem("shimmering_passion_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.SHIMMERING_PASSION_FRUIT).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> PASSION_FRUIT_TART = HELPER.createItem("passion_fruit_tart", () -> new Item(new Item.Properties().food(AtmosphericFoods.PASSION_FRUIT_TART).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> PASSION_FRUIT_SORBET = HELPER.createItem("passion_fruit_sorbet", () -> new BowlFoodItem(new Item.Properties().food(AtmosphericFoods.PASSION_FRUIT_SORBET).stacksTo(1).craftRemainder(Items.BOWL).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> PASSION_VINE_COIL = HELPER.createItem("passion_vine_coil", () -> new PassionVineCoilItem(new Item.Properties().stacksTo(16).tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> WATER_HYACINTH = HELPER.createItem("water_hyacinth", () -> new WaterHyacinthItem(new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 
@@ -82,10 +82,10 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> LARGE_GRIMWOOD_BOAT = HELPER.createItem("large_grimwood_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.LARGE_GRIMWOOD_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
 
 	public static final class AtmosphericFoods {
-		public static final FoodProperties PASSIONFRUIT = new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).fast().alwaysEat().effect(() -> new MobEffectInstance(AtmosphericMobEffects.SPITTING.get(), 140, 0, false, false, false), 1.0F).build();
-		public static final FoodProperties SHIMMERING_PASSIONFRUIT = new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).fast().alwaysEat().effect(() -> new MobEffectInstance(AtmosphericMobEffects.SPITTING.get(), 140, 1, false, false, false), 1.0F).build();
-		public static final FoodProperties PASSIONFRUIT_TART = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build();
-		public static final FoodProperties PASSIONFRUIT_SORBET = new FoodProperties.Builder().nutrition(15).saturationMod(0.6F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, false, true), 1.0F).build();
+		public static final FoodProperties PASSION_FRUIT = new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).fast().alwaysEat().effect(() -> new MobEffectInstance(AtmosphericMobEffects.SPITTING.get(), 140, 0, false, false, false), 1.0F).build();
+		public static final FoodProperties SHIMMERING_PASSION_FRUIT = new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).fast().alwaysEat().effect(() -> new MobEffectInstance(AtmosphericMobEffects.SPITTING.get(), 140, 1, false, false, false), 1.0F).build();
+		public static final FoodProperties PASSION_FRUIT_TART = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build();
+		public static final FoodProperties PASSION_FRUIT_SORBET = new FoodProperties.Builder().nutrition(15).saturationMod(0.6F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, false, true), 1.0F).build();
 
 		public static final FoodProperties YUCCA_FRUIT = new FoodProperties.Builder().nutrition(1).saturationMod(0.3F).build();
 		public static final FoodProperties ROASTED_YUCCA_FRUIT = new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).effect(() -> new MobEffectInstance(AtmosphericMobEffects.PERSISTENCE.get(), 560, 0, false, false, true), 1.0F).build();

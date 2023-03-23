@@ -80,8 +80,8 @@
   "block.atmospheric.water_hyacinth": "Водяний гіацинт",
   "block.atmospheric.potted_water_hyacinth": "Водяний гіацинт в горщику",
   
-  "block.atmospheric.passionfruit_crate": "Ящик маракуї",
-  "block.atmospheric.shimmering_passionfruit_crate": "Ящик блискучої маракуї",
+  "block.atmospheric.passion_fruit_crate": "Ящик маракуї",
+  "block.atmospheric.shimmering_passion_fruit_crate": "Ящик блискучої маракуї",
 
   "block.atmospheric.yucca_log": "Юкова колода",
   "block.atmospheric.yucca_wood": "Юкова деревина",
@@ -341,10 +341,10 @@
   "item.atmospheric.grimwood_chest_boat": "Зловісний човен зі скринею",
   "item.atmospheric.large_grimwood_boat": "Великий зловісний човен",
 
-  "item.atmospheric.passionfruit": "Маракуя",
-  "item.atmospheric.shimmering_passionfruit": "Блискуча маракуя",
-  "item.atmospheric.passionfruit_tart": "Пиріг із маракуї",
-  "item.atmospheric.passionfruit_sorbet": "Шербет із маракуї",
+  "item.atmospheric.passion_fruit": "Маракуя",
+  "item.atmospheric.shimmering_passion_fruit": "Блискуча маракуя",
+  "item.atmospheric.passion_fruit_tart": "Пиріг із маракуї",
+  "item.atmospheric.passion_fruit_sorbet": "Шербет із маракуї",
   "item.atmospheric.passion_vine_coil": "Пасифлорова котушка",
 
   "item.atmospheric.yucca_fruit": "Плід юки",
@@ -371,10 +371,10 @@
 
   "biome.atmospheric.hot_springs": "Гарячі джерела",
  
-  "entity.atmospheric.passionfruit_seed": "Насіння маракуйї",
+  "entity.atmospheric.passion_fruit_seed": "Насіння маракуйї",
 
-  "death.attack.atmospheric.passionfruitSeed": "%1$s смертельно запльований насінням %2$s",
-  "death.attack.atmospheric.shimmeringPassionfruitSeed": "%1$s смертельно запльований насінням %2$s",
+  "death.attack.atmospheric.passionFruitSeed": "%1$s смертельно запльований насінням %2$s",
+  "death.attack.atmospheric.shimmeringPassionFruitSeed": "%1$s смертельно запльований насінням %2$s",
   "death.attack.atmospheric.yuccaSapling": "Саджанець юки розсік %1$s",
   "death.attack.atmospheric.yuccaSapling.player": "Саджанець юки розсік %1$s, поки той рятувався від %2$s",
   "death.attack.atmospheric.yuccaFlower": "Квітка юки розсікла %1$s",
@@ -388,8 +388,8 @@
   "death.attack.atmospheric.aloeLeaves": "Листя алое проткнули %1$s",
   "death.attack.atmospheric.aloeLeaves.player": "Листя алое проткнули %1$s, поки той рятувався від %2$s",
 
-  "advancements.atmospheric.husbandry.spit_passionfruit.title": "Кулемет",
-  "advancements.atmospheric.husbandry.spit_passionfruit.description": "Нанесіть шкоду ворогові насінням маракуї",
+  "advancements.atmospheric.husbandry.spit_passion_fruit.title": "Кулемет",
+  "advancements.atmospheric.husbandry.spit_passion_fruit.description": "Нанесіть шкоду ворогові насінням маракуї",
   "advancements.atmospheric.husbandry.finish_gateau.title": "Подайте їм... торт?",
   "advancements.atmospheric.husbandry.finish_gateau.description": "Поласуйте останнім шматочком юкового торта", 
   "advancements.atmospheric.adventure.dunes_pricks.title": "Розрубано і розкромлено",

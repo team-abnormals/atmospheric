@@ -86,12 +86,12 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropPottedContents(POTTED_HOT_MONKEY_BRUSH.get());
 			this.dropSelf(SCALDING_MONKEY_BRUSH.get());
 			this.dropPottedContents(POTTED_SCALDING_MONKEY_BRUSH.get());
-			this.add(PASSION_VINE.get(), (block) -> applyExplosionDecay(block, LootTable.lootTable().withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(PASSION_VINE.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(AloeVeraBlock.AGE, 4))).add(LootItem.lootTableItem(AtmosphericItems.PASSIONFRUIT.get())).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))).withPool(LootPool.lootPool().add(LootItem.lootTableItem(PASSION_VINE.get())))));
+			this.add(PASSION_VINE.get(), (block) -> applyExplosionDecay(block, LootTable.lootTable().withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(PASSION_VINE.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(AloeVeraBlock.AGE, 4))).add(LootItem.lootTableItem(AtmosphericItems.PASSION_FRUIT.get())).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))).withPool(LootPool.lootPool().add(LootItem.lootTableItem(PASSION_VINE.get())))));
 			this.add(PASSION_VINE_BUNDLE.get(), (block) -> LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_SHEARS_OR_SILK_TOUCH).add(LootItem.lootTableItem(block))));
 			this.add(WATER_HYACINTH.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.UPPER));
 			this.dropPottedContents(POTTED_WATER_HYACINTH.get());
-			this.dropSelf(PASSIONFRUIT_CRATE.get());
-			this.dropSelf(SHIMMERING_PASSIONFRUIT_CRATE.get());
+			this.dropSelf(PASSION_FRUIT_CRATE.get());
+			this.dropSelf(SHIMMERING_PASSION_FRUIT_CRATE.get());
 
 			this.add(ARID_SPROUTS.get(), BlockLoot::createShearsOnlyDrop);
 			this.add(ALOE_VERA.get(), block -> applyExplosionDecay(block, LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(AtmosphericItems.ALOE_LEAVES.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(AloeVeraBlock.AGE, 5))).otherwise(LootItem.lootTableItem(AtmosphericItems.ALOE_KERNELS.get())))).withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(AloeVeraBlock.AGE, 5))).add(LootItem.lootTableItem(AtmosphericItems.ALOE_KERNELS.get()).apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));

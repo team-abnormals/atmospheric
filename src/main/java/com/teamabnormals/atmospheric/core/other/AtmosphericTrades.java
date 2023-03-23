@@ -55,13 +55,13 @@ public class AtmosphericTrades {
 		VillagerProfession profession = event.getType();
 		if (profession.equals(VillagerProfession.FARMER)) {
 			TradeUtil.addVillagerTrades(event, 2,
-					new BlueprintTrade(1, AtmosphericItems.PASSIONFRUIT_TART.get(), 4, 12, 5),
+					new BlueprintTrade(1, AtmosphericItems.PASSION_FRUIT_TART.get(), 4, 12, 5),
 					new BlueprintTrade(AtmosphericItems.ALOE_LEAVES.get(), 4, 1, 16, 15),
 					new BlueprintTrade(AtmosphericItems.YUCCA_FRUIT.get(), 3, 1, 12, 10)
 			);
 
 			TradeUtil.addVillagerTrades(event, 3,
-					new BlueprintTrade(AtmosphericItems.PASSIONFRUIT.get(), 8, 1, 12, 10)
+					new BlueprintTrade(AtmosphericItems.PASSION_FRUIT.get(), 8, 1, 12, 10)
 			);
 
 			TradeUtil.addVillagerTrades(event, 4,

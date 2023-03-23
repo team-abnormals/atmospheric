@@ -7,13 +7,14 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:gold_nugget"
+      "tag": "forge:fruits/passion_fruit"
     },
     "X": {
-      "item": "atmospheric:passionfruit"
+      "tag": "forge:eggs"
     }
   },
   "result": {
-    "item": "atmospheric:shimmering_passionfruit"
+    "item": "atmospheric:passion_fruit_tart",
+    "count": 8
   }
 }

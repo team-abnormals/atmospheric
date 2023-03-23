@@ -77,8 +77,8 @@
   "block.atmospheric.water_hyacinth": "Jacinto de agua",
   "block.atmospheric.potted_water_hyacinth": "Maceta con jacinto de agua",
 
-  "block.atmospheric.passionfruit_crate": "Cajón de maracuyás",
-  "block.atmospheric.shimmering_passionfruit_crate": "Cajón de maracuyás relucientes",
+  "block.atmospheric.passion_fruit_crate": "Cajón de maracuyás",
+  "block.atmospheric.shimmering_passion_fruit_crate": "Cajón de maracuyás relucientes",
 
   "block.atmospheric.yucca_log": "Tronco de yuca",
   "block.atmospheric.yucca_wood": "Leño de yuca",
@@ -316,10 +316,10 @@
   "item.atmospheric.aspen_boat": "Barca de álamo",
   "item.atmospheric.grimwood_boat": "Barca siniestra",
 
-  "item.atmospheric.passionfruit": "Maracuyá",
-  "item.atmospheric.shimmering_passionfruit": "Maracuyá reluciente",
-  "item.atmospheric.passionfruit_tart": "Tartaleta de maracuyá",
-  "item.atmospheric.passionfruit_sorbet": "Sorbete de maracuyá",
+  "item.atmospheric.passion_fruit": "Maracuyá",
+  "item.atmospheric.shimmering_passion_fruit": "Maracuyá reluciente",
+  "item.atmospheric.passion_fruit_tart": "Tartaleta de maracuyá",
+  "item.atmospheric.passion_fruit_sorbet": "Sorbete de maracuyá",
   "item.atmospheric.passion_vine_coil": "Rollo de pasionaria",
 
   "item.atmospheric.yucca_fruit": "Fruta de yuca",
@@ -350,10 +350,10 @@
 
   "biome.atmospheric.hot_springs": "Aguas termales",
 
-  "entity.atmospheric.passionfruit_seed": "Semilla de maracuyá",
+  "entity.atmospheric.passion_fruit_seed": "Semilla de maracuyá",
 
-  "death.attack.atmospheric.passionfruitSeed": "%1$s ha sido bombardeado/a con las semillas de %2$s",
-  "death.attack.atmospheric.shimmeringPassionfruitSeed": "%1$s ha sido bombardeado/a apasionadamente con las semillas de %2$s",
+  "death.attack.atmospheric.passionFruitSeed": "%1$s ha sido bombardeado/a con las semillas de %2$s",
+  "death.attack.atmospheric.shimmeringPassionFruitSeed": "%1$s ha sido bombardeado/a apasionadamente con las semillas de %2$s",
   "death.attack.atmospheric.yuccaSapling": "%1$s ha sido rebanado/a por un brote de yuca",
   "death.attack.atmospheric.yuccaSapling.player": "%1$s ha sido rebanado/a por un brote de yuca mientras intentaba huir de %2$s",
   "death.attack.atmospheric.yuccaFlower": "%1$s ha sido rebanado/a por una flor de yuca",
@@ -367,8 +367,8 @@
   "death.attack.atmospheric.aloeLeaves": "%1$s ha muerto entre espinas de áloe",
   "death.attack.atmospheric.aloeLeaves.player": "%1$s ha muerto entre espinas de áloe mientras intentaba huir de %2$s",
 
-  "advancements.atmospheric.husbandry.spit_passionfruit.title": "A escupitajos",
-  "advancements.atmospheric.husbandry.spit_passionfruit.description": "Ataca a un enemigo con semillas de maracuyá",
+  "advancements.atmospheric.husbandry.spit_passion_fruit.title": "A escupitajos",
+  "advancements.atmospheric.husbandry.spit_passion_fruit.description": "Ataca a un enemigo con semillas de maracuyá",
   "advancements.atmospheric.husbandry.finish_gateau.title": "Que coman... ¿pasteles?",
   "advancements.atmospheric.husbandry.finish_gateau.description": "Come el último trozo de una tarta de yuca",
   "advancements.atmospheric.adventure.dunes_pricks.title": "Picado y rebanado",

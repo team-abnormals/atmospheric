@@ -149,7 +149,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		if (!flag && player.getItemInHand(handIn).getItem() == Items.BONE_MEAL) {
 			return InteractionResult.PASS;
 		} else if (i == 4) {
-			popResource(worldIn, pos, new ItemStack(AtmosphericItems.PASSIONFRUIT.get(), 1 + worldIn.random.nextInt(2) + worldIn.random.nextInt(2) + worldIn.random.nextInt(3)));
+			popResource(worldIn, pos, new ItemStack(AtmosphericItems.PASSION_FRUIT.get(), 1 + worldIn.random.nextInt(2) + worldIn.random.nextInt(2) + worldIn.random.nextInt(3)));
 			worldIn.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
 			worldIn.setBlock(pos, state.setValue(AGE, Integer.valueOf(1)), 2);
 			return InteractionResult.SUCCESS;

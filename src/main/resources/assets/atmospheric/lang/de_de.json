@@ -79,15 +79,15 @@
   "block.atmospheric.water_hyacinth": "Wasserhyazinthe",
   "block.atmospheric.potted_water_hyacinth": "Eingetopfte Wasserhyazinthe",
   
-	"block.atmospheric.passionfruit_crate": "Passionsfruchtkiste",
-	"block.atmospheric.shimmering_passionfruit_crate": "Schimmernde-Passionsfrucht-Kiste",
+	"block.atmospheric.passion_fruit_crate": "Passionsfruchtkiste",
+	"block.atmospheric.shimmering_passion_fruit_crate": "Schimmernde-Passionsfrucht-Kiste",
 	
 	"item.atmospheric.rosewood_boat": "Palisanderholzboot",
 	"item.atmospheric.morado_boat": "Eisenholzboot",
-	"item.atmospheric.passionfruit": "Passionsfrucht",
-	"item.atmospheric.shimmering_passionfruit": "Schimmernde Passionsfrucht",
-	"item.atmospheric.passionfruit_tart": "Passionsfruchttorte",
-	"item.atmospheric.passionfruit_sorbet": "Passionsfruchteis",
+	"item.atmospheric.passion_fruit": "Passionsfrucht",
+	"item.atmospheric.shimmering_passion_fruit": "Schimmernde Passionsfrucht",
+	"item.atmospheric.passion_fruit_tart": "Passionsfruchttorte",
+	"item.atmospheric.passion_fruit_sorbet": "Passionsfruchteis",
 	"item.atmospheric.passion_vine_coil": "Passionsrankenspirale",
 	"item.atmospheric.yellow_blossoms": "Gelbe Blüte",
 	
@@ -134,13 +134,13 @@
 	"biome.atmospheric.rainforest_basin": "Regenwaldbecken",
 	"biome.atmospheric.sparse_rainforest_basin": "Waldarmes Regenwaldbecken",
 	
-	"entity.atmospheric.passionfruit_seed": "Passionsfruchtsamen",
+	"entity.atmospheric.passion_fruit_seed": "Passionsfruchtsamen",
 	
-	"death.attack.passionfruitSeed": "%1$s wurde zu Tode durch %2$ss Samen bombardiert",
-	"death.attack.shimmeringPassionfruitSeed": "%1$s wurde passioniert zu Tode durch %2$ss Samen bombardiert",
+	"death.attack.passionFruitSeed": "%1$s wurde zu Tode durch %2$ss Samen bombardiert",
+	"death.attack.shimmeringPassionFruitSeed": "%1$s wurde passioniert zu Tode durch %2$ss Samen bombardiert",
 	
-	"advancements.husbandry.spit_passionfruit.title": "Spit-Take",
-	"advancements.husbandry.spit_passionfruit.description": "Schlag einen Feind mit Passionsfruchtsamen",
+	"advancements.husbandry.spit_passion_fruit.title": "Spit-Take",
+	"advancements.husbandry.spit_passion_fruit.description": "Schlag einen Feind mit Passionsfruchtsamen",
 
   "_comment2": "START OF THE SPRINGS SECTION",
 

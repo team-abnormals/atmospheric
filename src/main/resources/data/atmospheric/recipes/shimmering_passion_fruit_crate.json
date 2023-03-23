@@ -7,11 +7,11 @@
   ],
   "key": {
     "#": {
-      "item": "atmospheric:shimmering_passionfruit"
+      "item": "atmospheric:shimmering_passion_fruit"
     }
   },
   "result": {
-    "item": "atmospheric:shimmering_passionfruit_crate",
+    "item": "atmospheric:shimmering_passion_fruit_crate",
     "count": 1
   },
   "conditions": [
