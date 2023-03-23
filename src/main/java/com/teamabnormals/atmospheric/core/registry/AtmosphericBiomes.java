@@ -128,7 +128,7 @@ public class AtmosphericBiomes {
 		BiomeDefaultFeatures.farmAnimals(spawns);
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
 
-		return biomeWithGrass(Biome.Precipitation.RAIN, 0.85F, 0.5F, 12249691, 10009673, spawns, generation, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+		return biomeWithGrass(Biome.Precipitation.RAIN, 0.85F, 0.5F, 12249691, 11392595, spawns, generation, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 	}
 
 	private static Biome hotSprings() {
