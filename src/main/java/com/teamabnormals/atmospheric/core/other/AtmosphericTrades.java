@@ -1,15 +1,24 @@
 package com.teamabnormals.atmospheric.core.other;
 
+import com.google.common.collect.ImmutableMap;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.util.TradeUtil;
 import com.teamabnormals.blueprint.core.util.TradeUtil.BlueprintTrade;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.core.Registry;
 import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.npc.VillagerTrades.ItemListing;
+import net.minecraft.world.entity.npc.VillagerType;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.List;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericTrades {
@@ -67,6 +76,18 @@ public class AtmosphericTrades {
 					new BlueprintTrade(1, AtmosphericBlocks.PERSIMMON_TRAVERTINE.get().asItem(), 4, 16, 10),
 					new BlueprintTrade(1, AtmosphericBlocks.SAFFRON_TRAVERTINE.get().asItem(), 4, 16, 10)
 			);
+		}
+
+		if (profession.equals(VillagerProfession.FISHERMAN)) {
+			Int2ObjectMap<List<ItemListing>> trades = event.getTrades();
+			for (ItemListing listing : trades.get(TradeUtil.MASTER)) {
+				if (listing instanceof VillagerTrades.EmeraldsForVillagerTypeItem trade) {
+					trade.trades = ImmutableMap.<VillagerType, Item>builder()
+							.putAll(trade.trades)
+							.put(Registry.VILLAGER_TYPE.get(Atmospheric.location("dunes")), AtmosphericItems.YUCCA_BOAT.getFirst().get())
+							.build();
+				}
+			}
 		}
 	}
 }
