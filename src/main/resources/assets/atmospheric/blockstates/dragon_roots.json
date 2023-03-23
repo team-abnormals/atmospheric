@@ -1,0 +1,172 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top",
+        "uvlock": true
+      },
+      "when": {
+        "facing": "north",
+        "top": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom",
+        "uvlock": true
+      },
+      "when": {
+        "facing": "north",
+        "bottom": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top",
+        "uvlock": true
+      },
+      "when": {
+        "facing": "north",
+        "top": "true",
+        "fruit": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom",
+        "uvlock": true
+      },
+      "when": {
+        "facing": "north",
+        "bottom": "true",
+        "fruit": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "top": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "bottom": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "top": "true",
+        "fruit": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "bottom": "true",
+        "fruit": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "top": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "bottom": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "top": "true",
+        "fruit": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "bottom": "true",
+        "fruit": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "top": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "bottom": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "top": "true",
+        "fruit": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "bottom": "true",
+        "fruit": "true"
+      }
+    }
+  ]
+}

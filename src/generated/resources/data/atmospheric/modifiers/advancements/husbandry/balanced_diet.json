@@ -74,16 +74,6 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "atmospheric:ender_dragon_fruit": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "atmospheric:ender_dragon_fruit"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "atmospheric:golden_dragon_fruit": {
             "conditions": {
               "item": {
@@ -221,9 +211,6 @@
           ],
           [
             "atmospheric:golden_dragon_fruit"
-          ],
-          [
-            "atmospheric:ender_dragon_fruit"
           ],
           [
             "atmospheric:orange"

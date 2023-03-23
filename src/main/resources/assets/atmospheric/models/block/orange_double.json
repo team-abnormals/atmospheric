@@ -1,0 +1,70 @@
+{
+	"textures": {
+		"orange": "atmospheric:block/orange",
+		"particle": "#orange"
+	},
+	"elements": [
+		{
+			"name": "orange",
+			"from": [1, 0, 1],
+			"to": [8, 6, 8],
+			"faces": {
+				"north": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"east": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"south": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"west": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"up": {"uv": [0, 0, 7, 7], "texture": "#orange"},
+				"down": {"uv": [7, 0, 14, 7], "texture": "#orange"}
+			}
+		},
+		{
+			"name": "stem",
+			"from": [4.5, 6, 4],
+			"to": [4.5, 8, 5],
+			"faces": {
+				"east": {"uv": [2, 14, 3, 16], "texture": "#orange"},
+				"west": {"uv": [2, 14, 3, 16], "texture": "#orange"}
+			}
+		},
+		{
+			"name": "leaf",
+			"from": [2, 6, 4.5],
+			"to": [5, 8, 4.5],
+			"faces": {
+				"north": {"uv": [3, 14, 0, 16], "texture": "#orange"},
+				"south": {"uv": [0, 14, 3, 16], "texture": "#orange"}
+			}
+		},
+		{
+			"name": "orange",
+			"from": [8, 0, 8],
+			"to": [15, 6, 15],
+			"faces": {
+				"north": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"east": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"south": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"west": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"up": {"uv": [0, 0, 7, 7], "texture": "#orange"},
+				"down": {"uv": [7, 0, 14, 7], "texture": "#orange"}
+			}
+		},
+		{
+			"name": "stem",
+			"from": [11.5, 6, 11],
+			"to": [11.5, 8, 12],
+			"faces": {
+				"east": {"uv": [2, 14, 3, 16], "texture": "#orange"},
+				"west": {"uv": [2, 14, 3, 16], "texture": "#orange"}
+			}
+		},
+		{
+			"name": "leaf",
+			"from": [9, 6, 11.5],
+			"to": [12, 8, 11.5],
+			"faces": {
+				"north": {"uv": [3, 14, 0, 16], "texture": "#orange"},
+				"south": {"uv": [0, 14, 3, 16], "texture": "#orange"}
+			}
+		}
+	]
+}

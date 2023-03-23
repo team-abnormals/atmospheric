@@ -1,0 +1,6 @@
+{
+    "parent": "atmospheric:block/orange_wall",
+    "textures": {
+        "orange": "atmospheric:block/blood_orange"
+    }
+}

@@ -41,6 +41,7 @@ public class AtmosphericRecipeProvider extends RecipeProvider {
 		oneToOneConversionRecipe(consumer, Items.RED_DYE, AtmosphericItems.CARMINE_HUSK.get(), "red_dye");
 		oneToOneConversionRecipe(consumer, Items.RED_DYE, AtmosphericBlocks.FIRETHORN.get(), "red_dye");
 		oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, AtmosphericBlocks.FORSYTHIA.get(), "yellow_dye");
+		oneToOneConversionRecipe(consumer, Items.PINK_DYE, AtmosphericItems.DRAGON_FRUIT.get(), "pink_dye");
 
 		ShapelessRecipeBuilder.shapeless(AtmosphericItems.CURRANT_MUFFIN.get()).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(Items.SUGAR).requires(BlueprintItemTags.EGGS).unlockedBy("has_currant", has(AtmosphericItemTags.FRUITS_CURRANT)).save(consumer);
 

@@ -1,0 +1,23 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"roots": "atmospheric:block/dragon_roots",
+		"particle": "#roots"
+	},
+	"elements": [
+		{
+			"from": [0, 1, 2],
+			"to": [16, 1, 18],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [0, 0, 0]},
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 0], "texture": "#roots"},
+				"east": {"uv": [0, 0, 8, 0], "texture": "#roots"},
+				"south": {"uv": [0, 0, 16, 0], "texture": "#roots"},
+				"west": {"uv": [0, 0, 8, 0], "texture": "#roots"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#roots"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#roots"}
+			}
+		}
+	]
+}

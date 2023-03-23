@@ -31,7 +31,7 @@ public class AtmosphericAdvancementModifierProvider extends AdvancementModifierP
 		CriteriaModifier.Builder balancedDiet = CriteriaModifier.builder(this.modId);
 		AtmosphericItems.HELPER.getDeferredRegister().getEntries().forEach(registryObject -> {
 			Item item = registryObject.get();
-			if (item.isEdible()) {
+			if (item.isEdible() && item != AtmosphericItems.ENDER_DRAGON_FRUIT.get()) {
 				balancedDiet.addCriterion(ForgeRegistries.ITEMS.getKey(item).getPath(), ConsumeItemTrigger.TriggerInstance.usedItem(item));
 			}
 		});

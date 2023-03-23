@@ -108,6 +108,8 @@ public class AtmosphericClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.CURRANT_HEDGE.get(), RenderType.cutoutMipped());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_CURRANT_SEEDLING.get(), RenderType.cutout());
 
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.DRAGON_ROOTS.get(), RenderType.cutout());
+
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ASPEN_LADDER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ASPEN_POST.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.STRIPPED_ASPEN_POST.get(), RenderType.cutout());

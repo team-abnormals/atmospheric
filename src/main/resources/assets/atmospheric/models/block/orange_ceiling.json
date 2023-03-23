@@ -1,0 +1,39 @@
+{
+	"textures": {
+		"orange": "atmospheric:block/orange",
+		"particle": "#orange"
+	},
+	"elements": [
+		{
+			"name": "orange",
+			"from": [5, 8, 4],
+			"to": [12, 14, 11],
+			"faces": {
+				"north": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"east": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"south": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"west": {"uv": [0, 7, 7, 13], "texture": "#orange"},
+				"up": {"uv": [0, 0, 7, 7], "texture": "#orange"},
+				"down": {"uv": [7, 0, 14, 7], "texture": "#orange"}
+			}
+		},
+		{
+			"name": "stem",
+			"from": [8.5, 14, 7],
+			"to": [8.5, 16, 8],
+			"faces": {
+				"east": {"uv": [2, 14, 3, 16], "texture": "#orange"},
+				"west": {"uv": [2, 14, 3, 16], "texture": "#orange"}
+			}
+		},
+		{
+			"name": "leaf",
+			"from": [6, 14, 7.5],
+			"to": [9, 16, 7.5],
+			"faces": {
+				"north": {"uv": [3, 14, 0, 16], "texture": "#orange"},
+				"south": {"uv": [0, 14, 3, 16], "texture": "#orange"}
+			}
+		}
+	]
+}

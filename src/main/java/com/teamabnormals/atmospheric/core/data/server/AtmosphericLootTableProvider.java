@@ -5,8 +5,8 @@ import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.block.AloeVeraBlock;
 import com.teamabnormals.atmospheric.common.block.AloeVeraTallBlock;
 import com.teamabnormals.atmospheric.common.block.BarrelCactusBlock;
+import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
@@ -26,9 +26,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.storage.loot.*;
+import net.minecraft.world.level.storage.loot.IntRange;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
-import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
+import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.*;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
@@ -152,6 +154,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropPottedContents(POTTED_FORSYTHIA.get());
 			this.dropSelf(DRAGON_FRUIT_CRATE.get());
 			this.dropSelf(GOLDEN_DRAGON_FRUIT_CRATE.get());
+			this.add(DRAGON_ROOTS.get(), AtmosphericBlockLoot::createDragonRootsDrops);
 
 			this.dropSelf(ARID_SAND.get());
 			this.dropSelf(ARID_SANDSTONE.get());
@@ -462,6 +465,12 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.add(GRIMWOOD_CHESTS.getSecond().get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(GRIMWOOD_BOOKSHELF.get(), (block) -> createSingleItemTableWithSilkTouch(block, Items.BOOK, ConstantValue.exactly(3.0F)));
 			this.add(GRIMWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, GRIMWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		}
+
+		protected static LootTable.Builder createDragonRootsDrops(Block block) {
+			return LootTable.lootTable()
+					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(block).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DragonRootsBlock.TOP, true))))))
+					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(block).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DragonRootsBlock.BOTTOM, true))))));
 		}
 
 		protected static LootTable.Builder createBarrelCactusDrops(Block block) {
