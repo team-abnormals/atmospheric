@@ -339,7 +339,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 			if (temperatureIndex <= 2) {
 				return VANILLA;
 			} else {
-				if (temperatureIndex == 3) return humidityIndex > 2 ? AtmosphericBiomes.RAINFOREST.getKey() : VANILLA;
+				if (temperatureIndex == 3) return VANILLA;
 				return humidityIndex < 2 && weirdness.max() < 0L ? AtmosphericBiomes.PETRIFIED_DUNES.getKey() : AtmosphericBiomes.ROCKY_DUNES.getKey();
 			}
 		}
