@@ -72,7 +72,6 @@ public class Atmospheric {
 		});
 
 		context.registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
-		context.registerConfig(ModConfig.Type.CLIENT, AtmosphericConfig.CLIENT_SPEC);
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {

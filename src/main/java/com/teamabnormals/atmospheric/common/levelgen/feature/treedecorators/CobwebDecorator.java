@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators;
 
 import com.mojang.serialization.Codec;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -34,7 +35,7 @@ public class CobwebDecorator extends TreeDecorator {
 						Direction oppositeDirection = direction.getOpposite();
 						BlockPos cobwebPos = pos.offset(oppositeDirection.getStepX(), oppositeDirection.getStepY(), oppositeDirection.getStepZ());
 						if (context.isAir(cobwebPos)) {
-							context.setBlock(cobwebPos, Blocks.COBWEB.defaultBlockState());
+							context.setBlock(cobwebPos, AtmosphericBlocks.GRIMWEB.get().defaultBlockState());
 						}
 					}
 				}

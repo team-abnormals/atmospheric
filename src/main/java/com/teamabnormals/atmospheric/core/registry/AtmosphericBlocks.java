@@ -17,6 +17,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.OffsetType;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
@@ -413,6 +414,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> CURRANT_BASKET = HELPER.createCompatBlock("quark", "currant_basket", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_CYAN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public static final RegistryObject<Block> GRIMWEB = HELPER.createBlock("grimweb", () -> new WebBlock(BlockBehaviour.Properties.copy(Blocks.COBWEB)), CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> STRIPPED_GRIMWOOD_LOG = HELPER.createBlock("stripped_grimwood_log", () -> new StrippedLogBlock(AtmosphericProperties.GRIMWOOD.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_GRIMWOOD = HELPER.createBlock("stripped_grimwood", () -> new StrippedWoodBlock(AtmosphericProperties.GRIMWOOD.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);

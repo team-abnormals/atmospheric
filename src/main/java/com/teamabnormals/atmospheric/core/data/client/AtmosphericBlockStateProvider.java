@@ -132,6 +132,8 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.logCompat(GRIMWOOD_LOG.get(), STRIPPED_GRIMWOOD_LOG.get(), GRIMWOOD_POST.get(), STRIPPED_GRIMWOOD_POST.get());
 		this.leavesCompat(GRIMWOOD_LEAVES.get(), GRIMWOOD_LOG.get(), GRIMWOOD_LEAF_PILE.get(), GRIMWOOD_HEDGE.get(), GRIMWOOD_LEAF_CARPET.get());
 
+		this.crossBlock(GRIMWEB.get());
+
 		this.directionalBlock(CARMINE_BLOCK.get());
 		this.blockFamily(AtmosphericBlockFamilies.CARMINE_SHINGLES_FAMILY, CARMINE_SHINGLE_VERTICAL_SLAB.get());
 		this.blockFamily(AtmosphericBlockFamilies.CARMINE_PAVEMENT_FAMILY, CARMINE_PAVEMENT_VERTICAL_SLAB.get());

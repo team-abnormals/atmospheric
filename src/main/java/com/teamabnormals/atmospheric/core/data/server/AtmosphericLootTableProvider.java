@@ -136,6 +136,8 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropOther(SNOWY_BAMBOO_SAPLING.get(), Items.BAMBOO);
 			this.dropPottedContents(POTTED_SNOWY_BAMBOO.get());
 
+			this.add(GRIMWEB.get(), (block) -> createSilkTouchOrShearsDispatchTable(block, applyExplosionCondition(block, LootItem.lootTableItem(Items.STRING))));
+
 			this.dropSelf(CARMINE_BLOCK.get());
 			this.dropSelf(CARMINE_SHINGLES.get());
 			this.dropSelf(CARMINE_SHINGLE_STAIRS.get());
