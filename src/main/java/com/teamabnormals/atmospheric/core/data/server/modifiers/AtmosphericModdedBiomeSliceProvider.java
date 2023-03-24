@@ -317,10 +317,12 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 
 		//Replaces pickBadlandsBiome because badlands biomes can act as middle biome deserts
 		private ResourceKey<Biome> pickDuneBiome(int humidityIndex, Climate.Parameter weirdness) {
-			if (humidityIndex < 2) {
-				return weirdness.max() < 0L ? AtmosphericBiomes.PETRIFIED_DUNES.getKey() : AtmosphericBiomes.DUNES.getKey();
+			if (humidityIndex < 1) {
+				return weirdness.max() < 0L ? AtmosphericBiomes.PETRIFIED_DUNES.getKey() : AtmosphericBiomes.ROCKY_DUNES.getKey();
+			} else if (humidityIndex < 2) {
+				return AtmosphericBiomes.DUNES.getKey();
 			} else {
-				return humidityIndex < 3 ? AtmosphericBiomes.DUNES.getKey() : AtmosphericBiomes.FLOURISHING_DUNES.getKey();
+				return humidityIndex < 3 ? AtmosphericBiomes.FLOURISHING_DUNES.getKey() : AtmosphericBiomes.SPINY_THICKET.getKey();
 			}
 		}
 

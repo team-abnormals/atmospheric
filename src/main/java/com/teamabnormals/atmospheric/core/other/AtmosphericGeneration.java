@@ -102,11 +102,11 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addDefaultOres(generation);
 		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
 		generation.addFeature(Decoration.VEGETAL_DECORATION, COARSE_DIRT.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
 		BiomeDefaultFeatures.addSavannaExtraGrass(generation);
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
-		generation.addFeature(Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_CACTUS_SPINY_THICKET.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_CACTUS_SPINIER_THICKET.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_SPINY_THICKET.getHolder().get());
