@@ -81,10 +81,11 @@ public class AtmosphericTrades {
 		if (profession.equals(VillagerProfession.FISHERMAN)) {
 			Int2ObjectMap<List<ItemListing>> trades = event.getTrades();
 			for (ItemListing listing : trades.get(TradeUtil.MASTER)) {
-				if (listing instanceof VillagerTrades.EmeraldsForVillagerTypeItem trade) {
+				VillagerType dunes = Registry.VILLAGER_TYPE.get(Atmospheric.location("dunes"));
+				if (listing instanceof VillagerTrades.EmeraldsForVillagerTypeItem trade && !trade.trades.containsKey(dunes)) {
 					trade.trades = ImmutableMap.<VillagerType, Item>builder()
 							.putAll(trade.trades)
-							.put(Registry.VILLAGER_TYPE.get(Atmospheric.location("dunes")), AtmosphericItems.YUCCA_BOAT.getFirst().get())
+							.put(dunes, AtmosphericItems.YUCCA_BOAT.getFirst().get())
 							.build();
 				}
 			}
