@@ -82,9 +82,9 @@ public class AtmosphericTrades {
 				if (listing instanceof VillagerTrades.EmeraldsForVillagerTypeItem trade) {
 					HashMap<VillagerType, Item> newTrades = new HashMap<>(trade.trades);
 
-					VillagerType dunes = Registry.VILLAGER_TYPE.get(Atmospheric.location("dunes"));
-					if (!trade.trades.containsKey(dunes)) {
-						newTrades.put(dunes, AtmosphericItems.YUCCA_BOAT.getFirst().get());
+					VillagerType shrubland = Registry.VILLAGER_TYPE.get(Atmospheric.location("shrubland"));
+					if (!trade.trades.containsKey(shrubland)) {
+						newTrades.put(shrubland, AtmosphericItems.YUCCA_BOAT.getFirst().get());
 					}
 
 					if (newTrades.get(VillagerType.DESERT) == Items.JUNGLE_BOAT && AtmosphericConfig.COMMON.yuccaDesertVillages.get()) {
