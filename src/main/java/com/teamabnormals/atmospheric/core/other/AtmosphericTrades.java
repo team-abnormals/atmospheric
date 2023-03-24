@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.core.other;
 
 import com.google.common.collect.ImmutableMap;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.AtmosphericConfig;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.util.TradeUtil;
@@ -13,11 +14,13 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.npc.VillagerTrades.ItemListing;
 import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = Atmospheric.MOD_ID)
@@ -52,41 +55,43 @@ public class AtmosphericTrades {
 
 	@SubscribeEvent
 	public static void onVillagerTradesEvent(VillagerTradesEvent event) {
-		VillagerProfession profession = event.getType();
-		if (profession.equals(VillagerProfession.FARMER)) {
-			TradeUtil.addVillagerTrades(event, 2,
-					new BlueprintTrade(1, AtmosphericItems.PASSION_FRUIT_TART.get(), 4, 12, 5),
-					new BlueprintTrade(AtmosphericItems.ALOE_LEAVES.get(), 4, 1, 16, 15),
-					new BlueprintTrade(AtmosphericItems.YUCCA_FRUIT.get(), 3, 1, 12, 10)
-			);
+		TradeUtil.addVillagerTrades(event, VillagerProfession.FARMER, TradeUtil.APPRENTICE,
+				new BlueprintTrade(1, AtmosphericItems.PASSION_FRUIT_TART.get(), 4, 12, 5),
+				new BlueprintTrade(AtmosphericItems.ALOE_LEAVES.get(), 4, 1, 16, 15),
+				new BlueprintTrade(AtmosphericItems.YUCCA_FRUIT.get(), 3, 1, 12, 10)
+		);
 
-			TradeUtil.addVillagerTrades(event, 3,
-					new BlueprintTrade(AtmosphericItems.PASSION_FRUIT.get(), 8, 1, 12, 10)
-			);
+		TradeUtil.addVillagerTrades(event, VillagerProfession.FARMER, TradeUtil.JOURNEYMAN,
+				new BlueprintTrade(AtmosphericItems.PASSION_FRUIT.get(), 8, 1, 12, 10)
+		);
 
-			TradeUtil.addVillagerTrades(event, 4,
-					new BlueprintTrade(3, AtmosphericItems.YUCCA_GATEAU.get(), 1, 12, 15)
-			);
-		}
+		TradeUtil.addVillagerTrades(event, VillagerProfession.FARMER, TradeUtil.EXPERT,
+				new BlueprintTrade(3, AtmosphericItems.YUCCA_GATEAU.get(), 1, 12, 15)
+		);
 
-		if (profession.equals(VillagerProfession.MASON)) {
-			TradeUtil.addVillagerTrades(event, 3,
-					new BlueprintTrade(1, AtmosphericBlocks.IVORY_TRAVERTINE.get().asItem(), 4, 16, 10),
-					new BlueprintTrade(1, AtmosphericBlocks.PEACH_TRAVERTINE.get().asItem(), 4, 16, 10),
-					new BlueprintTrade(1, AtmosphericBlocks.PERSIMMON_TRAVERTINE.get().asItem(), 4, 16, 10),
-					new BlueprintTrade(1, AtmosphericBlocks.SAFFRON_TRAVERTINE.get().asItem(), 4, 16, 10)
-			);
-		}
+		TradeUtil.addVillagerTrades(event, VillagerProfession.MASON, TradeUtil.EXPERT,
+				new BlueprintTrade(1, AtmosphericBlocks.IVORY_TRAVERTINE.get().asItem(), 4, 16, 10),
+				new BlueprintTrade(1, AtmosphericBlocks.PEACH_TRAVERTINE.get().asItem(), 4, 16, 10),
+				new BlueprintTrade(1, AtmosphericBlocks.PERSIMMON_TRAVERTINE.get().asItem(), 4, 16, 10),
+				new BlueprintTrade(1, AtmosphericBlocks.SAFFRON_TRAVERTINE.get().asItem(), 4, 16, 10)
+		);
 
-		if (profession.equals(VillagerProfession.FISHERMAN)) {
+		if (event.getType().equals(VillagerProfession.FISHERMAN)) {
 			Int2ObjectMap<List<ItemListing>> trades = event.getTrades();
 			for (ItemListing listing : trades.get(TradeUtil.MASTER)) {
-				VillagerType dunes = Registry.VILLAGER_TYPE.get(Atmospheric.location("dunes"));
-				if (listing instanceof VillagerTrades.EmeraldsForVillagerTypeItem trade && !trade.trades.containsKey(dunes)) {
-					trade.trades = ImmutableMap.<VillagerType, Item>builder()
-							.putAll(trade.trades)
-							.put(dunes, AtmosphericItems.YUCCA_BOAT.getFirst().get())
-							.build();
+				if (listing instanceof VillagerTrades.EmeraldsForVillagerTypeItem trade) {
+					HashMap<VillagerType, Item> newTrades = new HashMap<>(trade.trades);
+
+					VillagerType dunes = Registry.VILLAGER_TYPE.get(Atmospheric.location("dunes"));
+					if (!trade.trades.containsKey(dunes)) {
+						newTrades.put(dunes, AtmosphericItems.YUCCA_BOAT.getFirst().get());
+					}
+
+					if (newTrades.get(VillagerType.DESERT) == Items.JUNGLE_BOAT && AtmosphericConfig.COMMON.yuccaDesertVillages.get()) {
+						newTrades.replace(VillagerType.DESERT, AtmosphericItems.YUCCA_BOAT.getFirst().get());
+					}
+
+					trade.trades = ImmutableMap.copyOf(newTrades);
 				}
 			}
 		}
