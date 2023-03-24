@@ -22,7 +22,7 @@ public class AtmosphericProperties {
 
 	public static final Block.Properties ARID_SAND = Block.Properties.of(Material.SAND, MaterialColor.SAND).strength(0.5F).sound(SoundType.SAND);
 	public static final Block.Properties RED_ARID_SAND = Block.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_ORANGE).strength(0.5F).sound(SoundType.SAND);
-	public static final Block.Properties YUCCA_FLOWER = Block.Properties.of(Material.PLANT).noCollission().strength(0.2F).sound(SoundType.GRASS).offsetType(OffsetType.XZ);
+	public static final Block.Properties YUCCA_FLOWER = Block.Properties.of(Material.PLANT).noCollission().strength(0.5F).sound(SoundType.GRASS).offsetType(OffsetType.XZ);
 	public static final Block.Properties ARID_SPROUTS = Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.SAND).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(OffsetType.XYZ);
 
 	public static final Block.Properties AGAVE = Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.TERRACOTTA_CYAN).noCollission().instabreak().sound(SoundType.GRASS).offsetType(OffsetType.XYZ);
