@@ -55,7 +55,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				{null, null, VANILLA, null, null},
 				{null, null, null, null, null}};
 		private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
-				{VANILLA, VANILLA, AtmosphericBiomes.KOUSA_JUNGLE.getKey(), AtmosphericBiomes.KOUSA_JUNGLE.getKey(), VANILLA},
+				{VANILLA, VANILLA, AtmosphericBiomes.KOUSA_JUNGLE.getKey(), AtmosphericBiomes.KOUSA_JUNGLE.getKey(), AtmosphericBiomes.KOUSA_JUNGLE.getKey()},
 				{VANILLA, VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()},
