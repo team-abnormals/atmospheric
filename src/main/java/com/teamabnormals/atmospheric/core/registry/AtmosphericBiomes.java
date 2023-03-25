@@ -80,7 +80,15 @@ public class AtmosphericBiomes {
 		AtmosphericGeneration.shrubland(generation);
 
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-		BiomeDefaultFeatures.desertSpawns(spawns);
+		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));
+		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 2, 1, 1));
+		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 2, 1, 1));
+		BiomeDefaultFeatures.caveSpawns(spawns);
+		BiomeDefaultFeatures.monsters(spawns, 19, 1, !snowy ? 100 : 20, false);
+		spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.HUSK, 80, 4, 4));
+		if (snowy) {
+			spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.STRAY, 80, 4, 4));
+		}
 
 		return biome(!snowy ? Precipitation.NONE : Precipitation.SNOW, !snowy ? 2.0F : 0.0F, 0.0F, 13021599, spawns, generation, null);
 	}
