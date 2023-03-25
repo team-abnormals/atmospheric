@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.core.mixin;
 
 import com.teamabnormals.atmospheric.core.other.AtmosphericRabbitTypes;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBiomeTags;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBiomes;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Animal;
@@ -23,9 +24,13 @@ public abstract class RabbitMixin extends Animal {
 
 	@Inject(method = "getRandomRabbitType", at = @At("RETURN"), cancellable = true)
 	private void getRandomRabbitType(LevelAccessor level, CallbackInfoReturnable<Integer> cir) {
-		Holder<Biome> holder = level.getBiome(this.blockPosition());
-		if (holder.is(AtmosphericBiomeTags.ONLY_ALLOWS_YELLOW_RABBITS)) {
+		Holder<Biome> biome = level.getBiome(this.blockPosition());
+		if (biome.is(AtmosphericBiomeTags.ONLY_ALLOWS_YELLOW_RABBITS)) {
 			cir.setReturnValue(AtmosphericRabbitTypes.YELLOW.id());
+		}
+
+		if (cir.getReturnValue() == 3 && biome.is(AtmosphericBiomes.SNOWY_SHRUBLAND.getKey())) {
+			cir.setReturnValue(Rabbit.TYPE_GOLD);
 		}
 	}
 }

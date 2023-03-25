@@ -92,8 +92,8 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(BlockTags.DIRT).add(CRUSTOSE.get());
 		this.tag(BlockTags.REPLACEABLE_PLANTS).add(AGAVE.get(), GOLDEN_GROWTHS.get(), ARID_SPROUTS.get());
 		this.tag(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE).add(CURRANT_STALK.get());
-		this.tag(BlockTags.ANIMALS_SPAWNABLE_ON).add(CRUSTOSE.get());
-		this.tag(BlockTags.RABBITS_SPAWNABLE_ON).add(CRUSTOSE.get());
+		this.tag(BlockTags.ANIMALS_SPAWNABLE_ON).add(CRUSTOSE.get(), ARID_SAND.get());
+		this.tag(BlockTags.RABBITS_SPAWNABLE_ON).add(CRUSTOSE.get(), ARID_SAND.get());
 		this.tag(BlockTags.WOLVES_SPAWNABLE_ON).add(CRUSTOSE.get());
 		this.tag(BlockTags.FALL_DAMAGE_RESETTING).add(GRIMWEB.get());
 
