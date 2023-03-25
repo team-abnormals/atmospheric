@@ -7,10 +7,10 @@ import com.teamabnormals.blueprint.core.util.TreeUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
@@ -51,11 +51,11 @@ public abstract class AtmosphericTreeFeature extends Feature<TreeConfiguration> 
 		this.specialLogPositions = Maps.newHashMap();
 		this.specialFoliagePositions = Maps.newHashMap();
 
-		if (TreeUtil.isValidGround(level, origin.below(), (SaplingBlock) this.getSapling())) {
+		if (this.canSurvive(level, origin)) {
 			this.doPlace(context);
 
 			for (BlockPos logPos : this.logPositions) {
-				if (!TreeFeature.validTreePos(level, logPos) || logPos.getY() > level.getMaxBuildHeight() || (logPos.getY() == origin.getY() && !TreeUtil.isValidGround(level, logPos.below(), (SaplingBlock) this.getSapling())))
+				if (!TreeFeature.validTreePos(level, logPos) || logPos.getY() > level.getMaxBuildHeight())
 					return false;
 			}
 
@@ -63,6 +63,8 @@ public abstract class AtmosphericTreeFeature extends Feature<TreeConfiguration> 
 				if (!TreeFeature.validTreePos(level, foliagePos) || foliagePos.getY() > level.getMaxBuildHeight())
 					return false;
 			}
+
+			this.doMidPlace(context);
 
 			this.logPositions.forEach(logPos -> {
 				TreeUtil.setForcedState(level, logPos, this.specialLogPositions.getOrDefault(logPos, config.trunkProvider.getState(random, logPos)));
@@ -73,6 +75,11 @@ public abstract class AtmosphericTreeFeature extends Feature<TreeConfiguration> 
 			this.foliagePositions.forEach(foliagePos -> {
 				if (TreeFeature.validTreePos(level, foliagePos)) {
 					BlockState state = this.specialFoliagePositions.getOrDefault(foliagePos, config.foliageProvider.getState(random, foliagePos));
+
+					if (TreeFeature.isBlockWater(level, foliagePos) && state.hasProperty(BlockStateProperties.WATERLOGGED)) {
+						state = state.setValue(BlockStateProperties.WATERLOGGED, true);
+					}
+
 					if (!state.isAir()) {
 						TreeUtil.setForcedState(level, foliagePos, state);
 					}
@@ -86,15 +93,27 @@ public abstract class AtmosphericTreeFeature extends Feature<TreeConfiguration> 
 				config.decorators.forEach((decorator) -> decorator.place(decoratorContext));
 			}
 
+			this.doPostPlace(context);
+
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	public abstract Block getSapling();
+	public abstract BlockState getSapling();
+
+	public boolean canSurvive(WorldGenLevel level, BlockPos pos) {
+		return this.getSapling().canSurvive(level, pos);
+	}
 
 	public abstract void doPlace(FeaturePlaceContext<TreeConfiguration> context);
+
+	public void doMidPlace(FeaturePlaceContext<TreeConfiguration> context) {
+	}
+
+	public void doPostPlace(FeaturePlaceContext<TreeConfiguration> context) {
+	}
 
 	public void addLog(BlockPos pos) {
 		this.logPositions.add(pos.immutable());

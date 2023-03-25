@@ -1,259 +1,110 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.blueprint.core.util.TreeUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Direction.Plane;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelSimulatedRW;
-import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
-import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
-import net.minecraftforge.common.Tags;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.function.BiConsumer;
 
-public class RainforestTreeFeature extends Feature<TreeConfiguration> {
-	private final List<Block> brushes = new ArrayList<>();
-	private final boolean water;
+public class RainforestTreeFeature extends AtmosphericTreeFeature {
 
-	public RainforestTreeFeature(Codec<TreeConfiguration> config, boolean water) {
+	public RainforestTreeFeature(Codec<TreeConfiguration> config) {
 		super(config);
-		this.water = water;
 	}
 
 	@Override
-	public boolean place(FeaturePlaceContext<TreeConfiguration> context) {
+	public void doPlace(FeaturePlaceContext<TreeConfiguration> context) {
 		TreeConfiguration config = context.config();
-		WorldGenLevel level = context.level();
 		RandomSource random = context.random();
 		BlockPos origin = context.origin();
 
 		boolean morado = config.trunkProvider.getState(random, origin).is(AtmosphericBlocks.MORADO_LOG.get());
-		if (random.nextInt(250) == 0) {
-			if (random.nextInt(2) == 0)
-				brushes.add(AtmosphericBlocks.WARM_MONKEY_BRUSH.get());
-			if (random.nextInt(3) == 0)
-				brushes.add(AtmosphericBlocks.HOT_MONKEY_BRUSH.get());
-			if (random.nextInt(4) == 0)
-				brushes.add(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get());
-		} else {
-			brushes.clear();
-		}
 
 		int branches = 2 + random.nextInt(3) - (!morado ? 0 : 1);
-		int height = !morado ? 4 + random.nextInt(3) + random.nextInt(3) : 2 + random.nextInt(2);
-		boolean flag = true;
+		int trunkHeight = config.trunkPlacer.getTreeHeight(random);
 
-		if (origin.getY() > level.getMinBuildHeight() && origin.getY() + height + 1 <= level.getMaxBuildHeight()) {
-			for (int j = origin.getY(); j <= origin.getY() + 1 + height; ++j) {
-				int k = 1;
-				if (j == origin.getY()) {
-					k = 0;
-				}
-				if (j >= origin.getY() + 1 + height - 2) {
-					k = 2;
-				}
-				BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
-
-				for (int l = origin.getX() - k; l <= origin.getX() + k && flag; ++l) {
-					for (int i1 = origin.getZ() - k; i1 <= origin.getZ() + k && flag; ++i1) {
-						if (j >= level.getMinBuildHeight() && j < level.getMaxBuildHeight()) {
-							if (!this.water ? !TreeUtil.isAirOrLeaves(level, blockpos$mutableblockpos.set(l, j, i1)) : !isAirOrWaterOrLeaves(level, blockpos$mutableblockpos.set(l, j, i1))) {
-								flag = false;
-							}
-						} else {
-							flag = false;
-						}
-					}
-				}
-			}
-
-			if (!flag) {
-				return false;
-			} else if ((TreeUtil.isValidGround(level, origin.below(), (SaplingBlock) AtmosphericBlocks.ROSEWOOD_SAPLING.get()) || level.getBlockState(origin.below()).is(Tags.Blocks.GRAVEL)) && origin.getY() < level.getMaxBuildHeight() - branches - 1) {
-				// base log
-				if (!this.water)
-					TreeUtil.setDirtAt(level, origin.below());
-				Set<BlockPos> logsPlaced = Sets.newHashSet();
-
-				int logX = origin.getX();
-				int logZ = origin.getZ();
-				boolean canopy = false;
-
-				for (int k1 = 0; k1 < height; ++k1) {
-					int logY = origin.getY() + k1;
-					BlockPos blockpos = new BlockPos(logX, logY, logZ);
-					if (!this.water ? TreeUtil.isAirOrLeaves(level, blockpos) : isAirOrWaterOrLeaves(level, blockpos)) {
-						TreeUtil.placeDirectionalLogAt(level, blockpos, Direction.UP, random, config);
-						logsPlaced.add(blockpos.immutable());
-					}
-					if (random.nextInt(6) == 0 && k1 > 3 && !canopy) {
-						int leafSize = 1 + random.nextInt(2);
-						for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
-							for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
-								if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-									if (!level.isStateAtPosition(blockpos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
-										TreeUtil.placeLeafAt(level, blockpos.offset(k3, 0, j4), random, config);
-									}
-								}
-							}
-						}
-						canopy = true;
-					}
-				}
-
-				// branches
-				ArrayList<String> directions = new ArrayList<>();
-
-				for (int k2 = 0; k2 < branches; ++k2) {
-					Direction offset = Direction.Plane.HORIZONTAL.getRandomDirection(random);
-
-					while (directions.contains(offset.toString())) {
-						offset = Direction.Plane.HORIZONTAL.getRandomDirection(random);
-					}
-					directions.add(offset.toString());
-					int turns = 1 + random.nextInt(3);
-
-					BlockPos currentPos = origin.above(height - 1);
-					int branchLength = 0;
-					int branchHeight = 0;
-
-					for (int k4 = 0; k4 < turns; ++k4) {
-						branchLength = !morado ? 1 + random.nextInt(2) + random.nextInt(2) : 1 + random.nextInt(2);
-						branchHeight = !morado ? 1 + random.nextInt(3) + random.nextInt(2) : 1 + random.nextInt(2);
-						createHorizontalLog(branchLength, level, currentPos, offset, random, config, logsPlaced);
-						createVerticalLog(branchHeight, level, currentPos.relative(offset, branchLength), random, config, logsPlaced);
-						currentPos = currentPos.relative(offset, branchLength).relative(Direction.UP, branchHeight);
-					}
-
-					int leafSize = 2 + random.nextInt(2);
-					int leafSizeTop = 0;
-					if (leafSize == 2) {
-						leafSizeTop = leafSize - 1;
-					} else {
-						leafSizeTop = leafSize - 1 - random.nextInt(2);
-					}
-					// first layer of leaves
-					for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
-						for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
-							if (Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) {
-								if (!level.isStateAtPosition(currentPos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
-									TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), random, config);
-								}
-							}
-						}
-					}
-
-					// second layer of leaves
-					currentPos = currentPos.above(1);
-					for (int k3 = -leafSizeTop; k3 <= leafSizeTop; ++k3) {
-						for (int j4 = -leafSizeTop; j4 <= leafSizeTop; ++j4) {
-							if (Math.abs(k3) != leafSizeTop || Math.abs(j4) != leafSizeTop) {
-								if (!level.isStateAtPosition(currentPos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
-									TreeUtil.placeLeafAt(level, currentPos.offset(k3, 0, j4), random, config);
-								}
-							}
-						}
-					}
-				}
-
-				if (!brushes.isEmpty()) {
-					for (BlockPos pos : logsPlaced) {
-						for (Direction direction2 : Direction.values()) {
-							if (level.isStateAtPosition(pos.relative(direction2), BlockStateBase::isAir) && random.nextInt(3) == 0) {
-								level.setBlock(pos.relative(direction2), MonkeyBrushFeature.monkeyBrushState(brushes.get(random.nextInt(brushes.size())).defaultBlockState(), direction2), 18);
-							}
-						}
-					}
-				}
-
-				TreeUtil.updateLeaves(level, logsPlaced);
-
-				Set<BlockPos> set3 = Sets.newHashSet();
-				BiConsumer<BlockPos, BlockState> biconsumer3 = (p_225290_, p_225291_) -> {
-					set3.add(p_225290_.immutable());
-					level.setBlock(p_225290_, p_225291_, 19);
-				};
-
-				if (!config.decorators.isEmpty()) {
-					TreeDecorator.Context decoratorContext = new TreeDecorator.Context(level, biconsumer3, random, logsPlaced, Sets.newHashSet(), Sets.newHashSet());
-					config.decorators.forEach((decorator) -> decorator.place(decoratorContext));
-				}
-
-				return true;
-			} else {
-				return false;
-			}
-		} else {
-			return false;
-		}
-	}
-
-	private void createHorizontalLog(int branchLength, LevelSimulatedRW worldIn, BlockPos pos, Direction direction, RandomSource random, TreeConfiguration config, Set<BlockPos> logsPlaced) {
-		int logX = pos.getX();
-		int logY = pos.getY();
-		int logZ = pos.getZ();
-
-		for (int k3 = 0; k3 < branchLength; ++k3) {
-
-			logX += direction.getStepX();
-			logZ += direction.getStepZ();
-
-			BlockPos blockpos1 = new BlockPos(logX, logY, logZ);
-			if (!this.water ? TreeUtil.isAirOrLeaves(worldIn, blockpos1) : isAirOrWaterOrLeaves(worldIn, blockpos1)) {
-				TreeUtil.placeDirectionalLogAt(worldIn, blockpos1, direction, random, config);
-				logsPlaced.add(blockpos1.immutable());
-			}
-		}
-	}
-
-	private void createVerticalLog(int branchHeight, LevelSimulatedRW level, BlockPos pos, RandomSource random, TreeConfiguration config, Set<BlockPos> logsPlaced) {
-		int logX = pos.getX();
-		int logY = pos.getY();
-		int logZ = pos.getZ();
 		boolean canopy = false;
-
-		for (int k1 = 0; k1 < branchHeight; ++k1) {
-			logY += 1;
-			BlockPos blockpos = new BlockPos(logX, logY, logZ);
-			if (!this.water ? TreeUtil.isAirOrLeaves(level, blockpos) : isAirOrWaterOrLeaves(level, blockpos)) {
-				TreeUtil.placeDirectionalLogAt(level, blockpos, Direction.UP, random, config);
-				logsPlaced.add(blockpos.immutable());
+		for (int y = 0; y < trunkHeight; ++y) {
+			BlockPos pos = origin.above(y);
+			this.addLog(pos);
+			if (random.nextInt(6) == 0 && y > 3 && !canopy) {
+				this.createLeafLayer(pos, 1 + random.nextInt(2));
+				canopy = true;
 			}
-			if (random.nextInt(6) == 0 && !canopy) {
-				int leafSize = 1 + random.nextInt(2);
-				for (int k3 = -leafSize; k3 <= leafSize; ++k3) {
-					for (int j4 = -leafSize; j4 <= leafSize; ++j4) {
-						if ((Math.abs(k3) != leafSize || Math.abs(j4) != leafSize) && !level.isStateAtPosition(blockpos.offset(k3, 0, j4), (state -> state.is(Blocks.WATER)))) {
-							TreeUtil.placeLeafAt(level, blockpos.offset(k3, 0, j4), random, config);
-						}
-					}
+		}
+
+		ArrayList<Direction> directions = Lists.newArrayList();
+		while (directions.size() < branches) {
+			Direction randomDirection = Plane.HORIZONTAL.getRandomDirection(random);
+			if (!directions.contains(randomDirection))
+				directions.add(randomDirection);
+		}
+
+		for (Direction direction : directions) {
+			int turns = 1 + random.nextInt(3);
+			MutableBlockPos pos = new MutableBlockPos();
+			pos.set(origin.above(trunkHeight - 1));
+
+			for (int k4 = 0; k4 < turns; ++k4) {
+				int branchLength = !morado ? 1 + random.nextInt(2) + random.nextInt(2) : 1 + random.nextInt(2);
+				int branchHeight = !morado ? 1 + random.nextInt(3) + random.nextInt(2) : 1 + random.nextInt(2);
+				this.createHorizontalLog(branchLength, pos, direction, random, config);
+				this.createVerticalLog(branchHeight, pos, random);
+			}
+
+			int leafSize = 2 + random.nextInt(2);
+			this.createLeafLayer(pos, leafSize);
+			this.createLeafLayer(pos.above(), Math.max(leafSize - 1, 1));
+		}
+	}
+
+	public void createLeafLayer(BlockPos pos, int leafSize) {
+		for (int i = -leafSize; i <= leafSize; ++i) {
+			for (int k = -leafSize; k <= leafSize; ++k) {
+				if ((Math.abs(i) != leafSize || Math.abs(k) != leafSize)) {
+					this.addFoliage(pos.offset(i, 0, k));
 				}
+			}
+		}
+	}
+
+	private void createHorizontalLog(int branchLength, MutableBlockPos pos, Direction direction, RandomSource random, TreeConfiguration config) {
+		for (int i = 0; i < branchLength; ++i) {
+			pos.setWithOffset(pos, direction);
+			this.addSpecialLog(pos, config.trunkProvider.getState(random, pos).setValue(BlockStateProperties.AXIS, direction.getAxis()));
+		}
+	}
+
+	private void createVerticalLog(int branchHeight, MutableBlockPos pos, RandomSource random) {
+		boolean canopy = false;
+		for (int i = 0; i < branchHeight; ++i) {
+			pos.set(pos.above());
+			this.addLog(pos);
+			if (random.nextInt(6) == 0 && !canopy) {
+				this.createLeafLayer(pos, 1 + random.nextInt(2));
 				canopy = true;
 			}
 		}
 	}
 
-	public static boolean isAirOrWaterOrLeaves(LevelSimulatedReader world, BlockPos pos) {
-		return TreeFeature.isAirOrLeaves(world, pos) || isWater(world, pos);
+	@Override
+	public BlockState getSapling() {
+		return AtmosphericBlocks.ROSEWOOD_SAPLING.get().defaultBlockState();
 	}
 
-	public static boolean isWater(LevelSimulatedReader world, BlockPos pos) {
-		return world.isStateAtPosition(pos, (state) -> state.is(Blocks.WATER));
+	@Override
+	public boolean canSurvive(WorldGenLevel level, BlockPos pos) {
+		return super.canSurvive(level, pos) || level.getBlockState(pos.below()).is(Blocks.GRAVEL);
 	}
 }

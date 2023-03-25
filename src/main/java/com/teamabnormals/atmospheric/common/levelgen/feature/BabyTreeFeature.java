@@ -4,7 +4,7 @@ import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
@@ -32,11 +32,11 @@ public class BabyTreeFeature extends AtmosphericTreeFeature {
 	}
 
 	@Override
-	public Block getSapling() {
-		return AtmosphericBlocks.KOUSA_SAPLING.get();
+	public BlockState getSapling() {
+		return AtmosphericBlocks.KOUSA_SAPLING.get().defaultBlockState();
 	}
 
-	private void createLeafLayer(BlockPos pos, RandomSource random, boolean square) {
+	public void createLeafLayer(BlockPos pos, RandomSource random, boolean square) {
 		int leafSize = 1;
 		for (int i = -leafSize; i <= leafSize; ++i) {
 			for (int k = -leafSize; k <= leafSize; ++k) {

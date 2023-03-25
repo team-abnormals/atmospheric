@@ -8,7 +8,7 @@ import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Plane;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
@@ -51,8 +51,8 @@ public class KousaTreeFeature extends AtmosphericTreeFeature {
 	}
 
 	@Override
-	public Block getSapling() {
-		return AtmosphericBlocks.KOUSA_SAPLING.get();
+	public BlockState getSapling() {
+		return AtmosphericBlocks.KOUSA_SAPLING.get().defaultBlockState();
 	}
 
 	private void createBranch(BlockPos pos, Direction direction, RandomSource random) {

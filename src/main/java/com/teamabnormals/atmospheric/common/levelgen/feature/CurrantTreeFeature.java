@@ -4,7 +4,7 @@ import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
@@ -33,8 +33,8 @@ public class CurrantTreeFeature extends AtmosphericTreeFeature {
 	}
 
 	@Override
-	public Block getSapling() {
-		return AtmosphericBlocks.CURRANT_SEEDLING.get();
+	public BlockState getSapling() {
+		return AtmosphericBlocks.CURRANT_SEEDLING.get().defaultBlockState();
 	}
 
 	private void createLeafLayer(BlockPos pos, int leafSize, RandomSource random) {
