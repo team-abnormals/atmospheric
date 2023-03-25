@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class BlockMixin {
 
 	@Inject(method = "canSustainPlant", at = @At("RETURN"), cancellable = true, remap = false)
-	private void getStateForPlacement(BlockState state, BlockGetter world, BlockPos pos, Direction facing, IPlantable plantable, CallbackInfoReturnable<Boolean> cir) {
+	private void canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction facing, IPlantable plantable, CallbackInfoReturnable<Boolean> cir) {
 		if (plantable.getPlant(world, pos.relative(facing)).getBlock() == Blocks.CACTUS && state.is(AtmosphericBlocks.SNOWY_CACTUS.get())) {
 			cir.setReturnValue(true);
 		}

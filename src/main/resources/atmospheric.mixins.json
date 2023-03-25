@@ -11,6 +11,7 @@
     "RabbitMixin",
     "ServerLevelMixin",
     "ShearsItemMixin",
+    "SnowAndFreezeFeatureMixin",
     "SwordItemMixin"
   ],
   "injectors": {
