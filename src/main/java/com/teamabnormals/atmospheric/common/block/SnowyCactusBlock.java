@@ -29,7 +29,6 @@ public class SnowyCactusBlock extends CactusBlock {
 
 			if (i < 3) {
 				int j = state.getValue(AGE);
-				System.out.println(j);
 				if (ForgeHooks.onCropsGrowPre(level, abovePos, state, true)) {
 					if (j == 15) {
 						level.setBlockAndUpdate(abovePos, this.defaultBlockState());

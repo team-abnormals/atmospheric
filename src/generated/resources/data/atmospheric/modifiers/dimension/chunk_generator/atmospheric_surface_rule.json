@@ -556,7 +556,8 @@
             "if_true": {
               "type": "minecraft:biome",
               "biome_is": [
-                "atmospheric:shrubland"
+                "atmospheric:shrubland",
+                "atmospheric:snowy_shrubland"
               ]
             },
             "then_run": {

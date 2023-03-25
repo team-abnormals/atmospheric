@@ -22,7 +22,7 @@ public final class AtmosphericChunkGeneratorModifierProvider extends ChunkGenera
 	protected void registerEntries() {
 		ConditionSource isDunes = isBiome(AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.FLOURISHING_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.PETRIFIED_DUNES.getKey());
 		ConditionSource isSpinyThicket = isBiome(AtmosphericBiomes.SPINY_THICKET.getKey());
-		ConditionSource isShrubland = isBiome(AtmosphericBiomes.SHRUBLAND.getKey());
+		ConditionSource isShrubland = isBiome(AtmosphericBiomes.SHRUBLAND.getKey(), AtmosphericBiomes.SNOWY_SHRUBLAND.getKey());
 		ConditionSource isHotSprings = isBiome(AtmosphericBiomes.HOT_SPRINGS.getKey());
 
 		RuleSource coarseDirt = state(Blocks.COARSE_DIRT.defaultBlockState());

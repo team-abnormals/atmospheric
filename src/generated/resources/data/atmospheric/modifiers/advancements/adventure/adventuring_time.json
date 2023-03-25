@@ -196,6 +196,22 @@
             },
             "trigger": "minecraft:location"
           },
+          "atmospheric:snowy_shrubland": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "location": {
+                      "biome": "atmospheric:snowy_shrubland"
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          },
           "atmospheric:sparse_rainforest": {
             "conditions": {
               "player": [
@@ -275,6 +291,9 @@
           ],
           [
             "atmospheric:shrubland"
+          ],
+          [
+            "atmospheric:snowy_shrubland"
           ],
           [
             "atmospheric:aspen_parkland"

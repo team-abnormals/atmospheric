@@ -32,7 +32,8 @@ public class AtmosphericBiomes {
 	public static final KeyedBiome PETRIFIED_DUNES = HELPER.createBiome("petrified_dunes", () -> dunes(true, true));
 
 	public static final KeyedBiome SPINY_THICKET = HELPER.createBiome("spiny_thicket", AtmosphericBiomes::spinyThicket);
-	public static final KeyedBiome SHRUBLAND = HELPER.createBiome("shrubland", AtmosphericBiomes::shrubland);
+	public static final KeyedBiome SHRUBLAND = HELPER.createBiome("shrubland", () -> shrubland(false));
+	public static final KeyedBiome SNOWY_SHRUBLAND = HELPER.createBiome("snowy_shrubland", () -> shrubland(true));
 
 	public static final KeyedBiome ASPEN_PARKLAND = HELPER.createBiome("aspen_parkland", AtmosphericBiomes::aspenParkland);
 	public static final KeyedBiome KOUSA_JUNGLE = HELPER.createBiome("kousa_jungle", AtmosphericBiomes::kousaJungle);
@@ -74,14 +75,14 @@ public class AtmosphericBiomes {
 		return biome(Precipitation.NONE, 2.0F, 0.85F, 14988944, spawns, generation, null);
 	}
 
-	private static Biome shrubland() {
+	private static Biome shrubland(boolean snowy) {
 		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
 		AtmosphericGeneration.shrubland(generation);
 
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
 		BiomeDefaultFeatures.desertSpawns(spawns);
 
-		return biome(Precipitation.NONE, 2.0F, 0.0F, 13021599, spawns, generation, null);
+		return biome(!snowy ? Precipitation.NONE : Precipitation.SNOW, !snowy ? 2.0F : 0.0F, 0.0F, 13021599, spawns, generation, null);
 	}
 
 	private static Biome aspenParkland() {
@@ -106,7 +107,7 @@ public class AtmosphericBiomes {
 		spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 2, 1, 3));
 		BiomeDefaultFeatures.commonSpawns(spawns);
 
-		return biome(Biome.Precipitation.SNOW, -0.25F, 0.5F, spawns, generation, null);
+		return biome(Biome.Precipitation.SNOW, -0.5F, 0.5F, spawns, generation, null);
 	}
 
 	private static Biome grimwoods() {
