@@ -10,6 +10,7 @@ import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -30,8 +31,13 @@ public class AtmosphericEvents {
 			if (event.getRayTraceResult() instanceof BlockHitResult result) {
 				Level level = snowball.getLevel();
 				BlockPos pos = result.getBlockPos();
-				if (level.getBlockState(pos).is(Blocks.POTTED_BAMBOO)) {
-					level.setBlockAndUpdate(pos, AtmosphericBlocks.POTTED_SNOWY_BAMBOO.get().defaultBlockState());
+				BlockState state = level.getBlockState(pos);
+				Block newBlock = state.is(Blocks.POTTED_BAMBOO) ? AtmosphericBlocks.POTTED_SNOWY_BAMBOO.get() :
+						state.is(Blocks.POTTED_CACTUS) ? AtmosphericBlocks.POTTED_SNOWY_CACTUS.get() :
+								state.is(AtmosphericBlocks.POTTED_BARREL_CACTUS.get()) ? AtmosphericBlocks.POTTED_SNOWY_BARREL_CACTUS.get() : null;
+
+				if (newBlock != null) {
+					level.setBlockAndUpdate(pos, newBlock.defaultBlockState());
 				}
 			}
 		}

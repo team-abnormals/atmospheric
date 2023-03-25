@@ -1,0 +1,9 @@
+{
+    "parent": "minecraft:block/potted_cactus",
+    "textures": {
+        "particle": "block/flower_pot",
+        "flowerpot": "block/flower_pot",
+        "cactus_top": "atmospheric:block/snowy_cactus_top",
+        "cactus": "atmospheric:block/snowy_cactus_side"
+    }
+}

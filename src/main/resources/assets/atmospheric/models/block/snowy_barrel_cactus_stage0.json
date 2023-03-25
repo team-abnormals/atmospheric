@@ -1,0 +1,8 @@
+{
+  "parent": "atmospheric:block/barrel_cactus_stage0",
+  "textures": {
+    "bottom": "atmospheric:block/barrel_cactus_stage0_bottom",
+    "side": "atmospheric:block/snowy_barrel_cactus_stage0_side",
+    "top": "atmospheric:block/snowy_barrel_cactus_stage0_top"
+  }
+}

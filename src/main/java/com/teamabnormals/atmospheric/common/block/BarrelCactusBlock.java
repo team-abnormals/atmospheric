@@ -11,11 +11,11 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -60,9 +60,9 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	@Nullable
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos());
-		if (blockstate.getBlock() == this) {
-			return blockstate.setValue(AGE, Math.min(3, blockstate.getValue(AGE) + 1));
+		BlockState state = context.getLevel().getBlockState(context.getClickedPos());
+		if (state.getBlock() instanceof BarrelCactusBlock) {
+			return state.setValue(AGE, Math.min(3, state.getValue(AGE) + 1));
 		} else {
 			return this.defaultBlockState();
 		}
@@ -70,7 +70,12 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 
 	@Override
 	public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
-		return useContext.getItemInHand().getItem() == this.asItem() && state.getValue(AGE) < 3 || super.canBeReplaced(state, useContext);
+		return useContext.getItemInHand().getItem() == AtmosphericItems.BARREL_CACTUS.get() && state.getValue(AGE) < 3 || super.canBeReplaced(state, useContext);
+	}
+
+	@Override
+	public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+		return new ItemStack(AtmosphericItems.BARREL_CACTUS.get());
 	}
 
 	@Override

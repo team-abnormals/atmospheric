@@ -252,6 +252,10 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ALOE_GEL_BLOCK = HELPER.createBlock("aloe_gel_block", () -> new AloeGelBlock(Block.Properties.copy(Blocks.SLIME_BLOCK).isSuffocating(PropertyUtil::never)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> BARREL_CACTUS = HELPER.createBlockNoItem("barrel_cactus", () -> new BarrelCactusBlock(Block.Properties.copy(Blocks.CACTUS)));
 	public static final RegistryObject<Block> POTTED_BARREL_CACTUS = HELPER.createBlockNoItem("potted_barrel_cactus", () -> new FlowerPotBlock(BARREL_CACTUS.get(), Block.Properties.copy(Blocks.POTTED_CACTUS)));
+	public static final RegistryObject<Block> SNOWY_BARREL_CACTUS = HELPER.createBlockNoItem("snowy_barrel_cactus", () -> new BarrelCactusBlock(Block.Properties.copy(Blocks.CACTUS)));
+	public static final RegistryObject<Block> POTTED_SNOWY_BARREL_CACTUS = HELPER.createBlockNoItem("potted_snowy_barrel_cactus", () -> new SnowyFlowerPotBlock(SNOWY_BARREL_CACTUS.get(), () -> BARREL_CACTUS.get(), Block.Properties.copy(Blocks.POTTED_CACTUS)));
+	public static final RegistryObject<Block> SNOWY_CACTUS = HELPER.createBlockNoItem("snowy_cactus", () -> new SnowyCactusBlock(Block.Properties.copy(Blocks.CACTUS)));
+	public static final RegistryObject<Block> POTTED_SNOWY_CACTUS = HELPER.createBlockNoItem("potted_snowy_cactus", () -> new SnowyFlowerPotBlock(SNOWY_CACTUS.get(), () -> Blocks.CACTUS, Block.Properties.copy(Blocks.POTTED_CACTUS)));
 
 	public static final RegistryObject<Block> ARID_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "arid_sandstone_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> CUT_ARID_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "cut_arid_sandstone_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -400,7 +404,7 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> SNOWY_BAMBOO_SAPLING = HELPER.createBlockNoItem("snowy_bamboo_sapling", () -> new SnowyBambooSaplingBlock(Properties.of(Material.BAMBOO_SAPLING).randomTicks().instabreak().noCollission().strength(1.0F).sound(SoundType.BAMBOO_SAPLING).offsetType(OffsetType.XZ)));
 	public static final RegistryObject<Block> SNOWY_BAMBOO = HELPER.createBlockNoItem("snowy_bamboo", () -> new SnowyBambooBlock(Properties.of(Material.BAMBOO, MaterialColor.PLANT).randomTicks().instabreak().strength(1.0F).sound(SoundType.BAMBOO).noOcclusion().dynamicShape().offsetType(OffsetType.XZ)));
-	public static final RegistryObject<Block> POTTED_SNOWY_BAMBOO = HELPER.createBlockNoItem("potted_snowy_bamboo", () -> new PottedSnowyBambooBlock(SNOWY_BAMBOO.get(), PropertyUtil.flowerPot()));
+	public static final RegistryObject<Block> POTTED_SNOWY_BAMBOO = HELPER.createBlockNoItem("potted_snowy_bamboo", () -> new SnowyFlowerPotBlock(SNOWY_BAMBOO.get(), () -> Blocks.BAMBOO, PropertyUtil.flowerPot()));
 
 	public static final RegistryObject<Block> HANGING_CURRANT = HELPER.createBlock("hanging_currant", () -> new HangingCurrantBlock(Block.Properties.copy(Blocks.MELON_STEM).sound(SoundType.CROP).randomTicks()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CURRANT_STALK = HELPER.createFuelBlock("currant_stalk", () -> new CurrantStalkBlock(AtmosphericProperties.CURRANT.log()), 50, CreativeModeTab.TAB_BUILDING_BLOCKS);

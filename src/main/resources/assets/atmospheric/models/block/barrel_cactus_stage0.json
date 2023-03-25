@@ -1,11 +1,10 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "block/block",
 		"textures": {
 		"bottom": "atmospheric:block/barrel_cactus_stage0_bottom",
 		"side": "atmospheric:block/barrel_cactus_stage0_side",
 		"top": "atmospheric:block/barrel_cactus_stage0_top",
-		"particle": "atmospheric:block/barrel_cactus_stage0_side"
+		"particle": "#side"
 	},
 	"elements": [
 		{

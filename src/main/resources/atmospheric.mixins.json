@@ -6,8 +6,10 @@
   "refmap": "atmospheric.refmap.json",
   "mixins": [
     "BambooBlockMixin",
+    "BlockMixin",
     "PistonBaseBlockMixin",
     "RabbitMixin",
+    "ServerLevelMixin",
     "ShearsItemMixin",
     "SwordItemMixin"
   ],
