@@ -2,17 +2,19 @@ package com.teamabnormals.atmospheric.core.data.server.modifiers;
 
 import com.mojang.serialization.JsonOps;
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBiomeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericPlacedFeatures;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.RegistryOps;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.JsonCodecProvider;
@@ -26,31 +28,40 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class AtmosphericBiomeModifierProvider {
+	private static final RegistryAccess ACCESS = RegistryAccess.builtinCopy();
+	private static final Registry<Biome> BIOMES = ACCESS.registryOrThrow(Registry.BIOME_REGISTRY);
+	private static final Registry<PlacedFeature> PLACED_FEATURES = ACCESS.registryOrThrow(Registry.PLACED_FEATURE_REGISTRY);
+	private static final HashMap<ResourceLocation, BiomeModifier> MODIFIERS = new HashMap<>();
 
 	public static JsonCodecProvider<BiomeModifier> create(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-		RegistryAccess access = RegistryAccess.builtinCopy();
-		Registry<Biome> biomeRegistry = access.registryOrThrow(Registry.BIOME_REGISTRY);
-		Registry<PlacedFeature> placedFeatures = access.registryOrThrow(Registry.PLACED_FEATURE_REGISTRY);
-		HashMap<ResourceLocation, BiomeModifier> modifiers = new HashMap<>();
+		addFeature("yucca_tree_desert", Biomes.DESERT, Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.DESERT_YUCCA_TREES);
+		addFeature("yucca_tree_windswept_savanna", Biomes.WINDSWEPT_SAVANNA, Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.WINDSWEPT_SAVANNA_YUCCA_TREES);
+		addFeature("wooded_badlands_vegetation", Biomes.WOODED_BADLANDS, Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.WOODED_BADLANDS_YUCCA_TREES, AtmosphericPlacedFeatures.PATCH_AGAVE_LARGE);
 
-		addModifier(modifiers, "add_feature/yucca_tree/desert", new AddFeaturesBiomeModifier(tag(biomeRegistry, AtmosphericBiomeTags.HAS_DESERT_YUCCA_TREES), of(placedFeatures, AtmosphericPlacedFeatures.DESERT_YUCCA_TREES), GenerationStep.Decoration.VEGETAL_DECORATION));
-		addModifier(modifiers, "add_feature/yucca_tree/badlands", new AddFeaturesBiomeModifier(tag(biomeRegistry, AtmosphericBiomeTags.HAS_BADLANDS_YUCCA_TREES), of(placedFeatures, AtmosphericPlacedFeatures.TREES_WOODED_BADLANDS), GenerationStep.Decoration.VEGETAL_DECORATION));
-		addModifier(modifiers, "add_feature/yucca_tree/savanna", new AddFeaturesBiomeModifier(tag(biomeRegistry, AtmosphericBiomeTags.HAS_SAVANNA_YUCCA_TREES), of(placedFeatures, AtmosphericPlacedFeatures.WINDSWEPT_SAVANNA_YUCCA_TREES), GenerationStep.Decoration.VEGETAL_DECORATION));
-
-		return JsonCodecProvider.forDatapackRegistry(generator, existingFileHelper, Atmospheric.MOD_ID, RegistryOps.create(JsonOps.INSTANCE, access), ForgeRegistries.Keys.BIOME_MODIFIERS, modifiers);
-	}
-
-	private static HolderSet<Biome> tag(Registry<Biome> biomeRegistry, TagKey<Biome> tagKey) {
-		return new HolderSet.Named<>(biomeRegistry, tagKey);
-	}
-
-	private static void addModifier(HashMap<ResourceLocation, BiomeModifier> modifiers, String name, BiomeModifier modifier) {
-		modifiers.put(Atmospheric.location(name), modifier);
+		return JsonCodecProvider.forDatapackRegistry(generator, existingFileHelper, Atmospheric.MOD_ID, RegistryOps.create(JsonOps.INSTANCE, ACCESS), ForgeRegistries.Keys.BIOME_MODIFIERS, MODIFIERS);
 	}
 
 	@SafeVarargs
-	@SuppressWarnings("ConstantConditions")
-	private static HolderSet<PlacedFeature> of(Registry<PlacedFeature> placedFeatures, RegistryObject<PlacedFeature>... features) {
-		return HolderSet.direct(Stream.of(features).map(registryObject -> placedFeatures.getOrCreateHolderOrThrow(registryObject.getKey())).collect(Collectors.toList()));
+	private static void addFeature(String name, ResourceKey<Biome> biome, GenerationStep.Decoration step, RegistryObject<PlacedFeature>... features) {
+		addModifier("add_feature/" + name, new AddFeaturesBiomeModifier(biomeSet(biome), featureSet(features), step));
+	}
+
+	@SafeVarargs
+	private static void addFeature(String name, TagKey<Biome> biomes, GenerationStep.Decoration step, RegistryObject<PlacedFeature>... features) {
+		addModifier("add_feature/" + name, new AddFeaturesBiomeModifier(new HolderSet.Named<>(BIOMES, biomes), featureSet(features), step));
+	}
+
+	private static void addModifier(String name, BiomeModifier modifier) {
+		MODIFIERS.put(new ResourceLocation(Atmospheric.MOD_ID, name), modifier);
+	}
+
+	@SafeVarargs
+	private static HolderSet<Biome> biomeSet(ResourceKey<Biome>... biomes) {
+		return HolderSet.direct(Stream.of(biomes).map(BIOMES::getOrCreateHolderOrThrow).collect(Collectors.toList()));
+	}
+
+	@SafeVarargs
+	private static HolderSet<PlacedFeature> featureSet(RegistryObject<PlacedFeature>... features) {
+		return HolderSet.direct(Stream.of(features).map(registryObject -> PLACED_FEATURES.getOrCreateHolderOrThrow(registryObject.getKey())).collect(Collectors.toList()));
 	}
 }

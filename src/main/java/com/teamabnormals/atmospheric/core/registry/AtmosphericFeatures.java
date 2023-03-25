@@ -388,9 +388,9 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> TREES_FLOURISHING_DUNES = register("trees_flourishing_dunes", AtmosphericConfiguredFeatures.TREES_FLOURISHING_DUNES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.05F, 1)));
 		public static final RegistryObject<PlacedFeature> TREES_ROCKY_DUNES = register("trees_rocky_dunes", AtmosphericConfiguredFeatures.TREES_DUNES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 1)));
 		public static final RegistryObject<PlacedFeature> TREES_PETRIFIED_DUNES = register("trees_petrified_dunes", AtmosphericConfiguredFeatures.TREES_PETRIFIED_DUNES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.5F, 2)));
-		public static final RegistryObject<PlacedFeature> TREES_WOODED_BADLANDS = register("trees_wooded_badlands", AtmosphericConfiguredFeatures.TREES_DUNES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.25F, 1)));
-
 		public static final RegistryObject<PlacedFeature> FLOURISHING_DUNES_YUCCA_TREES = register("flourishing_dunes_yucca_trees", AtmosphericConfiguredFeatures.YUCCA_BEES_005_WITH_FLOWERS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.25F, 1)));
+
+		public static final RegistryObject<PlacedFeature> WOODED_BADLANDS_YUCCA_TREES = register("badlands_yucca_trees", AtmosphericConfiguredFeatures.TREES_DUNES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.25F, 1), Blocks.OAK_SAPLING));
 		public static final RegistryObject<PlacedFeature> DESERT_YUCCA_TREES = register("desert_yucca_trees", AtmosphericConfiguredFeatures.TREES_DUNES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.005F, 1)));
 		public static final RegistryObject<PlacedFeature> WINDSWEPT_SAVANNA_YUCCA_TREES = register("windswept_savanna_yucca_trees", AtmosphericConfiguredFeatures.TREES_DUNES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.125F, 1)));
 

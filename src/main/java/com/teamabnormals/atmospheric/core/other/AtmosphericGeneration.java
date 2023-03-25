@@ -83,6 +83,7 @@ public class AtmosphericGeneration {
 				generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_YUCCA_FLOWER_EXTRA.getHolder().get());
 				generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_ALOE_VERA_EXTRA.getHolder().get());
 				generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_BARREL_CACTUS_FLOURISHING_DUNES.getHolder().get());
+				generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_AGAVE_LARGE.getHolder().get());
 			}
 		} else {
 			if (!variant) {
@@ -114,6 +115,7 @@ public class AtmosphericGeneration {
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_FLOURISHING_DUNES.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_BARREL_CACTUS_SPINY_THICKET.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, SINGLE_YUCCA_FLOWER.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_AGAVE_LARGE.getHolder().get());
 	}
 
 	public static void shrubland(BiomeGenerationSettings.Builder generation) {
@@ -192,6 +194,7 @@ public class AtmosphericGeneration {
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_DEAD_BUSH_LAUREL_FOREST.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, COARSE_DIRT_LAUREL_FOREST.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_LAUREL_FOREST.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_AGAVE_LARGE.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_LARGE_FERN_KOUSA.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_GRASS_LAUREL_FOREST.getHolder().get());
 	}

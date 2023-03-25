@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#atmospheric:has_feature/yucca_tree/badlands",
-  "features": "atmospheric:trees_wooded_badlands",
-  "step": "vegetal_decoration"
-}

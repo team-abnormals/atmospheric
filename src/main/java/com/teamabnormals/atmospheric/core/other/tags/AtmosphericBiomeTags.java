@@ -12,10 +12,6 @@ public class AtmosphericBiomeTags {
 	public static final TagKey<Biome> HAS_KOUSA_SANCTUM = biomeTag("has_structure/kousa_sanctum");
 	public static final TagKey<Biome> ONLY_ALLOWS_YELLOW_RABBITS = biomeTag("only_allows_yellow_rabbits");
 
-	public static final TagKey<Biome> HAS_DESERT_YUCCA_TREES = biomeTag("has_feature/yucca_tree/desert");
-	public static final TagKey<Biome> HAS_BADLANDS_YUCCA_TREES = biomeTag("has_feature/yucca_tree/badlands");
-	public static final TagKey<Biome> HAS_SAVANNA_YUCCA_TREES = biomeTag("has_feature/yucca_tree/savanna");
-
 	private static TagKey<Biome> biomeTag(String name) {
 		return TagUtil.biomeTag(Atmospheric.MOD_ID, name);
 	}

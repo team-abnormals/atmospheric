@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#atmospheric:has_feature/yucca_tree/desert",
+  "biomes": "minecraft:desert",
   "features": "atmospheric:desert_yucca_trees",
   "step": "vegetal_decoration"
 }
