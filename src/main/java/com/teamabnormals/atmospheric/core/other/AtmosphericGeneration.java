@@ -32,6 +32,7 @@ public class AtmosphericGeneration {
 		if (!basin) {
 			if (!sparse) {
 				generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_RAINFOREST.getHolder().get());
+				generation.addFeature(Decoration.VEGETAL_DECORATION, BUSHES_RAINFOREST.getHolder().get());
 			} else {
 				generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_SPARSE_RAINFOREST.getHolder().get());
 				generation.addFeature(Decoration.VEGETAL_DECORATION, BUSHES_SPARSE_RAINFOREST.getHolder().get());
@@ -41,7 +42,7 @@ public class AtmosphericGeneration {
 			generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_WATERLILY_RAINFOREST.getHolder().get());
 			generation.addFeature(Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SWAMP);
 		} else {
-			generation.addFeature(Decoration.VEGETAL_DECORATION, OAK_RAINFOREST_BASIN.getHolder().get());
+			generation.addFeature(Decoration.VEGETAL_DECORATION, BUSHES_RAINFOREST.getHolder().get());
 			generation.addFeature(Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_DEEP_WARM);
 			generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_WATERLILY_RAINFOREST_BASIN.getHolder().get());
 			if (!sparse) {
