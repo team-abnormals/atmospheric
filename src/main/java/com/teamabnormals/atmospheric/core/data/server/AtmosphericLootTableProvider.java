@@ -7,6 +7,7 @@ import com.teamabnormals.atmospheric.common.block.AloeVeraTallBlock;
 import com.teamabnormals.atmospheric.common.block.BarrelCactusBlock;
 import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
@@ -96,7 +97,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropSelf(ALOE_GEL_BLOCK.get());
 			this.add(BARREL_CACTUS.get(), AtmosphericBlockLoot::createBarrelCactusDrops);
 			this.add(SNOWY_BARREL_CACTUS.get(), AtmosphericBlockLoot::createBarrelCactusDrops);
-			this.dropSelf(SNOWY_CACTUS.get());
+			this.dropOther(SNOWY_CACTUS.get(), Blocks.CACTUS);
 			this.dropSelf(BARREL_CACTUS_BATCH.get());
 			this.dropPottedContents(POTTED_BARREL_CACTUS.get());
 			this.dropPottedContents(POTTED_SNOWY_CACTUS.get());
@@ -476,7 +477,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 		}
 
 		protected static LootTable.Builder createBarrelCactusDrops(Block block) {
-			return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(applyExplosionDecay(block, LootItem.lootTableItem(block).apply(List.of(1, 2, 3), (val) -> SetItemCountFunction.setCount(ConstantValue.exactly((float) val)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BarrelCactusBlock.AGE, val)))))));
+			return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(applyExplosionDecay(block, LootItem.lootTableItem(BARREL_CACTUS.get()).apply(List.of(1, 2, 3), (val) -> SetItemCountFunction.setCount(ConstantValue.exactly((float) val)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BarrelCactusBlock.AGE, val)))))));
 		}
 
 		protected static Builder createLeafPileDrops(Block block) {
