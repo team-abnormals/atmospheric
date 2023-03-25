@@ -34,11 +34,16 @@ public class RainforestTreeFeature extends AtmosphericTreeFeature {
 		int branches = 2 + random.nextInt(3) - (!morado ? 0 : 1);
 		int trunkHeight = config.trunkPlacer.getTreeHeight(random);
 
+		boolean tall = !morado && random.nextInt(100) == 0;
+		if (tall) {
+			trunkHeight += 6 + random.nextInt(4) + random.nextInt(3);
+		}
+
 		boolean canopy = false;
 		for (int y = 0; y < trunkHeight; ++y) {
 			BlockPos pos = origin.above(y);
 			this.addLog(pos);
-			if (random.nextInt(6) == 0 && y > 3 && !canopy) {
+			if (random.nextInt(6) == 0 && y > (!tall ? 3 : 8) && !canopy) {
 				this.createLeafLayer(pos, 1 + random.nextInt(2));
 				canopy = true;
 			}
@@ -57,8 +62,8 @@ public class RainforestTreeFeature extends AtmosphericTreeFeature {
 			pos.set(origin.above(trunkHeight - 1));
 
 			for (int k4 = 0; k4 < turns; ++k4) {
-				int branchLength = !morado ? 1 + random.nextInt(2) + random.nextInt(2) : 1 + random.nextInt(2);
-				int branchHeight = !morado ? 1 + random.nextInt(3) + random.nextInt(2) : 1 + random.nextInt(2);
+				int branchLength = tall ? 2 + random.nextInt(2) : !morado ? 1 + random.nextInt(2) + random.nextInt(2) : 1 + random.nextInt(2);
+				int branchHeight = tall ? 2 + random.nextInt(2) + random.nextInt(2) : !morado ? 1 + random.nextInt(3) + random.nextInt(2) : 1 + random.nextInt(2);
 				this.createHorizontalLog(branchLength, pos, direction, random, config);
 				this.createVerticalLog(branchHeight, pos, random);
 			}
