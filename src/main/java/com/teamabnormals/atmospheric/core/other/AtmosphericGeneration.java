@@ -122,16 +122,11 @@ public class AtmosphericGeneration {
 		OverworldBiomes.globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addDefaultOres(generation);
 		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+		generation.addFeature(Decoration.VEGETAL_DECORATION, !snowy ? VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS : PATCH_DEAD_BUSH_LAUREL_FOREST.getHolder().get());
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
-		if (!snowy) {
-			generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_ARID_SPROUTS.getHolder().get());
-			generation.addFeature(Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
-		} else {
-			generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_ARID_SPROUTS_RARE.getHolder().get());
-			generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_DEAD_BUSH_LAUREL_FOREST.getHolder().get());
-		}
 
+		generation.addFeature(Decoration.VEGETAL_DECORATION, !snowy ? PATCH_ARID_SPROUTS.getHolder().get() : PATCH_ARID_SPROUTS_RARE.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_SHRUBLAND.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, FLOWER_SHRUBLAND.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_CACTUS_SHRUBLAND.getHolder().get());
@@ -176,12 +171,12 @@ public class AtmosphericGeneration {
 		OverworldBiomes.globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addDefaultOres(generation);
 		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+		generation.addFeature(Decoration.VEGETAL_DECORATION, COARSE_DIRT.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
 		BiomeDefaultFeatures.addSavannaExtraGrass(generation);
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
-		generation.addFeature(Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
-		generation.addFeature(Decoration.VEGETAL_DECORATION, COARSE_DIRT.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_GRIMWOODS.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, OMINOUS_BLOCK.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, DEAD_CURRANT.getHolder().get());
@@ -189,16 +184,16 @@ public class AtmosphericGeneration {
 
 	public static void laurelForest(BiomeGenerationSettings.Builder generation) {
 		OverworldBiomes.globalOverworldGeneration(generation);
+		BiomeDefaultFeatures.addSavannaGrass(generation);
 		BiomeDefaultFeatures.addDefaultOres(generation);
 		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
 		BiomeDefaultFeatures.addDefaultFlowers(generation);
-		BiomeDefaultFeatures.addSavannaGrass(generation);
+		generation.addFeature(Decoration.VEGETAL_DECORATION, COARSE_DIRT_LAUREL_FOREST.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_DEAD_BUSH_LAUREL_FOREST.getHolder().get());
 		BiomeDefaultFeatures.addForestGrass(generation);
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
-		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_DEAD_BUSH_LAUREL_FOREST.getHolder().get());
-		generation.addFeature(Decoration.VEGETAL_DECORATION, COARSE_DIRT_LAUREL_FOREST.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_LAUREL_FOREST.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_AGAVE_LARGE.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_LARGE_FERN_KOUSA.getHolder().get());

@@ -2,7 +2,6 @@ package com.teamabnormals.atmospheric.core.data.server.modifiers;
 
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericBiomes;
 import com.teamabnormals.blueprint.common.world.modification.ModdedBiomeSliceProvider;
 import com.teamabnormals.blueprint.core.registry.BlueprintBiomes;
 import com.teamabnormals.blueprint.core.util.BiomeUtil;
@@ -16,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import static com.teamabnormals.atmospheric.core.registry.AtmosphericBiomes.*;
+
 public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceProvider {
 
 	public AtmosphericModdedBiomeSliceProvider(DataGenerator dataGenerator) {
@@ -26,7 +27,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 	protected void registerSlices() {
 		List<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> entries = new ArrayList<>();
 		new AtmosphericBiomeBuilder().addBiomes(entries::add);
-		this.registerSlice("main", 5, new BiomeUtil.MultiNoiseModdedBiomeProvider(new Climate.ParameterList<>(entries)), LevelStem.OVERWORLD.location());
+		this.registerSlice("main", 7, new BiomeUtil.MultiNoiseModdedBiomeProvider(new Climate.ParameterList<>(entries)), LevelStem.OVERWORLD.location());
 	}
 
 	//Modified version of OverworldBiomeBuilder to simplify Atmospheric's slice
@@ -43,34 +44,34 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 		private final Climate.Parameter farInlandContinentalness = Climate.Parameter.span(0.3F, 1.0F);
 		private final ResourceKey<Biome> VANILLA = BlueprintBiomes.ORIGINAL_SOURCE_MARKER.getKey();
 		private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{
-				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.KOUSA_JUNGLE.getKey(), VANILLA},
-				{VANILLA, VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
-				{VANILLA, VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
-				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()},
-				{AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.DUNES.getKey(), AtmosphericBiomes.FLOURISHING_DUNES.getKey(), AtmosphericBiomes.FLOURISHING_DUNES.getKey()}};
+				{VANILLA, VANILLA, VANILLA, KOUSA_JUNGLE.getKey(), VANILLA},
+				{VANILLA, VANILLA, VANILLA, GRIMWOODS.getKey(), ASPEN_PARKLAND.getKey()},
+				{VANILLA, VANILLA, VANILLA, LAUREL_FOREST.getKey(), ASPEN_PARKLAND.getKey()},
+				{VANILLA, VANILLA, VANILLA, RAINFOREST.getKey(), RAINFOREST.getKey()},
+				{SHRUBLAND.getKey(), DUNES.getKey(), DUNES.getKey(), FLOURISHING_DUNES.getKey(), FLOURISHING_DUNES.getKey()}};
 		private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
 				{VANILLA, null, VANILLA, null, null},
 				{null, null, null, null, VANILLA},
 				{VANILLA, null, null, VANILLA, null},
 				{null, null, VANILLA, null, null},
-				{null, null, null, null, null}};
+				{SNOWY_SHRUBLAND.getKey(), null, null, null, null}};
 		private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
-				{VANILLA, VANILLA, AtmosphericBiomes.KOUSA_JUNGLE.getKey(), AtmosphericBiomes.KOUSA_JUNGLE.getKey(), AtmosphericBiomes.KOUSA_JUNGLE.getKey()},
-				{VANILLA, VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
-				{VANILLA, VANILLA, VANILLA, VANILLA, AtmosphericBiomes.ASPEN_PARKLAND.getKey()},
-				{VANILLA, VANILLA, VANILLA, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()},
-				{AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey(), AtmosphericBiomes.ROCKY_DUNES.getKey()}};
+				{VANILLA, VANILLA, KOUSA_JUNGLE.getKey(), KOUSA_JUNGLE.getKey(), KOUSA_JUNGLE.getKey()},
+				{VANILLA, VANILLA, VANILLA, GRIMWOODS.getKey(), ASPEN_PARKLAND.getKey()},
+				{VANILLA, VANILLA, LAUREL_FOREST.getKey(), LAUREL_FOREST.getKey(), ASPEN_PARKLAND.getKey()},
+				{VANILLA, VANILLA, VANILLA, RAINFOREST.getKey(), RAINFOREST.getKey()},
+				{SHRUBLAND.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey()}};
 		private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
 				{VANILLA, null, null, null, null},
-				{null, null, VANILLA, VANILLA, VANILLA},
+				{null, null, VANILLA, null, VANILLA},
 				{null, null, VANILLA, VANILLA, null},
-				{null, null, null, null, AtmosphericBiomes.SPARSE_RAINFOREST.getKey()},
-				{AtmosphericBiomes.PETRIFIED_DUNES.getKey(), AtmosphericBiomes.PETRIFIED_DUNES.getKey(), null, null, null}};
+				{null, null, null, null, SPARSE_RAINFOREST.getKey()},
+				{SNOWY_SHRUBLAND.getKey(), PETRIFIED_DUNES.getKey(), null, null, null}};
 		private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
 				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
 				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
 				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-				{null, null, null, AtmosphericBiomes.RAINFOREST.getKey(), AtmosphericBiomes.RAINFOREST.getKey()},
+				{null, null, null, RAINFOREST.getKey(), RAINFOREST.getKey()},
 				{null, null, null, null, null}};
 
 		private void addBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
@@ -82,7 +83,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 		private void addOffCoastBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
 			this.addSurfaceBiome(consumer, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.2F, -0.35F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, VANILLA);
 			this.addSurfaceBiome(consumer, Climate.Parameter.span(-1.0F, 0.2F), this.FULL_RANGE, Climate.Parameter.span(-0.35F, -0.19F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, VANILLA);
-			this.addSurfaceBiome(consumer, this.temperatures[3], Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(-0.35F, -0.19F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
+			this.addSurfaceBiome(consumer, this.temperatures[3], Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(-0.35F, -0.19F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, RAINFOREST_BASIN.getKey());
 			this.addSurfaceBiome(consumer, this.temperatures[4], Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(-0.35F, -0.19F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, VANILLA);
 		}
 
@@ -165,7 +166,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 			this.addSurfaceBiome(consumer, this.FULL_RANGE, this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), weirdness, 0.0F, VANILLA);
 
 			this.addSurfaceBiome(consumer, Climate.Parameter.span(-1.0F, 0.2F), FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, VANILLA);
-			this.addSurfaceBiome(consumer, Climate.Parameter.span(0.2F, 0.6F), Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
+			this.addSurfaceBiome(consumer, Climate.Parameter.span(0.2F, 0.6F), Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, RAINFOREST_BASIN.getKey());
 			this.addSurfaceBiome(consumer, Climate.Parameter.span(0.6F, 1.0F), FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, VANILLA);
 
 			for (int i = 0; i < this.temperatures.length; ++i) {
@@ -217,7 +218,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 			this.addSurfaceBiome(consumer, this.FULL_RANGE, this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), weirdness, 0.0F, VANILLA);
 
 			this.addSurfaceBiome(consumer, Climate.Parameter.span(-1.0F, 0.2F), FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, VANILLA);
-			this.addSurfaceBiome(consumer, Climate.Parameter.span(0.2F, 0.6F), Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
+			this.addSurfaceBiome(consumer, Climate.Parameter.span(0.2F, 0.6F), Climate.Parameter.span(0.1F, 1.0F), Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, RAINFOREST_BASIN.getKey());
 			this.addSurfaceBiome(consumer, Climate.Parameter.span(0.6F, 1.0F), FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, VANILLA);
 
 			for (int i = 0; i < this.temperatures.length; ++i) {
@@ -250,7 +251,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 
 		private void addValleys(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, Climate.Parameter weirdness) {
 			this.addRiverBiomes(consumer, Climate.Parameter.span(-1.0F, 0.2F), FULL_RANGE, weirdness, VANILLA);
-			this.addRiverBiomes(consumer, Climate.Parameter.span(0.2F, 0.6F), Climate.Parameter.span(0.1F, 1.0F), weirdness, AtmosphericBiomes.RAINFOREST_BASIN.getKey());
+			this.addRiverBiomes(consumer, Climate.Parameter.span(0.2F, 0.6F), Climate.Parameter.span(0.1F, 1.0F), weirdness, RAINFOREST_BASIN.getKey());
 			this.addRiverBiomes(consumer, Climate.Parameter.span(0.6F, 1.0F), FULL_RANGE, weirdness, VANILLA);
 
 			for (int temperatureIndex = 0; temperatureIndex < this.temperatures.length; ++temperatureIndex) {
@@ -295,7 +296,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 
 		private ResourceKey<Biome> maybePickWindsweptRainforestBiome(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness, ResourceKey<Biome> biome) {
 			if (weirdness.max() >= 0L) {
-				if (temperatureIndex == 3 && humidityIndex > 1) return AtmosphericBiomes.RAINFOREST.getKey();
+				if (temperatureIndex == 3 && humidityIndex > 1) return RAINFOREST.getKey();
 				if (temperatureIndex > 1 && humidityIndex < 4) return VANILLA;
 			}
 			return biome;
@@ -310,7 +311,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 			if (temperatureIndex == 0) {
 				return VANILLA;
 			} else {
-				if (temperatureIndex == 3 && humidityIndex > 2) return weirdness.max() >= 0L ? AtmosphericBiomes.RAINFOREST_BASIN.getKey() : AtmosphericBiomes.SPARSE_RAINFOREST_BASIN.getKey();
+				if (temperatureIndex == 3 && humidityIndex > 2) return weirdness.max() >= 0L ? RAINFOREST_BASIN.getKey() : SPARSE_RAINFOREST_BASIN.getKey();
 				return VANILLA;
 			}
 		}
@@ -318,11 +319,11 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 		//Replaces pickBadlandsBiome because badlands biomes can act as middle biome deserts
 		private ResourceKey<Biome> pickDuneBiome(int humidityIndex, Climate.Parameter weirdness) {
 			if (humidityIndex < 1) {
-				return weirdness.max() < 0L ? AtmosphericBiomes.PETRIFIED_DUNES.getKey() : AtmosphericBiomes.ROCKY_DUNES.getKey();
+				return weirdness.max() < 0L ? PETRIFIED_DUNES.getKey() : ROCKY_DUNES.getKey();
 			} else if (humidityIndex < 2) {
-				return AtmosphericBiomes.DUNES.getKey();
+				return DUNES.getKey();
 			} else {
-				return humidityIndex < 3 ? AtmosphericBiomes.FLOURISHING_DUNES.getKey() : AtmosphericBiomes.SPINY_THICKET.getKey();
+				return humidityIndex < 3 ? FLOURISHING_DUNES.getKey() : SPINY_THICKET.getKey();
 			}
 		}
 
@@ -340,7 +341,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				return VANILLA;
 			} else {
 				if (temperatureIndex == 3) return VANILLA;
-				return humidityIndex < 2 && weirdness.max() < 0L ? AtmosphericBiomes.PETRIFIED_DUNES.getKey() : AtmosphericBiomes.ROCKY_DUNES.getKey();
+				return humidityIndex < 2 && weirdness.max() < 0L ? PETRIFIED_DUNES.getKey() : ROCKY_DUNES.getKey();
 			}
 		}
 

@@ -6808,7 +6808,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -6835,7 +6835,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -6862,7 +6862,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -6889,7 +6889,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -6916,7 +6916,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -6943,7 +6943,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -6970,7 +6970,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -6997,7 +6997,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -7024,7 +7024,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -7051,7 +7051,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -7078,7 +7078,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -7105,7 +7105,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -7132,7 +7132,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -7159,7 +7159,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -7240,7 +7240,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -7267,7 +7267,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -7348,7 +7348,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -7375,7 +7375,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -9886,7 +9886,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -9913,7 +9913,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10048,7 +10048,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10075,7 +10075,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10588,7 +10588,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -10615,7 +10615,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -10642,7 +10642,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10669,7 +10669,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10696,7 +10696,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -10723,7 +10723,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -10750,7 +10750,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -10777,7 +10777,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -10804,7 +10804,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10831,7 +10831,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10858,7 +10858,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -10885,7 +10885,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -10912,7 +10912,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -10939,7 +10939,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -11020,7 +11020,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -11047,7 +11047,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -11128,7 +11128,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -11155,7 +11155,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -15826,7 +15826,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -15853,7 +15853,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -15934,7 +15934,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -15961,7 +15961,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -15988,7 +15988,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -16015,7 +16015,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -16096,7 +16096,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -16123,7 +16123,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -16150,7 +16150,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -16177,7 +16177,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -16312,7 +16312,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -16339,7 +16339,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -16420,7 +16420,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -16447,7 +16447,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -16474,7 +16474,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -16501,7 +16501,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -25222,7 +25222,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25249,7 +25249,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25384,7 +25384,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -25411,7 +25411,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -25492,7 +25492,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25519,7 +25519,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25546,7 +25546,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -25573,7 +25573,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -25600,7 +25600,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -25627,7 +25627,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -25654,7 +25654,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -25681,7 +25681,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -25708,7 +25708,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25735,7 +25735,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25762,7 +25762,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25789,7 +25789,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25870,7 +25870,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -25897,7 +25897,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -28354,7 +28354,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -28381,7 +28381,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -28462,7 +28462,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -28489,7 +28489,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -28732,7 +28732,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -28759,7 +28759,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -28894,7 +28894,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -28921,7 +28921,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -29002,7 +29002,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29029,7 +29029,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29056,7 +29056,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -29083,7 +29083,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -29110,7 +29110,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -29137,7 +29137,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -29164,7 +29164,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -29191,7 +29191,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -29218,7 +29218,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29245,7 +29245,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29272,7 +29272,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29299,7 +29299,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29380,7 +29380,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29407,7 +29407,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -33646,7 +33646,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -33673,7 +33673,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -33700,7 +33700,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -33727,7 +33727,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -33862,7 +33862,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -33889,7 +33889,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -33916,7 +33916,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -33943,7 +33943,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -33970,7 +33970,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -33997,7 +33997,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -34078,7 +34078,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -34105,7 +34105,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -34132,7 +34132,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34159,7 +34159,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34186,7 +34186,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34213,7 +34213,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34240,7 +34240,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -34267,7 +34267,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -34294,7 +34294,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34321,7 +34321,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -41962,7 +41962,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -41989,7 +41989,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42070,7 +42070,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42097,7 +42097,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42124,7 +42124,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -42151,7 +42151,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -42178,7 +42178,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -42205,7 +42205,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -42232,7 +42232,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -42259,7 +42259,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -42286,7 +42286,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42313,7 +42313,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42448,7 +42448,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42475,7 +42475,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -44500,7 +44500,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -44527,7 +44527,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -44608,7 +44608,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -44635,7 +44635,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -44932,7 +44932,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -44959,7 +44959,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45040,7 +45040,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45067,7 +45067,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45094,7 +45094,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -45121,7 +45121,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -45148,7 +45148,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -45175,7 +45175,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -45202,7 +45202,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -45229,7 +45229,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -45256,7 +45256,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45283,7 +45283,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45418,7 +45418,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45445,7 +45445,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -49198,7 +49198,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -49225,7 +49225,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -49252,7 +49252,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -49279,7 +49279,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -49360,7 +49360,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -49387,7 +49387,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -49414,7 +49414,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -49441,7 +49441,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -49468,7 +49468,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -49495,7 +49495,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -49522,7 +49522,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -49549,7 +49549,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -49576,7 +49576,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -49603,7 +49603,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -57622,7 +57622,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -57649,7 +57649,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -57784,7 +57784,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -57811,7 +57811,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -57892,7 +57892,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -57919,7 +57919,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -57946,7 +57946,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -57973,7 +57973,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -58000,7 +58000,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -58027,7 +58027,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -58054,7 +58054,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -58081,7 +58081,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -58108,7 +58108,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58135,7 +58135,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58162,7 +58162,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58189,7 +58189,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58270,7 +58270,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58297,7 +58297,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -60754,7 +60754,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -60781,7 +60781,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -60862,7 +60862,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -60889,7 +60889,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -61132,7 +61132,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61159,7 +61159,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61294,7 +61294,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -61321,7 +61321,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -61402,7 +61402,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61429,7 +61429,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61456,7 +61456,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -61483,7 +61483,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -61510,7 +61510,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -61537,7 +61537,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -61564,7 +61564,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -61591,7 +61591,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -61618,7 +61618,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61645,7 +61645,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61672,7 +61672,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61699,7 +61699,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61780,7 +61780,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61807,7 +61807,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66046,7 +66046,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66073,7 +66073,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66100,7 +66100,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -66127,7 +66127,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -66262,7 +66262,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -66289,7 +66289,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -66316,7 +66316,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66343,7 +66343,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66370,7 +66370,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -66397,7 +66397,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -66478,7 +66478,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -66505,7 +66505,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -66532,7 +66532,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66559,7 +66559,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66586,7 +66586,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66613,7 +66613,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66640,7 +66640,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -66667,7 +66667,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -66694,7 +66694,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66721,7 +66721,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -76144,7 +76144,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76171,7 +76171,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76198,7 +76198,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -76225,7 +76225,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -76252,7 +76252,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76279,7 +76279,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76306,7 +76306,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -76333,7 +76333,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -76360,7 +76360,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -76387,7 +76387,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -76414,7 +76414,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -76441,7 +76441,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -76468,7 +76468,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -76495,7 +76495,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -76576,7 +76576,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76603,7 +76603,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76684,7 +76684,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -76711,7 +76711,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -79222,7 +79222,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -79249,7 +79249,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -79384,7 +79384,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -79411,7 +79411,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -79924,7 +79924,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -79951,7 +79951,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -79978,7 +79978,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -80005,7 +80005,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -80032,7 +80032,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80059,7 +80059,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80086,7 +80086,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -80113,7 +80113,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -80140,7 +80140,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -80167,7 +80167,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.3,
@@ -80194,7 +80194,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -80221,7 +80221,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -80248,7 +80248,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -80275,7 +80275,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -80356,7 +80356,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80383,7 +80383,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80464,7 +80464,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80491,7 +80491,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -85162,7 +85162,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -85189,7 +85189,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -85270,7 +85270,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -85297,7 +85297,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -85324,7 +85324,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -85351,7 +85351,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -85432,7 +85432,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -85459,7 +85459,7 @@
         }
       },
       {
-        "biome": "atmospheric:rocky_dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -85486,7 +85486,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -85513,7 +85513,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -85648,7 +85648,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -85675,7 +85675,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -85756,7 +85756,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -85783,7 +85783,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -85810,7 +85810,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -85837,7 +85837,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -93748,7 +93748,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -93775,7 +93775,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -93802,7 +93802,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -93829,7 +93829,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -93856,7 +93856,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -93883,7 +93883,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -93910,7 +93910,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -93937,7 +93937,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -94018,7 +94018,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94045,7 +94045,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94126,7 +94126,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94153,7 +94153,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94180,7 +94180,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -94207,7 +94207,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96448,7 +96448,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96475,7 +96475,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96502,7 +96502,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96529,7 +96529,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96556,7 +96556,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96583,7 +96583,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96610,7 +96610,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96637,7 +96637,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96718,7 +96718,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96745,7 +96745,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96826,7 +96826,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96853,7 +96853,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96880,7 +96880,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96907,7 +96907,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest",
         "parameters": {
           "continentalness": [
             0.03,
@@ -100336,7 +100336,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -100363,7 +100363,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -100498,7 +100498,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -100525,7 +100525,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -100606,7 +100606,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -100633,7 +100633,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -100660,7 +100660,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -100687,7 +100687,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104170,7 +104170,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104197,7 +104197,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -109894,7 +109894,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -109921,7 +109921,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -109948,7 +109948,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -109975,7 +109975,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110002,7 +110002,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110029,7 +110029,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110056,7 +110056,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110083,7 +110083,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110164,7 +110164,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110191,7 +110191,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110218,7 +110218,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -110245,7 +110245,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -110272,7 +110272,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110299,7 +110299,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110326,7 +110326,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110353,7 +110353,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -116482,7 +116482,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -116509,7 +116509,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -116644,7 +116644,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -116671,7 +116671,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -116806,7 +116806,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -116833,7 +116833,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -125230,7 +125230,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125257,7 +125257,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125284,7 +125284,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -125311,7 +125311,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -125338,7 +125338,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125365,7 +125365,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125392,7 +125392,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -125419,7 +125419,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -125446,7 +125446,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -125473,7 +125473,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -125500,7 +125500,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125527,7 +125527,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125554,7 +125554,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -125581,7 +125581,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -125608,7 +125608,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125635,7 +125635,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125662,7 +125662,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125689,7 +125689,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125716,7 +125716,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125743,7 +125743,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125824,7 +125824,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -125851,7 +125851,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -133600,7 +133600,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -133627,7 +133627,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -133708,7 +133708,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -133735,7 +133735,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -133762,7 +133762,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -133789,7 +133789,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -133870,7 +133870,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -133897,7 +133897,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -133924,7 +133924,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -133951,7 +133951,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134032,7 +134032,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134059,7 +134059,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134194,7 +134194,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -134221,7 +134221,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -134248,7 +134248,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134275,7 +134275,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -142726,7 +142726,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -142753,7 +142753,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -142888,7 +142888,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -142915,7 +142915,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -142996,7 +142996,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143023,7 +143023,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143050,7 +143050,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143077,7 +143077,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143104,7 +143104,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143131,7 +143131,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143158,7 +143158,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -143185,7 +143185,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -143212,7 +143212,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143239,7 +143239,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143266,7 +143266,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143293,7 +143293,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143374,7 +143374,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143401,7 +143401,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151150,7 +151150,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151177,7 +151177,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151204,7 +151204,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -151231,7 +151231,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -151366,7 +151366,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151393,7 +151393,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151420,7 +151420,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151447,7 +151447,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151474,7 +151474,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151501,7 +151501,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151582,7 +151582,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -151609,7 +151609,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -151636,7 +151636,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151663,7 +151663,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151744,7 +151744,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151771,7 +151771,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151798,7 +151798,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151825,7 +151825,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159466,7 +159466,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159493,7 +159493,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159574,7 +159574,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159601,7 +159601,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159628,7 +159628,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -159655,7 +159655,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -159682,7 +159682,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -159709,7 +159709,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -159736,7 +159736,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -159763,7 +159763,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -159790,7 +159790,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159817,7 +159817,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159952,7 +159952,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159979,7 +159979,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -166702,7 +166702,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -166729,7 +166729,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -166756,7 +166756,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -166783,7 +166783,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -166864,7 +166864,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -166891,7 +166891,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -166918,7 +166918,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -166945,7 +166945,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167026,7 +167026,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -167053,7 +167053,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -167080,7 +167080,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167107,7 +167107,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175126,7 +175126,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175153,7 +175153,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175288,7 +175288,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -175315,7 +175315,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -175396,7 +175396,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175423,7 +175423,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175450,7 +175450,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -175477,7 +175477,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -175504,7 +175504,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -175531,7 +175531,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -175558,7 +175558,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -175585,7 +175585,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -175612,7 +175612,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175639,7 +175639,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175666,7 +175666,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175693,7 +175693,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175774,7 +175774,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175801,7 +175801,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -183550,7 +183550,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -183577,7 +183577,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -183604,7 +183604,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -183631,7 +183631,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -183766,7 +183766,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -183793,7 +183793,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -183820,7 +183820,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -183847,7 +183847,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -183874,7 +183874,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -183901,7 +183901,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -183982,7 +183982,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -184009,7 +184009,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -184036,7 +184036,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184063,7 +184063,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184144,7 +184144,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -184171,7 +184171,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -184198,7 +184198,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184225,7 +184225,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193216,7 +193216,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193243,7 +193243,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193270,7 +193270,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -193297,7 +193297,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -193324,7 +193324,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193351,7 +193351,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193378,7 +193378,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193405,7 +193405,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193432,7 +193432,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -193459,7 +193459,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -193486,7 +193486,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193513,7 +193513,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193540,7 +193540,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193567,7 +193567,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193594,7 +193594,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193621,7 +193621,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193648,7 +193648,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193675,7 +193675,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193702,7 +193702,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193729,7 +193729,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193810,7 +193810,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -193837,7 +193837,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:grimwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -201586,7 +201586,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -201613,7 +201613,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -201694,7 +201694,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -201721,7 +201721,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -201748,7 +201748,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -201775,7 +201775,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -201856,7 +201856,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -201883,7 +201883,7 @@
         }
       },
       {
-        "biome": "atmospheric:petrified_dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -201910,7 +201910,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -201937,7 +201937,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202018,7 +202018,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202045,7 +202045,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202180,7 +202180,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -202207,7 +202207,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -202234,7 +202234,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202261,7 +202261,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:snowy_shrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -205158,5 +205158,5 @@
     ]
   },
   "selector": "minecraft:overworld",
-  "weight": 5
+  "weight": 7
 }
