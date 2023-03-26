@@ -126,9 +126,9 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
 		generation.addFeature(Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
-		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_CACTUS_SHRUBLAND.getHolder().get());
-		generation.addFeature(Decoration.VEGETAL_DECORATION, FLOWER_SHRUBLAND.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_SHRUBLAND.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, FLOWER_SHRUBLAND.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_CACTUS_SHRUBLAND.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_BARREL_CACTUS_SHRUBLAND.getHolder().get());
 	}
 
