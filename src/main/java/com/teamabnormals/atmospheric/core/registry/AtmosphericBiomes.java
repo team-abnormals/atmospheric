@@ -77,7 +77,7 @@ public class AtmosphericBiomes {
 
 	private static Biome shrubland(boolean snowy) {
 		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
-		AtmosphericGeneration.shrubland(generation);
+		AtmosphericGeneration.shrubland(generation, snowy);
 
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));

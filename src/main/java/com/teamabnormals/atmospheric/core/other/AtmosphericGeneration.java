@@ -118,14 +118,20 @@ public class AtmosphericGeneration {
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_AGAVE_LARGE.getHolder().get());
 	}
 
-	public static void shrubland(BiomeGenerationSettings.Builder generation) {
+	public static void shrubland(BiomeGenerationSettings.Builder generation, boolean snowy) {
 		OverworldBiomes.globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addDefaultOres(generation);
 		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+		if (!snowy) {
+			generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_ARID_SPROUTS.getHolder().get());
+			generation.addFeature(Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
+		} else {
+			generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_ARID_SPROUTS_RARE.getHolder().get());
+			generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_DEAD_BUSH_LAUREL_FOREST.getHolder().get());
+		}
 
-		generation.addFeature(Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS);
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_SHRUBLAND.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, FLOWER_SHRUBLAND.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_CACTUS_SHRUBLAND.getHolder().get());
