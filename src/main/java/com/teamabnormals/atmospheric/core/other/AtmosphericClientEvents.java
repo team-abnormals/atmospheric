@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 @EventBusSubscriber(modid = Atmospheric.MOD_ID, value = Dist.CLIENT)
 public class AtmosphericClientEvents {
 
-	@SubscribeEvent
+//	@SubscribeEvent
 	public static void onRenderFog(RenderFog event) {
 		if (event.getCamera().getEntity() instanceof LocalPlayer player) {
 			Holder<Biome> holder = player.level.getBiome(player.blockPosition());
