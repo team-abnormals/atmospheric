@@ -118,7 +118,7 @@ public class AtmosphericGeneration {
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_AGAVE_LARGE.getHolder().get());
 	}
 
-	public static void shrubland(BiomeGenerationSettings.Builder generation, boolean snowy) {
+	public static void scrubland(BiomeGenerationSettings.Builder generation, boolean snowy) {
 		OverworldBiomes.globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addDefaultOres(generation);
 		BiomeDefaultFeatures.addDefaultSoftDisks(generation);
@@ -127,10 +127,10 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
 		generation.addFeature(Decoration.VEGETAL_DECORATION, !snowy ? PATCH_ARID_SPROUTS.getHolder().get() : PATCH_ARID_SPROUTS_RARE.getHolder().get());
-		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_SHRUBLAND.getHolder().get());
-		generation.addFeature(Decoration.VEGETAL_DECORATION, FLOWER_SHRUBLAND.getHolder().get());
-		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_CACTUS_SHRUBLAND.getHolder().get());
-		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_BARREL_CACTUS_SHRUBLAND.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_SCRUBLAND.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, FLOWER_SCRUBLAND.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_CACTUS_SCRUBLAND.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_BARREL_CACTUS_SCRUBLAND.getHolder().get());
 	}
 
 	public static void aspenParkland(BiomeGenerationSettings.Builder generation) {

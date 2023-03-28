@@ -296,10 +296,10 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_SPINY_THICKET = register("trees_spiny_thicket", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(TreePlacements.ACACIA_CHECKED, 0.25F)), AtmosphericPlacedFeatures.ROSEWOOD_BEES_0002.getHolder().get())));
 		public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> SINGLE_YUCCA_FLOWER = register("single_yucca_flower", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.YUCCA_FLOWER.get()))));
 
-		// Shrubland
+		// Scrubland
 
-		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_SHRUBLAND = register("trees_shrubland", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.BABY_YUCCA_WITH_FLOWERS.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.MORADO_BUSH_SAND.getHolder().get(), 0.2F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.DRY_LAUREL.getHolder().get(), 0.08F)), AtmosphericPlacedFeatures.DRY_LAUREL_BUSH.getHolder().get())));
-		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> FLOWER_SHRUBLAND = register("flower_shrubland", () -> new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchConfiguration(64, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(AtmosphericBlocks.FIRETHORN.get().defaultBlockState(), 1).add(AtmosphericBlocks.FORSYTHIA.get().defaultBlockState(), 1).build()))))));
+		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_SCRUBLAND = register("trees_scrubland", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.BABY_YUCCA_WITH_FLOWERS.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.MORADO_BUSH_SAND.getHolder().get(), 0.2F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.DRY_LAUREL.getHolder().get(), 0.08F)), AtmosphericPlacedFeatures.DRY_LAUREL_BUSH.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> FLOWER_SCRUBLAND = register("flower_scrubland", () -> new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchConfiguration(64, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(AtmosphericBlocks.FIRETHORN.get().defaultBlockState(), 1).add(AtmosphericBlocks.FORSYTHIA.get().defaultBlockState(), 1).build()))))));
 
 		// Hot Springs
 
@@ -398,7 +398,7 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> PATCH_BARREL_CACTUS_ROCKY_DUNES = register("patch_barrel_cactus_rocky_dunes", AtmosphericConfiguredFeatures.PATCH_BARREL_CACTUS, List.of(PlacementUtils.countExtra(0, 0.025F, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_BARREL_CACTUS_FLOURISHING_DUNES = register("patch_barrel_cactus_flourishing_dunes", AtmosphericConfiguredFeatures.PATCH_BARREL_CACTUS, List.of(PlacementUtils.countExtra(0, 0.5F, 3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_BARREL_CACTUS_SPINY_THICKET = register("patch_barrel_cactus_spiny_thicket", AtmosphericConfiguredFeatures.PATCH_BARREL_CACTUS, List.of(PlacementUtils.countExtra(0, 0.5F, 4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
-		public static final RegistryObject<PlacedFeature> PATCH_BARREL_CACTUS_SHRUBLAND = register("patch_barrel_cactus_shrubland", AtmosphericConfiguredFeatures.PATCH_BARREL_CACTUS, List.of(PlacementUtils.countExtra(0, 0.1F, 2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> PATCH_BARREL_CACTUS_SCRUBLAND = register("patch_barrel_cactus_scrubland", AtmosphericConfiguredFeatures.PATCH_BARREL_CACTUS, List.of(PlacementUtils.countExtra(0, 0.1F, 2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_MELON_DUNES = register("patch_melon_dunes", AtmosphericConfiguredFeatures.PATCH_MELON_DUNES, List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
 		public static final RegistryObject<PlacedFeature> PATCH_DUNE_GRASS = register("patch_dune_grass", AtmosphericConfiguredFeatures.PATCH_DUNE_GRASS, List.of(PlacementUtils.countExtra(1, 0.05F, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
@@ -442,14 +442,14 @@ public class AtmosphericFeatures {
 
 		public static final RegistryObject<PlacedFeature> TREES_SPINY_THICKET = register("trees_spiny_thicket", AtmosphericConfiguredFeatures.TREES_SPINY_THICKET, VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.1F, 5)));
 		public static final RegistryObject<PlacedFeature> SINGLE_YUCCA_FLOWER = register("single_yucca_flower", AtmosphericConfiguredFeatures.SINGLE_YUCCA_FLOWER, List.of(CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
-		public static final RegistryObject<PlacedFeature> PATCH_CACTUS_SHRUBLAND = register("patch_cactus_shrubland", AtmosphericConfiguredFeatures.PATCH_CACTUS, List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> PATCH_CACTUS_SCRUBLAND = register("patch_cactus_scrubland", AtmosphericConfiguredFeatures.PATCH_CACTUS, List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_CACTUS_SPINY_THICKET = register("patch_cactus_spiny_thicket", AtmosphericConfiguredFeatures.PATCH_CACTUS_TALL, List.of(CountPlacement.of(9), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_CACTUS_SPINIER_THICKET = register("patch_cactus_spinier_thicket", AtmosphericConfiguredFeatures.PATCH_CACTUS_VERY_TALL, List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
-		// Shrubland
+		// Scrubland
 
-		public static final RegistryObject<PlacedFeature> TREES_SHRUBLAND = register("trees_shrubland", AtmosphericConfiguredFeatures.TREES_SHRUBLAND, VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.25F, 2)));
-		public static final RegistryObject<PlacedFeature> FLOWER_SHRUBLAND = register("flower_shrubland", AtmosphericConfiguredFeatures.FLOWER_SHRUBLAND, List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> TREES_SCRUBLAND = register("trees_scrubland", AtmosphericConfiguredFeatures.TREES_SCRUBLAND, VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.25F, 2)));
+		public static final RegistryObject<PlacedFeature> FLOWER_SCRUBLAND = register("flower_scrubland", AtmosphericConfiguredFeatures.FLOWER_SCRUBLAND, List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_ARID_SPROUTS_RARE = register("patch_arid_sprouts_rare", AtmosphericConfiguredFeatures.PATCH_ARID_SPROUTS, List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 
 		// Grimwoods

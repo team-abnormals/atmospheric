@@ -180,7 +180,7 @@
             },
             "trigger": "minecraft:location"
           },
-          "atmospheric:shrubland": {
+          "atmospheric:scrubland": {
             "conditions": {
               "player": [
                 {
@@ -188,7 +188,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:shrubland"
+                      "biome": "atmospheric:scrubland"
                     }
                   }
                 }
@@ -196,7 +196,7 @@
             },
             "trigger": "minecraft:location"
           },
-          "atmospheric:snowy_shrubland": {
+          "atmospheric:snowy_scrubland": {
             "conditions": {
               "player": [
                 {
@@ -204,7 +204,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:snowy_shrubland"
+                      "biome": "atmospheric:snowy_scrubland"
                     }
                   }
                 }
@@ -290,10 +290,10 @@
             "atmospheric:spiny_thicket"
           ],
           [
-            "atmospheric:shrubland"
+            "atmospheric:scrubland"
           ],
           [
-            "atmospheric:snowy_shrubland"
+            "atmospheric:snowy_scrubland"
           ],
           [
             "atmospheric:aspen_parkland"

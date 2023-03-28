@@ -48,25 +48,25 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				{VANILLA, VANILLA, VANILLA, GRIMWOODS.getKey(), ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, LAUREL_FOREST.getKey(), ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, RAINFOREST.getKey(), RAINFOREST.getKey()},
-				{SHRUBLAND.getKey(), DUNES.getKey(), DUNES.getKey(), FLOURISHING_DUNES.getKey(), FLOURISHING_DUNES.getKey()}};
+				{SCRUBLAND.getKey(), DUNES.getKey(), DUNES.getKey(), FLOURISHING_DUNES.getKey(), FLOURISHING_DUNES.getKey()}};
 		private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
 				{VANILLA, null, VANILLA, null, null},
 				{null, null, null, null, VANILLA},
 				{VANILLA, null, null, VANILLA, null},
 				{null, null, VANILLA, null, null},
-				{SNOWY_SHRUBLAND.getKey(), null, null, null, null}};
+				{SNOWY_SCRUBLAND.getKey(), null, null, null, null}};
 		private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
 				{VANILLA, VANILLA, KOUSA_JUNGLE.getKey(), KOUSA_JUNGLE.getKey(), KOUSA_JUNGLE.getKey()},
 				{VANILLA, VANILLA, VANILLA, GRIMWOODS.getKey(), ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, LAUREL_FOREST.getKey(), LAUREL_FOREST.getKey(), ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, RAINFOREST.getKey(), RAINFOREST.getKey()},
-				{SHRUBLAND.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey()}};
+				{SCRUBLAND.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey()}};
 		private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
 				{VANILLA, null, null, null, null},
 				{null, null, VANILLA, null, VANILLA},
 				{null, null, VANILLA, VANILLA, null},
 				{null, null, null, null, SPARSE_RAINFOREST.getKey()},
-				{SNOWY_SHRUBLAND.getKey(), PETRIFIED_DUNES.getKey(), null, null, null}};
+				{SNOWY_SCRUBLAND.getKey(), PETRIFIED_DUNES.getKey(), null, null, null}};
 		private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
 				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
 				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},

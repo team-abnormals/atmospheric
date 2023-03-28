@@ -32,8 +32,8 @@ public class AtmosphericBiomes {
 	public static final KeyedBiome PETRIFIED_DUNES = HELPER.createBiome("petrified_dunes", () -> dunes(true, true));
 
 	public static final KeyedBiome SPINY_THICKET = HELPER.createBiome("spiny_thicket", AtmosphericBiomes::spinyThicket);
-	public static final KeyedBiome SHRUBLAND = HELPER.createBiome("shrubland", () -> shrubland(false));
-	public static final KeyedBiome SNOWY_SHRUBLAND = HELPER.createBiome("snowy_shrubland", () -> shrubland(true));
+	public static final KeyedBiome SCRUBLAND = HELPER.createBiome("scrubland", () -> scrubland(false));
+	public static final KeyedBiome SNOWY_SCRUBLAND = HELPER.createBiome("snowy_scrubland", () -> scrubland(true));
 
 	public static final KeyedBiome ASPEN_PARKLAND = HELPER.createBiome("aspen_parkland", AtmosphericBiomes::aspenParkland);
 	public static final KeyedBiome KOUSA_JUNGLE = HELPER.createBiome("kousa_jungle", AtmosphericBiomes::kousaJungle);
@@ -75,9 +75,9 @@ public class AtmosphericBiomes {
 		return biome(Precipitation.NONE, 2.0F, 0.85F, 14988944, spawns, generation, null);
 	}
 
-	private static Biome shrubland(boolean snowy) {
+	private static Biome scrubland(boolean snowy) {
 		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
-		AtmosphericGeneration.shrubland(generation, snowy);
+		AtmosphericGeneration.scrubland(generation, snowy);
 
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));

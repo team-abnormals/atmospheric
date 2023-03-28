@@ -29,7 +29,7 @@ public abstract class RabbitMixin extends Animal {
 			cir.setReturnValue(AtmosphericRabbitTypes.YELLOW.id());
 		}
 
-		if (cir.getReturnValue() == 3 && biome.is(AtmosphericBiomes.SNOWY_SHRUBLAND.getKey())) {
+		if (cir.getReturnValue() == 3 && biome.is(AtmosphericBiomes.SNOWY_SCRUBLAND.getKey())) {
 			cir.setReturnValue(Rabbit.TYPE_GOLD);
 		}
 	}
