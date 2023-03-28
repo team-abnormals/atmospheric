@@ -60,7 +60,9 @@ public class AtmosphericBiomes {
 		AtmosphericGeneration.dunes(generation, rocky, variant);
 
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-		BiomeDefaultFeatures.desertSpawns(spawns);
+		BiomeDefaultFeatures.caveSpawns(spawns);
+		BiomeDefaultFeatures.monsters(spawns, 19, 1, 100, false);
+		spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.HUSK, 80, 4, 4));
 
 		return biome(Precipitation.NONE, 2.0F, 0.0F, 14988944, spawns, generation, null);
 	}
@@ -70,7 +72,9 @@ public class AtmosphericBiomes {
 		AtmosphericGeneration.spinyThicket(generation);
 
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-		BiomeDefaultFeatures.desertSpawns(spawns);
+		BiomeDefaultFeatures.caveSpawns(spawns);
+		BiomeDefaultFeatures.monsters(spawns, 19, 1, 100, false);
+		spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.HUSK, 80, 4, 4));
 
 		return biome(Precipitation.NONE, 2.0F, 0.85F, 14988944, spawns, generation, null);
 	}
@@ -80,7 +84,6 @@ public class AtmosphericBiomes {
 		AtmosphericGeneration.scrubland(generation, snowy);
 
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 2, 1, 1));
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.CHICKEN, 2, 2, 4));
