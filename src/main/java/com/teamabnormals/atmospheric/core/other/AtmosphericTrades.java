@@ -40,6 +40,13 @@ public class AtmosphericTrades {
 				new BlueprintTrade(1, AtmosphericBlocks.GILIA.get().asItem(), 1, 12, 1),
 				new BlueprintTrade(1, AtmosphericItems.ALOE_KERNELS.get(), 1, 12, 1),
 				new BlueprintTrade(3, AtmosphericBlocks.BARREL_CACTUS.get().asItem(), 1, 8, 1),
+				new BlueprintTrade(1, AtmosphericBlocks.AGAVE.get().asItem(), 1, 8, 1),
+				new BlueprintTrade(1, AtmosphericBlocks.GOLDEN_GROWTHS.get().asItem(), 1, 8, 1),
+				new BlueprintTrade(1, AtmosphericBlocks.FIRETHORN.get().asItem(), 1, 12, 1),
+				new BlueprintTrade(1, AtmosphericBlocks.FORSYTHIA.get().asItem(), 1, 12, 1),
+				new BlueprintTrade(1, AtmosphericBlocks.CRUSTOSE.get().asItem(), 1, 8, 1),
+				new BlueprintTrade(3, AtmosphericBlocks.DRAGON_ROOTS.get().asItem(), 1, 5, 1),
+				new BlueprintTrade(4, AtmosphericBlocks.GRIMWEB.get().asItem(), 1, 5, 1),
 
 				new BlueprintTrade(5, AtmosphericBlocks.ROSEWOOD_SAPLING.get().asItem(), 1, 8, 1),
 				new BlueprintTrade(5, AtmosphericBlocks.YUCCA_SAPLING.get().asItem(), 1, 8, 1),
