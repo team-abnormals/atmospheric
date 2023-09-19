@@ -2,13 +2,14 @@ package com.teamabnormals.atmospheric.common.levelgen.feature;
 
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.blueprint.common.levelgen.feature.BlueprintTreeFeature;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
-public class BabyTreeFeature extends AtmosphericTreeFeature {
+public class BabyTreeFeature extends BlueprintTreeFeature {
 
 	public BabyTreeFeature(Codec<TreeConfiguration> config) {
 		super(config);

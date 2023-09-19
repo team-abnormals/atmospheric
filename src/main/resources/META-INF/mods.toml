@@ -36,6 +36,6 @@ license = "https://github.com/team-abnormals/atmospheric/blob/main/LICENSE.txt"
 [[dependencies.atmospheric]]
     modId = "blueprint"
     mandatory = true
-    versionRange = "[6.1.2,)"
+    versionRange = "[6.2.0,)"
     ordering = "AFTER"
     side = "BOTH"

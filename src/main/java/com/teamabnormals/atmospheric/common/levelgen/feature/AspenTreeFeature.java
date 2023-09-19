@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.common.levelgen.feature;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.blueprint.common.levelgen.feature.BlueprintTreeFeature;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Plane;
@@ -13,7 +14,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 
 import java.util.ArrayList;
 
-public class AspenTreeFeature extends AtmosphericTreeFeature {
+public class AspenTreeFeature extends BlueprintTreeFeature {
 
 	public AspenTreeFeature(Codec<TreeConfiguration> config) {
 		super(config);

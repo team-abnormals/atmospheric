@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.common.levelgen.feature;
 import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.blueprint.common.levelgen.feature.BlueprintTreeFeature;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.Direction;
@@ -15,7 +16,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 
 import java.util.Set;
 
-public class LaurelTreeFeature extends AtmosphericTreeFeature {
+public class LaurelTreeFeature extends BlueprintTreeFeature {
 
 	public LaurelTreeFeature(Codec<TreeConfiguration> config) {
 		super(config);

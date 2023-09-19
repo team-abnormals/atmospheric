@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.common.levelgen.feature;
 
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.blueprint.common.levelgen.feature.BlueprintTreeFeature;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.Direction;
@@ -15,7 +16,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
-public class GrimwoodTreeFeature extends AtmosphericTreeFeature {
+public class GrimwoodTreeFeature extends BlueprintTreeFeature {
 
 	public GrimwoodTreeFeature(Codec<TreeConfiguration> config) {
 		super(config);
