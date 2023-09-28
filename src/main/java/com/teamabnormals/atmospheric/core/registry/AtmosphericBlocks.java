@@ -119,8 +119,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> POTTED_SCALDING_MONKEY_BRUSH = HELPER.createBlockNoItem("potted_scalding_monkey_brush", () -> new FlowerPotBlock(SCALDING_MONKEY_BRUSH.get(), PropertyUtil.flowerPot()));
 	public static final RegistryObject<Block> POTTED_WATER_HYACINTH = HELPER.createBlockNoItem("potted_water_hyacinth", () -> new FlowerPotBlock(WATER_HYACINTH.get(), PropertyUtil.flowerPot()));
 
-	public static final RegistryObject<Block> PASSION_FRUIT_CRATE = HELPER.createCompatBlock("quark", "passion_fruit_crate", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> SHIMMERING_PASSION_FRUIT_CRATE = HELPER.createCompatBlock("quark", "shimmering_passion_fruit_crate", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.GOLD).lightLevel((state) -> 7).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> PASSION_FRUIT_CRATE = HELPER.createCompatBlock("quark", "passion_fruit_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> SHIMMERING_PASSION_FRUIT_CRATE = HELPER.createCompatBlock("quark", "shimmering_passion_fruit_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.GOLD).lightLevel((state) -> 7).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -277,8 +277,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> RED_ARID_SANDSTONE_BRICK_WALL = HELPER.createCompatBlock("quark", "red_arid_sandstone_brick_wall", () -> new WallBlock(Block.Properties.copy(Blocks.SANDSTONE_WALL)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> RED_ARID_SANDSTONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "red_arid_sandstone_brick_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-	public static final RegistryObject<Block> YUCCA_CASK = HELPER.createCompatBlock("quark", "yucca_cask", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> ROASTED_YUCCA_CASK = HELPER.createCompatBlock("quark", "roasted_yucca_cask", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> YUCCA_CASK = HELPER.createCompatBlock("quark", "yucca_cask", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> ROASTED_YUCCA_CASK = HELPER.createCompatBlock("quark", "roasted_yucca_cask", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> BARREL_CACTUS_BATCH = HELPER.createCompatBlock("quark", "barrel_cactus_batch", () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN).strength(0.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -415,7 +415,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> CURRANT_LEAF_PILE = HELPER.createCompatBlock("woodworks", "currant_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.CURRANT.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CURRANT_LEAF_CARPET = HELPER.createCompatBlock("quark", "currant_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.CURRANT.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CURRANT_HEDGE = HELPER.createCompatFuelBlock("quark", "currant_hedge", () -> new HedgeBlock(AtmosphericProperties.CURRANT.log()), 50, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> CURRANT_BASKET = HELPER.createCompatBlock("quark", "currant_basket", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_CYAN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CURRANT_BASKET = HELPER.createCompatBlock("berry_good", "currant_basket", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_CYAN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -476,6 +476,6 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> FORSYTHIA = HELPER.createBlock("forsythia", () -> new DesertFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_FORSYTHIA = HELPER.createBlockNoItem("potted_forsythia", () -> new FlowerPotBlock(FORSYTHIA.get(), PropertyUtil.flowerPot()));
 
-	public static final RegistryObject<Block> DRAGON_FRUIT_CRATE = HELPER.createCompatBlock("quark", "dragon_fruit_crate", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_MAGENTA).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> GOLDEN_DRAGON_FRUIT_CRATE = HELPER.createCompatBlock("quark", "golden_dragon_fruit_crate", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.GOLD).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DRAGON_FRUIT_CRATE = HELPER.createCompatBlock("quark", "dragon_fruit_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_MAGENTA).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> GOLDEN_DRAGON_FRUIT_CRATE = HELPER.createCompatBlock("quark", "golden_dragon_fruit_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.GOLD).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 }

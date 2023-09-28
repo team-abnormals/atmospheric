@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "atmospheric:block/yucca_cask_bottom",
+    "side": "atmospheric:block/yucca_cask_side",
+    "top": "atmospheric:block/roasted_yucca_cask_top"
+  }
+}

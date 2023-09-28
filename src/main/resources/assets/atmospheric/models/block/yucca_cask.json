@@ -1,8 +1,0 @@
-{
-    "parent": "block/cube_bottom_top",
-    "textures": {
-        "top": "atmospheric:block/yucca_cask_top",
-        "bottom": "atmospheric:block/yucca_cask_bottom",
-        "side": "atmospheric:block/yucca_cask"
-    }
-}

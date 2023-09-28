@@ -56,6 +56,9 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.logCompat(ROSEWOOD_LOG.get(), STRIPPED_ROSEWOOD_LOG.get(), ROSEWOOD_POST.get(), STRIPPED_ROSEWOOD_POST.get());
 		this.leavesCompat(ROSEWOOD_LEAVES.get(), ROSEWOOD_LOG.get(), ROSEWOOD_LEAF_PILE.get(), ROSEWOOD_HEDGE.get(), ROSEWOOD_LEAF_CARPET.get());
 
+		this.directionalBlock(PASSION_FRUIT_CRATE.get());
+		this.directionalBlockSharedBottom(SHIMMERING_PASSION_FRUIT_CRATE.get(), PASSION_FRUIT_CRATE.get());
+
 		this.blockFamily(AtmosphericBlockFamilies.MORADO_PLANKS_FAMILY, MORADO_VERTICAL_SLAB.get());
 		this.logBlocks(MORADO_LOG.get(), MORADO_WOOD.get());
 		this.logBlocks(STRIPPED_MORADO_LOG.get(), STRIPPED_MORADO_WOOD.get());
@@ -73,6 +76,9 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.planksCompat(YUCCA_PLANKS.get(), YUCCA_BOARDS.get(), YUCCA_LADDER.get(), YUCCA_BOOKSHELF.get(), YUCCA_BEEHIVE.get(), YUCCA_CHESTS, VERTICAL_YUCCA_PLANKS.get());
 		this.logCompat(YUCCA_LOG.get(), STRIPPED_YUCCA_LOG.get(), YUCCA_POST.get(), STRIPPED_YUCCA_POST.get());
 		this.leavesCompat(YUCCA_LEAVES.get(), YUCCA_LOG.get(), YUCCA_LEAF_PILE.get(), YUCCA_HEDGE.get(), YUCCA_LEAF_CARPET.get());
+
+		this.directionalBlock(YUCCA_CASK.get());
+		this.directionalBlockSharedSide(ROASTED_YUCCA_CASK.get(), YUCCA_CASK.get());
 
 //		this.blockFamily(AtmosphericBlockFamilies.ARID_SANDSTONE_FAMILY, ARID_SANDSTONE_VERTICAL_SLAB.get());
 //		this.blockFamily(AtmosphericBlockFamilies.CUT_ARID_SANDSTONE_FAMILY, CUT_ARID_SANDSTONE_VERTICAL_SLAB.get());
@@ -122,6 +128,7 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.leavesBlock(CURRANT_LEAVES.get());
 		this.crossBlockWithPot(CURRANT_SEEDLING.get(), POTTED_CURRANT_SEEDLING.get());
 		this.leavesCompat(CURRANT_LEAVES.get(), CURRANT_STALK.get(), CURRANT_LEAF_PILE.get(), CURRANT_HEDGE.get(), CURRANT_LEAF_CARPET.get());
+		this.directionalBlock(CURRANT_BASKET.get());
 
 		this.blockFamily(AtmosphericBlockFamilies.GRIMWOOD_PLANKS_FAMILY, GRIMWOOD_VERTICAL_SLAB.get());
 		this.logBlocks(GRIMWOOD_LOG.get(), GRIMWOOD.get());
@@ -139,8 +146,8 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.blockFamily(AtmosphericBlockFamilies.CARMINE_PAVEMENT_FAMILY, CARMINE_PAVEMENT_VERTICAL_SLAB.get());
 		this.crossBlockWithPot(FIRETHORN.get(), POTTED_FIRETHORN.get());
 		this.crossBlockWithPot(FORSYTHIA.get(), POTTED_FORSYTHIA.get());
-		this.cubeBottomTopBlock(DRAGON_FRUIT_CRATE.get());
-		this.cubeBottomTopBlock(GOLDEN_DRAGON_FRUIT_CRATE.get(), DRAGON_FRUIT_CRATE.get());
+		this.directionalBlock(DRAGON_FRUIT_CRATE.get());
+		this.directionalBlockSharedSide(GOLDEN_DRAGON_FRUIT_CRATE.get(), DRAGON_FRUIT_CRATE.get());
 	}
 
 	public void block(Block block) {
@@ -269,6 +276,16 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 
 	public void cubeBottomTopBlock(Block block, Block parent) {
 		this.simpleBlock(block, models().cubeBottomTop(name(block), suffix(blockTexture(parent), "_side"), suffix(blockTexture(parent), "_bottom"), suffix(blockTexture(block), "_top")));
+		this.blockItem(block);
+	}
+
+	public void directionalBlockSharedSide(Block block, Block parent) {
+		this.directionalBlock(block, models().cubeBottomTop(name(block), suffix(blockTexture(parent), "_side"), suffix(blockTexture(parent), "_bottom"), suffix(blockTexture(block), "_top")));
+		this.blockItem(block);
+	}
+
+	public void directionalBlockSharedBottom(Block block, Block parent) {
+		this.directionalBlock(block, models().cubeBottomTop(name(block), suffix(blockTexture(block), "_side"), suffix(blockTexture(parent), "_bottom"), suffix(blockTexture(block), "_top")));
 		this.blockItem(block);
 	}
 

@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "atmospheric:block/roasted_yucca_cask",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "atmospheric:block/roasted_yucca_cask",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "atmospheric:block/roasted_yucca_cask",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "atmospheric:block/roasted_yucca_cask",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "atmospheric:block/roasted_yucca_cask"
+    },
+    "facing=west": {
+      "model": "atmospheric:block/roasted_yucca_cask",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
