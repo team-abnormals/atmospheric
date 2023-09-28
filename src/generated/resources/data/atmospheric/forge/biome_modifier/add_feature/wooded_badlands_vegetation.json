@@ -3,7 +3,7 @@
   "biomes": "minecraft:wooded_badlands",
   "features": [
     "atmospheric:badlands_yucca_trees",
-    "atmospheric:patch_agave_large"
+    "atmospheric:patch_agave_wooded_badlands"
   ],
   "step": "vegetal_decoration"
 }
