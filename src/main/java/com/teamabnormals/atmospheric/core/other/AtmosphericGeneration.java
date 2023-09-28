@@ -14,7 +14,7 @@ import static com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.At
 @EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericGeneration {
 
-	public static void baseRainforest(BiomeGenerationSettings.Builder generation, boolean basin, boolean sparse) {
+	public static void rainforest(BiomeGenerationSettings.Builder generation, boolean basin, boolean sparse) {
 		OverworldBiomes.globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addMossyStoneBlock(generation);
 		BiomeDefaultFeatures.addSavannaGrass(generation);

@@ -44,7 +44,7 @@ public class AtmosphericBiomes {
 
 	private static Biome rainforest(boolean basin, boolean sparse) {
 		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
-		AtmosphericGeneration.baseRainforest(generation, basin, sparse);
+		AtmosphericGeneration.rainforest(generation, basin, sparse);
 
 		MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
 		BiomeDefaultFeatures.commonSpawns(spawns);
