@@ -36,7 +36,7 @@ public class AtmosphericBiomeModifierProvider {
 	public static JsonCodecProvider<BiomeModifier> create(DataGenerator generator, ExistingFileHelper existingFileHelper) {
 		addFeature("yucca_tree_desert", Biomes.DESERT, Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.DESERT_YUCCA_TREES);
 		addFeature("yucca_tree_windswept_savanna", Biomes.WINDSWEPT_SAVANNA, Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.WINDSWEPT_SAVANNA_YUCCA_TREES);
-		addFeature("wooded_badlands_vegetation", Biomes.WOODED_BADLANDS, Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.WOODED_BADLANDS_YUCCA_TREES, AtmosphericPlacedFeatures.PATCH_AGAVE_LARGE);
+		addFeature("wooded_badlands_vegetation", Biomes.WOODED_BADLANDS, Decoration.VEGETAL_DECORATION, AtmosphericPlacedFeatures.WOODED_BADLANDS_YUCCA_TREES, AtmosphericPlacedFeatures.PATCH_AGAVE_WOODED_BADLANDS);
 
 		return JsonCodecProvider.forDatapackRegistry(generator, existingFileHelper, Atmospheric.MOD_ID, RegistryOps.create(JsonOps.INSTANCE, ACCESS), ForgeRegistries.Keys.BIOME_MODIFIERS, MODIFIERS);
 	}
