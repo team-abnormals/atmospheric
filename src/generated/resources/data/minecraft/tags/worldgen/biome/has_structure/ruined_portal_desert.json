@@ -1,5 +1,8 @@
 {
   "values": [
-    "#atmospheric:is_dunes"
+    "#atmospheric:is_dunes",
+    "atmospheric:scrubland",
+    "atmospheric:snowy_scrubland",
+    "atmospheric:spiny_thicket"
   ]
 }

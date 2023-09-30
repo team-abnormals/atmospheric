@@ -18,17 +18,17 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 
 	@Override
 	public void addTags() {
-		this.tag(BiomeTags.HAS_MINESHAFT).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND.get(), KOUSA_JUNGLE.get());
-		this.tag(BiomeTags.IS_OVERWORLD).addTag(AtmosphericBiomeTags.IS_RAINFOREST).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND.get(), KOUSA_JUNGLE.get());
-		this.tag(BiomeTags.STRONGHOLD_BIASED_TO).addTag(AtmosphericBiomeTags.IS_RAINFOREST).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND.get(), KOUSA_JUNGLE.get());
+		this.tag(BiomeTags.HAS_MINESHAFT).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND.get(), KOUSA_JUNGLE.get(), SCRUBLAND.get(), SNOWY_SCRUBLAND.get(), SPINY_THICKET.get(), GRIMWOODS.get());
+		this.tag(BiomeTags.IS_OVERWORLD).addTag(AtmosphericBiomeTags.IS_RAINFOREST).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND.get(), KOUSA_JUNGLE.get(), SCRUBLAND.get(), SNOWY_SCRUBLAND.get(), SPINY_THICKET.get(), GRIMWOODS.get());
+		this.tag(BiomeTags.STRONGHOLD_BIASED_TO).addTag(AtmosphericBiomeTags.IS_RAINFOREST).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND.get(), KOUSA_JUNGLE.get(), SCRUBLAND.get(), SNOWY_SCRUBLAND.get(), SPINY_THICKET.get(), GRIMWOODS.get());
 
-		this.tag(BiomeTags.IS_FOREST).addTag(AtmosphericBiomeTags.IS_RAINFOREST);
-		this.tag(BlueprintBiomeTags.IS_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES);
+		this.tag(BiomeTags.IS_FOREST).addTag(AtmosphericBiomeTags.IS_RAINFOREST).add(LAUREL_FOREST.get(), GRIMWOODS.get());
+		this.tag(BlueprintBiomeTags.IS_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND.get(), SNOWY_SCRUBLAND.get(), SPINY_THICKET.get());
 		this.tag(BlueprintBiomeTags.IS_ICY).add(KOUSA_JUNGLE.get());
-		this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(ASPEN_PARKLAND.get(), KOUSA_JUNGLE.get());
-		this.tag(BiomeTags.HAS_RUINED_PORTAL_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES);
-		this.tag(BiomeTags.SPAWNS_COLD_VARIANT_FROGS).add(KOUSA_JUNGLE.get());
-		this.tag(BiomeTags.SPAWNS_WARM_VARIANT_FROGS).addTag(AtmosphericBiomeTags.IS_RAINFOREST).addTag(AtmosphericBiomeTags.IS_DUNES);
+		this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(ASPEN_PARKLAND.get(), KOUSA_JUNGLE.get(), GRIMWOODS.get());
+		this.tag(BiomeTags.HAS_RUINED_PORTAL_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND.get(), SNOWY_SCRUBLAND.get(), SPINY_THICKET.get());
+		this.tag(BiomeTags.SPAWNS_COLD_VARIANT_FROGS).add(KOUSA_JUNGLE.get()).add(SNOWY_SCRUBLAND.get());
+		this.tag(BiomeTags.SPAWNS_WARM_VARIANT_FROGS).addTag(AtmosphericBiomeTags.IS_RAINFOREST).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND.get(), SPINY_THICKET.get());
 		this.tag(BiomeTags.WATER_ON_MAP_OUTLINES).add(RAINFOREST_BASIN.get(), SPARSE_RAINFOREST_BASIN.get());
 		this.tag(BiomeTags.ONLY_ALLOWS_SNOW_AND_GOLD_RABBITS).addTag(AtmosphericBiomeTags.IS_DUNES).add(SPINY_THICKET.get(), SCRUBLAND.get(), SNOWY_SCRUBLAND.get());
 

@@ -1,5 +1,7 @@
 {
   "values": [
-    "#atmospheric:is_rainforest"
+    "#atmospheric:is_rainforest",
+    "atmospheric:laurel_forest",
+    "atmospheric:grimwoods"
   ]
 }
