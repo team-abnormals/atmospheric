@@ -45,7 +45,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 		private final ResourceKey<Biome> VANILLA = BlueprintBiomes.ORIGINAL_SOURCE_MARKER.getKey();
 		private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{
 				{VANILLA, VANILLA, VANILLA, KOUSA_JUNGLE.getKey(), VANILLA},
-				{VANILLA, VANILLA, VANILLA, GRIMWOODS.getKey(), ASPEN_PARKLAND.getKey()},
+				{VANILLA, VANILLA, VANILLA, VANILLA, ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, LAUREL_FOREST.getKey(), ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, RAINFOREST.getKey(), RAINFOREST.getKey()},
 				{SCRUBLAND.getKey(), DUNES.getKey(), DUNES.getKey(), FLOURISHING_DUNES.getKey(), FLOURISHING_DUNES.getKey()}};
@@ -57,7 +57,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				{SNOWY_SCRUBLAND.getKey(), null, null, null, null}};
 		private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
 				{VANILLA, VANILLA, KOUSA_JUNGLE.getKey(), KOUSA_JUNGLE.getKey(), KOUSA_JUNGLE.getKey()},
-				{VANILLA, VANILLA, VANILLA, GRIMWOODS.getKey(), ASPEN_PARKLAND.getKey()},
+				{VANILLA, VANILLA, VANILLA, VANILLA, ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, LAUREL_FOREST.getKey(), LAUREL_FOREST.getKey(), ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, RAINFOREST.getKey(), RAINFOREST.getKey()},
 				{SCRUBLAND.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey()}};
