@@ -52,38 +52,6 @@
             },
             "trigger": "minecraft:location"
           },
-          "atmospheric:grimwoods": {
-            "conditions": {
-              "player": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "location": {
-                      "biome": "atmospheric:grimwoods"
-                    }
-                  }
-                }
-              ]
-            },
-            "trigger": "minecraft:location"
-          },
-          "atmospheric:hot_springs": {
-            "conditions": {
-              "player": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "location": {
-                      "biome": "atmospheric:hot_springs"
-                    }
-                  }
-                }
-              ]
-            },
-            "trigger": "minecraft:location"
-          },
           "atmospheric:kousa_jungle": {
             "conditions": {
               "player": [
@@ -302,13 +270,7 @@
             "atmospheric:kousa_jungle"
           ],
           [
-            "atmospheric:grimwoods"
-          ],
-          [
             "atmospheric:laurel_forest"
-          ],
-          [
-            "atmospheric:hot_springs"
           ]
         ],
         "should_replace_requirements": false
