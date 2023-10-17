@@ -316,7 +316,7 @@
         "processors": "atmospheric:farm_scrubland",
         "projection": "rigid"
       },
-      "weight": 3
+      "weight": 2
     },
     {
       "element": {
@@ -325,7 +325,7 @@
         "processors": "atmospheric:farm_scrubland",
         "projection": "rigid"
       },
-      "weight": 3
+      "weight": 2
     },
     {
       "element": {
