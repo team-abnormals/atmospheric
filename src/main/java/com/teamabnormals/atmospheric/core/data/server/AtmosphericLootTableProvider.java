@@ -25,11 +25,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.storage.loot.IntRange;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.*;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
-import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.*;
@@ -559,6 +556,21 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 					)
 					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 1.0F))
 							.add(LootItem.lootTableItem(Items.SHEARS))
+					)
+			);
+
+			consumer.accept(Atmospheric.location("chests/village/village_scrubland"), LootTable.lootTable()
+					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(3.0F, 8.0F))
+							.add(LootItem.lootTableItem(FIRETHORN.get()).setWeight(1))
+							.add(LootItem.lootTableItem(FORSYTHIA.get()).setWeight(1))
+							.add(LootItem.lootTableItem(DRY_LAUREL_SAPLING.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+							.add(LootItem.lootTableItem(MORADO_SAPLING.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+							.add(LootItem.lootTableItem(BARREL_CACTUS.get()).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+							.add(LootItem.lootTableItem(Items.CARROT).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 7.0F))))
+							.add(LootItem.lootTableItem(Items.BREAD).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+							.add(LootItem.lootTableItem(AtmosphericItems.CARMINE_HUSK.get()).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+							.add(LootItem.lootTableItem(Items.REDSTONE).setWeight(1))
+							.add(LootItem.lootTableItem(Items.EMERALD).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
 					)
 			);
 		}
