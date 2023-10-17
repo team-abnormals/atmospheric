@@ -2,11 +2,18 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
+import com.teamabnormals.atmospheric.common.entity.projectile.DragonFruit;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -20,6 +27,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -52,6 +61,29 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 		Direction direction = state.getValue(FACING);
 		BlockPos offsetPos = pos.relative(direction.getOpposite());
 		return level.getBlockState(offsetPos).isFaceSturdy(level, offsetPos, direction);
+	}
+
+	@Override
+	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+		if (!state.getValue(FRUIT) && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
+			return InteractionResult.PASS;
+		} else if (state.getValue(FRUIT)) {
+			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+			BlockState newState = state.setValue(FRUIT, false);
+			level.setBlock(pos, newState, 2);
+			level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newState));
+
+			DragonFruit dragonFruit = AtmosphericEntityTypes.DRAGON_FRUIT.get().create(level);
+			dragonFruit.setPos(pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F);
+			dragonFruit.setRollingDirection(state.getValue(FACING));
+			dragonFruit.setYRot(state.getValue(FACING).toYRot());
+
+			level.addFreshEntity(dragonFruit);
+
+			return InteractionResult.sidedSuccess(level.isClientSide);
+		} else {
+			return super.use(state, level, pos, player, hand, result);
+		}
 	}
 
 	@Override

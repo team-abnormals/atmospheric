@@ -1,4 +1,4 @@
-package com.teamabnormals.atmospheric.client.renderer.entity.model;
+package com.teamabnormals.atmospheric.client.model;
 
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;

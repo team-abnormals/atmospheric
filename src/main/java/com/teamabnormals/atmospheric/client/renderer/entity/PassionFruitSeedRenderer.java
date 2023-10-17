@@ -3,7 +3,7 @@ package com.teamabnormals.atmospheric.client.renderer.entity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
-import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionFruitSeedModel;
+import com.teamabnormals.atmospheric.client.model.PassionFruitSeedModel;
 import com.teamabnormals.atmospheric.common.entity.projectile.PassionFruitSeed;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericModelLayers;

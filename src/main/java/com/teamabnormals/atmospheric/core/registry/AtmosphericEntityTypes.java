@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.core.registry;
 
+import com.teamabnormals.atmospheric.common.entity.projectile.DragonFruit;
 import com.teamabnormals.atmospheric.common.entity.projectile.PassionFruitSeed;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.blueprint.core.util.registry.EntitySubRegistryHelper;
@@ -13,4 +14,5 @@ public class AtmosphericEntityTypes {
 	public static final EntitySubRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER.getEntitySubHelper();
 
 	public static final RegistryObject<EntityType<PassionFruitSeed>> PASSION_FRUIT_SEED = HELPER.createEntity("passion_fruit_seed", PassionFruitSeed::new, PassionFruitSeed::new, MobCategory.MISC, 0.25F, 0.25F);
+	public static final RegistryObject<EntityType<DragonFruit>> DRAGON_FRUIT = HELPER.createEntity("dragon_fruit", DragonFruit::new, DragonFruit::new, MobCategory.MISC, 0.375F, 0.375F);
 }

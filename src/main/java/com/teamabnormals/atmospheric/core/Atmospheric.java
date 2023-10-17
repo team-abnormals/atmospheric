@@ -1,7 +1,9 @@
 package com.teamabnormals.atmospheric.core;
 
+import com.teamabnormals.atmospheric.client.model.DragonFruitModel;
+import com.teamabnormals.atmospheric.client.renderer.entity.DragonFruitRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.PassionFruitSeedRenderer;
-import com.teamabnormals.atmospheric.client.renderer.entity.model.PassionFruitSeedModel;
+import com.teamabnormals.atmospheric.client.model.PassionFruitSeedModel;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericBlockStateProvider;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericItemModelProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
@@ -99,6 +101,7 @@ public class Atmospheric {
 		generator.addProvider(includeServer, new AtmosphericEntityTypeTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new AtmosphericBiomeTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new AtmosphericBannerPatternTagsProvider(generator, helper));
+		generator.addProvider(includeServer, new AtmosphericStructureTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new AtmosphericLootTableProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericRecipeProvider(generator));
 		generator.addProvider(includeServer, new AtmosphericAdvancementProvider(generator, helper));
@@ -117,11 +120,13 @@ public class Atmospheric {
 	@OnlyIn(Dist.CLIENT)
 	private void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(AtmosphericModelLayers.PASSION_FRUIT_SEED, PassionFruitSeedModel::createBodyLayer);
+		event.registerLayerDefinition(AtmosphericModelLayers.DRAGON_FRUIT, DragonFruitModel::createBodyLayer);
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get(), PassionFruitSeedRenderer::new);
+		event.registerEntityRenderer(AtmosphericEntityTypes.DRAGON_FRUIT.get(), DragonFruitRenderer::new);
 	}
 
 	public static ResourceLocation location(String path) {

@@ -98,6 +98,13 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	}
 
 	@Override
+	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+		if (!state.canSurvive(level, pos)) {
+			level.destroyBlock(pos, true);
+		}
+	}
+
+	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		if (!stateIn.canSurvive(worldIn, currentPos)) {
 			worldIn.scheduleTick(currentPos, this, 1);
