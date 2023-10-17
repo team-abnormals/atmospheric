@@ -91,7 +91,7 @@ public class AtmosphericTrades {
 
 					VillagerType scrubland = Registry.VILLAGER_TYPE.get(Atmospheric.location("scrubland"));
 					if (!trade.trades.containsKey(scrubland)) {
-						newTrades.put(scrubland, AtmosphericItems.YUCCA_BOAT.getFirst().get());
+						newTrades.put(scrubland, AtmosphericItems.LAUREL_BOAT.getFirst().get());
 					}
 
 					if (newTrades.get(VillagerType.DESERT) == Items.JUNGLE_BOAT && AtmosphericConfig.COMMON.yuccaDesertVillages.get()) {
