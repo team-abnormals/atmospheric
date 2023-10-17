@@ -63,6 +63,7 @@ public class Atmospheric {
 		AtmosphericMobEffects.POTIONS.register(bus);
 		AtmosphericLootConditions.LOOT_CONDITION_TYPES.register(bus);
 		AtmosphericBannerPatterns.BANNER_PATTERNS.register(bus);
+		AtmosphericStructureProcessors.STRUCTURE_PROCESSORS.register(bus);
 
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);

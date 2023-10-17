@@ -12,6 +12,8 @@
     "ServerLevelMixin",
     "ShearsItemMixin",
     "SnowAndFreezeFeatureMixin",
+    "StructureProcessorAccessor",
+    "StructureTemplateMixin",
     "SwordItemMixin"
   ],
   "injectors": {

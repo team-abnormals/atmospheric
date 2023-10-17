@@ -20,6 +20,9 @@
           }
         }
       ]
+    },
+    {
+      "processor_type": "atmospheric:prevent_waterlogging_spread"
     }
   ]
 }
