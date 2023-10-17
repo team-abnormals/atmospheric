@@ -4,7 +4,18 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "minecraft:village/desert/terminators/terminator_01",
+        "location": "atmospheric:village/scrubland/terminators/terminator_01",
+        "processors": {
+          "processors": []
+        },
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:village/scrubland/terminators/terminator_02",
         "processors": {
           "processors": []
         },
@@ -15,7 +26,7 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "minecraft:village/desert/terminators/terminator_02",
+        "location": "atmospheric:village/scrubland/terminators/terminator_03",
         "processors": {
           "processors": []
         },
