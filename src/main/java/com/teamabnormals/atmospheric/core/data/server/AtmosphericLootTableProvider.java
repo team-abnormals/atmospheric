@@ -403,6 +403,12 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.add(ASPEN_CHESTS.getSecond().get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(ASPEN_BOOKSHELF.get(), (block) -> createSingleItemTableWithSilkTouch(block, Items.BOOK, ConstantValue.exactly(3.0F)));
 			this.add(ASPEN_LEAVES.get(), (block) -> createLeavesDrops(block, ASPEN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+			this.add(GREEN_ASPEN_LEAVES.get(), (block) -> createLeavesDrops(block, GREEN_ASPEN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+			this.dropSelf(GREEN_ASPEN_HEDGE.get());
+			this.dropSelf(GREEN_ASPEN_LEAF_CARPET.get());
+			this.add(GREEN_ASPEN_LEAF_PILE.get(), AtmosphericBlockLoot::createLeafPileDrops);
+			this.dropSelf(GREEN_ASPEN_SAPLING.get());
+			this.dropPottedContents(POTTED_GREEN_ASPEN_SAPLING.get());
 
 			this.dropSelf(KOUSA_PLANKS.get());
 			this.dropSelf(VERTICAL_KOUSA_PLANKS.get());

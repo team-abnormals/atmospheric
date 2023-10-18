@@ -98,6 +98,9 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.planksCompat(ASPEN_PLANKS.get(), ASPEN_BOARDS.get(), ASPEN_LADDER.get(), ASPEN_BOOKSHELF.get(), ASPEN_BEEHIVE.get(), ASPEN_CHESTS, VERTICAL_ASPEN_PLANKS.get());
 		this.logCompat(ASPEN_LOG.get(), STRIPPED_ASPEN_LOG.get(), ASPEN_POST.get(), STRIPPED_ASPEN_POST.get());
 		this.leavesCompat(ASPEN_LEAVES.get(), ASPEN_LOG.get(), ASPEN_LEAF_PILE.get(), ASPEN_HEDGE.get(), ASPEN_LEAF_CARPET.get());
+		this.leavesBlock(GREEN_ASPEN_LEAVES.get());
+		this.crossBlockWithPot(GREEN_ASPEN_SAPLING.get(), POTTED_GREEN_ASPEN_SAPLING.get());
+		this.leavesCompat(GREEN_ASPEN_LEAVES.get(), ASPEN_LOG.get(), GREEN_ASPEN_LEAF_PILE.get(), GREEN_ASPEN_HEDGE.get(), GREEN_ASPEN_LEAF_CARPET.get());
 
 		this.crossBlockWithCustomPot(AGAVE.get(), POTTED_AGAVE.get());
 		this.crossBlockWithCustomPot(GOLDEN_GROWTHS.get(), POTTED_GOLDEN_GROWTHS.get());

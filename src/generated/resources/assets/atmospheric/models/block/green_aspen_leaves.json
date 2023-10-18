@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "atmospheric:block/green_aspen_leaves"
+  }
+}

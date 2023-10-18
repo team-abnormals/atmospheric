@@ -317,6 +317,13 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ASPEN_LEAF_CARPET = HELPER.createCompatBlock("quark", "aspen_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.ASPEN.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> ASPEN_HEDGE = HELPER.createCompatFuelBlock("quark", "aspen_hedge", () -> new HedgeBlock(AtmosphericProperties.ASPEN.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
+	public static final RegistryObject<Block> GREEN_ASPEN_LEAVES = HELPER.createBlock("green_aspen_leaves", () -> new BlueprintLeavesBlock(AtmosphericProperties.GREEN_ASPEN.leaves()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> GREEN_ASPEN_SAPLING = HELPER.createBlock("green_aspen_sapling", () -> new BlueprintSaplingBlock(new GreenAspenTreeGrower(), AtmosphericProperties.GREEN_ASPEN.sapling()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> POTTED_GREEN_ASPEN_SAPLING = HELPER.createBlockNoItem("potted_green_aspen_sapling", () -> new FlowerPotBlock(GREEN_ASPEN_SAPLING.get(), PropertyUtil.flowerPot()));
+	public static final RegistryObject<Block> GREEN_ASPEN_LEAF_PILE = HELPER.createCompatBlock("woodworks", "green_aspen_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.GREEN_ASPEN.leafPile()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> GREEN_ASPEN_LEAF_CARPET = HELPER.createCompatBlock("quark", "green_aspen_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.GREEN_ASPEN.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> GREEN_ASPEN_HEDGE = HELPER.createCompatFuelBlock("quark", "green_aspen_hedge", () -> new HedgeBlock(AtmosphericProperties.GREEN_ASPEN.log()), 300, CreativeModeTab.TAB_DECORATIONS);
+
 	public static final RegistryObject<Block> AGAVE = HELPER.createBlock("agave", () -> new AgaveBlock(AtmosphericProperties.AGAVE), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_AGAVE = HELPER.createBlockNoItem("potted_agave", () -> new FlowerPotBlock(AGAVE.get(), PropertyUtil.flowerPot()));
 	public static final RegistryObject<Block> GOLDEN_GROWTHS = HELPER.createBlock("golden_growths", () -> new GoldenGrowthsBlock(AtmosphericProperties.GOLDEN_GROWTHS), CreativeModeTab.TAB_DECORATIONS);

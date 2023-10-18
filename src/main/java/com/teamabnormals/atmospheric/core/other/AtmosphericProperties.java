@@ -14,6 +14,7 @@ public class AtmosphericProperties {
 	public static final WoodSetProperties MORADO = WoodSetProperties.builder(MaterialColor.COLOR_RED).build();
 	public static final WoodSetProperties YUCCA = WoodSetProperties.builder(MaterialColor.COLOR_ORANGE).build();
 	public static final WoodSetProperties ASPEN = WoodSetProperties.builder(MaterialColor.GOLD).leavesColor(MaterialColor.GOLD).build();
+	public static final WoodSetProperties GREEN_ASPEN = WoodSetProperties.builder(MaterialColor.GOLD).leavesColor(MaterialColor.TERRACOTTA_LIGHT_GREEN).build();
 	public static final WoodSetProperties LAUREL = WoodSetProperties.builder(MaterialColor.TERRACOTTA_YELLOW).leavesColor(MaterialColor.TERRACOTTA_LIGHT_GREEN).build();
 	public static final WoodSetProperties DRY_LAUREL = WoodSetProperties.builder(MaterialColor.TERRACOTTA_YELLOW).leavesColor(MaterialColor.SAND).build();
 	public static final WoodSetProperties KOUSA = WoodSetProperties.builder(MaterialColor.TERRACOTTA_CYAN).leavesColor(MaterialColor.SNOW).build();

@@ -1,0 +1,7 @@
+{
+  "parent": "blueprint:block/hedge_post",
+  "textures": {
+    "leaf": "atmospheric:block/green_aspen_leaves",
+    "log": "atmospheric:block/aspen_log"
+  }
+}

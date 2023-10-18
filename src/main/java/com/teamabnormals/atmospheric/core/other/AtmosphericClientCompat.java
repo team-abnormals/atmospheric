@@ -42,7 +42,11 @@ public class AtmosphericClientCompat {
 				AtmosphericBlocks.YUCCA_LEAVES,
 				AtmosphericBlocks.YUCCA_LEAF_PILE,
 				AtmosphericBlocks.YUCCA_LEAF_CARPET,
-				AtmosphericBlocks.YUCCA_HEDGE
+				AtmosphericBlocks.YUCCA_HEDGE,
+				AtmosphericBlocks.GREEN_ASPEN_LEAVES,
+				AtmosphericBlocks.GREEN_ASPEN_LEAF_PILE,
+				AtmosphericBlocks.GREEN_ASPEN_LEAF_CARPET,
+				AtmosphericBlocks.GREEN_ASPEN_HEDGE
 		);
 
 		DataUtil.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.get(0.5D, 1.0D), foliageColors);
@@ -129,6 +133,12 @@ public class AtmosphericClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_ASPEN_SAPLING.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ASPEN_DOOR.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ASPEN_TRAPDOOR.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GREEN_ASPEN_LEAVES.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GREEN_ASPEN_LEAF_PILE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GREEN_ASPEN_LEAF_CARPET.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GREEN_ASPEN_HEDGE.get(), RenderType.cutoutMipped());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GREEN_ASPEN_SAPLING.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_GREEN_ASPEN_SAPLING.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_LADDER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_POST.get(), RenderType.cutout());
