@@ -598,7 +598,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -625,7 +625,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -652,7 +652,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -679,7 +679,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -706,7 +706,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -733,7 +733,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -760,7 +760,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -787,7 +787,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -814,7 +814,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -841,7 +841,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -922,7 +922,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -949,7 +949,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -1030,7 +1030,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -1057,7 +1057,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -1192,7 +1192,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -1219,7 +1219,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -19606,7 +19606,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -19633,7 +19633,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -19876,7 +19876,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -19903,7 +19903,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -19930,7 +19930,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -19957,7 +19957,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -19984,7 +19984,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -20011,7 +20011,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -20038,7 +20038,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -20065,7 +20065,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -20092,7 +20092,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -20119,7 +20119,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -20146,7 +20146,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -20173,7 +20173,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -20254,7 +20254,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -20281,7 +20281,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -37318,7 +37318,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -37345,7 +37345,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -37372,7 +37372,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -37399,7 +37399,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -37426,7 +37426,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -37453,7 +37453,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -37480,7 +37480,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -37507,7 +37507,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -37534,7 +37534,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -37561,7 +37561,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -37696,7 +37696,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -37723,7 +37723,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -52006,7 +52006,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -52033,7 +52033,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -52276,7 +52276,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -52303,7 +52303,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -52330,7 +52330,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -52357,7 +52357,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -52384,7 +52384,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -52411,7 +52411,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -52438,7 +52438,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -52465,7 +52465,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -52492,7 +52492,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -52519,7 +52519,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -52546,7 +52546,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -52573,7 +52573,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -52654,7 +52654,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -52681,7 +52681,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -69934,7 +69934,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -69961,7 +69961,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -69988,7 +69988,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -70015,7 +70015,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -70042,7 +70042,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -70069,7 +70069,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -70096,7 +70096,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -70123,7 +70123,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -70150,7 +70150,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -70177,7 +70177,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -70258,7 +70258,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -70285,7 +70285,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -70366,7 +70366,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -70393,7 +70393,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -70528,7 +70528,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -70555,7 +70555,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -89158,7 +89158,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -89185,7 +89185,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -89266,7 +89266,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -89293,7 +89293,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -89320,7 +89320,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -89347,7 +89347,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -89428,7 +89428,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -89455,7 +89455,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -89536,7 +89536,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -89563,7 +89563,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -89590,7 +89590,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -89617,7 +89617,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -89698,7 +89698,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -89725,7 +89725,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -116482,7 +116482,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -116509,7 +116509,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -116644,7 +116644,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -116671,7 +116671,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -116806,7 +116806,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -116833,7 +116833,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -133600,7 +133600,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -133627,7 +133627,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -133708,7 +133708,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -133735,7 +133735,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -133762,7 +133762,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -133789,7 +133789,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -133870,7 +133870,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -133897,7 +133897,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -133924,7 +133924,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -133951,7 +133951,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134032,7 +134032,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134059,7 +134059,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134194,7 +134194,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -134221,7 +134221,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -134248,7 +134248,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134275,7 +134275,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134390,33 +134390,6 @@
             0.3
           ],
           "depth": 1.0,
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "humidity": [
-            -0.35,
-            -0.1
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            0.2666,
-            0.4
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:petrified_dunes",
-        "parameters": {
-          "continentalness": [
-            0.3,
-            1.0
-          ],
-          "depth": 0.0,
           "erosion": [
             -0.7799,
             -0.375
@@ -134443,6 +134416,33 @@
             0.3,
             1.0
           ],
+          "depth": 0.0,
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
+          "humidity": [
+            -0.35,
+            -0.1
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            0.2666,
+            0.4
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:petrified_dunes",
+        "parameters": {
+          "continentalness": [
+            0.3,
+            1.0
+          ],
           "depth": 1.0,
           "erosion": [
             -0.7799,
@@ -151150,7 +151150,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151177,7 +151177,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151204,7 +151204,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -151231,7 +151231,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -151366,7 +151366,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151393,7 +151393,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151420,7 +151420,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151447,7 +151447,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151474,7 +151474,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151501,7 +151501,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151582,7 +151582,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -151609,7 +151609,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -151636,7 +151636,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151663,7 +151663,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151744,7 +151744,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151771,7 +151771,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151798,7 +151798,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151825,7 +151825,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -166702,7 +166702,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -166729,7 +166729,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -166756,7 +166756,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -166783,7 +166783,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -166864,7 +166864,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -166891,7 +166891,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -166918,7 +166918,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -166945,7 +166945,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167026,7 +167026,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -167053,7 +167053,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -167080,7 +167080,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167107,7 +167107,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -183550,7 +183550,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -183577,7 +183577,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -183604,7 +183604,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -183631,7 +183631,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -183766,7 +183766,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -183793,7 +183793,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -183820,7 +183820,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -183847,7 +183847,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -183874,7 +183874,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -183901,7 +183901,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -183982,7 +183982,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -184009,7 +184009,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -184036,7 +184036,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184063,7 +184063,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184144,7 +184144,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -184171,7 +184171,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -184198,7 +184198,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184225,7 +184225,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -201586,7 +201586,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -201613,7 +201613,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -201694,7 +201694,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -201721,7 +201721,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -201748,7 +201748,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -201775,7 +201775,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -201856,7 +201856,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -201883,7 +201883,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.3,
@@ -201910,7 +201910,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -201937,7 +201937,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202018,7 +202018,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202045,7 +202045,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202180,7 +202180,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -202207,7 +202207,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -202234,7 +202234,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202261,7 +202261,7 @@
         }
       },
       {
-        "biome": "atmospheric:snowy_scrubland",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
