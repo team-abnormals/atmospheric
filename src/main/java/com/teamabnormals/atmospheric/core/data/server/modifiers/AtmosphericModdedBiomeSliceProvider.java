@@ -48,7 +48,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				{VANILLA, VANILLA, VANILLA, VANILLA, ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, LAUREL_FOREST.getKey(), ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, RAINFOREST.getKey(), RAINFOREST.getKey()},
-				{SCRUBLAND.getKey(), DUNES.getKey(), DUNES.getKey(), FLOURISHING_DUNES.getKey(), FLOURISHING_DUNES.getKey()}};
+				{SCRUBLAND.getKey(), SCRUBLAND.getKey(), DUNES.getKey(), FLOURISHING_DUNES.getKey(), FLOURISHING_DUNES.getKey()}};
 		private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
 				{VANILLA, null, VANILLA, null, null},
 				{null, null, null, null, VANILLA},
@@ -320,10 +320,10 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 		private ResourceKey<Biome> pickDuneBiome(int humidityIndex, Climate.Parameter weirdness) {
 			if (humidityIndex < 1) {
 				return weirdness.max() < 0L ? PETRIFIED_DUNES.getKey() : ROCKY_DUNES.getKey();
-			} else if (humidityIndex < 2) {
+			} else if (humidityIndex < 3) {
 				return DUNES.getKey();
 			} else {
-				return humidityIndex < 3 ? FLOURISHING_DUNES.getKey() : SPINY_THICKET.getKey();
+				return humidityIndex < 4 ? FLOURISHING_DUNES.getKey() : SPINY_THICKET.getKey();
 			}
 		}
 

@@ -16744,7 +16744,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -16771,7 +16771,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -16906,7 +16906,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -16933,40 +16933,13 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
             0.03
           ],
           "depth": 1.0,
-          "erosion": [
-            -0.2225,
-            0.05
-          ],
-          "humidity": [
-            -0.35,
-            -0.1
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -1.0,
-            -0.9333
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:dunes",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 0.0,
           "erosion": [
             -0.2225,
             0.05
@@ -16993,6 +16966,33 @@
             0.03,
             1.0
           ],
+          "depth": 0.0,
+          "erosion": [
+            -0.2225,
+            0.05
+          ],
+          "humidity": [
+            -0.35,
+            -0.1
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -1.0,
+            -0.9333
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
           "depth": 1.0,
           "erosion": [
             -0.2225,
@@ -17068,7 +17068,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -17095,7 +17095,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -17176,7 +17176,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -17203,7 +17203,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -17230,7 +17230,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -17257,7 +17257,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -17392,7 +17392,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -17419,7 +17419,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -17554,7 +17554,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -17581,7 +17581,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -17716,7 +17716,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -17743,7 +17743,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -18148,7 +18148,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -18175,7 +18175,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -18310,7 +18310,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -18337,7 +18337,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -18472,7 +18472,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -18499,7 +18499,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -34348,7 +34348,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34375,7 +34375,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34618,7 +34618,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34645,7 +34645,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34834,7 +34834,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34861,7 +34861,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34888,7 +34888,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34915,7 +34915,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -34942,7 +34942,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -34969,7 +34969,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -34996,7 +34996,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -35023,7 +35023,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -35212,7 +35212,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -35239,7 +35239,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -35428,7 +35428,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -35455,7 +35455,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -35901,6 +35901,708 @@
           "humidity": [
             0.1,
             0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.11,
+            0.03
+          ],
+          "depth": 0.0,
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.11,
+            0.03
+          ],
+          "depth": 1.0,
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rocky_dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
+          "depth": 0.0,
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rocky_dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
+          "depth": 1.0,
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            0.03
+          ],
+          "depth": 0.0,
+          "erosion": [
+            -0.375,
+            0.05
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            0.03
+          ],
+          "depth": 1.0,
+          "erosion": [
+            -0.375,
+            0.05
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rocky_dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
+          "depth": 0.0,
+          "erosion": [
+            -0.375,
+            -0.2225
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rocky_dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
+          "depth": 1.0,
+          "erosion": [
+            -0.375,
+            -0.2225
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            0.3
+          ],
+          "depth": 0.0,
+          "erosion": [
+            -0.2225,
+            0.05
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            0.3
+          ],
+          "depth": 1.0,
+          "erosion": [
+            -0.2225,
+            0.05
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rocky_dunes",
+        "parameters": {
+          "continentalness": [
+            0.3,
+            1.0
+          ],
+          "depth": 0.0,
+          "erosion": [
+            -0.2225,
+            0.05
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rocky_dunes",
+        "parameters": {
+          "continentalness": [
+            0.3,
+            1.0
+          ],
+          "depth": 1.0,
+          "erosion": [
+            -0.2225,
+            0.05
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            1.0
+          ],
+          "depth": 0.0,
+          "erosion": [
+            0.05,
+            0.45
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            1.0
+          ],
+          "depth": 1.0,
+          "erosion": [
+            0.05,
+            0.45
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            0.03
+          ],
+          "depth": 0.0,
+          "erosion": [
+            0.45,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            0.03
+          ],
+          "depth": 1.0,
+          "erosion": [
+            0.45,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
+          "depth": 0.0,
+          "erosion": [
+            0.45,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
+          "depth": 1.0,
+          "erosion": [
+            0.45,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            1.0
+          ],
+          "depth": 0.0,
+          "erosion": [
+            0.55,
+            1.0
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            1.0
+          ],
+          "depth": 1.0,
+          "erosion": [
+            0.55,
+            1.0
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            -0.11
+          ],
+          "depth": 0.0,
+          "erosion": [
+            -1.0,
+            -0.375
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:flourishing_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            -0.11
+          ],
+          "depth": 1.0,
+          "erosion": [
+            -1.0,
+            -0.375
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rocky_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.11,
+            0.03
+          ],
+          "depth": 0.0,
+          "erosion": [
+            -1.0,
+            -0.7799
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rocky_dunes",
+        "parameters": {
+          "continentalness": [
+            -0.11,
+            0.03
+          ],
+          "depth": 1.0,
+          "erosion": [
+            -1.0,
+            -0.7799
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rocky_dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
+          "depth": 0.0,
+          "erosion": [
+            -1.0,
+            -0.7799
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:rocky_dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
+          "depth": 1.0,
+          "erosion": [
+            -1.0,
+            -0.7799
+          ],
+          "humidity": [
+            0.3,
+            1.0
           ],
           "offset": 0.0,
           "temperature": [
@@ -35926,708 +36628,6 @@
             -0.375
           ],
           "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:spiny_thicket",
-        "parameters": {
-          "continentalness": [
-            -0.11,
-            0.03
-          ],
-          "depth": 1.0,
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rocky_dunes",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 0.0,
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rocky_dunes",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 1.0,
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            0.03
-          ],
-          "depth": 0.0,
-          "erosion": [
-            -0.375,
-            0.05
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            0.03
-          ],
-          "depth": 1.0,
-          "erosion": [
-            -0.375,
-            0.05
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rocky_dunes",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 0.0,
-          "erosion": [
-            -0.375,
-            -0.2225
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rocky_dunes",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 1.0,
-          "erosion": [
-            -0.375,
-            -0.2225
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:spiny_thicket",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            0.3
-          ],
-          "depth": 0.0,
-          "erosion": [
-            -0.2225,
-            0.05
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:spiny_thicket",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            0.3
-          ],
-          "depth": 1.0,
-          "erosion": [
-            -0.2225,
-            0.05
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rocky_dunes",
-        "parameters": {
-          "continentalness": [
-            0.3,
-            1.0
-          ],
-          "depth": 0.0,
-          "erosion": [
-            -0.2225,
-            0.05
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rocky_dunes",
-        "parameters": {
-          "continentalness": [
-            0.3,
-            1.0
-          ],
-          "depth": 1.0,
-          "erosion": [
-            -0.2225,
-            0.05
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            1.0
-          ],
-          "depth": 0.0,
-          "erosion": [
-            0.05,
-            0.45
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            1.0
-          ],
-          "depth": 1.0,
-          "erosion": [
-            0.05,
-            0.45
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            0.03
-          ],
-          "depth": 0.0,
-          "erosion": [
-            0.45,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            0.03
-          ],
-          "depth": 1.0,
-          "erosion": [
-            0.45,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 0.0,
-          "erosion": [
-            0.45,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 1.0,
-          "erosion": [
-            0.45,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            1.0
-          ],
-          "depth": 0.0,
-          "erosion": [
-            0.55,
-            1.0
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            1.0
-          ],
-          "depth": 1.0,
-          "erosion": [
-            0.55,
-            1.0
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            -0.11
-          ],
-          "depth": 0.0,
-          "erosion": [
-            -1.0,
-            -0.375
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:flourishing_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            -0.11
-          ],
-          "depth": 1.0,
-          "erosion": [
-            -1.0,
-            -0.375
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rocky_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.11,
-            0.03
-          ],
-          "depth": 0.0,
-          "erosion": [
-            -1.0,
-            -0.7799
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rocky_dunes",
-        "parameters": {
-          "continentalness": [
-            -0.11,
-            0.03
-          ],
-          "depth": 1.0,
-          "erosion": [
-            -1.0,
-            -0.7799
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rocky_dunes",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 0.0,
-          "erosion": [
-            -1.0,
-            -0.7799
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:rocky_dunes",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 1.0,
-          "erosion": [
-            -1.0,
-            -0.7799
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:spiny_thicket",
-        "parameters": {
-          "continentalness": [
-            -0.11,
-            0.03
-          ],
-          "depth": 0.0,
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "humidity": [
             0.3,
             1.0
           ],
@@ -49792,7 +49792,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -49819,7 +49819,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -50008,7 +50008,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -50035,7 +50035,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -50062,7 +50062,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -50089,7 +50089,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -50116,7 +50116,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -50143,7 +50143,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -50170,7 +50170,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -50197,7 +50197,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -50278,7 +50278,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -50305,7 +50305,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -50494,7 +50494,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -50521,7 +50521,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -50872,7 +50872,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -50899,7 +50899,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -51088,7 +51088,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -51115,7 +51115,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -66748,7 +66748,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -66775,7 +66775,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -67018,7 +67018,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -67045,7 +67045,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -67234,7 +67234,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -67261,7 +67261,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -67288,7 +67288,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -67315,7 +67315,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -67342,7 +67342,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -67369,7 +67369,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -67396,7 +67396,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -67423,7 +67423,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -67612,7 +67612,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -67639,7 +67639,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -67828,7 +67828,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -67855,7 +67855,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -68314,7 +68314,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -68341,7 +68341,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -68530,7 +68530,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -68557,7 +68557,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -86080,7 +86080,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -86107,7 +86107,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -86242,7 +86242,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -86269,40 +86269,13 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
             0.03
           ],
           "depth": 1.0,
-          "erosion": [
-            -0.2225,
-            0.05
-          ],
-          "humidity": [
-            -0.35,
-            -0.1
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.55,
-            1.0
-          ],
-          "weirdness": [
-            -0.4,
-            -0.2666
-          ]
-        }
-      },
-      {
-        "biome": "atmospheric:dunes",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 0.0,
           "erosion": [
             -0.2225,
             0.05
@@ -86329,6 +86302,33 @@
             0.03,
             1.0
           ],
+          "depth": 0.0,
+          "erosion": [
+            -0.2225,
+            0.05
+          ],
+          "humidity": [
+            -0.35,
+            -0.1
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.55,
+            1.0
+          ],
+          "weirdness": [
+            -0.4,
+            -0.2666
+          ]
+        }
+      },
+      {
+        "biome": "atmospheric:dunes",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
           "depth": 1.0,
           "erosion": [
             -0.2225,
@@ -86404,7 +86404,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -86431,7 +86431,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -86512,7 +86512,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -86539,7 +86539,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -86566,7 +86566,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -86593,7 +86593,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -86728,7 +86728,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -86755,7 +86755,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -86890,7 +86890,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -86917,7 +86917,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -87052,7 +87052,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -87079,7 +87079,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -87484,7 +87484,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -87511,7 +87511,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -87646,7 +87646,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -87673,7 +87673,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -87808,7 +87808,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -87835,7 +87835,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -100876,7 +100876,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -100903,7 +100903,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -101038,7 +101038,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -101065,7 +101065,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -101146,7 +101146,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -101173,7 +101173,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -101200,7 +101200,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -101227,7 +101227,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -101308,7 +101308,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -101335,7 +101335,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -101362,7 +101362,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -101389,7 +101389,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -101470,7 +101470,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -101497,7 +101497,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -101848,7 +101848,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -101875,7 +101875,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -101902,7 +101902,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -101929,7 +101929,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -102010,7 +102010,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -102037,7 +102037,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104926,7 +104926,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104953,7 +104953,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104980,7 +104980,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -105007,7 +105007,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -117022,7 +117022,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -117049,7 +117049,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -117184,7 +117184,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -117211,7 +117211,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -117346,7 +117346,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -117373,7 +117373,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -117454,7 +117454,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -117481,7 +117481,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -117508,7 +117508,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -117535,7 +117535,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -117616,7 +117616,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -117643,7 +117643,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -117994,7 +117994,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -118021,7 +118021,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -118048,7 +118048,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -118075,7 +118075,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -118156,7 +118156,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -118183,7 +118183,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -134464,7 +134464,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -134491,7 +134491,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -134626,7 +134626,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134653,7 +134653,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134734,7 +134734,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134761,7 +134761,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134896,7 +134896,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -134923,7 +134923,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -134950,7 +134950,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -134977,7 +134977,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -135058,7 +135058,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -135085,7 +135085,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -135220,7 +135220,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -135247,7 +135247,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -135382,7 +135382,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -135409,7 +135409,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -135760,7 +135760,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -135787,7 +135787,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -135922,7 +135922,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -135949,7 +135949,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -136084,7 +136084,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -136111,7 +136111,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -151852,7 +151852,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -151879,7 +151879,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -152122,7 +152122,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -152149,7 +152149,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -152338,7 +152338,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -152365,7 +152365,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -152446,7 +152446,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -152473,7 +152473,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -152500,7 +152500,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -152527,7 +152527,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -152716,7 +152716,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -152743,7 +152743,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -152932,7 +152932,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -152959,7 +152959,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -153418,7 +153418,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -153445,7 +153445,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -153634,7 +153634,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -153661,7 +153661,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -167296,7 +167296,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167323,7 +167323,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167512,7 +167512,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167539,7 +167539,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167620,7 +167620,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -167647,7 +167647,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -167674,7 +167674,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167701,7 +167701,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167782,7 +167782,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167809,7 +167809,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -167998,7 +167998,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -168025,7 +168025,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -168376,7 +168376,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -168403,7 +168403,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -168592,7 +168592,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -168619,7 +168619,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -184252,7 +184252,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184279,7 +184279,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184522,7 +184522,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184549,7 +184549,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184738,7 +184738,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184765,7 +184765,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184846,7 +184846,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -184873,7 +184873,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -184900,7 +184900,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -184927,7 +184927,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -185116,7 +185116,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -185143,7 +185143,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -185332,7 +185332,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -185359,7 +185359,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -185818,7 +185818,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -185845,7 +185845,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -186034,7 +186034,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -186061,7 +186061,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -202450,7 +202450,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -202477,7 +202477,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -202612,7 +202612,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202639,7 +202639,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202720,7 +202720,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202747,7 +202747,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202882,7 +202882,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -202909,7 +202909,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             0.03,
@@ -202936,7 +202936,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -202963,7 +202963,7 @@
         }
       },
       {
-        "biome": "atmospheric:dunes",
+        "biome": "atmospheric:scrubland",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -203044,7 +203044,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -203071,7 +203071,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -203206,7 +203206,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -203233,7 +203233,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -203368,7 +203368,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -203395,7 +203395,7 @@
         }
       },
       {
-        "biome": "atmospheric:flourishing_dunes",
+        "biome": "atmospheric:dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -203746,7 +203746,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -203773,7 +203773,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -203908,7 +203908,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -203935,7 +203935,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -204070,7 +204070,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
@@ -204097,7 +204097,7 @@
         }
       },
       {
-        "biome": "atmospheric:spiny_thicket",
+        "biome": "atmospheric:flourishing_dunes",
         "parameters": {
           "continentalness": [
             0.03,
