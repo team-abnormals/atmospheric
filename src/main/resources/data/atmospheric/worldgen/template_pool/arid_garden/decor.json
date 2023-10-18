@@ -1,0 +1,14 @@
+{
+  "name": "atmospheric:arid_garden/decor",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:feature_pool_element",
+        "feature": "atmospheric:baby_yucca_with_flowers",
+        "projection": "rigid"
+      },
+      "weight": 4
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

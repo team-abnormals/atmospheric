@@ -1,0 +1,60 @@
+{
+  "name": "atmospheric:arid_garden/arid_garden",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:arid_garden/arid_garden_1",
+        "processors": "atmospheric:flower_pot_arid_garden",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:arid_garden/arid_garden_2",
+        "processors": "atmospheric:flower_pot_arid_garden",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:arid_garden/arid_garden_3",
+        "processors": "atmospheric:flower_pot_arid_garden",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:arid_garden/arid_garden_4",
+        "processors": "atmospheric:flower_pot_arid_garden",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:arid_garden/arid_garden_5",
+        "processors": "atmospheric:flower_pot_arid_garden",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:arid_garden/arid_garden_6",
+        "processors": "atmospheric:flower_pot_arid_garden",
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

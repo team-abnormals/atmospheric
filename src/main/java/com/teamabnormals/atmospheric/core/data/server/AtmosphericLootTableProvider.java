@@ -510,7 +510,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 
 		@Override
 		public void accept(BiConsumer<ResourceLocation, Builder> consumer) {
-			consumer.accept(Atmospheric.location("chests/arid_shrine"), LootTable.lootTable()
+			consumer.accept(Atmospheric.location("chests/arid_garden"), LootTable.lootTable()
 					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 1.0F))
 							.add(LootItem.lootTableItem(Items.IRON_HORSE_ARMOR))
 							.add(LootItem.lootTableItem(Items.GOLDEN_HORSE_ARMOR))
