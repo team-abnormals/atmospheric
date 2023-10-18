@@ -9,6 +9,7 @@ import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
 import net.minecraft.advancements.critereon.*;
@@ -18,6 +19,7 @@ import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.ChestLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -517,23 +519,42 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 		@Override
 		public void accept(BiConsumer<ResourceLocation, Builder> consumer) {
 			consumer.accept(Atmospheric.location("chests/arid_garden"), LootTable.lootTable()
-					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 1.0F))
-							.add(LootItem.lootTableItem(Items.IRON_HORSE_ARMOR))
-							.add(LootItem.lootTableItem(Items.GOLDEN_HORSE_ARMOR))
-							.add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR))
-					)
 					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 1.0F))
-							.add(LootItem.lootTableItem(ROSEWOOD_SAPLING.get()))
-							.add(LootItem.lootTableItem(MORADO_SAPLING.get()))
-							.add(LootItem.lootTableItem(ASPEN_SAPLING.get()))
-							.add(LootItem.lootTableItem(KOUSA_SAPLING.get()))
 							.add(LootItem.lootTableItem(GRIMWOOD_SAPLING.get()))
-							.add(LootItem.lootTableItem(LAUREL_SAPLING.get()))
 					)
-					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 4.0F))
-							.add(LootItem.lootTableItem(AtmosphericItems.ALOE_GEL_BOTTLE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
-							.add(LootItem.lootTableItem(Items.GOLD_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 15.0F))))
-							.add(LootItem.lootTableItem(YUCCA_BRANCH.get()))
+					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(3.0F, 6.0F))
+							.add(LootItem.lootTableItem(Items.IRON_HOE).setWeight(5).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+							.add(LootItem.lootTableItem(Items.FLOWER_POT).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+							.add(LootItem.lootTableItem(Items.HONEY_BOTTLE).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+							.add(LootItem.lootTableItem(Items.BRICK).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 6.0F))))
+							.add(LootItem.lootTableItem(Items.STICK).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 8.0F))))
+
+							.add(LootItem.lootTableItem(YUCCA_GATEAU.get()).setWeight(5).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+							.add(LootItem.lootTableItem(YUCCA_BRANCH.get()).setWeight(5).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+							.add(LootItem.lootTableItem(YUCCA_SAPLING.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+							.add(LootItem.lootTableItem(GILIA.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+							.add(LootItem.lootTableItem(AtmosphericItems.ALOE_LEAVES.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+							.add(LootItem.lootTableItem(AtmosphericItems.ALOE_KERNELS.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+							.add(LootItem.lootTableItem(AtmosphericItems.ROASTED_YUCCA_FRUIT.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+							.add(LootItem.lootTableItem(BARREL_CACTUS.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 6.0F))))
+							.add(LootItem.lootTableItem(AGAVE.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 6.0F))))
+							.add(LootItem.lootTableItem(YUCCA_FLOWER.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 6.0F))))
+							.add(LootItem.lootTableItem(AtmosphericItems.YELLOW_BLOSSOMS.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 8.0F))))
+							.add(LootItem.lootTableItem(AtmosphericItems.YUCCA_FRUIT.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 8.0F))))
+
+							.add(LootItem.lootTableItem(Items.SUSPICIOUS_STEW).setWeight(5).apply(SetStewEffectFunction.stewEffect()
+									.withEffect(AtmosphericMobEffects.RELIEF.get(), UniformGenerator.between(7.0F, 10.0F))
+									.withEffect(AtmosphericMobEffects.WORSENING.get(), UniformGenerator.between(5.0F, 7.0F))
+									.withEffect(AtmosphericMobEffects.PERSISTENCE.get(), UniformGenerator.between(7.0F, 10.0F))
+									.withEffect(MobEffects.POISON, UniformGenerator.between(10.0F, 20.0F))
+									.withEffect(MobEffects.SATURATION, UniformGenerator.between(7.0F, 10.0F))
+									.withEffect(MobEffects.WEAKNESS, UniformGenerator.between(6.0F, 8.0F))))
+
+							.add(LootItem.lootTableItem(AtmosphericItems.GOLDEN_DRAGON_FRUIT.get()).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+							.add(LootItem.lootTableItem(Items.IRON_HOE).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+									.apply(EnchantWithLevelsFunction.enchantWithLevels(UniformGenerator.between(20.0F, 39.0F)).allowTreasure()))
+							.add(LootItem.lootTableItem(Items.POTION).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+									.apply(SetPotionFunction.setPotion(AtmosphericMobEffects.RELIEF_STRONG.get())))
 					)
 			);
 
