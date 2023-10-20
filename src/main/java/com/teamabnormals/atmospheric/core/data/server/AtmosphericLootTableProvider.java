@@ -522,6 +522,13 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 1.0F))
 							.add(LootItem.lootTableItem(GRIMWOOD_SAPLING.get()))
 					)
+					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 1.0F))
+							.add(LootItem.lootTableItem(AtmosphericItems.GOLDEN_DRAGON_FRUIT.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+							.add(LootItem.lootTableItem(Items.IRON_HOE).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+									.apply(EnchantWithLevelsFunction.enchantWithLevels(UniformGenerator.between(20.0F, 39.0F)).allowTreasure()))
+							.add(LootItem.lootTableItem(Items.POTION).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+									.apply(SetPotionFunction.setPotion(AtmosphericMobEffects.RELIEF_LONG.get())))
+					)
 					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(3.0F, 6.0F))
 							.add(LootItem.lootTableItem(Items.IRON_HOE).setWeight(5).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
 							.add(LootItem.lootTableItem(Items.FLOWER_POT).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
@@ -549,12 +556,6 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 									.withEffect(MobEffects.POISON, UniformGenerator.between(10.0F, 20.0F))
 									.withEffect(MobEffects.SATURATION, UniformGenerator.between(7.0F, 10.0F))
 									.withEffect(MobEffects.WEAKNESS, UniformGenerator.between(6.0F, 8.0F))))
-
-							.add(LootItem.lootTableItem(AtmosphericItems.GOLDEN_DRAGON_FRUIT.get()).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
-							.add(LootItem.lootTableItem(Items.IRON_HOE).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-									.apply(EnchantWithLevelsFunction.enchantWithLevels(UniformGenerator.between(20.0F, 39.0F)).allowTreasure()))
-							.add(LootItem.lootTableItem(Items.POTION).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
-									.apply(SetPotionFunction.setPotion(AtmosphericMobEffects.RELIEF_STRONG.get())))
 					)
 			);
 
