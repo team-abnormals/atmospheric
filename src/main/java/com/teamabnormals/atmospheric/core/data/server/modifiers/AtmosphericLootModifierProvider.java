@@ -10,7 +10,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
-import java.util.Collections;
+import java.util.List;
 
 public class AtmosphericLootModifierProvider extends LootModifierProvider {
 
@@ -20,6 +20,11 @@ public class AtmosphericLootModifierProvider extends LootModifierProvider {
 
 	@Override
 	protected void registerEntries() {
-		this.entry("ruined_portal").selects(BuiltInLootTables.RUINED_PORTAL).addModifier(new LootPoolEntriesModifier(false, 0, Collections.singletonList(LootItem.lootTableItem(AtmosphericItems.SHIMMERING_PASSION_FRUIT.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 9.0F))).build())));
+		this.entry("ruined_portal").selects(BuiltInLootTables.RUINED_PORTAL)
+				.addModifier(new LootPoolEntriesModifier(false, 0,
+						List.of(
+								LootItem.lootTableItem(AtmosphericItems.SHIMMERING_PASSION_FRUIT.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 9.0F))).build(),
+								LootItem.lootTableItem(AtmosphericItems.GOLDEN_DRAGON_FRUIT.get()).setWeight(15).build()
+						)));
 	}
 }

@@ -19,6 +19,11 @@
             ],
             "name": "atmospheric:shimmering_passion_fruit",
             "weight": 5
+          },
+          {
+            "type": "minecraft:item",
+            "name": "atmospheric:golden_dragon_fruit",
+            "weight": 15
           }
         ],
         "index": 0,
