@@ -94,6 +94,8 @@ public class AtmosphericRecipeProvider extends RecipeProvider {
 		conditionalStonecuttingRecipe(consumer, VERTICAL_SLABS, AtmosphericBlocks.DOLERITE_VERTICAL_SLAB.get(), AtmosphericBlocks.DOLERITE.get(), 2);
 		conditionalStonecuttingRecipe(consumer, VERTICAL_SLABS, AtmosphericBlocks.POLISHED_DOLERITE_VERTICAL_SLAB.get(), AtmosphericBlocks.DOLERITE.get(), 2);
 		conditionalStonecuttingRecipe(consumer, VERTICAL_SLABS, AtmosphericBlocks.POLISHED_DOLERITE_VERTICAL_SLAB.get(), AtmosphericBlocks.POLISHED_DOLERITE.get(), 2);
+
+		ShapelessRecipeBuilder.shapeless(AtmosphericBlocks.GRIMWEB.get()).requires(AtmosphericItemTags.GRIMWOOD_LOGS).requires(Items.COBWEB).unlockedBy("has_grimwood", has(AtmosphericItemTags.GRIMWOOD_LOGS)).save(consumer);
 	}
 
 	public static QuarkFlagRecipeCondition quarkFlag(String flag) {
