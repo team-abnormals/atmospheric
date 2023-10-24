@@ -107,7 +107,7 @@
         "processors": "atmospheric:zombie_scrubland",
         "projection": "rigid"
       },
-      "weight": 1
+      "weight": 2
     },
     {
       "element": {
@@ -152,7 +152,7 @@
         "processors": "atmospheric:zombie_scrubland",
         "projection": "rigid"
       },
-      "weight": 1
+      "weight": 2
     },
     {
       "element": {
@@ -170,7 +170,7 @@
         "processors": "atmospheric:zombie_scrubland",
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 1
     },
     {
       "element": {
@@ -251,7 +251,7 @@
         "processors": "atmospheric:zombie_scrubland",
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 1
     },
     {
       "element": {
