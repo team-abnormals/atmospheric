@@ -5,13 +5,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "atmospheric:village/scrubland/town_centers/scrubland_meeting_point_1",
-        "processors": {
-          "processors": [
-            {
-              "processor_type": "atmospheric:prevent_waterlogging_spread"
-            }
-          ]
-        },
+        "processors": "atmospheric:prevent_waterlogging_spread",
         "projection": "rigid"
       },
       "weight": 98
@@ -20,13 +14,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "atmospheric:village/scrubland/town_centers/scrubland_meeting_point_2",
-        "processors": {
-          "processors": [
-            {
-              "processor_type": "atmospheric:prevent_waterlogging_spread"
-            }
-          ]
-        },
+        "processors": "atmospheric:prevent_waterlogging_spread",
         "projection": "rigid"
       },
       "weight": 98
@@ -35,13 +23,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "atmospheric:village/scrubland/town_centers/scrubland_meeting_point_3",
-        "processors": {
-          "processors": [
-            {
-              "processor_type": "atmospheric:prevent_waterlogging_spread"
-            }
-          ]
-        },
+        "processors": "atmospheric:prevent_waterlogging_spread",
         "projection": "rigid"
       },
       "weight": 49
@@ -49,26 +31,26 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "minecraft:village/desert/zombie/town_centers/desert_meeting_point_1",
-        "processors": "minecraft:zombie_desert",
+        "location": "minecraft:village/scrubland/zombie/town_centers/scrubland_meeting_point_1",
+        "processors": "atmospheric:zombie_scrubland",
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 1
     },
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "minecraft:village/desert/zombie/town_centers/desert_meeting_point_2",
-        "processors": "minecraft:zombie_desert",
+        "location": "atmospheric:village/scrubland/zombie/town_centers/scrubland_meeting_point_2",
+        "processors": "atmospheric:zombie_scrubland",
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 1
     },
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "minecraft:village/desert/zombie/town_centers/desert_meeting_point_3",
-        "processors": "minecraft:zombie_desert",
+        "location": "atmospheric:village/scrubland/zombie/town_centers/scrubland_meeting_point_3",
+        "processors": "atmospheric:zombie_scrubland",
         "projection": "rigid"
       },
       "weight": 1
