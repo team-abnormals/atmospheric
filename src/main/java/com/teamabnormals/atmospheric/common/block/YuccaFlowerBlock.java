@@ -1,11 +1,9 @@
 package com.teamabnormals.atmospheric.common.block;
 
 import com.google.common.base.Supplier;
-import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.blueprint.common.advancement.EmptyTrigger;
 import com.teamabnormals.blueprint.common.block.BlueprintFlowerBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -73,11 +71,6 @@ public class YuccaFlowerBlock extends BlueprintFlowerBlock implements Bonemealab
 	@Override
 	public DamageSource getDamageSource() {
 		return AtmosphericDamageSources.YUCCA_FLOWER;
-	}
-
-	@Override
-	public EmptyTrigger getCriteriaTrigger() {
-		return AtmosphericCriteriaTriggers.YUCCA_FLOWER_PRICK;
 	}
 
 	@Override

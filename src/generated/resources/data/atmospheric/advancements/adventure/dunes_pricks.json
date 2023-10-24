@@ -7,14 +7,8 @@
     "barrel_cactus": {
       "trigger": "atmospheric:barrel_cactus_prick"
     },
-    "yucca_branch": {
-      "trigger": "atmospheric:yucca_branch_prick"
-    },
     "yucca_flower": {
-      "trigger": "atmospheric:yucca_flower_prick"
-    },
-    "yucca_leaves": {
-      "trigger": "atmospheric:yucca_leaves_prick"
+      "trigger": "atmospheric:yucca_prick"
     }
   },
   "display": {
@@ -35,12 +29,6 @@
   "requirements": [
     [
       "yucca_flower"
-    ],
-    [
-      "yucca_leaves"
-    ],
-    [
-      "yucca_branch"
     ],
     [
       "aloe_vera"

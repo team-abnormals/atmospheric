@@ -2,7 +2,6 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
-import com.teamabnormals.blueprint.common.advancement.EmptyTrigger;
 import com.teamabnormals.blueprint.common.block.wood.BlueprintSaplingBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
@@ -41,11 +40,6 @@ public class YuccaSaplingBlock extends BlueprintSaplingBlock implements IPlantab
 	@Override
 	public DamageSource getDamageSource() {
 		return AtmosphericDamageSources.YUCCA_SAPLING;
-	}
-
-	@Override
-	public EmptyTrigger getCriteriaTrigger() {
-		return null;
 	}
 
 	@Nullable

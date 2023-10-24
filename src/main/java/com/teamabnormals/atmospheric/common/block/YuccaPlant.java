@@ -1,7 +1,7 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
-import com.teamabnormals.blueprint.common.advancement.EmptyTrigger;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
@@ -18,8 +18,6 @@ public interface YuccaPlant {
 
 	DamageSource getDamageSource();
 
-	EmptyTrigger getCriteriaTrigger();
-
 	default void onYuccaCollision(BlockState state, Level level, BlockPos pos, Entity entity) {
 		if (entity instanceof LivingEntity livingEntity && !(entity instanceof Bee)) {
 			if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ())) {
@@ -33,8 +31,8 @@ public interface YuccaPlant {
 					boolean wearingBarrelCactus = livingEntity.getItemBySlot(EquipmentSlot.HEAD).is(AtmosphericItems.BARREL_CACTUS.get());
 					entity.hurt(this.getDamageSource(), !wearingBarrelCactus ? 1.0F : 0.01F);
 					if (entity instanceof ServerPlayer serverPlayer) {
-						if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative() && this.getCriteriaTrigger() != null) {
-							this.getCriteriaTrigger().trigger(serverPlayer);
+						if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative()) {
+							AtmosphericCriteriaTriggers.YUCCA_PRICK.trigger(serverPlayer);
 						}
 					}
 				}

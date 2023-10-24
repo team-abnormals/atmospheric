@@ -1,8 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
-import com.teamabnormals.blueprint.common.advancement.EmptyTrigger;
 import com.teamabnormals.blueprint.common.block.HedgeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
@@ -35,11 +33,6 @@ public class YuccaHedgeBlock extends HedgeBlock implements YuccaPlant {
 	@Override
 	public DamageSource getDamageSource() {
 		return AtmosphericDamageSources.YUCCA_LEAVES;
-	}
-
-	@Override
-	public EmptyTrigger getCriteriaTrigger() {
-		return AtmosphericCriteriaTriggers.YUCCA_LEAVES_PRICK;
 	}
 
 	@Override

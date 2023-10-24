@@ -27,9 +27,7 @@ public class AtmosphericAdvancementProvider extends AdvancementProvider {
 	@Override
 	protected void registerAdvancements(Consumer<Advancement> consumer, ExistingFileHelper existingFileHelper) {
 		createAdvancement("dunes_pricks", "adventure", new ResourceLocation("adventure/root"), AtmosphericBlocks.YUCCA_FLOWER.get(), FrameType.GOAL, true, true, false)
-				.addCriterion("yucca_flower", AtmosphericCriteriaTriggers.YUCCA_FLOWER_PRICK.createInstance())
-				.addCriterion("yucca_leaves", AtmosphericCriteriaTriggers.YUCCA_LEAVES_PRICK.createInstance())
-				.addCriterion("yucca_branch", AtmosphericCriteriaTriggers.YUCCA_BRANCH_PRICK.createInstance())
+				.addCriterion("yucca_flower", AtmosphericCriteriaTriggers.YUCCA_PRICK.createInstance())
 				.addCriterion("aloe_vera", AtmosphericCriteriaTriggers.ALOE_VERA_PRICK.createInstance())
 				.addCriterion("barrel_cactus", AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.createInstance())
 				.save(consumer, Atmospheric.MOD_ID + ":adventure/dunes_pricks");

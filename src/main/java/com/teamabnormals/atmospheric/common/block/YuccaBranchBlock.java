@@ -137,9 +137,4 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 	public DamageSource getDamageSource() {
 		return AtmosphericDamageSources.YUCCA_BRANCH;
 	}
-
-	@Override
-	public EmptyTrigger getCriteriaTrigger() {
-		return AtmosphericCriteriaTriggers.YUCCA_BRANCH_PRICK;
-	}
 }
