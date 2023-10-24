@@ -1,8 +1,31 @@
 {
   "parent": "minecraft:husbandry/root",
   "criteria": {
-    "put_out_fire": {
-      "trigger": "atmospheric:put_out_fire"
+    "consume_aloe_leaves": {
+      "conditions": {
+        "item": {
+          "items": [
+            "atmospheric:aloe_leaves"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "on_fire": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "flags": {
+                "is_on_fire": true
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
     }
   },
   "display": {
@@ -22,7 +45,10 @@
   },
   "requirements": [
     [
-      "put_out_fire"
+      "on_fire"
+    ],
+    [
+      "consume_aloe_leaves"
     ]
   ]
 }

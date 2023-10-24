@@ -1,9 +1,7 @@
 package com.teamabnormals.atmospheric.common.entity.projectile;
 
-import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -35,12 +33,6 @@ public class PassionFruitSeed extends ThrowableProjectile {
 		Entity entity = this.getOwner();
 		if (entity instanceof LivingEntity living) {
 			result.getEntity().hurt(AtmosphericDamageSources.passionFruitSeedAttack(this, living).setProjectile(), 0.5F + amplifier);
-			if (living instanceof ServerPlayer serverPlayer) {
-				if (!serverPlayer.getCommandSenderWorld().isClientSide()) {
-					AtmosphericCriteriaTriggers.SPIT_PASSION_FRUIT.trigger(serverPlayer);
-				}
-			}
-
 			if (!level.isClientSide()) {
 				this.discard();
 			}

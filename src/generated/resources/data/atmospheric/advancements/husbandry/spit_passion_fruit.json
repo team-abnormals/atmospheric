@@ -2,7 +2,17 @@
   "parent": "minecraft:husbandry/plant_seed",
   "criteria": {
     "spit_passion_fruit": {
-      "trigger": "atmospheric:spit_passion_fruit"
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "atmospheric:passion_fruit_seed"
+            },
+            "is_projectile": true
+          }
+        }
+      },
+      "trigger": "minecraft:player_hurt_entity"
     }
   },
   "display": {

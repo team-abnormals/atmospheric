@@ -7,10 +7,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericCriteriaTriggers {
-	public static final EmptyTrigger SPIT_PASSION_FRUIT = CriteriaTriggers.register(new EmptyTrigger(Atmospheric.location("spit_passion_fruit")));
-
 	public static final EmptyTrigger FINISH_GATEAU = CriteriaTriggers.register(new EmptyTrigger(Atmospheric.location("finish_gateau")));
-	public static final EmptyTrigger PUT_OUT_FIRE = CriteriaTriggers.register(new EmptyTrigger(Atmospheric.location("put_out_fire")));
 
 	public static final EmptyTrigger BARREL_CACTUS_PRICK = CriteriaTriggers.register(new EmptyTrigger(Atmospheric.location("barrel_cactus_prick")));
 	public static final EmptyTrigger ALOE_VERA_PRICK = CriteriaTriggers.register(new EmptyTrigger(Atmospheric.location("aloe_vera_prick")));
