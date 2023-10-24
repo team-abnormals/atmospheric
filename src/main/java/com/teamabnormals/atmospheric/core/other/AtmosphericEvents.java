@@ -3,8 +3,11 @@ package com.teamabnormals.atmospheric.core.other;
 import com.teamabnormals.atmospheric.common.block.YuccaBundleBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
@@ -12,6 +15,7 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.Tags;
@@ -19,6 +23,7 @@ import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
@@ -99,6 +104,25 @@ public class AtmosphericEvents {
 			if (damage >= (amplifierHeal + 1)) {
 				entity.heal((amplifierHeal + 1));
 				entity.getPersistentData().putBoolean("Heal", false);
+			}
+		}
+
+		if (event.getEntity() instanceof ServerPlayer player && !player.getCommandSenderWorld().isClientSide()) {
+			if (player.hasEffect(AtmosphericMobEffects.PERSISTENCE.get()) && player.getFoodData().getFoodLevel() <= 6.0F) {
+				AtmosphericCriteriaTriggers.PERSISTENCE_WHILE_STARVING.trigger(player);
+			}
+		}
+	}
+
+	@SubscribeEvent
+	public static void onInteractWithBlock(PlayerInteractEvent.RightClickBlock event) {
+		if (event.getEntity() instanceof ServerPlayer player) {
+			BlockPos pos = event.getPos();
+			Level level = event.getLevel();
+			if (level.getBlockEntity(pos) instanceof RandomizableContainerBlockEntity container && container.serializeNBT().getString("LootTable").equals(Atmospheric.location("chests/arid_garden").toString())) {
+				if (player.getItemBySlot(EquipmentSlot.HEAD).is(AtmosphericItems.BARREL_CACTUS.get()) && !player.getCommandSenderWorld().isClientSide()) {
+					AtmosphericCriteriaTriggers.LOOT_ARID_GARDEN.trigger(player);
+				}
 			}
 		}
 	}

@@ -16,7 +16,7 @@
     "description": {
       "translate": "advancements.atmospheric.adventure.dunes_pricks.description"
     },
-    "frame": "goal",
+    "frame": "task",
     "hidden": false,
     "icon": {
       "item": "atmospheric:yucca_flower"

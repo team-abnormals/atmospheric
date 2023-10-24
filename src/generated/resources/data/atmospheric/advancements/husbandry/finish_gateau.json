@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:husbandry/plant_seed",
+  "parent": "atmospheric:husbandry/persistence_while_starving",
   "criteria": {
     "finish_gateau": {
       "trigger": "atmospheric:finish_gateau"

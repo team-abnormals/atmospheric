@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:husbandry/plant_seed",
+  "parent": "minecraft:husbandry/root",
   "criteria": {
     "spit_passion_fruit": {
       "conditions": {

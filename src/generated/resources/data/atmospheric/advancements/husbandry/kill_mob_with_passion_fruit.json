@@ -1,0 +1,36 @@
+{
+  "parent": "atmospheric:husbandry/spit_passion_fruit",
+  "criteria": {
+    "kill_mob_with_passion_fruit": {
+      "conditions": {
+        "killing_blow": {
+          "direct_entity": {
+            "type": "atmospheric:passion_fruit_seed"
+          },
+          "is_projectile": true
+        }
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.atmospheric.husbandry.kill_mob_with_passion_fruit.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "atmospheric:shimmering_passion_fruit"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.atmospheric.husbandry.kill_mob_with_passion_fruit.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_mob_with_passion_fruit"
+    ]
+  ]
+}
