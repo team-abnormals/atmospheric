@@ -33,6 +33,7 @@ public class EnderDragonFruitItem extends Item {
 		SoundEvent sound = SoundEvents.CHORUS_FRUIT_TELEPORT;
 		level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), sound, SoundSource.PLAYERS, 1.0F, 1.0F);
 		entity.playSound(sound, 1.0F, 1.0F);
+		entity.playSound(SoundEvents.ENDER_DRAGON_GROWL, 1.0F, 0.8F + entity.getRandom().nextFloat() * 0.3F);
 
 		for (int i = 0; i < 8; ++i) {
 			Vec3 vec3 = new Vec3(((double) entity.getRandom().nextFloat() - 0.5D), Math.random() * 0.1D + 0.1D, 0.0D);
