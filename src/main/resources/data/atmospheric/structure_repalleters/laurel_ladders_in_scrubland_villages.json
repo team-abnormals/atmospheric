@@ -1,8 +1,8 @@
 {
   "type": "blueprint:simple",
   "priority": "normal",
-  "replaces_block": "minecraft:chest",
-  "replaces_with": "atmospheric:laurel_chest",
+  "replaces_block": "minecraft:ladder",
+  "replaces_with": "atmospheric:laurel_ladder",
   "selector": {
     "type": "names",
     "conditions": [
