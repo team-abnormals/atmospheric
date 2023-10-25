@@ -67,13 +67,12 @@ public class OrangeVaporCloud extends Entity {
 		float f = this.getRadius();
 		if (this.level.isClientSide) {
 			int i = Mth.ceil((float) Math.PI * f * f * 0.05F);
-			float f1 = f;
 
 			for (int j = 0; j < i; ++j) {
 				float f2 = this.random.nextFloat() * ((float) Math.PI * 2F);
-				float f3 = Mth.sqrt(this.random.nextFloat()) * f1;
+				float f3 = Mth.sqrt(this.random.nextFloat()) * f;
 				double d0 = this.getX() + (double) (Mth.cos(f2) * f3);
-				double d2 = this.getY() + random.nextFloat() * f * 2.0F;
+				double d2 = this.getY() + random.nextFloat() * this.getHeight();
 				double d4 = this.getZ() + (double) (Mth.sin(f2) * f3);
 
 				double d5 = (0.5D - this.random.nextDouble()) * 0.15D;
@@ -151,7 +150,11 @@ public class OrangeVaporCloud extends Entity {
 		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
+	public float getHeight() {
+		return this.getRadius() * 2.0F;
+	}
+
 	public EntityDimensions getDimensions(Pose p_19721_) {
-		return EntityDimensions.scalable(this.getRadius() * 2.0F, this.getRadius() * 2.0F);
+		return EntityDimensions.scalable(this.getRadius() * 2.0F, this.getHeight());
 	}
 }

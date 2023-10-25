@@ -29,7 +29,7 @@ public class OrangeBlockItem extends ItemNameBlockItem {
 		if (!level.isClientSide) {
 			Vec3 pos = entity.position();
 			OrangeVaporCloud cloud = new OrangeVaporCloud(level, pos.x(), pos.y(), pos.z());
-			cloud.setRadius(3.0F);
+			cloud.setRadius(1.5F);
 			cloud.setDuration(600);
 			cloud.setRadiusPerTick(-cloud.getRadius() / (float) cloud.getDuration());
 			level.addFreshEntity(cloud);
