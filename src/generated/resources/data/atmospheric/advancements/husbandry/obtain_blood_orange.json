@@ -1,0 +1,37 @@
+{
+  "parent": "atmospheric:husbandry/find_orange",
+  "criteria": {
+    "obtain_blood_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "atmospheric:blood_orange"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.atmospheric.husbandry.obtain_blood_orange.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "atmospheric:blood_orange"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.atmospheric.husbandry.obtain_blood_orange.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_blood_orange"
+    ]
+  ]
+}
