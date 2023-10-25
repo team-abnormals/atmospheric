@@ -48,7 +48,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				{VANILLA, VANILLA, VANILLA, VANILLA, ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, LAUREL_FOREST.getKey(), ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, RAINFOREST.getKey(), RAINFOREST.getKey()},
-				{SCRUBLAND.getKey(), SCRUBLAND.getKey(), DUNES.getKey(), FLOURISHING_DUNES.getKey(), FLOURISHING_DUNES.getKey()}};
+				{SCRUBLAND.getKey(), SCRUBLAND.getKey(), SCRUBLAND.getKey(), DUNES.getKey(), FLOURISHING_DUNES.getKey()}};
 		private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
 				{VANILLA, null, VANILLA, null, null},
 				{null, null, null, null, VANILLA},
@@ -60,7 +60,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				{VANILLA, VANILLA, VANILLA, VANILLA, ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, LAUREL_FOREST.getKey(), LAUREL_FOREST.getKey(), ASPEN_PARKLAND.getKey()},
 				{VANILLA, VANILLA, VANILLA, RAINFOREST.getKey(), RAINFOREST.getKey()},
-				{SCRUBLAND.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey()}};
+				{SCRUBLAND.getKey(), SCRUBLAND.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey(), ROCKY_DUNES.getKey()}};
 		private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
 				{VANILLA, null, null, null, null},
 				{null, null, VANILLA, null, VANILLA},
