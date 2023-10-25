@@ -1,0 +1,6 @@
+{
+  "parent": "atmospheric:block/template_stemmed_orange",
+  "textures": {
+    "orange": "atmospheric:block/stemmed_orange"
+  }
+}

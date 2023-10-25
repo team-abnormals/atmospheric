@@ -1,6 +1,7 @@
 {
+	"ambientocclusion": false,
+	"parent": "block/block",
 	"textures": {
-		"orange": "atmospheric:block/orange",
 		"particle": "#orange"
 	},
 	"elements": [

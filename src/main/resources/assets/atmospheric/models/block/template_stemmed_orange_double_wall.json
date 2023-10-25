@@ -1,13 +1,14 @@
 {
+	"ambientocclusion": false,
+	"parent": "block/block",
 	"textures": {
-		"orange": "atmospheric:block/orange",
 		"particle": "#orange"
 	},
 	"elements": [
 		{
 			"name": "orange",
-			"from": [8, 8, 8],
-			"to": [15, 14, 15],
+			"from": [9, 8, 9],
+			"to": [16, 14, 16],
 			"faces": {
 				"north": {"uv": [0, 7, 7, 13], "texture": "#orange"},
 				"east": {"uv": [0, 7, 7, 13], "texture": "#orange"},
@@ -19,8 +20,8 @@
 		},
 		{
 			"name": "stem",
-			"from": [11.5, 14, 11],
-			"to": [11.5, 16, 12],
+			"from": [12.5, 14, 12],
+			"to": [12.5, 16, 13],
 			"faces": {
 				"east": {"uv": [2, 14, 3, 16], "texture": "#orange"},
 				"west": {"uv": [2, 14, 3, 16], "texture": "#orange"}
@@ -28,8 +29,8 @@
 		},
 		{
 			"name": "leaf",
-			"from": [9, 14, 11.5],
-			"to": [12, 16, 11.5],
+			"from": [10, 14, 12.5],
+			"to": [13, 16, 12.5],
 			"faces": {
 				"north": {"uv": [3, 14, 0, 16], "texture": "#orange"},
 				"south": {"uv": [0, 14, 3, 16], "texture": "#orange"}
@@ -37,8 +38,8 @@
 		},
 		{
 			"name": "orange",
-			"from": [1, 8, 1],
-			"to": [8, 14, 8],
+			"from": [1, 0, 9],
+			"to": [8, 6, 16],
 			"faces": {
 				"north": {"uv": [0, 7, 7, 13], "texture": "#orange"},
 				"east": {"uv": [0, 7, 7, 13], "texture": "#orange"},
@@ -50,8 +51,8 @@
 		},
 		{
 			"name": "stem",
-			"from": [4.5, 14, 4],
-			"to": [4.5, 16, 5],
+			"from": [4.5, 6, 12],
+			"to": [4.5, 8, 13],
 			"faces": {
 				"east": {"uv": [2, 14, 3, 16], "texture": "#orange"},
 				"west": {"uv": [2, 14, 3, 16], "texture": "#orange"}
@@ -59,8 +60,8 @@
 		},
 		{
 			"name": "leaf",
-			"from": [2, 14, 4.5],
-			"to": [5, 16, 4.5],
+			"from": [2, 6, 12.5],
+			"to": [5, 8, 12.5],
 			"faces": {
 				"north": {"uv": [3, 14, 0, 16], "texture": "#orange"},
 				"south": {"uv": [0, 14, 3, 16], "texture": "#orange"}

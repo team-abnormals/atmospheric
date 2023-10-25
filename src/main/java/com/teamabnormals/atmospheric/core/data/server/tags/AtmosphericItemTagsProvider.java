@@ -72,7 +72,7 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 		this.copy(Tags.Blocks.SAND_RED, Tags.Items.SAND_RED);
 		this.copy(Tags.Blocks.SANDSTONE, Tags.Items.SANDSTONE);
 		this.tag(Tags.Items.BOOKSHELVES).add(ROSEWOOD_BOOKSHELF.get().asItem(), MORADO_BOOKSHELF.get().asItem(), YUCCA_BOOKSHELF.get().asItem(), KOUSA_BOOKSHELF.get().asItem(), ASPEN_BOOKSHELF.get().asItem(), GRIMWOOD_BOOKSHELF.get().asItem(), LAUREL_BOOKSHELF.get().asItem());
-		this.tag(FRUITS).addTags(FRUITS_PASSION_FRUIT, FRUITS_CURRANT, FRUITS_DRAGON_FRUIT, FRUITS_CURRANT);
+		this.tag(FRUITS).addTags(FRUITS_PASSION_FRUIT, FRUITS_CURRANT, FRUITS_DRAGON_FRUIT, FRUITS_ORANGE);
 		this.tag(FRUITS_PASSION_FRUIT).add(AtmosphericItems.PASSION_FRUIT.get());
 		this.tag(FRUITS_CURRANT).add(AtmosphericItems.CURRANT.get());
 		this.tag(FRUITS_DRAGON_FRUIT).add(AtmosphericItems.DRAGON_FRUIT.get());

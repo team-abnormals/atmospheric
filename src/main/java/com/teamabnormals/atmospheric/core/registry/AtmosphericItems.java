@@ -47,11 +47,11 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> GOLDEN_DRAGON_FRUIT = HELPER.createItem("golden_dragon_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.GOLDEN_DRAGON_FRUIT).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> ENDER_DRAGON_FRUIT = HELPER.createItem("ender_dragon_fruit", () -> new EnderDragonFruitItem(new Item.Properties().food(AtmosphericFoods.ENDER_DRAGON_FRUIT).rarity(Rarity.EPIC).stacksTo(1)));
 
-	public static final RegistryObject<Item> ORANGE = HELPER.createItem("orange", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
-	public static final RegistryObject<Item> ORANGE_PUDDING = HELPER.createItem("orange_pudding", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
-	public static final RegistryObject<Item> ORANGE_SORBET = HELPER.createItem("orange_sorbet", () -> new BowlFoodItem(new Item.Properties().food(AtmosphericFoods.CURRANT).stacksTo(1).craftRemainder(Items.BOWL).tab(CreativeModeTab.TAB_FOOD)));
-	public static final RegistryObject<Item> CANDIED_ORANGE_SLICES = HELPER.createItem("candied_orange_slices", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
-	public static final RegistryObject<Item> BLOOD_ORANGE = HELPER.createItem("blood_orange", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> ORANGE = HELPER.createItem("orange", () -> new OrangeBlockItem(AtmosphericBlocks.STEMMED_ORANGE.get(), new Item.Properties().food(AtmosphericFoods.ORANGE).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> ORANGE_PUDDING = HELPER.createItem("orange_pudding", () -> new Item(new Item.Properties().food(AtmosphericFoods.ORANGE_PUDDING).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> ORANGE_SORBET = HELPER.createItem("orange_sorbet", () -> new BowlFoodItem(new Item.Properties().food(AtmosphericFoods.ORANGE_SORBET).stacksTo(1).craftRemainder(Items.BOWL).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> CANDIED_ORANGE_SLICES = HELPER.createItem("candied_orange_slices", () -> new Item(new Item.Properties().food(AtmosphericFoods.CANDIED_ORANGE_SLICES).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> BLOOD_ORANGE = HELPER.createItem("blood_orange", () -> new OrangeBlockItem(AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get(), new Item.Properties().food(AtmosphericFoods.BLOOD_ORANGE).tab(CreativeModeTab.TAB_FOOD)));
 
 	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> ROSEWOOD_BOAT = HELPER.createBoatAndChestBoatItem("rosewood", AtmosphericBlocks.ROSEWOOD_PLANKS);
 	public static final RegistryObject<Item> ROSEWOOD_FURNACE_BOAT = HELPER.createItem("rosewood_furnace_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.ROSEWOOD_FURNACE_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));
@@ -98,5 +98,11 @@ public class AtmosphericItems {
 		public static final FoodProperties DRAGON_FRUIT = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build();
 		public static final FoodProperties GOLDEN_DRAGON_FRUIT = new FoodProperties.Builder().nutrition(8).saturationMod(0.1F).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3600), 1.0F).build();
 		public static final FoodProperties ENDER_DRAGON_FRUIT = new FoodProperties.Builder().nutrition(20).saturationMod(1.2F).build();
+
+		public static final FoodProperties ORANGE = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build();
+		public static final FoodProperties ORANGE_PUDDING = new FoodProperties.Builder().nutrition(8).saturationMod(0.3F).build();
+		public static final FoodProperties ORANGE_SORBET = new FoodProperties.Builder().nutrition(15).saturationMod(0.6F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, false, true), 1.0F).build();
+		public static final FoodProperties CANDIED_ORANGE_SLICES = new FoodProperties.Builder().nutrition(6).saturationMod(0.3F).build();
+		public static final FoodProperties BLOOD_ORANGE = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build();
 	}
 }

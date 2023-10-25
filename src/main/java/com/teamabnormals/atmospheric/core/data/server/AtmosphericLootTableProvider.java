@@ -2,12 +2,8 @@ package com.teamabnormals.atmospheric.core.data.server;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import com.teamabnormals.atmospheric.common.block.AloeVeraBlock;
-import com.teamabnormals.atmospheric.common.block.AloeVeraTallBlock;
-import com.teamabnormals.atmospheric.common.block.BarrelCactusBlock;
-import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
+import com.teamabnormals.atmospheric.common.block.*;
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
@@ -20,6 +16,7 @@ import net.minecraft.data.loot.ChestLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -27,8 +24,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.storage.loot.*;
+import net.minecraft.world.level.storage.loot.IntRange;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
+import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.*;
@@ -373,6 +373,9 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropPottedContents(POTTED_DRY_LAUREL_SAPLING.get());
 			this.add(DRY_LAUREL_LEAVES.get(), (block) -> createLeavesDrops(block, DRY_LAUREL_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
+			this.add(STEMMED_ORANGE.get(), block -> createStemmedOrangeDrops(block, AtmosphericItems.ORANGE.get()));
+			this.add(STEMMED_BLOOD_ORANGE.get(), block -> createStemmedOrangeDrops(block, AtmosphericItems.BLOOD_ORANGE.get()));
+
 			this.dropSelf(ASPEN_PLANKS.get());
 			this.dropSelf(VERTICAL_ASPEN_PLANKS.get());
 			this.dropSelf(ASPEN_LOG.get());
@@ -502,6 +505,10 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			);
 		}
 
+		protected static LootTable.Builder createStemmedOrangeDrops(Block block, Item item) {
+			return applyExplosionDecay(block, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StemmedOrangeBlock.ORANGES, 2)))))));
+		}
+		
 		protected static LootTable.Builder createDoublePlantDrops(Block large, Block big) {
 			LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(big).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)));
 			return LootTable.lootTable().withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(large).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(large).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).build()).build()), new BlockPos(0, 1, 0)))).withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(large).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(large).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).build()).build()), new BlockPos(0, -1, 0))));

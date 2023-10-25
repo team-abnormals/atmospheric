@@ -1,0 +1,46 @@
+{
+  "variants": {
+    "facing=down,oranges=1": {
+      "model": "atmospheric:block/stemmed_blood_orange_ceiling"
+    },
+    "facing=down,oranges=2": {
+      "model": "atmospheric:block/stemmed_blood_orange_double_ceiling"
+    },
+    "facing=east,oranges=1": {
+      "model": "atmospheric:block/stemmed_blood_orange_wall",
+      "y": 90
+    },
+    "facing=east,oranges=2": {
+      "model": "atmospheric:block/stemmed_blood_orange_double_wall",
+      "y": 90
+    },
+    "facing=north,oranges=1": {
+      "model": "atmospheric:block/stemmed_blood_orange_wall"
+    },
+    "facing=north,oranges=2": {
+      "model": "atmospheric:block/stemmed_blood_orange_double_wall"
+    },
+    "facing=south,oranges=1": {
+      "model": "atmospheric:block/stemmed_blood_orange_wall",
+      "y": 180
+    },
+    "facing=south,oranges=2": {
+      "model": "atmospheric:block/stemmed_blood_orange_double_wall",
+      "y": 180
+    },
+    "facing=up,oranges=1": {
+      "model": "atmospheric:block/stemmed_blood_orange"
+    },
+    "facing=up,oranges=2": {
+      "model": "atmospheric:block/stemmed_blood_orange_double"
+    },
+    "facing=west,oranges=1": {
+      "model": "atmospheric:block/stemmed_blood_orange_wall",
+      "y": 270
+    },
+    "facing=west,oranges=2": {
+      "model": "atmospheric:block/stemmed_blood_orange_double_wall",
+      "y": 270
+    }
+  }
+}

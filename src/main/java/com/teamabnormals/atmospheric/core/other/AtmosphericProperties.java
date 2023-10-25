@@ -39,4 +39,5 @@ public class AtmosphericProperties {
 	public static final Block.Properties CARMINE_BLOCK = Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED).sound(SoundType.TUFF).strength(0.5F);
 
 	public static final Block.Properties ALOE_VERA = Block.Properties.of(Material.PLANT).noCollission().instabreak().randomTicks().sound(SoundType.CROP);
+	public static final Block.Properties STEMMED_ORANGE = Block.Properties.of(Material.PLANT, MaterialColor.COLOR_ORANGE).strength(0.5F).sound(SoundType.WOOD);
 }

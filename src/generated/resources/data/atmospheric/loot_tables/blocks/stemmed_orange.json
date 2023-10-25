@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "atmospheric:stemmed_orange",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "oranges": "2"
+                  }
+                }
+              ],
+              "count": 2.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "atmospheric:orange"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}
