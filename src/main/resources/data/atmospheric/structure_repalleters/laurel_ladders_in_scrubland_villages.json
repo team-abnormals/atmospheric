@@ -1,18 +1,14 @@
 {
   "type": "blueprint:simple",
-  "priority": "high",
-  "replaces_block": "woodworks:dark_oak_ladder",
-  "replaces_with": "atmospheric:grimwood_ladder",
+  "priority": "normal",
+  "replaces_block": "minecraft:chest",
+  "replaces_with": "atmospheric:laurel_chest",
   "selector": {
     "type": "names",
     "conditions": [
       {
         "type": "blueprint:and",
         "values": [
-          {
-            "type": "atmospheric:config",
-            "value": "grimwood_ancient_cities"
-          },
           {
             "type": "forge:mod_loaded",
             "modid": "woodworks"
@@ -29,7 +25,7 @@
       }
     ],
     "config": [
-      "minecraft:ancient_city"
+      "atmospheric:village_scrubland"
     ]
   }
 }

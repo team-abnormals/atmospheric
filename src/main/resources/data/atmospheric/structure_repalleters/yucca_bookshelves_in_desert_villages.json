@@ -16,6 +16,14 @@
           {
             "type": "forge:mod_loaded",
             "modid": "woodworks"
+          },
+          {
+            "type": "woodworks:config",
+            "value": "wooden_bookshelves"
+          },
+          {
+            "type": "woodworks:config",
+            "value": "wooden_bookshelves_in_structures"
           }
         ]
       }

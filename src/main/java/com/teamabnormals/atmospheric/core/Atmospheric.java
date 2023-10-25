@@ -1,9 +1,9 @@
 package com.teamabnormals.atmospheric.core;
 
 import com.teamabnormals.atmospheric.client.model.DragonFruitModel;
+import com.teamabnormals.atmospheric.client.model.PassionFruitSeedModel;
 import com.teamabnormals.atmospheric.client.renderer.entity.DragonFruitRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.PassionFruitSeedRenderer;
-import com.teamabnormals.atmospheric.client.model.PassionFruitSeedModel;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericBlockStateProvider;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericItemModelProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;

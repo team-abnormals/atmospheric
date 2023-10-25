@@ -16,6 +16,14 @@
           {
             "type": "forge:mod_loaded",
             "modid": "woodworks"
+          },
+          {
+            "type": "woodworks:config",
+            "value": "wooden_chests"
+          },
+          {
+            "type": "woodworks:config",
+            "value": "wooden_chests_in_structures"
           }
         ]
       }
