@@ -109,13 +109,13 @@ public class AtmosphericFeatures {
 		private static final BeehiveDecorator BEEHIVE_0002 = new BeehiveDecorator(0.002F);
 		private static final BeehiveDecorator BEEHIVE_005 = new BeehiveDecorator(0.05F);
 
-		private static final OrangesDecorator ORANGES = orangesDecorator(0.02F, false, 0.35F, 0.3F);
-		private static final OrangesDecorator ORANGES_GROWN = orangesDecorator(0.2F, false, 0.35F, 0.3F);
-		private static final OrangesDecorator ORANGES_DRY = orangesDecorator(0.01F, false, 0.25F, 0.2F);
-		private static final OrangesDecorator ORANGES_DRY_GROWN = orangesDecorator(0.1F, false, 0.25F, 0.2F);
+		private static final OrangesDecorator ORANGES = orangesDecorator(0.01F, false, 0.3F, 0.3F);
+		private static final OrangesDecorator ORANGES_GROWN = orangesDecorator(0.2F, false, 0.3F, 0.3F);
+		private static final OrangesDecorator ORANGES_DRY = orangesDecorator(0.005F, false, 0.2F, 0.2F);
+		private static final OrangesDecorator ORANGES_DRY_GROWN = orangesDecorator(0.1F, false, 0.2F, 0.2F);
 
-		private static final OrangesDecorator BLOOD_ORANGES = orangesDecorator(0.3F, true, 0.35F, 0.3F);
-		private static final OrangesDecorator BLOOD_ORANGES_DRY = orangesDecorator(0.15F, true, 0.25F, 0.2F);
+		private static final OrangesDecorator BLOOD_ORANGES = orangesDecorator(0.3F, true, 0.3F, 0.3F);
+		private static final OrangesDecorator BLOOD_ORANGES_DRY = orangesDecorator(0.15F, true, 0.2F, 0.2F);
 		
 		private static OrangesDecorator orangesDecorator(float probability, boolean blood, float orangesProb, float doubleProb) {
 			return new OrangesDecorator(probability, BlockStateProvider.simple(blood ? AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get() : AtmosphericBlocks.STEMMED_ORANGE.get()), orangesProb, doubleProb);
