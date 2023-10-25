@@ -22,6 +22,15 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:village/scrubland/scrubland_lamp_3",
+        "processors": "atmospheric:zombie_scrubland",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
         "location": "atmospheric:village/scrubland/scrubland_decoration_1",
         "processors": "atmospheric:zombie_scrubland",
         "projection": "rigid"
@@ -68,6 +77,33 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "atmospheric:village/scrubland/scrubland_decoration_6",
+        "processors": "atmospheric:zombie_scrubland",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:village/scrubland/scrubland_decoration_7",
+        "processors": "atmospheric:zombie_scrubland",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:village/scrubland/scrubland_decoration_8",
+        "processors": "atmospheric:zombie_scrubland",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:village/scrubland/scrubland_decoration_9",
         "processors": "atmospheric:zombie_scrubland",
         "projection": "rigid"
       },
