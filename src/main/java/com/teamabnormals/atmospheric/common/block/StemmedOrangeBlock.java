@@ -1,10 +1,13 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.teamabnormals.atmospheric.common.item.OrangeBlockItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -14,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -101,6 +105,15 @@ public class StemmedOrangeBlock extends DirectionalBlock {
 
 			return null;
 		}
+	}
+
+	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float distance) {
+		if (!level.isClientSide) {
+			level.destroyBlock(pos, false);
+			OrangeBlockItem.createVaporCloud(level, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F));
+		}
+
+		super.fallOn(level, state, pos, entity, distance);
 	}
 
 	@Override

@@ -28,13 +28,17 @@ public class OrangeBlockItem extends ItemNameBlockItem {
 	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
 		if (!level.isClientSide) {
 			Vec3 pos = entity.position();
-			OrangeVaporCloud cloud = new OrangeVaporCloud(level, pos.x(), pos.y(), pos.z());
-			cloud.setRadius(1.5F);
-			cloud.setDuration(600);
-			cloud.setRadiusPerTick(-cloud.getRadius() / (float) cloud.getDuration());
-			level.addFreshEntity(cloud);
+			createVaporCloud(level, pos);
 		}
 
 		return super.finishUsingItem(stack, level, entity);
+	}
+
+	public static void createVaporCloud(Level level, Vec3 pos) {
+		OrangeVaporCloud cloud = new OrangeVaporCloud(level, pos.x(), pos.y(), pos.z());
+		cloud.setRadius(1.5F);
+		cloud.setDuration(600);
+		cloud.setRadiusPerTick(-cloud.getRadius() / (float) cloud.getDuration());
+		level.addFreshEntity(cloud);
 	}
 }
