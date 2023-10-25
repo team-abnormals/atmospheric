@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.core.other;
 
 import com.teamabnormals.atmospheric.common.block.YuccaBundleBlock;
+import com.teamabnormals.atmospheric.common.entity.OrangeVaporCloud;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
