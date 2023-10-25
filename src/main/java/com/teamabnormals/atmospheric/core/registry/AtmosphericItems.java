@@ -45,7 +45,7 @@ public class AtmosphericItems {
 
 	public static final RegistryObject<Item> DRAGON_FRUIT = HELPER.createItem("dragon_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.DRAGON_FRUIT).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> GOLDEN_DRAGON_FRUIT = HELPER.createItem("golden_dragon_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.GOLDEN_DRAGON_FRUIT).tab(CreativeModeTab.TAB_FOOD)));
-	public static final RegistryObject<Item> ENDER_DRAGON_FRUIT = HELPER.createItem("ender_dragon_fruit", () -> new EnderDragonFruitItem(new Item.Properties().food(AtmosphericFoods.ENDER_DRAGON_FRUIT)));
+	public static final RegistryObject<Item> ENDER_DRAGON_FRUIT = HELPER.createItem("ender_dragon_fruit", () -> new EnderDragonFruitItem(new Item.Properties().food(AtmosphericFoods.ENDER_DRAGON_FRUIT).rarity(Rarity.EPIC).stacksTo(1)));
 
 	public static final RegistryObject<Item> ORANGE = HELPER.createItem("orange", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> ORANGE_PUDDING = HELPER.createItem("orange_pudding", () -> new Item(new Item.Properties().food(AtmosphericFoods.CURRANT).tab(CreativeModeTab.TAB_FOOD)));
