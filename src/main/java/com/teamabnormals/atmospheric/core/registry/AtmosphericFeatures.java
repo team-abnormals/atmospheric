@@ -109,16 +109,14 @@ public class AtmosphericFeatures {
 		private static final BeehiveDecorator BEEHIVE_0002 = new BeehiveDecorator(0.002F);
 		private static final BeehiveDecorator BEEHIVE_005 = new BeehiveDecorator(0.05F);
 
-		private static final OrangesDecorator ORANGES = orangesDecorator(0.01F, false, 0.3F, 0.3F);
-		private static final OrangesDecorator ORANGES_GROWN = orangesDecorator(0.2F, false, 0.3F, 0.3F);
-		private static final OrangesDecorator ORANGES_DRY = orangesDecorator(0.005F, false, 0.2F, 0.2F);
-		private static final OrangesDecorator ORANGES_DRY_GROWN = orangesDecorator(0.1F, false, 0.2F, 0.2F);
+		private static final OrangesDecorator ORANGES = orangesDecorator(0.005F, false);
+		private static final OrangesDecorator ORANGES_GROWN = orangesDecorator(0.1F, false);
+		private static final OrangesDecorator ORANGES_BOOSTED = orangesDecorator(0.8F, false);
+		private static final OrangesDecorator BLOOD_ORANGES_GROWN = orangesDecorator(0.1F, true);
+		private static final OrangesDecorator BLOOD_ORANGES_BOOSTED = orangesDecorator(0.8F, true);
 
-		private static final OrangesDecorator BLOOD_ORANGES = orangesDecorator(0.3F, true, 0.3F, 0.3F);
-		private static final OrangesDecorator BLOOD_ORANGES_DRY = orangesDecorator(0.15F, true, 0.2F, 0.2F);
-		
-		private static OrangesDecorator orangesDecorator(float probability, boolean blood, float orangesProb, float doubleProb) {
-			return new OrangesDecorator(probability, BlockStateProvider.simple(blood ? AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get() : AtmosphericBlocks.STEMMED_ORANGE.get()), orangesProb, doubleProb);
+		private static OrangesDecorator orangesDecorator(float probability, boolean blood) {
+			return new OrangesDecorator(probability, BlockStateProvider.simple(blood ? AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get() : AtmosphericBlocks.STEMMED_ORANGE.get()), (float) 0.25, (float) 0.3);
 		}
 
 		public static final TreeConfiguration ROSEWOOD = createRosewood().decorators(List.of(MONKEY_BRUSH)).build();
@@ -159,12 +157,18 @@ public class AtmosphericFeatures {
 
 		public static final TreeConfiguration LAUREL = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES)).build();
 		public static final TreeConfiguration LAUREL_GROWN = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_GROWN)).build();
+		public static final TreeConfiguration LAUREL_BOOSTED = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_BOOSTED)).build();
 		public static final TreeConfiguration LAUREL_WITH_VINES = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(new LeaveVineDecorator(0.15F))).build();
-		public static final TreeConfiguration LAUREL_NETHER = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES)).build();
-		public static final TreeConfiguration DRY_LAUREL = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_DRY)).build();
-		public static final TreeConfiguration DRY_LAUREL_GROWN = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_DRY_GROWN)).build();
+		public static final TreeConfiguration LAUREL_NETHER_GROWN = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_GROWN)).build();
+		public static final TreeConfiguration LAUREL_NETHER_BOOSTED = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_BOOSTED)).build();
+		
+		public static final TreeConfiguration DRY_LAUREL = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES)).build();
+		public static final TreeConfiguration DRY_LAUREL_GROWN = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_GROWN)).build();
+		public static final TreeConfiguration DRY_LAUREL_BOOSTED = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_BOOSTED)).build();
 		public static final TreeConfiguration DRY_LAUREL_WITH_VINES = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(new LeaveVineDecorator(0.15F))).build();
-		public static final TreeConfiguration DRY_LAUREL_NETHER = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_DRY)).build();
+		public static final TreeConfiguration DRY_LAUREL_NETHER_GROWN = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_GROWN)).build();
+		public static final TreeConfiguration DRY_LAUREL_NETHER_BOOSTED = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_BOOSTED)).build();
+
 		public static final TreeConfiguration DRY_LAUREL_BUSH = createCustomTree(AtmosphericBlocks.LAUREL_LOG.get(), new StraightTrunkPlacer(1, 0, 0), AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).build();
 
 		private static TreeConfigurationBuilder createLaurel(Block leaves) {
@@ -254,12 +258,17 @@ public class AtmosphericFeatures {
 
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL = register("laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_GROWN = register("laurel_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_GROWN));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_BOOSTED = register("laurel_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_BOOSTED));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_WITH_VINES = register("laurel_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_WITH_VINES));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_NETHER = register("laurel_nether", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_NETHER));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_NETHER_GROWN = register("laurel_nether_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_NETHER_GROWN));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_NETHER_BOOSTED = register("laurel_nether_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_NETHER_BOOSTED));
+
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL = register("dry_laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_GROWN = register("dry_laurel_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_GROWN));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_BOOSTED = register("dry_laurel_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_BOOSTED));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_WITH_VINES = register("dry_laurel_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_WITH_VINES));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_NETHER = register("dry_laurel_nether", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_NETHER));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_NETHER_GROWN = register("dry_laurel_nether", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_NETHER_GROWN));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_NETHER_BOOSTED = register("dry_laurel_nether_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_NETHER_BOOSTED));
 
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> KOUSA = register("kousa", () -> new ConfiguredFeature<>(AtmosphericFeatures.KOUSA_TREE.get(), Configs.KOUSA));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> BABY_KOUSA = register("baby_kousa", () -> new ConfiguredFeature<>(AtmosphericFeatures.BABY_TREE.get(), Configs.BABY_KOUSA));
