@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.entity;
 
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -78,6 +79,10 @@ public class OrangeVaporCloud extends Entity {
 				double d5 = (0.5D - this.random.nextDouble()) * 0.15D;
 				double d6 = 0.15;
 				double d7 = (0.5D - this.random.nextDouble()) * 0.15D;
+
+				if (d2 < this.getY() + this.getHeight() / 2.0F && random.nextBoolean()) {
+					this.level.addAlwaysVisibleParticle(ParticleTypes.POOF, d0, d2, d4, d5, d6, d7);
+				}
 
 				this.level.addAlwaysVisibleParticle(ParticleTypes.DRIPPING_DRIPSTONE_WATER, d0, d2, d4, d5, d6, d7);
 			}

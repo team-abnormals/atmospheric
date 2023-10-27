@@ -66,7 +66,7 @@ public final class AtmosphericModdedBiomeSliceProvider extends ModdedBiomeSliceP
 				{null, null, VANILLA, null, VANILLA},
 				{null, null, VANILLA, VANILLA, null},
 				{null, null, null, null, SPARSE_RAINFOREST.getKey()},
-				{SCRUBLAND.getKey(), PETRIFIED_DUNES.getKey(), null, null, null}};
+				{SCRUBLAND.getKey(), SCRUBLAND.getKey(), PETRIFIED_DUNES.getKey(), null, null}};
 		private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
 				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
 				{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
