@@ -1,9 +1,12 @@
 package com.teamabnormals.atmospheric.core;
 
+import com.teamabnormals.atmospheric.client.model.CochinealModel;
 import com.teamabnormals.atmospheric.client.model.DragonFruitModel;
 import com.teamabnormals.atmospheric.client.model.PassionFruitSeedModel;
+import com.teamabnormals.atmospheric.client.renderer.entity.CochinealRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.DragonFruitRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.PassionFruitSeedRenderer;
+import com.teamabnormals.atmospheric.common.entity.Cochineal;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericBlockStateProvider;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericItemModelProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;
@@ -21,6 +24,7 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.Atmospher
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericPlacedFeatures;
 import com.teamabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -121,12 +125,15 @@ public class Atmospheric {
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(AtmosphericModelLayers.COCHINEAL, () -> CochinealModel.createBodyLayer(CubeDeformation.NONE));
+		event.registerLayerDefinition(AtmosphericModelLayers.COCHINEAL_SADDLE, () -> CochinealModel.createBodyLayer(new CubeDeformation(0.5F)));
 		event.registerLayerDefinition(AtmosphericModelLayers.PASSION_FRUIT_SEED, PassionFruitSeedModel::createBodyLayer);
 		event.registerLayerDefinition(AtmosphericModelLayers.DRAGON_FRUIT, DragonFruitModel::createBodyLayer);
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(AtmosphericEntityTypes.COCHINEAL.get(), CochinealRenderer::new);
 		event.registerEntityRenderer(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get(), PassionFruitSeedRenderer::new);
 		event.registerEntityRenderer(AtmosphericEntityTypes.DRAGON_FRUIT.get(), DragonFruitRenderer::new);
 		event.registerEntityRenderer(AtmosphericEntityTypes.ORANGE_VAPOR_CLOUD.get(), NoopRenderer::new);
