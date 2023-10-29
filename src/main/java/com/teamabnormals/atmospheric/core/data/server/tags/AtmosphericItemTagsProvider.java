@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.core.data.server.tags;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
@@ -25,6 +26,8 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 
 	@Override
 	public void addTags() {
+		this.tag(COCHINEAL_FOOD).add(AtmosphericItems.BARREL_CACTUS.get());
+
 		this.copy(AtmosphericBlockTags.ROSEWOOD_LOGS, ROSEWOOD_LOGS);
 		this.copy(AtmosphericBlockTags.MORADO_LOGS, MORADO_LOGS);
 		this.copy(AtmosphericBlockTags.YUCCA_LOGS, YUCCA_LOGS);

@@ -1,9 +1,11 @@
 package com.teamabnormals.atmospheric.core.data.server;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.block.*;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
@@ -13,9 +15,14 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.ChestLoot;
+import net.minecraft.data.loot.EntityLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
@@ -24,13 +31,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.storage.loot.IntRange;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.*;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
-import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.entries.TagEntry;
 import net.minecraft.world.level.storage.loot.functions.*;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -42,6 +47,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -50,7 +56,7 @@ import java.util.stream.Collectors;
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.*;
 
 public class AtmosphericLootTableProvider extends LootTableProvider {
-	private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootContextParamSet>> tables = ImmutableList.of(Pair.of(AtmosphericBlockLoot::new, LootContextParamSets.BLOCK), Pair.of(AtmosphericChestLoot::new, LootContextParamSets.CHEST));
+	private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootContextParamSet>> tables = ImmutableList.of(Pair.of(AtmosphericBlockLoot::new, LootContextParamSets.BLOCK), Pair.of(AtmosphericEntityLoot::new, LootContextParamSets.ENTITY), Pair.of(AtmosphericChestLoot::new, LootContextParamSets.CHEST));
 
 	public AtmosphericLootTableProvider(DataGenerator generator) {
 		super(generator);
@@ -520,6 +526,18 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 		}
 	}
 
+	private static class AtmosphericEntityLoot extends EntityLoot {
+
+		@Override
+		public void addTables() {
+			this.add(AtmosphericEntityTypes.COCHINEAL.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(AtmosphericItems.CARMINE_HUSK.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 7.0F))))));
+		}
+
+		@Override
+		public Iterable<EntityType<?>> getKnownEntities() {
+			return ForgeRegistries.ENTITY_TYPES.getValues().stream().filter(entity -> ForgeRegistries.ENTITY_TYPES.getKey(entity).getNamespace().equals(Atmospheric.MOD_ID)).collect(Collectors.toSet());
+		}
+	}
 
 	private static class AtmosphericChestLoot extends ChestLoot {
 

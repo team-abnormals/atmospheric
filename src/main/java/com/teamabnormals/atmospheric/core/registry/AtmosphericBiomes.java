@@ -87,6 +87,7 @@ public class AtmosphericBiomes {
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 2, 1, 1));
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.CHICKEN, 2, 2, 4));
+		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(AtmosphericEntityTypes.COCHINEAL.get(), 4, 1, 4));
 		BiomeDefaultFeatures.caveSpawns(spawns);
 		BiomeDefaultFeatures.monsters(spawns, 19, 1, !snowy ? 100 : 20, false);
 		spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.HUSK, 80, 4, 4));

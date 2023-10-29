@@ -22,6 +22,8 @@ public class AtmosphericItemTags {
 	public static final TagKey<Item> FRUITS_ORANGE = TagUtil.itemTag("forge", "fruits/orange");
 	public static final TagKey<Item> SEEDS_ALOE_VERA = TagUtil.itemTag("forge", "seeds/aloe_vera");
 
+	public static final TagKey<Item> COCHINEAL_FOOD = itemTag("cochineal_food");
+
 	private static TagKey<Item> itemTag(String name) {
 		return TagUtil.itemTag(Atmospheric.MOD_ID, name);
 	}
