@@ -1,12 +1,15 @@
 package com.teamabnormals.atmospheric.core.other;
 
+import com.teamabnormals.atmospheric.common.block.StemmedOrangeBlock;
 import com.teamabnormals.atmospheric.common.block.YuccaBundleBlock;
 import com.teamabnormals.atmospheric.common.entity.OrangeVaporCloud;
+import com.teamabnormals.atmospheric.common.item.OrangeBlockItem;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,17 +17,20 @@ import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.level.PistonEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
@@ -93,6 +99,15 @@ public class AtmosphericEvents {
 			if (event.getAmount() >= (amplifier + 1)) {
 				event.setAmount(event.getAmount() + (amplifier + 1));
 			}
+		}
+	}
+
+	@SubscribeEvent
+	public static void onPistonPush(PistonEvent.Pre event) {
+		LevelAccessor level = event.getLevel();
+		BlockPos pos = event.getFaceOffsetPos();
+		if (level instanceof ServerLevel serverLevel && level.getBlockState(pos).getBlock() instanceof StemmedOrangeBlock) {
+			OrangeBlockItem.createVaporCloud(serverLevel, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F));
 		}
 	}
 
