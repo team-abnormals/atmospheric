@@ -41,7 +41,7 @@ public class CochinealRandomStrollGoal extends WaterAvoidingRandomStrollGoal {
 	@Nullable
 	protected Vec3 getPosition() {
 		if (this.mob.isInWaterOrBubble()) {
-			Vec3 vec3 = LandRandomPos.getPos(this.mob, 45, 7);
+			Vec3 vec3 = LandRandomPos.getPos(this.mob, 15, 7);
 			return vec3 == null ? super.getPosition() : vec3;
 		} else {
 			return this.mob.getRandom().nextFloat() >= this.probability ? LandRandomPos.getPos(this.mob, 30, 7) : DefaultRandomPos.getPos(this.mob, 30, 7);
@@ -49,6 +49,6 @@ public class CochinealRandomStrollGoal extends WaterAvoidingRandomStrollGoal {
 	}
 
 	public boolean canContinueToUse() {
-		return false;
+		return this.mob.isInWaterOrBubble();
 	}
 }
