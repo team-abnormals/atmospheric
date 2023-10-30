@@ -109,7 +109,13 @@ public class StemmedOrangeBlock extends DirectionalBlock {
 
 	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float distance) {
 		if (!level.isClientSide) {
-			level.destroyBlock(pos, false);
+			if (state.getValue(ORANGES) < 2) {
+				level.destroyBlock(pos, false);
+			} else {
+				level.setBlockAndUpdate(pos, state.setValue(ORANGES, 1));
+				level.levelEvent(2001, pos, Block.getId(state));
+			}
+
 			OrangeBlockItem.createVaporCloud(level, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F));
 		}
 
