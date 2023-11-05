@@ -31,7 +31,8 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 				PASSION_FRUIT_CRATE.get(), SHIMMERING_PASSION_FRUIT_CRATE.get(), YUCCA_CASK.get(), ROASTED_YUCCA_CASK.get(), BARREL_CACTUS_BATCH.get(),
 				ARID_SPROUTS.get(), YUCCA_BRANCH.get(), ALOE_VERA.get(), TALL_ALOE_VERA.get(), AGAVE.get(), GOLDEN_GROWTHS.get(),
 				SNOWY_BAMBOO.get(), HANGING_CURRANT.get(), CURRANT_STALK.get(), CURRANT_STALK_BUNDLE.get(), CURRANT_BASKET.get(), CURRANT_HEDGE.get(),
-				DRAGON_FRUIT_CRATE.get(), GOLDEN_DRAGON_FRUIT_CRATE.get()
+				DRAGON_FRUIT_CRATE.get(), GOLDEN_DRAGON_FRUIT_CRATE.get(),
+				ORANGE_CRATE.get(), BLOOD_ORANGE_CRATE.get()
 		);
 
 		this.tag(BlockTags.MINEABLE_WITH_HOE).add(

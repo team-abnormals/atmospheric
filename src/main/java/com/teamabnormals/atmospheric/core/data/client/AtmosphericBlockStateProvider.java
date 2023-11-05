@@ -156,6 +156,8 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.crossBlockWithPot(FORSYTHIA.get(), POTTED_FORSYTHIA.get());
 		this.directionalBlock(DRAGON_FRUIT_CRATE.get());
 		this.directionalBlockSharedSide(GOLDEN_DRAGON_FRUIT_CRATE.get(), DRAGON_FRUIT_CRATE.get());
+		this.directionalBlock(ORANGE_CRATE.get());
+		this.directionalBlock(BLOOD_ORANGE_CRATE.get());
 	}
 
 	public void block(Block block) {

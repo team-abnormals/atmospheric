@@ -381,6 +381,8 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 
 			this.add(STEMMED_ORANGE.get(), block -> createStemmedOrangeDrops(block, AtmosphericItems.ORANGE.get()));
 			this.add(STEMMED_BLOOD_ORANGE.get(), block -> createStemmedOrangeDrops(block, AtmosphericItems.BLOOD_ORANGE.get()));
+			this.dropSelf(ORANGE_CRATE.get());
+			this.dropSelf(BLOOD_ORANGE_CRATE.get());
 
 			this.dropSelf(ASPEN_PLANKS.get());
 			this.dropSelf(VERTICAL_ASPEN_PLANKS.get());

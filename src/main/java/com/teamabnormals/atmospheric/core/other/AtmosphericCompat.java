@@ -120,6 +120,8 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.BARREL_CACTUS_BATCH.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.DRAGON_FRUIT_CRATE.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.GOLDEN_DRAGON_FRUIT_CRATE.get(), 1.0F);
+		DataUtil.registerCompostable(AtmosphericBlocks.ORANGE_CRATE.get(), 1.0F);
+		DataUtil.registerCompostable(AtmosphericBlocks.BLOOD_ORANGE_CRATE.get(), 1.0F);
 	}
 
 	public static void registerFlammables() {

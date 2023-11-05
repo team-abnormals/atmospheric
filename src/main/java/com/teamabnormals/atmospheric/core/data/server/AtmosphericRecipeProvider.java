@@ -76,6 +76,8 @@ public class AtmosphericRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(AtmosphericItems.CANDIED_ORANGE_SLICES.get()).requires(AtmosphericItemTags.FRUITS_ORANGE).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FRUITS_ORANGE)).save(consumer);
 		ShapelessRecipeBuilder.shapeless(AtmosphericItems.ORANGE_PUDDING.get()).requires(AtmosphericItemTags.FRUITS_ORANGE).requires(Items.SWEET_BERRIES).requires(Items.COCOA_BEANS).requires(BlueprintItemTags.EGGS).requires(BlueprintItemTags.MILK).unlockedBy("has_orange", has(AtmosphericItemTags.FRUITS_ORANGE)).save(consumer);
 		conditionalRecipe(consumer, NEAPOLITAN_NOT_LOADED, ShapelessRecipeBuilder.shapeless(AtmosphericItems.ORANGE_SORBET.get()).requires(Items.BOWL).requires(AtmosphericItemTags.FRUITS_ORANGE).requires(Blocks.ICE).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FRUITS_ORANGE)));
+		conditionalNineBlockStorageRecipes(consumer, APPLE_CRATE, AtmosphericItems.ORANGE.get(), AtmosphericBlocks.ORANGE_CRATE.get());
+		conditionalNineBlockStorageRecipes(consumer, APPLE_CRATE, AtmosphericItems.BLOOD_ORANGE.get(), AtmosphericBlocks.BLOOD_ORANGE_CRATE.get());
 
 		ShapelessRecipeBuilder.shapeless(AtmosphericBlocks.DOLERITE.get(), 2).requires(AtmosphericItemTags.TRAVERTINE).requires(Blocks.COBBLESTONE).unlockedBy("has_travertine", has(AtmosphericItemTags.TRAVERTINE)).save(consumer);
 		generateRecipes(consumer, AtmosphericBlockFamilies.DOLERITE_FAMILY);

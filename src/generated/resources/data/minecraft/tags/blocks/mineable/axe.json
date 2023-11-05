@@ -84,6 +84,8 @@
     "atmospheric:currant_basket",
     "atmospheric:currant_hedge",
     "atmospheric:dragon_fruit_crate",
-    "atmospheric:golden_dragon_fruit_crate"
+    "atmospheric:golden_dragon_fruit_crate",
+    "atmospheric:orange_crate",
+    "atmospheric:blood_orange_crate"
   ]
 }
