@@ -1,0 +1,848 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top"
+      },
+      "when": {
+        "type": "top",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top"
+      },
+      "when": {
+        "type": "double",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom"
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom"
+      },
+      "when": {
+        "type": "double",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top"
+      },
+      "when": {
+        "type": "top",
+        "facing": "north",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top"
+      },
+      "when": {
+        "type": "double",
+        "facing": "north",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom"
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "north",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom"
+      },
+      "when": {
+        "type": "double",
+        "facing": "north",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_top"
+      },
+      "when": {
+        "type": "top",
+        "facing": "north",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_top"
+      },
+      "when": {
+        "type": "double",
+        "facing": "north",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_bottom"
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "north",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_bottom"
+      },
+      "when": {
+        "type": "double",
+        "facing": "north",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_top"
+      },
+      "when": {
+        "type": "top",
+        "facing": "north",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_top"
+      },
+      "when": {
+        "type": "double",
+        "facing": "north",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_bottom"
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "north",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_bottom"
+      },
+      "when": {
+        "type": "double",
+        "facing": "north",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_top"
+      },
+      "when": {
+        "type": "top",
+        "facing": "north",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_top"
+      },
+      "when": {
+        "type": "double",
+        "facing": "north",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_bottom"
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "north",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_bottom"
+      },
+      "when": {
+        "type": "double",
+        "facing": "north",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top",
+        "y": 180
+      },
+      "when": {
+        "type": "top",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top",
+        "y": 180
+      },
+      "when": {
+        "type": "double",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom",
+        "y": 180
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom",
+        "y": 180
+      },
+      "when": {
+        "type": "double",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top",
+        "y": 180
+      },
+      "when": {
+        "type": "top",
+        "facing": "south",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top",
+        "y": 180
+      },
+      "when": {
+        "type": "double",
+        "facing": "south",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom",
+        "y": 180
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "south",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom",
+        "y": 180
+      },
+      "when": {
+        "type": "double",
+        "facing": "south",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_top",
+        "y": 180
+      },
+      "when": {
+        "type": "top",
+        "facing": "south",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_top",
+        "y": 180
+      },
+      "when": {
+        "type": "double",
+        "facing": "south",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_bottom",
+        "y": 180
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "south",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_bottom",
+        "y": 180
+      },
+      "when": {
+        "type": "double",
+        "facing": "south",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_top",
+        "y": 180
+      },
+      "when": {
+        "type": "top",
+        "facing": "south",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_top",
+        "y": 180
+      },
+      "when": {
+        "type": "double",
+        "facing": "south",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_bottom",
+        "y": 180
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "south",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_bottom",
+        "y": 180
+      },
+      "when": {
+        "type": "double",
+        "facing": "south",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_top",
+        "y": 180
+      },
+      "when": {
+        "type": "top",
+        "facing": "south",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_top",
+        "y": 180
+      },
+      "when": {
+        "type": "double",
+        "facing": "south",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_bottom",
+        "y": 180
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "south",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_bottom",
+        "y": 180
+      },
+      "when": {
+        "type": "double",
+        "facing": "south",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top",
+        "y": 270
+      },
+      "when": {
+        "type": "top",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top",
+        "y": 270
+      },
+      "when": {
+        "type": "double",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom",
+        "y": 270
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom",
+        "y": 270
+      },
+      "when": {
+        "type": "double",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top",
+        "y": 270
+      },
+      "when": {
+        "type": "top",
+        "facing": "west",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top",
+        "y": 270
+      },
+      "when": {
+        "type": "double",
+        "facing": "west",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom",
+        "y": 270
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "west",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom",
+        "y": 270
+      },
+      "when": {
+        "type": "double",
+        "facing": "west",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_top",
+        "y": 270
+      },
+      "when": {
+        "type": "top",
+        "facing": "west",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_top",
+        "y": 270
+      },
+      "when": {
+        "type": "double",
+        "facing": "west",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_bottom",
+        "y": 270
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "west",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_bottom",
+        "y": 270
+      },
+      "when": {
+        "type": "double",
+        "facing": "west",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_top",
+        "y": 270
+      },
+      "when": {
+        "type": "top",
+        "facing": "west",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_top",
+        "y": 270
+      },
+      "when": {
+        "type": "double",
+        "facing": "west",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_bottom",
+        "y": 270
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "west",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_bottom",
+        "y": 270
+      },
+      "when": {
+        "type": "double",
+        "facing": "west",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_top",
+        "y": 270
+      },
+      "when": {
+        "type": "top",
+        "facing": "west",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_top",
+        "y": 270
+      },
+      "when": {
+        "type": "double",
+        "facing": "west",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_bottom",
+        "y": 270
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "west",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_bottom",
+        "y": 270
+      },
+      "when": {
+        "type": "double",
+        "facing": "west",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top",
+        "y": 90
+      },
+      "when": {
+        "type": "top",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_top",
+        "y": 90
+      },
+      "when": {
+        "type": "double",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom",
+        "y": 90
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_roots_bottom",
+        "y": 90
+      },
+      "when": {
+        "type": "double",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top",
+        "y": 90
+      },
+      "when": {
+        "type": "top",
+        "facing": "east",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_top",
+        "y": 90
+      },
+      "when": {
+        "type": "double",
+        "facing": "east",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom",
+        "y": 90
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "east",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/dragon_fruit_bottom",
+        "y": 90
+      },
+      "when": {
+        "type": "double",
+        "facing": "east",
+        "stage": "fruit"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_top",
+        "y": 90
+      },
+      "when": {
+        "type": "top",
+        "facing": "east",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_top",
+        "y": 90
+      },
+      "when": {
+        "type": "double",
+        "facing": "east",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_bottom",
+        "y": 90
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "east",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_dragon_fruit_bottom",
+        "y": 90
+      },
+      "when": {
+        "type": "double",
+        "facing": "east",
+        "stage": "flowering"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_top",
+        "y": 90
+      },
+      "when": {
+        "type": "top",
+        "facing": "east",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_top",
+        "y": 90
+      },
+      "when": {
+        "type": "double",
+        "facing": "east",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_bottom",
+        "y": 90
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "east",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/ender_dragon_fruit_bottom",
+        "y": 90
+      },
+      "when": {
+        "type": "double",
+        "facing": "east",
+        "stage": "ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_top",
+        "y": 90
+      },
+      "when": {
+        "type": "top",
+        "facing": "east",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_top",
+        "y": 90
+      },
+      "when": {
+        "type": "double",
+        "facing": "east",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_bottom",
+        "y": 90
+      },
+      "when": {
+        "type": "bottom",
+        "facing": "east",
+        "stage": "flowering_ender"
+      }
+    },
+    {
+      "apply": {
+        "model": "atmospheric:block/flowering_ender_dragon_fruit_bottom",
+        "y": 90
+      },
+      "when": {
+        "type": "double",
+        "facing": "east",
+        "stage": "flowering_ender"
+      }
+    }
+  ]
+}

@@ -2,6 +2,8 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
+import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsType;
 import com.teamabnormals.atmospheric.common.entity.projectile.DragonFruit;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import net.minecraft.core.BlockPos;
@@ -25,20 +27,21 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ForgeHooks;
 
 import java.util.Map;
 
 public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-	public static final BooleanProperty TOP = BooleanProperty.create("top");
-	public static final BooleanProperty BOTTOM = BooleanProperty.create("bottom");
-	public static final BooleanProperty FRUIT = BooleanProperty.create("fruit");
+	public static final EnumProperty<DragonRootsType> TYPE = EnumProperty.create("type", DragonRootsType.class);
+	public static final EnumProperty<DragonRootsStage> STAGE = EnumProperty.create("stage", DragonRootsStage.class);
 
 	private static final Map<Direction, VoxelShape> SHAPES = Maps.newEnumMap(ImmutableMap.of(
 			Direction.NORTH, Block.box(0.0D, 6.0D, 5.0D, 16.0D, 14.0D, 16.0D),
@@ -48,7 +51,7 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 
 	public DragonRootsBlock(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(TOP, true).setValue(BOTTOM, true).setValue(FRUIT, false));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(TYPE, DragonRootsType.DOUBLE).setValue(STAGE, DragonRootsStage.NONE));
 	}
 
 	@Override
@@ -63,13 +66,21 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 		return level.getBlockState(offsetPos).isFaceSturdy(level, offsetPos, direction);
 	}
 
+	public boolean hasFruit(BlockState state) {
+		return state.getValue(STAGE) != DragonRootsStage.NONE;
+	}
+
+	public boolean isFlowering(BlockState state) {
+		return state.getValue(STAGE) == DragonRootsStage.FLOWERING || state.getValue(STAGE) == DragonRootsStage.FLOWERING_ENDER;
+	}
+
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (!state.getValue(FRUIT) && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
+		if (!hasFruit(state) && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
 			return InteractionResult.PASS;
-		} else if (state.getValue(FRUIT)) {
+		} else if (hasFruit(state)) {
 			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
-			BlockState newState = state.setValue(FRUIT, false);
+			BlockState newState = state.setValue(STAGE, DragonRootsStage.NONE);
 			level.setBlock(pos, newState, 2);
 			level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newState));
 
@@ -93,12 +104,12 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, TOP, BOTTOM, FRUIT);
+		builder.add(FACING, TYPE, STAGE);
 	}
 
 	@Override
 	public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
-		return !context.isSecondaryUseActive() && context.getItemInHand().getItem() == this.asItem() && state.getValue(TOP) != state.getValue(BOTTOM) || super.canBeReplaced(state, context);
+		return !context.isSecondaryUseActive() && context.getItemInHand().getItem() == this.asItem() && state.getValue(TYPE) != DragonRootsType.DOUBLE || super.canBeReplaced(state, context);
 	}
 
 	@Override
@@ -111,15 +122,29 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 		BlockPos pos = context.getClickedPos();
 		BlockState state = level.getBlockState(pos);
 
-		if (state.is(this)) {
-			if (state.getValue(TOP)) {
-				return state.setValue(BOTTOM, true);
-			} else if (state.getValue(BOTTOM)) {
-				return state.setValue(TOP, true);
-			}
+		if (state.is(this) && state.getValue(TYPE) != DragonRootsType.DOUBLE) {
+			return state.setValue(TYPE, DragonRootsType.DOUBLE);
 		}
 
-		return this.defaultBlockState().setValue(FACING, direction).setValue(TOP, context.getClickLocation().y - (double) pos.getY() > 0.5D).setValue(BOTTOM, context.getClickLocation().y - (double) pos.getY() <= 0.5D);
+		return this.defaultBlockState().setValue(FACING, direction).setValue(TYPE, context.getClickLocation().y - (double) pos.getY() > 0.5D ? DragonRootsType.TOP : DragonRootsType.BOTTOM);
+	}
+
+	@Override
+	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+		if (!hasFruit(state) && level.getRawBrightness(pos, 0) >= 12 && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(8) == 0)) {
+			BlockState newState = state.setValue(STAGE, getStageForLevel(level, false));
+			level.setBlock(pos, newState, 2);
+			level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(newState));
+			ForgeHooks.onCropsGrowPost(level, pos, state);
+		} else if (hasFruit(state)) {
+			boolean floweringConditions = level.getRawBrightness(pos, 0) <= 3 || (level.getRawBrightness(pos, 15) <= 3 && level.isNight());
+			if (isFlowering(state) != floweringConditions) {
+				BlockState newState = state.setValue(STAGE, getStageForLevel(level, floweringConditions));
+				level.setBlock(pos, newState, 2);
+				level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(newState));
+			}
+
+		}
 	}
 
 	@Override
@@ -129,7 +154,7 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 
 	@Override
 	public boolean isValidBonemealTarget(BlockGetter worldIn, BlockPos pos, BlockState state, boolean isClient) {
-		return !state.getValue(FRUIT);
+		return !hasFruit(state);
 	}
 
 	@Override
@@ -139,6 +164,10 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 
 	@Override
 	public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-		level.setBlockAndUpdate(pos, state.setValue(FRUIT, true));
+		level.setBlockAndUpdate(pos, state.setValue(STAGE, getStageForLevel(level, false)));
+	}
+
+	public DragonRootsStage getStageForLevel(ServerLevel level, boolean flowering) {
+		return level.dimensionTypeId().equals(BuiltinDimensionTypes.END) ? (flowering ? DragonRootsStage.FLOWERING_ENDER : DragonRootsStage.ENDER) : (flowering ? DragonRootsStage.FLOWERING : DragonRootsStage.FRUIT);
 	}
 }

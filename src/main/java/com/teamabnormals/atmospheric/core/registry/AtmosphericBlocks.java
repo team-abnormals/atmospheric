@@ -481,7 +481,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> CARMINE_PAVEMENT_WALL = HELPER.createBlock("carmine_pavement_wall", () -> new WallBlock(AtmosphericProperties.CARMINE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CARMINE_PAVEMENT_VERTICAL_SLAB = HELPER.createCompatBlock("quark", "carmine_pavement_vertical_slab", () -> new VerticalSlabBlock(Properties.copy(CARMINE_PAVEMENT.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-	public static final RegistryObject<Block> DRAGON_ROOTS = HELPER.createBlock("dragon_roots", () -> new DragonRootsBlock(Block.Properties.of(Material.PLANT, MaterialColor.TERRACOTTA_MAGENTA).strength(1.5F).noCollission().sound(SoundType.AZALEA_LEAVES)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> DRAGON_ROOTS = HELPER.createBlock("dragon_roots", () -> new DragonRootsBlock(Block.Properties.of(Material.PLANT, MaterialColor.TERRACOTTA_MAGENTA).strength(1.5F).randomTicks().noCollission().sound(SoundType.AZALEA_LEAVES)), CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> FIRETHORN = HELPER.createBlock("firethorn", () -> new DesertFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_FIRETHORN = HELPER.createBlockNoItem("potted_firethorn", () -> new FlowerPotBlock(FIRETHORN.get(), PropertyUtil.flowerPot()));

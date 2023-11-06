@@ -1,0 +1,6 @@
+{
+  "parent": "atmospheric:block/template_dragon_fruit_top",
+  "textures": {
+    "fruit": "atmospheric:block/ender_dragon_fruit"
+  }
+}

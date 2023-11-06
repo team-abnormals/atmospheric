@@ -1,12 +1,11 @@
 {
 	"textures": {
-		"fruit": "atmospheric:block/dragon_fruit",
 		"particle": "#fruit"
 	},
 	"elements": [
 		{
-			"from": [2, 8, 9],
-			"to": [6, 14, 13],
+			"from": [10, 0, 8],
+			"to": [14, 6, 12],
 			"faces": {
 				"north": {"uv": [4, 4, 8, 10], "texture": "#fruit"},
 				"east": {"uv": [8, 4, 12, 10], "texture": "#fruit"},

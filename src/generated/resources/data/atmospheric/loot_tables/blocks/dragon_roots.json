@@ -34,11 +34,23 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "atmospheric:dragon_roots",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "top": "true"
-              }
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "block": "atmospheric:dragon_roots",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "type": "top"
+                  }
+                },
+                {
+                  "block": "atmospheric:dragon_roots",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "type": "bottom"
+                  }
+                }
+              ]
             }
           ],
           "functions": [
@@ -87,7 +99,7 @@
               "block": "atmospheric:dragon_roots",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "bottom": "true"
+                "type": "double"
               }
             }
           ],
@@ -99,7 +111,7 @@
           "name": "atmospheric:dragon_roots"
         }
       ],
-      "rolls": 1.0
+      "rolls": 2.0
     }
   ]
 }

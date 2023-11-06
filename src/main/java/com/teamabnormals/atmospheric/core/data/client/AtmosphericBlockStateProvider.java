@@ -1,7 +1,10 @@
 package com.teamabnormals.atmospheric.core.data.client;
 
 import com.mojang.datafixers.util.Pair;
+import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.common.block.StemmedOrangeBlock;
+import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
+import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsType;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericBlockFamilies;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
@@ -24,12 +27,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.client.model.generators.ModelFile.ExistingModelFile;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
-import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -121,6 +121,8 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 
 		this.stemmedOrange(STEMMED_ORANGE.get());
 		this.stemmedOrange(STEMMED_BLOOD_ORANGE.get());
+		this.directionalBlock(ORANGE_CRATE.get());
+		this.directionalBlock(BLOOD_ORANGE_CRATE.get());
 
 		this.blockFamily(AtmosphericBlockFamilies.KOUSA_PLANKS_FAMILY, KOUSA_VERTICAL_SLAB.get());
 		this.logBlocks(KOUSA_LOG.get(), KOUSA_WOOD.get());
@@ -156,8 +158,7 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.crossBlockWithPot(FORSYTHIA.get(), POTTED_FORSYTHIA.get());
 		this.directionalBlock(DRAGON_FRUIT_CRATE.get());
 		this.directionalBlockSharedSide(GOLDEN_DRAGON_FRUIT_CRATE.get(), DRAGON_FRUIT_CRATE.get());
-		this.directionalBlock(ORANGE_CRATE.get());
-		this.directionalBlock(BLOOD_ORANGE_CRATE.get());
+		this.dragonRoots(DRAGON_ROOTS.get());
 	}
 
 	public void block(Block block) {
@@ -340,6 +341,46 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 					.modelFile(models().getBuilder(name(block) + addition).parent(new UncheckedModelFile(Atmospheric.location("block/template_stemmed_orange" + addition))).texture("orange", blockTexture(block)))
 					.rotationY(horizontal ? (int) ((state.getValue(BlockStateProperties.FACING).toYRot() + 180) % 360) : 0)
 					.build();
+		});
+	}
+
+	public void dragonRoots(Block block) {
+		MultiPartBlockStateBuilder builder = this.getMultipartBuilder(block);
+
+		ModelFile rootsTop = new UncheckedModelFile(Atmospheric.location("block/dragon_roots_top"));
+		ModelFile rootsBottom = new UncheckedModelFile(Atmospheric.location("block/dragon_roots_bottom"));
+
+		DragonRootsBlock.FACING.getPossibleValues().forEach(dir -> {
+			int yRot = (((int) dir.toYRot()) + 180) % 360;
+
+			builder.part().modelFile(rootsTop).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.TOP).condition(DragonRootsBlock.FACING, dir);
+			builder.part().modelFile(rootsTop).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE).condition(DragonRootsBlock.FACING, dir);
+			builder.part().modelFile(rootsBottom).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.BOTTOM).condition(DragonRootsBlock.FACING, dir);
+			builder.part().modelFile(rootsBottom).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE).condition(DragonRootsBlock.FACING, dir);
+
+			for (DragonRootsStage stage : DragonRootsStage.values()) {
+				if (stage != DragonRootsStage.NONE) {
+					boolean flowering = stage == DragonRootsStage.FLOWERING || stage == DragonRootsStage.FLOWERING_ENDER;
+
+					String name = (stage == DragonRootsStage.FRUIT ? "" : stage.toString() + "_") + "dragon_fruit";
+					String texture = Atmospheric.location("block/" + name).toString();
+					String parent = "block/template_" + (flowering ? "flowering_" : "") + "dragon_fruit";
+
+					ModelBuilder<?> top = models().getBuilder(Atmospheric.location(name) + "_top").parent(new UncheckedModelFile(Atmospheric.location(parent + "_top"))).texture("fruit", texture);
+					ModelBuilder<?> bottom = models().getBuilder(Atmospheric.location(name) + "_bottom").parent(new UncheckedModelFile(Atmospheric.location(parent + "_bottom"))).texture("fruit", texture);
+
+					if (flowering) {
+						ResourceLocation emissiveTexture = Atmospheric.location("block/flowering_dragon_fruit_emissive");
+						top = top.texture("overlay", emissiveTexture);
+						bottom = bottom.texture("overlay", emissiveTexture);
+					}
+
+					builder.part().modelFile(top).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.TOP).condition(DragonRootsBlock.STAGE, stage).condition(DragonRootsBlock.FACING, dir);
+					builder.part().modelFile(top).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE).condition(DragonRootsBlock.STAGE, stage).condition(DragonRootsBlock.FACING, dir);
+					builder.part().modelFile(bottom).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.BOTTOM).condition(DragonRootsBlock.STAGE, stage).condition(DragonRootsBlock.FACING, dir);
+					builder.part().modelFile(bottom).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE).condition(DragonRootsBlock.STAGE, stage).condition(DragonRootsBlock.FACING, dir);
+				}
+			}
 		});
 	}
 
