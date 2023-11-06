@@ -1,8 +1,7 @@
 package com.teamabnormals.atmospheric.common.entity;
 
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -19,6 +18,7 @@ import java.util.List;
 
 public class OrangeVaporCloud extends Entity {
 	private static final EntityDataAccessor<Float> DATA_RADIUS = SynchedEntityData.defineId(OrangeVaporCloud.class, EntityDataSerializers.FLOAT);
+	private static final EntityDataAccessor<Boolean> IS_BLOOD_ORANGE = SynchedEntityData.defineId(OrangeVaporCloud.class, EntityDataSerializers.BOOLEAN);
 	private int duration = 600;
 	private float radiusPerTick;
 
@@ -35,6 +35,7 @@ public class OrangeVaporCloud extends Entity {
 
 	protected void defineSynchedData() {
 		this.getEntityData().define(DATA_RADIUS, 0.5F);
+		this.getEntityData().define(IS_BLOOD_ORANGE, false);
 	}
 
 	public void setRadius(float radius) {
@@ -55,6 +56,14 @@ public class OrangeVaporCloud extends Entity {
 		return this.getEntityData().get(DATA_RADIUS);
 	}
 
+	public boolean isBloodOrange() {
+		return this.getEntityData().get(IS_BLOOD_ORANGE);
+	}
+
+	public void setBloodOrange(boolean bloodOrange) {
+		this.getEntityData().set(IS_BLOOD_ORANGE, bloodOrange);
+	}
+
 	public int getDuration() {
 		return this.duration;
 	}
@@ -70,21 +79,19 @@ public class OrangeVaporCloud extends Entity {
 			int i = Mth.ceil((float) Math.PI * f * f * 0.05F);
 
 			for (int j = 0; j < i; ++j) {
-				float f2 = this.random.nextFloat() * ((float) Math.PI * 2F);
-				float f3 = Mth.sqrt(this.random.nextFloat()) * f;
-				double d0 = this.getX() + (double) (Mth.cos(f2) * f3);
-				double d2 = this.getY() + random.nextFloat() * this.getHeight();
-				double d4 = this.getZ() + (double) (Mth.sin(f2) * f3);
+				if (random.nextInt(3) == 0) {
+					float f2 = this.random.nextFloat() * ((float) Math.PI * 2F);
+					float f3 = Mth.sqrt(this.random.nextFloat()) * f;
+					double d0 = this.getX() + (double) (Mth.cos(f2) * f3);
+					double d2 = this.getY() + random.nextFloat() * this.getHeight();
+					double d4 = this.getZ() + (double) (Mth.sin(f2) * f3);
 
-				double d5 = (0.5D - this.random.nextDouble()) * 0.15D;
-				double d6 = 0.15;
-				double d7 = (0.5D - this.random.nextDouble()) * 0.15D;
+					double d5 = (0.5D - this.random.nextDouble()) * 0.15D;
+					double d6 = 0.15;
+					double d7 = (0.5D - this.random.nextDouble()) * 0.15D;
 
-				if (d2 < this.getY() + this.getHeight() / 2.0F && random.nextBoolean()) {
-					this.level.addAlwaysVisibleParticle(ParticleTypes.POOF, d0, d2, d4, d5, d6, d7);
+					this.level.addAlwaysVisibleParticle(this.isBloodOrange() ? AtmosphericParticleTypes.BLOOD_ORANGE_VAPOR.get() : AtmosphericParticleTypes.ORANGE_VAPOR.get(), d0, d2, d4, d5, d6, d7);
 				}
-
-				this.level.addAlwaysVisibleParticle(ParticleTypes.DRIPPING_DRIPSTONE_WATER, d0, d2, d4, d5, d6, d7);
 			}
 		} else {
 			if (this.tickCount >= this.duration) {
@@ -95,7 +102,7 @@ public class OrangeVaporCloud extends Entity {
 			if (this.radiusPerTick != 0.0F) {
 				f += this.radiusPerTick;
 
-				if (this.level.dimensionType().ultraWarm()) {
+				if (this.level.dimensionType().ultraWarm() && !this.isBloodOrange()) {
 					f += this.radiusPerTick * 4.0F;
 				}
 

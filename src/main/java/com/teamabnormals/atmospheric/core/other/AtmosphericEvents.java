@@ -106,8 +106,9 @@ public class AtmosphericEvents {
 	public static void onPistonPush(PistonEvent.Pre event) {
 		LevelAccessor level = event.getLevel();
 		BlockPos pos = event.getFaceOffsetPos();
-		if (level instanceof ServerLevel serverLevel && level.getBlockState(pos).getBlock() instanceof StemmedOrangeBlock) {
-			OrangeBlockItem.createVaporCloud(serverLevel, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F));
+		BlockState state = level.getBlockState(pos);
+		if (level instanceof ServerLevel serverLevel && state.getBlock() instanceof StemmedOrangeBlock) {
+			OrangeBlockItem.createVaporCloud(serverLevel, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F), state.is(AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get()));
 		}
 	}
 

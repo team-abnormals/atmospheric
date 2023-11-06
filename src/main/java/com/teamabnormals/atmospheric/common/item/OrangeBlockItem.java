@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.common.item;
 
 import com.teamabnormals.atmospheric.common.block.StemmedOrangeBlock;
 import com.teamabnormals.atmospheric.common.entity.OrangeVaporCloud;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -28,14 +29,15 @@ public class OrangeBlockItem extends ItemNameBlockItem {
 	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
 		if (!level.isClientSide) {
 			Vec3 pos = entity.position();
-			createVaporCloud(level, pos);
+			createVaporCloud(level, pos, stack.is(AtmosphericItems.BLOOD_ORANGE.get()));
 		}
 
 		return super.finishUsingItem(stack, level, entity);
 	}
 
-	public static void createVaporCloud(Level level, Vec3 pos) {
+	public static void createVaporCloud(Level level, Vec3 pos, boolean blood) {
 		OrangeVaporCloud cloud = new OrangeVaporCloud(level, pos.x(), pos.y(), pos.z());
+		cloud.setBloodOrange(blood);
 		cloud.setRadius(1.5F);
 		cloud.setDuration(600);
 		cloud.setRadiusPerTick(-cloud.getRadius() / (float) cloud.getDuration());

@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.common.item.OrangeBlockItem;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
@@ -116,7 +117,7 @@ public class StemmedOrangeBlock extends DirectionalBlock {
 				level.levelEvent(2001, pos, Block.getId(state));
 			}
 
-			OrangeBlockItem.createVaporCloud(level, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F));
+			OrangeBlockItem.createVaporCloud(level, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F), state.is(AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get()));
 		}
 
 		super.fallOn(level, state, pos, entity, distance);
