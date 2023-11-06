@@ -127,6 +127,7 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
 		generation.addFeature(Decoration.VEGETAL_DECORATION, !snowy ? PATCH_ARID_SPROUTS.getHolder().get() : PATCH_ARID_SPROUTS_RARE.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, DRAGON_ROOTS.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_SCRUBLAND.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, FLOWER_SCRUBLAND.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_CACTUS_SCRUBLAND.getHolder().get());

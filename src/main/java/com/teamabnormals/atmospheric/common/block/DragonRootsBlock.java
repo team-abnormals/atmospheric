@@ -131,7 +131,7 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 
 	@Override
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-		if (!hasFruit(state) && level.getRawBrightness(pos, 0) >= 12 && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(8) == 0)) {
+		if (!hasFruit(state) && level.getRawBrightness(pos, 0) >= 12 && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(10) == 0)) {
 			BlockState newState = state.setValue(STAGE, getStageForLevel(level, false));
 			level.setBlock(pos, newState, 2);
 			level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(newState));
