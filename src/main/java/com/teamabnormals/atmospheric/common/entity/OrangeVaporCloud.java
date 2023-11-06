@@ -79,7 +79,7 @@ public class OrangeVaporCloud extends Entity {
 			int i = Mth.ceil((float) Math.PI * f * f * 0.05F);
 
 			for (int j = 0; j < i; ++j) {
-				if (random.nextInt(3) == 0) {
+				if (random.nextInt(2) == 0) {
 					float f2 = this.random.nextFloat() * ((float) Math.PI * 2F);
 					float f3 = Mth.sqrt(this.random.nextFloat()) * f;
 					double d0 = this.getX() + (double) (Mth.cos(f2) * f3);
