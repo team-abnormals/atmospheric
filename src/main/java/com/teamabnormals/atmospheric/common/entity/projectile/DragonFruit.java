@@ -1,5 +1,8 @@
 package com.teamabnormals.atmospheric.common.entity.projectile;
 
+import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
+import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsType;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.core.BlockPos;
@@ -9,6 +12,9 @@ import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
@@ -21,11 +27,15 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.network.PlayMessages;
 
 public class DragonFruit extends Entity {
+	private static final EntityDataAccessor<Boolean> IS_FLOWERING = SynchedEntityData.defineId(DragonFruit.class, EntityDataSerializers.BOOLEAN);
+	private static final EntityDataAccessor<Boolean> IS_ENDER = SynchedEntityData.defineId(DragonFruit.class, EntityDataSerializers.BOOLEAN);
+
 	private Direction rollingDirection;
 	public int rollingTicks = 200;
 
@@ -46,7 +56,27 @@ public class DragonFruit extends Entity {
 	}
 
 	public ItemStack getPickResult() {
-		return new ItemStack(AtmosphericItems.DRAGON_FRUIT.get());
+		return this.getItem();
+	}
+
+	public ItemStack getItem() {
+		return new ItemStack(this.isEnder() ? AtmosphericItems.ENDER_DRAGON_FRUIT.get() : AtmosphericItems.DRAGON_FRUIT.get());
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		this.entityData.define(IS_ENDER, false);
+		this.entityData.define(IS_FLOWERING, false);
+	}
+
+	@Override
+	protected void readAdditionalSaveData(CompoundTag p_20052_) {
+
+	}
+
+	@Override
+	protected void addAdditionalSaveData(CompoundTag p_20139_) {
+
 	}
 
 	@Override
@@ -125,6 +155,46 @@ public class DragonFruit extends Entity {
 		}
 	}
 
+	public void setFlowering(boolean flowering) {
+		this.entityData.set(IS_FLOWERING, flowering);
+	}
+
+	public boolean isFlowering() {
+		return this.entityData.get(IS_FLOWERING);
+	}
+
+	public boolean attemptPlaceRoots() {
+		if (this.isFlowering() && !this.getLevel().isClientSide()) {
+			BlockState rootsState = AtmosphericBlocks.DRAGON_ROOTS.get().defaultBlockState().setValue(DragonRootsBlock.TYPE, DragonRootsType.BOTTOM).setValue(DragonRootsBlock.FACING, this.getRollingDirection().getOpposite());
+			BlockPos pos = this.blockPosition();
+			BlockState state = this.getLevel().getBlockState(pos);
+
+			for (int i = 0; i < 4; i++) {
+				if (i > 0) {
+					rootsState = rootsState.cycle(DragonRootsBlock.FACING);
+				}
+
+				if (this.getLevel().isEmptyBlock(pos) && rootsState.canSurvive(this.getLevel(), pos)) {
+					this.level.setBlockAndUpdate(pos, rootsState);
+					return true;
+				} else if (state.is(AtmosphericBlocks.DRAGON_ROOTS.get()) && state.getValue(DragonRootsBlock.TYPE) != DragonRootsType.DOUBLE) {
+					this.level.setBlockAndUpdate(pos, state.setValue(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE));
+				}
+			}
+
+			Block.popResource(this.level, this.blockPosition(), new ItemStack(AtmosphericBlocks.DRAGON_ROOTS.get()));
+		}
+
+		return false;
+	}
+
+	public void setEnder(boolean ender) {
+		this.entityData.set(IS_ENDER, ender);
+	}
+
+	public boolean isEnder() {
+		return this.entityData.get(IS_ENDER);
+	}
 
 	public boolean isAlwaysTicking() {
 		return true;
@@ -184,34 +254,21 @@ public class DragonFruit extends Entity {
 	}
 
 	private void brokenByPlayer() {
-		Block.popResource(this.level, this.blockPosition(), new ItemStack(AtmosphericItems.DRAGON_FRUIT.get()));
-		this.playBrokenSound();
+		Block.popResource(this.level, this.blockPosition(), this.getItem());
+		if (!this.attemptPlaceRoots()) {
+			this.playBrokenSound();
+		}
 	}
 
 	private void showBreakingParticles() {
 		if (this.level instanceof ServerLevel serverLevel) {
-			serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(AtmosphericItems.DRAGON_FRUIT.get())), this.getX(), this.getY(0.6666666666666666D), this.getZ(), 10, this.getBbWidth() / 4.0F, (double) (this.getBbHeight() / 4.0F), (double) (this.getBbWidth() / 4.0F), 0.05D);
+			serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, this.getItem()), this.getX(), this.getY(0.6666666666666666D), this.getZ(), 10, this.getBbWidth() / 4.0F, (double) (this.getBbHeight() / 4.0F), (double) (this.getBbWidth() / 4.0F), 0.05D);
 		}
 	}
 
 
 	private void playBrokenSound() {
 		this.level.playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.SWEET_BERRY_BUSH_BREAK, this.getSoundSource(), 1.0F, 1.0F);
-	}
-
-	@Override
-	protected void defineSynchedData() {
-
-	}
-
-	@Override
-	protected void readAdditionalSaveData(CompoundTag p_20052_) {
-
-	}
-
-	@Override
-	protected void addAdditionalSaveData(CompoundTag p_20139_) {
-
 	}
 
 	@Override
