@@ -203,9 +203,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "atmospheric:village/scrubland/houses/scrubland_fisher_1",
-        "processors": {
-          "processors": []
-        },
+        "processors": "atmospheric:prevent_waterlogging_spread",
         "projection": "rigid"
       },
       "weight": 1
