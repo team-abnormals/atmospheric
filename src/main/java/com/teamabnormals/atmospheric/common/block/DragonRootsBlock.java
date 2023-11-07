@@ -19,10 +19,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.BushBlock;
@@ -153,7 +150,7 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 
 	@Override
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-		if (!hasFruit(state) && level.getRawBrightness(pos, 0) >= 12 && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(10) == 0)) {
+		if (!hasFruit(state) && ((level.getRawBrightness(pos, 0) >= 12 && level.isDay()) || level.getRawBrightness(pos, 15) >= 12) && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(10) == 0)) {
 			BlockState newState = state.setValue(STAGE, getStageForLevel(level, false));
 			level.setBlock(pos, newState, 2);
 			level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(newState));
