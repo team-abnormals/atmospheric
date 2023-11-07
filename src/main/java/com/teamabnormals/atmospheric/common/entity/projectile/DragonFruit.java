@@ -41,6 +41,7 @@ public class DragonFruit extends Entity {
 
 	public DragonFruit(EntityType<?> entityType, Level level) {
 		super(entityType, level);
+		this.blocksBuilding = true;
 	}
 
 	public DragonFruit(PlayMessages.SpawnEntity message, Level level) {
@@ -83,25 +84,14 @@ public class DragonFruit extends Entity {
 	public void tick() {
 		super.tick();
 
-		this.xo = this.getX();
-		this.yo = this.getY();
-		this.zo = this.getZ();
-		Vec3 vec3 = this.getDeltaMovement();
-		float f = this.getEyeHeight() - 0.11111111F;
-		if (this.isInWater() && this.getFluidHeight(FluidTags.WATER) > (double) f) {
-			this.setUnderwaterMovement();
-		}
-		if (!this.isNoGravity()) {
-			this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.04D, 0.0D));
+		if (this.isInWater()) {
+			this.showBreakingParticles();
+			this.brokenByPlayer();
+			this.kill();
 		}
 
-		if (this.level.isClientSide) {
-			this.noPhysics = false;
-		} else {
-			this.noPhysics = !this.level.noCollision(this, this.getBoundingBox().deflate(1.0E-7D));
-			if (this.noPhysics) {
-				this.moveTowardsClosestSpace(this.getX(), (this.getBoundingBox().minY + this.getBoundingBox().maxY) / 2.0D, this.getZ());
-			}
+		if (!this.isNoGravity()) {
+			this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.04D, 0.0D));
 		}
 
 		if (!this.onGround || this.getDeltaMovement().horizontalDistanceSqr() > (double) 1.0E-5F || (this.tickCount + this.getId()) % 4 == 0) {
@@ -144,14 +134,6 @@ public class DragonFruit extends Entity {
 
 
 			this.push(direction.getX() * speed, 0.0D, direction.getZ() * speed);
-		}
-
-		this.hasImpulse |= this.updateInWaterStateAndDoFluidPushing();
-		if (!this.level.isClientSide) {
-			double d0 = this.getDeltaMovement().subtract(vec3).lengthSqr();
-			if (d0 > 0.01D) {
-				this.hasImpulse = true;
-			}
 		}
 	}
 
