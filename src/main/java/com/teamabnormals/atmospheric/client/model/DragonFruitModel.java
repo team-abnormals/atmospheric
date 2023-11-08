@@ -26,19 +26,21 @@ public class DragonFruitModel<T extends DragonFruit> extends EntityModel<T> {
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		fruit.yRot = 0;
-		fruit.xRot = 0;
-		fruit.zRot = 0;
 		float yRot = entity.getYRot();
-		float amount = ((float) Math.PI + ageInTicks / 3);
-		if (yRot < 0) {
+
+		fruit.xRot = 0.0F;
+		fruit.zRot = (float) Math.PI;
+		fruit.yRot = (yRot + 180F) * ((float) Math.PI / 180F);
+
+		float amount = ageInTicks / 3.0F;
+		if (yRot == -90.0F) {
 			amount *= -1;
 		}
 
 		if (Math.abs(yRot) == 90.0F) {
-			fruit.zRot = amount;
+			fruit.zRot += amount;
 		} else {
-			fruit.xRot = amount;
+			fruit.xRot += amount;
 		}
 	}
 
