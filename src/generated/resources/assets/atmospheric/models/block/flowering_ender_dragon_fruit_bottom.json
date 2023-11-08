@@ -1,5 +1,6 @@
 {
   "parent": "atmospheric:block/template_flowering_dragon_fruit_bottom",
+  "render_type": "minecraft:translucent",
   "textures": {
     "fruit": "atmospheric:block/flowering_ender_dragon_fruit",
     "overlay": "atmospheric:block/flowering_dragon_fruit_emissive"

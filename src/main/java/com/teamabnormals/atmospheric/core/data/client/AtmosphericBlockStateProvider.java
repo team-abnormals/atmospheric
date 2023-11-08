@@ -13,6 +13,7 @@ import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
 import com.teamabnormals.blueprint.core.Blueprint;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.core.Direction.Plane;
@@ -345,17 +346,13 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 
 	public void dragonRoots(Block block) {
 		MultiPartBlockStateBuilder builder = this.getMultipartBuilder(block);
-
-		ModelFile rootsTop = new UncheckedModelFile(Atmospheric.location("block/dragon_roots_top"));
-		ModelFile rootsBottom = new UncheckedModelFile(Atmospheric.location("block/dragon_roots_bottom"));
-
 		DragonRootsBlock.FACING.getPossibleValues().forEach(dir -> {
 			int yRot = (((int) dir.toYRot()) + 180) % 360;
 
 			for (DragonRootsStage stage : DragonRootsStage.values()) {
 				if (stage != DragonRootsStage.NONE) {
-					builder.part().modelFile(rootsTop).rotationY(yRot).addModel().condition(DragonRootsBlock.TOP_STAGE, stage).condition(DragonRootsBlock.FACING, dir);
-					builder.part().modelFile(rootsBottom).rotationY(yRot).addModel().condition(DragonRootsBlock.BOTTOM_STAGE, stage).condition(DragonRootsBlock.FACING, dir);
+					builder.part().modelFile(new UncheckedModelFile(Atmospheric.location("block/dragon_roots_top"))).rotationY(yRot).addModel().condition(DragonRootsBlock.TOP_STAGE, stage).condition(DragonRootsBlock.FACING, dir);
+					builder.part().modelFile(new UncheckedModelFile(Atmospheric.location("block/dragon_roots_bottom"))).rotationY(yRot).addModel().condition(DragonRootsBlock.BOTTOM_STAGE, stage).condition(DragonRootsBlock.FACING, dir);
 
 					if (stage != DragonRootsStage.ROOTS) {
 						boolean flowering = stage == DragonRootsStage.FLOWERING || stage == DragonRootsStage.FLOWERING_ENDER;
@@ -370,8 +367,8 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 
 						if (flowering) {
 							ResourceLocation emissiveTexture = Atmospheric.location("block/flowering_dragon_fruit_emissive");
-							top = top.texture("overlay", emissiveTexture);
-							bottom = bottom.texture("overlay", emissiveTexture);
+							top = top.texture("overlay", emissiveTexture).renderType("translucent");
+							bottom = bottom.texture("overlay", emissiveTexture).renderType("translucent");
 						}
 
 						builder.part().modelFile(top).rotationY(yRot).addModel().condition(DragonRootsBlock.TOP_STAGE, stage).condition(DragonRootsBlock.FACING, dir);
