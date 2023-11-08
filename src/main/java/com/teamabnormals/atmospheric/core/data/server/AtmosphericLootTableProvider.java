@@ -3,7 +3,7 @@ package com.teamabnormals.atmospheric.core.data.server;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.block.*;
-import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsType;
+import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
@@ -486,10 +486,8 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 
 		protected static LootTable.Builder createDragonRootsDrops(Block block) {
 			return LootTable.lootTable()
-					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(block)
-							.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DragonRootsBlock.TYPE, DragonRootsType.TOP))
-									.or(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DragonRootsBlock.TYPE, DragonRootsType.BOTTOM)))))))
-					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(2.0F)).when(HAS_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(block).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE))))));
+					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(block).when(InvertedLootItemCondition.invert(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DragonRootsBlock.TOP_STAGE, DragonRootsStage.NONE)))))))
+					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(block).when(InvertedLootItemCondition.invert(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DragonRootsBlock.BOTTOM_STAGE, DragonRootsStage.NONE)))))));
 		}
 
 		protected static LootTable.Builder createBarrelCactusDrops(Block block) {

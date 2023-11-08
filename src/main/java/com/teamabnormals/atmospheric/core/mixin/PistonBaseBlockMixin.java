@@ -34,7 +34,7 @@ public abstract class PistonBaseBlockMixin {
 			}
 
 			if (state.is(AtmosphericBlocks.DRAGON_ROOTS.get()) && DragonRootsBlock.hasFruit(state)) {
-				DragonRootsBlock.dropFruits(state, level, pos, null);
+				DragonRootsBlock.dropFruits(state, level, pos);
 			}
 		}
 	}

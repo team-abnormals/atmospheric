@@ -1,7 +1,7 @@
 package com.teamabnormals.atmospheric.common.entity.projectile;
 
 import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
-import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsType;
+import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
@@ -17,7 +17,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -147,7 +146,10 @@ public class DragonFruit extends Entity {
 
 	public boolean attemptPlaceRoots() {
 		if (this.isFlowering() && !this.getLevel().isClientSide()) {
-			BlockState rootsState = AtmosphericBlocks.DRAGON_ROOTS.get().defaultBlockState().setValue(DragonRootsBlock.TYPE, DragonRootsType.BOTTOM).setValue(DragonRootsBlock.FACING, this.getRollingDirection().getOpposite());
+			BlockState rootsState = AtmosphericBlocks.DRAGON_ROOTS.get().defaultBlockState()
+					.setValue(DragonRootsBlock.TOP_STAGE, DragonRootsStage.ROOTS)
+					.setValue(DragonRootsBlock.BOTTOM_STAGE, DragonRootsStage.NONE)
+					.setValue(DragonRootsBlock.FACING, this.getRollingDirection().getOpposite());
 			BlockPos pos = this.blockPosition();
 			BlockState state = this.getLevel().getBlockState(pos);
 
@@ -159,14 +161,22 @@ public class DragonFruit extends Entity {
 				if (this.getLevel().isEmptyBlock(pos) && rootsState.canSurvive(this.getLevel(), pos)) {
 					this.level.setBlockAndUpdate(pos, rootsState);
 					return true;
-				} else if (state.is(AtmosphericBlocks.DRAGON_ROOTS.get()) && state.getValue(DragonRootsBlock.TYPE) != DragonRootsType.DOUBLE) {
-					this.level.setBlockAndUpdate(pos, state.setValue(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE));
+				} else if (state.is(AtmosphericBlocks.DRAGON_ROOTS.get()) && !DragonRootsBlock.isDouble(state)) {
+					if (state.getValue(DragonRootsBlock.TOP_STAGE) == DragonRootsStage.NONE) {
+						state = state.setValue(DragonRootsBlock.TOP_STAGE, DragonRootsStage.ROOTS);
+					}
+
+					if (state.getValue(DragonRootsBlock.BOTTOM_STAGE) == DragonRootsStage.NONE) {
+						state = state.setValue(DragonRootsBlock.BOTTOM_STAGE, DragonRootsStage.ROOTS);
+					}
+
+					this.level.setBlockAndUpdate(pos, state);
+					return true;
 				}
 			}
 
 			Block.popResource(this.level, this.blockPosition(), new ItemStack(AtmosphericBlocks.DRAGON_ROOTS.get()));
 		}
-
 		return false;
 	}
 
@@ -188,11 +198,6 @@ public class DragonFruit extends Entity {
 
 	public void setRollingDirection(Direction direction) {
 		this.rollingDirection = direction;
-	}
-
-	private void setUnderwaterMovement() {
-		Vec3 vec3 = this.getDeltaMovement();
-		this.setDeltaMovement(vec3.x * (double) 0.99F, vec3.y + (double) (vec3.y < (double) 0.06F ? 5.0E-4F : 0.0F), vec3.z * (double) 0.99F);
 	}
 
 	@Override

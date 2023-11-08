@@ -4,7 +4,6 @@ import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.common.block.StemmedOrangeBlock;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
-import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsType;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericBlockFamilies;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
@@ -353,32 +352,31 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		DragonRootsBlock.FACING.getPossibleValues().forEach(dir -> {
 			int yRot = (((int) dir.toYRot()) + 180) % 360;
 
-			builder.part().modelFile(rootsTop).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.TOP).condition(DragonRootsBlock.FACING, dir);
-			builder.part().modelFile(rootsTop).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE).condition(DragonRootsBlock.FACING, dir);
-			builder.part().modelFile(rootsBottom).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.BOTTOM).condition(DragonRootsBlock.FACING, dir);
-			builder.part().modelFile(rootsBottom).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE).condition(DragonRootsBlock.FACING, dir);
-
 			for (DragonRootsStage stage : DragonRootsStage.values()) {
 				if (stage != DragonRootsStage.NONE) {
-					boolean flowering = stage == DragonRootsStage.FLOWERING || stage == DragonRootsStage.FLOWERING_ENDER;
+					builder.part().modelFile(rootsTop).rotationY(yRot).addModel().condition(DragonRootsBlock.TOP_STAGE, stage).condition(DragonRootsBlock.FACING, dir);
+					builder.part().modelFile(rootsBottom).rotationY(yRot).addModel().condition(DragonRootsBlock.BOTTOM_STAGE, stage).condition(DragonRootsBlock.FACING, dir);
 
-					String name = (stage == DragonRootsStage.FRUIT ? "" : stage.toString() + "_") + "dragon_fruit";
-					String texture = Atmospheric.location("block/" + name).toString();
-					String parent = "block/template_" + (flowering ? "flowering_" : "") + "dragon_fruit";
+					if (stage != DragonRootsStage.ROOTS) {
+						boolean flowering = stage == DragonRootsStage.FLOWERING || stage == DragonRootsStage.FLOWERING_ENDER;
+						boolean ender = stage == DragonRootsStage.ENDER || stage == DragonRootsStage.FLOWERING_ENDER;
 
-					ModelBuilder<?> top = models().getBuilder(Atmospheric.location(name) + "_top").parent(new UncheckedModelFile(Atmospheric.location(parent + "_top"))).texture("fruit", texture);
-					ModelBuilder<?> bottom = models().getBuilder(Atmospheric.location(name) + "_bottom").parent(new UncheckedModelFile(Atmospheric.location(parent + "_bottom"))).texture("fruit", texture);
+						String name = (flowering ? "flowering_" : "") + (ender ? "ender_" : "") + "dragon_fruit";
+						String texture = Atmospheric.location("block/" + name).toString();
+						String parent = "block/template_" + (flowering ? "flowering_" : "") + "dragon_fruit";
 
-					if (flowering) {
-						ResourceLocation emissiveTexture = Atmospheric.location("block/flowering_dragon_fruit_emissive");
-						top = top.texture("overlay", emissiveTexture);
-						bottom = bottom.texture("overlay", emissiveTexture);
+						ModelBuilder<?> top = models().getBuilder(Atmospheric.location(name) + "_top").parent(new UncheckedModelFile(Atmospheric.location(parent + "_top"))).texture("fruit", texture);
+						ModelBuilder<?> bottom = models().getBuilder(Atmospheric.location(name) + "_bottom").parent(new UncheckedModelFile(Atmospheric.location(parent + "_bottom"))).texture("fruit", texture);
+
+						if (flowering) {
+							ResourceLocation emissiveTexture = Atmospheric.location("block/flowering_dragon_fruit_emissive");
+							top = top.texture("overlay", emissiveTexture);
+							bottom = bottom.texture("overlay", emissiveTexture);
+						}
+
+						builder.part().modelFile(top).rotationY(yRot).addModel().condition(DragonRootsBlock.TOP_STAGE, stage).condition(DragonRootsBlock.FACING, dir);
+						builder.part().modelFile(bottom).rotationY(yRot).addModel().condition(DragonRootsBlock.BOTTOM_STAGE, stage).condition(DragonRootsBlock.FACING, dir);
 					}
-
-					builder.part().modelFile(top).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.TOP).condition(DragonRootsBlock.STAGE, stage).condition(DragonRootsBlock.FACING, dir);
-					builder.part().modelFile(top).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE).condition(DragonRootsBlock.STAGE, stage).condition(DragonRootsBlock.FACING, dir);
-					builder.part().modelFile(bottom).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.BOTTOM).condition(DragonRootsBlock.STAGE, stage).condition(DragonRootsBlock.FACING, dir);
-					builder.part().modelFile(bottom).rotationY(yRot).addModel().condition(DragonRootsBlock.TYPE, DragonRootsType.DOUBLE).condition(DragonRootsBlock.STAGE, stage).condition(DragonRootsBlock.FACING, dir);
 				}
 			}
 		});

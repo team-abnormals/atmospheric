@@ -4,6 +4,7 @@ import net.minecraft.util.StringRepresentable;
 
 public enum DragonRootsStage implements StringRepresentable {
 	NONE("none"),
+	ROOTS("roots"),
 	FRUIT("fruit"),
 	FLOWERING("flowering"),
 	ENDER("ender"),
@@ -24,7 +25,6 @@ public enum DragonRootsStage implements StringRepresentable {
 	public String getSerializedName() {
 		return this.name;
 	}
-
 }
 
 

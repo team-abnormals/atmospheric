@@ -3,7 +3,6 @@ package com.teamabnormals.atmospheric.common.levelgen.feature;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
-import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsType;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -34,7 +33,7 @@ public class DragonRootsFeature extends Feature<NoneFeatureConfiguration> {
 
 		Direction direction = null;
 		List<BlockPos> positions = Lists.newArrayList();
-		BlockState rootsState = AtmosphericBlocks.DRAGON_ROOTS.get().defaultBlockState().setValue(DragonRootsBlock.STAGE, DragonRootsStage.FRUIT);
+		BlockState rootsState = AtmosphericBlocks.DRAGON_ROOTS.get().defaultBlockState();
 
 		for (int j = 0; j < 512; ++j) {
 			BlockPos offsetPos;
@@ -64,7 +63,11 @@ public class DragonRootsFeature extends Feature<NoneFeatureConfiguration> {
 
 		if (positions.size() > 16) {
 			for (BlockPos pos : positions) {
-				BlockState roots = rootsState.setValue(DragonRootsBlock.TYPE, random.nextBoolean() ? DragonRootsType.DOUBLE : random.nextBoolean() ? DragonRootsType.TOP : DragonRootsType.BOTTOM);
+				boolean top = random.nextBoolean();
+				boolean doubleRoots = random.nextBoolean();
+				BlockState roots = rootsState
+						.setValue(DragonRootsBlock.TOP_STAGE, (top || doubleRoots) ? DragonRootsStage.FRUIT : DragonRootsStage.NONE)
+						.setValue(DragonRootsBlock.BOTTOM_STAGE, (!top || doubleRoots) ? DragonRootsStage.FRUIT : DragonRootsStage.NONE);
 				level.setBlock(pos, roots, 2);
 			}
 
