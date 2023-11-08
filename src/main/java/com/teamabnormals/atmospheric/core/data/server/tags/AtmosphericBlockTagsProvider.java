@@ -117,8 +117,8 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(PASSION_VINE_GROWABLE_ON).add(ROSEWOOD_LEAVES.get()).addTag(ROSEWOOD_LOGS);
 		this.tag(ALOE_PLACEABLE).addTag(BlockTags.SAND);
 		this.tag(TALL_ALOE_GROWABLE_ON).addTag(Tags.Blocks.SAND_COLORLESS);
-		this.tag(YUCCA_PLACEABLE).addTag(BlockTags.SAND).addTag(BlockTags.DIRT);
-		this.tag(YUCCA_FLOWER_PLACEABLE).add(Blocks.CACTUS, YUCCA_LEAVES.get(), YUCCA_HEDGE.get()).addTag(YUCCA_PLACEABLE);
+		this.tag(DESERT_PLANT_PLACEABLE).addTag(BlockTags.SAND).addTag(BlockTags.DIRT);
+		this.tag(YUCCA_FLOWER_PLACEABLE).add(Blocks.CACTUS, YUCCA_LEAVES.get(), YUCCA_HEDGE.get()).addTag(DESERT_PLANT_PLACEABLE);
 		this.tag(BARREL_CACTUS_PLACEABLE).addTag(BlockTags.SAND);
 		this.tag(SNOWY_BAMBOO_PLANTABLE_ON).add(Blocks.SNOW_BLOCK, SNOWY_BAMBOO.get(), SNOWY_BAMBOO_SAPLING.get());
 		this.tag(GOLDEN_GROWTHS_PLACEABLE).add(CRUSTOSE.get(), CRUSTOSE_LOG.get(), CRUSTOSE_WOOD.get()).addTag(BlockTags.DIRT);

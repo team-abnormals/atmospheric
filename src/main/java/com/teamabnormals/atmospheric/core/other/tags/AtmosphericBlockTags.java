@@ -19,7 +19,7 @@ public class AtmosphericBlockTags {
 	public static final TagKey<Block> PASSION_VINE_GROWABLE_ON = blockTag("passion_vine_growable_on");
 	public static final TagKey<Block> ALOE_PLACEABLE = blockTag("aloe_placeable");
 	public static final TagKey<Block> TALL_ALOE_GROWABLE_ON = blockTag("tall_aloe_growable_on");
-	public static final TagKey<Block> YUCCA_PLACEABLE = blockTag("yucca_placeable");
+	public static final TagKey<Block> DESERT_PLANT_PLACEABLE = blockTag("desert_plant_placeable");
 	public static final TagKey<Block> YUCCA_FLOWER_PLACEABLE = blockTag("yucca_flower_placeable");
 	public static final TagKey<Block> BARREL_CACTUS_PLACEABLE = blockTag("barrel_cactus_placeable");
 	public static final TagKey<Block> SNOWY_BAMBOO_PLANTABLE_ON = blockTag("snowy_bamboo_plantable_on");

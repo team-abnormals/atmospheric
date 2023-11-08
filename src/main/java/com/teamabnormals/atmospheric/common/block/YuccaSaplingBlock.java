@@ -9,6 +9,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -24,7 +25,7 @@ public class YuccaSaplingBlock extends BlueprintSaplingBlock implements IPlantab
 
 	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return state.is(AtmosphericBlockTags.YUCCA_PLACEABLE);
+		return state.is(AtmosphericBlockTags.DESERT_PLANT_PLACEABLE) || state.is(Blocks.FARMLAND);
 	}
 
 	@Override

@@ -41,7 +41,7 @@ public class LaurelTreeFeature extends BlueprintTreeFeature {
 
 	@Override
 	public BlockState getSapling() {
-		return AtmosphericBlocks.YUCCA_SAPLING.get().defaultBlockState();
+		return AtmosphericBlocks.LAUREL_SAPLING.get().defaultBlockState();
 	}
 
 	private void createBranch(BlockPos pos, Direction direction, RandomSource random) {

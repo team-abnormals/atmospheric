@@ -25,7 +25,7 @@ public class AridSproutsBlock extends BushBlock {
 
 	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return state.is(AtmosphericBlockTags.YUCCA_PLACEABLE);
+		return state.is(AtmosphericBlockTags.DESERT_PLANT_PLACEABLE);
 	}
 
 	@Override
