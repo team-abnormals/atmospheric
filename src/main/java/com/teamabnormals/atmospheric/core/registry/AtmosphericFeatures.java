@@ -516,7 +516,7 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> TREES_SCRUBLAND = register("trees_scrubland", AtmosphericConfiguredFeatures.TREES_SCRUBLAND, VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.25F, 2)));
 		public static final RegistryObject<PlacedFeature> FLOWER_SCRUBLAND = register("flower_scrubland", AtmosphericConfiguredFeatures.FLOWER_SCRUBLAND, List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_ARID_SPROUTS_RARE = register("patch_arid_sprouts_rare", AtmosphericConfiguredFeatures.PATCH_ARID_SPROUTS, List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
-		public static final RegistryObject<PlacedFeature> DRAGON_ROOTS = register("dragon_roots", AtmosphericConfiguredFeatures.DRAGON_ROOTS, List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		public static final RegistryObject<PlacedFeature> DRAGON_ROOTS = register("dragon_roots", AtmosphericConfiguredFeatures.DRAGON_ROOTS, List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
 		// Grimwoods
 

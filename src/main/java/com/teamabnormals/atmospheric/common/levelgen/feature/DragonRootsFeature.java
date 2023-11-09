@@ -35,10 +35,10 @@ public class DragonRootsFeature extends Feature<NoneFeatureConfiguration> {
 		List<BlockPos> positions = Lists.newArrayList();
 		BlockState rootsState = AtmosphericBlocks.DRAGON_ROOTS.get().defaultBlockState();
 
-		for (int j = 0; j < 512; ++j) {
+		for (int j = 0; j < 256; ++j) {
 			BlockPos offsetPos;
 			if (direction == null) {
-				offsetPos = origin.offset(random.nextInt(8) - random.nextInt(8), random.nextInt(3) - random.nextInt(3), random.nextInt(8) - random.nextInt(8));
+				offsetPos = origin.offset(random.nextInt(7) - random.nextInt(7), random.nextInt(3) - random.nextInt(3), random.nextInt(7) - random.nextInt(7));
 				for (Direction dir : DragonRootsBlock.FACING.getPossibleValues()) {
 					if (isOnSandstone(level, offsetPos, dir) && level.isEmptyBlock(offsetPos)) {
 						direction = dir;
