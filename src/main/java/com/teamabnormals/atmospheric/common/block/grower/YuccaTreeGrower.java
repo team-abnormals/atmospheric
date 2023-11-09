@@ -10,7 +10,7 @@ public class YuccaTreeGrower extends AbstractTreeGrower {
 
 	@Override
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean beehive) {
-		if (random.nextInt(10) == 0) {
+		if (random.nextFloat() < 0.1F) {
 			return AtmosphericConfiguredFeatures.BABY_YUCCA.getHolder().get();
 		} else {
 			return beehive ? AtmosphericConfiguredFeatures.YUCCA_BEES_005.getHolder().get() : AtmosphericConfiguredFeatures.YUCCA.getHolder().get();

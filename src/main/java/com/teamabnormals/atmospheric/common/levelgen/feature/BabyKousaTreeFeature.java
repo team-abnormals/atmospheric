@@ -9,9 +9,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
-public class BabyTreeFeature extends BlueprintTreeFeature {
+public class BabyKousaTreeFeature extends BlueprintTreeFeature {
 
-	public BabyTreeFeature(Codec<TreeConfiguration> config) {
+	public BabyKousaTreeFeature(Codec<TreeConfiguration> config) {
 		super(config);
 	}
 
@@ -27,9 +27,9 @@ public class BabyTreeFeature extends BlueprintTreeFeature {
 		}
 
 		BlockPos pos = origin.above(trunkHeight);
-		this.createLeafLayer(pos, random, false);
-		this.createLeafLayer(pos.below(), random, true);
-		this.createLeafLayer(pos.below(2), random, false);
+		this.createLeafLayer(pos, false);
+		this.createLeafLayer(pos.below(), true);
+		this.createLeafLayer(pos.below(2), false);
 	}
 
 	@Override
@@ -37,19 +37,15 @@ public class BabyTreeFeature extends BlueprintTreeFeature {
 		return AtmosphericBlocks.KOUSA_SAPLING.get().defaultBlockState();
 	}
 
-	public void createLeafLayer(BlockPos pos, RandomSource random, boolean square) {
-		int leafSize = 1;
-		for (int i = -leafSize; i <= leafSize; ++i) {
-			for (int k = -leafSize; k <= leafSize; ++k) {
+	public void createLeafLayer(BlockPos pos, boolean square) {
+		for (int i = -1; i <= 1; ++i) {
+			for (int k = -1; k <= 1; ++k) {
 				if (square) {
 					this.addFoliage(pos.offset(i, 0, k));
 				} else {
-					if ((Math.abs(i) != leafSize || Math.abs(k) != leafSize)) {
+					if ((Math.abs(i) != 1 || Math.abs(k) != 1)) {
 						this.addFoliage(pos.offset(i, 0, k));
 					}
-//					if (random.nextInt(4) == 0) {
-//						this.addFoliage(pos.offset(i, 0, k));
-//					}
 				}
 			}
 		}

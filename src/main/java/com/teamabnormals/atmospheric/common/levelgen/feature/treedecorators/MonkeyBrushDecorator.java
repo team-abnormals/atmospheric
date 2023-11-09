@@ -36,7 +36,7 @@ public class MonkeyBrushDecorator extends TreeDecorator {
 				for (BlockPos pos : context.logs()) {
 					for (Direction direction : Direction.values()) {
 						BlockPos offsetPos = pos.relative(direction);
-						if (random.nextInt(3) == 0 && context.level().isStateAtPosition(offsetPos, BlockStateBase::isAir)) {
+						if (random.nextInt(3) == 0 && context.isAir(offsetPos)) {
 							context.setBlock(offsetPos, MonkeyBrushFeature.monkeyBrushState(brushes.get(random.nextInt(brushes.size())).defaultBlockState(), direction));
 						}
 					}

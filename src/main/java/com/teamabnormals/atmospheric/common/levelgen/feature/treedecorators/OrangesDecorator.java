@@ -7,7 +7,6 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
@@ -46,7 +45,7 @@ public class OrangesDecorator extends TreeDecorator {
 				Collections.shuffle(directions);
 				for (Direction direction : directions) {
 					BlockPos offsetPos = pos.relative(direction);
-					if (random.nextFloat() < this.orangeProbability && context.level().isStateAtPosition(offsetPos, BlockStateBase::isAir)) {
+					if (random.nextFloat() < this.orangeProbability && context.isAir(offsetPos)) {
 						context.setBlock(offsetPos, this.blockProvider.getState(random, offsetPos).setValue(StemmedOrangeBlock.FACING, direction).setValue(StemmedOrangeBlock.ORANGES, random.nextFloat() < this.doubleProbability ? 2 : 1));
 					}
 				}

@@ -54,11 +54,11 @@ public class LaurelTreeGrower extends AbstractTreeGrower {
 	@Override
 	@Nullable
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean oranges) {
-		return oranges ? AtmosphericConfiguredFeatures.LAUREL_BOOSTED.getHolder().get() : AtmosphericConfiguredFeatures.LAUREL_GROWN.getHolder().get();
+		return oranges ? AtmosphericConfiguredFeatures.LAUREL_ORANGES_08.getHolder().get() : AtmosphericConfiguredFeatures.LAUREL.getHolder().get();
 	}
 
 	@Nullable
 	protected Holder<? extends ConfiguredFeature<?, ?>> getNetherFeature(RandomSource random, boolean oranges) {
-		return oranges ? AtmosphericConfiguredFeatures.LAUREL_NETHER_BOOSTED.getHolder().get() : AtmosphericConfiguredFeatures.LAUREL_NETHER_GROWN.getHolder().get();
+		return oranges ? AtmosphericConfiguredFeatures.LAUREL_BLOOD_ORANGES_08.getHolder().get() : AtmosphericConfiguredFeatures.LAUREL.getHolder().get();
 	}
 }

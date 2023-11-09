@@ -5,15 +5,10 @@ import com.google.common.collect.Lists;
 import com.teamabnormals.atmospheric.common.block.AloeVeraBlock;
 import com.teamabnormals.atmospheric.common.block.AloeVeraTallBlock;
 import com.teamabnormals.atmospheric.common.block.BarrelCactusBlock;
-import com.teamabnormals.atmospheric.common.block.YuccaFlowerDoubleBlock;
+import com.teamabnormals.atmospheric.common.block.YuccaBranchBlock;
 import com.teamabnormals.atmospheric.common.levelgen.feature.*;
 import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.LargeDiskConfiguration;
-import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.YuccaTreeConfiguration;
-import com.teamabnormals.atmospheric.common.levelgen.feature.configurations.YuccaTreeConfiguration.YuccaTreeConfigurationBuilder;
-import com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators.CobwebDecorator;
-import com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators.HangingCurrantDecorator;
-import com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators.MonkeyBrushDecorator;
-import com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators.OrangesDecorator;
+import com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators.*;
 import com.teamabnormals.atmospheric.common.levelgen.placement.InSquareCenterPlacement;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import net.minecraft.core.BlockPos;
@@ -35,7 +30,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -83,13 +77,14 @@ public class AtmosphericFeatures {
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> DRAGON_ROOTS = FEATURES.register("dragon_roots", () -> new DragonRootsFeature(NoneFeatureConfiguration.CODEC));
 
 	public static final RegistryObject<Feature<TreeConfiguration>> ROSEWOOD_TREE = FEATURES.register("rosewood_tree", () -> new RainforestTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<YuccaTreeConfiguration>> YUCCA_TREE = FEATURES.register("yucca_tree", () -> new YuccaTreeFeature(YuccaTreeConfiguration.CODEC));
+	public static final RegistryObject<Feature<TreeConfiguration>> YUCCA_TREE = FEATURES.register("yucca_tree", () -> new YuccaTreeFeature(TreeConfiguration.CODEC));
+	public static final RegistryObject<Feature<TreeConfiguration>> BABY_YUCCA_TREE = FEATURES.register("baby_yucca_tree", () -> new BabyYuccaTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> ASPEN_TREE = FEATURES.register("aspen_tree", () -> new AspenTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> KOUSA_TREE = FEATURES.register("kousa_tree", () -> new KousaTreeFeature(TreeConfiguration.CODEC));
+	public static final RegistryObject<Feature<TreeConfiguration>> BABY_KOUSA_TREE = FEATURES.register("baby_kousa_tree", () -> new BabyKousaTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> GRIMWOOD_TREE = FEATURES.register("grimwood_tree", () -> new GrimwoodTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> LAUREL_TREE = FEATURES.register("laurel_tree", () -> new LaurelTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> CURRANT_TREE = FEATURES.register("currant_tree", () -> new CurrantTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> BABY_TREE = FEATURES.register("baby_tree", () -> new BabyTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> SMALL_BUSH = FEATURES.register("small_bush", () -> new SmallBushFeature(TreeConfiguration.CODEC));
 
 	public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> CRUSTOSE = FEATURES.register("crustose", () -> new CrustoseFeature(ProbabilityFeatureConfiguration.CODEC));
@@ -105,17 +100,28 @@ public class AtmosphericFeatures {
 	public static final RegistryObject<TreeDecoratorType<?>> HANGING_CURRANT = TREE_DECORATOR_TYPES.register("hanging_currant", () -> new TreeDecoratorType<>(HangingCurrantDecorator.CODEC));
 	public static final RegistryObject<TreeDecoratorType<?>> COBWEB = TREE_DECORATOR_TYPES.register("cobweb", () -> new TreeDecoratorType<>(CobwebDecorator.CODEC));
 	public static final RegistryObject<TreeDecoratorType<?>> ORANGES = TREE_DECORATOR_TYPES.register("oranges", () -> new TreeDecoratorType<>(OrangesDecorator.CODEC));
+	public static final RegistryObject<TreeDecoratorType<?>> YUCCA_BUNDLE = TREE_DECORATOR_TYPES.register("yucca_bundle", () -> new TreeDecoratorType<>(YuccaBundleDecorator.CODEC));
+	public static final RegistryObject<TreeDecoratorType<?>> YUCCA_FLOWERS = TREE_DECORATOR_TYPES.register("yucca_flowers", () -> new TreeDecoratorType<>(YuccaFlowersDecorator.CODEC));
+	public static final RegistryObject<TreeDecoratorType<?>> YUCCA_FLOWER_PATCH = TREE_DECORATOR_TYPES.register("yucca_flower_patch", () -> new TreeDecoratorType<>(YuccaFlowerPatchDecorator.CODEC));
+	public static final RegistryObject<TreeDecoratorType<?>> ROASTED_YUCCA_BUNDLE = TREE_DECORATOR_TYPES.register("roasted_yucca_bundle", () -> new TreeDecoratorType<>(RoastedYuccaBundleDecorator.CODEC));
+	public static final RegistryObject<TreeDecoratorType<?>> EXTEND_PETRIFIED_YUCCA_TREE = TREE_DECORATOR_TYPES.register("extend_petrified_yucca_tree", () -> new TreeDecoratorType<>(ExtendPetrifiedYuccaTreeDecorator.CODEC));
 
 	public static final class Configs {
 		private static final MonkeyBrushDecorator MONKEY_BRUSH = new MonkeyBrushDecorator(0.004F);
 		private static final BeehiveDecorator BEEHIVE_0002 = new BeehiveDecorator(0.002F);
 		private static final BeehiveDecorator BEEHIVE_005 = new BeehiveDecorator(0.05F);
 
-		private static final OrangesDecorator ORANGES = orangesDecorator(0.005F, false);
-		private static final OrangesDecorator ORANGES_GROWN = orangesDecorator(0.1F, false);
-		private static final OrangesDecorator ORANGES_BOOSTED = orangesDecorator(0.8F, false);
-		private static final OrangesDecorator BLOOD_ORANGES_GROWN = orangesDecorator(0.1F, true);
-		private static final OrangesDecorator BLOOD_ORANGES_BOOSTED = orangesDecorator(0.8F, true);
+		private static final OrangesDecorator ORANGES_0005 = orangesDecorator(0.005F, false);
+		private static final OrangesDecorator ORANGES_08 = orangesDecorator(0.8F, false);
+		private static final OrangesDecorator BLOOD_ORANGES_08 = orangesDecorator(0.8F, true);
+
+		private static final YuccaBundleDecorator YUCCA_BUNDLE = new YuccaBundleDecorator(0.0625F, BlockStateProvider.simple(AtmosphericBlocks.YUCCA_BUNDLE.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_BRANCH.get().defaultBlockState().setValue(YuccaBranchBlock.SNAPPED, false)));
+		private static final YuccaFlowersDecorator YUCCA_FLOWERS = new YuccaFlowersDecorator(0.125F, new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(AtmosphericBlocks.YUCCA_FLOWER.get().defaultBlockState(), 3).add(AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState(), 1).build()));
+		private static final YuccaFlowerPatchDecorator YUCCA_FLOWER_PATCH = new YuccaFlowerPatchDecorator(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(AtmosphericBlocks.YUCCA_FLOWER.get().defaultBlockState(), 3).add(AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState(), 1).build()));
+		private static final RoastedYuccaBundleDecorator ROASTED_YUCCA_BUNDLE = new RoastedYuccaBundleDecorator(0.125F, BlockStateProvider.simple(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get()));
+
+		private static final ExtendPetrifiedYuccaTreeDecorator PETRIFIED_YUCCA_TREE_EXTENDER = new ExtendPetrifiedYuccaTreeDecorator(BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE.get()));
+		private static final ExtendPetrifiedYuccaTreeDecorator RED_PETRIFIED_YUCCA_TREE_EXTENDER = new ExtendPetrifiedYuccaTreeDecorator(BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE.get()));
 
 		private static OrangesDecorator orangesDecorator(float probability, boolean blood) {
 			return new OrangesDecorator(probability, BlockStateProvider.simple(blood ? AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get() : AtmosphericBlocks.STEMMED_ORANGE.get()), (float) 0.25, (float) 0.3);
@@ -129,15 +135,15 @@ public class AtmosphericFeatures {
 		public static final TreeConfiguration MORADO_BEES_0002 = createMorado().decorators(List.of(BEEHIVE_0002, MONKEY_BRUSH)).build();
 		public static final TreeConfiguration MORADO_BEES_005 = createMorado().decorators(List.of(BEEHIVE_005, MONKEY_BRUSH)).build();
 
-		public static final YuccaTreeConfiguration YUCCA = createYucca().build();
-		public static final YuccaTreeConfiguration YUCCA_WITH_FLOWERS = createYucca().hasPatch().build();
-		public static final YuccaTreeConfiguration YUCCA_BEES_005 = createYucca().decorators(List.of(BEEHIVE_005)).build();
-		public static final YuccaTreeConfiguration YUCCA_BEES_005_WITH_FLOWERS = createYucca().hasPatch().decorators(List.of(BEEHIVE_005)).build();
-		public static final YuccaTreeConfiguration BABY_YUCCA = createYucca().setBaby().build();
-		public static final YuccaTreeConfiguration BABY_YUCCA_WITH_FLOWERS = createYucca().setBaby().hasPatch().build();
+		public static final TreeConfiguration YUCCA = createYucca().decorators(List.of(YUCCA_FLOWERS, YUCCA_BUNDLE)).build();
+		public static final TreeConfiguration YUCCA_WITH_FLOWERS = createYucca().decorators(List.of(YUCCA_FLOWERS, YUCCA_BUNDLE, YUCCA_FLOWER_PATCH)).build();
+		public static final TreeConfiguration YUCCA_BEES_005 = createYucca().decorators(List.of(YUCCA_FLOWERS, YUCCA_BUNDLE, BEEHIVE_005)).build();
+		public static final TreeConfiguration YUCCA_BEES_005_WITH_FLOWERS = createYucca().decorators(List.of(YUCCA_FLOWERS, YUCCA_BUNDLE, YUCCA_FLOWER_PATCH, BEEHIVE_005)).build();
+		public static final TreeConfiguration BABY_YUCCA = createBabyYucca().decorators(List.of(YUCCA_FLOWERS)).build();
+		public static final TreeConfiguration BABY_YUCCA_WITH_FLOWERS = createBabyYucca().decorators(List.of(YUCCA_FLOWERS, YUCCA_FLOWER_PATCH)).build();
 
-		public static final YuccaTreeConfiguration PETRIFIED_YUCCA = new YuccaTreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE.get()), BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE.get()), BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get()), BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE_WALL.get())).isPetrified().build();
-		public static final YuccaTreeConfiguration RED_PETRIFIED_YUCCA = new YuccaTreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get()), BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE_WALL.get())).isPetrified().build();
+		public static final TreeConfiguration PETRIFIED_YUCCA = createCustomTree(BlockStateProvider.simple(AtmosphericBlocks.ARID_SANDSTONE.get()), new StraightTrunkPlacer(2, 1, 1), BlockStateProvider.simple(Blocks.AIR)).decorators(List.of(PETRIFIED_YUCCA_TREE_EXTENDER, ROASTED_YUCCA_BUNDLE)).build();
+		public static final TreeConfiguration RED_PETRIFIED_YUCCA = createCustomTree(BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE.get()), new StraightTrunkPlacer(2, 1, 1), BlockStateProvider.simple(Blocks.AIR)).decorators(List.of(RED_PETRIFIED_YUCCA_TREE_EXTENDER, ROASTED_YUCCA_BUNDLE)).build();
 
 		public static final TreeConfiguration ASPEN = createAspen().build();
 		public static final TreeConfiguration ASPEN_BEES_0002 = createAspen().decorators(List.of(BEEHIVE_0002)).build();
@@ -157,19 +163,17 @@ public class AtmosphericFeatures {
 		public static final TreeConfiguration GRIMWOOD = createCustomTree(AtmosphericBlocks.GRIMWOOD_LOG.get(), new StraightTrunkPlacer(2, 1, 0), AtmosphericBlocks.GRIMWOOD_LEAVES.get()).build();
 		public static final TreeConfiguration DEAD_GRIMWOOD = createCustomTree(AtmosphericBlocks.GRIMWOOD_LOG.get(), new StraightTrunkPlacer(2, 1, 0), Blocks.AIR).decorators(List.of(new CobwebDecorator(0.025F))).build();
 
-		public static final TreeConfiguration LAUREL = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES)).build();
-		public static final TreeConfiguration LAUREL_GROWN = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_GROWN)).build();
-		public static final TreeConfiguration LAUREL_BOOSTED = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_BOOSTED)).build();
+		public static final TreeConfiguration LAUREL = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).build();
+		public static final TreeConfiguration LAUREL_ORANGES_0005 = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_0005)).build();
+		public static final TreeConfiguration LAUREL_ORANGES_08 = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_08)).build();
 		public static final TreeConfiguration LAUREL_WITH_VINES = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(new LeaveVineDecorator(0.15F))).build();
-		public static final TreeConfiguration LAUREL_NETHER_GROWN = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_GROWN)).build();
-		public static final TreeConfiguration LAUREL_NETHER_BOOSTED = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_BOOSTED)).build();
-		
-		public static final TreeConfiguration DRY_LAUREL = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES)).build();
-		public static final TreeConfiguration DRY_LAUREL_GROWN = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_GROWN)).build();
-		public static final TreeConfiguration DRY_LAUREL_BOOSTED = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_BOOSTED)).build();
+		public static final TreeConfiguration LAUREL_BLOOD_ORANGES_08 = createLaurel(AtmosphericBlocks.LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_08)).build();
+
+		public static final TreeConfiguration DRY_LAUREL = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).build();
+		public static final TreeConfiguration DRY_LAUREL_ORANGES_0005 = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_0005)).build();
+		public static final TreeConfiguration DRY_LAUREL_ORANGES_08 = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(ORANGES_08)).build();
 		public static final TreeConfiguration DRY_LAUREL_WITH_VINES = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(new LeaveVineDecorator(0.15F))).build();
-		public static final TreeConfiguration DRY_LAUREL_NETHER_GROWN = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_GROWN)).build();
-		public static final TreeConfiguration DRY_LAUREL_NETHER_BOOSTED = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_BOOSTED)).build();
+		public static final TreeConfiguration DRY_LAUREL_BLOOD_ORANGES_08 = createLaurel(AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).decorators(ImmutableList.of(BLOOD_ORANGES_08)).build();
 
 		public static final TreeConfiguration DRY_LAUREL_BUSH = createCustomTree(AtmosphericBlocks.LAUREL_LOG.get(), new StraightTrunkPlacer(1, 0, 0), AtmosphericBlocks.DRY_LAUREL_LEAVES.get()).build();
 
@@ -185,8 +189,12 @@ public class AtmosphericFeatures {
 			return createCustomTree(BlockStateProvider.simple(AtmosphericBlocks.MORADO_LOG.get()), new StraightTrunkPlacer(2, 1, 0), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(AtmosphericBlocks.MORADO_LEAVES.get().defaultBlockState(), 2).add(AtmosphericBlocks.FLOWERING_MORADO_LEAVES.get().defaultBlockState(), 6).build()));
 		}
 
-		private static YuccaTreeConfigurationBuilder createYucca() {
-			return new YuccaTreeConfigurationBuilder(BlockStateProvider.simple(AtmosphericBlocks.YUCCA_LOG.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_LEAVES.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_BRANCH.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_BUNDLE.get()), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_FLOWER.get()), BlockStateProvider.simple(AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState().setValue(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.UPPER)), BlockStateProvider.simple(AtmosphericBlocks.TALL_YUCCA_FLOWER.get().defaultBlockState().setValue(YuccaFlowerDoubleBlock.HALF, DoubleBlockHalf.LOWER)));
+		private static TreeConfigurationBuilder createYucca() {
+			return createCustomTree(BlockStateProvider.simple(AtmosphericBlocks.YUCCA_LOG.get()), new StraightTrunkPlacer(4, 1, 1), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_LEAVES.get()));
+		}
+
+		private static TreeConfigurationBuilder createBabyYucca() {
+			return createCustomTree(BlockStateProvider.simple(AtmosphericBlocks.YUCCA_LOG.get()), new StraightTrunkPlacer(3, 1, 0), BlockStateProvider.simple(AtmosphericBlocks.YUCCA_LEAVES.get()));
 		}
 
 		private static TreeConfigurationBuilder createAspen(Block leaves) {
@@ -239,14 +247,14 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> MORADO_BEES_0002 = register("morado_bees_0002", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.MORADO_BEES_0002));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> MORADO_BEES_005 = register("morado_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.ROSEWOOD_TREE.get(), Configs.MORADO_BEES_005));
 
-		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> YUCCA = register("yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA));
-		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> YUCCA_WITH_FLOWERS = register("yucca_with_flowers", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA_WITH_FLOWERS));
-		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> BABY_YUCCA = register("baby_yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.BABY_YUCCA));
-		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> BABY_YUCCA_WITH_FLOWERS = register("baby_yucca_with_flowers", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.BABY_YUCCA_WITH_FLOWERS));
-		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> YUCCA_BEES_005 = register("yucca_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA_BEES_005));
-		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> YUCCA_BEES_005_WITH_FLOWERS = register("yucca_bees_005_with_flowers", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA_BEES_005_WITH_FLOWERS));
-		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> PETRIFIED_YUCCA = register("petrified_yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.PETRIFIED_YUCCA));
-		public static final RegistryObject<ConfiguredFeature<YuccaTreeConfiguration, ?>> RED_PETRIFIED_YUCCA = register("red_petrified_yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.RED_PETRIFIED_YUCCA));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> YUCCA = register("yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> YUCCA_WITH_FLOWERS = register("yucca_with_flowers", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA_WITH_FLOWERS));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> BABY_YUCCA = register("baby_yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.BABY_YUCCA_TREE.get(), Configs.BABY_YUCCA));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> BABY_YUCCA_WITH_FLOWERS = register("baby_yucca_with_flowers", () -> new ConfiguredFeature<>(AtmosphericFeatures.BABY_YUCCA_TREE.get(), Configs.BABY_YUCCA_WITH_FLOWERS));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> YUCCA_BEES_005 = register("yucca_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA_BEES_005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> YUCCA_BEES_005_WITH_FLOWERS = register("yucca_bees_005_with_flowers", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.YUCCA_BEES_005_WITH_FLOWERS));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> PETRIFIED_YUCCA = register("petrified_yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.PETRIFIED_YUCCA));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> RED_PETRIFIED_YUCCA = register("red_petrified_yucca", () -> new ConfiguredFeature<>(AtmosphericFeatures.YUCCA_TREE.get(), Configs.RED_PETRIFIED_YUCCA));
 
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ASPEN = register("aspen", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.ASPEN));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> ASPEN_BEES_0002 = register("aspen_bees_0002", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.ASPEN_BEES_0002));
@@ -258,22 +266,20 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GREEN_ASPEN_BEES_005 = register("green_aspen_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.GREEN_ASPEN_BEES_005));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GREEN_ASPEN_WITH_VINES = register("green_aspen_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.GREEN_ASPEN_WITH_VINES));
 
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL = register("laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_GROWN = register("laurel_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_GROWN));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_BOOSTED = register("laurel_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_BOOSTED));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL = register("laurel_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_ORANGES_0005 = register("laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_ORANGES_0005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_ORANGES_08 = register("laurel_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_ORANGES_08));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_WITH_VINES = register("laurel_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_WITH_VINES));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_NETHER_GROWN = register("laurel_nether_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_NETHER_GROWN));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_NETHER_BOOSTED = register("laurel_nether_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_NETHER_BOOSTED));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_BLOOD_ORANGES_08 = register("laurel_nether_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_BLOOD_ORANGES_08));
 
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL = register("dry_laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_GROWN = register("dry_laurel_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_GROWN));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_BOOSTED = register("dry_laurel_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_BOOSTED));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL = register("dry_laurel_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_ORANGES_0005 = register("dry_laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_ORANGES_0005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_ORANGES_08 = register("dry_laurel_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_ORANGES_08));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_WITH_VINES = register("dry_laurel_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_WITH_VINES));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_NETHER_GROWN = register("dry_laurel_nether", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_NETHER_GROWN));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_NETHER_BOOSTED = register("dry_laurel_nether_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_NETHER_BOOSTED));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_BLOOD_ORANGES_08 = register("dry_laurel_nether_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_BLOOD_ORANGES_08));
 
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> KOUSA = register("kousa", () -> new ConfiguredFeature<>(AtmosphericFeatures.KOUSA_TREE.get(), Configs.KOUSA));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> BABY_KOUSA = register("baby_kousa", () -> new ConfiguredFeature<>(AtmosphericFeatures.BABY_TREE.get(), Configs.BABY_KOUSA));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> BABY_KOUSA = register("baby_kousa", () -> new ConfiguredFeature<>(AtmosphericFeatures.BABY_KOUSA_TREE.get(), Configs.BABY_KOUSA));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> CURRANT = register("currant", () -> new ConfiguredFeature<>(AtmosphericFeatures.CURRANT_TREE.get(), Configs.CURRANT));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DEAD_CURRANT = register("dead_currant", () -> new ConfiguredFeature<>(AtmosphericFeatures.CURRANT_TREE.get(), Configs.DEAD_CURRANT));
 
@@ -397,9 +403,9 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> ASPEN_WITH_VINES = register("aspen_with_vines", AtmosphericConfiguredFeatures.ASPEN_WITH_VINES, List.of());
 		public static final RegistryObject<PlacedFeature> GREEN_ASPEN_BEES_0002 = register("green_aspen_bees_0002", AtmosphericConfiguredFeatures.GREEN_ASPEN_BEES_0002, List.of());
 		public static final RegistryObject<PlacedFeature> GREEN_ASPEN_WITH_VINES = register("green_aspen_with_vines", AtmosphericConfiguredFeatures.GREEN_ASPEN_WITH_VINES, List.of());
-		public static final RegistryObject<PlacedFeature> LAUREL = register("laurel", AtmosphericConfiguredFeatures.LAUREL, List.of());
+		public static final RegistryObject<PlacedFeature> LAUREL = register("laurel", AtmosphericConfiguredFeatures.LAUREL_ORANGES_0005, List.of());
 		public static final RegistryObject<PlacedFeature> LAUREL_WITH_VINES = register("laurel_with_vines", AtmosphericConfiguredFeatures.LAUREL_WITH_VINES, List.of());
-		public static final RegistryObject<PlacedFeature> DRY_LAUREL = register("dry_laurel", AtmosphericConfiguredFeatures.DRY_LAUREL, List.of());
+		public static final RegistryObject<PlacedFeature> DRY_LAUREL = register("dry_laurel", AtmosphericConfiguredFeatures.DRY_LAUREL_ORANGES_0005, List.of());
 		public static final RegistryObject<PlacedFeature> DRY_LAUREL_WITH_VINES = register("dry_laurel_with_vines", AtmosphericConfiguredFeatures.DRY_LAUREL_WITH_VINES, List.of());
 		public static final RegistryObject<PlacedFeature> KOUSA = register("kousa", AtmosphericConfiguredFeatures.KOUSA, List.of());
 		public static final RegistryObject<PlacedFeature> GRIMWOOD = register("grimwood", AtmosphericConfiguredFeatures.GRIMWOOD, List.of());
