@@ -29,7 +29,7 @@ public class AtmosphericItemModelProvider extends ItemModelProvider {
 				LAUREL_BOAT.getFirst().get(), LAUREL_BOAT.getSecond().get(), LAUREL_FURNACE_BOAT.get(), LARGE_LAUREL_BOAT.get(),
 				KOUSA_BOAT.getFirst().get(), KOUSA_BOAT.getSecond().get(), KOUSA_FURNACE_BOAT.get(), LARGE_KOUSA_BOAT.get(),
 				GRIMWOOD_BOAT.getFirst().get(), GRIMWOOD_BOAT.getSecond().get(), GRIMWOOD_FURNACE_BOAT.get(), LARGE_GRIMWOOD_BOAT.get()
-				);
+		);
 
 		this.generatedItem(AtmosphericBlocks.YUCCA_GATEAU.get());
 		this.handheldItem(AtmosphericBlocks.YUCCA_BRANCH.get());

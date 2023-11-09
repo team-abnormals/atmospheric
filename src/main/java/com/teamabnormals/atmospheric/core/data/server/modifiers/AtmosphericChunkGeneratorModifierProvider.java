@@ -57,7 +57,7 @@ public final class AtmosphericChunkGeneratorModifierProvider extends ChunkGenera
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isBiome(AtmosphericBiomes.ASPEN_PARKLAND.getKey()), ifTrue(ON_FLOOR, ifTrue(waterBlockCheck(-1, 0), sequence(ifTrue(waterBlockCheck(0, 0), coarseDirt), dirt))))), false))
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isHotSprings, ifTrue(not(yBlockCheck(VerticalAnchor.absolute(93), 0)), sequence(hotSpringsRuleSource, hotSpringsRuleSource2)))), false));
 	}
-	
+
 	private RuleSource sandRuleSource(RuleSource sand, RuleSource sandstone) {
 		return sequence(
 				ifTrue(ON_FLOOR, ifTrue(waterBlockCheck(-1, 0), sequence(ifTrue(ON_CEILING, sandstone), sand))),

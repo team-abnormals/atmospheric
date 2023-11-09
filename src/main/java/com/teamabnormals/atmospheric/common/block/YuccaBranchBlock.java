@@ -1,10 +1,8 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.blueprint.common.advancement.EmptyTrigger;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

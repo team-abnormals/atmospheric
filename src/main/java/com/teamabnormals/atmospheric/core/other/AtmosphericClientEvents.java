@@ -9,13 +9,12 @@ import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ViewportEvent.RenderFog;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = Atmospheric.MOD_ID, value = Dist.CLIENT)
 public class AtmosphericClientEvents {
 
-//	@SubscribeEvent
+	//	@SubscribeEvent
 	public static void onRenderFog(RenderFog event) {
 		if (event.getCamera().getEntity() instanceof LocalPlayer player) {
 			Holder<Biome> holder = player.level.getBiome(player.blockPosition());

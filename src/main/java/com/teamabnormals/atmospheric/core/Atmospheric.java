@@ -6,7 +6,6 @@ import com.teamabnormals.atmospheric.client.model.PassionFruitSeedModel;
 import com.teamabnormals.atmospheric.client.renderer.entity.CochinealRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.DragonFruitRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.PassionFruitSeedRenderer;
-import com.teamabnormals.atmospheric.common.entity.Cochineal;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericBlockStateProvider;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericItemModelProvider;
 import com.teamabnormals.atmospheric.core.data.server.AtmosphericAdvancementProvider;

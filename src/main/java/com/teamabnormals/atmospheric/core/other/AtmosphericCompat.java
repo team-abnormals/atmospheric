@@ -83,7 +83,7 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.ASPEN_LEAVES.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.ASPEN_SAPLING.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.ASPEN_LEAF_CARPET.get(), 0.3F);
-		
+
 		DataUtil.registerCompostable(AtmosphericBlocks.GREEN_ASPEN_LEAVES.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.GREEN_ASPEN_SAPLING.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.GREEN_ASPEN_LEAF_CARPET.get(), 0.3F);
