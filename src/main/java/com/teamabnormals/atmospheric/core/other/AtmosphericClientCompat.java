@@ -206,7 +206,5 @@ public class AtmosphericClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_AGAVE.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GOLDEN_GROWTHS.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_GOLDEN_GROWTHS.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.BRACKEN.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_BRACKEN.get(), RenderType.cutout());
 	}
 }

@@ -340,7 +340,7 @@ public class AtmosphericFeatures {
 		// Laurel Forest
 
 		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_LAUREL_FOREST = register("trees_laurel_forest", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.DRY_LAUREL_WITH_VINES.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.DRY_LAUREL.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.LAUREL_WITH_VINES.getHolder().get(), 0.45F)), AtmosphericPlacedFeatures.LAUREL.getHolder().get())));
-		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_GRASS_LAUREL_FOREST = register("patch_grass_laurel_forest", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS.defaultBlockState(), 1).add(Blocks.FERN.defaultBlockState(), 4).add(AtmosphericBlocks.BRACKEN.get().defaultBlockState(), 4)), 32)));
+		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_GRASS_LAUREL_FOREST = register("patch_grass_laurel_forest", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS.defaultBlockState(), 1).add(Blocks.FERN.defaultBlockState(), 6)), 32)));
 
 		// Kousa Jungle
 

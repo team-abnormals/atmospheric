@@ -375,9 +375,6 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> DRY_LAUREL_LEAF_CARPET = HELPER.createCompatBlock("quark", "dry_laurel_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.DRY_LAUREL.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> DRY_LAUREL_HEDGE = HELPER.createCompatFuelBlock("quark", "dry_laurel_hedge", () -> new HedgeBlock(AtmosphericProperties.DRY_LAUREL.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
-	public static final RegistryObject<Block> BRACKEN = HELPER.createBlock("bracken", () -> new BrackenBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> POTTED_BRACKEN = HELPER.createBlockNoItem("potted_bracken", () -> new FlowerPotBlock(BRACKEN.get(), PropertyUtil.flowerPot()));
-
 	public static final RegistryObject<Block> STEMMED_ORANGE = HELPER.createBlockNoItem("stemmed_orange", () -> new StemmedOrangeBlock(AtmosphericProperties.STEMMED_ORANGE));
 	public static final RegistryObject<Block> STEMMED_BLOOD_ORANGE = HELPER.createBlockNoItem("stemmed_blood_orange", () -> new StemmedOrangeBlock(AtmosphericProperties.STEMMED_ORANGE));
 
