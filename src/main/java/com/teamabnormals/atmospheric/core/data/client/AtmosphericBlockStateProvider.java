@@ -105,6 +105,7 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 
 		this.crossBlockWithCustomPot(AGAVE.get(), POTTED_AGAVE.get());
 		this.crossBlockWithCustomPot(GOLDEN_GROWTHS.get(), POTTED_GOLDEN_GROWTHS.get());
+		this.crossBlockWithPot(BRACKEN.get(), POTTED_BRACKEN.get());
 
 		this.blockFamily(AtmosphericBlockFamilies.LAUREL_PLANKS_FAMILY, LAUREL_VERTICAL_SLAB.get());
 		this.logBlocks(LAUREL_LOG.get(), LAUREL_WOOD.get());

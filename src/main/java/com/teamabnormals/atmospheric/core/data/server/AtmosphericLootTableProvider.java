@@ -5,6 +5,7 @@ import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.block.*;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
@@ -381,6 +382,9 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.add(STEMMED_BLOOD_ORANGE.get(), block -> createStemmedOrangeDrops(block, AtmosphericItems.BLOOD_ORANGE.get()));
 			this.dropSelf(ORANGE_CRATE.get());
 			this.dropSelf(BLOOD_ORANGE_CRATE.get());
+
+			this.add(BRACKEN.get(), BlockLoot::createGrassDrops);
+			this.dropPottedContents(POTTED_BRACKEN.get());
 
 			this.dropSelf(ASPEN_PLANKS.get());
 			this.dropSelf(VERTICAL_ASPEN_PLANKS.get());
