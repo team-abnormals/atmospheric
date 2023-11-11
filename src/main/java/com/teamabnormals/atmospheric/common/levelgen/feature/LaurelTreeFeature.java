@@ -61,10 +61,14 @@ public class LaurelTreeFeature extends BlueprintTreeFeature {
 		}
 
 		mutablePos.set(mutablePos.above(secondHeight - 1));
-		this.createLeafLayer(mutablePos.above(), false, random);
-		this.createLeafLayer(mutablePos, true, random);
-		this.createLeafLayer(mutablePos.below(), false, random);
-		this.createVines(mutablePos.below().immutable(), direction, random);
+		this.createLeafChunk(mutablePos, direction, random);
+	}
+
+	public void createLeafChunk(BlockPos pos, Direction direction, RandomSource random) {
+		this.createLeafLayer(pos.above(), false, random);
+		this.createLeafLayer(pos, true, random);
+		this.createLeafLayer(pos.below(), false, random);
+		this.createVines(pos.below().immutable(), direction, random);
 	}
 
 	private void createLeafLayer(BlockPos pos, boolean square, RandomSource random) {

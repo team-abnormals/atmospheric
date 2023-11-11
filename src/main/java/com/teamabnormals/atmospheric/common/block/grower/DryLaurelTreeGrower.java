@@ -9,14 +9,31 @@ import javax.annotation.Nullable;
 
 public class DryLaurelTreeGrower extends LaurelTreeGrower {
 
-	@Override
 	@Nullable
-	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean oranges) {
-		return oranges ? AtmosphericConfiguredFeatures.DRY_LAUREL_ORANGES_08.getHolder().get() : AtmosphericConfiguredFeatures.DRY_LAUREL.getHolder().get();
+	@Override
+	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean flowers) {
+		return AtmosphericConfiguredFeatures.DRY_LAUREL.getHolder().get();
+	}
+
+	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredNetherFeature(RandomSource random) {
+		return AtmosphericConfiguredFeatures.DRY_LAUREL_BLOOD_ORANGES_08.getHolder().get();
+	}
+
+	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredOrangesFeature(RandomSource random) {
+		return AtmosphericConfiguredFeatures.DRY_LAUREL_ORANGES_08.getHolder().get();
 	}
 
 	@Nullable
-	protected Holder<? extends ConfiguredFeature<?, ?>> getNetherFeature(RandomSource random, boolean oranges) {
-		return oranges ? AtmosphericConfiguredFeatures.DRY_LAUREL_BLOOD_ORANGES_08.getHolder().get() : AtmosphericConfiguredFeatures.LAUREL.getHolder().get();
+	@Override
+	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource random) {
+		return this.shouldBeGiant(random) ? AtmosphericConfiguredFeatures.GIANT_DRY_LAUREL.getHolder().get() : AtmosphericConfiguredFeatures.LARGE_DRY_LAUREL.getHolder().get();
+	}
+
+	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredOrangesMegaFeature(RandomSource random) {
+		return this.shouldBeGiant(random) ? AtmosphericConfiguredFeatures.GIANT_DRY_LAUREL_ORANGES_08.getHolder().get() : AtmosphericConfiguredFeatures.LARGE_DRY_LAUREL_ORANGES_08.getHolder().get();
+	}
+
+	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredNetherMegaFeature(RandomSource random) {
+		return this.shouldBeGiant(random) ? AtmosphericConfiguredFeatures.GIANT_DRY_LAUREL_BLOOD_ORANGES_08.getHolder().get() : AtmosphericConfiguredFeatures.LARGE_DRY_LAUREL_BLOOD_ORANGES_08.getHolder().get();
 	}
 }

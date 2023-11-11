@@ -84,6 +84,8 @@ public class AtmosphericFeatures {
 	public static final RegistryObject<Feature<TreeConfiguration>> BABY_KOUSA_TREE = FEATURES.register("baby_kousa_tree", () -> new BabyKousaTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> GRIMWOOD_TREE = FEATURES.register("grimwood_tree", () -> new GrimwoodTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> LAUREL_TREE = FEATURES.register("laurel_tree", () -> new LaurelTreeFeature(TreeConfiguration.CODEC));
+	public static final RegistryObject<Feature<TreeConfiguration>> LARGE_LAUREL_TREE = FEATURES.register("large_laurel_tree", () -> new LargeLaurelTreeFeature(TreeConfiguration.CODEC));
+	public static final RegistryObject<Feature<TreeConfiguration>> GIANT_LAUREL_TREE = FEATURES.register("giant_laurel_tree", () -> new GiantLaurelTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> CURRANT_TREE = FEATURES.register("currant_tree", () -> new CurrantTreeFeature(TreeConfiguration.CODEC));
 	public static final RegistryObject<Feature<TreeConfiguration>> SMALL_BUSH = FEATURES.register("small_bush", () -> new SmallBushFeature(TreeConfiguration.CODEC));
 
@@ -266,17 +268,37 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GREEN_ASPEN_BEES_005 = register("green_aspen_bees_005", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.GREEN_ASPEN_BEES_005));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GREEN_ASPEN_WITH_VINES = register("green_aspen_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.ASPEN_TREE.get(), Configs.GREEN_ASPEN_WITH_VINES));
 
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL = register("laurel_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_ORANGES_0005 = register("laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_ORANGES_0005));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_ORANGES_08 = register("laurel_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL = register("laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_ORANGES_0005 = register("laurel_oranges_0005", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_ORANGES_0005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_ORANGES_08 = register("laurel_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_ORANGES_08));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_WITH_VINES = register("laurel_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_WITH_VINES));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_BLOOD_ORANGES_08 = register("laurel_nether_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_BLOOD_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LAUREL_BLOOD_ORANGES_08 = register("laurel_blood_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.LAUREL_BLOOD_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LARGE_LAUREL = register("large_laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LARGE_LAUREL_TREE.get(), Configs.LAUREL));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LARGE_LAUREL_ORANGES_0005 = register("large_laurel_oranges_0005", () -> new ConfiguredFeature<>(AtmosphericFeatures.LARGE_LAUREL_TREE.get(), Configs.LAUREL_ORANGES_0005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LARGE_LAUREL_ORANGES_08 = register("large_laurel_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.LARGE_LAUREL_TREE.get(), Configs.LAUREL_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LARGE_LAUREL_WITH_VINES = register("large_laurel_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.LARGE_LAUREL_TREE.get(), Configs.LAUREL_WITH_VINES));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LARGE_LAUREL_BLOOD_ORANGES_08 = register("large_laurel_blood_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.LARGE_LAUREL_TREE.get(), Configs.LAUREL_BLOOD_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GIANT_LAUREL = register("giant_laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.GIANT_LAUREL_TREE.get(), Configs.LAUREL));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GIANT_LAUREL_ORANGES_0005 = register("giant_laurel_oranges_0005", () -> new ConfiguredFeature<>(AtmosphericFeatures.GIANT_LAUREL_TREE.get(), Configs.LAUREL_ORANGES_0005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GIANT_LAUREL_ORANGES_08 = register("giant_laurel_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.GIANT_LAUREL_TREE.get(), Configs.LAUREL_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GIANT_LAUREL_WITH_VINES = register("giant_laurel_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.GIANT_LAUREL_TREE.get(), Configs.LAUREL_WITH_VINES));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GIANT_LAUREL_BLOOD_ORANGES_08 = register("giant_laurel_blood_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.GIANT_LAUREL_TREE.get(), Configs.LAUREL_BLOOD_ORANGES_08));
 
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL = register("dry_laurel_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_ORANGES_0005 = register("dry_laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_ORANGES_0005));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_ORANGES_08 = register("dry_laurel_boosted", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL = register("dry_laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_ORANGES_0005 = register("dry_laurel_oranges_0005", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_ORANGES_0005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_ORANGES_08 = register("dry_laurel_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_ORANGES_08));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_WITH_VINES = register("dry_laurel_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_WITH_VINES));
-		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_BLOOD_ORANGES_08 = register("dry_laurel_nether_grown", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_BLOOD_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> DRY_LAUREL_BLOOD_ORANGES_08 = register("dry_laurel_blood_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.LAUREL_TREE.get(), Configs.DRY_LAUREL_BLOOD_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LARGE_DRY_LAUREL = register("large_dry_laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.LARGE_LAUREL_TREE.get(), Configs.DRY_LAUREL));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LARGE_DRY_LAUREL_ORANGES_0005 = register("large_dry_laurel_oranges_0005", () -> new ConfiguredFeature<>(AtmosphericFeatures.LARGE_LAUREL_TREE.get(), Configs.DRY_LAUREL_ORANGES_0005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LARGE_DRY_LAUREL_ORANGES_08 = register("large_dry_laurel_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.LARGE_LAUREL_TREE.get(), Configs.DRY_LAUREL_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LARGE_DRY_LAUREL_WITH_VINES = register("large_dry_laurel_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.LARGE_LAUREL_TREE.get(), Configs.DRY_LAUREL_WITH_VINES));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> LARGE_DRY_LAUREL_BLOOD_ORANGES_08 = register("large_dry_laurel_blood_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.LARGE_LAUREL_TREE.get(), Configs.DRY_LAUREL_BLOOD_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GIANT_DRY_LAUREL = register("giant_dry_laurel", () -> new ConfiguredFeature<>(AtmosphericFeatures.GIANT_LAUREL_TREE.get(), Configs.DRY_LAUREL));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GIANT_DRY_LAUREL_ORANGES_0005 = register("giant_dry_laurel_oranges_0005", () -> new ConfiguredFeature<>(AtmosphericFeatures.GIANT_LAUREL_TREE.get(), Configs.DRY_LAUREL_ORANGES_0005));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GIANT_DRY_LAUREL_ORANGES_08 = register("giant_dry_laurel_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.GIANT_LAUREL_TREE.get(), Configs.DRY_LAUREL_ORANGES_08));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GIANT_DRY_LAUREL_WITH_VINES = register("giant_dry_laurel_with_vines", () -> new ConfiguredFeature<>(AtmosphericFeatures.GIANT_LAUREL_TREE.get(), Configs.DRY_LAUREL_WITH_VINES));
+		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> GIANT_DRY_LAUREL_BLOOD_ORANGES_08 = register("giant_dry_laurel_blood_oranges_08", () -> new ConfiguredFeature<>(AtmosphericFeatures.GIANT_LAUREL_TREE.get(), Configs.DRY_LAUREL_BLOOD_ORANGES_08));
 
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> KOUSA = register("kousa", () -> new ConfiguredFeature<>(AtmosphericFeatures.KOUSA_TREE.get(), Configs.KOUSA));
 		public static final RegistryObject<ConfiguredFeature<TreeConfiguration, ?>> BABY_KOUSA = register("baby_kousa", () -> new ConfiguredFeature<>(AtmosphericFeatures.BABY_KOUSA_TREE.get(), Configs.BABY_KOUSA));
@@ -340,6 +362,8 @@ public class AtmosphericFeatures {
 		// Laurel Forest
 
 		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_LAUREL_FOREST = register("trees_laurel_forest", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.DRY_LAUREL_WITH_VINES.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.DRY_LAUREL.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.LAUREL_WITH_VINES.getHolder().get(), 0.45F)), AtmosphericPlacedFeatures.LAUREL.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_LAUREL_FOREST_LARGE = register("trees_laurel_forest_large", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.LARGE_DRY_LAUREL_WITH_VINES.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.LARGE_DRY_LAUREL.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.LARGE_LAUREL_WITH_VINES.getHolder().get(), 0.45F)), AtmosphericPlacedFeatures.LARGE_LAUREL.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREES_LAUREL_FOREST_GIANT = register("trees_laurel_forest_giant", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AtmosphericPlacedFeatures.GIANT_DRY_LAUREL_WITH_VINES.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.GIANT_DRY_LAUREL.getHolder().get(), 0.05F), new WeightedPlacedFeature(AtmosphericPlacedFeatures.GIANT_LAUREL_WITH_VINES.getHolder().get(), 0.45F)), AtmosphericPlacedFeatures.GIANT_LAUREL.getHolder().get())));
 		public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_GRASS_LAUREL_FOREST = register("patch_grass_laurel_forest", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS.defaultBlockState(), 1).add(Blocks.FERN.defaultBlockState(), 6)), 32)));
 
 		// Kousa Jungle
@@ -405,8 +429,16 @@ public class AtmosphericFeatures {
 		public static final RegistryObject<PlacedFeature> GREEN_ASPEN_WITH_VINES = register("green_aspen_with_vines", AtmosphericConfiguredFeatures.GREEN_ASPEN_WITH_VINES, List.of());
 		public static final RegistryObject<PlacedFeature> LAUREL = register("laurel", AtmosphericConfiguredFeatures.LAUREL_ORANGES_0005, List.of());
 		public static final RegistryObject<PlacedFeature> LAUREL_WITH_VINES = register("laurel_with_vines", AtmosphericConfiguredFeatures.LAUREL_WITH_VINES, List.of());
+		public static final RegistryObject<PlacedFeature> LARGE_LAUREL = register("large_laurel", AtmosphericConfiguredFeatures.LARGE_LAUREL_ORANGES_0005, List.of());
+		public static final RegistryObject<PlacedFeature> LARGE_LAUREL_WITH_VINES = register("large_laurel_with_vines", AtmosphericConfiguredFeatures.LARGE_LAUREL_WITH_VINES, List.of());
+		public static final RegistryObject<PlacedFeature> GIANT_LAUREL = register("giant_laurel", AtmosphericConfiguredFeatures.GIANT_LAUREL_ORANGES_0005, List.of());
+		public static final RegistryObject<PlacedFeature> GIANT_LAUREL_WITH_VINES = register("giant_laurel_with_vines", AtmosphericConfiguredFeatures.GIANT_LAUREL_WITH_VINES, List.of());
 		public static final RegistryObject<PlacedFeature> DRY_LAUREL = register("dry_laurel", AtmosphericConfiguredFeatures.DRY_LAUREL_ORANGES_0005, List.of());
 		public static final RegistryObject<PlacedFeature> DRY_LAUREL_WITH_VINES = register("dry_laurel_with_vines", AtmosphericConfiguredFeatures.DRY_LAUREL_WITH_VINES, List.of());
+		public static final RegistryObject<PlacedFeature> LARGE_DRY_LAUREL = register("large_dry_laurel", AtmosphericConfiguredFeatures.LARGE_DRY_LAUREL_ORANGES_0005, List.of());
+		public static final RegistryObject<PlacedFeature> LARGE_DRY_LAUREL_WITH_VINES = register("large_dry_laurel_with_vines", AtmosphericConfiguredFeatures.LARGE_DRY_LAUREL_WITH_VINES, List.of());
+		public static final RegistryObject<PlacedFeature> GIANT_DRY_LAUREL = register("giant_dry_laurel", AtmosphericConfiguredFeatures.GIANT_DRY_LAUREL_ORANGES_0005, List.of());
+		public static final RegistryObject<PlacedFeature> GIANT_DRY_LAUREL_WITH_VINES = register("giant_dry_laurel_with_vines", AtmosphericConfiguredFeatures.GIANT_DRY_LAUREL_WITH_VINES, List.of());
 		public static final RegistryObject<PlacedFeature> KOUSA = register("kousa", AtmosphericConfiguredFeatures.KOUSA, List.of());
 		public static final RegistryObject<PlacedFeature> GRIMWOOD = register("grimwood", AtmosphericConfiguredFeatures.GRIMWOOD, List.of());
 		public static final RegistryObject<PlacedFeature> DEAD_GRIMWOOD = register("dead_grimwood", AtmosphericConfiguredFeatures.DEAD_GRIMWOOD, List.of());
@@ -490,6 +522,8 @@ public class AtmosphericFeatures {
 		// Laurel Forest
 
 		public static final RegistryObject<PlacedFeature> TREES_LAUREL_FOREST = register("trees_laurel_forest", AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
+		public static final RegistryObject<PlacedFeature> TREES_LAUREL_FOREST_LARGE = register("trees_laurel_forest_large", AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST_LARGE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
+		public static final RegistryObject<PlacedFeature> TREES_LAUREL_FOREST_GIANT = register("trees_laurel_forest_giant", AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST_GIANT, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.5F, 1)));
 		public static final RegistryObject<PlacedFeature> COARSE_DIRT = register("coarse_dirt", AtmosphericConfiguredFeatures.COARSE_DIRT, List.of(CountPlacement.of(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> COARSE_DIRT_LAUREL_FOREST = register("coarse_dirt_laurel_forest", AtmosphericConfiguredFeatures.COARSE_DIRT, List.of(CountPlacement.of(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> PATCH_GRASS_LAUREL_FOREST = register("patch_grass_laurel_forest", AtmosphericConfiguredFeatures.PATCH_GRASS_LAUREL_FOREST, List.of(CountPlacement.of(20), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));

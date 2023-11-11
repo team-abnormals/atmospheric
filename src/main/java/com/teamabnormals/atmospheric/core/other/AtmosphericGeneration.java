@@ -195,6 +195,8 @@ public class AtmosphericGeneration {
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
 
+		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_LAUREL_FOREST_GIANT.getHolder().get());
+		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_LAUREL_FOREST_LARGE.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_LAUREL_FOREST.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_AGAVE_LARGE.getHolder().get());
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_LARGE_FERN_KOUSA.getHolder().get());
