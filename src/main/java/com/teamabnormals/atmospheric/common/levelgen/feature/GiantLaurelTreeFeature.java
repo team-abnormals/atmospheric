@@ -7,6 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.core.Direction.AxisDirection;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
 public class GiantLaurelTreeFeature extends LargeLaurelTreeFeature {
@@ -16,14 +17,22 @@ public class GiantLaurelTreeFeature extends LargeLaurelTreeFeature {
 	}
 
 	@Override
-	public void addRoots(BlockPos origin, RandomSource random, Direction direction, MutableBlockPos pos) {
+	public void addRoots(FeaturePlaceContext<TreeConfiguration> context, Direction direction, MutableBlockPos pos) {
+		BlockPos origin = context.origin();
+		RandomSource random = context.random();
+
 		boolean positive = direction.getAxisDirection() == AxisDirection.POSITIVE;
 		boolean xAxis = direction.getAxis() == Axis.X;
 
 		pos.set(origin.offset(xAxis ? positive ? 1 : 0 : random.nextInt(2), 0, !xAxis ? positive ? 1 : 0 : random.nextInt(2)));
 		int length = 1 + random.nextInt(2);
 		for (int i = 0; i < length; i++) {
-			this.logPositions.add(pos.relative(direction, i + 1));
+			BlockPos rootPos = pos.relative(direction, i + 1);
+			if (isGrassOrDirt(context.level(), rootPos.below())) {
+				this.logPositions.add(rootPos);
+			} else {
+				break;
+			}
 		}
 
 		pos.set(origin.offset(xAxis ? positive ? 1 : 0 : random.nextInt(2), 0, !xAxis ? positive ? 1 : 0 : random.nextInt(2)));
@@ -46,5 +55,10 @@ public class GiantLaurelTreeFeature extends LargeLaurelTreeFeature {
 	@Override
 	public int getSmallMaxSize() {
 		return 3;
+	}
+
+	@Override
+	public boolean limitBranches() {
+		return false;
 	}
 }

@@ -47,7 +47,7 @@ public class LargeLaurelTreeFeature extends LaurelTreeFeature {
 			boolean xAxis = direction.getAxis() == Axis.X;
 			MutableBlockPos pos = new MutableBlockPos();
 
-			this.addRoots(origin, random, direction, pos);
+			this.addRoots(context, direction, pos);
 
 			int height;
 			pos.set(origin.offset(xAxis ? positive ? 1 : 0 : random.nextInt(2), 0, !xAxis ? positive ? 1 : 0 : random.nextInt(2)));
@@ -68,7 +68,7 @@ public class LargeLaurelTreeFeature extends LaurelTreeFeature {
 		return 3;
 	}
 
-	public void addRoots(BlockPos origin, RandomSource random, Direction direction, MutableBlockPos pos) {
+	public void addRoots(FeaturePlaceContext<TreeConfiguration> context, Direction direction, MutableBlockPos pos) {
 	}
 
 	private static int getStumpHeight(TreeConfiguration config, RandomSource random) {
@@ -96,7 +96,7 @@ public class LargeLaurelTreeFeature extends LaurelTreeFeature {
 			this.addLog(mutablePos);
 
 			int smallMaxSize = this.getSmallMaxSize();
-			if (i > 0 && height < maxHeight - 1 && minLength != 2 && !bonus && random.nextInt(this.getSmallMaxSize()) != 0) {
+			if (i > 0 && height < maxHeight - 1 && minLength != 2 && (!bonus || !this.limitBranches()) && random.nextInt(this.getSmallMaxSize()) != 0) {
 				this.createBranch(mutablePos, random.nextBoolean() ? direction.getClockWise() : direction.getCounterClockWise(), random, 2, smallMaxSize, smallMaxSize);
 				bonus = true;
 			}
@@ -107,5 +107,9 @@ public class LargeLaurelTreeFeature extends LaurelTreeFeature {
 
 	public int getSmallMaxSize() {
 		return 2;
+	}
+
+	public boolean limitBranches() {
+		return true;
 	}
 }
