@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.entity;
 
+import com.teamabnormals.atmospheric.common.entity.ai.goal.CochinealBreedGoal;
 import com.teamabnormals.atmospheric.common.entity.ai.goal.CochinealRandomStrollGoal;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
@@ -19,7 +20,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.JumpControl;
 import net.minecraft.world.entity.ai.control.MoveControl;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.PanicGoal;
+import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -53,7 +57,7 @@ public class Cochineal extends Animal implements Saddleable {
 	protected void registerGoals() {
 		this.goalSelector.addGoal(1, new FloatGoal(this));
 		this.goalSelector.addGoal(1, new CochinealPanicGoal(this, 2.2D));
-		this.goalSelector.addGoal(2, new BreedGoal(this, 0.8D));
+		this.goalSelector.addGoal(2, new CochinealBreedGoal(this, 0.8D));
 		this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, Ingredient.of(AtmosphericItemTags.COCHINEAL_FOOD), false));
 
 		this.goalSelector.addGoal(6, new CochinealRandomStrollGoal(this, 3.25D));
