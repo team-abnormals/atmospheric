@@ -103,6 +103,7 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.AGAVE.get(), 0.65F);
 		DataUtil.registerCompostable(AtmosphericBlocks.GOLDEN_GROWTHS.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericItems.CURRANT.get(), 0.3F);
+		DataUtil.registerCompostable(AtmosphericItems.CURRANT_MUFFIN.get(), 0.65F);
 		DataUtil.registerCompostable(AtmosphericBlocks.HANGING_CURRANT.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_LEAVES.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_SEEDLING.get(), 0.3F);
@@ -110,6 +111,12 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_BASKET.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_STALK.get(), 0.65F);
 		DataUtil.registerCompostable(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get(), 1.0F);
+
+		DataUtil.registerCompostable(AtmosphericItems.ORANGE.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericItems.BLOOD_ORANGE.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericItems.CANDIED_ORANGE_SLICES.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericItems.DRAGON_FRUIT.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericBlocks.DRAGON_ROOTS.get(), 0.65F);
 
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_BUNDLE.get(), 0.85F);
 		DataUtil.registerCompostable(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get(), 0.85F);
@@ -151,6 +158,11 @@ public class AtmosphericCompat {
 
 		DataUtil.registerFlammable(AtmosphericBlocks.GOLDEN_GROWTHS.get(), 60, 100);
 		DataUtil.registerFlammable(AtmosphericBlocks.AGAVE.get(), 60, 100);
+		DataUtil.registerFlammable(AtmosphericBlocks.DRAGON_ROOTS.get(), 60, 100);
+		DataUtil.registerFlammable(AtmosphericBlocks.FIRETHORN.get(), 60, 100);
+		DataUtil.registerFlammable(AtmosphericBlocks.FORSYTHIA.get(), 60, 100);
+		DataUtil.registerFlammable(AtmosphericBlocks.GILIA.get(), 60, 100);
+		DataUtil.registerFlammable(AtmosphericBlocks.WATER_HYACINTH.get(), 60, 100);
 
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.ROSEWOOD_LOG.get(), 5, 5);
