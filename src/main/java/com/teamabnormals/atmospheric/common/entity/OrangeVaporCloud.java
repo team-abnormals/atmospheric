@@ -78,8 +78,13 @@ public class OrangeVaporCloud extends Entity {
 		if (this.level.isClientSide) {
 			int i = Mth.ceil((float) Math.PI * f * f * 0.05F);
 
+			boolean fresh = this.tickCount < 4;
+			if (fresh) {
+				i *= 15;
+			}
+
 			for (int j = 0; j < i; ++j) {
-				if (random.nextInt(2) == 0) {
+				if (fresh || random.nextInt(8) == 0) {
 					float f2 = this.random.nextFloat() * ((float) Math.PI * 2F);
 					float f3 = Mth.sqrt(this.random.nextFloat()) * f;
 					double d0 = this.getX() + (double) (Mth.cos(f2) * f3);

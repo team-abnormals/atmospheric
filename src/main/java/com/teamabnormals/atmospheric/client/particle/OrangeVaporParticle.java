@@ -14,7 +14,7 @@ public class OrangeVaporParticle extends TextureSheetParticle {
 		this.scale(3.0F);
 		this.setSize(0.25F, 0.25F);
 
-		this.lifetime = random.nextInt(50) + 50;
+		this.lifetime = random.nextInt(100) + 100;
 
 		this.xd *= 0.05F;
 		this.yd *= 0.05F;
