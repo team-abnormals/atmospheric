@@ -2,7 +2,7 @@ package com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.teamabnormals.atmospheric.common.block.StemmedOrangeBlock;
+import com.teamabnormals.atmospheric.common.block.OrangeBlock;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -46,7 +46,7 @@ public class OrangesDecorator extends TreeDecorator {
 				for (Direction direction : directions) {
 					BlockPos offsetPos = pos.relative(direction);
 					if (random.nextFloat() < this.orangeProbability && context.isAir(offsetPos)) {
-						context.setBlock(offsetPos, this.blockProvider.getState(random, offsetPos).setValue(StemmedOrangeBlock.FACING, direction).setValue(StemmedOrangeBlock.ORANGES, random.nextFloat() < this.doubleProbability ? 2 : 1));
+						context.setBlock(offsetPos, this.blockProvider.getState(random, offsetPos).setValue(OrangeBlock.FACING, direction).setValue(OrangeBlock.ORANGES, random.nextFloat() < this.doubleProbability ? 2 : 1));
 					}
 				}
 			}

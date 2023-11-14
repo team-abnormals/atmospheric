@@ -375,8 +375,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> DRY_LAUREL_LEAF_CARPET = HELPER.createCompatBlock("quark", "dry_laurel_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.DRY_LAUREL.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> DRY_LAUREL_HEDGE = HELPER.createCompatFuelBlock("quark", "dry_laurel_hedge", () -> new HedgeBlock(AtmosphericProperties.DRY_LAUREL.log()), 300, CreativeModeTab.TAB_DECORATIONS);
 
-	public static final RegistryObject<Block> STEMMED_ORANGE = HELPER.createBlockNoItem("stemmed_orange", () -> new StemmedOrangeBlock(AtmosphericProperties.STEMMED_ORANGE));
-	public static final RegistryObject<Block> STEMMED_BLOOD_ORANGE = HELPER.createBlockNoItem("stemmed_blood_orange", () -> new StemmedOrangeBlock(AtmosphericProperties.STEMMED_ORANGE));
+	public static final RegistryObject<Block> ORANGE = HELPER.createBlockNoItem("orange", () -> new OrangeBlock(AtmosphericProperties.ORANGE));
+	public static final RegistryObject<Block> BLOOD_ORANGE = HELPER.createBlockNoItem("blood_orange", () -> new OrangeBlock(AtmosphericProperties.ORANGE));
 
 	public static final RegistryObject<Block> ORANGE_CRATE = HELPER.createCompatBlock("quark", "orange_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_ORANGE).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> BLOOD_ORANGE_CRATE = HELPER.createCompatBlock("quark", "blood_orange_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);

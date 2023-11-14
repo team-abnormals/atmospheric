@@ -48,11 +48,11 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> GOLDEN_DRAGON_FRUIT = HELPER.createItem("golden_dragon_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.GOLDEN_DRAGON_FRUIT).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> ENDER_DRAGON_FRUIT = HELPER.createItem("ender_dragon_fruit", () -> new EnderDragonFruitItem(new Item.Properties().food(AtmosphericFoods.ENDER_DRAGON_FRUIT).rarity(Rarity.EPIC).stacksTo(1)));
 
-	public static final RegistryObject<Item> ORANGE = HELPER.createItem("orange", () -> new OrangeBlockItem(AtmosphericBlocks.STEMMED_ORANGE.get(), new Item.Properties().food(AtmosphericFoods.ORANGE).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> ORANGE = HELPER.createItem("orange", () -> new OrangeBlockItem(AtmosphericBlocks.ORANGE.get(), new Item.Properties().food(AtmosphericFoods.ORANGE).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> ORANGE_PUDDING = HELPER.createItem("orange_pudding", () -> new Item(new Item.Properties().food(AtmosphericFoods.ORANGE_PUDDING).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> ORANGE_SORBET = HELPER.createItem("orange_sorbet", () -> new BowlFoodItem(new Item.Properties().food(AtmosphericFoods.ORANGE_SORBET).stacksTo(1).craftRemainder(Items.BOWL).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> CANDIED_ORANGE_SLICES = HELPER.createItem("candied_orange_slices", () -> new Item(new Item.Properties().food(AtmosphericFoods.CANDIED_ORANGE_SLICES).tab(CreativeModeTab.TAB_FOOD)));
-	public static final RegistryObject<Item> BLOOD_ORANGE = HELPER.createItem("blood_orange", () -> new OrangeBlockItem(AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get(), new Item.Properties().food(AtmosphericFoods.BLOOD_ORANGE).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> BLOOD_ORANGE = HELPER.createItem("blood_orange", () -> new OrangeBlockItem(AtmosphericBlocks.BLOOD_ORANGE.get(), new Item.Properties().food(AtmosphericFoods.BLOOD_ORANGE).tab(CreativeModeTab.TAB_FOOD)));
 
 	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> ROSEWOOD_BOAT = HELPER.createBoatAndChestBoatItem("rosewood", AtmosphericBlocks.ROSEWOOD_PLANKS);
 	public static final RegistryObject<Item> ROSEWOOD_FURNACE_BOAT = HELPER.createItem("rosewood_furnace_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.ROSEWOOD_FURNACE_BOAT : () -> new Item(new Item.Properties().tab(AbstractSubRegistryHelper.areModsLoaded("boatload") ? CreativeModeTab.TAB_TRANSPORTATION : null)));

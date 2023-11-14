@@ -126,7 +126,7 @@ public class AtmosphericFeatures {
 		private static final ExtendPetrifiedYuccaTreeDecorator RED_PETRIFIED_YUCCA_TREE_EXTENDER = new ExtendPetrifiedYuccaTreeDecorator(BlockStateProvider.simple(AtmosphericBlocks.RED_ARID_SANDSTONE.get()));
 
 		private static OrangesDecorator orangesDecorator(float probability, boolean blood) {
-			return new OrangesDecorator(probability, BlockStateProvider.simple(blood ? AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get() : AtmosphericBlocks.STEMMED_ORANGE.get()), (float) 0.25, (float) 0.3);
+			return new OrangesDecorator(probability, BlockStateProvider.simple(blood ? AtmosphericBlocks.BLOOD_ORANGE.get() : AtmosphericBlocks.ORANGE.get()), (float) 0.25, (float) 0.3);
 		}
 
 		public static final TreeConfiguration ROSEWOOD = createRosewood().decorators(List.of(MONKEY_BRUSH)).build();

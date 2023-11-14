@@ -1,0 +1,6 @@
+{
+  "parent": "atmospheric:block/template_orange_ceiling",
+  "textures": {
+    "orange": "atmospheric:block/blood_orange"
+  }
+}

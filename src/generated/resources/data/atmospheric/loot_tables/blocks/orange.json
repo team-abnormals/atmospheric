@@ -16,7 +16,7 @@
               "add": false,
               "conditions": [
                 {
-                  "block": "atmospheric:stemmed_orange",
+                  "block": "atmospheric:orange",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "oranges": "2"

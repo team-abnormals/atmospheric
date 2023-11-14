@@ -50,7 +50,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 				PASSION_VINE.get(), PASSION_VINE_BUNDLE.get(),
 				YUCCA_BUNDLE.get(), ROASTED_YUCCA_BUNDLE.get(), ALOE_BUNDLE.get(), YUCCA_FLOWER.get(), TALL_YUCCA_FLOWER.get(),
 				DRAGON_ROOTS.get(),
-				STEMMED_ORANGE.get(), STEMMED_BLOOD_ORANGE.get()
+				ORANGE.get(), BLOOD_ORANGE.get()
 		);
 
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
@@ -122,7 +122,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(BARREL_CACTUS_PLACEABLE).addTag(BlockTags.SAND);
 		this.tag(SNOWY_BAMBOO_PLANTABLE_ON).add(Blocks.SNOW_BLOCK, SNOWY_BAMBOO.get(), SNOWY_BAMBOO_SAPLING.get());
 		this.tag(GOLDEN_GROWTHS_PLACEABLE).add(CRUSTOSE.get(), CRUSTOSE_LOG.get(), CRUSTOSE_WOOD.get()).addTag(BlockTags.DIRT);
-		this.tag(ORANGES).add(STEMMED_ORANGE.get(), STEMMED_BLOOD_ORANGE.get());
+		this.tag(ORANGES).add(ORANGE.get(), BLOOD_ORANGE.get());
 
 		this.tag(Tags.Blocks.CHESTS_WOODEN).add(ROSEWOOD_CHESTS.getFirst().get(), ROSEWOOD_CHESTS.getSecond().get(), MORADO_CHESTS.getFirst().get(), MORADO_CHESTS.getSecond().get(), YUCCA_CHESTS.getFirst().get(), YUCCA_CHESTS.getSecond().get(), KOUSA_CHESTS.getFirst().get(), KOUSA_CHESTS.getSecond().get(), ASPEN_CHESTS.getFirst().get(), ASPEN_CHESTS.getSecond().get(), GRIMWOOD_CHESTS.getFirst().get(), GRIMWOOD_CHESTS.getSecond().get(), LAUREL_CHESTS.getFirst().get(), LAUREL_CHESTS.getSecond().get());
 		this.tag(Tags.Blocks.CHESTS_TRAPPED).add(ROSEWOOD_CHESTS.getSecond().get(), MORADO_CHESTS.getSecond().get(), YUCCA_CHESTS.getSecond().get(), KOUSA_CHESTS.getSecond().get(), ASPEN_CHESTS.getSecond().get(), GRIMWOOD_CHESTS.getSecond().get(), LAUREL_CHESTS.getSecond().get());

@@ -377,8 +377,8 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropPottedContents(POTTED_DRY_LAUREL_SAPLING.get());
 			this.add(DRY_LAUREL_LEAVES.get(), (block) -> createLeavesDrops(block, DRY_LAUREL_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
-			this.add(STEMMED_ORANGE.get(), block -> createStemmedOrangeDrops(block, AtmosphericItems.ORANGE.get()));
-			this.add(STEMMED_BLOOD_ORANGE.get(), block -> createStemmedOrangeDrops(block, AtmosphericItems.BLOOD_ORANGE.get()));
+			this.add(ORANGE.get(), block -> createOrangeDrops(block, AtmosphericItems.ORANGE.get()));
+			this.add(BLOOD_ORANGE.get(), block -> createOrangeDrops(block, AtmosphericItems.BLOOD_ORANGE.get()));
 			this.dropSelf(ORANGE_CRATE.get());
 			this.dropSelf(BLOOD_ORANGE_CRATE.get());
 
@@ -511,8 +511,8 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			);
 		}
 
-		protected static LootTable.Builder createStemmedOrangeDrops(Block block, Item item) {
-			return applyExplosionDecay(block, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StemmedOrangeBlock.ORANGES, 2)))))));
+		protected static LootTable.Builder createOrangeDrops(Block block, Item item) {
+			return applyExplosionDecay(block, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(OrangeBlock.ORANGES, 2)))))));
 		}
 
 		protected static LootTable.Builder createDoublePlantDrops(Block large, Block big) {

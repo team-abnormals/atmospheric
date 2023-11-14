@@ -1,0 +1,6 @@
+{
+  "parent": "atmospheric:block/template_orange_double_wall",
+  "textures": {
+    "orange": "atmospheric:block/blood_orange"
+  }
+}

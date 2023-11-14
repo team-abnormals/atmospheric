@@ -1,7 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.common.entity.OrangeVaporCloud;
-import com.teamabnormals.atmospheric.common.item.OrangeBlockItem;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -26,7 +25,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class StemmedOrangeBlock extends DirectionalBlock {
+public class OrangeBlock extends DirectionalBlock {
 	public static final IntegerProperty ORANGES = IntegerProperty.create("oranges", 1, 2);
 
 	private static final VoxelShape SINGLE = Block.box(5.0D, 0.0D, 4.0D, 12.0D, 6.0D, 11.0D);
@@ -41,7 +40,7 @@ public class StemmedOrangeBlock extends DirectionalBlock {
 	private static final VoxelShape DOUBLE_CEILING_COLLISION = Shapes.or(Block.box(1.0D, 8.0D, 1.0D, 8.0D, 14.0D, 8.0D), Block.box(8.0D, 8.0D, 8.0D, 15.0D, 14.0D, 15.0D));
 	private static final VoxelShape DOUBLE_WALL_COLLISION = Shapes.or(Block.box(1.0D, 0.0D, 9.0D, 8.0D, 6.0D, 16.0D), Block.box(9.0D, 8.0D, 9.0D, 16.0D, 14.0D, 16.0D));
 
-	public StemmedOrangeBlock(BlockBehaviour.Properties properties) {
+	public OrangeBlock(BlockBehaviour.Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(ORANGES, 1));
 	}
@@ -118,7 +117,7 @@ public class StemmedOrangeBlock extends DirectionalBlock {
 				level.levelEvent(2001, pos, Block.getId(state));
 			}
 
-			createVaporCloud(level, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F), state.is(AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get()));
+			createVaporCloud(level, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F), state.is(AtmosphericBlocks.BLOOD_ORANGE.get()));
 		}
 
 		super.fallOn(level, state, pos, entity, distance);

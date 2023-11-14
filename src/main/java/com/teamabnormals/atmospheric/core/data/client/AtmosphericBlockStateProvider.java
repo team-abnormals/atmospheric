@@ -2,7 +2,7 @@ package com.teamabnormals.atmospheric.core.data.client;
 
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
-import com.teamabnormals.atmospheric.common.block.StemmedOrangeBlock;
+import com.teamabnormals.atmospheric.common.block.OrangeBlock;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericBlockFamilies;
@@ -118,8 +118,8 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.crossBlockWithPot(DRY_LAUREL_SAPLING.get(), POTTED_DRY_LAUREL_SAPLING.get());
 		this.leavesCompat(DRY_LAUREL_LEAVES.get(), LAUREL_LOG.get(), DRY_LAUREL_LEAF_PILE.get(), DRY_LAUREL_HEDGE.get(), DRY_LAUREL_LEAF_CARPET.get());
 
-		this.stemmedOrange(STEMMED_ORANGE.get());
-		this.stemmedOrange(STEMMED_BLOOD_ORANGE.get());
+		this.orange(ORANGE.get());
+		this.orange(BLOOD_ORANGE.get());
 		this.directionalBlock(ORANGE_CRATE.get());
 		this.directionalBlock(BLOOD_ORANGE_CRATE.get());
 
@@ -332,12 +332,12 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 		this.getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFunc.apply(state)).uvLock(state.getValue(BlockStateProperties.ATTACH_FACE) == AttachFace.WALL).rotationX(state.getValue(BlockStateProperties.ATTACH_FACE) == AttachFace.WALL ? 90 : state.getValue(BlockStateProperties.ATTACH_FACE) == AttachFace.CEILING ? 180 : 0).rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + (state.getValue(BlockStateProperties.ATTACH_FACE) != AttachFace.CEILING ? 180 : 0)) % 360).build());
 	}
 
-	public void stemmedOrange(Block block) {
+	public void orange(Block block) {
 		this.getVariantBuilder(block).forAllStates(state -> {
 			boolean horizontal = Plane.HORIZONTAL.test(state.getValue(BlockStateProperties.FACING));
-			String addition = (state.getValue(StemmedOrangeBlock.ORANGES) == 2 ? "_double" : "") + (horizontal ? "_wall" : state.getValue(StemmedOrangeBlock.FACING) == Direction.DOWN ? "_ceiling" : "");
+			String addition = (state.getValue(OrangeBlock.ORANGES) == 2 ? "_double" : "") + (horizontal ? "_wall" : state.getValue(OrangeBlock.FACING) == Direction.DOWN ? "_ceiling" : "");
 			return ConfiguredModel.builder()
-					.modelFile(models().getBuilder(name(block) + addition).parent(new UncheckedModelFile(Atmospheric.location("block/template_stemmed_orange" + addition))).texture("orange", blockTexture(block)))
+					.modelFile(models().getBuilder(name(block) + addition).parent(new UncheckedModelFile(Atmospheric.location("block/template_orange" + addition))).texture("orange", blockTexture(block)))
 					.rotationY(horizontal ? (int) ((state.getValue(BlockStateProperties.FACING).toYRot() + 180) % 360) : 0)
 					.build();
 		});
