@@ -3,7 +3,6 @@ package com.teamabnormals.atmospheric.core.mixin;
 import com.teamabnormals.atmospheric.common.block.CurrantStalkBundleBlock;
 import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.common.block.StemmedOrangeBlock;
-import com.teamabnormals.atmospheric.common.item.OrangeBlockItem;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
@@ -30,7 +29,7 @@ public abstract class PistonBaseBlockMixin {
 			}
 
 			if (state.getBlock() instanceof StemmedOrangeBlock) {
-				OrangeBlockItem.createVaporCloud(level, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F), state.is(AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get()));
+				StemmedOrangeBlock.createVaporCloud(level, new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F), state.is(AtmosphericBlocks.STEMMED_BLOOD_ORANGE.get()));
 			}
 
 			if (state.is(AtmosphericBlocks.DRAGON_ROOTS.get()) && DragonRootsBlock.hasFruit(state)) {
