@@ -21,8 +21,10 @@ public abstract class PistonBaseBlockMixin {
 
 	@Redirect(method = "moveBlocks", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/piston/PistonBaseBlock;dropResources(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/entity/BlockEntity;)V"))
 	private void moveBlocks(BlockState state, LevelAccessor levelAccessor, BlockPos pos, BlockEntity entity) {
-		Block.dropResources(state, levelAccessor, pos, entity);
-		if (!levelAccessor.isClientSide() && levelAccessor instanceof Level level) {
+		if (!(state.getBlock() instanceof StemmedOrangeBlock)) {
+			Block.dropResources(state, levelAccessor, pos, entity);
+		}
+		if (levelAccessor instanceof Level level) {
 			if (state.getBlock() instanceof CurrantStalkBundleBlock block) {
 				CurrantStalkBundleBlock.breakLeaves(level, pos);
 				block.breakStalks(state, level, pos);
