@@ -25,8 +25,8 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 
 	@Override
 	public void addTags() {
-		this.tag(COCHINEAL_FOOD).add(AtmosphericItems.DRAGON_FRUIT.get());
-		this.tag(COCHINEAL_GOLDEN_FOOD).add(AtmosphericItems.GOLDEN_DRAGON_FRUIT.get());
+		this.tag(COCHINEAL_FOOD).add(AtmosphericItems.DRAGON_FRUIT.get()).addTag(COCHINEAL_BREEDING_FOOD);
+		this.tag(COCHINEAL_BREEDING_FOOD).add(AtmosphericItems.GOLDEN_DRAGON_FRUIT.get());
 
 		this.copy(AtmosphericBlockTags.ROSEWOOD_LOGS, ROSEWOOD_LOGS);
 		this.copy(AtmosphericBlockTags.MORADO_LOGS, MORADO_LOGS);

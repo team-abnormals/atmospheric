@@ -43,6 +43,7 @@ public class Cochineal extends Animal implements Saddleable {
 	private int jumpDuration;
 	private boolean wasOnGround;
 	private int jumpDelayTicks;
+	private boolean superInLove = false;
 
 	public Cochineal(EntityType<? extends Cochineal> entity, Level level) {
 		super(entity, level);
@@ -121,11 +122,13 @@ public class Cochineal extends Animal implements Saddleable {
 
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
+		tag.putBoolean("SuperInLove", this.superInLove);
 		tag.putBoolean("Saddle", this.isSaddled());
 	}
 
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
+		this.superInLove = tag.getBoolean("SuperInLove");
 		this.setSaddle(tag.getBoolean("Saddle"));
 	}
 
@@ -138,24 +141,48 @@ public class Cochineal extends Animal implements Saddleable {
 		return this.entityData.get(DATA_SADDLE_ID);
 	}
 
+	public boolean isSuperInLove() {
+		return this.superInLove;
+	}
+
+	public void setSuperInLove(boolean superInLove) {
+		this.superInLove = superInLove;
+	}
+
 	@Override
 	public InteractionResult mobInteract(Player player, InteractionHand hand) {
-		boolean flag = this.isFood(player.getItemInHand(hand));
-		if (!flag && this.isSaddled() && !this.isVehicle() && !player.isSecondaryUseActive()) {
+		ItemStack stack = player.getItemInHand(hand);
+		if (this.isFood(stack)) {
+			int i = this.getAge();
+			if (!this.level.isClientSide && i == 0 && this.canFallInLove()) {
+				this.usePlayerItem(player, hand, stack);
+				this.setInLove(player);
+				if (stack.is(AtmosphericItemTags.COCHINEAL_BREEDING_FOOD)) {
+					this.setSuperInLove(true);
+				}
+				return InteractionResult.SUCCESS;
+			}
+
+			if (this.isBaby()) {
+				this.usePlayerItem(player, hand, stack);
+				this.ageUp(getSpeedUpSecondsWhenFeeding(-i), true);
+				return InteractionResult.sidedSuccess(this.level.isClientSide);
+			}
+
+			if (this.level.isClientSide) {
+				return InteractionResult.CONSUME;
+			}
+		} else if (this.isSaddled() && !this.isVehicle() && !player.isSecondaryUseActive()) {
 			if (!this.level.isClientSide) {
 				player.startRiding(this);
 			}
 
 			return InteractionResult.sidedSuccess(this.level.isClientSide);
-		} else {
-			InteractionResult interactionresult = super.mobInteract(player, hand);
-			if (!interactionresult.consumesAction()) {
-				ItemStack itemstack = player.getItemInHand(hand);
-				return itemstack.is(Items.SADDLE) ? itemstack.interactLivingEntity(player, this, hand) : InteractionResult.PASS;
-			} else {
-				return interactionresult;
-			}
+		} else if (stack.is(Items.SADDLE)) {
+			return stack.interactLivingEntity(player, this, hand);
 		}
+
+		return InteractionResult.PASS;
 	}
 
 	@Override
@@ -201,6 +228,11 @@ public class Cochineal extends Animal implements Saddleable {
 	@Override
 	public void aiStep() {
 		super.aiStep();
+
+		if (this.getInLoveTime() == 0) {
+			this.setSuperInLove(false);
+		}
+
 		if (this.jumpTicks != this.jumpDuration) {
 			++this.jumpTicks;
 		} else if (this.jumpDuration != 0) {
