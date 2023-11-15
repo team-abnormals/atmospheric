@@ -70,13 +70,15 @@ public class DragonFruit extends Entity {
 	}
 
 	@Override
-	protected void readAdditionalSaveData(CompoundTag p_20052_) {
-
+	protected void readAdditionalSaveData(CompoundTag tag) {
+		tag.putInt("RollingTicks", this.rollingTicks);
+		tag.putInt("RollingDirection", this.getRollingDirection().get3DDataValue());
 	}
 
 	@Override
-	protected void addAdditionalSaveData(CompoundTag p_20139_) {
-
+	protected void addAdditionalSaveData(CompoundTag tag) {
+		this.rollingTicks = tag.getInt("RollingTicks");
+		this.rollingDirection = Direction.from3DDataValue(tag.getInt("RollingDirection"));
 	}
 
 	@Override
