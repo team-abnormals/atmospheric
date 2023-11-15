@@ -52,6 +52,7 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 		this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
 		this.copy(BlockTags.LEAVES, ItemTags.LEAVES);
 		this.copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
+		this.tag(MONKEY_BRUSH).add(WARM_MONKEY_BRUSH.get().asItem(), HOT_MONKEY_BRUSH.get().asItem(), SCALDING_MONKEY_BRUSH.get().asItem());
 		this.copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
 		this.copy(BlockTags.TALL_FLOWERS, ItemTags.TALL_FLOWERS);
 		this.copy(BlockTags.FLOWERS, ItemTags.FLOWERS);
