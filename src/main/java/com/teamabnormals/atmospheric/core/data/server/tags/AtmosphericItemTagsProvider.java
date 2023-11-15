@@ -64,7 +64,7 @@ public class AtmosphericItemTagsProvider extends ItemTagsProvider {
 		this.tag(ItemTags.CHEST_BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.getSecond().get(), AtmosphericItems.MORADO_BOAT.getSecond().get(), AtmosphericItems.YUCCA_BOAT.getSecond().get(), AtmosphericItems.KOUSA_BOAT.getSecond().get(), AtmosphericItems.ASPEN_BOAT.getSecond().get(), AtmosphericItems.GRIMWOOD_BOAT.getSecond().get(), AtmosphericItems.LAUREL_BOAT.getSecond().get());
 		this.tag(BlueprintItemTags.FURNACE_BOATS).add(AtmosphericItems.ROSEWOOD_FURNACE_BOAT.get(), AtmosphericItems.MORADO_FURNACE_BOAT.get(), AtmosphericItems.YUCCA_FURNACE_BOAT.get(), AtmosphericItems.KOUSA_FURNACE_BOAT.get(), AtmosphericItems.ASPEN_FURNACE_BOAT.get(), AtmosphericItems.GRIMWOOD_FURNACE_BOAT.get(), AtmosphericItems.LAUREL_FURNACE_BOAT.get());
 		this.tag(BlueprintItemTags.LARGE_BOATS).add(AtmosphericItems.LARGE_ROSEWOOD_BOAT.get(), AtmosphericItems.LARGE_MORADO_BOAT.get(), AtmosphericItems.LARGE_YUCCA_BOAT.get(), AtmosphericItems.LARGE_KOUSA_BOAT.get(), AtmosphericItems.LARGE_ASPEN_BOAT.get(), AtmosphericItems.LARGE_GRIMWOOD_BOAT.get(), AtmosphericItems.LARGE_LAUREL_BOAT.get());
-		this.tag(ItemTags.PIGLIN_LOVED).add(AtmosphericItems.SHIMMERING_PASSION_FRUIT.get(), AtmosphericBlocks.SHIMMERING_PASSION_FRUIT_CRATE.get().asItem());
+		this.tag(ItemTags.PIGLIN_LOVED).add(AtmosphericItems.SHIMMERING_PASSION_FRUIT.get(), SHIMMERING_PASSION_FRUIT_CRATE.get().asItem(), AtmosphericItems.GOLDEN_DRAGON_FRUIT.get(), GOLDEN_DRAGON_FRUIT_CRATE.get().asItem());
 		this.tag(ItemTags.STONE_TOOL_MATERIALS).addTag(TRAVERTINE);
 		this.tag(ItemTags.STONE_CRAFTING_MATERIALS).addTag(TRAVERTINE);
 
