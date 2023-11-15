@@ -122,7 +122,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 
 	@Override
 	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-		if (!entity.getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE)) {
+		if (!entity.getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE) && state.getValue(AGE) > 0) {
 			if (entity instanceof LivingEntity living && state.getValue(AGE) != 0) {
 				living.addEffect(new MobEffectInstance(AtmosphericMobEffects.WORSENING.get(), ((state.getValue(AGE) + 1) * 40)));
 			}
