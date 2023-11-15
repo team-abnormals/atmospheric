@@ -23,8 +23,9 @@ public class PassionFruitSeed extends ThrowableProjectile {
 	}
 
 	public PassionFruitSeed(Level level, LivingEntity shooter, int amplifier) {
-		super(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get(), shooter, level);
+		super(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get(), shooter.getX(), shooter.getEyeY() - 0.3F, shooter.getZ(), level);
 		this.amplifier = amplifier;
+		this.setOwner(shooter);
 	}
 
 	@Override
