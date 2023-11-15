@@ -1,17 +1,24 @@
 package com.teamabnormals.atmospheric.common.entity.ai.goal;
 
 import net.minecraft.world.entity.PathfinderMob;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.ai.util.LandRandomPos;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
 
-public class CochinealRandomStrollGoal extends WaterAvoidingRandomStrollGoal {
+public class CochinealRandomStrollGoal extends RandomStrollGoal {
+	public static final float PROBABILITY = 0.001F;
+	protected final float probability;
 
 	public CochinealRandomStrollGoal(PathfinderMob mob, double speed) {
-		super(mob, speed, 240);
+		this(mob, speed, 0.001F);
+	}
+
+	public CochinealRandomStrollGoal(PathfinderMob mob, double speed, float probability) {
+		super(mob, speed, 30);
+		this.probability = probability;
 	}
 
 	@Override
