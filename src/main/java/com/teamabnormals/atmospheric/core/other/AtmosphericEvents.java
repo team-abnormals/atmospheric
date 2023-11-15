@@ -2,11 +2,13 @@ package com.teamabnormals.atmospheric.core.other;
 
 import com.teamabnormals.atmospheric.common.block.YuccaBundleBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericEntityTypeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Snowball;
@@ -20,10 +22,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
@@ -69,6 +73,13 @@ public class AtmosphericEvents {
 
 		if (state.is(AtmosphericBlocks.GRIMWEB.get()) && (stack.is(Tags.Items.SHEARS) || stack.getItem() instanceof SwordItem)) {
 			event.setNewSpeed(15.0F);
+		}
+	}
+
+	@SubscribeEvent
+	public static void onLivingAttack(LivingAttackEvent event) {
+		if (event.getEntity().getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE) && event.getSource() == DamageSource.CACTUS) {
+			event.setCanceled(true);
 		}
 	}
 

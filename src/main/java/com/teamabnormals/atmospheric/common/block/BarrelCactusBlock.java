@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.common.block;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericEntityTypeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.core.BlockPos;
@@ -120,21 +121,23 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	}
 
 	@Override
-	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entity) {
-		if (entity instanceof LivingEntity living && state.getValue(AGE) != 0) {
-			living.addEffect(new MobEffectInstance(AtmosphericMobEffects.WORSENING.get(), ((state.getValue(AGE) + 1) * 40)));
-		}
-
-		if (worldIn.getGameTime() % 20 == 0) {
-			float damage = 0.5F * state.getValue(AGE);
-			if (entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.HEAD).is(AtmosphericItems.BARREL_CACTUS.get())) {
-				damage /= 2.0F;
+	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+		if (!entity.getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE)) {
+			if (entity instanceof LivingEntity living && state.getValue(AGE) != 0) {
+				living.addEffect(new MobEffectInstance(AtmosphericMobEffects.WORSENING.get(), ((state.getValue(AGE) + 1) * 40)));
 			}
 
-			entity.hurt(AtmosphericDamageSources.BARREL_CACTUS, damage);
-			if (entity instanceof ServerPlayer serverPlayer) {
-				if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative()) {
-					AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.trigger(serverPlayer);
+			if (level.getGameTime() % 20 == 0) {
+				float damage = 0.5F * state.getValue(AGE);
+				if (entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.HEAD).is(AtmosphericItems.BARREL_CACTUS.get())) {
+					damage /= 2.0F;
+				}
+
+				entity.hurt(AtmosphericDamageSources.BARREL_CACTUS, damage);
+				if (entity instanceof ServerPlayer serverPlayer) {
+					if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative()) {
+						AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.trigger(serverPlayer);
+					}
 				}
 			}
 		}

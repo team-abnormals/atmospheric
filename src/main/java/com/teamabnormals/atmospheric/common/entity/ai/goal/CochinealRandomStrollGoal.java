@@ -9,7 +9,6 @@ import net.minecraft.world.phys.Vec3;
 import javax.annotation.Nullable;
 
 public class CochinealRandomStrollGoal extends RandomStrollGoal {
-	public static final float PROBABILITY = 0.001F;
 	protected final float probability;
 
 	public CochinealRandomStrollGoal(PathfinderMob mob, double speed) {

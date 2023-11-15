@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericEntityTypeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -19,7 +20,7 @@ public interface YuccaPlant {
 	DamageSource getDamageSource();
 
 	default void onYuccaCollision(BlockState state, Level level, BlockPos pos, Entity entity) {
-		if (entity instanceof LivingEntity livingEntity && !(entity instanceof Bee)) {
+		if (entity instanceof LivingEntity livingEntity && !entity.getType().is(AtmosphericEntityTypeTags.YUCCA_IMMUNE)) {
 			if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ())) {
 				double d0 = Math.abs(entity.getX() - entity.xOld);
 				double d1 = Math.abs(entity.getZ() - entity.zOld);
