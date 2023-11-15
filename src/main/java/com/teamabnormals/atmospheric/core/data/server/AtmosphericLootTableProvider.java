@@ -491,7 +491,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 		}
 
 		protected static LootTable.Builder createBarrelCactusDrops(Block block) {
-			return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(applyExplosionDecay(block, LootItem.lootTableItem(BARREL_CACTUS.get()).apply(List.of(1, 2, 3), (val) -> SetItemCountFunction.setCount(ConstantValue.exactly((float) val)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BarrelCactusBlock.AGE, val)))))));
+			return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(applyExplosionDecay(block, LootItem.lootTableItem(BARREL_CACTUS.get()).apply(List.of(1, 2, 3, 4), (val) -> SetItemCountFunction.setCount(ConstantValue.exactly((float) val)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BarrelCactusBlock.AGE, val - 1)))))));
 		}
 
 		protected static Builder createLeafPileDrops(Block block) {
