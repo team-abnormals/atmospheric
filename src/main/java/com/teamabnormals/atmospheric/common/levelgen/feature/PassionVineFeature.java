@@ -12,6 +12,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import org.apache.commons.compress.utils.Lists;
+
+import java.util.List;
 
 public class PassionVineFeature extends Feature<NoneFeatureConfiguration> {
 	public PassionVineFeature(Codec<NoneFeatureConfiguration> p_i49876_1_) {
@@ -20,23 +23,26 @@ public class PassionVineFeature extends Feature<NoneFeatureConfiguration> {
 
 	@Override
 	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
-		WorldGenLevel worldIn = context.level();
-		RandomSource rand = context.random();
-		BlockPos pos = context.origin();
+		WorldGenLevel level = context.level();
+		RandomSource random = context.random();
+		BlockPos origin = context.origin();
+		List<BlockPos> positions = Lists.newArrayList();
 		int i = 0;
 		for (int j = 0; j < 400; ++j) {
-			Direction direction = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
-			BlockState blockstate = AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction);
-			BlockPos blockpos = pos.offset(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+			Direction direction = Direction.Plane.HORIZONTAL.getRandomDirection(random);
+			BlockState state = AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction);
+			BlockPos pos = origin.offset(random.nextInt(8) - random.nextInt(8), random.nextInt(4) - random.nextInt(4), random.nextInt(8) - random.nextInt(8));
 
-			int lengthA = 3 + rand.nextInt(2) + rand.nextInt(2) + rand.nextInt(2) - rand.nextInt(3);
+			int lengthA = 3 + random.nextInt(2) + random.nextInt(2) + random.nextInt(2) - random.nextInt(3);
 
-			if (worldIn.isEmptyBlock(blockpos) && blockpos.getY() > 50 && blockpos.getY() < 255 && blockstate.canSurvive(worldIn, blockpos)) {
-				worldIn.setBlock(blockpos, getVineState(worldIn, blockstate, blockpos, rand), 6);
+			if (level.isEmptyBlock(pos) && pos.getY() > 50 && pos.getY() < level.getMaxBuildHeight() && state.canSurvive(level, pos)) {
+				positions.add(pos);
+				level.setBlock(pos, getVineState(level, state, pos, random), 2);
 				for (int length = 0; length < lengthA; ++length) {
-					blockpos = blockpos.below();
-					if (worldIn.isEmptyBlock(blockpos) && blockpos.getY() < 255 && blockstate.canSurvive(worldIn, blockpos)) {
-						worldIn.setBlock(blockpos, getVineState(worldIn, blockstate, blockpos, rand), 6);
+					pos = pos.below();
+					if (level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && state.canSurvive(level, pos)) {
+						positions.add(pos);
+						level.setBlock(pos, getVineState(level, state, pos, random), 2);
 					} else {
 						break;
 					}
@@ -44,6 +50,13 @@ public class PassionVineFeature extends Feature<NoneFeatureConfiguration> {
 				++i;
 			}
 		}
+
+		positions.forEach(vinePos -> {
+			BlockState state = level.getBlockState(vinePos);
+			if (level.getBlockState(vinePos).is(AtmosphericBlocks.PASSION_VINE.get())) {
+				level.setBlock(vinePos, ((PassionVineBlock) state.getBlock()).determineState(state, level, vinePos), 2);
+			}
+		});
 		return i > 0;
 	}
 

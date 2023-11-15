@@ -104,19 +104,20 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		}
 	}
 
-	public void attemptGrowFruit(BlockState state, Level worldIn, BlockPos pos, RandomSource random) {
+	public void attemptGrowFruit(BlockState state, Level level, BlockPos pos, RandomSource random) {
 		int i = state.getValue(AGE);
+		state = this.determineState(state, level, pos.below());
 		Direction direction = state.getValue(FACING);
-		BlockState hanging = worldIn.getBlockState(pos.relative(direction.getOpposite()));
+		BlockState hanging = level.getBlockState(pos.relative(direction.getOpposite()));
 		if (hanging.is(AtmosphericBlockTags.PASSION_VINE_GROWABLE_ON)) {
-			if (i < 4 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
-				worldIn.setBlock(pos, state.setValue(AGE, i + 1), 2);
-				ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			if (i < 4 && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(7) == 0)) {
+				level.setBlock(pos, state.setValue(AGE, i + 1), 2);
+				ForgeHooks.onCropsGrowPost(level, pos, state);
 			}
 		} else {
-			if (i < 1 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {
-				worldIn.setBlock(pos, state.setValue(AGE, i + 1), 2);
-				ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			if (i < 1 && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(7) == 0)) {
+				level.setBlock(pos, state.setValue(AGE, i + 1), 2);
+				ForgeHooks.onCropsGrowPost(level, pos, state);
 			}
 		}
 	}
@@ -124,7 +125,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 	public void attemptGrowDown(BlockState state, Level level, BlockPos pos, RandomSource random) {
 		if (ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(7) == 0)) {
 			if (level.getBlockState(pos.below()).isAir()) {
-				level.setBlockAndUpdate(pos.below(), AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(AGE, 0).setValue(FACING, state.getValue(FACING)));
+				level.setBlockAndUpdate(pos.below(), this.determineState(AtmosphericBlocks.PASSION_VINE.get().defaultBlockState(), level, pos.below()).setValue(AGE, 0).setValue(FACING, state.getValue(FACING)));
 			}
 		}
 	}
