@@ -27,16 +27,17 @@ public class PassionFruitSeedRenderer extends EntityRenderer<PassionFruitSeed> {
 	}
 
 	@Override
-	public void render(PassionFruitSeed entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
-		matrixStackIn.pushPose();
-		matrixStackIn.translate(0.0D, 0.1825F, 0.0D);
-		matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(Mth.lerp(partialTicks, entityIn.yRotO, entityIn.getYRot()) - 90.0F));
-		matrixStackIn.mulPose(Vector3f.ZP.rotationDegrees(Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot())));
-		this.model.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
-		VertexConsumer ivertexbuilder = bufferIn.getBuffer(this.model.renderType(PASSION_FRUIT_SEED_TEXTURE));
-		this.model.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-		matrixStackIn.popPose();
-		super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+	public void render(PassionFruitSeed entityIn, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
+		if (entityIn.tickCount >= 2 || !(this.entityRenderDispatcher.camera.getEntity().distanceToSqr(entityIn) < 9.0D)) {
+			poseStack.pushPose();
+			poseStack.translate(0.0D, 0.1825F, 0.0D);
+			poseStack.mulPose(Vector3f.YP.rotationDegrees(Mth.lerp(partialTicks, entityIn.yRotO, entityIn.getYRot()) - 90.0F));
+			poseStack.mulPose(Vector3f.ZP.rotationDegrees(Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot())));
+			this.model.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
+			this.model.renderToBuffer(poseStack, buffer.getBuffer(this.model.renderType(PASSION_FRUIT_SEED_TEXTURE)), packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+			poseStack.popPose();
+			super.render(entityIn, entityYaw, partialTicks, poseStack, buffer, packedLight);
+		}
 	}
 
 	@Override
