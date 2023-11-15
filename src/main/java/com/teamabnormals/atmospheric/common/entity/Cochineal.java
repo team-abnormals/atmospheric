@@ -60,10 +60,8 @@ public class Cochineal extends Animal implements Saddleable {
 		this.goalSelector.addGoal(1, new CochinealPanicGoal(this, 2.2D));
 		this.goalSelector.addGoal(2, new CochinealBreedGoal(this, 0.8D));
 		this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, Ingredient.of(AtmosphericItemTags.COCHINEAL_FOOD), false));
-
-		this.goalSelector.addGoal(6, new CochinealRandomStrollGoal(this, 3.25D));
-
-		this.goalSelector.addGoal(11, new LookAtPlayerGoal(this, Player.class, 10.0F));
+		this.goalSelector.addGoal(4, new CochinealRandomStrollGoal(this, 3.25D));
+		this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 10.0F));
 	}
 
 	@Override
@@ -218,7 +216,9 @@ public class Cochineal extends Animal implements Saddleable {
 
 		if (!this.onGround && this.level.isClientSide) {
 			boolean cold = this.level.getBiome(this.blockPosition()).get().coldEnoughToSnow(this.blockPosition());
-			this.level.addParticle(cold ? AtmosphericParticleTypes.COLD_COCHINEAL_TRAIL.get() : AtmosphericParticleTypes.COCHINEAL_TRAIL.get(), this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+			for (int i = 0; i < 2; i++) {
+				this.level.addParticle(cold ? AtmosphericParticleTypes.COLD_COCHINEAL_TRAIL.get() : AtmosphericParticleTypes.COCHINEAL_TRAIL.get(), this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+			}
 		}
 	}
 
