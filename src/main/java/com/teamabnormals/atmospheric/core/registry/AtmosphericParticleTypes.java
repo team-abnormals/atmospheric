@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.core.registry;
 
 import com.teamabnormals.atmospheric.client.particle.AloeBlossomParticle;
+import com.teamabnormals.atmospheric.client.particle.CochinealTrailParticle;
 import com.teamabnormals.atmospheric.client.particle.MoradoBlossomParticle;
 import com.teamabnormals.atmospheric.client.particle.OrangeVaporParticle;
 import com.teamabnormals.atmospheric.core.Atmospheric;
@@ -22,6 +23,8 @@ public class AtmosphericParticleTypes {
 	public static final RegistryObject<SimpleParticleType> MORADO_BLOSSOM = register("morado_blossom", false);
 	public static final RegistryObject<SimpleParticleType> ORANGE_VAPOR = register("orange_vapor", true);
 	public static final RegistryObject<SimpleParticleType> BLOOD_ORANGE_VAPOR = register("blood_orange_vapor", true);
+	public static final RegistryObject<SimpleParticleType> COCHINEAL_TRAIL = register("cochineal_trail", false);
+	public static final RegistryObject<SimpleParticleType> COLD_COCHINEAL_TRAIL = register("cold_cochineal_trail", false);
 
 	private static RegistryObject<SimpleParticleType> register(String name, boolean alwaysShow) {
 		return PARTICLES.register(name, () -> new SimpleParticleType(alwaysShow));
@@ -33,5 +36,7 @@ public class AtmosphericParticleTypes {
 		event.register(MORADO_BLOSSOM.get(), MoradoBlossomParticle.Factory::new);
 		event.register(ORANGE_VAPOR.get(), OrangeVaporParticle.Provider::new);
 		event.register(BLOOD_ORANGE_VAPOR.get(), OrangeVaporParticle.Provider::new);
+		event.register(COCHINEAL_TRAIL.get(), CochinealTrailParticle.Provider::new);
+		event.register(COLD_COCHINEAL_TRAIL.get(), CochinealTrailParticle.Provider::new);
 	}
 }

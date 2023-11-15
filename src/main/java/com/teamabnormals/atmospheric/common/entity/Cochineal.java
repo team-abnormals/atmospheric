@@ -4,6 +4,7 @@ import com.teamabnormals.atmospheric.common.entity.ai.goal.CochinealBreedGoal;
 import com.teamabnormals.atmospheric.common.entity.ai.goal.CochinealRandomStrollGoal;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -213,6 +214,11 @@ public class Cochineal extends Animal implements Saddleable {
 		Vec3 vec3 = this.getDeltaMovement();
 		if (!this.onGround && vec3.y < 0.0D) {
 			this.setDeltaMovement(vec3.multiply(0.8D, 0.7D, 0.8D));
+		}
+
+		if (!this.onGround && this.level.isClientSide) {
+			boolean cold = this.level.getBiome(this.blockPosition()).get().coldEnoughToSnow(this.blockPosition());
+			this.level.addParticle(cold ? AtmosphericParticleTypes.COLD_COCHINEAL_TRAIL.get() : AtmosphericParticleTypes.COCHINEAL_TRAIL.get(), this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
 		}
 	}
 
