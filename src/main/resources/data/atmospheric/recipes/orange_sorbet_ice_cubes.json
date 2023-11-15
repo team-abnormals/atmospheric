@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:fruits/orange"
+    },
+    {
+      "item": "neapolitan:ice_cubes"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "atmospheric:orange_sorbet"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ]
+}

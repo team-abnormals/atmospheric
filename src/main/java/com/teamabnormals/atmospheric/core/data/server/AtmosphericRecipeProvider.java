@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 import java.util.function.Consumer;
 
 public class AtmosphericRecipeProvider extends RecipeProvider {
-	public static final NotCondition NEAPOLITAN_NOT_LOADED = new NotCondition(new ModLoadedCondition("neapolitan"));
+	public static final ModLoadedCondition NEAPOLITAN_LOADED = new ModLoadedCondition("neapolitan");
+	public static final NotCondition NEAPOLITAN_NOT_LOADED = new NotCondition(NEAPOLITAN_LOADED);
 
 	public static final QuarkFlagRecipeCondition VERTICAL_SLABS = quarkFlag("vertical_slabs");
 	public static final QuarkFlagRecipeCondition APPLE_CRATE = quarkFlag("apple_crate");
