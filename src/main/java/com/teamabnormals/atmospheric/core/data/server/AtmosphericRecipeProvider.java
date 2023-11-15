@@ -46,8 +46,8 @@ public class AtmosphericRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(AtmosphericItems.CURRANT_MUFFIN.get()).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(Items.SUGAR).requires(BlueprintItemTags.EGGS).unlockedBy("has_currant", has(AtmosphericItemTags.FRUITS_CURRANT)).save(consumer);
 
 		nineBlockStorageRecipes(consumer, AtmosphericItems.CARMINE_HUSK.get(), AtmosphericBlocks.CARMINE_BLOCK.get());
-		ShapedRecipeBuilder.shaped(AtmosphericBlocks.CARMINE_SHINGLES.get(), 8).define('#', AtmosphericItems.CARMINE_HUSK.get()).define('S', Blocks.STONE_BRICKS).pattern("###").pattern("#S#").pattern("###").unlockedBy("has_carmine_husk", has(AtmosphericItems.CARMINE_HUSK.get())).save(consumer);
-		ShapedRecipeBuilder.shaped(AtmosphericBlocks.CARMINE_PAVEMENT.get(), 8).define('#', AtmosphericItems.CARMINE_HUSK.get()).define('S', Blocks.SMOOTH_STONE).pattern("###").pattern("#S#").pattern("###").unlockedBy("has_carmine_husk", has(AtmosphericItems.CARMINE_HUSK.get())).save(consumer);
+		ShapedRecipeBuilder.shaped(AtmosphericBlocks.CARMINE_SHINGLES.get(), 4).define('#', AtmosphericItems.CARMINE_HUSK.get()).pattern("##").pattern("##").unlockedBy("has_carmine_husk", has(AtmosphericItems.CARMINE_HUSK.get())).save(consumer);
+		ShapedRecipeBuilder.shaped(AtmosphericBlocks.CARMINE_PAVEMENT.get(), 4).define('#', AtmosphericBlocks.CARMINE_SHINGLES.get()).pattern("##").pattern("##").unlockedBy("has_carmine_shingles", has(AtmosphericBlocks.CARMINE_SHINGLES.get())).save(consumer);
 
 		generateRecipes(consumer, AtmosphericBlockFamilies.CARMINE_SHINGLES_FAMILY);
 		verticalSlabRecipes(consumer, AtmosphericBlockFamilies.CARMINE_SHINGLES_FAMILY, AtmosphericBlocks.CARMINE_SHINGLE_VERTICAL_SLAB.get());

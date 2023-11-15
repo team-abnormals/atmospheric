@@ -2,19 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "atmospheric:carmine_husk"
-    },
-    "S": {
-      "item": "minecraft:smooth_stone"
+      "item": "atmospheric:carmine_shingles"
     }
   },
   "pattern": [
-    "###",
-    "#S#",
-    "###"
+    "##",
+    "##"
   ],
   "result": {
-    "count": 8,
+    "count": 4,
     "item": "atmospheric:carmine_pavement"
   }
 }

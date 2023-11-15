@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_carmine_husk": {
+    "has_carmine_shingles": {
       "conditions": {
         "items": [
           {
             "items": [
-              "atmospheric:carmine_husk"
+              "atmospheric:carmine_shingles"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_carmine_husk",
+      "has_carmine_shingles",
       "has_the_recipe"
     ]
   ],
