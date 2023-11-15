@@ -58,6 +58,7 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericItems.YUCCA_FRUIT.get(), 0.65F);
 		DataUtil.registerCompostable(AtmosphericItems.ROASTED_YUCCA_FRUIT.get(), 0.65F);
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_BRANCH.get(), 0.65F);
+		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_GATEAU.get(), 1.0F);
 
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_LEAVES.get(), 0.3F);
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_SAPLING.get(), 0.3F);
@@ -118,6 +119,8 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericItems.DRAGON_FRUIT.get(), 0.65F);
 		DataUtil.registerCompostable(AtmosphericBlocks.DRAGON_ROOTS.get(), 0.65F);
 
+		DataUtil.registerCompostable(AtmosphericItems.ORANGE_PUDDING.get(), 1.0F);
+
 		DataUtil.registerCompostable(AtmosphericBlocks.YUCCA_BUNDLE.get(), 0.85F);
 		DataUtil.registerCompostable(AtmosphericBlocks.ROASTED_YUCCA_BUNDLE.get(), 0.85F);
 
@@ -126,7 +129,6 @@ public class AtmosphericCompat {
 		DataUtil.registerCompostable(AtmosphericBlocks.ROASTED_YUCCA_CASK.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.BARREL_CACTUS_BATCH.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.DRAGON_FRUIT_CRATE.get(), 1.0F);
-		DataUtil.registerCompostable(AtmosphericBlocks.GOLDEN_DRAGON_FRUIT_CRATE.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.ORANGE_CRATE.get(), 1.0F);
 		DataUtil.registerCompostable(AtmosphericBlocks.BLOOD_ORANGE_CRATE.get(), 1.0F);
 	}
