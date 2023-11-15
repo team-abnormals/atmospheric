@@ -199,8 +199,7 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	}
 
 	@Override
-	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
-		super.tick(state, worldIn, pos, random);
+	public void randomTick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
 		if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
 			boolean flag = worldIn.getBlockState(pos.below()).is(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON);
 			if (flag && state.getValue(AGE) < 8 && worldIn.getRawBrightness(pos.above(), 0) >= 12 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(7) == 0)) {

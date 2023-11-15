@@ -94,7 +94,7 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 		if (!state.canSurvive(worldIn, pos)) {
 			worldIn.destroyBlock(pos, true);
 		} else {
-			if (state.getValue(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0) && worldIn.getBlockState(pos.below()).isAir()) {
+			if (state.getValue(SNAPPED) && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0) && worldIn.getBlockState(pos.below()).isAir()) {
 				worldIn.setBlockAndUpdate(pos, state.setValue(SNAPPED, false));
 				worldIn.setBlockAndUpdate(pos.below(), AtmosphericBlocks.YUCCA_BUNDLE.get().defaultBlockState());
 			}
