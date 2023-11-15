@@ -83,6 +83,6 @@ public class EnderDragonFruitItem extends Item {
 
 	@Override
 	public int getUseDuration(ItemStack stack) {
-		return 600;
+		return 6000;
 	}
 }
