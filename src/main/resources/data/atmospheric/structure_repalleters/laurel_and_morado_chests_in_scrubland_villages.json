@@ -1,7 +1,7 @@
 {
-  "type": "blueprint:simple",
+  "type": "blueprint:weighted",
   "priority": "normal",
-  "replaces_block": "minecraft:chest",
+  "replaces_blocks": "forge:chests/wooden",
   "replaces_with": [
     {
       "data": "atmospheric:laurel_chest",
