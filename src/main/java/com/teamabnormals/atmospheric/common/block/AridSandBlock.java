@@ -6,17 +6,19 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
+
 
 public class AridSandBlock extends FallingBlock implements BonemealableBlock {
 	private final int color;
@@ -32,21 +34,27 @@ public class AridSandBlock extends FallingBlock implements BonemealableBlock {
 	}
 
 	@Override
-	public boolean canSustainPlant(BlockState state, BlockGetter blockReader, BlockPos pos, Direction direction, IPlantable iPlantable) {
-		final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
-		final PlantType plantType = iPlantable.getPlantType(blockReader, plantPos);
-		if (plantType == PlantType.DESERT) {
+	public boolean canSustainPlant(BlockState state, BlockGetter level, BlockPos pos, Direction facing, IPlantable plantable) {
+		BlockState plant = plantable.getPlant(level, pos.relative(facing));
+		PlantType type = plantable.getPlantType(level, pos.relative(facing));
+
+		if (plant.getBlock() == Blocks.CACTUS)
 			return true;
-		} else if (plantType == PlantType.WATER) {
-			return blockReader.getBlockState(pos).getMaterial() == Material.WATER && blockReader.getBlockState(pos) == defaultBlockState();
-		} else if (plantType == PlantType.BEACH) {
-			return ((blockReader.getBlockState(pos.east()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.east()).hasProperty(BlockStateProperties.WATERLOGGED))
-					|| (blockReader.getBlockState(pos.west()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.west()).hasProperty(BlockStateProperties.WATERLOGGED))
-					|| (blockReader.getBlockState(pos.north()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.north()).hasProperty(BlockStateProperties.WATERLOGGED))
-					|| (blockReader.getBlockState(pos.south()).getMaterial() == Material.WATER || blockReader.getBlockState(pos.south()).hasProperty(BlockStateProperties.WATERLOGGED)));
-		} else {
-			return false;
+		if (PlantType.DESERT.equals(type)) {
+			return true;
+		} else if (PlantType.BEACH.equals(type)) {
+			boolean hasWater = false;
+			for (Direction face : Direction.Plane.HORIZONTAL) {
+				BlockState blockState = level.getBlockState(pos.relative(face));
+				FluidState fluidState = level.getFluidState(pos.relative(face));
+				hasWater |= blockState.is(Blocks.FROSTED_ICE);
+				hasWater |= fluidState.is(FluidTags.WATER);
+				if (hasWater) {
+					return true;
+				}
+			}
 		}
+		return super.canSustainPlant(state, level, pos, facing, plantable);
 	}
 
 	@Override
