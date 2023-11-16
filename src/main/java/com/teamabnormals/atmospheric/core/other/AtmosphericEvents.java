@@ -1,6 +1,5 @@
 package com.teamabnormals.atmospheric.core.other;
 
-import com.teamabnormals.atmospheric.common.block.YuccaBundleBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericEntityTypeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
@@ -12,22 +11,17 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Snowball;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
@@ -52,29 +46,6 @@ public class AtmosphericEvents {
 		}
 	}
 
-	@SubscribeEvent
-	public static void breakSpead(BreakSpeed event) {
-		ItemStack stack = event.getEntity().getMainHandItem();
-		BlockState state = event.getState();
-
-		if (stack.is(Tags.Items.SHEARS)) {
-			if (state.is(AtmosphericBlocks.PASSION_VINE_BUNDLE.get()) || state.is(AtmosphericBlocks.YUCCA_FLOWER.get()) || state.is(AtmosphericBlocks.TALL_YUCCA_FLOWER.get()) || state.is(AtmosphericBlocks.DRAGON_ROOTS.get())) {
-				event.setNewSpeed(15.0F);
-			}
-
-			if (state.is(AtmosphericBlocks.CURRANT_STALK.get())) {
-				event.setNewSpeed(10.0F);
-			}
-
-			if (state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get()) || state.getBlock() instanceof YuccaBundleBlock) {
-				event.setNewSpeed(5.0F);
-			}
-		}
-
-		if (state.is(AtmosphericBlocks.GRIMWEB.get()) && (stack.is(Tags.Items.SHEARS) || stack.getItem() instanceof SwordItem)) {
-			event.setNewSpeed(15.0F);
-		}
-	}
 
 	@SubscribeEvent
 	public static void onLivingAttack(LivingAttackEvent event) {
