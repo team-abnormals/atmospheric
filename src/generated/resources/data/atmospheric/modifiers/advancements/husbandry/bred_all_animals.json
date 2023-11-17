@@ -1,0 +1,33 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "atmospheric:cochineal": {
+            "conditions": {
+              "child": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "atmospheric:cochineal"
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:bred_animals"
+          }
+        },
+        "requirements": [
+          [
+            "atmospheric:cochineal"
+          ]
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:husbandry/bred_all_animals"
+}

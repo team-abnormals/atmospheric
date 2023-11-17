@@ -1,10 +1,7 @@
 package com.teamabnormals.atmospheric.core.data.server.modifiers;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericBiomes;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
+import com.teamabnormals.atmospheric.core.registry.*;
 import com.teamabnormals.blueprint.common.advancement.modification.AdvancementModifierProvider;
 import com.teamabnormals.blueprint.common.advancement.modification.modifiers.CriteriaModifier;
 import com.teamabnormals.blueprint.common.advancement.modification.modifiers.EffectsChangedModifier;
@@ -14,10 +11,12 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class AtmosphericAdvancementModifierProvider extends AdvancementModifierProvider {
+	private static final EntityType<?>[] BREEDABLE_ANIMALS = new EntityType[]{AtmosphericEntityTypes.COCHINEAL.get()};
 
 	public AtmosphericAdvancementModifierProvider(DataGenerator generator) {
 		super(generator, Atmospheric.MOD_ID);
@@ -36,6 +35,13 @@ public class AtmosphericAdvancementModifierProvider extends AdvancementModifierP
 			}
 		});
 		this.entry("husbandry/balanced_diet").selects("husbandry/balanced_diet").addModifier(balancedDiet.requirements(RequirementsStrategy.AND).build());
+
+		CriteriaModifier.Builder breedAllAnimals = CriteriaModifier.builder(this.modId);
+		for (EntityType<?> entityType : BREEDABLE_ANIMALS) {
+			breedAllAnimals.addCriterion(ForgeRegistries.ENTITY_TYPES.getKey(entityType).getPath(), BredAnimalsTrigger.TriggerInstance.bredAnimals(EntityPredicate.Builder.entity().of(entityType)));
+		}
+		this.entry("husbandry/bred_all_animals").selects("husbandry/bred_all_animals").addModifier(breedAllAnimals.requirements(RequirementsStrategy.AND).build());
+
 
 		CriteriaModifier.Builder adventuringTime = CriteriaModifier.builder(this.modId);
 		AtmosphericBiomes.HELPER.getDeferredRegister().getEntries().forEach(biome -> {
