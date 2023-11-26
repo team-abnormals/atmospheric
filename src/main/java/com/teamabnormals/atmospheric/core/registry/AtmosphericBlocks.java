@@ -428,7 +428,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> CURRANT_LEAF_PILE = HELPER.createCompatBlock("woodworks", "currant_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.CURRANT.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CURRANT_LEAF_CARPET = HELPER.createCompatBlock("quark", "currant_leaf_carpet", () -> new LeafCarpetBlock(AtmosphericProperties.CURRANT.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CURRANT_HEDGE = HELPER.createCompatFuelBlock("quark", "currant_hedge", () -> new HedgeBlock(AtmosphericProperties.CURRANT.log()), 50, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> CURRANT_BASKET = HELPER.createCompatBlock("berry_good", "currant_basket", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_CYAN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CURRANT_CRATE = HELPER.createCompatBlock("quark", "currant_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_CYAN).strength(1.5F).sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "atmospheric:block/currant_basket_bottom",
-    "side": "atmospheric:block/currant_basket_side",
-    "top": "atmospheric:block/currant_basket_top"
-  }
-}

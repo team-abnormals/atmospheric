@@ -1,28 +1,28 @@
 {
   "variants": {
     "facing=down": {
-      "model": "atmospheric:block/currant_basket",
+      "model": "atmospheric:block/currant_crate",
       "x": 180
     },
     "facing=east": {
-      "model": "atmospheric:block/currant_basket",
+      "model": "atmospheric:block/currant_crate",
       "x": 90,
       "y": 90
     },
     "facing=north": {
-      "model": "atmospheric:block/currant_basket",
+      "model": "atmospheric:block/currant_crate",
       "x": 90
     },
     "facing=south": {
-      "model": "atmospheric:block/currant_basket",
+      "model": "atmospheric:block/currant_crate",
       "x": 90,
       "y": 180
     },
     "facing=up": {
-      "model": "atmospheric:block/currant_basket"
+      "model": "atmospheric:block/currant_crate"
     },
     "facing=west": {
-      "model": "atmospheric:block/currant_basket",
+      "model": "atmospheric:block/currant_crate",
       "x": 90,
       "y": 270
     }

@@ -45,6 +45,7 @@ public class AtmosphericRecipeProvider extends RecipeProvider {
 		oneToOneConversionRecipe(consumer, Items.PINK_DYE, AtmosphericItems.DRAGON_FRUIT.get(), "pink_dye");
 
 		ShapelessRecipeBuilder.shapeless(AtmosphericItems.CURRANT_MUFFIN.get()).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(Items.SUGAR).requires(BlueprintItemTags.EGGS).unlockedBy("has_currant", has(AtmosphericItemTags.FRUITS_CURRANT)).save(consumer);
+		conditionalNineBlockStorageRecipes(consumer, APPLE_CRATE, AtmosphericItems.CURRANT.get(), AtmosphericBlocks.CURRANT_CRATE.get());
 
 		nineBlockStorageRecipes(consumer, AtmosphericItems.CARMINE_HUSK.get(), AtmosphericBlocks.CARMINE_BLOCK.get());
 		ShapedRecipeBuilder.shaped(AtmosphericBlocks.CARMINE_SHINGLES.get(), 4).define('#', AtmosphericItems.CARMINE_HUSK.get()).pattern("##").pattern("##").unlockedBy("has_carmine_husk", has(AtmosphericItems.CARMINE_HUSK.get())).save(consumer);

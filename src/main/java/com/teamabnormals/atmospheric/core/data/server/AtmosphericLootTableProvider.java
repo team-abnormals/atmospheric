@@ -128,7 +128,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 
 			this.dropSelf(CURRANT_STALK.get());
 			this.dropSelf(CURRANT_STALK_BUNDLE.get());
-			this.dropSelf(CURRANT_BASKET.get());
+			this.dropSelf(CURRANT_CRATE.get());
 			this.add(HANGING_CURRANT.get(), BlockLoot::createShearsOnlyDrop);
 			this.add(CURRANT_SEEDLING.get(), BlockLoot::createShearsOnlyDrop);
 			this.dropPottedContents(POTTED_CURRANT_SEEDLING.get());
