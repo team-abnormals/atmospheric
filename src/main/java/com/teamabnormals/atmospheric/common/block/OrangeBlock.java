@@ -14,10 +14,15 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -25,8 +30,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class OrangeBlock extends DirectionalBlock {
+public class OrangeBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
 	public static final IntegerProperty ORANGES = IntegerProperty.create("oranges", 1, 2);
+	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	private static final VoxelShape SINGLE = Block.box(5.0D, 0.0D, 4.0D, 12.0D, 6.0D, 11.0D);
 	private static final VoxelShape SINGLE_CEILING = Block.box(5.0D, 8.0D, 4.0D, 12.0D, 14.0D, 11.0D);
@@ -42,7 +48,7 @@ public class OrangeBlock extends DirectionalBlock {
 
 	public OrangeBlock(BlockBehaviour.Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(ORANGES, 1));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(ORANGES, 1).setValue(WATERLOGGED, false));
 	}
 
 	@Override
@@ -88,17 +94,22 @@ public class OrangeBlock extends DirectionalBlock {
 
 	@Override
 	public BlockState updateShape(BlockState state, Direction direction, BlockState offsetState, LevelAccessor level, BlockPos pos, BlockPos offsetPos) {
+		if (state.getValue(WATERLOGGED)) {
+			level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+		}
 		return state.getValue(FACING).getOpposite() == direction && !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, offsetState, level, pos, offsetPos);
 	}
 
 	@Nullable
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		BlockState state = context.getLevel().getBlockState(context.getClickedPos());
+		FluidState fluidState = context.getLevel().getFluidState(context.getClickedPos());
+		boolean flag = fluidState.getType() == Fluids.WATER;
 		if (state.is(this)) {
 			return state.cycle(ORANGES);
 		} else {
 			for (Direction direction : context.getNearestLookingDirections()) {
-				BlockState newState = this.defaultBlockState().setValue(FACING, direction.getOpposite());
+				BlockState newState = this.defaultBlockState().setValue(FACING, direction.getOpposite()).setValue(WATERLOGGED, flag);
 				if (newState.canSurvive(context.getLevel(), context.getClickedPos())) {
 					return newState;
 				}
@@ -139,6 +150,16 @@ public class OrangeBlock extends DirectionalBlock {
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, ORANGES);
+		builder.add(FACING, ORANGES, WATERLOGGED);
+	}
+
+	@Override
+	public FluidState getFluidState(BlockState state) {
+		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+	}
+
+	@Override
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter level, BlockPos pos) {
+		return state.getFluidState().isEmpty();
 	}
 }
