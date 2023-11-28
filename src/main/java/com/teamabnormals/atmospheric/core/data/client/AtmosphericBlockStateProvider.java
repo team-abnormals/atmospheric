@@ -333,14 +333,14 @@ public class AtmosphericBlockStateProvider extends BlockStateProvider {
 	}
 
 	public void orange(Block block) {
-		this.getVariantBuilder(block).forAllStates(state -> {
+		this.getVariantBuilder(block).forAllStatesExcept(state -> {
 			boolean horizontal = Plane.HORIZONTAL.test(state.getValue(BlockStateProperties.FACING));
 			String addition = (state.getValue(OrangeBlock.ORANGES) == 2 ? "_double" : "") + (horizontal ? "_wall" : state.getValue(OrangeBlock.FACING) == Direction.DOWN ? "_ceiling" : "");
 			return ConfiguredModel.builder()
 					.modelFile(models().getBuilder(name(block) + addition).parent(new UncheckedModelFile(Atmospheric.location("block/template_orange" + addition))).texture("orange", blockTexture(block)))
 					.rotationY(horizontal ? (int) ((state.getValue(BlockStateProperties.FACING).toYRot() + 180) % 360) : 0)
 					.build();
-		});
+		}, BlockStateProperties.WATERLOGGED);
 	}
 
 	public void dragonRoots(Block block) {
