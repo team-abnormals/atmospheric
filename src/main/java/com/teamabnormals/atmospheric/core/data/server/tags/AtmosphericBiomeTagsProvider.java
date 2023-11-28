@@ -24,7 +24,6 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 
 		this.tag(BiomeTags.IS_FOREST).addTag(AtmosphericBiomeTags.IS_RAINFOREST).add(LAUREL_FOREST.get(), GRIMWOODS.get());
 		this.tag(BlueprintBiomeTags.IS_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND.get(), SNOWY_SCRUBLAND.get(), SPINY_THICKET.get());
-		this.tag(BlueprintBiomeTags.IS_ICY).add(KOUSA_JUNGLE.get());
 		this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(ASPEN_PARKLAND.get(), KOUSA_JUNGLE.get(), GRIMWOODS.get());
 		this.tag(BiomeTags.HAS_RUINED_PORTAL_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND.get(), SNOWY_SCRUBLAND.get(), SPINY_THICKET.get());
 		this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(SCRUBLAND.get());
