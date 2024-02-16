@@ -6,6 +6,8 @@ import com.teamabnormals.blueprint.core.other.tags.BlueprintBiomeTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericBiomes.*;
@@ -38,5 +40,12 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 		this.tag(AtmosphericBiomeTags.HAS_VILLAGE_SCRUBLAND).add(SCRUBLAND.get());
 		this.tag(AtmosphericBiomeTags.HAS_KOUSA_SANCTUM).add(KOUSA_JUNGLE.get());
 		this.tag(AtmosphericBiomeTags.ONLY_ALLOWS_YELLOW_RABBITS).add(ASPEN_PARKLAND.get());
+	}
+
+	@SafeVarargs
+	private void tag(Biome biome, TagKey<Biome>... tags) {
+		for (TagKey<Biome> key : tags) {
+			tag(key).add(biome);
+		}
 	}
 }

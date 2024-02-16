@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature;
 
+import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
@@ -15,7 +16,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraftforge.common.Tags.Blocks;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 
