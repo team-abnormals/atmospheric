@@ -22,8 +22,8 @@ public class CochinealRenderer<T extends Cochineal> extends MobRenderer<T, Cochi
 	}
 
 	@Override
-	protected void scale(Cochineal entity, PoseStack stack, float partialTicks) {
-		if (entity.isBaby()) {
+	protected void scale(T cochineal, PoseStack stack, float partialTicks) {
+		if (cochineal.isBaby()) {
 			stack.scale(0.4F, 0.4F, 0.4F);
 			this.shadowRadius = 0.4F;
 		} else {
@@ -32,7 +32,7 @@ public class CochinealRenderer<T extends Cochineal> extends MobRenderer<T, Cochi
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(T entity) {
+	public ResourceLocation getTextureLocation(T cochineal) {
 		return COCHINEAL_LOCATION;
 	}
 }

@@ -1,8 +1,6 @@
 package com.teamabnormals.atmospheric.common.entity;
 
-import com.teamabnormals.atmospheric.common.entity.ai.goal.CochinealBreedGoal;
-import com.teamabnormals.atmospheric.common.entity.ai.goal.CochinealRandomHopGoal;
-import com.teamabnormals.atmospheric.common.entity.ai.goal.CochinealTemptGoal;
+import com.teamabnormals.atmospheric.common.entity.ai.goal.*;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericParticleTypes;
@@ -20,10 +18,11 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.control.BodyRotationControl;
+import net.minecraft.world.entity.ai.control.LookControl;
 import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -40,6 +39,7 @@ public class Cochineal extends Animal implements Saddleable {
 	private static final EntityDataAccessor<Boolean> IS_LEAPING = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.BOOLEAN);
 
 	private boolean wasOnGroundOrFluid;
+	private boolean jumpingQuickly;
 	private int jumpDelayTicks;
 	private boolean superInLove = false;
 
@@ -50,6 +50,7 @@ public class Cochineal extends Animal implements Saddleable {
 	public Cochineal(EntityType<? extends Cochineal> entity, Level level) {
 		super(entity, level);
 		this.moveControl = new CochinealMoveControl(this);
+		this.lookControl = new CochinealLookControl(this);
 	}
 
 	public Cochineal(PlayMessages.SpawnEntity message, Level level) {
@@ -58,11 +59,12 @@ public class Cochineal extends Animal implements Saddleable {
 
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(1, new PanicGoal(this, 1.0D));
-		this.goalSelector.addGoal(2, new CochinealBreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(3, new CochinealTemptGoal(this, 1.0D, Ingredient.of(AtmosphericItemTags.COCHINEAL_FOOD)));
-		this.goalSelector.addGoal(4, new CochinealRandomHopGoal(this));
-		this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 10.0F));
+		this.goalSelector.addGoal(1, new CochinealFleeGoal(this));
+		this.goalSelector.addGoal(2, new CochinealBreedGoal(this, 1.2D));
+		this.goalSelector.addGoal(3, new CochinealTemptGoal(this, 1.2D, Ingredient.of(AtmosphericItemTags.COCHINEAL_FOOD)));
+		this.goalSelector.addGoal(4, new CochinealRandomSwimGoal(this, 1.2D));
+		this.goalSelector.addGoal(5, new CochinealRandomHopGoal(this));
+		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 10.0F));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -127,6 +129,10 @@ public class Cochineal extends Animal implements Saddleable {
 
 	public void setLeaping(boolean leaping) {
 		this.entityData.set(IS_LEAPING, leaping);
+	}
+
+	public void setJumpingQuickly(boolean jumpingQuickly) {
+		this.jumpingQuickly = jumpingQuickly;
 	}
 
 	public boolean isLeaping() {
@@ -233,7 +239,7 @@ public class Cochineal extends Animal implements Saddleable {
 		if ((this.onGround || this.isInFluidType()) && !this.wasOnGroundOrFluid) {
 			this.setDiscardFriction(false);
 			this.setLeaping(false);
-			this.jumpDelayTicks = 10;
+			this.jumpDelayTicks = this.jumpingQuickly ? 2 : 10;
 		}
 
 		this.wasOnGroundOrFluid = this.onGround || this.isInFluidType();
@@ -241,7 +247,7 @@ public class Cochineal extends Animal implements Saddleable {
 
 	protected void leap(double jumpPower) {
 		Vec3 vec3 = this.getDeltaMovement();
-		this.setDeltaMovement(vec3.x, jumpPower /*+ this.getJumpBoostPower()*/, vec3.z);
+		this.setDeltaMovement(vec3.x, jumpPower + this.getJumpBoostPower(), vec3.z);
 		double speed = ((CochinealMoveControl) this.moveControl).jumpSpeed;
 		this.moveRelative((float) speed, new Vec3(0.0D, 0.0D, 1.0D));
 		this.hasImpulse = true;
@@ -276,7 +282,7 @@ public class Cochineal extends Animal implements Saddleable {
 	private void facePoint(double x, double z) {
 		this.setYRot((float) (Mth.atan2(z - this.getZ(), x - this.getX()) * Mth.RAD_TO_DEG) - 90.0F);
 		this.yBodyRot = this.getYRot();
-		this.yHeadRot = this.yBodyRot;
+		this.yHeadRot = this.getYRot();
 	}
 
 	@Override
@@ -287,6 +293,43 @@ public class Cochineal extends Animal implements Saddleable {
 	@Override
 	public MoveControl getMoveControl() {
 		return this.moveControl;
+	}
+
+	@Override
+	protected BodyRotationControl createBodyControl() {
+		return new CochinealBodyRotationControl(this);
+	}
+
+	static class CochinealBodyRotationControl extends BodyRotationControl {
+		private final Cochineal cochineal;
+
+		public CochinealBodyRotationControl(Cochineal cochineal) {
+			super(cochineal);
+			this.cochineal = cochineal;
+		}
+
+		@Override
+		public void clientTick() {
+			if (this.cochineal.isLeaping()) {
+				this.cochineal.yHeadRot = this.cochineal.getYRot();
+				this.cochineal.yBodyRot = this.cochineal.getYRot();
+			}
+		}
+	}
+
+	static class CochinealLookControl extends LookControl {
+		private final Cochineal cochineal;
+
+		public CochinealLookControl(Cochineal cochineal) {
+			super(cochineal);
+			this.cochineal = cochineal;
+		}
+
+		@Override
+		public void tick() {
+			if (!this.cochineal.isLeaping())
+				super.tick();
+		}
 	}
 
 	public static class CochinealMoveControl extends MoveControl {
@@ -335,7 +378,9 @@ public class Cochineal extends Animal implements Saddleable {
 						double distance = Math.sqrt(dx * dx + dz * dz);
 						this.cochineal.facePoint(this.jumpX, this.jumpZ);
 
-						double jumppower = Mth.clamp(0.5D + dy * 0.05D, 0.4D, 0.8D);
+						double jumppower = this.cochineal.jumpingQuickly ? Mth.clamp(0.4D + dy * 0.05D, 0.4D, 0.8D) : Mth.clamp(0.5D + dy * 0.05D, 0.4D, 0.8D);
+						jumppower += this.cochineal.getJumpBoostPower();
+
 						this.jumpSpeed = this.calculateJumpSpeed(distance, dy, jumppower);
 						this.cochineal.leap(jumppower);
 
@@ -345,13 +390,6 @@ public class Cochineal extends Animal implements Saddleable {
 				}
 				this.stopNormalNavigation();
 			}
-
-			/*
-			if (this.wantsToJump || this.cochineal.isLeaping())
-				for (int i = 0; i < 4; ++i) {
-					NetworkUtil.spawnParticle("minecraft:smoke", this.jumpX, this.jumpY, this.jumpZ, 0.0D, 0.0D, 0.0D);
-				}
-			*/
 		}
 
 		public void leapTo(double x, double y, double z) {
