@@ -27,7 +27,7 @@ public class CochinealRenderer<T extends Cochineal> extends MobRenderer<T, Cochi
 			stack.scale(0.4F, 0.4F, 0.4F);
 			this.shadowRadius = 0.4F;
 		} else {
-			this.shadowRadius = 0.6F;
+			this.shadowRadius = 1.0F;
 		}
 	}
 

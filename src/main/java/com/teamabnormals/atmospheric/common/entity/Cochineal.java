@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.common.entity;
 
 import com.teamabnormals.atmospheric.common.entity.ai.goal.CochinealBreedGoal;
 import com.teamabnormals.atmospheric.common.entity.ai.goal.CochinealRandomHopGoal;
+import com.teamabnormals.atmospheric.common.entity.ai.goal.CochinealTemptGoal;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericParticleTypes;
@@ -19,12 +20,10 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.JumpControl;
 import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
-import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -37,18 +36,19 @@ import net.minecraftforge.network.PlayMessages;
 import org.jetbrains.annotations.Nullable;
 
 public class Cochineal extends Animal implements Saddleable {
-	private static final EntityDataAccessor<Boolean> DATA_SADDLE_ID = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.BOOLEAN);
+	private static final EntityDataAccessor<Boolean> IS_SADDLED = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.BOOLEAN);
+	private static final EntityDataAccessor<Boolean> IS_LEAPING = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.BOOLEAN);
 
-	private boolean wasOnGround;
+	private boolean wasOnGroundOrFluid;
 	private int jumpDelayTicks;
 	private boolean superInLove = false;
 
+	private boolean jumpAnim;
 	private float jumpAmount;
 	private float jumpAmount0;
 
 	public Cochineal(EntityType<? extends Cochineal> entity, Level level) {
 		super(entity, level);
-		this.jumpControl = new CochinealJumpControl(this);
 		this.moveControl = new CochinealMoveControl(this);
 	}
 
@@ -60,7 +60,7 @@ public class Cochineal extends Animal implements Saddleable {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
 		this.goalSelector.addGoal(1, new PanicGoal(this, 1.0D));
 		this.goalSelector.addGoal(2, new CochinealBreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, Ingredient.of(AtmosphericItemTags.COCHINEAL_FOOD), false));
+		this.goalSelector.addGoal(3, new CochinealTemptGoal(this, 1.0D, Ingredient.of(AtmosphericItemTags.COCHINEAL_FOOD)));
 		this.goalSelector.addGoal(4, new CochinealRandomHopGoal(this));
 		this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 10.0F));
 	}
@@ -100,7 +100,8 @@ public class Cochineal extends Animal implements Saddleable {
 
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(DATA_SADDLE_ID, false);
+		this.entityData.define(IS_SADDLED, false);
+		this.entityData.define(IS_LEAPING, false);
 	}
 
 	public void addAdditionalSaveData(CompoundTag tag) {
@@ -116,12 +117,20 @@ public class Cochineal extends Animal implements Saddleable {
 	}
 
 	public void setSaddle(boolean saddle) {
-		this.entityData.set(DATA_SADDLE_ID, saddle);
+		this.entityData.set(IS_SADDLED, saddle);
 	}
 
 	@Override
 	public boolean isSaddled() {
-		return this.entityData.get(DATA_SADDLE_ID);
+		return this.entityData.get(IS_SADDLED);
+	}
+
+	public void setLeaping(boolean leaping) {
+		this.entityData.set(IS_LEAPING, leaping);
+	}
+
+	public boolean isLeaping() {
+		return this.entityData.get(IS_LEAPING);
 	}
 
 	public boolean isSuperInLove() {
@@ -170,7 +179,7 @@ public class Cochineal extends Animal implements Saddleable {
 
 	@Override
 	public void equipSaddle(@Nullable SoundSource source) {
-		this.entityData.set(DATA_SADDLE_ID, true);
+		this.entityData.set(IS_SADDLED, true);
 		if (source != null) {
 			this.level.playSound(null, this, SoundEvents.PIG_SADDLE, source, 0.5F, 1.0F);
 		}
@@ -180,32 +189,10 @@ public class Cochineal extends Animal implements Saddleable {
 	public void handleEntityEvent(byte id) {
 		if (id == 1) {
 			this.spawnSprintParticle();
-			this.jumping = true;
+			this.jumpAnim = true;
 		} else {
 			super.handleEntityEvent(id);
 		}
-	}
-
-	@Override
-	protected void jumpFromGround() {
-		super.jumpFromGround();
-		double speed = this.moveControl.getSpeedModifier();
-		if (speed > 0.0D) {
-			this.moveRelative((float) speed, new Vec3(0.0D, 0.0D, 1.0D));
-		}
-	}
-
-	@Override
-	protected float getJumpPower() {
-		return ((CochinealJumpControl) this.jumpControl).jumpPower;
-	}
-
-	@Override
-	public void tick() {
-		super.tick();
-
-		if (this.onGround || this.isInFluidType())
-			this.setDiscardFriction(false);
 	}
 
 	@Override
@@ -217,19 +204,22 @@ public class Cochineal extends Animal implements Saddleable {
 		}
 
 		this.jumpAmount0 = this.jumpAmount;
-		if (this.jumping) {
+		if (this.jumpAnim) {
 			if (this.jumpAmount < 1.0F)
 				this.jumpAmount = Math.min(this.jumpAmount + 0.5F, 1.0F);
 			else
-				this.setJumping(false);
+				this.jumpAnim = false;
 		} else if (this.jumpAmount > 0.0F) {
 			this.jumpAmount = Math.max(this.jumpAmount - 0.1F, 0.0F);
 		}
 
-		if (!this.onGround && this.level.isClientSide) {
+		if ((this.isLeaping() || this.hurtTime > 0) && this.level.isClientSide) {
 			boolean cold = this.level.getBiome(this.blockPosition()).get().coldEnoughToSnow(this.blockPosition());
-			for (int i = 0; i < 2; i++) {
-				this.level.addParticle(cold ? AtmosphericParticleTypes.COLD_COCHINEAL_TRAIL.get() : AtmosphericParticleTypes.COCHINEAL_TRAIL.get(), this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+			for (int i = 0; i < 4; i++) {
+				double x = this.getX() - this.getLookAngle().x / 2.0D + (this.random.nextDouble() - 0.5D) * 0.8D;
+				double y = this.getY() + 0.8D + (this.random.nextDouble() - 0.5D) * 0.8D;
+				double z = this.getZ() - this.getLookAngle().z / 2.0D + (this.random.nextDouble() - 0.5D) * 0.8D;
+				this.level.addParticle(cold ? AtmosphericParticleTypes.COLD_COCHINEAL_TRAIL.get() : AtmosphericParticleTypes.COCHINEAL_TRAIL.get(), x, y, z, 0.0D, 0.0D, 0.0D);
 			}
 		}
 	}
@@ -240,12 +230,28 @@ public class Cochineal extends Animal implements Saddleable {
 			--this.jumpDelayTicks;
 		}
 
-		if (this.onGround && !this.wasOnGround) {
-			this.setJumping(false);
+		if ((this.onGround || this.isInFluidType()) && !this.wasOnGroundOrFluid) {
+			this.setDiscardFriction(false);
+			this.setLeaping(false);
 			this.jumpDelayTicks = 10;
 		}
 
-		this.wasOnGround = this.onGround;
+		this.wasOnGroundOrFluid = this.onGround || this.isInFluidType();
+	}
+
+	protected void leap(double jumpPower) {
+		Vec3 vec3 = this.getDeltaMovement();
+		this.setDeltaMovement(vec3.x, jumpPower /*+ this.getJumpBoostPower()*/, vec3.z);
+		double speed = ((CochinealMoveControl) this.moveControl).jumpSpeed;
+		this.moveRelative((float) speed, new Vec3(0.0D, 0.0D, 1.0D));
+		this.hasImpulse = true;
+		this.level.broadcastEntityEvent(this, (byte) 1);
+		this.setLeaping(true);
+		net.minecraftforge.common.ForgeHooks.onLivingJump(this);
+	}
+
+	public boolean canLeap() {
+		return this.onGround && !this.isLeaping() && !((CochinealMoveControl) this.moveControl).wantsToJump && this.jumpDelayTicks == 0;
 	}
 
 	public float getJumpAmount(float partialTick) {
@@ -267,15 +273,6 @@ public class Cochineal extends Animal implements Saddleable {
 		return false;
 	}
 
-	@Override
-	public void setJumping(boolean jumping) {
-		super.setJumping(jumping);
-		if (jumping) {
-			if (!this.level.isClientSide)
-				this.level.broadcastEntityEvent(this, (byte) 1);
-		}
-	}
-
 	private void facePoint(double x, double z) {
 		this.setYRot((float) (Mth.atan2(z - this.getZ(), x - this.getX()) * Mth.RAD_TO_DEG) - 90.0F);
 		this.yBodyRot = this.getYRot();
@@ -287,103 +284,103 @@ public class Cochineal extends Animal implements Saddleable {
 		return false;
 	}
 
-	static class CochinealJumpControl extends JumpControl {
-		private final Cochineal cochineal;
-		private float jumpPower;
-
-		public CochinealJumpControl(Cochineal cochineal) {
-			super(cochineal);
-			this.cochineal = cochineal;
-		}
-
-		public boolean wantJump() {
-			return this.jump;
-		}
-
-		@Override
-		public void tick() {
-			if (this.jump) {
-				this.cochineal.setJumping(true);
-				this.jump = false;
-			}
-		}
-
-		private void calculateJumpPower(double height) {
-			this.jumpPower = Mth.clamp(0.5F + (float) height * 0.05F, 0.4F, 0.8F);
-		}
+	@Override
+	public MoveControl getMoveControl() {
+		return this.moveControl;
 	}
 
-	static class CochinealMoveControl extends MoveControl {
+	public static class CochinealMoveControl extends MoveControl {
 		private final Cochineal cochineal;
+		private double jumpX;
+		private double jumpY;
+		private double jumpZ;
+		private boolean wantsToJump;
 		private int justJumpedTime;
+		private double jumpSpeed;
 
 		public CochinealMoveControl(Cochineal cochineal) {
 			super(cochineal);
 			this.cochineal = cochineal;
-			this.speedModifier = 0.0D;
 		}
 
 		@Override
 		public void tick() {
-			CochinealJumpControl jumpcontrol = (CochinealJumpControl) this.cochineal.jumpControl;
-			if (this.cochineal.onGround) {
-				if (this.hasWanted() && this.cochineal.jumpDelayTicks == 0) {
-					double dx = this.wantedX - this.mob.getX();
-					double dy = this.wantedY - this.mob.getY();
-					double dz = this.wantedZ - this.mob.getZ();
-					double distance = Math.sqrt(dx * dx + dz * dz);
-					this.cochineal.facePoint(this.wantedX, this.wantedZ);
-					jumpcontrol.calculateJumpPower(dy);
-					jumpcontrol.jump();
-					this.speedModifier = this.calculateJumpSpeed(distance, dy);
-					this.justJumpedTime = 3;
-					this.cochineal.setDiscardFriction(true);
-					this.operation = Operation.JUMPING;
-				} else if (!this.cochineal.jumping && !jumpcontrol.wantJump()) {
-					this.speedModifier = 0.0D;
-					this.operation = Operation.WAIT;
-				}
-			} else if (operation == Operation.JUMPING) {
-				this.cochineal.setDiscardFriction(true);
-				Vec3 vec3 = new Vec3(this.wantedX - this.mob.getX(), 0.0D, this.wantedZ - this.mob.getZ()).normalize();
+			if (this.cochineal.isInFluidType()) {
+				super.tick();
+				this.wantsToJump = false;
+				return;
+			}
+
+			if (this.cochineal.isLeaping()) {
+				Vec3 vec3 = new Vec3(this.jumpX - this.mob.getX(), 0.0D, this.jumpZ - this.mob.getZ()).normalize();
 				double d0 = this.cochineal.getDeltaMovement().horizontalDistance();
 				if (this.justJumpedTime > 0) {
 					--this.justJumpedTime;
-					if (d0 < this.speedModifier) {
-						Vec3 vec31 = vec3.scale(Math.min(0.2D, this.speedModifier - d0));
+					if (d0 < this.jumpSpeed) {
+						Vec3 vec31 = vec3.scale(Math.min(0.2D, this.jumpSpeed - d0));
 						this.cochineal.setDeltaMovement(this.cochineal.getDeltaMovement().add(vec31));
 					}
 				} else if (d0 < 0.1D) {
 					Vec3 vec31 = vec3.scale(Math.min(0.04D, 0.1D - d0));
 					this.cochineal.setDeltaMovement(this.cochineal.getDeltaMovement().add(vec31));
 				}
+				this.cochineal.setDiscardFriction(true);
+				this.stopNormalNavigation();
+			} else if (this.cochineal.onGround) {
+				if (this.wantsToJump && this.cochineal.jumpDelayTicks == 0) {
+					if (this.canReach(this.jumpX, this.jumpY, this.jumpZ)) {
+						double dx = this.jumpX - this.mob.getX();
+						double dy = this.jumpY - this.mob.getY();
+						double dz = this.jumpZ - this.mob.getZ();
+						double distance = Math.sqrt(dx * dx + dz * dz);
+						this.cochineal.facePoint(this.jumpX, this.jumpZ);
+
+						double jumppower = Mth.clamp(0.5D + dy * 0.05D, 0.4D, 0.8D);
+						this.jumpSpeed = this.calculateJumpSpeed(distance, dy, jumppower);
+						this.cochineal.leap(jumppower);
+
+						this.justJumpedTime = 3;
+					}
+					this.wantsToJump = false;
+				}
+				this.stopNormalNavigation();
 			}
 
 			/*
-			if (this.operation != Operation.WAIT)
+			if (this.wantsToJump || this.cochineal.isLeaping())
 				for (int i = 0; i < 4; ++i) {
-					NetworkUtil.spawnParticle("minecraft:smoke", this.wantedX, this.wantedY, this.wantedZ, 0.0D, 0.0D, 0.0D);
+					NetworkUtil.spawnParticle("minecraft:smoke", this.jumpX, this.jumpY, this.jumpZ, 0.0D, 0.0D, 0.0D);
 				}
-
-			 */
+			*/
 		}
 
-		@Override
-		public void setWantedPosition(double x, double y, double z, double speed) {
-			if (this.cochineal.isInWater())
-				speed = 1.5D;
-			super.setWantedPosition(x, y, z, speed);
+		public void leapTo(double x, double y, double z) {
+			this.jumpX = x;
+			this.jumpY = y;
+			this.jumpZ = z;
+			this.wantsToJump = true;
 		}
 
-		private double calculateJumpSpeed(double distance, double height) {
-			double jumppower = ((CochinealJumpControl) this.cochineal.jumpControl).jumpPower;
+		private void stopNormalNavigation() {
+			this.operation = Operation.WAIT;
+			this.cochineal.getNavigation().stop();
+			this.cochineal.setZza(0.0F);
+		}
+
+		public boolean canReach(double x, double y, double z) {
+			double dx = x - this.mob.getX();
+			double dy = y - this.mob.getY();
+			double dz = z - this.mob.getZ();
+			return dy <= 8.0D && dy >= -8.0D && dx * dx + dz * dz <= 256.0D;
+		}
+
+		private double calculateJumpSpeed(double distance, double height, double jumpPower) {
 			double gravity = -this.cochineal.getAttributeValue(ForgeMod.ENTITY_GRAVITY.get());
 
-			// I love L'Hôpital's rule jak
 			if (height == 0) {
-				return -gravity * distance / Math.abs(jumppower) / 2.0D;
+				return -gravity * distance / Math.abs(jumpPower) / 2.0D;
 			} else {
-				return distance * (jumppower - Math.sqrt(jumppower * jumppower + 2 * height * gravity)) / height / 2.0D;
+				return distance * (jumpPower - Math.sqrt(jumpPower * jumpPower + 2 * height * gravity)) / height / 2.0D;
 			}
 		}
 	}

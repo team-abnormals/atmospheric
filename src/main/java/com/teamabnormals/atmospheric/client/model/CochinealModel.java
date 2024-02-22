@@ -57,15 +57,14 @@ public class CochinealModel<T extends Cochineal> extends HierarchicalModel<T> {
 		float partialtick = ageInTicks - cochineal.tickCount;
 		float jumpamount = cochineal.getJumpAmount(partialtick);
 
-		float jumprot = jumpamount * 0.8F;
-		float noanimamount = 1.0F - jumpamount * 0.75F;
+		float noanimamount = 1.0F - jumpamount * 1.75F;
 
-		this.rightHindLeg.zRot = -(0.58119464F + jumprot);
-		this.leftHindLeg.zRot = 0.58119464F + jumprot;
-		this.rightMiddleLeg.zRot = -(Mth.PI / 6F + jumprot);
-		this.leftMiddleLeg.zRot = Mth.PI / 6F + jumprot;
-		this.rightFrontLeg.zRot = -(0.58119464F + jumprot);
-		this.leftFrontLeg.zRot = 0.58119464F + jumprot;
+		this.rightHindLeg.zRot = -(0.58119464F + jumpamount);
+		this.leftHindLeg.zRot = 0.58119464F + jumpamount;
+		this.rightMiddleLeg.zRot = -(Mth.PI / 6F + jumpamount);
+		this.leftMiddleLeg.zRot = Mth.PI / 6F + jumpamount;
+		this.rightFrontLeg.zRot = -(0.58119464F + jumpamount);
+		this.leftFrontLeg.zRot = 0.58119464F + jumpamount;
 
 		this.rightHindLeg.yRot = Mth.PI / 6F;
 		this.leftHindLeg.yRot = -Mth.PI / 6F;
