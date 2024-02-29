@@ -60,9 +60,9 @@ public class CochinealAttachToCactusGoal extends Goal {
 			this.cochineal.attachToCactus(this.cactusPos, this.cactusFace);
 		} else if (this.cochineal.canLeap()) {
 			CochinealMoveControl control = (CochinealMoveControl) cochineal.getMoveControl();
-			double x = this.cactusFacePos.getX() + 0.5D + this.cactusFace.getStepX() * 0.15D;
-			double y = this.cactusFacePos.getY() + 0.5D;
-			double z = this.cactusFacePos.getZ() + 0.5D + this.cactusFace.getStepZ() * 0.15D;
+			double x = this.cactusFacePos.getX() + 0.5D + this.cactusFace.getStepX() * 0.2D;
+			double y = this.cactusFacePos.getY();
+			double z = this.cactusFacePos.getZ() + 0.5D + this.cactusFace.getStepZ() * 0.2D;
 			if (control.canReach(x, y, z)) {
 				control.leapTo(x, y, z);
 			}
