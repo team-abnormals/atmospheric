@@ -54,45 +54,64 @@ public class CochinealModel<T extends Cochineal> extends HierarchicalModel<T> {
 
 	@Override
 	public void setupAnim(T cochineal, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		float partialtick = ageInTicks - cochineal.tickCount;
-		float jumpamount = cochineal.getJumpAmount(partialtick);
+		boolean sucklingcactus = cochineal.isAttachedToCactus();
 
-		float noanimamount = 1.0F - jumpamount * 1.75F;
+		this.rightHindLeg.visible = !sucklingcactus;
+		this.leftHindLeg.visible = !sucklingcactus;
+		this.rightMiddleLeg.visible = !sucklingcactus;
+		this.leftMiddleLeg.visible = !sucklingcactus;
+		this.rightFrontLeg.visible = !sucklingcactus;
+		this.leftFrontLeg.visible = !sucklingcactus;
 
-		this.rightHindLeg.zRot = -(0.58119464F + jumpamount);
-		this.leftHindLeg.zRot = 0.58119464F + jumpamount;
-		this.rightMiddleLeg.zRot = -(Mth.PI / 6F + jumpamount);
-		this.leftMiddleLeg.zRot = Mth.PI / 6F + jumpamount;
-		this.rightFrontLeg.zRot = -(0.58119464F + jumpamount);
-		this.leftFrontLeg.zRot = 0.58119464F + jumpamount;
+		if (sucklingcactus) {
+			this.body.y = 14F;
+			this.body.z = -4F;
+			this.body.xRot = -Mth.HALF_PI;
+		} else {
+			float partialtick = ageInTicks - cochineal.tickCount;
+			float jumpamount = cochineal.getJumpAmount(partialtick);
 
-		this.rightHindLeg.yRot = Mth.PI / 6F;
-		this.leftHindLeg.yRot = -Mth.PI / 6F;
-		this.rightMiddleLeg.yRot = 0.0F;
-		this.leftMiddleLeg.yRot = 0.0F;
-		this.rightFrontLeg.yRot = -Mth.PI / 6F;
-		this.leftFrontLeg.yRot = Mth.PI / 6F;
+			float noanimamount = 1.0F - jumpamount * 1.75F;
 
-		float yHind = -(Mth.cos(limbSwing * 0.6662F * 2.0F + Mth.PI / 2F) * 0.4F) * limbSwingAmount * noanimamount;
-		float yMid = -(Mth.cos(limbSwing * 0.6662F * 2.0F) * 0.4F) * limbSwingAmount * noanimamount;
-		float yFront = -(Mth.cos(limbSwing * 0.6662F * 2.0F + Mth.PI / 2F) * 0.4F) * limbSwingAmount * noanimamount;
+			this.body.y = 13.5F;
+			this.body.z = -1F;
+			this.body.xRot = 0F;
 
-		float zHind = Math.abs(Mth.sin(limbSwing * 0.6662F + Mth.PI / 2F) * 0.4F) * limbSwingAmount * noanimamount;
-		float zMid = Math.abs(Mth.sin(limbSwing * 0.6662F) * 0.4F) * limbSwingAmount * noanimamount;
-		float zFront = Math.abs(Mth.sin(limbSwing * 0.6662F + Mth.PI / 2F) * 0.4F) * limbSwingAmount * noanimamount;
+			this.rightHindLeg.zRot = -(0.58119464F + jumpamount);
+			this.leftHindLeg.zRot = 0.58119464F + jumpamount;
+			this.rightMiddleLeg.zRot = -(Mth.PI / 6F + jumpamount);
+			this.leftMiddleLeg.zRot = Mth.PI / 6F + jumpamount;
+			this.rightFrontLeg.zRot = -(0.58119464F + jumpamount);
+			this.leftFrontLeg.zRot = 0.58119464F + jumpamount;
 
-		this.rightHindLeg.yRot += yHind;
-		this.leftHindLeg.yRot += -yHind;
-		this.rightMiddleLeg.yRot += yMid;
-		this.leftMiddleLeg.yRot += -yMid;
-		this.rightFrontLeg.yRot += yFront;
-		this.leftFrontLeg.yRot += -yFront;
+			this.rightHindLeg.yRot = Mth.PI / 6F;
+			this.leftHindLeg.yRot = -Mth.PI / 6F;
+			this.rightMiddleLeg.yRot = 0.0F;
+			this.leftMiddleLeg.yRot = 0.0F;
+			this.rightFrontLeg.yRot = -Mth.PI / 6F;
+			this.leftFrontLeg.yRot = Mth.PI / 6F;
 
-		this.rightHindLeg.zRot += zHind;
-		this.leftHindLeg.zRot += -zHind;
-		this.rightMiddleLeg.zRot += zMid;
-		this.leftMiddleLeg.zRot += -zMid;
-		this.rightFrontLeg.zRot += zFront;
-		this.leftFrontLeg.zRot += -zFront;
+			float yHind = -(Mth.cos(limbSwing * 0.6662F * 2.0F + Mth.PI / 2F) * 0.4F) * limbSwingAmount * noanimamount;
+			float yMid = -(Mth.cos(limbSwing * 0.6662F * 2.0F) * 0.4F) * limbSwingAmount * noanimamount;
+			float yFront = -(Mth.cos(limbSwing * 0.6662F * 2.0F + Mth.PI / 2F) * 0.4F) * limbSwingAmount * noanimamount;
+
+			float zHind = Math.abs(Mth.sin(limbSwing * 0.6662F + Mth.PI / 2F) * 0.4F) * limbSwingAmount * noanimamount;
+			float zMid = Math.abs(Mth.sin(limbSwing * 0.6662F) * 0.4F) * limbSwingAmount * noanimamount;
+			float zFront = Math.abs(Mth.sin(limbSwing * 0.6662F + Mth.PI / 2F) * 0.4F) * limbSwingAmount * noanimamount;
+
+			this.rightHindLeg.yRot += yHind;
+			this.leftHindLeg.yRot += -yHind;
+			this.rightMiddleLeg.yRot += yMid;
+			this.leftMiddleLeg.yRot += -yMid;
+			this.rightFrontLeg.yRot += yFront;
+			this.leftFrontLeg.yRot += -yFront;
+
+			this.rightHindLeg.zRot += zHind;
+			this.leftHindLeg.zRot += -zHind;
+			this.rightMiddleLeg.zRot += zMid;
+			this.leftMiddleLeg.zRot += -zMid;
+			this.rightFrontLeg.zRot += zFront;
+			this.leftFrontLeg.zRot += -zFront;
+		}
 	}
 }

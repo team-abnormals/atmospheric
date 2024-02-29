@@ -30,8 +30,4 @@ public class CochinealRandomSwimGoal extends WaterAvoidingRandomStrollGoal {
 			return true;
 		}
 	}
-
-	private boolean shouldPanic() {
-		return this.mob.getLastHurtByMob() != null || this.mob.isFreezing() || this.mob.isOnFire();
-	}
 }

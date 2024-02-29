@@ -15,6 +15,12 @@ public class CochinealTemptGoal extends TemptGoal {
 		this.cochineal = cochineal;
 	}
 
+	@Override
+	public boolean canUse() {
+		return !this.cochineal.isAttachedToCactus() && super.canUse();
+	}
+
+	@Override
 	public void tick() {
 		if (this.cochineal.isInFluidType()) {
 			super.tick();
@@ -26,8 +32,11 @@ public class CochinealTemptGoal extends TemptGoal {
 				int j = d0 < 36.0D ? 1 : 3;
 				CochinealMoveControl control = (CochinealMoveControl) cochineal.getMoveControl();
 				Vec3 vec3 = DefaultRandomPos.getPosTowards(this.mob, i, j, this.player.position(), Math.PI / 6.0D);
-				if (vec3 != null && control.canReach(vec3.x, vec3.y, vec3.z))
-					control.leapTo(vec3.x, vec3.y, vec3.z);
+				if (vec3 != null) {
+					vec3.add(0.5D, 0.0D, 0.5D);
+					if (control.canReach(vec3.x, vec3.y, vec3.z))
+						control.leapTo(vec3.x, vec3.y, vec3.z);
+				}
 			}
 		}
 	}

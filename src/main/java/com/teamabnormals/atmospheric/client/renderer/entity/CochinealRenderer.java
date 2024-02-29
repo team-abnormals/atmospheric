@@ -29,6 +29,9 @@ public class CochinealRenderer<T extends Cochineal> extends MobRenderer<T, Cochi
 		} else {
 			this.shadowRadius = 1.0F;
 		}
+
+		if (cochineal.isAttachedToCactus())
+			this.shadowRadius = 0.0F;
 	}
 
 	@Override

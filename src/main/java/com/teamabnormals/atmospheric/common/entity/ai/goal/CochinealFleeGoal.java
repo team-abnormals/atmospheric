@@ -50,10 +50,13 @@ public class CochinealFleeGoal extends Goal {
 			Vec3 vec3 = this.cochineal.position().add(new Vec3(Math.sin(this.direction) * 32.0D, 0.0D, Math.cos(this.direction) * 32.0D));
 			for (int i = 0; i < 3; i++) {
 				Vec3 vec31 = DefaultRandomPos.getPosTowards(this.cochineal, 14, 7, vec3, Math.PI / 2.0D);
-				if (vec31 != null && control.canReach(vec31.x, vec31.y, vec31.z)) {
-					control.leapTo(vec31.x, vec31.y, vec31.z);
-					this.idleTime = 0;
-					return;
+				if (vec31 != null) {
+					vec31.add(0.5D, 0.0D, 0.5D);
+					if (control.canReach(vec31.x, vec31.y, vec31.z)) {
+						control.leapTo(vec31.x, vec31.y, vec31.z);
+						this.idleTime = 0;
+						return;
+					}
 				}
 			}
 

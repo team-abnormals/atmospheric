@@ -45,11 +45,17 @@ public class CochinealRandomHopGoal extends Goal {
 			CochinealMoveControl control = (CochinealMoveControl) cochineal.getMoveControl();
 			Vec3 vec3 = this.cochineal.position().add(new Vec3(Math.sin(this.direction) * 32.0D, 0.0D, Math.cos(this.direction) * 32.0D));
 			Vec3 vec31 = DefaultRandomPos.getPosTowards(this.cochineal, 12, 7, vec3, Math.PI / 4.0D);
-			if (vec31 != null && control.canReach(vec31.x, vec31.y, vec31.z)) {
-				control.leapTo(vec31.x, vec31.y, vec31.z);
-				--this.hops;
-				this.idleTime = 0;
-			} else if (++this.idleTime > this.adjustedTickDelay(80)) {
+			if (vec31 != null) {
+				vec31.add(0.5D, 0.0D, 0.5D);
+				if (control.canReach(vec31.x, vec31.y, vec31.z)) {
+					control.leapTo(vec31.x, vec31.y, vec31.z);
+					--this.hops;
+					this.idleTime = 0;
+					return;
+				}
+			}
+
+			if (++this.idleTime > this.adjustedTickDelay(80)) {
 				this.direction = this.cochineal.getRandom().nextFloat() * Mth.TWO_PI;
 				this.idleTime = 0;
 			}

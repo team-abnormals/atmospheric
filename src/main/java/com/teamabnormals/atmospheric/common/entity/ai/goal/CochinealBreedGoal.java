@@ -29,8 +29,11 @@ public class CochinealBreedGoal extends BreedGoal {
 					control.leapTo(vec3.x, vec3.y, vec3.z);
 				} else {
 					Vec3 vec31 = DefaultRandomPos.getPosTowards(this.cochineal, 7, 3, vec3, Math.PI / 6.0D);
-					if (vec31 != null && control.canReach(vec31.x, vec31.y, vec31.z))
-						control.leapTo(vec31.x, vec31.y, vec31.z);
+					if (vec31 != null) {
+						vec31.add(0.5D, 0.0D, 0.5D);
+						if (control.canReach(vec31.x, vec31.y, vec31.z))
+							control.leapTo(vec31.x, vec31.y, vec31.z);
+					}
 				}
 			}
 		}
