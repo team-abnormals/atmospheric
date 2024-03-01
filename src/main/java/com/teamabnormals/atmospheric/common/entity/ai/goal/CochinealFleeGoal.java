@@ -36,8 +36,7 @@ public class CochinealFleeGoal extends Goal {
 		this.fleeTime = this.adjustedTickDelay(240);
 		this.direction = this.cochineal.getRandom().nextFloat() * Mth.TWO_PI;
 		this.cochineal.setJumpingQuickly(true);
-		if (this.cochineal.isAttachedToCactus())
-			this.cochineal.detachFromCactus();
+		this.cochineal.detachFromCactus();
 	}
 
 	@Override

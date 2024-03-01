@@ -12,11 +12,7 @@ public class CochinealRandomSwimGoal extends WaterAvoidingRandomStrollGoal {
 
 	@Override
 	public boolean canUse() {
-		if (!this.mob.isInFluidType())
-			return false;
-		if (this.mob.getNoActionTime() >= 100)
-			return false;
-		if (this.mob.getRandom().nextInt(reducedTickDelay(this.interval)) != 0)
+		if (!this.mob.isInFluidType() || !((Cochineal) this.mob).isAttachedToCactus() || this.mob.getNoActionTime() >= 100 || this.mob.getRandom().nextInt(reducedTickDelay(this.interval)) != 0)
 			return false;
 
 		Vec3 vec3 = this.getPosition();

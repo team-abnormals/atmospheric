@@ -7,7 +7,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.phys.Vec3;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -15,9 +14,9 @@ import java.util.List;
 public class CochinealAttachToCactusGoal extends Goal {
 	private final Cochineal cochineal;
 	private BlockPos cactusPos;
-	private BlockPos cactusFacePos;
-	private Direction cactusFace;
+	private Direction cactusSide;
 	private int nextStartTicks;
+	private int hops;
 
 	public CochinealAttachToCactusGoal(Cochineal cochineal) {
 		this.cochineal = cochineal;
@@ -33,16 +32,15 @@ public class CochinealAttachToCactusGoal extends Goal {
 
 		this.nextStartTicks = this.adjustedTickDelay(20);
 
-		if (this.cochineal.isInFluidType() || !this.cochineal.isOnGround())
+		if (this.cochineal.isInFluidType() || this.cochineal.isAttachedToCactus())
 			return false;
-		//if (!this.cochineal.isBaby() && this.cochineal.getRandom().nextInt(this.adjustedTickDelay(200)) != 0)
-		//	return false;
+		if (this.cochineal.isOnSuckleCooldown() || this.cochineal.getRandom().nextInt(this.adjustedTickDelay(this.cochineal.isBaby() ? 10 : 800)) != 0)
+			return false;
 
 		BlockPos blockpos = this.findCactus();
 		if (blockpos != null) {
 			this.cactusPos = blockpos;
-			this.cactusFace = this.cochineal.getClosestCactusFace(this.cactusPos);
-			this.cactusFacePos = this.cactusPos.relative(this.cactusFace);
+			this.cactusSide = this.cochineal.getClosestVisibleCactusFace(this.cactusPos);
 			return true;
 		}
 
@@ -51,21 +49,28 @@ public class CochinealAttachToCactusGoal extends Goal {
 
 	@Override
 	public boolean canContinueToUse() {
-		return !this.cochineal.isInFluidType() && this.cochineal.isSuckleableCactus(this.cactusPos) && this.cochineal.getLevel().isEmptyBlock(this.cactusFacePos);
+		return !this.cochineal.isInFluidType() && !this.cochineal.isAttachedToCactus() && this.cochineal.isSuckleable(this.cactusPos) && this.cochineal.hasSpaceOnCactusSide(this.cactusPos, this.cactusSide) && this.hops > 0;
+	}
+
+	@Override
+	public void start() {
+		this.hops = 4;
 	}
 
 	@Override
 	public void tick() {
-		if (this.cochineal.blockPosition().equals(this.cactusFacePos)) {
-			this.cochineal.attachToCactus(this.cactusPos, this.cactusFace);
+		double x = this.cactusPos.getX() + 0.5D;
+		double y = this.cactusPos.getY();
+		double z = this.cactusPos.getZ() + 0.5D;
+		if (this.cochineal.distanceToSqr(x + this.cactusSide.getStepX(), y, z + this.cactusSide.getStepZ()) < 1.0D) {
+			this.cochineal.attachToCactus(this.cactusPos, this.cactusSide);
 		} else if (this.cochineal.canLeap()) {
 			CochinealMoveControl control = (CochinealMoveControl) cochineal.getMoveControl();
-			double x = this.cactusFacePos.getX() + 0.5D + this.cactusFace.getStepX() * 0.2D;
-			double y = this.cactusFacePos.getY();
-			double z = this.cactusFacePos.getZ() + 0.5D + this.cactusFace.getStepZ() * 0.2D;
-			if (control.canReach(x, y, z)) {
+			x += this.cactusSide.getStepX() * 1.2D;
+			z += this.cactusSide.getStepZ() * 1.2D;
+			if (control.canReach(x, y, z))
 				control.leapTo(x, y, z);
-			}
+			this.hops--;
 		}
 	}
 
@@ -73,18 +78,17 @@ public class CochinealAttachToCactusGoal extends Goal {
 		BlockPos blockpos = this.cochineal.blockPosition();
 		BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 
-		for(int r = 0; r < 12; ++r) {
+		for(int r = 0; r < 10; ++r) {
 			for(int x = 0; x <= r; x = x > 0 ? -x : 1 - x) {
 				for(int z = x < r && x > -r ? r : 0; z <= r; z = z > 0 ? -z : 1 - z) {
 					for(int y = 0; y <= 2; y = y > 0 ? -y : 1 - y) {
 						mutable.setWithOffset(blockpos, x, y, z);
-						if (this.cochineal.isSuckleableCactus(mutable)) {
+						if (this.cochineal.isSuckleable(mutable)) {
 							List<BlockPos> list = Lists.newArrayList();
 							for (int i = -3; i <= 3; i++) {
 								BlockPos blockpos1 = mutable.relative(Axis.Y, i);
-								if (this.cochineal.isSuckleableCactus(blockpos1) && this.cochineal.getClosestCactusFace(blockpos1) != null) {
+								if (this.cochineal.isSuckleable(blockpos1) && this.cochineal.getClosestVisibleCactusFace(blockpos1) != null)
 									list.add(blockpos1);
-								}
 							}
 
 							if (!list.isEmpty())

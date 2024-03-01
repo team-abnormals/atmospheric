@@ -34,8 +34,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeMod;
@@ -56,6 +58,7 @@ public class Cochineal extends Animal implements Saddleable {
 	private boolean jumpingQuickly;
 	private boolean superInLove;
 	private int jumpDelayTicks;
+	private int suckleCooldown;
 
 	private boolean jumpAnim;
 	private float jumpAmount;
@@ -76,10 +79,11 @@ public class Cochineal extends Animal implements Saddleable {
 		this.goalSelector.addGoal(1, new CochinealFleeGoal(this));
 		this.goalSelector.addGoal(2, new CochinealBreedGoal(this, 1.2D));
 		this.goalSelector.addGoal(3, new CochinealTemptGoal(this, 1.2D, Ingredient.of(AtmosphericItemTags.COCHINEAL_FOOD)));
-		this.goalSelector.addGoal(4, new CochinealAttachToCactusGoal(this));
-		this.goalSelector.addGoal(5, new CochinealRandomSwimGoal(this, 1.2D));
-		this.goalSelector.addGoal(6, new CochinealRandomHopGoal(this));
-		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 10.0F));
+		this.goalSelector.addGoal(4, new CochinealDetachFromCactusGoal(this));
+		this.goalSelector.addGoal(5, new CochinealAttachToCactusGoal(this));
+		this.goalSelector.addGoal(6, new CochinealRandomSwimGoal(this, 1.2D));
+		this.goalSelector.addGoal(7, new CochinealRandomHopGoal(this));
+		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 10.0F));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -191,6 +195,10 @@ public class Cochineal extends Animal implements Saddleable {
 		this.entityData.set(CACTUS_SIDE, side);
 	}
 
+	public boolean isOnSuckleCooldown() {
+		return this.suckleCooldown > 0;
+	}
+
 	public boolean isAttachedToCactus() {
 		return this.getCactusPos() != null;
 	}
@@ -204,10 +212,12 @@ public class Cochineal extends Animal implements Saddleable {
 
 		this.setDiscardFriction(false);
 		this.setLeaping(false);
+		this.suckleCooldown = 200;
 	}
 
 	public void detachFromCactus() {
 		this.setCactusPos(null);
+		this.suckleCooldown = 100;
 	}
 
 	private Vec3 getCactusAttachPoint(BlockPos cactusPos, Direction cactusSide) {
@@ -226,26 +236,23 @@ public class Cochineal extends Animal implements Saddleable {
 		return new Vec3(x, cactusPos.getY() + 0.5D - this.getBbHeight() * 0.5D, z);
 	}
 
-	public boolean isSuckleableCactus(BlockPos pos) {
+	public boolean isSuckleable(BlockPos pos) {
 		return this.level.getBlockState(pos).is(AtmosphericBlockTags.COCHINEALS_CAN_SUCKLE);
 	}
 
-	public Direction getClosestCactusFace(BlockPos cactusPos) {
+	public Direction getClosestVisibleCactusFace(BlockPos cactusPos) {
 		Direction closestdir = null;
 		double closestdist = Double.MAX_VALUE;
 
-		int x = this.getX() - cactusPos.getX() - 0.5D < 0.0D ? -1 : 1;
-		int z = this.getZ() - cactusPos.getZ() - 0.5D < 0.0D ? -1 : 1;
-
 		for (Direction direction : Plane.HORIZONTAL) {
-			if (direction.getStepX() == x || direction.getStepZ() == z) {
-				if (this.hasSpaceOnCactusSide(cactusPos, direction)) {
-					BlockPos sidepos = cactusPos.relative(direction);
-					double distance = this.distanceToSqr(sidepos.getX(), sidepos.getY(), sidepos.getZ());
-					if (distance < closestdist) {
-						closestdir = direction;
-						closestdist = distance;
-					}
+			BlockPos sidepos = cactusPos.relative(direction);
+			Vec3 vec3 = new Vec3(this.getX(), this.getEyeY(), this.getZ());
+			Vec3 vec31 = new Vec3(sidepos.getX() + 0.5D, sidepos.getY() + 0.5D, sidepos.getZ() + 0.5D);
+			if (this.hasSpaceOnCactusSide(cactusPos, direction) && this.level.clip(new ClipContext(vec3, vec31, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, this)).getType() == HitResult.Type.MISS) {
+				double distance = this.distanceToSqr(sidepos.getX(), sidepos.getY(), sidepos.getZ());
+				if (distance < closestdist) {
+					closestdir = direction;
+					closestdist = distance;
 				}
 			}
 		}
@@ -344,13 +351,13 @@ public class Cochineal extends Animal implements Saddleable {
 
 		this.wasOnGroundOrFluid = this.onGround || this.isInFluidType();
 
-		if (this.isAttachedToCactus() && !this.level.isClientSide) {
-			if (this.isSuckleableCactus(this.getCactusPos()) && this.distanceToSqr(this.getCactusAttachPoint(this.getCactusPos(), this.getCactusSide())) < 0.2D && this.hasSpaceOnCactusSide(this.getCactusPos(), this.getCactusSide())) {
+		if (this.isAttachedToCactus()) {
+			if (this.isSuckleable(this.getCactusPos()) && this.distanceToSqr(this.getCactusAttachPoint(this.getCactusPos(), this.getCactusSide())) < 0.2D && this.hasSpaceOnCactusSide(this.getCactusPos(), this.getCactusSide())) {
 				this.setDeltaMovement(Vec3.ZERO);
 				this.setYRot(this.getCactusSide().getOpposite().toYRot());
 				this.yHeadRot = this.getYRot();
 				this.yBodyRot = this.getYRot();
-			} else {
+			} else if (!this.level.isClientSide) {
 				this.detachFromCactus();
 			}
 		}
@@ -363,9 +370,11 @@ public class Cochineal extends Animal implements Saddleable {
 
 		super.aiStep();
 
-		if (this.getInLoveTime() == 0) {
+		if (this.getInLoveTime() == 0)
 			this.setSuperInLove(false);
-		}
+
+		if (this.suckleCooldown > 0)
+			this.suckleCooldown--;
 
 		this.jumpAmount0 = this.jumpAmount;
 		if (this.jumpAnim) {
@@ -398,14 +407,13 @@ public class Cochineal extends Animal implements Saddleable {
 	@Override
 	public void knockback(double force, double x, double z) {
 		super.knockback(force, x, z);
-		if (this.isAttachedToCactus())
-			this.detachFromCactus();
+		this.detachFromCactus();
 	}
 
 	protected void leap(double jumpPower) {
 		Vec3 vec3 = this.getDeltaMovement();
 		this.setDeltaMovement(vec3.x, jumpPower + this.getJumpBoostPower(), vec3.z);
-		double speed = ((CochinealMoveControl) this.moveControl).jumpSpeed;
+		double speed = ((CochinealMoveControl) this.moveControl).leapSpeed;
 		this.moveRelative((float) speed, new Vec3(0.0D, 0.0D, 1.0D));
 		this.hasImpulse = true;
 		this.level.broadcastEntityEvent(this, (byte) 1);
@@ -414,7 +422,7 @@ public class Cochineal extends Animal implements Saddleable {
 	}
 
 	public boolean canLeap() {
-		return this.onGround && !this.isLeaping() && !((CochinealMoveControl) this.moveControl).wantsToJump && this.jumpDelayTicks == 0;
+		return this.onGround && !this.isLeaping() && !((CochinealMoveControl) this.moveControl).wantsToLeap && this.jumpDelayTicks == 0;
 	}
 
 	public float getJumpAmount(float partialTick) {
@@ -542,9 +550,9 @@ public class Cochineal extends Animal implements Saddleable {
 		private double jumpX;
 		private double jumpY;
 		private double jumpZ;
-		private boolean wantsToJump;
-		private int justJumpedTime;
-		private double jumpSpeed;
+		private boolean wantsToLeap;
+		private int justLeapedTime;
+		private double leapSpeed;
 
 		public CochinealMoveControl(Cochineal cochineal) {
 			super(cochineal);
@@ -555,27 +563,27 @@ public class Cochineal extends Animal implements Saddleable {
 		public void tick() {
 			if (this.cochineal.isInFluidType()) {
 				super.tick();
-				this.wantsToJump = false;
+				this.wantsToLeap = false;
 				return;
 			}
 
 			if (this.cochineal.isLeaping()) {
 				Vec3 vec3 = new Vec3(this.jumpX - this.mob.getX(), 0.0D, this.jumpZ - this.mob.getZ()).normalize();
 				double d0 = this.cochineal.getDeltaMovement().horizontalDistance();
-				if (this.justJumpedTime > 0) {
-					--this.justJumpedTime;
-					if (d0 < this.jumpSpeed) {
-						Vec3 vec31 = vec3.scale(Math.min(0.2D, this.jumpSpeed - d0));
+				if (this.justLeapedTime > 0) {
+					--this.justLeapedTime;
+					if (d0 < this.leapSpeed) {
+						Vec3 vec31 = vec3.scale(Math.min(0.2D, this.leapSpeed - d0));
 						this.cochineal.setDeltaMovement(this.cochineal.getDeltaMovement().add(vec31));
 					}
-				} else if (d0 < 0.1D) {
-					Vec3 vec31 = vec3.scale(Math.min(0.04D, 0.1D - d0));
+				} else if (d0 < Math.min(0.1D, this.leapSpeed)) {
+					Vec3 vec31 = vec3.scale(Math.min(0.04D, Math.min(0.1D, this.leapSpeed) - d0));
 					this.cochineal.setDeltaMovement(this.cochineal.getDeltaMovement().add(vec31));
 				}
 				this.cochineal.setDiscardFriction(true);
 				this.stopSwimmingNaviation();
 			} else if (this.cochineal.onGround) {
-				if (this.wantsToJump && this.cochineal.jumpDelayTicks == 0) {
+				if (this.wantsToLeap && this.cochineal.jumpDelayTicks == 0) {
 					if (this.canReach(this.jumpX, this.jumpY, this.jumpZ)) {
 						double dx = this.jumpX - this.mob.getX();
 						double dy = this.jumpY - this.mob.getY();
@@ -586,12 +594,12 @@ public class Cochineal extends Animal implements Saddleable {
 						double jumppower = this.cochineal.jumpingQuickly ? Mth.clamp(0.4D + dy * 0.05D, 0.4D, 0.8D) : Mth.clamp(0.5D + dy * 0.05D, 0.4D, 0.8D);
 						jumppower += this.cochineal.getJumpBoostPower();
 
-						this.jumpSpeed = this.calculateJumpSpeed(distance, dy, jumppower);
+						this.leapSpeed = this.calculateJumpSpeed(distance, dy, jumppower);
 						this.cochineal.leap(jumppower);
 
-						this.justJumpedTime = 3;
+						this.justLeapedTime = 3;
 					}
-					this.wantsToJump = false;
+					this.wantsToLeap = false;
 				}
 				this.stopSwimmingNaviation();
 			}
@@ -601,7 +609,7 @@ public class Cochineal extends Animal implements Saddleable {
 			this.jumpX = x;
 			this.jumpY = y;
 			this.jumpZ = z;
-			this.wantsToJump = true;
+			this.wantsToLeap = true;
 		}
 
 		private void stopSwimmingNaviation() {

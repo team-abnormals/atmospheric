@@ -17,7 +17,13 @@ public class CochinealTemptGoal extends TemptGoal {
 
 	@Override
 	public boolean canUse() {
-		return !this.cochineal.isAttachedToCactus() && super.canUse();
+		return (!this.cochineal.isBaby() || !this.cochineal.isAttachedToCactus()) && super.canUse();
+	}
+
+	@Override
+	public void start() {
+		super.start();
+		this.cochineal.detachFromCactus();
 	}
 
 	@Override

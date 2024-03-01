@@ -18,6 +18,11 @@ public class CochinealBreedGoal extends BreedGoal {
 	}
 
 	@Override
+	public void start() {
+		this.cochineal.detachFromCactus();
+	}
+
+	@Override
 	public void tick() {
 		super.tick();
 		if (!this.cochineal.isInFluidType()) {

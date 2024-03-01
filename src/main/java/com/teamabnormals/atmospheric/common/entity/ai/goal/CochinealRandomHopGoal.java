@@ -23,7 +23,7 @@ public class CochinealRandomHopGoal extends Goal {
 
 	@Override
 	public boolean canUse() {
-		return !this.cochineal.isInFluidType() && this.cochineal.getNoActionTime() < 100 && this.cochineal.getRandom().nextInt(this.adjustedTickDelay(120)) == 0;
+		return !this.cochineal.isInFluidType() && !this.cochineal.isAttachedToCactus() && this.cochineal.getNoActionTime() < 100 && this.cochineal.getRandom().nextInt(this.adjustedTickDelay(120)) == 0;
 	}
 
 	@Override
