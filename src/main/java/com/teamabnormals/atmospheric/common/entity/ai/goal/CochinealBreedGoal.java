@@ -30,7 +30,7 @@ public class CochinealBreedGoal extends BreedGoal {
 			if (this.cochineal.canLeap()) {
 				CochinealMoveControl control = (CochinealMoveControl) cochineal.getMoveControl();
 				Vec3 vec3 = this.partner.position();
-				if (control.canReach(vec3.x, vec3.y, vec3.z) && this.cochineal.distanceToSqr(vec3) < 36.0D) {
+				if (this.cochineal.distanceToSqr(vec3) < 36.0D && control.canReach(vec3.x, vec3.y, vec3.z)) {
 					control.leapTo(vec3.x, vec3.y, vec3.z);
 				} else {
 					Vec3 vec31 = DefaultRandomPos.getPosTowards(this.cochineal, 7, 3, vec3, Math.PI / 6.0D);

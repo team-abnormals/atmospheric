@@ -9,6 +9,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.core.Direction.Plane;
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -53,6 +55,7 @@ public class Cochineal extends Animal implements Saddleable {
 	private static final EntityDataAccessor<Boolean> IS_LEAPING = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.BOOLEAN);
 	private static final EntityDataAccessor<Optional<BlockPos>> CACTUS_POS = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.OPTIONAL_BLOCK_POS);
 	private static final EntityDataAccessor<Direction> CACTUS_SIDE = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.DIRECTION);
+	private static final EntityDataAccessor<ItemStack> EATING_STACK = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.ITEM_STACK);
 
 	private boolean wasOnGroundOrFluid;
 	private boolean jumpingQuickly;
@@ -79,11 +82,12 @@ public class Cochineal extends Animal implements Saddleable {
 		this.goalSelector.addGoal(1, new CochinealPanicGoal(this));
 		this.goalSelector.addGoal(2, new CochinealBreedGoal(this, 1.2D));
 		this.goalSelector.addGoal(3, new CochinealTemptGoal(this, 1.2D, Ingredient.of(AtmosphericItemTags.COCHINEAL_FOOD)));
-		this.goalSelector.addGoal(4, new CochinealDetachFromCactusGoal(this));
-		this.goalSelector.addGoal(5, new CochinealAttachToCactusGoal(this));
-		this.goalSelector.addGoal(6, new CochinealRandomSwimGoal(this, 1.2D));
-		this.goalSelector.addGoal(7, new CochinealRandomHopGoal(this));
-		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 10.0F));
+		this.goalSelector.addGoal(4, new CochinealEatDragonFruitGoal(this, 1.2D));
+		this.goalSelector.addGoal(5, new CochinealDetachFromCactusGoal(this));
+		this.goalSelector.addGoal(6, new CochinealAttachToCactusGoal(this));
+		this.goalSelector.addGoal(7, new CochinealRandomSwimGoal(this, 1.2D));
+		this.goalSelector.addGoal(8, new CochinealRandomHopGoal(this));
+		this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 10.0F));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -126,6 +130,7 @@ public class Cochineal extends Animal implements Saddleable {
 		this.entityData.define(IS_LEAPING, false);
 		this.entityData.define(CACTUS_POS, Optional.empty());
 		this.entityData.define(CACTUS_SIDE, Direction.SOUTH);
+		this.entityData.define(EATING_STACK, ItemStack.EMPTY);
 	}
 
 	@Override
@@ -193,6 +198,14 @@ public class Cochineal extends Animal implements Saddleable {
 
 	public void setCactusSide(Direction side) {
 		this.entityData.set(CACTUS_SIDE, side);
+	}
+
+	public ItemStack getEatingStack() {
+		return this.entityData.get(EATING_STACK);
+	}
+
+	public void setEatingStack(ItemStack stack) {
+		this.entityData.set(EATING_STACK, stack);
 	}
 
 	public boolean isOnSuckleCooldown() {
@@ -288,9 +301,8 @@ public class Cochineal extends Animal implements Saddleable {
 			if (!this.level.isClientSide && i == 0 && this.canFallInLove()) {
 				this.usePlayerItem(player, hand, stack);
 				this.setInLove(player);
-				if (stack.is(AtmosphericItemTags.COCHINEAL_SUPER_LOVE_FOOD)) {
+				if (stack.is(AtmosphericItemTags.COCHINEAL_SUPER_LOVE_FOOD))
 					this.setSuperInLove(true);
-				}
 				return InteractionResult.SUCCESS;
 			}
 
@@ -402,6 +414,22 @@ public class Cochineal extends Animal implements Saddleable {
 				}
 
 				this.level.addParticle(cold ? AtmosphericParticleTypes.COLD_COCHINEAL_TRAIL.get() : AtmosphericParticleTypes.COCHINEAL_TRAIL.get(), this.getX() + x, this.getY() + y, this.getZ() + z, 0.0D, 0.0D, 0.0D);
+			}
+		}
+
+		if (!this.getEatingStack().isEmpty() && this.tickCount % 20 == 0) {
+			this.playSound(SoundEvents.GENERIC_EAT, 0.5F + 0.5F * (float) this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+			if (this.level.isClientSide) {
+				for (int i = 0; i < 6; ++i) {
+					Vec3 vec3 = new Vec3((this.random.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, (this.random.nextFloat() - 0.5D) * 0.1D);
+					vec3 = vec3.xRot(-this.getXRot() * Mth.DEG_TO_RAD);
+					vec3 = vec3.yRot(-this.getYRot() * Mth.DEG_TO_RAD);
+					double d0 = (double) (-this.random.nextFloat()) * 0.6D - 0.3D;
+					Vec3 vec31 = new Vec3((this.random.nextFloat() - 0.5D) * 0.8D, d0, 0.8D + (this.random.nextFloat() - 0.5D) * 0.4D);
+					vec31 = vec31.yRot(-this.yBodyRot * Mth.DEG_TO_RAD);
+					vec31 = vec31.add(this.getX(), this.getY() + 1.0F, this.getZ());
+					this.level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, this.getEatingStack()), vec31.x, vec31.y, vec31.z, vec3.x, vec3.y + 0.05D, vec3.z);
+				}
 			}
 		}
 	}
