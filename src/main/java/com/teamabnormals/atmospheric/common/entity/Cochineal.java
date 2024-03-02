@@ -209,6 +209,7 @@ public class Cochineal extends Animal implements Saddleable {
 		this.setDeltaMovement(Vec3.ZERO);
 
 		this.setPos(this.getCactusAttachPoint(cactusPos, cactusSide));
+		this.ejectPassengers();
 
 		this.setDiscardFriction(false);
 		this.setLeaping(false);
@@ -217,7 +218,7 @@ public class Cochineal extends Animal implements Saddleable {
 
 	public void detachFromCactus() {
 		this.setCactusPos(null);
-		this.suckleCooldown = 200;
+		this.suckleCooldown = 100;
 	}
 
 	private Vec3 getCactusAttachPoint(BlockPos cactusPos, Direction cactusSide) {
@@ -302,7 +303,7 @@ public class Cochineal extends Animal implements Saddleable {
 			if (this.level.isClientSide) {
 				return InteractionResult.CONSUME;
 			}
-		} else if (this.isSaddled() && !this.isVehicle() && !player.isSecondaryUseActive()) {
+		} else if (this.isSaddled() && !this.isVehicle() && !player.isSecondaryUseActive() && !this.isAttachedToCactus()) {
 			if (!this.level.isClientSide) {
 				player.startRiding(this);
 			}

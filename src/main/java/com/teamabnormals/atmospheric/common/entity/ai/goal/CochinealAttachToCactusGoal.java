@@ -34,7 +34,7 @@ public class CochinealAttachToCactusGoal extends Goal {
 
 		if (this.cochineal.isInFluidType() || this.cochineal.isAttachedToCactus())
 			return false;
-		if (this.cochineal.isOnSuckleCooldown() || this.cochineal.getRandom().nextInt(this.adjustedTickDelay(this.cochineal.isBaby() ? 5 : this.cochineal.getHealth() / this.cochineal.getMaxHealth() <= 0.5F ? 10 : 600)) != 0)
+		if (this.cochineal.isOnSuckleCooldown() || this.cochineal.getRandom().nextInt(this.adjustedTickDelay(this.cochineal.isBaby() || this.cochineal.getHealth() / this.cochineal.getMaxHealth() <= 0.5F ? 5 : 600)) != 0)
 			return false;
 
 		BlockPos blockpos = this.findCactus();
@@ -78,7 +78,7 @@ public class CochinealAttachToCactusGoal extends Goal {
 		BlockPos blockpos = this.cochineal.blockPosition();
 		BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 
-		for(int r = 0; r < 10; ++r) {
+		for(int r = 0; r < 12; ++r) {
 			for(int x = 0; x <= r; x = x > 0 ? -x : 1 - x) {
 				for(int z = x < r && x > -r ? r : 0; z <= r; z = z > 0 ? -z : 1 - z) {
 					for(int y = 0; y <= 2; y = y > 0 ? -y : 1 - y) {
