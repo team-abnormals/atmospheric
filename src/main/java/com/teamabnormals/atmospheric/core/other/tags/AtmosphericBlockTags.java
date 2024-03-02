@@ -26,7 +26,7 @@ public class AtmosphericBlockTags {
 	public static final TagKey<Block> GOLDEN_GROWTHS_PLACEABLE = blockTag("golden_growths_placeable");
 	public static final TagKey<Block> ORANGES = blockTag("oranges");
 	public static final TagKey<Block> MONKEY_BRUSH = blockTag("monkey_brush");
-	public static final TagKey<Block> COCHINEALS_CAN_SUCKLE = blockTag("cochineals_can_suckle");
+	public static final TagKey<Block> COCHINEALS_CAN_FEED_ON = blockTag("cochineals_can_feed_on");
 
 	private static TagKey<Block> blockTag(String name) {
 		return TagUtil.blockTag(Atmospheric.MOD_ID, name);

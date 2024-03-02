@@ -238,7 +238,7 @@ public class Cochineal extends Animal implements Saddleable {
 	}
 
 	public boolean isSuckleable(BlockPos pos) {
-		return this.level.getBlockState(pos).is(AtmosphericBlockTags.COCHINEALS_CAN_SUCKLE);
+		return this.level.getBlockState(pos).is(AtmosphericBlockTags.COCHINEALS_CAN_FEED_ON);
 	}
 
 	public Direction getClosestVisibleCactusFace(BlockPos cactusPos) {
@@ -288,7 +288,7 @@ public class Cochineal extends Animal implements Saddleable {
 			if (!this.level.isClientSide && i == 0 && this.canFallInLove()) {
 				this.usePlayerItem(player, hand, stack);
 				this.setInLove(player);
-				if (stack.is(AtmosphericItemTags.COCHINEAL_BREEDING_FOOD)) {
+				if (stack.is(AtmosphericItemTags.COCHINEAL_SUPER_LOVE_FOOD)) {
 					this.setSuperInLove(true);
 				}
 				return InteractionResult.SUCCESS;
