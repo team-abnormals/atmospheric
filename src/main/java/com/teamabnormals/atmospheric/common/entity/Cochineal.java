@@ -268,15 +268,13 @@ public class Cochineal extends Animal implements Saddleable {
 		double z = cactusSide == Direction.NORTH ? shape.min(Axis.Z) - 1.0D : cactusSide == Direction.SOUTH ? shape.max(Axis.Z) : 0.0D;
 		aabb = aabb.move(cactusPos.getX() + x, cactusPos.getY(), cactusPos.getZ() + z);
 
-		for(VoxelShape voxelshape : this.level.getBlockCollisions(this, aabb)) {
+		for (VoxelShape voxelshape : this.level.getBlockCollisions(this, aabb))
 			if (!voxelshape.isEmpty())
 				return false;
-		}
 
-		for(Cochineal cochineal : this.level.getEntitiesOfClass(Cochineal.class, aabb)) {
+		for (Cochineal cochineal : this.level.getEntitiesOfClass(Cochineal.class, aabb))
 			if (cochineal != this && cochineal.isAttachedToCactus())
 				return false;
-		}
 
 		return true;
 	}
@@ -352,7 +350,7 @@ public class Cochineal extends Animal implements Saddleable {
 		this.wasOnGroundOrFluid = this.onGround || this.isInFluidType();
 
 		if (this.isAttachedToCactus()) {
-			if (this.isSuckleable(this.getCactusPos()) && this.distanceToSqr(this.getCactusAttachPoint(this.getCactusPos(), this.getCactusSide())) < 0.2D && this.hasSpaceOnCactusSide(this.getCactusPos(), this.getCactusSide())) {
+			if (this.isSuckleable(this.getCactusPos()) && this.distanceToSqr(this.getCactusAttachPoint(this.getCactusPos(), this.getCactusSide())) < 0.2D) {
 				this.setDeltaMovement(Vec3.ZERO);
 				this.setYRot(this.getCactusSide().getOpposite().toYRot());
 				this.yHeadRot = this.getYRot();
