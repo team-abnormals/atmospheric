@@ -50,8 +50,8 @@ public class CochinealTemptGoal extends TemptGoal {
 			this.mob.getLookControl().setLookAt(this.player, (float) (this.mob.getMaxHeadYRot() + 20), (float) this.mob.getMaxHeadXRot());
 			double d0 = this.mob.distanceToSqr(this.player);
 			if (d0 >= 9.0D) {
-				int i = d0 < 36.0D ? 3 : 7;
-				int j = d0 < 36.0D ? 1 : 3;
+				int i = d0 < 25.0D ? 3 : d0 < 64.0D ? 7 : 12;
+				int j = d0 < 25.0D ? 1 : 3;
 				CochinealMoveControl control = (CochinealMoveControl) cochineal.getMoveControl();
 				Vec3 vec3 = DefaultRandomPos.getPosTowards(this.mob, i, j, this.player.position(), Math.PI / 6.0D);
 				if (vec3 != null) {

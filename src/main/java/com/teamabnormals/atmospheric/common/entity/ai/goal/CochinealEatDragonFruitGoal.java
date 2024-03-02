@@ -88,7 +88,6 @@ public class CochinealEatDragonFruitGoal extends Goal {
 				}
 			}
 		} else {
-			this.eatTime = this.adjustedTickDelay(140);
 			this.cochineal.setEatingStack(ItemStack.EMPTY);
 
 			if (this.cochineal.isInFluidType()) {
@@ -105,7 +104,7 @@ public class CochinealEatDragonFruitGoal extends Goal {
 				if (this.cochineal.distanceToSqr(vec3) < 64.0D && control.canReach(vec3.x, vec3.y, vec3.z)) {
 					control.leapTo(vec3.x, vec3.y, vec3.z);
 				} else {
-					Vec3 vec31 = DefaultRandomPos.getPosTowards(this.cochineal, 7, 3, vec3, Math.PI / 6.0D);
+					Vec3 vec31 = DefaultRandomPos.getPosTowards(this.cochineal, 12, 3, vec3, Math.PI / 6.0D);
 					if (vec31 != null) {
 						vec31.add(0.5D, 0.0D, 0.5D);
 						if (control.canReach(vec31.x, vec31.y, vec31.z))

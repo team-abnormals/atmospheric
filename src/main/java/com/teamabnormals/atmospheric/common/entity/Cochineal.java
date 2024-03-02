@@ -31,6 +31,8 @@ import net.minecraft.world.entity.ai.control.LookControl;
 import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -539,6 +541,11 @@ public class Cochineal extends Animal implements Saddleable {
 		return new CochinealBodyRotationControl(this);
 	}
 
+	@Override
+	protected PathNavigation createNavigation(Level level) {
+		return new CochinealNavigation(this, level);
+	}
+
 	static class CochinealBodyRotationControl extends BodyRotationControl {
 		private final Cochineal cochineal;
 
@@ -573,6 +580,20 @@ public class Cochineal extends Animal implements Saddleable {
 				super.tick();
 		}
 		*/
+	}
+
+	static class CochinealNavigation extends GroundPathNavigation {
+		private final Cochineal cochineal;
+
+		CochinealNavigation(Cochineal cochineal, Level level) {
+			super(cochineal, level);
+			this.cochineal = cochineal;
+		}
+
+		@Override
+		public boolean isStableDestination(BlockPos pos) {
+			return !this.cochineal.isInFluidType() ? this.level.getBlockState(pos.below()).entityCanStandOn(this.level, pos.below(), this.mob) : super.isStableDestination(pos);
+		}
 	}
 
 	public static class CochinealMoveControl extends MoveControl {
