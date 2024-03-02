@@ -9,13 +9,13 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.EnumSet;
 
-public class CochinealFleeGoal extends Goal {
+public class CochinealPanicGoal extends Goal {
 	private final Cochineal cochineal;
 	private int idleTime;
 	private int fleeTime;
 	private float direction;
 
-	public CochinealFleeGoal(Cochineal cochineal) {
+	public CochinealPanicGoal(Cochineal cochineal) {
 		this.cochineal = cochineal;
 		this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
 	}

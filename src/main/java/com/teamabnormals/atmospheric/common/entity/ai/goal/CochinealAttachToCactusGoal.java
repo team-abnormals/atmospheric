@@ -34,7 +34,7 @@ public class CochinealAttachToCactusGoal extends Goal {
 
 		if (this.cochineal.isInFluidType() || this.cochineal.isAttachedToCactus())
 			return false;
-		if (this.cochineal.isOnSuckleCooldown() || this.cochineal.getRandom().nextInt(this.adjustedTickDelay(this.cochineal.isBaby() ? 10 : 1000)) != 0)
+		if (this.cochineal.isOnSuckleCooldown() || this.cochineal.getRandom().nextInt(this.adjustedTickDelay(this.cochineal.isBaby() ? 5 : this.cochineal.getHealth() / this.cochineal.getMaxHealth() <= 0.5F ? 10 : 600)) != 0)
 			return false;
 
 		BlockPos blockpos = this.findCactus();

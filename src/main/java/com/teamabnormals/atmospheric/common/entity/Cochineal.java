@@ -76,7 +76,7 @@ public class Cochineal extends Animal implements Saddleable {
 
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(1, new CochinealFleeGoal(this));
+		this.goalSelector.addGoal(1, new CochinealPanicGoal(this));
 		this.goalSelector.addGoal(2, new CochinealBreedGoal(this, 1.2D));
 		this.goalSelector.addGoal(3, new CochinealTemptGoal(this, 1.2D, Ingredient.of(AtmosphericItemTags.COCHINEAL_FOOD)));
 		this.goalSelector.addGoal(4, new CochinealDetachFromCactusGoal(this));
@@ -217,7 +217,7 @@ public class Cochineal extends Animal implements Saddleable {
 
 	public void detachFromCactus() {
 		this.setCactusPos(null);
-		this.suckleCooldown = 100;
+		this.suckleCooldown = 200;
 	}
 
 	private Vec3 getCactusAttachPoint(BlockPos cactusPos, Direction cactusSide) {
@@ -372,6 +372,9 @@ public class Cochineal extends Animal implements Saddleable {
 
 		if (this.getInLoveTime() == 0)
 			this.setSuperInLove(false);
+
+		if (!this.level.isClientSide && this.isAlive() && this.getHealth() < this.getMaxHealth() && this.tickCount % 120 == 0 && this.isAttachedToCactus())
+			this.heal(1.0F);
 
 		if (this.suckleCooldown > 0)
 			this.suckleCooldown--;
