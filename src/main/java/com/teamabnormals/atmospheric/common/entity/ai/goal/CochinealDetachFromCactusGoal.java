@@ -12,7 +12,7 @@ public class CochinealDetachFromCactusGoal extends Goal {
 
 	@Override
 	public boolean canUse() {
-		return this.cochineal.isAttachedToCactus() && !this.cochineal.isOnSuckleCooldown() && this.cochineal.getRandom().nextInt(this.adjustedTickDelay(this.cochineal.isBaby() ? 16000 : 1000)) == 0;
+		return this.cochineal.isAttachedToCactus() && !this.cochineal.isBaby() && !this.cochineal.isOnSuckleCooldown() && this.cochineal.getRandom().nextInt(this.adjustedTickDelay(800)) == 0;
 	}
 
 	@Override

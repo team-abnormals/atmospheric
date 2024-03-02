@@ -9,21 +9,37 @@ import net.minecraft.world.phys.Vec3;
 
 public class CochinealTemptGoal extends TemptGoal {
 	private final Cochineal cochineal;
+	private int detachTimer;
 
 	public CochinealTemptGoal(Cochineal cochineal, double speed, Ingredient ingredient) {
 		super(cochineal, speed, ingredient, false);
 		this.cochineal = cochineal;
+		this.resetDetachTimer();
 	}
 
 	@Override
 	public boolean canUse() {
-		return (!this.cochineal.isBaby() || !this.cochineal.isAttachedToCactus()) && super.canUse();
+		if (!super.canUse()) {
+			this.resetDetachTimer();
+			return false;
+		}
+
+		if (this.cochineal.isBaby())
+			return !this.cochineal.isAttachedToCactus();
+
+		if (this.cochineal.isAttachedToCactus() && this.detachTimer > 0) {
+			this.detachTimer--;
+			return false;
+		}
+
+		return true;
 	}
 
 	@Override
 	public void start() {
 		super.start();
 		this.cochineal.detachFromCactus();
+		this.resetDetachTimer();
 	}
 
 	@Override
@@ -45,5 +61,9 @@ public class CochinealTemptGoal extends TemptGoal {
 				}
 			}
 		}
+	}
+
+	private void resetDetachTimer() {
+		this.detachTimer = this.cochineal.getRandom().nextInt(this.adjustedTickDelay(20));
 	}
 }
