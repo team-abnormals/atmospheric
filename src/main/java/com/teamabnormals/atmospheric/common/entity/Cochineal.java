@@ -416,7 +416,7 @@ public class Cochineal extends Animal implements Saddleable {
 			}
 		}
 
-		if (!this.getEatingStack().isEmpty() && this.tickCount % 20 == 0) {
+		if (!this.getEatingStack().isEmpty() && this.tickCount % 12 == 0) {
 			this.playSound(SoundEvents.GENERIC_EAT, 0.5F + 0.5F * (float) this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
 			if (this.level.isClientSide) {
 				for (int i = 0; i < 6; ++i) {

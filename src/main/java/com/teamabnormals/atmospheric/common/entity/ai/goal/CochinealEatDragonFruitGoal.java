@@ -60,7 +60,7 @@ public class CochinealEatDragonFruitGoal extends Goal {
 
 	@Override
 	public void start() {
-		this.eatTime = this.adjustedTickDelay(140);
+		this.eatTime = this.adjustedTickDelay(80);
 		this.delayCounter = 0;
 	}
 
