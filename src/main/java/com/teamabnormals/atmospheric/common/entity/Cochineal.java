@@ -26,8 +26,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.BodyRotationControl;
-import net.minecraft.world.entity.ai.control.LookControl;
 import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
@@ -72,7 +70,6 @@ public class Cochineal extends Animal implements Saddleable {
 	public Cochineal(EntityType<? extends Cochineal> entity, Level level) {
 		super(entity, level);
 		this.moveControl = new CochinealMoveControl(this);
-		this.lookControl = new CochinealLookControl(this);
 	}
 
 	public Cochineal(PlayMessages.SpawnEntity message, Level level) {
@@ -525,61 +522,14 @@ public class Cochineal extends Animal implements Saddleable {
 		super.onSyncedDataUpdated(key);
 	}
 
-	private void facePoint(double x, double z) {
-		this.setYRot((float) (Mth.atan2(z - this.getZ(), x - this.getX()) * Mth.RAD_TO_DEG) - 90.0F);
-		this.yBodyRot = this.getYRot();
-		this.yHeadRot = this.getYRot();
-	}
-
 	@Override
 	public MoveControl getMoveControl() {
 		return this.moveControl;
 	}
 
 	@Override
-	protected BodyRotationControl createBodyControl() {
-		return new CochinealBodyRotationControl(this);
-	}
-
-	@Override
 	protected PathNavigation createNavigation(Level level) {
 		return new CochinealNavigation(this, level);
-	}
-
-	static class CochinealBodyRotationControl extends BodyRotationControl {
-		private final Cochineal cochineal;
-
-		public CochinealBodyRotationControl(Cochineal cochineal) {
-			super(cochineal);
-			this.cochineal = cochineal;
-		}
-
-		/*
-		@Override
-		public void clientTick() {
-			if (this.cochineal.isLeaping()) {
-				this.cochineal.yHeadRot = this.cochineal.getYRot();
-				this.cochineal.yBodyRot = this.cochineal.getYRot();
-			}
-		}
-		*/
-	}
-
-	static class CochinealLookControl extends LookControl {
-		private final Cochineal cochineal;
-
-		public CochinealLookControl(Cochineal cochineal) {
-			super(cochineal);
-			this.cochineal = cochineal;
-		}
-
-		/*
-		@Override
-		public void tick() {
-			if (!this.cochineal.isLeaping())
-				super.tick();
-		}
-		*/
 	}
 
 	static class CochinealNavigation extends GroundPathNavigation {
@@ -621,6 +571,7 @@ public class Cochineal extends Animal implements Saddleable {
 			if (this.cochineal.isLeaping()) {
 				Vec3 vec3 = new Vec3(this.jumpX - this.mob.getX(), 0.0D, this.jumpZ - this.mob.getZ()).normalize();
 				double d0 = this.cochineal.getDeltaMovement().horizontalDistance();
+
 				if (this.justLeapedTime > 0) {
 					--this.justLeapedTime;
 					if (d0 < this.leapSpeed) {
@@ -631,6 +582,7 @@ public class Cochineal extends Animal implements Saddleable {
 					Vec3 vec31 = vec3.scale(Math.min(0.04D, Math.min(0.1D, this.leapSpeed) - d0));
 					this.cochineal.setDeltaMovement(this.cochineal.getDeltaMovement().add(vec31));
 				}
+
 				this.cochineal.setDiscardFriction(true);
 				this.stopSwimmingNaviation();
 			} else if (this.cochineal.onGround) {
@@ -640,7 +592,8 @@ public class Cochineal extends Animal implements Saddleable {
 						double dy = this.jumpY - this.mob.getY();
 						double dz = this.jumpZ - this.mob.getZ();
 						double distance = Math.sqrt(dx * dx + dz * dz);
-						this.cochineal.facePoint(this.jumpX, this.jumpZ);
+
+						this.faceJumpPoint();
 
 						double jumppower = this.cochineal.jumpingQuickly ? Mth.clamp(0.4D + dy * 0.05D, 0.4D, 0.8D) : Mth.clamp(0.5D + dy * 0.05D, 0.4D, 0.8D);
 						jumppower += this.cochineal.getJumpBoostPower();
@@ -661,6 +614,7 @@ public class Cochineal extends Animal implements Saddleable {
 			this.jumpY = y;
 			this.jumpZ = z;
 			this.wantsToLeap = true;
+			this.faceJumpPoint();
 		}
 
 		private void stopSwimmingNaviation() {
@@ -674,6 +628,12 @@ public class Cochineal extends Animal implements Saddleable {
 			double dy = y - this.mob.getY();
 			double dz = z - this.mob.getZ();
 			return dy <= 8.0D && dy >= -8.0D && dx * dx + dz * dz <= 256.0D;
+		}
+
+		private void faceJumpPoint() {
+			this.cochineal.setYRot((float) (Mth.atan2(this.jumpZ - this.cochineal.getZ(), this.jumpX - this.cochineal.getX()) * Mth.RAD_TO_DEG) - 90.0F);
+			this.cochineal.yBodyRot = this.cochineal.getYRot();
+			this.cochineal.yHeadRot = this.cochineal.getYRot();
 		}
 
 		private double calculateJumpSpeed(double distance, double height, double jumpPower) {
