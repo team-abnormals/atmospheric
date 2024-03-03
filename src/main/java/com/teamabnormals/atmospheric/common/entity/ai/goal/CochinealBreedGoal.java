@@ -46,18 +46,15 @@ public class CochinealBreedGoal extends BreedGoal {
 
 	@Override
 	protected void breed() {
-		RandomSource random = this.cochineal.getRandom();
-		boolean flag = random.nextBoolean();
-		int i = ((Cochineal) this.animal).isSuperInLove() ? (flag ? 2 : 1 + random.nextInt(2)) : 1;
-		int j = ((Cochineal) this.partner).isSuperInLove() ? (!flag ? 2 : 1 + random.nextInt(2)) : 1;
-		this.spawnBabies((Cochineal) this.animal, this.partner, i);
-		this.spawnBabies((Cochineal) this.partner, this.animal, j);
+		this.spawnBabies((Cochineal) this.animal, this.partner);
+		this.spawnBabies((Cochineal) this.partner, this.animal);
 	}
 
-	public void spawnBabies(Cochineal cochineal, Animal partner, int count) {
-		for (int i = 0; i < count; i++) {
+	public void spawnBabies(Cochineal cochineal, Animal partner) {
+		RandomSource random = this.cochineal.getRandom();
+		int count = 1 + random.nextInt(2) + (cochineal.isSuperInLove() ? 2 : 0);
+		for (int i = 0; i < count; i++)
 			cochineal.spawnChildFromBreeding((ServerLevel) this.level, partner);
-		}
 		cochineal.kill();
 	}
 }
