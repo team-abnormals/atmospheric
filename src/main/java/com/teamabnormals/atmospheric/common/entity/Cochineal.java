@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.entity;
 
 import com.teamabnormals.atmospheric.common.entity.ai.goal.*;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBiomeTags;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
@@ -21,6 +22,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -39,6 +41,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -57,6 +60,9 @@ public class Cochineal extends Animal implements Saddleable {
 	private static final EntityDataAccessor<Optional<BlockPos>> CACTUS_POS = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.OPTIONAL_BLOCK_POS);
 	private static final EntityDataAccessor<Direction> CACTUS_SIDE = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.DIRECTION);
 	private static final EntityDataAccessor<ItemStack> EATING_STACK = SynchedEntityData.defineId(Cochineal.class, EntityDataSerializers.ITEM_STACK);
+
+	private BlockPos lastHabitatBiomePos;
+	private int forgetHabitatBiomePosCounter;
 
 	private boolean wasOnGroundOrFluid;
 	private boolean jumpingQuickly;
@@ -143,6 +149,10 @@ public class Cochineal extends Animal implements Saddleable {
 			tag.put("CactusPos", NbtUtils.writeBlockPos(this.getCactusPos()));
 			tag.putString("CactusSide", this.getCactusSide().getName());
 		}
+		if (this.lastHabitatBiomePos != null) {
+			tag.put("LastHabitatBiomePos", NbtUtils.writeBlockPos(this.lastHabitatBiomePos));
+			tag.putInt("ForgetHabitatBiomePosCounter", this.forgetHabitatBiomePosCounter);
+		}
 	}
 
 	@Override
@@ -154,6 +164,10 @@ public class Cochineal extends Animal implements Saddleable {
 			this.setCactusPos(NbtUtils.readBlockPos(tag.getCompound("CactusPos")));
 			this.setCactusSide(Direction.byName(tag.getString("CactusSide")));
 			this.suckleHealTicks = 120;
+		}
+		if (tag.contains("LastHabitatBiomePos")) {
+			this.lastHabitatBiomePos = NbtUtils.readBlockPos(tag.getCompound("LastHabitatBiomePos"));
+			this.forgetHabitatBiomePosCounter = tag.getInt("ForgetHabitatBiomePosCounter");
 		}
 	}
 
@@ -212,6 +226,16 @@ public class Cochineal extends Animal implements Saddleable {
 
 	public boolean isOnSuckleCooldown() {
 		return this.suckleCooldown > 0;
+	}
+
+	public BlockPos getLastHabitatBiomePos() {
+		if (this.lastHabitatBiomePos != null) {
+			double dx = this.getX() - this.lastHabitatBiomePos.getX();
+			double dz = this.getZ() - this.lastHabitatBiomePos.getZ();
+			if (dx * dx + dz * dz > 16384.0D)
+				this.lastHabitatBiomePos = null;
+		}
+		return this.lastHabitatBiomePos;
 	}
 
 	public boolean isAttachedToCactus() {
@@ -388,9 +412,6 @@ public class Cochineal extends Animal implements Saddleable {
 		if (this.getInLoveTime() == 0)
 			this.setSuperInLove(false);
 
-		if (this.suckleCooldown > 0)
-			this.suckleCooldown--;
-
 		this.jumpAmount0 = this.jumpAmount;
 		if (this.jumpAnim) {
 			if (this.jumpAmount < 1.0F)
@@ -402,27 +423,30 @@ public class Cochineal extends Animal implements Saddleable {
 		}
 
 		if (this.isAlive()) {
-			if (!this.level.isClientSide && this.getHealth() < this.getMaxHealth() && this.isAttachedToCactus() && this.suckleHealTicks-- <= 0) {
-				this.heal(1.0F);
-				this.suckleHealTicks = 120;
-				double d0 = this.random.nextGaussian() * 0.02D;
-				double d1 = this.random.nextGaussian() * 0.02D;
-				double d2 = this.random.nextGaussian() * 0.02D;
-				NetworkUtil.spawnParticle("minecraft:heart", this.getRandomX(1.0D), this.getRandomY(), this.getRandomZ(1.0D), d0, d1, d2);
-			} else if (this.level.isClientSide) {
+			if (!this.level.isClientSide) {
+				if (this.suckleCooldown > 0)
+					this.suckleCooldown--;
+
+				if (this.getHealth() < this.getMaxHealth() && this.isAttachedToCactus() && this.suckleHealTicks-- <= 0) {
+					this.heal(1.0F);
+					this.suckleHealTicks = 120;
+					double d0 = this.random.nextGaussian() * 0.02D;
+					double d1 = this.random.nextGaussian() * 0.02D;
+					double d2 = this.random.nextGaussian() * 0.02D;
+					NetworkUtil.spawnParticle("minecraft:heart", this.getRandomX(1.0D), this.getRandomY(), this.getRandomZ(1.0D), d0, d1, d2);
+				}
+			} else {
 				if (this.isLeaping() || this.hurtTime > 0) {
 					boolean cold = this.level.getBiome(this.blockPosition()).get().coldEnoughToSnow(this.blockPosition());
 					for (int i = 0; i < 3; i++) {
 						double x = -this.getLookAngle().x * 0.7D + (this.random.nextDouble() - 0.5D) * 0.6D;
 						double y = 0.6D + (this.random.nextDouble() - 0.5D) * 0.6D;
 						double z = -this.getLookAngle().z * 0.7D + (this.random.nextDouble() - 0.5D) * 0.6D;
-
 						if (this.isBaby()) {
 							x *= 0.4D;
 							y *= 0.4D;
 							z *= 0.4D;
 						}
-
 						this.level.addParticle(cold ? AtmosphericParticleTypes.COLD_COCHINEAL_TRAIL.get() : AtmosphericParticleTypes.COCHINEAL_TRAIL.get(), this.getX() + x, this.getY() + y, this.getZ() + z, 0.0D, 0.0D, 0.0D);
 					}
 				}
@@ -458,12 +482,21 @@ public class Cochineal extends Animal implements Saddleable {
 
 	protected void leap(double jumpPower) {
 		Vec3 vec3 = this.getDeltaMovement();
-		this.setDeltaMovement(vec3.x, jumpPower + this.getJumpBoostPower(), vec3.z);
 		double speed = ((CochinealMoveControl) this.moveControl).leapSpeed;
+		this.setDeltaMovement(vec3.x, jumpPower + this.getJumpBoostPower(), vec3.z);
 		this.moveRelative((float) speed, new Vec3(0.0D, 0.0D, 1.0D));
-		this.hasImpulse = true;
-		this.level.broadcastEntityEvent(this, (byte) 1);
+
 		this.setLeaping(true);
+		this.level.broadcastEntityEvent(this, (byte) 1);
+
+		if (this.level.getBiome(this.blockPosition()).is(AtmosphericBiomeTags.IS_COCHINEAL_HABITAT)) {
+			this.lastHabitatBiomePos = this.blockPosition();
+			this.forgetHabitatBiomePosCounter = 100;
+		} else if (this.lastHabitatBiomePos != null && this.forgetHabitatBiomePosCounter-- <= 0) {
+			this.lastHabitatBiomePos = null;
+		}
+
+		this.hasImpulse = true;
 		net.minecraftforge.common.ForgeHooks.onLivingJump(this);
 	}
 
@@ -537,6 +570,16 @@ public class Cochineal extends Animal implements Saddleable {
 		if (CACTUS_POS.equals(key))
 			this.refreshDimensions();
 		super.onSyncedDataUpdated(key);
+	}
+
+	@Override
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData groupData, @Nullable CompoundTag tag) {
+		BlockPos blockpos = this.blockPosition();
+		if (this.level.getBiome(blockpos).is(AtmosphericBiomeTags.IS_COCHINEAL_HABITAT)) {
+			this.lastHabitatBiomePos = blockpos;
+			this.forgetHabitatBiomePosCounter = 100;
+		}
+		return super.finalizeSpawn(level, difficulty, spawnType, groupData, tag);
 	}
 
 	@Override

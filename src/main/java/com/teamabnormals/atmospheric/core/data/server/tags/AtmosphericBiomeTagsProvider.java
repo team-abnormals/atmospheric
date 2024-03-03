@@ -36,6 +36,8 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 
 		this.tag(AtmosphericBiomeTags.IS_RAINFOREST).add(RAINFOREST.get(), SPARSE_RAINFOREST.get(), RAINFOREST_BASIN.get(), SPARSE_RAINFOREST_BASIN.get());
 		this.tag(AtmosphericBiomeTags.IS_DUNES).add(DUNES.get(), FLOURISHING_DUNES.get(), ROCKY_DUNES.get(), PETRIFIED_DUNES.get());
+		this.tag(AtmosphericBiomeTags.IS_SCRUBLAND).add(SCRUBLAND.get(), SNOWY_SCRUBLAND.get());
+		this.tag(AtmosphericBiomeTags.IS_COCHINEAL_HABITAT).addTag(AtmosphericBiomeTags.IS_SCRUBLAND).add(SPINY_THICKET.get());
 		this.tag(AtmosphericBiomeTags.HAS_ARID_GARDEN).addTag(AtmosphericBiomeTags.IS_DUNES);
 		this.tag(AtmosphericBiomeTags.HAS_VILLAGE_SCRUBLAND).add(SCRUBLAND.get());
 		this.tag(AtmosphericBiomeTags.HAS_KOUSA_SANCTUM).add(KOUSA_JUNGLE.get());
