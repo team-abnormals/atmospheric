@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature;
 
+import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.teamabnormals.atmospheric.common.block.PassionVineBlock;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
@@ -12,7 +13,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 
