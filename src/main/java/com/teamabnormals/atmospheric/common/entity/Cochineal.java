@@ -5,6 +5,7 @@ import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericParticleTypes;
+import com.teamabnormals.blueprint.core.util.NetworkUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
@@ -62,6 +63,7 @@ public class Cochineal extends Animal implements Saddleable {
 	private boolean superInLove;
 	private int jumpDelayTicks;
 	private int suckleCooldown;
+	private int suckleHealTicks;
 
 	private boolean jumpAnim;
 	private float jumpAmount;
@@ -151,6 +153,7 @@ public class Cochineal extends Animal implements Saddleable {
 		if (tag.contains("CactusPos")) {
 			this.setCactusPos(NbtUtils.readBlockPos(tag.getCompound("CactusPos")));
 			this.setCactusSide(Direction.byName(tag.getString("CactusSide")));
+			this.suckleHealTicks = 120;
 		}
 	}
 
@@ -225,6 +228,8 @@ public class Cochineal extends Animal implements Saddleable {
 
 		this.setDiscardFriction(false);
 		this.setLeaping(false);
+
+		this.suckleHealTicks = 120;
 		this.suckleCooldown = 200;
 	}
 
@@ -383,9 +388,6 @@ public class Cochineal extends Animal implements Saddleable {
 		if (this.getInLoveTime() == 0)
 			this.setSuperInLove(false);
 
-		if (!this.level.isClientSide && this.isAlive() && this.getHealth() < this.getMaxHealth() && this.tickCount % 120 == 0 && this.isAttachedToCactus())
-			this.heal(1.0F);
-
 		if (this.suckleCooldown > 0)
 			this.suckleCooldown--;
 
@@ -399,35 +401,50 @@ public class Cochineal extends Animal implements Saddleable {
 			this.jumpAmount = Math.max(this.jumpAmount - 0.1F, 0.0F);
 		}
 
-		if ((this.isLeaping() || this.hurtTime > 0) && this.level.isClientSide) {
-			boolean cold = this.level.getBiome(this.blockPosition()).get().coldEnoughToSnow(this.blockPosition());
-			for (int i = 0; i < 3; i++) {
-				double x = -this.getLookAngle().x * 0.7D + (this.random.nextDouble() - 0.5D) * 0.6D;
-				double y = 0.6D + (this.random.nextDouble() - 0.5D) * 0.6D;
-				double z = -this.getLookAngle().z * 0.7D + (this.random.nextDouble() - 0.5D) * 0.6D;
+		if (this.isAlive()) {
+			if (!this.level.isClientSide && this.getHealth() < this.getMaxHealth() && this.isAttachedToCactus() && this.suckleHealTicks-- <= 0) {
+				this.heal(1.0F);
+				this.suckleHealTicks = 120;
+				double d0 = this.random.nextGaussian() * 0.02D;
+				double d1 = this.random.nextGaussian() * 0.02D;
+				double d2 = this.random.nextGaussian() * 0.02D;
+				NetworkUtil.spawnParticle("minecraft:heart", this.getRandomX(1.0D), this.getRandomY(), this.getRandomZ(1.0D), d0, d1, d2);
+			} else if (this.level.isClientSide) {
+				if (this.isLeaping() || this.hurtTime > 0) {
+					boolean cold = this.level.getBiome(this.blockPosition()).get().coldEnoughToSnow(this.blockPosition());
+					for (int i = 0; i < 3; i++) {
+						double x = -this.getLookAngle().x * 0.7D + (this.random.nextDouble() - 0.5D) * 0.6D;
+						double y = 0.6D + (this.random.nextDouble() - 0.5D) * 0.6D;
+						double z = -this.getLookAngle().z * 0.7D + (this.random.nextDouble() - 0.5D) * 0.6D;
 
-				if (this.isBaby()) {
-					x *= 0.4D;
-					y *= 0.4D;
-					z *= 0.4D;
+						if (this.isBaby()) {
+							x *= 0.4D;
+							y *= 0.4D;
+							z *= 0.4D;
+						}
+
+						this.level.addParticle(cold ? AtmosphericParticleTypes.COLD_COCHINEAL_TRAIL.get() : AtmosphericParticleTypes.COCHINEAL_TRAIL.get(), this.getX() + x, this.getY() + y, this.getZ() + z, 0.0D, 0.0D, 0.0D);
+					}
 				}
 
-				this.level.addParticle(cold ? AtmosphericParticleTypes.COLD_COCHINEAL_TRAIL.get() : AtmosphericParticleTypes.COCHINEAL_TRAIL.get(), this.getX() + x, this.getY() + y, this.getZ() + z, 0.0D, 0.0D, 0.0D);
+				if (this.isAttachedToCactus() && this.isBaby() && this.random.nextInt(160) == 0) {
+					this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, this.getRandomX(1.0D), this.getRandomY(), this.getRandomZ(1.0D), 0.0D, 0.0D, 0.0D);
+				}
 			}
-		}
 
-		if (!this.getEatingStack().isEmpty() && this.tickCount % 12 == 0) {
-			this.playSound(SoundEvents.GENERIC_EAT, 0.5F + 0.5F * (float) this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-			if (this.level.isClientSide) {
-				for (int i = 0; i < 6; ++i) {
-					Vec3 vec3 = new Vec3((this.random.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, (this.random.nextFloat() - 0.5D) * 0.1D);
-					vec3 = vec3.xRot(-this.getXRot() * Mth.DEG_TO_RAD);
-					vec3 = vec3.yRot(-this.getYRot() * Mth.DEG_TO_RAD);
-					double d0 = (double) (-this.random.nextFloat()) * 0.6D - 0.3D;
-					Vec3 vec31 = new Vec3((this.random.nextFloat() - 0.5D) * 0.8D, d0, 0.8D + (this.random.nextFloat() - 0.5D) * 0.4D);
-					vec31 = vec31.yRot(-this.yBodyRot * Mth.DEG_TO_RAD);
-					vec31 = vec31.add(this.getX(), this.getY() + 1.0F, this.getZ());
-					this.level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, this.getEatingStack()), vec31.x, vec31.y, vec31.z, vec3.x, vec3.y + 0.05D, vec3.z);
+			if (!this.getEatingStack().isEmpty() && this.tickCount % 12 == 0) {
+				this.playSound(SoundEvents.GENERIC_EAT, 0.5F + 0.5F * (float) this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+				if (this.level.isClientSide) {
+					for (int i = 0; i < 6; ++i) {
+						Vec3 vec3 = new Vec3((this.random.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, (this.random.nextFloat() - 0.5D) * 0.1D);
+						vec3 = vec3.xRot(-this.getXRot() * Mth.DEG_TO_RAD);
+						vec3 = vec3.yRot(-this.getYRot() * Mth.DEG_TO_RAD);
+						double d0 = (double) (-this.random.nextFloat()) * 0.6D - 0.3D;
+						Vec3 vec31 = new Vec3((this.random.nextFloat() - 0.5D) * 0.8D, d0, 0.8D + (this.random.nextFloat() - 0.5D) * 0.4D);
+						vec31 = vec31.yRot(-this.yBodyRot * Mth.DEG_TO_RAD);
+						vec31 = vec31.add(this.getX(), this.getY() + 1.0F, this.getZ());
+						this.level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, this.getEatingStack()), vec31.x, vec31.y, vec31.z, vec3.x, vec3.y + 0.05D, vec3.z);
+					}
 				}
 			}
 		}
