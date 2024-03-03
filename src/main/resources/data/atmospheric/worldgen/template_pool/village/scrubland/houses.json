@@ -337,6 +337,28 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:village/scrubland/houses/scrubland_cochineal_farm_1",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "atmospheric:village/scrubland/houses/scrubland_cochineal_farm_2",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
         "location": "atmospheric:village/scrubland/houses/scrubland_animal_pen_1",
         "processors": {
           "processors": []
