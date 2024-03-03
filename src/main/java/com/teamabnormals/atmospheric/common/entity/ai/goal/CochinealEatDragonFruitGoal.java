@@ -82,9 +82,12 @@ public class CochinealEatDragonFruitGoal extends Goal {
 					if (this.itemEntity.getItem().is(AtmosphericItemTags.COCHINEAL_SUPER_LOVE_FOOD))
 						this.cochineal.setSuperInLove(true);
 
-					this.itemEntity.getItem().shrink(1);
-					if (this.itemEntity.getItem().isEmpty())
+					ItemStack itemstack = this.itemEntity.getItem().copy();
+					itemstack.shrink(1);
+					if (itemstack.isEmpty())
 						this.itemEntity.discard();
+					else
+						this.itemEntity.setItem(itemstack);
 				}
 			}
 		} else {
