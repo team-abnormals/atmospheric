@@ -626,6 +626,10 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 							.add(LootItem.lootTableItem(Items.EMERALD).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
 					)
 			);
+
+			consumer.accept(Atmospheric.location("chests/cochineal_farm_dropper"), LootTable.lootTable()
+					.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(3.0F, 4.0F))
+							.add(LootItem.lootTableItem(AtmosphericItems.DRAGON_FRUIT.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))));
 		}
 	}
 }
