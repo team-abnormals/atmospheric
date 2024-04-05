@@ -85,7 +85,7 @@ public class DragonFruit extends Entity {
 	public void tick() {
 		super.tick();
 
-		if (this.isInWater()) {
+		if (this.isInFluidType()) {
 			this.showBreakingParticles();
 			this.brokenByPlayer();
 			this.kill();

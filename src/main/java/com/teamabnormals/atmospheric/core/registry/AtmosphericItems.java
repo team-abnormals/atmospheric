@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.core.registry;
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.item.*;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.other.AtmosphericEvents;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBannerPatternTags;
 import com.teamabnormals.atmospheric.integration.boatload.AtmosphericBoatTypes;
 import com.teamabnormals.blueprint.common.item.BlueprintBannerPatternItem;
@@ -48,7 +49,7 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> GOLDEN_DRAGON_FRUIT = HELPER.createItem("golden_dragon_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.GOLDEN_DRAGON_FRUIT).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> ENDER_DRAGON_FRUIT = HELPER.createItem("ender_dragon_fruit", () -> new EnderDragonFruitItem(new Item.Properties().food(AtmosphericFoods.ENDER_DRAGON_FRUIT).rarity(Rarity.EPIC).stacksTo(1)));
 
-	public static final RegistryObject<Item> ORANGE = HELPER.createItem("orange", () -> new OrangeBlockItem(AtmosphericBlocks.ORANGE.get(), new Item.Properties().food(AtmosphericFoods.ORANGE).tab(CreativeModeTab.TAB_FOOD)));
+	public static final RegistryObject<Item> ORANGE = HELPER.createItem("orange", () -> new OrangeBlockItem(AtmosphericBlocks.ORANGE.get(), new Item.Properties().food(AtmosphericFoods.ORANGE).tab(CreativeModeTab.TAB_FOOD).stacksTo(AtmosphericEvents.isAprilFools() ? 1 : 64)));
 	public static final RegistryObject<Item> ORANGE_PUDDING = HELPER.createItem("orange_pudding", () -> new Item(new Item.Properties().food(AtmosphericFoods.ORANGE_PUDDING).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> ORANGE_SORBET = HELPER.createItem("orange_sorbet", () -> new BowlFoodItem(new Item.Properties().food(AtmosphericFoods.ORANGE_SORBET).stacksTo(1).craftRemainder(Items.BOWL).tab(CreativeModeTab.TAB_FOOD)));
 	public static final RegistryObject<Item> CANDIED_ORANGE_SLICES = HELPER.createItem("candied_orange_slices", () -> new Item(new Item.Properties().food(AtmosphericFoods.CANDIED_ORANGE_SLICES).tab(CreativeModeTab.TAB_FOOD)));

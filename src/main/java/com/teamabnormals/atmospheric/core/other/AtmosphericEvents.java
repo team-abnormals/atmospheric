@@ -25,6 +25,8 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
+import java.util.Calendar;
+
 @EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericEvents {
 
@@ -107,5 +109,10 @@ public class AtmosphericEvents {
 				}
 			}
 		}
+	}
+
+	public static boolean isAprilFools() {
+		Calendar calendar = Calendar.getInstance();
+		return calendar.get(Calendar.MONTH) + 1 == 4 && calendar.get(Calendar.DATE) == 1;
 	}
 }

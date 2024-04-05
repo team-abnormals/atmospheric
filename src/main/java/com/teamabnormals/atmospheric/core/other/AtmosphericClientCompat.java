@@ -1,25 +1,39 @@
 package com.teamabnormals.atmospheric.core.other;
 
+import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.TickEvent.PlayerTickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Arrays;
 import java.util.List;
 
+@EventBusSubscriber(modid = Atmospheric.MOD_ID, value = Dist.CLIENT)
 public class AtmosphericClientCompat {
 
 	public static void registerCompat() {
 		registerBlockColors();
 		registerRenderLayers();
+		registerItemProperties();
 	}
 
 	private static void registerBlockColors() {
@@ -206,5 +220,27 @@ public class AtmosphericClientCompat {
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_AGAVE.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GOLDEN_GROWTHS.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_GOLDEN_GROWTHS.get(), RenderType.cutout());
+	}
+
+	private static void registerItemProperties() {
+		ItemProperties.register(AtmosphericItems.ORANGE.get(), new ResourceLocation(Atmospheric.MOD_ID, "hey_apple"), (stack, level, entity, hash) -> AtmosphericEvents.isAprilFools() ? 1.0F : 0.0F);
+	}
+
+	@SubscribeEvent
+	public static void onPlayerTick(PlayerTickEvent event) {
+		if (AtmosphericEvents.isAprilFools()) {
+			Player player = event.player;
+			RandomSource random = player.getRandom();
+			if (random.nextInt(401) == 0 && player.getInventory().contains(AtmosphericItems.ORANGE.get().getDefaultInstance())) {
+				player.displayClientMessage(Component.literal(getMessage(random)).withStyle(ChatFormatting.GOLD), true);
+			}
+		}
+	}
+
+	public static final String[] COMMON = {"Hey!", "Hey! Hey!", "Hey Apple!", "Apple!"};
+	public static final String[] RARE = {"Knife!", "Orange you glad I didn't say apple again?", "Can you do ten push-ups in ten seconds?", "Blah blah blah!", "Hey Pear!"};
+
+	public static String getMessage(RandomSource random) {
+		return random.nextInt(4) == 0 ? RARE[random.nextInt(RARE.length - 1)] : COMMON[random.nextInt(COMMON.length - 1)];
 	}
 }

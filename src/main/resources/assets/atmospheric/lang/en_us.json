@@ -80,7 +80,7 @@
   "block.atmospheric.barrel_cactus": "Barrel Cactus",
   "block.atmospheric.barrel_cactus_batch": "Barrel Cactus Batch",
   "block.atmospheric.blood_orange": "Blood Orange",
-  "block.atmospheric.blood_orange_crate": "Crate Blood Oranges",
+  "block.atmospheric.blood_orange_crate": "Crate of Blood Oranges",
   "block.atmospheric.carmine_block": "Carmine Block",
   "block.atmospheric.carmine_pavement": "Carmine Pavement",
   "block.atmospheric.carmine_pavement_slab": "Carmine Pavement Slab",
@@ -539,5 +539,9 @@
   "item.minecraft.tipped_arrow.effect.worsening_long": "Arrow of Worsening",
   "item.minecraft.tipped_arrow.effect.worsening_strong": "Arrow of Worsening",
   "potion.potency.9": "X",
+  "subtitles.atmospheric.entity.cochineal.death": "Cochineal dies",
+  "subtitles.atmospheric.entity.cochineal.hurt": "Cochineal hurts",
+  "subtitles.atmospheric.entity.cochineal.suckle": "Cochineal suckles",
+  "subtitles.atmospheric.entity.passion_fruit_seed.spit": "Spitting",
   "tooltip.atmospheric.unobtainable": "Unobtainable"
 }

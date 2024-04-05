@@ -1,0 +1,32 @@
+{
+  "entity.cochineal.hurt": {
+    "sounds": [
+      "atmospheric:mob/cochineal/hurt1",
+      "atmospheric:mob/cochineal/hurt2",
+      "atmospheric:mob/cochineal/hurt3"
+    ],
+    "subtitle": "subtitles.atmospheric.entity.cochineal.hurt"
+  },
+  "entity.cochineal.death": {
+    "sounds": [
+      "atmospheric:mob/cochineal/death1",
+      "atmospheric:mob/cochineal/death2"
+    ],
+    "subtitle": "subtitles.atmospheric.entity.cochineal.death"
+  },
+  "entity.cochineal.suckle": {
+    "sounds": [
+      "atmospheric:mob/cochineal/suckle1",
+      "atmospheric:mob/cochineal/suckle2",
+      "atmospheric:mob/cochineal/suckle3"
+    ],
+    "subtitle": "subtitles.atmospheric.entity.cochineal.suckle"
+  },
+  "entity.passion_fruit_seed.spit": {
+    "sounds": [
+      "mob/llama/spit1",
+      "mob/llama/spit2"
+    ],
+    "subtitle": "subtitles.atmospheric.entity.passion_fruit_seed.spit"
+  }
+}
