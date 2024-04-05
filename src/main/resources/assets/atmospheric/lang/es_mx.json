@@ -539,5 +539,9 @@
   "item.minecraft.tipped_arrow.effect.worsening_long": "Flecha de empeoramiento",
   "item.minecraft.tipped_arrow.effect.worsening_strong": "Flecha de empeoramiento",
   "potion.potency.9": "X",
+  "subtitles.atmospheric.entity.cochineal.death": "Cochinilla muere",
+  "subtitles.atmospheric.entity.cochineal.hurt": "Cochinilla recibe daño",
+  "subtitles.atmospheric.entity.cochineal.suckle": "Cochinilla succiona",
+  "subtitles.atmospheric.entity.passion_fruit_seed.spit": "Escupiendo",
   "tooltip.atmospheric.unobtainable": "No se puede obtener"
 }
