@@ -6,7 +6,9 @@ import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.tags.PaintingVariantTags;
+import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -18,11 +20,9 @@ public class AtmosphericPaintingVariantTagsProvider extends PaintingVariantTagsP
 
 	@Override
 	public void addTags(Provider provider) {
-		this.tag(PaintingVariantTags.PLACEABLE).add(
-				AtmosphericPaintingVariants.FATEFUL_OUTING.getKey(),
-				AtmosphericPaintingVariants.MONSOON.getKey(),
-				AtmosphericPaintingVariants.NOT_SO_STILL_LIFE.getKey(),
-				AtmosphericPaintingVariants.WAYWARD.getKey()
-		);
+		TagAppender<PaintingVariant> appender = this.tag(PaintingVariantTags.PLACEABLE);
+		for (RegistryObject<PaintingVariant> variant : AtmosphericPaintingVariants.PAINTING_VARIANTS.getEntries()) {
+			appender.add(variant.getKey());
+		}
 	}
 }

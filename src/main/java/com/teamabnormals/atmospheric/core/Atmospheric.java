@@ -26,6 +26,8 @@ import com.teamabnormals.atmospheric.core.other.AtmosphericVillagers;
 import com.teamabnormals.atmospheric.core.registry.*;
 import com.teamabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
+import com.teamabnormals.gallery.core.data.client.GalleryAssetsRemolderProvider;
+import com.teamabnormals.gallery.core.data.client.GalleryItemModelProvider;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.core.HolderLookup.Provider;
@@ -143,6 +145,9 @@ public class Atmospheric {
 		generator.addProvider(client, new AtmosphericBlockStateProvider(output, helper));
 		generator.addProvider(client, new AtmosphericItemModelProvider(output, helper));
 		generator.addProvider(client, new AtmosphericSpriteSourceProvider(output, helper));
+
+		generator.addProvider(client, new GalleryItemModelProvider(MOD_ID, output, helper));
+		generator.addProvider(client, new GalleryAssetsRemolderProvider(MOD_ID, output, provider));
 	}
 
 	@OnlyIn(Dist.CLIENT)

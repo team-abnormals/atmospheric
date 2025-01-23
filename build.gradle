@@ -81,6 +81,7 @@ dependencies {
 
     implementation fg.deobf("com.teamabnormals:boatload:${project.minecraft}-${project.boatload}")
     implementation fg.deobf("com.teamabnormals:woodworks:${project.minecraft}-${project.woodworks}")
+    implementation fg.deobf("com.teamabnormals:gallery:${project.minecraft}-${project.gallery}")
 
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-common-api:${project.jei}")
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-forge-api:${project.jei}")
