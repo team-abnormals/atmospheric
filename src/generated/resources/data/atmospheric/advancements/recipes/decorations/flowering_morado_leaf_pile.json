@@ -18,7 +18,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "atmospheric:flowering_morado_leaves"
+              "recipe": "atmospheric:flowering_morado_leaf_pile"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -31,7 +31,7 @@
         ],
         "rewards": {
           "recipes": [
-            "atmospheric:flowering_morado_leaves"
+            "atmospheric:flowering_morado_leaf_pile"
           ]
         },
         "sends_telemetry_event": false

@@ -115,7 +115,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		WoodworksRecipeProvider.baseRecipes(consumer, MORADO_PLANKS.get(), MORADO_SLAB.get(), MORADO_BOARDS.get(), MORADO_BOOKSHELF.get(), CHISELED_MORADO_BOOKSHELF.get(), MORADO_LADDER.get(), MORADO_BEEHIVE.get(), MORADO_CHEST.get(), TRAPPED_MORADO_CHEST.get(), Atmospheric.MOD_ID);
 		WoodworksRecipeProvider.sawmillRecipes(consumer, AtmosphericBlockFamilies.MORADO_PLANKS_FAMILY, AtmosphericItemTags.MORADO_LOGS, MORADO_BOARDS.get(), MORADO_LADDER.get(), Atmospheric.MOD_ID);
 		WoodworksRecipeProvider.leafPileRecipes(consumer, MORADO_LEAVES.get(), MORADO_LEAF_PILE.get(), Atmospheric.MOD_ID);
-		WoodworksRecipeProvider.leafPileRecipes(consumer, FLOWERING_MORADO_LEAVES.get(), FLOWERING_MORADO_LEAVES.get(), Atmospheric.MOD_ID);
+		WoodworksRecipeProvider.leafPileRecipes(consumer, FLOWERING_MORADO_LEAVES.get(), FLOWERING_MORADO_LEAF_PILE.get(), Atmospheric.MOD_ID);
 
 		generateRecipes(consumer, AtmosphericBlockFamilies.YUCCA_PLANKS_FAMILY);
 		planksFromLogs(consumer, YUCCA_PLANKS.get(), AtmosphericItemTags.YUCCA_LOGS, 4);
