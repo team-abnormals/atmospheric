@@ -1,5 +1,6 @@
 {
   "parent": "blueprint:block/tinted_leaf_pile",
+  "render_type": "minecraft:cutout",
   "textures": {
     "all": "atmospheric:block/morado_leaves",
     "overlay": "atmospheric:block/flowering_morado_leaves_overlay"
