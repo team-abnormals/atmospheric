@@ -82,6 +82,7 @@ dependencies {
     implementation fg.deobf("com.teamabnormals:boatload:${project.minecraft}-${project.boatload}")
     implementation fg.deobf("com.teamabnormals:woodworks:${project.minecraft}-${project.woodworks}")
     implementation fg.deobf("com.teamabnormals:gallery:${project.minecraft}-${project.gallery}")
+    implementation fg.deobf("com.teamabnormals:clayworks:${project.minecraft}-${project.clayworks}")
 
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-common-api:${project.jei}")
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-forge-api:${project.jei}")
@@ -91,7 +92,7 @@ dependencies {
 }
 
 repositories {
-    maven { url "https://maven.jaackson.me" }
+    maven { url "https://maven.teamabnormals.com/" }
     maven { url "https://dvs1.progwml6.com/files/maven/" }
     maven { url "https://modmaven.k-4u.nl" }
     maven { url "https://www.cursemaven.com" }

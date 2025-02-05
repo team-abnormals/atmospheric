@@ -8,6 +8,7 @@ import com.teamabnormals.atmospheric.integration.boatload.AtmosphericBoatTypes;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
+import com.teamabnormals.clayworks.core.data.server.ClayworksRecipeProvider;
 import com.teamabnormals.woodworks.core.data.server.WoodworksRecipeProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -175,5 +176,9 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		WoodworksRecipeProvider.baseRecipes(consumer, GRIMWOOD_PLANKS.get(), GRIMWOOD_SLAB.get(), GRIMWOOD_BOARDS.get(), GRIMWOOD_BOOKSHELF.get(), CHISELED_GRIMWOOD_BOOKSHELF.get(), GRIMWOOD_LADDER.get(), GRIMWOOD_BEEHIVE.get(), GRIMWOOD_CHEST.get(), TRAPPED_GRIMWOOD_CHEST.get(), Atmospheric.MOD_ID);
 		WoodworksRecipeProvider.sawmillRecipes(consumer, AtmosphericBlockFamilies.GRIMWOOD_PLANKS_FAMILY, AtmosphericItemTags.GRIMWOOD_LOGS, GRIMWOOD_BOARDS.get(), GRIMWOOD_LADDER.get(), Atmospheric.MOD_ID);
 		WoodworksRecipeProvider.leafPileRecipes(consumer, GRIMWOOD_LEAVES.get(), GRIMWOOD_LEAF_PILE.get(), Atmospheric.MOD_ID);
+
+		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.MISC, AGAVE.get(), Items.CYAN_DYE, 1.0F, 100, Atmospheric.MOD_ID);
+		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ARID_SANDSTONE.get(), SMOOTH_ARID_SANDSTONE.get(), 0.1F, 100, Atmospheric.MOD_ID);
+		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, RED_ARID_SANDSTONE.get(), SMOOTH_RED_ARID_SANDSTONE.get(), 0.1F, 100, Atmospheric.MOD_ID);
 	}
 }
