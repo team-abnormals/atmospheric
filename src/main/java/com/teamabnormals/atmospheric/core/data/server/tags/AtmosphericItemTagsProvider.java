@@ -61,6 +61,7 @@ public class AtmosphericItemTagsProvider extends BlueprintItemTagsProvider {
 		this.tag(ItemTags.STONE_CRAFTING_MATERIALS).addTag(TRAVERTINE);
 		this.tag(ItemTags.DECORATED_POT_SHERDS).add(AtmosphericItems.SCYTHE_POTTERY_SHERD.get(), AtmosphericItems.SUCCULENT_POTTERY_SHERD.get(), AtmosphericItems.SUN_POTTERY_SHERD.get());
 		this.tag(ItemTags.TRIM_TEMPLATES).add(AtmosphericItems.APOSTLE_ARMOR_TRIM_SMITHING_TEMPLATE.get(), AtmosphericItems.DRUID_ARMOR_TRIM_SMITHING_TEMPLATE.get(), AtmosphericItems.PETRIFIED_ARMOR_TRIM_SMITHING_TEMPLATE.get());
+		this.tag(ItemTags.TRIM_MATERIALS).add(AtmosphericItems.CARMINE_HUSK.get());
 
 		this.copy(Tags.Blocks.SAND_COLORLESS, Tags.Items.SAND_COLORLESS);
 		this.copy(Tags.Blocks.SAND_RED, Tags.Items.SAND_RED);

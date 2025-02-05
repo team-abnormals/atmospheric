@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "type": "blueprint:paletted_permutations",
+      "palette_key": "clayworks:entity/decorated_pot_trim_palettes/trim_palette",
+      "permutations": {
+        "atmospheric_carmine": "atmospheric:entity/decorated_pot_trim_palettes/carmine"
+      },
+      "sources": [
+        {
+          "type": "minecraft:directory",
+          "prefix": "entity/decorated_pot_trim_patterns/",
+          "source": "entity/decorated_pot_trim_patterns"
+        }
+      ]
+    }
+  ]
+}

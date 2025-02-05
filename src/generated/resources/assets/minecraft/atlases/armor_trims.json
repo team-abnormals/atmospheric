@@ -4,6 +4,20 @@
       "type": "blueprint:paletted_permutations",
       "palette_key": "minecraft:trims/color_palettes/trim_palette",
       "permutations": {
+        "atmospheric_carmine": "atmospheric:trims/color_palettes/carmine"
+      },
+      "sources": [
+        {
+          "type": "minecraft:directory",
+          "prefix": "trims/models/armor/",
+          "source": "trims/models/armor"
+        }
+      ]
+    },
+    {
+      "type": "blueprint:paletted_permutations",
+      "palette_key": "minecraft:trims/color_palettes/trim_palette",
+      "permutations": {
         "amethyst": "minecraft:trims/color_palettes/amethyst",
         "copper": "minecraft:trims/color_palettes/copper",
         "diamond": "minecraft:trims/color_palettes/diamond",

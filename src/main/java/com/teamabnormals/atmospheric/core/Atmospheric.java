@@ -131,6 +131,7 @@ public class Atmospheric {
 		generator.addProvider(server, new AtmosphericEntityTypeTagsProvider(output, provider, helper));
 		generator.addProvider(server, new AtmosphericBiomeTagsProvider(output, provider, helper));
 		generator.addProvider(server, new AtmosphericBannerPatternTagsProvider(output, provider, helper));
+		generator.addProvider(server, new AtmosphericTrimMaterialTagsProvider(output, provider, helper));
 		generator.addProvider(server, new AtmosphericStructureTagsProvider(output, provider, helper));
 		generator.addProvider(server, new AtmosphericDamageTypeTagsProvider(output, provider, helper));
 		generator.addProvider(server, new AtmosphericPaintingVariantTagsProvider(output, provider, helper));

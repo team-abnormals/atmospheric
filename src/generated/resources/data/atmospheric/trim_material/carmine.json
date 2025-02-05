@@ -1,0 +1,9 @@
+{
+  "asset_name": "atmospheric_carmine",
+  "description": {
+    "color": "#DB4F4A",
+    "translate": "trim_material.atmospheric.carmine"
+  },
+  "ingredient": "atmospheric:carmine_husk",
+  "item_model_index": -1.0
+}
