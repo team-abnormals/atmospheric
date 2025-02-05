@@ -49,7 +49,7 @@ public class AtmosphericClientCompat {
 		);
 
 		DataUtil.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.get(0.5D, 1.0D), foliageColors);
-		DataUtil.registerBlockItemColor(itemColors, (color, items) -> FoliageColor.get(0.5D, 1.0D), foliageColors);
+		DataUtil.registerBlockItemColor(itemColors, (color, items) -> items > 0 ? -1 : FoliageColor.get(0.5D, 1.0D), foliageColors);
 	}
 
 	private static void registerRenderLayers() {
