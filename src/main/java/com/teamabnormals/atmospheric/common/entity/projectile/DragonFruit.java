@@ -38,7 +38,7 @@ public class DragonFruit extends Entity {
 	private static final EntityDataAccessor<Boolean> IS_FLOWERING = SynchedEntityData.defineId(DragonFruit.class, EntityDataSerializers.BOOLEAN);
 	private static final EntityDataAccessor<Boolean> IS_ENDER = SynchedEntityData.defineId(DragonFruit.class, EntityDataSerializers.BOOLEAN);
 
-	private Direction rollingDirection;
+	private Direction rollingDirection = Direction.NORTH;
 	public int rollingTicks = 200;
 
 	public DragonFruit(EntityType<?> entityType, Level level) {
@@ -90,7 +90,7 @@ public class DragonFruit extends Entity {
 
 		if (this.isInFluidType()) {
 			this.showBreakingParticles();
-			this.brokenByPlayer();
+			this.breakDragonFruit();
 			this.kill();
 		}
 
@@ -118,13 +118,13 @@ public class DragonFruit extends Entity {
 			this.rollingTicks--;
 		} else {
 			this.showBreakingParticles();
-			this.brokenByPlayer();
+			this.breakDragonFruit();
 			this.kill();
 		}
 
 		if (this.horizontalCollision) {
 			this.showBreakingParticles();
-			this.brokenByPlayer();
+			this.breakDragonFruit();
 			this.kill();
 		}
 
@@ -193,11 +193,17 @@ public class DragonFruit extends Entity {
 		return this.entityData.get(IS_ENDER);
 	}
 
+	@Override
 	public boolean isAlwaysTicking() {
 		return true;
 	}
 
 	public Direction getRollingDirection() {
+		Direction dir = this.rollingDirection;
+		if (dir == null || dir.getAxis().isHorizontal()) {
+			return Direction.NORTH;
+		}
+
 		return this.rollingDirection;
 	}
 
@@ -213,7 +219,7 @@ public class DragonFruit extends Entity {
 				return false;
 			} else if (!this.isInvulnerableTo(source)) {
 				if (source.is(DamageTypeTags.IS_EXPLOSION)) {
-					this.brokenByPlayer();
+					this.breakDragonFruit();
 					this.kill();
 					return false;
 				} else {
@@ -222,7 +228,7 @@ public class DragonFruit extends Entity {
 					boolean flag2 = "player".equals(source.getMsgId());
 					if (!flag2 && !flag) {
 						return false;
-					} else if (source.getEntity() instanceof Player && !((Player) source.getEntity()).getAbilities().mayBuild) {
+					} else if (source.getEntity() instanceof Player player && !player.getAbilities().mayBuild) {
 						return false;
 					} else if (source.isCreativePlayer()) {
 						this.playBrokenSound();
@@ -230,7 +236,7 @@ public class DragonFruit extends Entity {
 						this.kill();
 						return flag1;
 					} else {
-						this.brokenByPlayer();
+						this.breakDragonFruit();
 						this.showBreakingParticles();
 						this.kill();
 
@@ -245,11 +251,10 @@ public class DragonFruit extends Entity {
 		}
 	}
 
-	private void brokenByPlayer() {
+	private void breakDragonFruit() {
 		Block.popResource(this.level(), this.blockPosition(), this.getItem());
-		if (!this.attemptPlaceRoots()) {
-			this.playBrokenSound();
-		}
+		this.attemptPlaceRoots();
+		this.playBrokenSound();
 	}
 
 	private void showBreakingParticles() {
