@@ -3,6 +3,11 @@
   "remolder": [
     {
       "type": "add",
+      "target": "overrides",
+      "value": []
+    },
+    {
+      "type": "add",
       "target": "overrides[]",
       "value": {
         "model": "atmospheric:item/painting/fateful_outing",
