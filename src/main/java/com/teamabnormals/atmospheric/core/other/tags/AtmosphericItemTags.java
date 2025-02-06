@@ -13,6 +13,7 @@ public class AtmosphericItemTags {
 	public static final TagKey<Item> KOUSA_LOGS = itemTag("kousa_logs");
 	public static final TagKey<Item> GRIMWOOD_LOGS = itemTag("grimwood_logs");
 	public static final TagKey<Item> LAUREL_LOGS = itemTag("laurel_logs");
+	public static final TagKey<Item> SMELTS_TO_ARID_GLASS = itemTag("smelts_to_arid_glass");
 
 	public static final TagKey<Item> MONKEY_BRUSH = itemTag("monkey_brush");
 	public static final TagKey<Item> TRAVERTINE = itemTag("travertine");

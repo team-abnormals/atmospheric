@@ -176,10 +176,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE = HELPER.createBlock("smooth_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE)));
 	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE_SLAB = HELPER.createBlock("smooth_arid_sandstone_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE_SLAB)));
 	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE_STAIRS = HELPER.createBlock("smooth_arid_sandstone_stairs", () -> new StairBlock(() -> SMOOTH_ARID_SANDSTONE.get().defaultBlockState(), Block.Properties.copy(Blocks.SMOOTH_SANDSTONE_STAIRS)));
-
 	public static final RegistryObject<Block> CUT_ARID_SANDSTONE = HELPER.createBlock("cut_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.CUT_SANDSTONE)));
 	public static final RegistryObject<Block> CUT_ARID_SANDSTONE_SLAB = HELPER.createBlock("cut_arid_sandstone_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.CUT_SANDSTONE_SLAB)));
-
 	public static final RegistryObject<Block> CHISELED_ARID_SANDSTONE = HELPER.createBlock("chiseled_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE)));
 
 	public static final RegistryObject<Block> RED_ARID_SAND = HELPER.createBlock("red_arid_sand", () -> new AridSandBlock(16241568, AtmosphericProperties.RED_ARID_SAND));
@@ -191,11 +189,12 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> SMOOTH_RED_ARID_SANDSTONE = HELPER.createBlock("smooth_red_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE)));
 	public static final RegistryObject<Block> SMOOTH_RED_ARID_SANDSTONE_SLAB = HELPER.createBlock("smooth_red_arid_sandstone_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE_SLAB)));
 	public static final RegistryObject<Block> SMOOTH_RED_ARID_SANDSTONE_STAIRS = HELPER.createBlock("smooth_red_arid_sandstone_stairs", () -> new StairBlock(() -> SMOOTH_RED_ARID_SANDSTONE.get().defaultBlockState(), Block.Properties.copy(Blocks.SMOOTH_SANDSTONE_STAIRS)));
-
 	public static final RegistryObject<Block> CUT_RED_ARID_SANDSTONE = HELPER.createBlock("cut_red_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.CUT_SANDSTONE)));
 	public static final RegistryObject<Block> CUT_RED_ARID_SANDSTONE_SLAB = HELPER.createBlock("cut_red_arid_sandstone_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.CUT_SANDSTONE_SLAB)));
-
 	public static final RegistryObject<Block> CHISELED_RED_ARID_SANDSTONE = HELPER.createBlock("chiseled_red_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE)));
+
+	public static final RegistryObject<Block> ARID_GLASS = HELPER.createBlock("arid_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
+	public static final RegistryObject<Block> ARID_GLASS_PANE = HELPER.createBlock("arid_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE)));
 
 	public static final RegistryObject<Block> SUSPICIOUS_ARID_SAND = HELPER.createBlock("suspicious_arid_sand", () -> new BrushableBlock(ARID_SAND.get(), BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
 	public static final RegistryObject<Block> SUSPICIOUS_RED_ARID_SAND = HELPER.createBlock("suspicious_red_arid_sand", () -> new BrushableBlock(RED_ARID_SAND.get(), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
@@ -543,6 +542,9 @@ public class AtmosphericBlocks {
 				.addItemsBefore(modLoaded(Blocks.AZALEA_LEAVES, "woodworks"), GRIMWOOD_LEAF_PILE)
 				.addItemsBefore(of(Blocks.AZALEA), ROSEWOOD_SAPLING, MORADO_SAPLING, YUCCA_SAPLING, LAUREL_SAPLING, DRY_LAUREL_SAPLING, ASPEN_SAPLING, GREEN_ASPEN_SAPLING, KOUSA_SAPLING, CURRANT_SEEDLING, GRIMWOOD_SAPLING)
 				.addItemsAfter(of(Blocks.HONEY_BLOCK), ALOE_GEL_BLOCK)
+				.tab(COLORED_BLOCKS)
+				.addItemsAfter(of(Blocks.GLASS), ARID_GLASS)
+				.addItemsAfter(of(Blocks.GLASS_PANE), ARID_GLASS_PANE)
 				.tab(REDSTONE_BLOCKS)
 				.addItemsAfter(of(Blocks.HONEY_BLOCK), ALOE_GEL_BLOCK);
 

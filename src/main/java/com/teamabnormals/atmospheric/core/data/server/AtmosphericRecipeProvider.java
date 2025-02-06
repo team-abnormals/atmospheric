@@ -11,11 +11,11 @@ import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
 import com.teamabnormals.clayworks.core.data.server.ClayworksRecipeProvider;
 import com.teamabnormals.woodworks.core.data.server.WoodworksRecipeProvider;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
@@ -177,8 +177,64 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		WoodworksRecipeProvider.sawmillRecipes(consumer, AtmosphericBlockFamilies.GRIMWOOD_PLANKS_FAMILY, AtmosphericItemTags.GRIMWOOD_LOGS, GRIMWOOD_BOARDS.get(), GRIMWOOD_LADDER.get(), Atmospheric.MOD_ID);
 		WoodworksRecipeProvider.leafPileRecipes(consumer, GRIMWOOD_LEAVES.get(), GRIMWOOD_LEAF_PILE.get(), Atmospheric.MOD_ID);
 
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(AtmosphericItemTags.SMELTS_TO_ARID_GLASS), RecipeCategory.BUILDING_BLOCKS, ARID_GLASS.get(), 0.1F, 200).unlockedBy("has_smelts_to_arid_glass", has(AtmosphericItemTags.SMELTS_TO_ARID_GLASS)).save(consumer);
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ARID_GLASS_PANE.get(), 16).define('#', ARID_GLASS.get()).pattern("###").pattern("###").unlockedBy("has_arid_glass", has(ARID_GLASS.get())).save(consumer);
+
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ARID_GLASS.get()), RecipeCategory.BUILDING_BLOCKS, Blocks.GLASS, 0.1F, 200).unlockedBy("has_arid_glass", has(ARID_GLASS.get())).save(consumer, getModConversionRecipeName(Blocks.GLASS, ARID_GLASS.get()));
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ARID_GLASS_PANE.get()), RecipeCategory.DECORATIONS, Blocks.GLASS_PANE, 0.1F, 200).unlockedBy("has_arid_glass_pane", has(ARID_GLASS_PANE.get())).save(consumer, getModConversionRecipeName(Blocks.GLASS_PANE, ARID_GLASS_PANE.get()));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.BEACON).define('S', Items.NETHER_STAR).define('G', Tags.Items.GLASS_COLORLESS).define('O', Blocks.OBSIDIAN).pattern("GGG").pattern("GSG").pattern("OOO").unlockedBy("has_nether_star", has(Items.NETHER_STAR)).save(consumer);
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.DAYLIGHT_DETECTOR).define('Q', Items.QUARTZ).define('G', Tags.Items.GLASS_COLORLESS).define('W', Ingredient.of(ItemTags.WOODEN_SLABS)).pattern("GGG").pattern("QQQ").pattern("WWW").unlockedBy("has_quartz", has(Items.QUARTZ)).save(consumer);
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Items.END_CRYSTAL).define('T', Items.GHAST_TEAR).define('E', Items.ENDER_EYE).define('G', Tags.Items.GLASS_COLORLESS).pattern("GGG").pattern("GEG").pattern("GTG").unlockedBy("has_ender_eye", has(Items.ENDER_EYE)).save(consumer);
+		ShapedRecipeBuilder.shaped(RecipeCategory.BREWING, Items.GLASS_BOTTLE, 3).define('#', Tags.Items.GLASS_COLORLESS).pattern("# #").pattern(" # ").unlockedBy("has_glass", has(Blocks.GLASS)).save(consumer);
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.TINTED_GLASS, 2).define('G', Tags.Items.GLASS_COLORLESS).define('S', Tags.Items.GEMS_AMETHYST).pattern(" S ").pattern("SGS").pattern(" S ").unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD)).save(consumer);
+
+		stainedGlassFromGlassAndDye(consumer, Blocks.BLACK_STAINED_GLASS, Items.BLACK_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.BLACK_STAINED_GLASS_PANE, Items.BLACK_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.BLUE_STAINED_GLASS, Items.BLUE_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.BLUE_STAINED_GLASS_PANE, Items.BLUE_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.BROWN_STAINED_GLASS, Items.BROWN_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.BROWN_STAINED_GLASS_PANE, Items.BROWN_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.CYAN_STAINED_GLASS, Items.CYAN_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.CYAN_STAINED_GLASS_PANE, Items.CYAN_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.GRAY_STAINED_GLASS, Items.GRAY_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.GRAY_STAINED_GLASS_PANE, Items.GRAY_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.GREEN_STAINED_GLASS, Items.GREEN_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.GREEN_STAINED_GLASS_PANE, Items.GREEN_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.LIGHT_BLUE_STAINED_GLASS, Items.LIGHT_BLUE_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.LIGHT_BLUE_STAINED_GLASS_PANE, Items.LIGHT_BLUE_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.LIGHT_GRAY_STAINED_GLASS, Items.LIGHT_GRAY_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.LIGHT_GRAY_STAINED_GLASS_PANE, Items.LIGHT_GRAY_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.LIME_STAINED_GLASS, Items.LIME_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.LIME_STAINED_GLASS_PANE, Items.LIME_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.MAGENTA_STAINED_GLASS, Items.MAGENTA_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.MAGENTA_STAINED_GLASS_PANE, Items.MAGENTA_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.ORANGE_STAINED_GLASS, Items.ORANGE_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.ORANGE_STAINED_GLASS_PANE, Items.ORANGE_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.PINK_STAINED_GLASS, Items.PINK_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.PINK_STAINED_GLASS_PANE, Items.PINK_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.PURPLE_STAINED_GLASS, Items.PURPLE_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.PURPLE_STAINED_GLASS_PANE, Items.PURPLE_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.RED_STAINED_GLASS, Items.RED_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.RED_STAINED_GLASS_PANE, Items.RED_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.WHITE_STAINED_GLASS, Items.WHITE_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.WHITE_STAINED_GLASS_PANE, Items.WHITE_DYE);
+		stainedGlassFromGlassAndDye(consumer, Blocks.YELLOW_STAINED_GLASS, Items.YELLOW_DYE);
+		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.YELLOW_STAINED_GLASS_PANE, Items.YELLOW_DYE);
+		
 		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.MISC, AGAVE.get(), Items.CYAN_DYE, 1.0F, 100, Atmospheric.MOD_ID);
 		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ARID_SANDSTONE.get(), SMOOTH_ARID_SANDSTONE.get(), 0.1F, 100, Atmospheric.MOD_ID);
 		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, RED_ARID_SANDSTONE.get(), SMOOTH_RED_ARID_SANDSTONE.get(), 0.1F, 100, Atmospheric.MOD_ID);
+		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, AtmosphericItemTags.SMELTS_TO_ARID_GLASS, "has_smelts_to_arid_glass", ARID_GLASS.get(), 0.1F, 100, Atmospheric.MOD_ID);
+		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ARID_GLASS.get(), Blocks.GLASS, 0.1F, 100, Atmospheric.MOD_ID);
+		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.DECORATIONS, ARID_GLASS_PANE.get(), Blocks.GLASS_PANE, 0.1F, 100, Atmospheric.MOD_ID);
+	}
+
+	protected static void stainedGlassFromGlassAndDye(Consumer<FinishedRecipe> p_126086_, ItemLike p_126087_, ItemLike p_126088_) {
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, p_126087_, 8).define('#', Tags.Items.GLASS_COLORLESS).define('X', p_126088_).pattern("###").pattern("#X#").pattern("###").group("stained_glass").unlockedBy("has_glass", has(Blocks.GLASS)).save(p_126086_);
+	}
+
+	protected static void stainedGlassPaneFromGlassPaneAndDye(Consumer<FinishedRecipe> p_126094_, ItemLike p_126095_, ItemLike p_126096_) {
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, p_126095_, 8).define('#', Tags.Items.GLASS_PANES_COLORLESS).define('$', p_126096_).pattern("###").pattern("#$#").pattern("###").group("stained_glass_pane").unlockedBy("has_glass_pane", has(Blocks.GLASS_PANE)).unlockedBy(getHasName(p_126096_), has(p_126096_)).save(p_126094_, getConversionRecipeName(p_126095_, Blocks.GLASS_PANE));
 	}
 }

@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.core.data.server.tags;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.data.server.tags.BlueprintItemTagsProvider;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
@@ -40,6 +41,7 @@ public class AtmosphericItemTagsProvider extends BlueprintItemTagsProvider {
 		this.copy(AtmosphericBlockTags.GRIMWOOD_LOGS, GRIMWOOD_LOGS);
 		this.copy(AtmosphericBlockTags.LAUREL_LOGS, LAUREL_LOGS);
 		this.copy(AtmosphericBlockTags.TRAVERTINE, TRAVERTINE);
+		this.tag(SMELTS_TO_ARID_GLASS).add(ARID_SAND.get().asItem(), RED_ARID_SAND.get().asItem());
 
 		this.copy(BlockTags.SAND, ItemTags.SAND);
 		this.copy(BlockTags.SLABS, ItemTags.SLABS);
@@ -66,6 +68,8 @@ public class AtmosphericItemTagsProvider extends BlueprintItemTagsProvider {
 		this.copy(Tags.Blocks.SAND_COLORLESS, Tags.Items.SAND_COLORLESS);
 		this.copy(Tags.Blocks.SAND_RED, Tags.Items.SAND_RED);
 		this.copy(Tags.Blocks.SANDSTONE, Tags.Items.SANDSTONE);
+		this.copy(Tags.Blocks.GLASS_COLORLESS, Tags.Items.GLASS_COLORLESS);
+		this.copy(Tags.Blocks.GLASS_PANES_COLORLESS, Tags.Items.GLASS_PANES_COLORLESS);
 		this.tag(Tags.Items.BOOKSHELVES).add(ROSEWOOD_BOOKSHELF.get().asItem(), MORADO_BOOKSHELF.get().asItem(), YUCCA_BOOKSHELF.get().asItem(), KOUSA_BOOKSHELF.get().asItem(), ASPEN_BOOKSHELF.get().asItem(), GRIMWOOD_BOOKSHELF.get().asItem(), LAUREL_BOOKSHELF.get().asItem());
 		this.tag(FRUITS).addTags(FRUITS_PASSION_FRUIT, FRUITS_CURRANT, FRUITS_DRAGON_FRUIT, FRUITS_ORANGE);
 		this.tag(FRUITS_PASSION_FRUIT).add(AtmosphericItems.PASSION_FRUIT.get());

@@ -186,6 +186,9 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.add(CUT_RED_ARID_SANDSTONE_SLAB.get(), this::createSlabItemTable);
 			this.dropSelf(CHISELED_RED_ARID_SANDSTONE.get());
 
+			this.dropWhenSilkTouch(ARID_GLASS.get());
+			this.dropWhenSilkTouch(ARID_GLASS_PANE.get());
+
 			this.dropSelf(IVORY_TRAVERTINE.get());
 			this.dropSelf(IVORY_TRAVERTINE_STAIRS.get());
 			this.add(IVORY_TRAVERTINE_SLAB.get(), this::createSlabItemTable);
