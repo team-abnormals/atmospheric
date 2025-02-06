@@ -4,7 +4,7 @@
       "model": "atmospheric:block/polished_dolerite_slab"
     },
     "type=double": {
-      "model": "atmospheric:block/polished_dolerite"
+      "model": "atmospheric:block/polished_dolerite_slab_double"
     },
     "type=top": {
       "model": "atmospheric:block/polished_dolerite_slab_top"

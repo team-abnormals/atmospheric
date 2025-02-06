@@ -2,7 +2,7 @@
   "parent": "minecraft:block/slab",
   "textures": {
     "bottom": "atmospheric:block/polished_dolerite",
-    "side": "atmospheric:block/polished_dolerite",
+    "side": "atmospheric:block/polished_dolerite_slab",
     "top": "atmospheric:block/polished_dolerite"
   }
 }

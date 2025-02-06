@@ -14,6 +14,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.PipeBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
@@ -243,6 +244,17 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		return models().getBuilder(name + "_" + suffix).parent(new UncheckedModelFile(new ResourceLocation("block/template_glass_pane_" + suffix)));
 	}
 
+	@Override
+	public void slabBlock(Block block, Block slab) {
+		if (slab instanceof SlabBlock slabBlock && slabBlock == POLISHED_DOLERITE_SLAB.get()) {
+			ResourceLocation side = blockTexture(slab);
+			ResourceLocation full = blockTexture(block);
+			this.slabBlock(slabBlock, models().slab(name(slab), side, full, full), models().slabTop(name(slab) + "_top", side, full, full), models().cubeColumn(name(slab) + "_double", side, full));
+			this.blockItem(slab);
+		} else {
+			super.slabBlock(block, slab);
+		}
+	}
 
 	public void flowerPotBlock(RegistryObject<Block> flowerPot, ResourceLocation potTexture) {
 		this.simpleBlock(flowerPot.get(), models().singleTexture(name(flowerPot.get()), new ResourceLocation("block/flower_pot_cross"), "plant", potTexture));

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "atmospheric:block/polished_dolerite",
+    "side": "atmospheric:block/polished_dolerite_slab"
+  }
+}
