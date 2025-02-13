@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.core.other;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents.AtmosphericSoundTypes;
 import com.teamabnormals.blueprint.core.api.BlockSetTypeRegistryHelper;
 import com.teamabnormals.blueprint.core.api.WoodTypeRegistryHelper;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
@@ -10,6 +11,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.OffsetType;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -42,10 +44,34 @@ public class AtmosphericProperties {
 	public static final WoodSetProperties CURRANT = WoodSetProperties.builder(MapColor.TERRACOTTA_GRAY).leavesColor(MapColor.PODZOL).build();
 	public static final WoodSetProperties GRIMWOOD = WoodSetProperties.builder(MapColor.TERRACOTTA_BLACK).build();
 
-	public static final Properties ARID_SAND = Properties.of().mapColor(MapColor.SAND).strength(0.5F).sound(SoundType.SAND);
-	public static final Properties RED_ARID_SAND = Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).strength(0.5F).sound(SoundType.SAND);
+	public static final Properties ARID_SAND = Properties.of().mapColor(MapColor.SAND).strength(0.5F).sound(AtmosphericSoundTypes.ARID_SAND);
+	public static final Properties RED_ARID_SAND = Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).strength(0.5F).sound(AtmosphericSoundTypes.ARID_SAND);
 	public static final Properties YUCCA_FLOWER = Properties.of().noCollission().strength(0.5F).sound(SoundType.GRASS).offsetType(OffsetType.XZ).pushReaction(PushReaction.DESTROY);
 	public static final Properties ARID_SPROUTS = Properties.of().mapColor(MapColor.SAND).replaceable().noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
+
+	public static Properties aridSandstone() {
+		return aridSandstone(MapColor.SAND);
+	}
+
+	public static Properties redAridSandstone() {
+		return aridSandstone(MapColor.TERRACOTTA_ORANGE);
+	}
+
+	public static Properties smoothAridSandstone() {
+		return smoothAridSandstone(MapColor.SAND);
+	}
+
+	public static Properties smoothRedAridSandstone() {
+		return smoothAridSandstone(MapColor.TERRACOTTA_ORANGE);
+	}
+
+	public static Properties aridSandstone(MapColor color) {
+		return Properties.of().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F).sound(AtmosphericSoundTypes.ARID_SANDSTONE);
+	}
+
+	public static Properties smoothAridSandstone(MapColor color) {
+		return Properties.of().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F).sound(AtmosphericSoundTypes.ARID_SANDSTONE);
+	}
 
 	public static final Properties AGAVE = Properties.of().mapColor(MapColor.TERRACOTTA_CYAN).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
 	public static final Properties GOLDEN_GROWTHS = Properties.of().mapColor(MapColor.GOLD).replaceable().noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);

@@ -6,6 +6,7 @@ import com.teamabnormals.atmospheric.common.block.grower.*;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericConstants;
 import com.teamabnormals.atmospheric.core.other.AtmosphericProperties;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents.AtmosphericSoundTypes;
 import com.teamabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.common.block.*;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
@@ -168,36 +169,36 @@ public class AtmosphericBlocks {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> ARID_SAND = HELPER.createBlock("arid_sand", () -> new AridSandBlock(14406560, AtmosphericProperties.ARID_SAND));
-	public static final RegistryObject<Block> ARID_SANDSTONE = HELPER.createBlock("arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.SANDSTONE)));
-	public static final RegistryObject<Block> ARID_SANDSTONE_SLAB = HELPER.createBlock("arid_sandstone_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB)));
-	public static final RegistryObject<Block> ARID_SANDSTONE_STAIRS = HELPER.createBlock("arid_sandstone_stairs", () -> new StairBlock(() -> ARID_SANDSTONE.get().defaultBlockState(), Block.Properties.copy(Blocks.SANDSTONE_STAIRS)));
-	public static final RegistryObject<Block> ARID_SANDSTONE_WALL = HELPER.createBlock("arid_sandstone_wall", () -> new WallBlock(Block.Properties.copy(Blocks.SANDSTONE_WALL)));
+	public static final RegistryObject<Block> ARID_SANDSTONE = HELPER.createBlock("arid_sandstone", () -> new Block(AtmosphericProperties.aridSandstone()));
+	public static final RegistryObject<Block> ARID_SANDSTONE_SLAB = HELPER.createBlock("arid_sandstone_slab", () -> new SlabBlock(AtmosphericProperties.smoothAridSandstone()));
+	public static final RegistryObject<Block> ARID_SANDSTONE_STAIRS = HELPER.createBlock("arid_sandstone_stairs", () -> new StairBlock(() -> ARID_SANDSTONE.get().defaultBlockState(), AtmosphericProperties.aridSandstone()));
+	public static final RegistryObject<Block> ARID_SANDSTONE_WALL = HELPER.createBlock("arid_sandstone_wall", () -> new WallBlock(AtmosphericProperties.aridSandstone().forceSolidOn()));
 
-	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE = HELPER.createBlock("smooth_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE)));
-	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE_SLAB = HELPER.createBlock("smooth_arid_sandstone_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE_SLAB)));
-	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE_STAIRS = HELPER.createBlock("smooth_arid_sandstone_stairs", () -> new StairBlock(() -> SMOOTH_ARID_SANDSTONE.get().defaultBlockState(), Block.Properties.copy(Blocks.SMOOTH_SANDSTONE_STAIRS)));
-	public static final RegistryObject<Block> CUT_ARID_SANDSTONE = HELPER.createBlock("cut_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.CUT_SANDSTONE)));
-	public static final RegistryObject<Block> CUT_ARID_SANDSTONE_SLAB = HELPER.createBlock("cut_arid_sandstone_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.CUT_SANDSTONE_SLAB)));
-	public static final RegistryObject<Block> CHISELED_ARID_SANDSTONE = HELPER.createBlock("chiseled_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE)));
+	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE = HELPER.createBlock("smooth_arid_sandstone", () -> new Block(AtmosphericProperties.smoothAridSandstone()));
+	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE_SLAB = HELPER.createBlock("smooth_arid_sandstone_slab", () -> new SlabBlock(AtmosphericProperties.smoothAridSandstone()));
+	public static final RegistryObject<Block> SMOOTH_ARID_SANDSTONE_STAIRS = HELPER.createBlock("smooth_arid_sandstone_stairs", () -> new StairBlock(() -> SMOOTH_ARID_SANDSTONE.get().defaultBlockState(), AtmosphericProperties.smoothAridSandstone()));
+	public static final RegistryObject<Block> CUT_ARID_SANDSTONE = HELPER.createBlock("cut_arid_sandstone", () -> new Block(AtmosphericProperties.aridSandstone()));
+	public static final RegistryObject<Block> CUT_ARID_SANDSTONE_SLAB = HELPER.createBlock("cut_arid_sandstone_slab", () -> new SlabBlock(AtmosphericProperties.smoothAridSandstone()));
+	public static final RegistryObject<Block> CHISELED_ARID_SANDSTONE = HELPER.createBlock("chiseled_arid_sandstone", () -> new Block(AtmosphericProperties.aridSandstone()));
 
 	public static final RegistryObject<Block> RED_ARID_SAND = HELPER.createBlock("red_arid_sand", () -> new AridSandBlock(16241568, AtmosphericProperties.RED_ARID_SAND));
-	public static final RegistryObject<Block> RED_ARID_SANDSTONE = HELPER.createBlock("red_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.SANDSTONE)));
-	public static final RegistryObject<Block> RED_ARID_SANDSTONE_SLAB = HELPER.createBlock("red_arid_sandstone_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB)));
-	public static final RegistryObject<Block> RED_ARID_SANDSTONE_STAIRS = HELPER.createBlock("red_arid_sandstone_stairs", () -> new StairBlock(() -> RED_ARID_SANDSTONE.get().defaultBlockState(), Block.Properties.copy(Blocks.SANDSTONE_STAIRS)));
-	public static final RegistryObject<Block> RED_ARID_SANDSTONE_WALL = HELPER.createBlock("red_arid_sandstone_wall", () -> new WallBlock(Block.Properties.copy(Blocks.SANDSTONE_WALL)));
+	public static final RegistryObject<Block> RED_ARID_SANDSTONE = HELPER.createBlock("red_arid_sandstone", () -> new Block(AtmosphericProperties.redAridSandstone()));
+	public static final RegistryObject<Block> RED_ARID_SANDSTONE_SLAB = HELPER.createBlock("red_arid_sandstone_slab", () -> new SlabBlock(AtmosphericProperties.smoothRedAridSandstone()));
+	public static final RegistryObject<Block> RED_ARID_SANDSTONE_STAIRS = HELPER.createBlock("red_arid_sandstone_stairs", () -> new StairBlock(() -> RED_ARID_SANDSTONE.get().defaultBlockState(), AtmosphericProperties.redAridSandstone()));
+	public static final RegistryObject<Block> RED_ARID_SANDSTONE_WALL = HELPER.createBlock("red_arid_sandstone_wall", () -> new WallBlock(AtmosphericProperties.redAridSandstone().forceSolidOn()));
 
-	public static final RegistryObject<Block> SMOOTH_RED_ARID_SANDSTONE = HELPER.createBlock("smooth_red_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE)));
-	public static final RegistryObject<Block> SMOOTH_RED_ARID_SANDSTONE_SLAB = HELPER.createBlock("smooth_red_arid_sandstone_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE_SLAB)));
-	public static final RegistryObject<Block> SMOOTH_RED_ARID_SANDSTONE_STAIRS = HELPER.createBlock("smooth_red_arid_sandstone_stairs", () -> new StairBlock(() -> SMOOTH_RED_ARID_SANDSTONE.get().defaultBlockState(), Block.Properties.copy(Blocks.SMOOTH_SANDSTONE_STAIRS)));
-	public static final RegistryObject<Block> CUT_RED_ARID_SANDSTONE = HELPER.createBlock("cut_red_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.CUT_SANDSTONE)));
-	public static final RegistryObject<Block> CUT_RED_ARID_SANDSTONE_SLAB = HELPER.createBlock("cut_red_arid_sandstone_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.CUT_SANDSTONE_SLAB)));
-	public static final RegistryObject<Block> CHISELED_RED_ARID_SANDSTONE = HELPER.createBlock("chiseled_red_arid_sandstone", () -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE)));
+	public static final RegistryObject<Block> SMOOTH_RED_ARID_SANDSTONE = HELPER.createBlock("smooth_red_arid_sandstone", () -> new Block(AtmosphericProperties.smoothRedAridSandstone()));
+	public static final RegistryObject<Block> SMOOTH_RED_ARID_SANDSTONE_SLAB = HELPER.createBlock("smooth_red_arid_sandstone_slab", () -> new SlabBlock(AtmosphericProperties.smoothRedAridSandstone()));
+	public static final RegistryObject<Block> SMOOTH_RED_ARID_SANDSTONE_STAIRS = HELPER.createBlock("smooth_red_arid_sandstone_stairs", () -> new StairBlock(() -> SMOOTH_RED_ARID_SANDSTONE.get().defaultBlockState(), AtmosphericProperties.smoothRedAridSandstone()));
+	public static final RegistryObject<Block> CUT_RED_ARID_SANDSTONE = HELPER.createBlock("cut_red_arid_sandstone", () -> new Block(AtmosphericProperties.redAridSandstone()));
+	public static final RegistryObject<Block> CUT_RED_ARID_SANDSTONE_SLAB = HELPER.createBlock("cut_red_arid_sandstone_slab", () -> new SlabBlock(AtmosphericProperties.smoothRedAridSandstone()));
+	public static final RegistryObject<Block> CHISELED_RED_ARID_SANDSTONE = HELPER.createBlock("chiseled_red_arid_sandstone", () -> new Block(AtmosphericProperties.redAridSandstone()));
 
 	public static final RegistryObject<Block> ARID_GLASS = HELPER.createBlock("arid_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
 	public static final RegistryObject<Block> ARID_GLASS_PANE = HELPER.createBlock("arid_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE)));
 
-	public static final RegistryObject<Block> SUSPICIOUS_ARID_SAND = HELPER.createBlock("suspicious_arid_sand", () -> new BrushableBlock(ARID_SAND.get(), BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
-	public static final RegistryObject<Block> SUSPICIOUS_RED_ARID_SAND = HELPER.createBlock("suspicious_red_arid_sand", () -> new BrushableBlock(RED_ARID_SAND.get(), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
+	public static final RegistryObject<Block> SUSPICIOUS_ARID_SAND = HELPER.createBlock("suspicious_arid_sand", () -> new BrushableBlock(ARID_SAND.get(), BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(AtmosphericSoundTypes.SUSPICIOUS_ARID_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
+	public static final RegistryObject<Block> SUSPICIOUS_RED_ARID_SAND = HELPER.createBlock("suspicious_red_arid_sand", () -> new BrushableBlock(RED_ARID_SAND.get(), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(AtmosphericSoundTypes.SUSPICIOUS_ARID_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
 
 	public static final RegistryObject<Block> STRIPPED_YUCCA_LOG = HELPER.createBlock("stripped_yucca_log", () -> new RotatedPillarBlock(AtmosphericProperties.YUCCA.log()));
 	public static final RegistryObject<Block> STRIPPED_YUCCA_WOOD = HELPER.createBlock("stripped_yucca_wood", () -> new RotatedPillarBlock(AtmosphericProperties.YUCCA.log()));

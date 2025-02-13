@@ -28,5 +28,143 @@
       "mob/llama/spit2"
     ],
     "subtitle": "subtitles.atmospheric.entity.passion_fruit_seed.spit"
+  },
+  "block.arid_sand.break": {
+    "sounds": [
+      "atmospheric:block/arid_sand/place1",
+      "atmospheric:block/arid_sand/place2",
+      "atmospheric:block/arid_sand/place3",
+      "atmospheric:block/arid_sand/place4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.arid_sand.fall": {
+    "sounds": [
+      "atmospheric:block/arid_sand/step1",
+      "atmospheric:block/arid_sand/step2",
+      "atmospheric:block/arid_sand/step3",
+      "atmospheric:block/arid_sand/step4"
+    ]
+  },
+  "block.arid_sand.hit": {
+    "sounds": [
+      "atmospheric:block/arid_sand/step1",
+      "atmospheric:block/arid_sand/step2",
+      "atmospheric:block/arid_sand/step3",
+      "atmospheric:block/arid_sand/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.arid_sand.place": {
+    "sounds": [
+      "atmospheric:block/arid_sand/place1",
+      "atmospheric:block/arid_sand/place2",
+      "atmospheric:block/arid_sand/place3",
+      "atmospheric:block/arid_sand/place4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.arid_sand.step": {
+    "sounds": [
+      "atmospheric:block/arid_sand/step1",
+      "atmospheric:block/arid_sand/step2",
+      "atmospheric:block/arid_sand/step3",
+      "atmospheric:block/arid_sand/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.arid_sandstone.break": {
+    "sounds": [
+      "atmospheric:block/arid_sandstone/place1",
+      "atmospheric:block/arid_sandstone/place2",
+      "atmospheric:block/arid_sandstone/place3",
+      "atmospheric:block/arid_sandstone/place4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.arid_sandstone.fall": {
+    "sounds": [
+      "atmospheric:block/arid_sandstone/step1",
+      "atmospheric:block/arid_sandstone/step2",
+      "atmospheric:block/arid_sandstone/step3",
+      "atmospheric:block/arid_sandstone/step4"
+    ]
+  },
+  "block.arid_sandstone.hit": {
+    "sounds": [
+      "atmospheric:block/arid_sandstone/step1",
+      "atmospheric:block/arid_sandstone/step2",
+      "atmospheric:block/arid_sandstone/step3",
+      "atmospheric:block/arid_sandstone/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.arid_sandstone.place": {
+    "sounds": [
+      "atmospheric:block/arid_sandstone/place1",
+      "atmospheric:block/arid_sandstone/place2",
+      "atmospheric:block/arid_sandstone/place3",
+      "atmospheric:block/arid_sandstone/place4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.arid_sandstone.step": {
+    "sounds": [
+      "atmospheric:block/arid_sandstone/step1",
+      "atmospheric:block/arid_sandstone/step2",
+      "atmospheric:block/arid_sandstone/step3",
+      "atmospheric:block/arid_sandstone/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.suspicious_arid_sand.break": {
+    "sounds": [
+      "atmospheric:block/suspicious_arid_sand/break1",
+      "atmospheric:block/suspicious_arid_sand/break2",
+      "atmospheric:block/suspicious_arid_sand/break3",
+      "atmospheric:block/suspicious_arid_sand/break4",
+      "atmospheric:block/suspicious_arid_sand/break5",
+      "atmospheric:block/suspicious_arid_sand/break6"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.suspicious_arid_sand.fall": {
+    "sounds": [
+      "atmospheric:block/suspicious_arid_sand/step1",
+      "atmospheric:block/suspicious_arid_sand/step2",
+      "atmospheric:block/suspicious_arid_sand/step3",
+      "atmospheric:block/suspicious_arid_sand/step4",
+      "atmospheric:block/suspicious_arid_sand/step5"
+    ]
+  },
+  "block.suspicious_arid_sand.hit": {
+    "sounds": [
+      "atmospheric:block/suspicious_arid_sand/step1",
+      "atmospheric:block/suspicious_arid_sand/step2",
+      "atmospheric:block/suspicious_arid_sand/step3",
+      "atmospheric:block/suspicious_arid_sand/step4",
+      "atmospheric:block/suspicious_arid_sand/step5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.suspicious_arid_sand.place": {
+    "sounds": [
+      "atmospheric:block/suspicious_arid_sand/place1",
+      "atmospheric:block/suspicious_arid_sand/place2",
+      "atmospheric:block/suspicious_arid_sand/place3",
+      "atmospheric:block/suspicious_arid_sand/place4",
+      "atmospheric:block/suspicious_arid_sand/place5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.suspicious_arid_sand.step": {
+    "sounds": [
+      "atmospheric:block/suspicious_arid_sand/step1",
+      "atmospheric:block/suspicious_arid_sand/step2",
+      "atmospheric:block/suspicious_arid_sand/step3",
+      "atmospheric:block/suspicious_arid_sand/step4",
+      "atmospheric:block/suspicious_arid_sand/step5"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
   }
 }
