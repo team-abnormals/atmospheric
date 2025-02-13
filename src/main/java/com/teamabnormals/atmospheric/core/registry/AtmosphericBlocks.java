@@ -224,7 +224,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> CHISELED_YUCCA_BOOKSHELF = HELPER.createFuelBlock("chiseled_yucca_bookshelf", () -> new ChiseledYuccaBookShelfBlock(AtmosphericProperties.YUCCA.chiseledBookshelf()), 300);
 	public static final RegistryObject<Block> YUCCA_LADDER = HELPER.createFuelBlock("yucca_ladder", () -> new LadderBlock(AtmosphericProperties.YUCCA.ladder()), 300);
 	public static final RegistryObject<Block> YUCCA_BEEHIVE = HELPER.createBlock("yucca_beehive", () -> new BlueprintBeehiveBlock(AtmosphericProperties.YUCCA.beehive()));
-	public static final RegistryObject<Block> YUCCA_LEAF_PILE = HELPER.createBlock("yucca_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.YUCCA.leafPile()));
+	public static final RegistryObject<Block> YUCCA_LEAF_PILE = HELPER.createBlock("yucca_leaf_pile", () -> new YuccaLeafPileBlock(AtmosphericProperties.YUCCA.leafPile()));
 	public static final RegistryObject<BlueprintChestBlock> YUCCA_CHEST = HELPER.createChestBlock("yucca", AtmosphericProperties.YUCCA.chest());
 	public static final RegistryObject<BlueprintTrappedChestBlock> TRAPPED_YUCCA_CHEST = HELPER.createTrappedChestBlockNamed("yucca", AtmosphericProperties.YUCCA.chest());
 
