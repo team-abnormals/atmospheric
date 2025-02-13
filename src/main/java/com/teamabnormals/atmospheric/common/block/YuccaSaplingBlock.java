@@ -47,7 +47,7 @@ public class YuccaSaplingBlock extends SaplingBlock implements IPlantable, Yucca
 	@Nullable
 	@Override
 	public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
-		return BlockPathTypes.DANGER_OTHER;
+		return this.getYuccaPathType(entity);
 	}
 
 	@Override

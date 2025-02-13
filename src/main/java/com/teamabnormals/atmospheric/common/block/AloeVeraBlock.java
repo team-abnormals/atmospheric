@@ -156,7 +156,7 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 	@Nullable
 	@Override
 	public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
-		return BlockPathTypes.DANGER_OTHER;
+		return BlockPathTypes.DAMAGE_OTHER;
 	}
 
 	public void placeAt(LevelAccessor world, BlockPos pos, int flags) {

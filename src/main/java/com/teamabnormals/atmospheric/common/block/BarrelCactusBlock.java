@@ -175,7 +175,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	@Nullable
 	@Override
 	public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
-		return BlockPathTypes.DANGER_OTHER;
+		return entity != null && entity.getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE) ? null : BlockPathTypes.DAMAGE_OTHER;
 	}
 
 	@Override

@@ -12,8 +12,12 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+
+import javax.annotation.Nullable;
 
 public interface YuccaPlant {
 	float getKnockbackForce();
@@ -32,7 +36,7 @@ public interface YuccaPlant {
 
 					DamageSource source = level.damageSources().source(this.getDamageTypeKey());
 					if (living.getItemBySlot(EquipmentSlot.HEAD).is(AtmosphericItems.BARREL_CACTUS.get())) {
-						entity.hurt(source, 0.01F); //TODO: Should this bypass armor?
+						entity.hurt(source, 0.01F);
 					} else {
 						entity.hurt(source, 1.0F);
 					}
@@ -45,5 +49,9 @@ public interface YuccaPlant {
 				}
 			}
 		}
+	}
+
+	default BlockPathTypes getYuccaPathType(@Nullable Mob entity) {
+		return entity != null && entity.getType().is(AtmosphericEntityTypeTags.YUCCA_IMMUNE) ? null : BlockPathTypes.DAMAGE_OTHER;
 	}
 }
