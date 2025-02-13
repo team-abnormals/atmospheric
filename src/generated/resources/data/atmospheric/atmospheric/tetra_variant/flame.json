@@ -1,0 +1,6 @@
+{
+  "description": {
+    "translate": "entity.atmospheric.tetra.atmospheric.flame"
+  },
+  "texture": "atmospheric:textures/entity/tetra/flame_tetra"
+}

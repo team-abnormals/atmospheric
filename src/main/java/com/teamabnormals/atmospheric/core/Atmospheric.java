@@ -5,9 +5,11 @@ import com.google.common.collect.Sets;
 import com.teamabnormals.atmospheric.client.model.CochinealModel;
 import com.teamabnormals.atmospheric.client.model.DragonFruitModel;
 import com.teamabnormals.atmospheric.client.model.PassionFruitSeedModel;
+import com.teamabnormals.atmospheric.client.model.TetraModel;
 import com.teamabnormals.atmospheric.client.renderer.entity.CochinealRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.DragonFruitRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.PassionFruitSeedRenderer;
+import com.teamabnormals.atmospheric.client.renderer.entity.TetraRenderer;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericBlockStateProvider;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericItemModelProvider;
 import com.teamabnormals.atmospheric.core.data.client.AtmosphericSpriteSourceProvider;
@@ -79,6 +81,8 @@ public class Atmospheric {
 		AtmosphericStructureProcessors.STRUCTURE_PROCESSORS.register(bus);
 		AtmosphericDecoratedPotPatterns.DECORATED_POT_PATTERNS.register(bus);
 		AtmosphericPaintingVariants.PAINTING_VARIANTS.register(bus);
+
+		bus.addListener(AtmosphericRegistries::registerRegistries);
 
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);
@@ -153,6 +157,7 @@ public class Atmospheric {
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(AtmosphericModelLayers.TETRA, TetraModel::createBodyLayer);
 		event.registerLayerDefinition(AtmosphericModelLayers.COCHINEAL, () -> CochinealModel.createBodyLayer(CubeDeformation.NONE));
 		event.registerLayerDefinition(AtmosphericModelLayers.COCHINEAL_SADDLE, () -> CochinealModel.createBodyLayer(new CubeDeformation(0.5F)));
 		event.registerLayerDefinition(AtmosphericModelLayers.PASSION_FRUIT_SEED, PassionFruitSeedModel::createBodyLayer);
@@ -161,6 +166,7 @@ public class Atmospheric {
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(AtmosphericEntityTypes.TETRA.get(), TetraRenderer::new);
 		event.registerEntityRenderer(AtmosphericEntityTypes.COCHINEAL.get(), CochinealRenderer::new);
 		event.registerEntityRenderer(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get(), PassionFruitSeedRenderer::new);
 		event.registerEntityRenderer(AtmosphericEntityTypes.DRAGON_FRUIT.get(), DragonFruitRenderer::new);

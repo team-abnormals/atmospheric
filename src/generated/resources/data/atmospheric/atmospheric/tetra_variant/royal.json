@@ -1,0 +1,6 @@
+{
+  "description": {
+    "translate": "entity.atmospheric.tetra.atmospheric.royal"
+  },
+  "texture": "atmospheric:textures/entity/tetra/royal_tetra"
+}

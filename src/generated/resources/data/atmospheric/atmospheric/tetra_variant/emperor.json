@@ -1,0 +1,6 @@
+{
+  "description": {
+    "translate": "entity.atmospheric.tetra.atmospheric.emperor"
+  },
+  "texture": "atmospheric:textures/entity/tetra/emperor_tetra"
+}

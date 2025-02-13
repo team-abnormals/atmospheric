@@ -1,0 +1,6 @@
+{
+  "description": {
+    "translate": "entity.atmospheric.tetra.atmospheric.beacon"
+  },
+  "texture": "atmospheric:textures/entity/tetra/beacon_tetra"
+}

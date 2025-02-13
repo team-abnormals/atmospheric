@@ -1,11 +1,16 @@
 package com.teamabnormals.atmospheric.core.data.client;
 
+import com.teamabnormals.atmospheric.common.entity.TetraVariant;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.core.data.client.BlueprintItemModelProvider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.data.ExistingFileHelper;
+
+import java.lang.reflect.Modifier;
+import java.util.Arrays;
 
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericItems.*;
 
@@ -39,8 +44,20 @@ public class AtmosphericItemModelProvider extends BlueprintItemModelProvider {
 				APOSTLE_ARMOR_TRIM_SMITHING_TEMPLATE, DRUID_ARMOR_TRIM_SMITHING_TEMPLATE, PETRIFIED_ARMOR_TRIM_SMITHING_TEMPLATE
 		);
 
-		this.spawnEggItem(COCHINEAL_SPAWN_EGG);
+		this.spawnEggItem(TETRA_SPAWN_EGG, COCHINEAL_SPAWN_EGG);
 
 		this.item(ORANGE, "generated").override().model(this.item(new ResourceLocation(Atmospheric.MOD_ID, "annoying_orange"), "generated")).predicate(new ResourceLocation(Atmospheric.MOD_ID, "hey_apple"), 1.0F);
+
+		this.getBuilder(name(TETRA_BUCKET.get()));
+		Arrays.stream(TetraVariant.class.getDeclaredFields()).forEach(field -> {
+			if (Modifier.isStatic(field.getModifiers()) && ResourceKey.class.isAssignableFrom(field.getType())) {
+				try {
+					ResourceLocation location = ((ResourceKey<?>) field.get(null)).location().withPath(s -> "item/tetra_bucket/" + s + "_tetra_bucket");
+					this.withExistingParent(location.getPath(), "item/generated").texture("layer0", location);
+				} catch (IllegalAccessException e) {
+					throw new RuntimeException(e);
+				}
+			}
+		});
 	}
 }

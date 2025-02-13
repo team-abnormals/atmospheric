@@ -1,0 +1,6 @@
+{
+  "description": {
+    "translate": "entity.atmospheric.tetra.atmospheric.jewel"
+  },
+  "texture": "atmospheric:textures/entity/tetra/jewel_tetra"
+}

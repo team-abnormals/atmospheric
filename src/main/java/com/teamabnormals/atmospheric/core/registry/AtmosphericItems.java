@@ -100,6 +100,9 @@ public class AtmosphericItems {
 	public static final RegistryObject<Item> GRIMWOOD_FURNACE_BOAT = HELPER.createItem("grimwood_furnace_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.GRIMWOOD_FURNACE_BOAT : () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LARGE_GRIMWOOD_BOAT = HELPER.createItem("large_grimwood_boat", ModList.get().isLoaded("boatload") ? AtmosphericBoatTypes.LARGE_GRIMWOOD_BOAT : () -> new Item(new Item.Properties()));
 
+	public static final RegistryObject<Item> TETRA_BUCKET = HELPER.createItem("tetra_bucket", () -> new TetraBucketItem(new Item.Properties().stacksTo(1)));
+
+	public static final RegistryObject<ForgeSpawnEggItem> TETRA_SPAWN_EGG = HELPER.createSpawnEggItem("tetra", AtmosphericEntityTypes.TETRA::get, 0xFF4A47, 0x30FFCE);
 	public static final RegistryObject<ForgeSpawnEggItem> COCHINEAL_SPAWN_EGG = HELPER.createSpawnEggItem("cochineal", AtmosphericEntityTypes.COCHINEAL::get, 0xEF5B58, 0xAA3D3A);
 
 	public static void setupTabEditors() {
@@ -121,6 +124,7 @@ public class AtmosphericItems {
 				.addItemsAfter(of(Items.GLOBE_BANNER_PATTERN), COCHINEAL_BANNER_PATTERN)
 				.tab(TOOLS_AND_UTILITIES)
 				.addItemsBefore(of(Items.ENDER_PEARL), PASSION_VINE_COIL)
+				.addItemsAfter(of(Items.TROPICAL_FISH_BUCKET), TETRA_BUCKET)
 				.addItemsBefore(of(Items.BAMBOO_RAFT), ROSEWOOD_BOAT.getFirst(), ROSEWOOD_BOAT.getSecond())
 				.addItemsBefore(modLoaded(Items.BAMBOO_RAFT, "boatload"), ROSEWOOD_FURNACE_BOAT, LARGE_ROSEWOOD_BOAT)
 				.addItemsBefore(of(Items.BAMBOO_RAFT), MORADO_BOAT.getFirst(), MORADO_BOAT.getSecond())
@@ -136,7 +140,7 @@ public class AtmosphericItems {
 				.addItemsBefore(of(Items.BAMBOO_RAFT), GRIMWOOD_BOAT.getFirst(), GRIMWOOD_BOAT.getSecond())
 				.addItemsBefore(modLoaded(Items.BAMBOO_RAFT, "boatload"), GRIMWOOD_FURNACE_BOAT, LARGE_GRIMWOOD_BOAT)
 				.tab(SPAWN_EGGS)
-				.addItemsAlphabetically(is(SpawnEggItem.class), COCHINEAL_SPAWN_EGG);
+				.addItemsAlphabetically(is(SpawnEggItem.class), TETRA_SPAWN_EGG, COCHINEAL_SPAWN_EGG);
 	}
 
 	public static Predicate<ItemStack> modLoaded(ItemLike item, String... modids) {

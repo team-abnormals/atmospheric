@@ -1,0 +1,6 @@
+{
+  "description": {
+    "translate": "entity.atmospheric.tetra.atmospheric.ornate"
+  },
+  "texture": "atmospheric:textures/entity/tetra/ornate_tetra"
+}

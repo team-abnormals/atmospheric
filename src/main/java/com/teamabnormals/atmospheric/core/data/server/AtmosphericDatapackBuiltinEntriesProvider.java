@@ -1,6 +1,8 @@
 package com.teamabnormals.atmospheric.core.data.server;
 
+import com.teamabnormals.atmospheric.common.entity.TetraVariant;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
 import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericBiomeSlices;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBiomes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericConfiguredFeatures;
@@ -31,7 +33,8 @@ public class AtmosphericDatapackBuiltinEntriesProvider extends DatapackBuiltinEn
 			.add(Registries.TRIM_MATERIAL, AtmosphericTrimMaterials::bootstrap)
 			.add(BlueprintDataPackRegistries.STRUCTURE_REPALETTERS, AtmosphericStructureRepaletters::bootstrap)
 			.add(BlueprintDataPackRegistries.MODDED_BIOME_SLICES, AtmosphericBiomeSlices::bootstrap)
-			.add(ForgeRegistries.Keys.BIOME_MODIFIERS, AtmosphericBiomeModifiers::bootstrap);
+			.add(ForgeRegistries.Keys.BIOME_MODIFIERS, AtmosphericBiomeModifiers::bootstrap)
+			.add(AtmosphericRegistries.TETRA_VARIANT, TetraVariant::bootstrap);
 
 	public AtmosphericDatapackBuiltinEntriesProvider(PackOutput output, CompletableFuture<Provider> provider) {
 		super(output, provider, BUILDER, Set.of(Atmospheric.MOD_ID));
