@@ -49,6 +49,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.network.PlayMessages;
 import org.jetbrains.annotations.Nullable;
@@ -504,7 +505,8 @@ public class Cochineal extends Animal implements Saddleable {
 		}
 
 		this.hasImpulse = true;
-		net.minecraftforge.common.ForgeHooks.onLivingJump(this);
+		this.playSound(AtmosphericSoundEvents.COCHINEAL_BOUNCE.get(), 2.5F, 0.8F / (this.getRandom().nextFloat() * 0.2F + 0.8F));
+		ForgeHooks.onLivingJump(this);
 	}
 
 	public boolean canLeap() {

@@ -56,8 +56,7 @@ public class AtmosphericSoundEvents {
 	public static final RegistryObject<SoundEvent> COCHINEAL_DEATH = HELPER.createSoundEvent("entity.cochineal.death");
 	public static final RegistryObject<SoundEvent> COCHINEAL_HURT = HELPER.createSoundEvent("entity.cochineal.hurt");
 	public static final RegistryObject<SoundEvent> COCHINEAL_SUCKLE = HELPER.createSoundEvent("entity.cochineal.suckle");
-//	public static final RegistryObject<SoundEvent> COCHINEAL_GRAB = HELPER.createSoundEvent("entity.cochineal.grab");
-//	public static final RegistryObject<SoundEvent> COCHINEAL_BOUNCE = HELPER.createSoundEvent("entity.cochineal.bounce");
+	public static final RegistryObject<SoundEvent> COCHINEAL_BOUNCE = HELPER.createSoundEvent("entity.cochineal.bounce");
 
 	public static final RegistryObject<SoundEvent> PASSION_FRUIT_SEED_SPIT = HELPER.createSoundEvent("entity.passion_fruit_seed.spit");
 
