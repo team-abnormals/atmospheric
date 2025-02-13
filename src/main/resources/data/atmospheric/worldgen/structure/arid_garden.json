@@ -1,7 +1,7 @@
 {
   "type": "minecraft:jigsaw",
   "start_pool": "atmospheric:arid_garden/arid_garden",
-  "size": 2,
+  "size": 6,
   "max_distance_from_center": 64,
   "biomes": "#atmospheric:has_structure/arid_garden",
   "step": "surface_structures",
