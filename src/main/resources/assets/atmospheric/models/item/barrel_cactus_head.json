@@ -1,0 +1,9 @@
+{
+  "parent": "atmospheric:block/barrel_cactus_stage1",
+  "display": {
+    "head": {
+      "translation": [ 0, 8, 0],
+      "scale": [2, 2, 2]
+    }
+  }
+}

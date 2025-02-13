@@ -1,3 +1,12 @@
 {
-    "parent": "atmospheric:block/barrel_cactus_stage2"
+  "parent": "atmospheric:block/barrel_cactus_stage2",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "atmospheric:item/barrel_cactus_inventory"
+  },
+  "perspectives": {
+    "head": {
+      "parent": "atmospheric:item/barrel_cactus_head"
+    }
+  }
 }

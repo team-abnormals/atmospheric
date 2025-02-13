@@ -178,8 +178,7 @@
     "sounds": [
       "atmospheric:block/arid_glass/break1",
       "atmospheric:block/arid_glass/break2",
-      "atmospheric:block/arid_glass/break3",
-      "atmospheric:block/arid_glass/break4"
+      "atmospheric:block/arid_glass/break3"
     ],
     "subtitle": "subtitles.block.generic.break"
   },
