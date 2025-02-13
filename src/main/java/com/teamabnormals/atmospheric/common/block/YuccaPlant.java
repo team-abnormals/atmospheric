@@ -16,6 +16,8 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
@@ -25,7 +27,10 @@ public interface YuccaPlant {
 	ResourceKey<DamageType> getDamageTypeKey();
 
 	default void onYuccaCollision(BlockState state, Level level, BlockPos pos, Entity entity) {
-		if (entity instanceof LivingEntity living && !entity.getType().is(AtmosphericEntityTypeTags.YUCCA_IMMUNE)) {
+		VoxelShape collision = state.getBlock().getShape(state, level, pos, CollisionContext.empty()).move(pos.getX(), pos.getY(), pos.getZ());
+		boolean colliding = entity.getBoundingBox().intersects(collision.bounds().inflate(1.0E-7D));
+
+		if (colliding && entity instanceof LivingEntity living && !entity.getType().is(AtmosphericEntityTypeTags.YUCCA_IMMUNE)) {
 			if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ())) {
 				double d0 = Math.abs(entity.getX() - entity.xOld);
 				double d1 = Math.abs(entity.getZ() - entity.zOld);

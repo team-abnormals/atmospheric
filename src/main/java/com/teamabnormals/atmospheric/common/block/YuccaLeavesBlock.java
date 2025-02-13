@@ -19,7 +19,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 
 public class YuccaLeavesBlock extends LeavesBlock implements YuccaPlant {
-	private static final VoxelShape HITBOX = box(1.0F, 1.0F, 1.0F, 15.0F, 15.0F, 15.0F);
+	private static final VoxelShape HITBOX = box(0.01F, 0.01F, 0.01F, 15.99F, 15.99F, 15.99F);
 
 	public YuccaLeavesBlock(Properties properties) {
 		super(properties);

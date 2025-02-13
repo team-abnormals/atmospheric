@@ -118,12 +118,12 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 	}
 
 	@Override
-	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
-		super.entityInside(state, worldIn, pos, entityIn);
+	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entityIn) {
+		super.entityInside(state, level, pos, entityIn);
 		if (entityIn instanceof LivingEntity && !(entityIn instanceof Bee)) {
-			this.onYuccaCollision(state, worldIn, pos, entityIn);
+			this.onYuccaCollision(state, level, pos, entityIn);
 		} else if (entityIn instanceof Projectile && !state.getValue(SNAPPED)) {
-			worldIn.setBlockAndUpdate(pos, state.setValue(SNAPPED, true));
+			level.setBlockAndUpdate(pos, state.setValue(SNAPPED, true));
 		}
 	}
 
