@@ -52,7 +52,6 @@ public class YuccaSaplingBlock extends SaplingBlock implements IPlantable, Yucca
 
 	@Override
 	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
-		super.entityInside();
 		this.onYuccaCollision(state, worldIn, pos, entityIn);
 	}
 }
