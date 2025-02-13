@@ -47,7 +47,7 @@ public class AtmosphericProperties {
 	public static final Properties ARID_SAND = Properties.of().mapColor(MapColor.SAND).strength(0.5F).sound(AtmosphericSoundTypes.ARID_SAND);
 	public static final Properties RED_ARID_SAND = Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).strength(0.5F).sound(AtmosphericSoundTypes.ARID_SAND);
 	public static final Properties YUCCA_FLOWER = Properties.of().noCollission().strength(0.5F).sound(SoundType.GRASS).offsetType(OffsetType.XZ).pushReaction(PushReaction.DESTROY);
-	public static final Properties ARID_SPROUTS = Properties.of().mapColor(MapColor.SAND).replaceable().noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
+	public static final Properties ARID_SPROUTS = Properties.of().mapColor(MapColor.SAND).replaceable().noCollission().instabreak().sound(AtmosphericSoundTypes.ARID_SPROUTS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
 
 	public static Properties aridSandstone() {
 		return aridSandstone(MapColor.SAND);
@@ -84,7 +84,7 @@ public class AtmosphericProperties {
 	public static final Properties SAFFRON_TRAVERTINE = Properties.of().mapColor(MapColor.COLOR_RED).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
 	public static final Properties DOLERITE = Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
 
-	public static final Properties CARMINE_BLOCK = Properties.of().mapColor(MapColor.COLOR_RED).sound(SoundType.TUFF).strength(0.5F);
+	public static final Properties CARMINE_BLOCK = Properties.of().mapColor(MapColor.COLOR_RED).sound(AtmosphericSoundTypes.CARMINE).strength(0.5F);
 
 	public static final Properties ALOE_VERA = Properties.of().noCollission().instabreak().randomTicks().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY);
 	public static final Properties ORANGE = Properties.of().mapColor(MapColor.COLOR_ORANGE).instabreak().sound(SoundType.HONEY_BLOCK).pushReaction(PushReaction.DESTROY);

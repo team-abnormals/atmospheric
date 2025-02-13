@@ -110,13 +110,13 @@ public class AtmosphericBlocks {
 
 	public static final RegistryObject<Block> WATER_HYACINTH = HELPER.createBlockNoItem("water_hyacinth", () -> new WaterHyacinthBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.VINE).pushReaction(PushReaction.DESTROY)));
 
-	public static final RegistryObject<Block> WARM_MONKEY_BRUSH = HELPER.createBlockNoItem("warm_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.flower()));
-	public static final RegistryObject<Block> HOT_MONKEY_BRUSH = HELPER.createBlockNoItem("hot_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.flower()));
-	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH = HELPER.createBlockNoItem("scalding_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.flower()));
+	public static final RegistryObject<Block> WARM_MONKEY_BRUSH = HELPER.createBlockNoItem("warm_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.MONKEY_BRUSH)));
+	public static final RegistryObject<Block> HOT_MONKEY_BRUSH = HELPER.createBlockNoItem("hot_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.MONKEY_BRUSH)));
+	public static final RegistryObject<Block> SCALDING_MONKEY_BRUSH = HELPER.createBlockNoItem("scalding_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.MONKEY_BRUSH)));
 
-	public static final RegistryObject<Block> WARM_WALL_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("warm_monkey_brush", "warm_wall_monkey_brush", WARM_MONKEY_BRUSH, () -> new WallMonkeyBrushBlock(PropertyUtil.flower().offsetType(OffsetType.NONE).lootFrom(WARM_MONKEY_BRUSH)));
-	public static final RegistryObject<Block> HOT_WALL_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("hot_monkey_brush", "hot_wall_monkey_brush", HOT_MONKEY_BRUSH, () -> new WallMonkeyBrushBlock(PropertyUtil.flower().offsetType(OffsetType.NONE).lootFrom(HOT_MONKEY_BRUSH)));
-	public static final RegistryObject<Block> SCALDING_WALL_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("scalding_monkey_brush", "scalding_wall_monkey_brush", SCALDING_MONKEY_BRUSH, () -> new WallMonkeyBrushBlock(PropertyUtil.flower().offsetType(OffsetType.NONE).lootFrom(SCALDING_MONKEY_BRUSH)));
+	public static final RegistryObject<Block> WARM_WALL_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("warm_monkey_brush", "warm_wall_monkey_brush", WARM_MONKEY_BRUSH, () -> new WallMonkeyBrushBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.MONKEY_BRUSH).offsetType(OffsetType.NONE).lootFrom(WARM_MONKEY_BRUSH)));
+	public static final RegistryObject<Block> HOT_WALL_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("hot_monkey_brush", "hot_wall_monkey_brush", HOT_MONKEY_BRUSH, () -> new WallMonkeyBrushBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.MONKEY_BRUSH).offsetType(OffsetType.NONE).lootFrom(HOT_MONKEY_BRUSH)));
+	public static final RegistryObject<Block> SCALDING_WALL_MONKEY_BRUSH = HELPER.createWallOrVerticalBlock("scalding_monkey_brush", "scalding_wall_monkey_brush", SCALDING_MONKEY_BRUSH, () -> new WallMonkeyBrushBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.MONKEY_BRUSH).offsetType(OffsetType.NONE).lootFrom(SCALDING_MONKEY_BRUSH)));
 
 	public static final RegistryObject<Block> POTTED_WARM_MONKEY_BRUSH = HELPER.createBlockNoItem("potted_warm_monkey_brush", () -> new FlowerPotBlock(WARM_MONKEY_BRUSH.get(), PropertyUtil.flowerPot()));
 	public static final RegistryObject<Block> POTTED_HOT_MONKEY_BRUSH = HELPER.createBlockNoItem("potted_hot_monkey_brush", () -> new FlowerPotBlock(HOT_MONKEY_BRUSH.get(), PropertyUtil.flowerPot()));
@@ -194,8 +194,8 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> CUT_RED_ARID_SANDSTONE_SLAB = HELPER.createBlock("cut_red_arid_sandstone_slab", () -> new SlabBlock(AtmosphericProperties.smoothRedAridSandstone()));
 	public static final RegistryObject<Block> CHISELED_RED_ARID_SANDSTONE = HELPER.createBlock("chiseled_red_arid_sandstone", () -> new Block(AtmosphericProperties.redAridSandstone()));
 
-	public static final RegistryObject<Block> ARID_GLASS = HELPER.createBlock("arid_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
-	public static final RegistryObject<Block> ARID_GLASS_PANE = HELPER.createBlock("arid_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE)));
+	public static final RegistryObject<Block> ARID_GLASS = HELPER.createBlock("arid_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(AtmosphericSoundTypes.ARID_GLASS)));
+	public static final RegistryObject<Block> ARID_GLASS_PANE = HELPER.createBlock("arid_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE).sound(AtmosphericSoundTypes.ARID_GLASS)));
 
 	public static final RegistryObject<Block> SUSPICIOUS_ARID_SAND = HELPER.createBlock("suspicious_arid_sand", () -> new BrushableBlock(ARID_SAND.get(), BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(AtmosphericSoundTypes.SUSPICIOUS_ARID_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
 	public static final RegistryObject<Block> SUSPICIOUS_RED_ARID_SAND = HELPER.createBlock("suspicious_red_arid_sand", () -> new BrushableBlock(RED_ARID_SAND.get(), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(AtmosphericSoundTypes.SUSPICIOUS_ARID_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
