@@ -5,6 +5,7 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -35,7 +36,6 @@ import javax.annotation.Nullable;
 public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraVariant> {
 	public static final String BUCKET_VARIANT_TAG = "TetraVariant";
 	private static final EntityDataAccessor<String> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Tetra.class, EntityDataSerializers.STRING);
-	private boolean isSchool = true;
 
 	public Tetra(EntityType<? extends Tetra> p_30015_, Level p_30016_) {
 		super(p_30015_, p_30016_);
@@ -58,10 +58,6 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
 		this.setStringVariant(tag.getString("Variant"));
-	}
-
-	public boolean isMaxGroupSizeReached(int p_30035_) {
-		return !this.isSchool;
 	}
 
 	public String getStringVariant() {
@@ -112,6 +108,10 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 		return SoundEvents.TROPICAL_FISH_FLOP;
 	}
 
+	public int getMaxSpawnClusterSize() {
+		return 12;
+	}
+
 	@Nullable
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData data, @Nullable CompoundTag tag) {
 		data = super.finalizeSpawn(level, difficulty, spawnType, data, tag);
@@ -124,7 +124,8 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 			if (data instanceof TetraGroupData tetraData) {
 				tetraVariant = tetraData.variant;
 			} else {
-				tetraVariant = Util.getRandom(level.registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT).stream().toList(), random);
+				Registry<TetraVariant> registry = level.registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT);
+				tetraVariant = random.nextFloat() < 0.9D ? registry.get(TetraVariant.NEON) : Util.getRandom(registry.stream().toList(), random);
 				data = new TetraGroupData(this, tetraVariant);
 			}
 
@@ -140,8 +141,8 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 	static class TetraGroupData extends AbstractSchoolingFish.SchoolSpawnGroupData {
 		final TetraVariant variant;
 
-		TetraGroupData(Tetra tetra, TetraVariant variant) {
-			super(tetra);
+		TetraGroupData(Tetra leader, TetraVariant variant) {
+			super(leader);
 			this.variant = variant;
 		}
 	}

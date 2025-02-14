@@ -203,7 +203,20 @@
         "weight": 10
       }
     ],
-    "water_ambient": [],
+    "water_ambient": [
+      {
+        "type": "minecraft:squid",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
+      },
+      {
+        "type": "atmospheric:tetra",
+        "maxCount": 12,
+        "minCount": 3,
+        "weight": 25
+      }
+    ],
     "water_creature": []
   },
   "temperature": 0.9
