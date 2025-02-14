@@ -32,6 +32,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.network.PlayMessages;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraVariant> {
 	public static final String BUCKET_VARIANT_TAG = "TetraVariant";
@@ -108,8 +109,57 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 		return SoundEvents.TROPICAL_FISH_FLOP;
 	}
 
+	public int getMaxSchoolSize() {
+		return 12;
+	}
+
 	public int getMaxSpawnClusterSize() {
 		return 12;
+	}
+
+	public void tick() {
+		super.tick();
+
+		if (this.hasFollowers() && this.isFollower()) {
+			tryMergeSchools(this, this.leader);
+		}
+
+		if (!this.isSchoolFull() && this.random.nextInt(50) == 0) {
+			List<? extends Tetra> list = this.level().getEntitiesOfClass(this.getClass(), this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D),
+					tetra -> tetra != this &&
+							((tetra.canBeFollowed() && tetra != this.leader) ||
+									(!this.isFollower() && !this.hasFollowers() && tetra.schoolSize < tetra.getMaxSchoolSize() && !tetra.isFollower())));
+
+			for (Tetra tetra : list) {
+				if ((this.hasFollowers() || this.isFollower()) && tryMergeSchools(this.isFollower() ? this.leader : this, tetra)) {
+					break;
+				} else if (!this.isFollower() && !this.hasFollowers()) {
+					this.startFollowing(tetra);
+					break;
+				}
+
+			}
+		}
+	}
+
+	public boolean isSchoolFull() {
+		return this.hasFollowers() ? this.schoolSize == this.getMaxSchoolSize() : this.isFollower() && this.leader.schoolSize == this.leader.getMaxSchoolSize();
+	}
+
+	public static boolean tryMergeSchools(AbstractSchoolingFish from, AbstractSchoolingFish to) {
+		if (from.schoolSize + to.schoolSize <= to.getMaxSchoolSize()) {
+			List<? extends Tetra> fromFollowers = from.level().getEntitiesOfClass(Tetra.class, from.getBoundingBox().inflate(8.0D, 8.0D, 8.0D),
+					t -> t.isFollower() && t.leader == from);
+
+			fromFollowers.forEach(follower -> {
+				follower.stopFollowing();
+				follower.startFollowing(to);
+			});
+
+			from.startFollowing(to);
+			return true;
+		}
+		return false;
 	}
 
 	@Nullable
