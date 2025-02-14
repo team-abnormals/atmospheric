@@ -29,6 +29,60 @@
     ],
     "subtitle": "subtitles.atmospheric.entity.cochineal.bounce"
   },
+  "entity.tetra.ambient": {
+    "sounds": []
+  },
+  "entity.tetra.death": {
+    "sounds": [
+      {
+        "name": "entity/fish/hurt1",
+        "pitch": 0.8
+      },
+      {
+        "name": "entity/fish/hurt2",
+        "pitch": 0.8
+      },
+      {
+        "name": "entity/fish/hurt3",
+        "pitch": 0.8
+      },
+      {
+        "name": "entity/fish/hurt4",
+        "pitch": 0.8
+      }
+    ],
+    "subtitle": "subtitles.atmospheric.entity.tetra.death"
+  },
+  "entity.tetra.flop": {
+    "sounds": [
+      {
+        "name": "entity/fish/flop1",
+        "volume": 0.3
+      },
+      {
+        "name": "entity/fish/flop2",
+        "volume": 0.3
+      },
+      {
+        "name": "entity/fish/flop3",
+        "volume": 0.3
+      },
+      {
+        "name": "entity/fish/flop4",
+        "volume": 0.3
+      }
+    ],
+    "subtitle": "subtitles.atmospheric.entity.tetra.flop"
+  },
+  "entity.tetra.hurt": {
+    "sounds": [
+      "entity/fish/hurt1",
+      "entity/fish/hurt2",
+      "entity/fish/hurt3",
+      "entity/fish/hurt4"
+    ],
+    "subtitle": "subtitles.atmospheric.entity.tetra.hurt"
+  },
   "entity.passion_fruit_seed.spit": {
     "sounds": [
       "mob/llama/spit1",

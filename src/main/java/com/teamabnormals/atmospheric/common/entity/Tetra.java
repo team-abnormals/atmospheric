@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.common.entity;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
@@ -13,7 +14,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
@@ -94,19 +94,19 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 	}
 
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.TROPICAL_FISH_AMBIENT;
+		return AtmosphericSoundEvents.TETRA_AMBIENT.get();
 	}
 
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.TROPICAL_FISH_DEATH;
+		return AtmosphericSoundEvents.TETRA_DEATH.get();
 	}
 
 	protected SoundEvent getHurtSound(DamageSource p_30039_) {
-		return SoundEvents.TROPICAL_FISH_HURT;
+		return AtmosphericSoundEvents.TETRA_HURT.get();
 	}
 
 	protected SoundEvent getFlopSound() {
-		return SoundEvents.TROPICAL_FISH_FLOP;
+		return AtmosphericSoundEvents.TETRA_FLOP.get();
 	}
 
 	public int getMaxSchoolSize() {

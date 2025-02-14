@@ -58,6 +58,11 @@ public class AtmosphericSoundEvents {
 	public static final RegistryObject<SoundEvent> COCHINEAL_SUCKLE = HELPER.createSoundEvent("entity.cochineal.suckle");
 	public static final RegistryObject<SoundEvent> COCHINEAL_BOUNCE = HELPER.createSoundEvent("entity.cochineal.bounce");
 
+	public static final RegistryObject<SoundEvent> TETRA_AMBIENT = HELPER.createSoundEvent("entity.tetra.ambient");
+	public static final RegistryObject<SoundEvent> TETRA_DEATH = HELPER.createSoundEvent("entity.tetra.death");
+	public static final RegistryObject<SoundEvent> TETRA_FLOP = HELPER.createSoundEvent("entity.tetra.flop");
+	public static final RegistryObject<SoundEvent> TETRA_HURT = HELPER.createSoundEvent("entity.tetra.hurt");
+	
 	public static final RegistryObject<SoundEvent> PASSION_FRUIT_SEED_SPIT = HELPER.createSoundEvent("entity.passion_fruit_seed.spit");
 
 	public static class AtmosphericSoundTypes {
