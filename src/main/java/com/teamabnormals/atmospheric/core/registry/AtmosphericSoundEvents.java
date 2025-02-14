@@ -53,16 +53,37 @@ public class AtmosphericSoundEvents {
 	public static final RegistryObject<SoundEvent> MONKEY_BRUSH_PLACE = HELPER.createSoundEvent("block.monkey_brush.place");
 	public static final RegistryObject<SoundEvent> MONKEY_BRUSH_STEP = HELPER.createSoundEvent("block.monkey_brush.step");
 
+	public static final RegistryObject<SoundEvent> WATER_HYACINTH_BREAK = HELPER.createSoundEvent("block.water_hyacinth.break");
+	public static final RegistryObject<SoundEvent> WATER_HYACINTH_FALL = HELPER.createSoundEvent("block.water_hyacinth.fall");
+	public static final RegistryObject<SoundEvent> WATER_HYACINTH_HIT = HELPER.createSoundEvent("block.water_hyacinth.hit");
+	public static final RegistryObject<SoundEvent> WATER_HYACINTH_PLACE = HELPER.createSoundEvent("block.water_hyacinth.place");
+	public static final RegistryObject<SoundEvent> WATER_HYACINTH_STEP = HELPER.createSoundEvent("block.water_hyacinth.step");
+
+	public static final RegistryObject<SoundEvent> CURRANT_STALK_BREAK = HELPER.createSoundEvent("block.currant_stalk.break");
+	public static final RegistryObject<SoundEvent> CURRANT_STALK_FALL = HELPER.createSoundEvent("block.currant_stalk.fall");
+	public static final RegistryObject<SoundEvent> CURRANT_STALK_HIT = HELPER.createSoundEvent("block.currant_stalk.hit");
+	public static final RegistryObject<SoundEvent> CURRANT_STALK_PLACE = HELPER.createSoundEvent("block.currant_stalk.place");
+	public static final RegistryObject<SoundEvent> CURRANT_STALK_STEP = HELPER.createSoundEvent("block.currant_stalk.step");
+
+	public static final RegistryObject<SoundEvent> CURRANT_LEAVES_BREAK = HELPER.createSoundEvent("block.currant_leaves.break");
+	public static final RegistryObject<SoundEvent> CURRANT_LEAVES_FALL = HELPER.createSoundEvent("block.currant_leaves.fall");
+	public static final RegistryObject<SoundEvent> CURRANT_LEAVES_HIT = HELPER.createSoundEvent("block.currant_leaves.hit");
+	public static final RegistryObject<SoundEvent> CURRANT_LEAVES_PLACE = HELPER.createSoundEvent("block.currant_leaves.place");
+	public static final RegistryObject<SoundEvent> CURRANT_LEAVES_STEP = HELPER.createSoundEvent("block.currant_leaves.step");
+
+	public static final RegistryObject<SoundEvent> HANGING_CURRANT_PICK_CURRANT = HELPER.createSoundEvent("block.hanging_currant.pick_currant");
+
 	public static final RegistryObject<SoundEvent> COCHINEAL_DEATH = HELPER.createSoundEvent("entity.cochineal.death");
 	public static final RegistryObject<SoundEvent> COCHINEAL_HURT = HELPER.createSoundEvent("entity.cochineal.hurt");
 	public static final RegistryObject<SoundEvent> COCHINEAL_SUCKLE = HELPER.createSoundEvent("entity.cochineal.suckle");
 	public static final RegistryObject<SoundEvent> COCHINEAL_BOUNCE = HELPER.createSoundEvent("entity.cochineal.bounce");
+	public static final RegistryObject<SoundEvent> COCHINEAL_GRAB = HELPER.createSoundEvent("entity.cochineal.grab");
 
 	public static final RegistryObject<SoundEvent> TETRA_AMBIENT = HELPER.createSoundEvent("entity.tetra.ambient");
 	public static final RegistryObject<SoundEvent> TETRA_DEATH = HELPER.createSoundEvent("entity.tetra.death");
 	public static final RegistryObject<SoundEvent> TETRA_FLOP = HELPER.createSoundEvent("entity.tetra.flop");
 	public static final RegistryObject<SoundEvent> TETRA_HURT = HELPER.createSoundEvent("entity.tetra.hurt");
-	
+
 	public static final RegistryObject<SoundEvent> PASSION_FRUIT_SEED_SPIT = HELPER.createSoundEvent("entity.passion_fruit_seed.spit");
 
 	public static class AtmosphericSoundTypes {
@@ -73,5 +94,8 @@ public class AtmosphericSoundEvents {
 		public static final ForgeSoundType ARID_SPROUTS = new ForgeSoundType(1.0F, 1.0F, ARID_SPROUTS_BREAK, ARID_SPROUTS_STEP, ARID_SPROUTS_PLACE, ARID_SPROUTS_HIT, ARID_SPROUTS_FALL);
 		public static final ForgeSoundType CARMINE = new ForgeSoundType(1.0F, 1.0F, CARMINE_BREAK, CARMINE_STEP, CARMINE_PLACE, CARMINE_HIT, CARMINE_FALL);
 		public static final ForgeSoundType MONKEY_BRUSH = new ForgeSoundType(1.0F, 1.0F, MONKEY_BRUSH_BREAK, MONKEY_BRUSH_STEP, MONKEY_BRUSH_PLACE, MONKEY_BRUSH_HIT, MONKEY_BRUSH_FALL);
+		public static final ForgeSoundType CURRANT_LEAVES = new ForgeSoundType(1.0F, 1.0F, CURRANT_LEAVES_BREAK, CURRANT_LEAVES_STEP, CURRANT_LEAVES_PLACE, CURRANT_LEAVES_HIT, CURRANT_LEAVES_FALL);
+		public static final ForgeSoundType CURRANT_STALK = new ForgeSoundType(1.0F, 1.0F, CURRANT_STALK_BREAK, CURRANT_STALK_STEP, CURRANT_STALK_PLACE, CURRANT_STALK_HIT, CURRANT_STALK_FALL);
+		public static final ForgeSoundType WATER_HYACINTH = new ForgeSoundType(1.0F, 1.0F, WATER_HYACINTH_BREAK, WATER_HYACINTH_STEP, WATER_HYACINTH_PLACE, WATER_HYACINTH_HIT, WATER_HYACINTH_FALL);
 	}
 }

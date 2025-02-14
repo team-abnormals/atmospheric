@@ -259,6 +259,8 @@ public class Cochineal extends Animal implements Saddleable {
 
 		this.suckleHealTicks = 120;
 		this.suckleCooldown = 200;
+
+		this.playSound(AtmosphericSoundEvents.COCHINEAL_GRAB.get(), 1.0F, 0.8F / (this.getRandom().nextFloat() * 0.8F + 0.8F));
 	}
 
 	public void detachFromCactus() {

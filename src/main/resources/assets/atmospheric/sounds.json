@@ -29,6 +29,13 @@
     ],
     "subtitle": "subtitles.atmospheric.entity.cochineal.bounce"
   },
+  "entity.cochineal.grab": {
+    "sounds": [
+      "atmospheric:mob/cochineal/grab1",
+      "atmospheric:mob/cochineal/grab2"
+    ],
+    "subtitle": "subtitles.atmospheric.entity.cochineal.grab"
+  },
   "entity.tetra.ambient": {
     "sounds": []
   },
@@ -356,6 +363,50 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "block.water_hyacinth.break": {
+    "sounds": [
+      "atmospheric:block/water_hyacinth/break1",
+      "atmospheric:block/water_hyacinth/break2",
+      "atmospheric:block/water_hyacinth/break3",
+      "atmospheric:block/water_hyacinth/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.water_hyacinth.fall": {
+    "sounds": [
+      "atmospheric:block/water_hyacinth/step1",
+      "atmospheric:block/water_hyacinth/step2",
+      "atmospheric:block/water_hyacinth/step3",
+      "atmospheric:block/water_hyacinth/step4"
+    ]
+  },
+  "block.water_hyacinth.hit": {
+    "sounds": [
+      "atmospheric:block/water_hyacinth/step1",
+      "atmospheric:block/water_hyacinth/step2",
+      "atmospheric:block/water_hyacinth/step3",
+      "atmospheric:block/water_hyacinth/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.water_hyacinth.place": {
+    "sounds": [
+      "atmospheric:block/water_hyacinth/break1",
+      "atmospheric:block/water_hyacinth/break2",
+      "atmospheric:block/water_hyacinth/break3",
+      "atmospheric:block/water_hyacinth/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.water_hyacinth.step": {
+    "sounds": [
+      "atmospheric:block/water_hyacinth/step1",
+      "atmospheric:block/water_hyacinth/step2",
+      "atmospheric:block/water_hyacinth/step3",
+      "atmospheric:block/water_hyacinth/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.arid_sprouts.break": {
     "sounds": [
       "atmospheric:block/arid_sprouts/place1",
@@ -399,5 +450,102 @@
       "atmospheric:block/arid_sprouts/step4"
     ],
     "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.currant_stalk.break": {
+    "sounds": [
+      "atmospheric:block/currant_stalk/break1",
+      "atmospheric:block/currant_stalk/break2",
+      "atmospheric:block/currant_stalk/break3",
+      "atmospheric:block/currant_stalk/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.currant_stalk.fall": {
+    "sounds": [
+      "atmospheric:block/currant_stalk/step1",
+      "atmospheric:block/currant_stalk/step2",
+      "atmospheric:block/currant_stalk/step3",
+      "atmospheric:block/currant_stalk/step4"
+    ]
+  },
+  "block.currant_stalk.hit": {
+    "sounds": [
+      "atmospheric:block/currant_stalk/step1",
+      "atmospheric:block/currant_stalk/step2",
+      "atmospheric:block/currant_stalk/step3",
+      "atmospheric:block/currant_stalk/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.currant_stalk.place": {
+    "sounds": [
+      "atmospheric:block/currant_stalk/break1",
+      "atmospheric:block/currant_stalk/break2",
+      "atmospheric:block/currant_stalk/break3",
+      "atmospheric:block/currant_stalk/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.currant_stalk.step": {
+    "sounds": [
+      "atmospheric:block/currant_stalk/step1",
+      "atmospheric:block/currant_stalk/step2",
+      "atmospheric:block/currant_stalk/step3",
+      "atmospheric:block/currant_stalk/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.currant_leaves.break": {
+    "sounds": [
+      "atmospheric:block/currant_leaves/break1",
+      "atmospheric:block/currant_leaves/break2",
+      "atmospheric:block/currant_leaves/break3",
+      "atmospheric:block/currant_leaves/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.currant_leaves.fall": {
+    "sounds": [
+      "atmospheric:block/currant_leaves/step1",
+      "atmospheric:block/currant_leaves/step2",
+      "atmospheric:block/currant_leaves/step3",
+      "atmospheric:block/currant_leaves/step4"
+    ]
+  },
+  "block.currant_leaves.hit": {
+    "sounds": [
+      "atmospheric:block/currant_leaves/step1",
+      "atmospheric:block/currant_leaves/step2",
+      "atmospheric:block/currant_leaves/step3",
+      "atmospheric:block/currant_leaves/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.currant_leaves.place": {
+    "sounds": [
+      "atmospheric:block/currant_leaves/break1",
+      "atmospheric:block/currant_leaves/break2",
+      "atmospheric:block/currant_leaves/break3",
+      "atmospheric:block/currant_leaves/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.currant_leaves.step": {
+    "sounds": [
+      "atmospheric:block/currant_leaves/step1",
+      "atmospheric:block/currant_leaves/step2",
+      "atmospheric:block/currant_leaves/step3",
+      "atmospheric:block/currant_leaves/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.hanging_currant.pick_currant": {
+    "sounds": [
+      "atmospheric:block/currant_leaves/step1",
+      "atmospheric:block/currant_leaves/step2",
+      "atmospheric:block/currant_leaves/step3",
+      "atmospheric:block/currant_leaves/step4"
+    ],
+    "subtitle": "subtitles.atmospheric.block.hanging_currant.pick_currant"
   }
 }

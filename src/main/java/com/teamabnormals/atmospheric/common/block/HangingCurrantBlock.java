@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
 import com.teamabnormals.blueprint.common.entity.BlueprintFallingBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -98,7 +99,7 @@ public class HangingCurrantBlock extends BushBlock implements Fallable {
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		popResource(level, pos, new ItemStack(AtmosphericItems.CURRANT.get(), 2 + level.random.nextInt(3)));
-		level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+		level.playSound(null, pos, AtmosphericSoundEvents.HANGING_CURRANT_PICK_CURRANT.get(), SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
 		BlockState newState = Blocks.AIR.defaultBlockState();
 		level.removeBlock(pos, true);
 		level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newState));
