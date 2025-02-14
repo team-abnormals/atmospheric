@@ -7,6 +7,7 @@ import com.teamabnormals.atmospheric.common.entity.Tetra;
 import com.teamabnormals.atmospheric.core.other.AtmosphericModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
@@ -33,5 +34,10 @@ public class TetraRenderer extends MobRenderer<Tetra, TetraModel<Tetra>> {
 			stack.translate(0.2F, 0.1F, 0.0F);
 			stack.mulPose(Axis.ZP.rotationDegrees(90.0F));
 		}
+	}
+
+	@Override
+	protected int getBlockLightLevel(Tetra tetra, BlockPos pos) {
+		return Mth.clamp(super.getBlockLightLevel(tetra, pos) + 7, 0, 15);
 	}
 }
