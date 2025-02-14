@@ -88,8 +88,8 @@ public class AtmosphericBiomes {
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 40, 1, 2));
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4));
 
-		spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.SQUID, 5, 1, 1));
-		spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(AtmosphericEntityTypes.TETRA.get(), 25, 3, 12));
+		spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.SQUID, 1, 1, 1));
+		spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(AtmosphericEntityTypes.TETRA.get(), 20, 3, 12));
 
 		return biome(true, 0.9F, 0.95F, 6675400, 408635, spawns, generation, null);
 	}

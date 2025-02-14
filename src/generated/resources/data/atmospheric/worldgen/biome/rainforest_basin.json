@@ -208,13 +208,13 @@
         "type": "minecraft:squid",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 5
+        "weight": 1
       },
       {
         "type": "atmospheric:tetra",
         "maxCount": 12,
         "minCount": 3,
-        "weight": 25
+        "weight": 20
       }
     ],
     "water_creature": []
