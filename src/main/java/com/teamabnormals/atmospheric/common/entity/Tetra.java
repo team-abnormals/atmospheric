@@ -117,6 +117,10 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 		return 12;
 	}
 
+	public int getMinSchoolSize() {
+		return 6;
+	}
+
 	public void tick() {
 		super.tick();
 
@@ -143,7 +147,7 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 	}
 
 	public boolean isSchoolFull() {
-		return this.hasFollowers() ? this.schoolSize == this.getMaxSchoolSize() : this.isFollower() && this.leader.schoolSize == this.leader.getMaxSchoolSize();
+		return this.hasFollowers() ? this.schoolSize <= this.getMinSchoolSize() : this.isFollower() && this.leader.schoolSize <= this.getMinSchoolSize();
 	}
 
 	public static boolean tryMergeSchools(AbstractSchoolingFish from, AbstractSchoolingFish to) {
