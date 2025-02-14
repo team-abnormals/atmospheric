@@ -108,7 +108,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> PASSION_VINE = HELPER.createBlock("passion_vine", () -> new PassionVineBlock(Block.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.VINE).pushReaction(PushReaction.DESTROY)));
 	public static final RegistryObject<Block> PASSION_VINE_BUNDLE = HELPER.createBlock("passion_vine_bundle", () -> new PassionVineBundleBlock(Block.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F, 2.5F).sound(SoundType.GRASS)));
 
-	public static final RegistryObject<Block> WATER_HYACINTH = HELPER.createBlockNoItem("water_hyacinth", () -> new WaterHyacinthBlock(Block.Properties.of().noCollission().instabreak().sound(SoundType.VINE).pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> WATER_HYACINTH = HELPER.createBlockNoItem("water_hyacinth", () -> new WaterHyacinthBlock(PropertyUtil.flower().sound(SoundType.VINE).pushReaction(PushReaction.DESTROY)));
 
 	public static final RegistryObject<Block> WARM_MONKEY_BRUSH = HELPER.createBlockNoItem("warm_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.MONKEY_BRUSH)));
 	public static final RegistryObject<Block> HOT_MONKEY_BRUSH = HELPER.createBlockNoItem("hot_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.MONKEY_BRUSH)));
