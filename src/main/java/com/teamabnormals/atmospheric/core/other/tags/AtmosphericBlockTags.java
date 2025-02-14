@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.core.other.tags;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.other.AtmosphericConstants;
 import com.teamabnormals.blueprint.core.util.TagUtil;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -27,6 +28,8 @@ public class AtmosphericBlockTags {
 	public static final TagKey<Block> ORANGES = blockTag("oranges");
 	public static final TagKey<Block> MONKEY_BRUSH = blockTag("monkey_brush");
 	public static final TagKey<Block> COCHINEALS_CAN_FEED_ON = blockTag("cochineals_can_feed_on");
+
+	public static final TagKey<Block> MINEABLE_KNIFE = TagUtil.blockTag(AtmosphericConstants.FARMERS_DELIGHT, "mineable/knife");
 
 	private static TagKey<Block> blockTag(String name) {
 		return TagUtil.blockTag(Atmospheric.MOD_ID, name);

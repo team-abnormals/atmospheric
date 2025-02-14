@@ -132,6 +132,8 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(ORANGES).add(ORANGE.get(), BLOOD_ORANGE.get());
 		this.tag(COCHINEALS_CAN_FEED_ON).add(Blocks.CACTUS, SNOWY_CACTUS.get());
 
+		this.tag(MINEABLE_KNIFE).add(YUCCA_GATEAU.get());
+
 		this.tag(BlueprintBlockTags.WOODEN_CHESTS).add(ROSEWOOD_CHEST.get(), MORADO_CHEST.get(), YUCCA_CHEST.get(), KOUSA_CHEST.get(), ASPEN_CHEST.get(), GRIMWOOD_CHEST.get(), LAUREL_CHEST.get());
 		this.tag(BlueprintBlockTags.WOODEN_TRAPPED_CHESTS).add(TRAPPED_ROSEWOOD_CHEST.get(), TRAPPED_MORADO_CHEST.get(), TRAPPED_YUCCA_CHEST.get(), TRAPPED_KOUSA_CHEST.get(), TRAPPED_ASPEN_CHEST.get(), TRAPPED_GRIMWOOD_CHEST.get(), TRAPPED_LAUREL_CHEST.get());
 		this.tag(BlueprintBlockTags.WOODEN_BEEHIVES).add(ROSEWOOD_BEEHIVE.get(), MORADO_BEEHIVE.get(), YUCCA_BEEHIVE.get(), KOUSA_BEEHIVE.get(), ASPEN_BEEHIVE.get(), GRIMWOOD_BEEHIVE.get(), LAUREL_BEEHIVE.get());

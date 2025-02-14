@@ -3,6 +3,8 @@ package com.teamabnormals.atmospheric.core.other;
 import net.minecraft.resources.ResourceLocation;
 
 public class AtmosphericConstants {
+	public static final String FARMERS_DELIGHT = "farmersdelight";
+
 	public static final ResourceLocation BAMBOO_LADDER = new ResourceLocation("woodworks", "bamboo_ladder");
 	public static final ResourceLocation BAMBOO_BEEHIVE = new ResourceLocation("woodworks", "bamboo_beehive");
 	public static final ResourceLocation BAMBOO_BOOKSHELF = new ResourceLocation("woodworks", "bamboo_bookshelf");
