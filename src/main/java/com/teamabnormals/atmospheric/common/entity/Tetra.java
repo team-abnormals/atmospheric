@@ -61,7 +61,7 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 	}
 
 	public String getStringVariant() {
-		return this.entityData.get(DATA_ID_TYPE_VARIANT);
+		return !this.entityData.get(DATA_ID_TYPE_VARIANT).isEmpty() ? this.entityData.get(DATA_ID_TYPE_VARIANT) : TetraVariant.NEON.location().toString();
 	}
 
 	private void setStringVariant(String var) {
