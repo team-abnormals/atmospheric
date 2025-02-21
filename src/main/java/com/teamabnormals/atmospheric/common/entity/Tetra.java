@@ -1,11 +1,13 @@
 package com.teamabnormals.atmospheric.common.entity;
 
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBiomeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -18,17 +20,23 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.world.entity.VariantHolder;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
+import net.minecraft.world.entity.ai.goal.FollowFlockLeaderGoal;
+import net.minecraft.world.entity.ai.goal.PanicGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.animal.AbstractSchoolingFish;
 import net.minecraft.world.entity.animal.WaterAnimal;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
 
 import javax.annotation.Nullable;
@@ -51,14 +59,24 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 		this.entityData.define(DATA_ID_TYPE_VARIANT, TetraVariant.NEON.location().toString());
 	}
 
+	@Override
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putString("Variant", this.getStringVariant());
 	}
 
+	@Override
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
 		this.setStringVariant(tag.getString("Variant"));
+	}
+
+	@Override
+	protected void registerGoals() {
+		this.goalSelector.addGoal(0, new PanicGoal(this, 2.25D));
+		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 8.0F, 2.6D, 2.4D, EntitySelector.NO_CREATIVE_OR_SPECTATOR::test));
+		this.goalSelector.addGoal(4, new TetraSwimGoal(this));
+		this.goalSelector.addGoal(5, new FollowFlockLeaderGoal(this));
 	}
 
 	public String getStringVariant() {
@@ -125,7 +143,9 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 		super.tick();
 
 		if (this.hasFollowers() && this.isFollower()) {
-			tryMergeSchools(this, this.leader);
+			if (!tryMergeSchools(this, this.leader)) {
+				this.stopFollowing();
+			}
 		}
 
 		if (!this.isSchoolFull() && this.random.nextInt(50) == 0) {
@@ -198,6 +218,68 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 		TetraGroupData(Tetra leader, TetraVariant variant) {
 			super(leader);
 			this.variant = variant;
+		}
+	}
+
+	static class TetraSwimGoal extends RandomStrollGoal {
+		private final Tetra fish;
+
+		public TetraSwimGoal(Tetra tetra) {
+			super(tetra, 1.0D, 40, false);
+			this.fish = tetra;
+		}
+
+		public boolean canUse() {
+			return this.fish.canRandomSwim() && super.canUse();
+		}
+
+		@Nullable
+		protected Vec3 getPosition() {
+			return getRandomSwimmablePos(this.mob, 10, 7);
+		}
+
+		@Nullable
+		public static Vec3 getRandomSwimmablePos(PathfinderMob mob, int xz, int y) {
+			Vec3 vec3 = getPos(mob, xz, y);
+
+			for (int i = 0; vec3 != null && !mob.level().getBlockState(BlockPos.containing(vec3)).isPathfindable(mob.level(), BlockPos.containing(vec3), PathComputationType.WATER) && i++ < 10; vec3 = getPos(mob, xz, y)) {
+			}
+
+			return vec3;
+		}
+
+		@Nullable
+		public static Vec3 getPos(PathfinderMob tetra, int xz, int y) {
+			Vec3 vec3 = DefaultRandomPos.getPos(tetra, xz, y);
+
+			if (vec3 != null) {
+				Level level = tetra.level();
+				RandomSource random = tetra.getRandom();
+
+				BlockPos pos = tetra.getOnPos();
+				BlockPos newPos = BlockPos.containing(vec3);
+
+				Holder<Biome> oldBiome = level.getBiome(pos);
+				Holder<Biome> newBiome = level.getBiome(newPos);
+
+				int newLight = level.getRawBrightness(newPos, 0);
+
+				boolean tooBright = newLight > 5 && random.nextFloat() < newLight / 16.0F;
+				boolean wrongBiome = oldBiome.is(AtmosphericBiomeTags.IS_RAINFOREST) && !newBiome.is(AtmosphericBiomeTags.IS_RAINFOREST) && random.nextFloat() < 0.95F;
+
+				if (tooBright || wrongBiome) {
+					return getPos(tetra, xz, y);
+				}
+			}
+
+			return vec3;
+		}
+	}
+
+	static class TetraFollowFlockLeader extends FollowFlockLeaderGoal {
+
+		public TetraFollowFlockLeader(AbstractSchoolingFish fish) {
+			super(fish);
 		}
 	}
 }

@@ -8,18 +8,18 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "atmospheric:tall_aloe_vera",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "atmospheric:tall_aloe_vera",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "half": "lower"
-              }
-            }
-          ],
           "functions": [
             {
               "add": false,
@@ -46,6 +46,15 @@
     },
     {
       "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "atmospheric:tall_aloe_vera",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -57,8 +66,7 @@
                   "block": "atmospheric:tall_aloe_vera",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "6",
-                    "half": "lower"
+                    "age": "6"
                   }
                 }
               ],
@@ -72,8 +80,7 @@
                   "block": "atmospheric:tall_aloe_vera",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "7",
-                    "half": "lower"
+                    "age": "7"
                   }
                 }
               ],
@@ -87,8 +94,7 @@
                   "block": "atmospheric:tall_aloe_vera",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "8",
-                    "half": "lower"
+                    "age": "8"
                   }
                 }
               ],
@@ -97,37 +103,6 @@
             }
           ],
           "name": "atmospheric:yellow_blossoms"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "atmospheric:tall_aloe_vera",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "age": "8",
-            "half": "lower"
-          }
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "atmospheric:aloe_kernels"
-        }
-      ],
-      "functions": [
-        {
-          "enchantment": "minecraft:fortune",
-          "formula": "minecraft:binomial_with_bonus_count",
-          "function": "minecraft:apply_bonus",
-          "parameters": {
-            "extra": 3,
-            "probability": 0.5714286
-          }
         }
       ],
       "rolls": 1.0
