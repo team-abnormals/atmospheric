@@ -22,7 +22,7 @@ public class TetraRenderer extends MobRenderer<Tetra, TetraModel<Tetra>> {
 
 	@Override
 	public ResourceLocation getTextureLocation(Tetra tetra) {
-		return tetra.getVariant().texture().withSuffix(".png");
+		return tetra.getVariant().texture().withPrefix("textures/").withSuffix(".png");
 	}
 
 	@Override
