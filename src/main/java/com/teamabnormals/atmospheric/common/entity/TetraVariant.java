@@ -34,8 +34,8 @@ public record TetraVariant(Component displayName, ResourceLocation texture) {
 
 	public static void registerVariant(BootstapContext<TetraVariant> context, ResourceKey<TetraVariant> key) {
 		context.register(key, new TetraVariant(
-				Component.translatable(Util.makeDescriptionId("entity.atmospheric.tetra", key.location())),
-				key.location().withPrefix("textures/entity/tetra/").withSuffix("_tetra")));
+				Component.translatable(Util.makeDescriptionId("tetra_variant", key.location())),
+				key.location().withPrefix("entity/tetra/")));
 	}
 
 	public static ResourceKey<TetraVariant> createKey(String name) {
@@ -44,6 +44,6 @@ public record TetraVariant(Component displayName, ResourceLocation texture) {
 
 	public static final Codec<TetraVariant> CODEC = RecordCodecBuilder.create(instance -> instance.group(
 					ExtraCodecs.COMPONENT.fieldOf("description").forGetter(entry -> entry.displayName),
-					ResourceLocation.CODEC.fieldOf("texture").forGetter(entry -> entry.texture))
+					ResourceLocation.CODEC.fieldOf("asset_id").forGetter(entry -> entry.texture))
 			.apply(instance, TetraVariant::new));
 }

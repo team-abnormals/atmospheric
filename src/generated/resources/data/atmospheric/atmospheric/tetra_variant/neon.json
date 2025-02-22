@@ -1,6 +1,6 @@
 {
+  "asset_id": "atmospheric:entity/tetra/neon",
   "description": {
-    "translate": "entity.atmospheric.tetra.atmospheric.neon"
-  },
-  "texture": "atmospheric:textures/entity/tetra/neon_tetra"
+    "translate": "tetra_variant.atmospheric.neon"
+  }
 }
