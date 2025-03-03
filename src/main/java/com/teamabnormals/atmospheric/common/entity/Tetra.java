@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.entity;
 
+import com.google.common.collect.Lists;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBiomeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
@@ -40,6 +41,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraVariant> {
@@ -199,7 +201,13 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 				tetraVariant = tetraData.variant;
 			} else {
 				Registry<TetraVariant> registry = level.registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT);
-				tetraVariant = random.nextFloat() < 0.9D ? registry.get(TetraVariant.NEON) : Util.getRandom(registry.stream().toList(), random);
+				ArrayList<TetraVariant> weightedVariants = Lists.newArrayList();
+				for (TetraVariant variant : registry.stream().toList()) {
+					for (int i = 0; i < variant.weight(); i++)
+						weightedVariants.add(variant);
+				}
+
+				tetraVariant = Util.getRandom(weightedVariants, random);
 				data = new TetraGroupData(this, tetraVariant);
 			}
 

@@ -2,5 +2,6 @@
   "asset_id": "atmospheric:entity/tetra/neon",
   "description": {
     "translate": "tetra_variant.atmospheric.neon"
-  }
+  },
+  "weight": 50
 }

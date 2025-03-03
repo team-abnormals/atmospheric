@@ -11,7 +11,7 @@ public final class AtmosphericRegistries {
 	public static final ResourceKey<Registry<TetraVariant>> TETRA_VARIANT = key("tetra_variant");
 
 	public static void registerRegistries(DataPackRegistryEvent.NewRegistry event) {
-		event.dataPackRegistry(TETRA_VARIANT, TetraVariant.CODEC, TetraVariant.CODEC);
+		event.dataPackRegistry(TETRA_VARIANT, TetraVariant.CODEC, TetraVariant.NETWORK_CODEC);
 	}
 
 	private static <T> ResourceKey<Registry<T>> key(String name) {

@@ -1,0 +1,7 @@
+{
+  "asset_id": "atmospheric:entity/tetra/cardinal",
+  "description": {
+    "translate": "tetra_variant.atmospheric.cardinal"
+  },
+  "weight": 50
+}
