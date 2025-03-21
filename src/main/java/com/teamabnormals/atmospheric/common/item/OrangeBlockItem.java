@@ -20,7 +20,8 @@ public class OrangeBlockItem extends BlockItem {
 	@Override
 	public InteractionResult place(BlockPlaceContext context) {
 		BlockState state = context.getLevel().getBlockState(context.getClickedPos());
-		return context.getPlayer().isSecondaryUseActive() || state.is(this.getBlock()) && state.getValue(OrangeBlock.ORANGES) < 2 ? super.place(context) : InteractionResult.FAIL;
+		boolean isShiftPlacement = context.getPlayer() == null || context.getPlayer().isSecondaryUseActive();
+		return isShiftPlacement || (state.is(this.getBlock()) && state.getValue(OrangeBlock.ORANGES) < 2) ? super.place(context) : InteractionResult.FAIL;
 	}
 
 	@Override

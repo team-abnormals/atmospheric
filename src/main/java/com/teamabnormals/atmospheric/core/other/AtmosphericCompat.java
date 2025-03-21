@@ -1,14 +1,25 @@
 package com.teamabnormals.atmospheric.core.other;
 
+import com.teamabnormals.atmospheric.common.block.OrangeBlock;
 import com.teamabnormals.atmospheric.common.dispenser.PassionVineBundleDispenseBehavior;
 import com.teamabnormals.atmospheric.common.dispenser.PassionVineDispenseBehavior;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.BlockSource;
+import net.minecraft.core.Direction;
+import net.minecraft.core.dispenser.OptionalDispenseItemBehavior;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.animal.Parrot;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 
 import java.util.Collections;
@@ -30,6 +41,112 @@ public class AtmosphericCompat {
 	public static void registerDispenserBehaviors() {
 		DispenserBlock.registerBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
 		DispenserBlock.registerBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
+		DispenserBlock.registerBehavior(AtmosphericItems.ORANGE.get(), new OptionalDispenseItemBehavior() {
+			@Override
+			protected ItemStack execute(BlockSource source, ItemStack stack) {
+				this.setSuccess(false);
+				if (stack.isEmpty()) return stack;
+
+				Direction direction = source.getBlockState().getValue(DispenserBlock.FACING);
+				BlockPos targetPos = source.getPos().relative(direction);
+				Level level = source.getLevel();
+
+				try {
+					if (!level.isLoaded(targetPos)) {
+						return stack;
+					}
+
+					BlockState targetState = level.getBlockState(targetPos);
+					
+					if (targetState.is(AtmosphericBlocks.ORANGE.get())) {
+						if (targetState.getValue(OrangeBlock.ORANGES) < 2) {
+							BlockState newState = targetState.cycle(OrangeBlock.ORANGES);
+							if (level.setBlock(targetPos, newState, 3)) {
+								level.levelEvent(2001, targetPos, Block.getId(newState));
+								stack.shrink(1);
+								this.setSuccess(true);
+							}
+						}
+						return stack;
+					}
+
+					if (!targetState.isAir() && !targetState.canBeReplaced()) {
+						return stack;
+					}
+
+					BlockState orangeState = AtmosphericBlocks.ORANGE.get().defaultBlockState()
+						.setValue(OrangeBlock.FACING, direction.getOpposite())
+						.setValue(BlockStateProperties.WATERLOGGED, level.getFluidState(targetPos).getType() == Fluids.WATER);
+					
+					if (!orangeState.canSurvive(level, targetPos)) {
+						return stack;
+					}
+
+					if (level.setBlock(targetPos, orangeState, 3)) {
+						level.levelEvent(2001, targetPos, Block.getId(orangeState));
+						stack.shrink(1);
+						this.setSuccess(true);
+					}
+					
+					return stack;
+				} catch (Exception e) {
+					return stack;
+				}
+			}
+		});
+		DispenserBlock.registerBehavior(AtmosphericItems.BLOOD_ORANGE.get(), new OptionalDispenseItemBehavior() {
+			@Override
+			protected ItemStack execute(BlockSource source, ItemStack stack) {
+				this.setSuccess(false);
+				if (stack.isEmpty()) return stack;
+
+				Direction direction = source.getBlockState().getValue(DispenserBlock.FACING);
+				BlockPos targetPos = source.getPos().relative(direction);
+				Level level = source.getLevel();
+
+				try {
+					if (!level.isLoaded(targetPos) || !level.mayInteract(null, targetPos)) {
+						return stack;
+					}
+
+					BlockState targetState = level.getBlockState(targetPos);
+					
+					if (targetState.is(AtmosphericBlocks.BLOOD_ORANGE.get())) {
+						if (targetState.getValue(OrangeBlock.ORANGES) < 2) {
+							BlockState newState = targetState.cycle(OrangeBlock.ORANGES);
+							if (level.setBlock(targetPos, newState, 3)) {
+								level.levelEvent(2001, targetPos, Block.getId(newState));
+								stack.shrink(1);
+								this.setSuccess(true);
+							}
+						}
+						return stack;
+					}
+
+					if (!targetState.isAir() && !targetState.canBeReplaced()) {
+						return stack;
+					}
+
+					BlockState orangeState = AtmosphericBlocks.BLOOD_ORANGE.get().defaultBlockState()
+						.setValue(OrangeBlock.FACING, direction.getOpposite())
+						.setValue(BlockStateProperties.WATERLOGGED, level.getFluidState(targetPos).getType() == Fluids.WATER);
+					
+					if (!orangeState.canSurvive(level, targetPos)) {
+						return stack;
+					}
+
+					if (level.setBlock(targetPos, orangeState, 3)) {
+						level.levelEvent(2001, targetPos, Block.getId(orangeState));
+						stack.shrink(1);
+						this.setSuccess(true);
+					}
+					
+					return stack;
+				} catch (Exception e) {
+					return stack;
+				}
+			}
+		});
 	}
 
 	public static void registerCompostables() {
