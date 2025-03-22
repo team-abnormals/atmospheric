@@ -511,8 +511,8 @@
   "effect.atmospheric.persistence.desc" : "Скорость перемещения увеличиваться с уменьшением сытости",
   "effect.atmospheric.relief" : "Облегчение",
   "effect.atmospheric.relief.desc" : "При получении единицы урона, которая идентична или выше уровня эффекта, ваше здоровье будет восстановлено",
-  "effect.atmospheric.spitting" : "Плевание",
-  "effect.atmospheric.spitting.desc" : "Выплевавыние града маракуйевых семян",
+  "effect.atmospheric.spitting" : "Сплёвывание",
+  "effect.atmospheric.spitting.desc" : "После поедания маракуйи пользователь выплёвывает множество летящих косточек",
   "effect.atmospheric.worsening" : "Усугубление",
   "effect.atmospheric.worsening.desc" : "При получении единицы урона, которая идентична или выше уровня эффекта, будет нанесён дополнительный урон",
 
