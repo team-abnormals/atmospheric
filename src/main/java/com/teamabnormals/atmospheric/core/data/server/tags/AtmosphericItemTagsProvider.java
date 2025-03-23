@@ -2,7 +2,6 @@ package com.teamabnormals.atmospheric.core.data.server.tags;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
-import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.data.server.tags.BlueprintItemTagsProvider;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;

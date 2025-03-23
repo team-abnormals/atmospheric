@@ -10,7 +10,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.ExtraCodecs;
-import net.minecraft.util.random.WeightedEntry;
 
 public record TetraVariant(Component displayName, ResourceLocation texture, int weight) {
 	public static final ResourceKey<TetraVariant> NEON = createKey("neon");

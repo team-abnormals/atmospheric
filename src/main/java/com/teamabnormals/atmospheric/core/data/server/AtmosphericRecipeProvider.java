@@ -221,7 +221,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.WHITE_STAINED_GLASS_PANE, Items.WHITE_DYE);
 		stainedGlassFromGlassAndDye(consumer, Blocks.YELLOW_STAINED_GLASS, Items.YELLOW_DYE);
 		stainedGlassPaneFromGlassPaneAndDye(consumer, Blocks.YELLOW_STAINED_GLASS_PANE, Items.YELLOW_DYE);
-		
+
 		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.MISC, AGAVE.get(), Items.CYAN_DYE, 1.0F, 100, Atmospheric.MOD_ID);
 		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ARID_SANDSTONE.get(), SMOOTH_ARID_SANDSTONE.get(), 0.1F, 100, Atmospheric.MOD_ID);
 		ClayworksRecipeProvider.bakingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, RED_ARID_SANDSTONE.get(), SMOOTH_RED_ARID_SANDSTONE.get(), 0.1F, 100, Atmospheric.MOD_ID);

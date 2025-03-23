@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import org.spongepowered.asm.mixin.injection.At;
 
 public class AtmosphericProperties {
 	public static final BlockSetType ROSEWOOD_BLOCK_SET = blockSetType("rosewood");

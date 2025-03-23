@@ -44,7 +44,7 @@ public class AtmosphericBlocks {
 
 	public static final AtmosphericBlockSubRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER.getBlockSubHelper();
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> STRIPPED_ROSEWOOD_LOG = HELPER.createBlock("stripped_rosewood_log", () -> new RotatedPillarBlock(AtmosphericProperties.ROSEWOOD.log()));
 	public static final RegistryObject<Block> STRIPPED_ROSEWOOD = HELPER.createBlock("stripped_rosewood", () -> new RotatedPillarBlock(AtmosphericProperties.ROSEWOOD.log()));
@@ -126,7 +126,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> PASSION_FRUIT_CRATE = HELPER.createBlock("passion_fruit_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> SHIMMERING_PASSION_FRUIT_CRATE = HELPER.createBlock("shimmering_passion_fruit_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of().mapColor(MapColor.GOLD).lightLevel((state) -> 7).strength(1.5F).sound(SoundType.WOOD)));
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> IVORY_TRAVERTINE = HELPER.createBlock("ivory_travertine", () -> new RotatedPillarBlock(AtmosphericProperties.IVORY_TRAVERTINE));
 	public static final RegistryObject<Block> PEACH_TRAVERTINE = HELPER.createBlock("peach_travertine", () -> new RotatedPillarBlock(AtmosphericProperties.PEACH_TRAVERTINE));
@@ -166,7 +166,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> POLISHED_DOLERITE_STAIRS = HELPER.createBlock("polished_dolerite_stairs", () -> new StairBlock(() -> POLISHED_DOLERITE.get().defaultBlockState(), AtmosphericProperties.DOLERITE));
 	public static final RegistryObject<Block> POLISHED_DOLERITE_SLAB = HELPER.createBlock("polished_dolerite_slab", () -> new SlabBlock(AtmosphericProperties.DOLERITE));
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> ARID_SAND = HELPER.createBlock("arid_sand", () -> new AridSandBlock(14406560, AtmosphericProperties.ARID_SAND));
 	public static final RegistryObject<Block> ARID_SANDSTONE = HELPER.createBlock("arid_sandstone", () -> new Block(AtmosphericProperties.aridSandstone()));
@@ -257,7 +257,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ROASTED_YUCCA_CASK = HELPER.createBlock("roasted_yucca_cask", () -> new BlueprintDirectionalBlock(Block.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(1.5F).sound(SoundType.WOOD).ignitedByLava()));
 	public static final RegistryObject<Block> BARREL_CACTUS_BATCH = HELPER.createBlock("barrel_cactus_batch", () -> new RotatedPillarBlock(Block.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F).sound(SoundType.WOOD).ignitedByLava()));
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> STRIPPED_ASPEN_LOG = HELPER.createBlock("stripped_aspen_log", () -> new RotatedPillarBlock(AtmosphericProperties.ASPEN.log()));
 	public static final RegistryObject<Block> STRIPPED_ASPEN_WOOD = HELPER.createBlock("stripped_aspen_wood", () -> new RotatedPillarBlock(AtmosphericProperties.ASPEN.log()));
@@ -304,7 +304,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> CRUSTOSE_LOG = HELPER.createBlock("crustose_log", () -> new CrustoseLogBlock(ASPEN_LOG::get, AtmosphericProperties.ASPEN.log().randomTicks()));
 	public static final RegistryObject<Block> CRUSTOSE_WOOD = HELPER.createBlock("crustose_wood", () -> new CrustoseLogBlock(ASPEN_WOOD::get, AtmosphericProperties.ASPEN.log().randomTicks()));
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> STRIPPED_LAUREL_LOG = HELPER.createBlock("stripped_laurel_log", () -> new RotatedPillarBlock(AtmosphericProperties.LAUREL.log()));
 	public static final RegistryObject<Block> STRIPPED_LAUREL_WOOD = HELPER.createBlock("stripped_laurel_wood", () -> new RotatedPillarBlock(AtmosphericProperties.LAUREL.log()));
@@ -345,7 +345,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> ORANGE_CRATE = HELPER.createBlock("orange_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(1.5F).sound(SoundType.WOOD).ignitedByLava()));
 	public static final RegistryObject<Block> BLOOD_ORANGE_CRATE = HELPER.createBlock("blood_orange_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of().mapColor(MapColor.COLOR_RED).strength(1.5F).sound(SoundType.WOOD).ignitedByLava()));
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> STRIPPED_KOUSA_LOG = HELPER.createBlock("stripped_kousa_log", () -> new RotatedPillarBlock(AtmosphericProperties.KOUSA.log()));
 	public static final RegistryObject<Block> STRIPPED_KOUSA_WOOD = HELPER.createBlock("stripped_kousa_wood", () -> new RotatedPillarBlock(AtmosphericProperties.KOUSA.log()));
@@ -388,7 +388,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<Block> CURRANT_LEAF_PILE = HELPER.createBlock("currant_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.CURRANT.leafPile()));
 	public static final RegistryObject<Block> CURRANT_CRATE = HELPER.createBlock("currant_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of().mapColor(MapColor.TERRACOTTA_CYAN).strength(1.5F).sound(SoundType.WOOD).ignitedByLava()));
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> GRIMWEB = HELPER.createBlock("grimweb", () -> new WebBlock(BlockBehaviour.Properties.copy(Blocks.COBWEB)));
 
@@ -420,7 +420,7 @@ public class AtmosphericBlocks {
 	public static final RegistryObject<BlueprintChestBlock> GRIMWOOD_CHEST = HELPER.createChestBlock("grimwood", AtmosphericProperties.GRIMWOOD.chest());
 	public static final RegistryObject<BlueprintTrappedChestBlock> TRAPPED_GRIMWOOD_CHEST = HELPER.createTrappedChestBlockNamed("grimwood", AtmosphericProperties.GRIMWOOD.chest());
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final RegistryObject<Block> CARMINE_BLOCK = HELPER.createBlock("carmine_block", () -> new CarmineBlock(AtmosphericProperties.CARMINE_BLOCK));
 	public static final RegistryObject<Block> CARMINE_SHINGLES = HELPER.createBlock("carmine_shingles", () -> new Block(AtmosphericProperties.CARMINE_BLOCK));

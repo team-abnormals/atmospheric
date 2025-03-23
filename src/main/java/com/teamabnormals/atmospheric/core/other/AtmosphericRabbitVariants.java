@@ -4,7 +4,6 @@ import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBiomeTags;
 import com.teamabnormals.blueprint.core.api.BlueprintRabbitVariants;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 @EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericRabbitVariants extends BlueprintRabbitVariants {

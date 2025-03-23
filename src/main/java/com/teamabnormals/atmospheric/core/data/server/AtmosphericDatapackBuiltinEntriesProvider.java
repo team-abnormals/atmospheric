@@ -2,11 +2,10 @@ package com.teamabnormals.atmospheric.core.data.server;
 
 import com.teamabnormals.atmospheric.common.entity.TetraVariant;
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
-import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericBiomeSlices;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBiomes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericConfiguredFeatures;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericPlacedFeatures;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
 import com.teamabnormals.atmospheric.core.registry.builtin.*;
 import com.teamabnormals.blueprint.core.registry.BlueprintDataPackRegistries;
 import net.minecraft.core.HolderLookup.Provider;

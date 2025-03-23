@@ -2,7 +2,6 @@ package com.teamabnormals.atmospheric.core.other;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.resources.ResourceLocation;
 
 public class AtmosphericModelLayers {
 	public static final ModelLayerLocation TETRA = register("tetra");
