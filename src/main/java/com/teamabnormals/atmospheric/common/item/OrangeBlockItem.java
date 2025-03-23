@@ -5,6 +5,7 @@ import com.teamabnormals.atmospheric.core.other.AtmosphericEvents;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -19,8 +20,9 @@ public class OrangeBlockItem extends BlockItem {
 
 	@Override
 	public InteractionResult place(BlockPlaceContext context) {
+		Player player = context.getPlayer();
 		BlockState state = context.getLevel().getBlockState(context.getClickedPos());
-		return context.getPlayer().isSecondaryUseActive() || state.is(this.getBlock()) && state.getValue(OrangeBlock.ORANGES) < 2 ? super.place(context) : InteractionResult.FAIL;
+		return (player == null || player.isSecondaryUseActive()) || state.is(this.getBlock()) && state.getValue(OrangeBlock.ORANGES) < 2 ? super.place(context) : InteractionResult.FAIL;
 	}
 
 	@Override
