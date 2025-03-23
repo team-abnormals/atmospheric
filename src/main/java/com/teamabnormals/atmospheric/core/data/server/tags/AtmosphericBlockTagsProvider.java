@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.core.data.server.tags;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -61,6 +62,8 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		);
 
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(ARID_SAND.get(), RED_ARID_SAND.get(), SUSPICIOUS_ARID_SAND.get(), SUSPICIOUS_RED_ARID_SAND.get(), CRUSTOSE.get(), CRUSTOSE_PATH.get());
+
+		this.tag(MINEABLE_WITH_KNIFE).add(YUCCA_GATEAU.get());
 
 		this.tag(BlockTags.SWORD_EFFICIENT).add(
 				AGAVE.get(), BARREL_CACTUS.get(), PASSION_VINE.get(), TALL_YUCCA_FLOWER.get(), ALOE_VERA.get(), TALL_ALOE_VERA.get(),
