@@ -488,7 +488,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 		@Override
 		public void generate() {
 			this.add(AtmosphericEntityTypes.TETRA.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.TROPICAL_FISH).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.BONE_MEAL)).when(LootItemRandomChanceCondition.randomChance(0.05F))));
-			this.add(AtmosphericEntityTypes.COCHINEAL.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(AtmosphericItems.CARMINE_HUSK.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 7.0F))))));
+			this.add(AtmosphericEntityTypes.COCHINEAL.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(AtmosphericItems.CARMINE_HUSK.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 7.0F))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))));
 		}
 
 		@Override
