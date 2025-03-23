@@ -200,7 +200,7 @@ public class DragonFruit extends Entity {
 
 	public Direction getRollingDirection() {
 		Direction dir = this.rollingDirection;
-		if (dir == null || dir.getAxis().isHorizontal()) {
+		if (dir == null || dir.getAxis().isVertical()) {
 			return Direction.NORTH;
 		}
 
