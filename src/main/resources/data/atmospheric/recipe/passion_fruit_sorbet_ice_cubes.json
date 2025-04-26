@@ -5,7 +5,7 @@
       "item": "minecraft:bowl"
     },
     {
-      "tag": "forge:fruits/passion_fruit"
+      "tag": "c:fruits/passion_fruit"
     },
     {
       "item": "neapolitan:ice_cubes"
@@ -15,11 +15,12 @@
     }
   ],
   "result": {
-    "item": "atmospheric:passion_fruit_sorbet"
+    "count": 1,
+    "id": "atmospheric:passion_fruit_sorbet"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
-      "type": "forge:mod_loaded",
+      "type": "neoforge:mod_loaded",
       "modid": "neapolitan"
     }
   ]

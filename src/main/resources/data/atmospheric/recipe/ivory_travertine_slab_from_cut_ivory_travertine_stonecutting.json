@@ -3,6 +3,8 @@
   "ingredient": {
     "item": "atmospheric:cut_ivory_travertine"
   },
-  "result": "atmospheric:ivory_travertine_slab",
-  "count": 2
+  "result": {
+    "count": 2,
+    "id": "atmospheric:ivory_travertine_slab"
+  }
 }

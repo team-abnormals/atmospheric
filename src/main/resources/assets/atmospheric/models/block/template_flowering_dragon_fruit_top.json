@@ -1,5 +1,4 @@
 {
-	"loader": "blueprint:fullbright",
 	"parent": "atmospheric:block/template_dragon_fruit_top",
 	"elements": [
 		{
@@ -18,12 +17,16 @@
 			"from": [2, 8, 9],
 			"to": [6, 14, 13],
 			"faces": {
-				"north": {"uv": [4, 4, 8, 10], "texture": "#overlay", "fullbright": true},
-				"east": {"uv": [12, 4, 8, 10], "texture": "#overlay", "fullbright": true},
-				"south": {"uv": [12, 4, 16, 10], "texture": "#overlay", "fullbright": true},
-				"west": {"uv": [4, 4, 0, 10], "texture": "#overlay", "fullbright": true},
-				"up": {"uv": [4, 0, 8, 4], "texture": "#overlay", "fullbright": true},
-				"down": {"uv": [8, 0, 12, 4], "texture": "#overlay", "fullbright": true}
+				"north": {"uv": [4, 4, 8, 10], "texture": "#overlay"},
+				"east": {"uv": [12, 4, 8, 10], "texture": "#overlay"},
+				"south": {"uv": [12, 4, 16, 10], "texture": "#overlay"},
+				"west": {"uv": [4, 4, 0, 10], "texture": "#overlay"},
+				"up": {"uv": [4, 0, 8, 4], "texture": "#overlay"},
+				"down": {"uv": [8, 0, 12, 4], "texture": "#overlay"}
+			},
+			"neoforge_data": {
+				"block_light": 15,
+				"sky_light": 15
 			}
 		}
 	]

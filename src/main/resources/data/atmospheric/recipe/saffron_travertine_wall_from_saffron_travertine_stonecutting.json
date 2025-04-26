@@ -3,6 +3,8 @@
   "ingredient": {
     "item": "atmospheric:saffron_travertine"
   },
-  "result": "atmospheric:saffron_travertine_wall",
-  "count": 1
+  "result": {
+    "count": 1,
+    "id": "atmospheric:saffron_travertine_wall"
+  }
 }

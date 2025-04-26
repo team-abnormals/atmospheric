@@ -17,12 +17,12 @@ public class AtmosphericItemTags {
 
 	public static final TagKey<Item> MONKEY_BRUSH = itemTag("monkey_brush");
 	public static final TagKey<Item> TRAVERTINE = itemTag("travertine");
-	public static final TagKey<Item> FRUITS = TagUtil.itemTag("forge", "fruits");
-	public static final TagKey<Item> FRUITS_PASSION_FRUIT = TagUtil.itemTag("forge", "fruits/passion_fruit");
-	public static final TagKey<Item> FRUITS_CURRANT = TagUtil.itemTag("forge", "fruits/currant");
-	public static final TagKey<Item> FRUITS_DRAGON_FRUIT = TagUtil.itemTag("forge", "fruits/dragon_fruit");
-	public static final TagKey<Item> FRUITS_ORANGE = TagUtil.itemTag("forge", "fruits/orange");
-	public static final TagKey<Item> SEEDS_ALOE_VERA = TagUtil.itemTag("forge", "seeds/aloe_vera");
+	public static final TagKey<Item> FRUITS = TagUtil.itemTag("c", "fruits");
+	public static final TagKey<Item> FRUITS_PASSION_FRUIT = TagUtil.itemTag("c", "fruits/passion_fruit");
+	public static final TagKey<Item> FRUITS_CURRANT = TagUtil.itemTag("c", "fruits/currant");
+	public static final TagKey<Item> FRUITS_DRAGON_FRUIT = TagUtil.itemTag("c", "fruits/dragon_fruit");
+	public static final TagKey<Item> FRUITS_ORANGE = TagUtil.itemTag("c", "fruits/orange");
+	public static final TagKey<Item> SEEDS_ALOE_VERA = TagUtil.itemTag("c", "seeds/aloe_vera");
 
 	public static final TagKey<Item> COCHINEAL_FOOD = itemTag("cochineal_food");
 	public static final TagKey<Item> COCHINEAL_SUPER_LOVE_FOOD = itemTag("cochineal_super_love_food");

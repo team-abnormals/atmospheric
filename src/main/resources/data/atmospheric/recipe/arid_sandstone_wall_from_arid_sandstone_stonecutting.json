@@ -3,6 +3,8 @@
   "ingredient": {
     "item": "atmospheric:arid_sandstone"
   },
-  "result": "atmospheric:arid_sandstone_wall",
-  "count": 1
+  "result": {
+    "count": 1,
+    "id": "atmospheric:arid_sandstone_wall"
+  }
 }

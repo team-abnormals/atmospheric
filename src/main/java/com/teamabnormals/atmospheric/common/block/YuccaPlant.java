@@ -1,7 +1,7 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericEntityTypeTags;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;

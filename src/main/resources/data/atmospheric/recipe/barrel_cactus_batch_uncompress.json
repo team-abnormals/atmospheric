@@ -6,15 +6,15 @@
     }
   ],
   "result": {
-    "item": "atmospheric:barrel_cactus",
+    "id": "atmospheric:barrel_cactus",
     "count": 9
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "blueprint:and",
       "values": [
         {
-          "type": "forge:mod_loaded",
+          "type": "neoforge:mod_loaded",
           "modid": "quark"
         },
         {

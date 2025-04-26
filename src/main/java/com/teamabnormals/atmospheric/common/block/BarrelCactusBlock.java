@@ -1,8 +1,8 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericEntityTypeTags;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericDamageTypes;

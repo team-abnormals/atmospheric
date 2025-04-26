@@ -10,7 +10,7 @@
     }
   },
   "result": {
-    "item": "atmospheric:arid_sandstone_wall",
+    "id": "atmospheric:arid_sandstone_wall",
     "count": 6
   }
 }

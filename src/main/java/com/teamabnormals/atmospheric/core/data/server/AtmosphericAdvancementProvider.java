@@ -1,8 +1,8 @@
 package com.teamabnormals.atmospheric.core.data.server;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.advancements.Advancement;

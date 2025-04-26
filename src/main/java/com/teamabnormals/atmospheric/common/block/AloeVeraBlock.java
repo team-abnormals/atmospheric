@@ -1,9 +1,9 @@
 package com.teamabnormals.atmospheric.common.block;
 
 import com.mojang.serialization.MapCodec;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericDamageTypes;
 import net.minecraft.core.BlockPos;

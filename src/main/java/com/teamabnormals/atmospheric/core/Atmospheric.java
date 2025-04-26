@@ -12,7 +12,6 @@ import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericDataR
 import com.teamabnormals.atmospheric.core.data.server.tags.*;
 import com.teamabnormals.atmospheric.core.other.AtmosphericClientCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericVillagerTypes;
 import com.teamabnormals.atmospheric.core.registry.*;
 import com.teamabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;

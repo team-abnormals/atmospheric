@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#forge:fruits/currant"
+            "items": "#c:fruits/currant"
           }
         ]
       },

@@ -1,8 +1,8 @@
 package com.teamabnormals.atmospheric.core.data.server;
 
-import com.teamabnormals.atmospheric.core.registry.AtmosphericVillagerTypes;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBiomeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericVillagerTypes;
 import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericBiomes;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;

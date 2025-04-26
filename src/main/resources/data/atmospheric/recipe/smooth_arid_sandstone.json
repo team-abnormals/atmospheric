@@ -3,7 +3,10 @@
   "ingredient": {
     "item": "atmospheric:arid_sandstone"
   },
-  "result": "atmospheric:smooth_arid_sandstone",
+  "result": {
+    "count": 1,
+    "id": "atmospheric:smooth_arid_sandstone"
+  },
   "experience": 0.1,
   "cookingtime": 200
 }

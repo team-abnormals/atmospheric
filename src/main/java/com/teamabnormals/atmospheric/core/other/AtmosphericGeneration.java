@@ -1,13 +1,11 @@
 package com.teamabnormals.atmospheric.core.other;
 
-import com.teamabnormals.atmospheric.core.Atmospheric;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
-import net.neoforged.fml.common.EventBusSubscriber;
 
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericPlacedFeatures.*;
 

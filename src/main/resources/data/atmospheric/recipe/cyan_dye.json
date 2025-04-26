@@ -5,5 +5,8 @@
   "ingredient": {
     "item": "atmospheric:agave"
   },
-  "result": "minecraft:cyan_dye"
+  "result": {
+    "count": 1,
+    "id": "minecraft:cyan_dye"
+  }
 }

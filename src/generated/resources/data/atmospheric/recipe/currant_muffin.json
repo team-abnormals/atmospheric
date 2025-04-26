@@ -3,13 +3,13 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:fruits/currant"
+      "tag": "c:fruits/currant"
     },
     {
-      "tag": "forge:fruits/currant"
+      "tag": "c:fruits/currant"
     },
     {
-      "tag": "forge:fruits/currant"
+      "tag": "c:fruits/currant"
     },
     {
       "item": "minecraft:sugar"

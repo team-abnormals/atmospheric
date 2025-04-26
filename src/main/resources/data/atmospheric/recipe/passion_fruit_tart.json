@@ -7,14 +7,14 @@
   ],
   "key": {
     "#": {
-      "tag": "forge:fruits/passion_fruit"
+      "tag": "c:fruits/passion_fruit"
     },
     "X": {
-      "tag": "forge:eggs"
+      "tag": "c:eggs"
     }
   },
   "result": {
-    "item": "atmospheric:passion_fruit_tart",
+    "id": "atmospheric:passion_fruit_tart",
     "count": 8
   }
 }
