@@ -16,7 +16,7 @@
   ],
   "repaletter": {
     "type": "blueprint:weighted",
-    "replaces": "minecraft:chest",
+    "replaces_block": "minecraft:chest",
     "replaces_with": [
       {
         "data": "atmospheric:laurel_chest",

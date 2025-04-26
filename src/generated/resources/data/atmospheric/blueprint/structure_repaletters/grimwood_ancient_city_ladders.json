@@ -26,7 +26,7 @@
   "priority": 50,
   "repaletter": {
     "type": "blueprint:simple",
-    "replaces": "minecraft:ladder",
+    "replaces_block": "minecraft:ladder",
     "replaces_with": "atmospheric:grimwood_ladder"
   },
   "structures": "minecraft:ancient_city"

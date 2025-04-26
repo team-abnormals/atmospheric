@@ -8,27 +8,27 @@
   "repaletter": [
     {
       "type": "blueprint:simple",
-      "replaces": "minecraft:jungle_button",
+      "replaces_block": "minecraft:jungle_button",
       "replaces_with": "atmospheric:yucca_button"
     },
     {
       "type": "blueprint:simple",
-      "replaces": "minecraft:jungle_door",
+      "replaces_block": "minecraft:jungle_door",
       "replaces_with": "atmospheric:yucca_door"
     },
     {
       "type": "blueprint:simple",
-      "replaces": "minecraft:jungle_fence",
+      "replaces_block": "minecraft:jungle_fence",
       "replaces_with": "atmospheric:yucca_fence"
     },
     {
       "type": "blueprint:simple",
-      "replaces": "minecraft:jungle_fence_gate",
+      "replaces_block": "minecraft:jungle_fence_gate",
       "replaces_with": "atmospheric:yucca_fence_gate"
     },
     {
       "type": "blueprint:simple",
-      "replaces": "minecraft:jungle_trapdoor",
+      "replaces_block": "minecraft:jungle_trapdoor",
       "replaces_with": "atmospheric:yucca_trapdoor"
     }
   ],

@@ -26,7 +26,7 @@
   "priority": 50,
   "repaletter": {
     "type": "blueprint:simple",
-    "replaces": "minecraft:bookshelf",
+    "replaces_block": "minecraft:bookshelf",
     "replaces_with": "atmospheric:yucca_bookshelf"
   },
   "structures": "minecraft:village_desert"

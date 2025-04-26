@@ -26,7 +26,7 @@
   "priority": 50,
   "repaletter": {
     "type": "blueprint:simple",
-    "replaces": "minecraft:chest",
+    "replaces_block": "minecraft:chest",
     "replaces_with": "atmospheric:yucca_chest"
   },
   "structures": "minecraft:village_desert"
