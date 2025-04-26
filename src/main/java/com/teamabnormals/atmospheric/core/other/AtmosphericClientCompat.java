@@ -35,7 +35,7 @@ public class AtmosphericClientCompat {
 
 	@SubscribeEvent
 	public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-		event.register((color, items) -> FoliageColor.get(0.5D, 1.0D),
+		event.register((color, items) -> items > 0 ? -1 : FoliageColor.get(0.5D, 1.0D),
 				AtmosphericBlocks.ROSEWOOD_LEAVES, AtmosphericBlocks.ROSEWOOD_LEAF_PILE,
 				AtmosphericBlocks.MORADO_LEAVES, AtmosphericBlocks.MORADO_LEAF_PILE,
 				AtmosphericBlocks.FLOWERING_MORADO_LEAVES, AtmosphericBlocks.FLOWERING_MORADO_LEAF_PILE,
