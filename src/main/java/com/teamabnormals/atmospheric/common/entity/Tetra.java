@@ -99,7 +99,7 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<Holder
 	@Override
 	public void loadFromBucketTag(CompoundTag tag) {
 		super.loadFromBucketTag(tag);
-		Optional.ofNullable(ResourceLocation.tryParse(BUCKET_VARIANT_TAG))
+		Optional.ofNullable(ResourceLocation.tryParse(tag.getString(BUCKET_VARIANT_TAG)))
 				.map(loc -> ResourceKey.create(AtmosphericRegistries.TETRA_VARIANT, loc))
 				.flatMap(key -> this.registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT).getHolder(key))
 				.ifPresent(this::setVariant);

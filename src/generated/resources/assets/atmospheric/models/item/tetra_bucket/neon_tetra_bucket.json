@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "atmospheric:item/tetra_bucket/neon_tetra_bucket"
-  }
-}

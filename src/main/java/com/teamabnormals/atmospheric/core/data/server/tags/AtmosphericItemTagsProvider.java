@@ -67,6 +67,8 @@ public class AtmosphericItemTagsProvider extends BlueprintItemTagsProvider {
 		this.tag(ItemTags.TRIM_TEMPLATES).add(AtmosphericItems.APOSTLE_ARMOR_TRIM_SMITHING_TEMPLATE.get(), AtmosphericItems.DRUID_ARMOR_TRIM_SMITHING_TEMPLATE.get(), AtmosphericItems.PETRIFIED_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 		this.tag(ItemTags.TRIM_MATERIALS).add(AtmosphericItems.CARMINE_HUSK.get());
 
+		this.copy(Tags.Blocks.STRIPPED_LOGS, Tags.Items.STRIPPED_LOGS);
+		this.copy(Tags.Blocks.STRIPPED_WOODS, Tags.Items.STRIPPED_WOODS);
 		this.copy(Tags.Blocks.SANDS_COLORLESS, Tags.Items.SANDS_COLORLESS);
 		this.copy(Tags.Blocks.SANDS_RED, Tags.Items.SANDS_RED);
 		this.copy(Tags.Blocks.SANDSTONE_BLOCKS, Tags.Items.SANDSTONE_BLOCKS);

@@ -52,7 +52,7 @@ public class TetraBucketItem extends MobBucketItem {
 							.map(loc -> ResourceKey.create(AtmosphericRegistries.TETRA_VARIANT, loc))
 							.flatMap(registry::get));
 
-			tetra.ifPresent(tetraVariantHolder -> tooltip.add(tetraVariantHolder.value().description().copy().withStyle(ChatFormatting.ITALIC)));
+			tetra.ifPresent(tetraVariantHolder -> tooltip.add(tetraVariantHolder.value().description().copy().withStyle(ChatFormatting.ITALIC, ChatFormatting.GRAY)));
 		}
 	}
 }

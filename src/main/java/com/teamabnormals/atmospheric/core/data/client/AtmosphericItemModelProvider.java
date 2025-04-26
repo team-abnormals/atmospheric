@@ -53,7 +53,7 @@ public class AtmosphericItemModelProvider extends BlueprintItemModelProvider {
 		Arrays.stream(TetraVariant.class.getDeclaredFields()).forEach(field -> {
 			if (Modifier.isStatic(field.getModifiers()) && ResourceKey.class.isAssignableFrom(field.getType())) {
 				try {
-					ResourceLocation location = ((ResourceKey<?>) field.get(null)).location().withPath(s -> "item/tetra_bucket/" + s + "_tetra_bucket");
+					ResourceLocation location = ((ResourceKey<?>) field.get(null)).location().withPath(s -> "item/tetra_bucket/" + s);
 					this.withExistingParent(location.getPath(), "item/generated").texture("layer0", location);
 				} catch (IllegalAccessException e) {
 					throw new RuntimeException(e);
