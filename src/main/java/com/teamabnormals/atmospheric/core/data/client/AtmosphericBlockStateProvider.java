@@ -52,7 +52,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_MORADO_LOG, STRIPPED_MORADO_WOOD);
 		this.leavesBlock(MORADO_LEAVES);
 		this.crossBlockWithPot(MORADO_SAPLING, POTTED_MORADO_SAPLING);
-		this.hangingSignBlocks(STRIPPED_MORADO_LOG, MORADO_HANGING_SIGNS.getFirst(), MORADO_HANGING_SIGNS.getSecond());
+		this.hangingSignBlocks(STRIPPED_MORADO_LOG, MORADO_HANGING_SIGNS);
 		this.woodworksBlocks(MORADO_PLANKS, MORADO_BOARDS, MORADO_LADDER, MORADO_BOOKSHELF, MORADO_BEEHIVE, MORADO_CHEST, TRAPPED_MORADO_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_MORADO_BOOKSHELF, ALTERNATE_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(MORADO_LEAVES, MORADO_LEAF_PILE);
@@ -62,7 +62,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_YUCCA_LOG, STRIPPED_YUCCA_WOOD);
 		this.leavesBlock(YUCCA_LEAVES);
 		this.crossBlockWithPot(YUCCA_SAPLING, POTTED_YUCCA_SAPLING);
-		this.hangingSignBlocks(STRIPPED_YUCCA_LOG, YUCCA_HANGING_SIGNS.getFirst(), YUCCA_HANGING_SIGNS.getSecond());
+		this.hangingSignBlocks(STRIPPED_YUCCA_LOG, YUCCA_HANGING_SIGNS);
 		this.woodworksBlocks(YUCCA_PLANKS, YUCCA_BOARDS, YUCCA_LADDER, YUCCA_BOOKSHELF, YUCCA_BEEHIVE, YUCCA_CHEST, TRAPPED_YUCCA_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_YUCCA_BOOKSHELF, DEFAULT_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(YUCCA_LEAVES, YUCCA_LEAF_PILE);
@@ -90,7 +90,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.watchfulAspenLogBlocks(ASPEN_LOG, WATCHFUL_ASPEN_LOG, WATCHFUL_ASPEN_WOOD);
 		this.leavesBlock(ASPEN_LEAVES);
 		this.crossBlockWithPot(ASPEN_SAPLING, POTTED_ASPEN_SAPLING);
-		this.hangingSignBlocks(STRIPPED_ASPEN_LOG, ASPEN_HANGING_SIGNS.getFirst(), ASPEN_HANGING_SIGNS.getSecond());
+		this.hangingSignBlocks(STRIPPED_ASPEN_LOG, ASPEN_HANGING_SIGNS);
 		this.woodworksBlocks(ASPEN_PLANKS, ASPEN_BOARDS, ASPEN_LADDER, ASPEN_BOOKSHELF, ASPEN_BEEHIVE, ASPEN_CHEST, TRAPPED_ASPEN_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_ASPEN_BOOKSHELF, ALTERNATE_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(ASPEN_LEAVES, ASPEN_LEAF_PILE);
@@ -106,7 +106,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_LAUREL_LOG, STRIPPED_LAUREL_WOOD);
 		this.leavesBlock(LAUREL_LEAVES);
 		this.crossBlockWithPot(LAUREL_SAPLING, POTTED_LAUREL_SAPLING);
-		this.hangingSignBlocks(STRIPPED_LAUREL_LOG, LAUREL_HANGING_SIGNS.getFirst(), LAUREL_HANGING_SIGNS.getSecond());
+		this.hangingSignBlocks(STRIPPED_LAUREL_LOG, LAUREL_HANGING_SIGNS);
 		this.woodworksBlocks(LAUREL_PLANKS, LAUREL_BOARDS, LAUREL_LADDER, LAUREL_BOOKSHELF, LAUREL_BEEHIVE, LAUREL_CHEST, TRAPPED_LAUREL_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_LAUREL_BOOKSHELF);
 		this.leafPileBlock(LAUREL_LEAVES, LAUREL_LEAF_PILE);
@@ -124,7 +124,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_KOUSA_LOG, STRIPPED_KOUSA_WOOD);
 		this.leavesBlock(KOUSA_LEAVES);
 		this.crossBlockWithPot(KOUSA_SAPLING, POTTED_KOUSA_SAPLING);
-		this.hangingSignBlocks(STRIPPED_KOUSA_LOG, KOUSA_HANGING_SIGNS.getFirst(), KOUSA_HANGING_SIGNS.getSecond());
+		this.hangingSignBlocks(STRIPPED_KOUSA_LOG, KOUSA_HANGING_SIGNS);
 		this.woodworksBlocks(KOUSA_PLANKS, KOUSA_BOARDS, KOUSA_LADDER, KOUSA_BOOKSHELF, KOUSA_BEEHIVE, KOUSA_CHEST, TRAPPED_KOUSA_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_KOUSA_BOOKSHELF, DEFAULT_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(KOUSA_LEAVES, KOUSA_LEAF_PILE);
@@ -141,7 +141,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_GRIMWOOD_LOG, STRIPPED_GRIMWOOD);
 		this.leavesBlock(GRIMWOOD_LEAVES);
 		this.crossBlockWithPot(GRIMWOOD_SAPLING, POTTED_GRIMWOOD_SAPLING);
-		this.hangingSignBlocks(STRIPPED_GRIMWOOD_LOG, GRIMWOOD_HANGING_SIGNS.getFirst(), GRIMWOOD_HANGING_SIGNS.getSecond());
+		this.hangingSignBlocks(STRIPPED_GRIMWOOD_LOG, GRIMWOOD_HANGING_SIGNS);
 		this.woodworksBlocks(GRIMWOOD_PLANKS, GRIMWOOD_BOARDS, GRIMWOOD_LADDER, GRIMWOOD_BOOKSHELF, GRIMWOOD_BEEHIVE, GRIMWOOD_CHEST, TRAPPED_GRIMWOOD_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_GRIMWOOD_BOOKSHELF, ALTERNATE_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(GRIMWOOD_LEAVES, GRIMWOOD_LEAF_PILE);

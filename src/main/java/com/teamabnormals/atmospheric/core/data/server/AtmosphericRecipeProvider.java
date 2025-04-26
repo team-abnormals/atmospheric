@@ -15,7 +15,6 @@ import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -50,13 +49,13 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CARMINE_SHINGLES.get(), 4).define('#', AtmosphericItems.CARMINE_HUSK.get()).pattern("##").pattern("##").unlockedBy("has_carmine_husk", has(AtmosphericItems.CARMINE_HUSK.get())).save(consumer);
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CARMINE_PAVEMENT.get(), 4).define('#', CARMINE_SHINGLES.get()).pattern("##").pattern("##").unlockedBy("has_carmine_shingles", has(CARMINE_SHINGLES.get())).save(consumer);
 
-		generateRecipes(consumer, AtmosphericBlockFamilies.CARMINE_SHINGLES_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.CARMINE_SHINGLES_FAMILY);
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, CARMINE_SHINGLE_SLAB.get(), CARMINE_SHINGLES.get(), 2);
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, CARMINE_SHINGLE_STAIRS.get(), CARMINE_SHINGLES.get());
 		stonecutterRecipe(consumer, RecipeCategory.DECORATIONS, CARMINE_SHINGLE_WALL.get(), CARMINE_SHINGLES.get());
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, CHISELED_CARMINE_SHINGLES.get(), CARMINE_SHINGLES.get());
 
-		generateRecipes(consumer, AtmosphericBlockFamilies.CARMINE_PAVEMENT_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.CARMINE_PAVEMENT_FAMILY);
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, CARMINE_PAVEMENT_SLAB.get(), CARMINE_PAVEMENT.get(), 2);
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, CARMINE_PAVEMENT_STAIRS.get(), CARMINE_PAVEMENT.get());
 		stonecutterRecipe(consumer, RecipeCategory.DECORATIONS, CARMINE_PAVEMENT_WALL.get(), CARMINE_PAVEMENT.get());
@@ -76,7 +75,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		conditionalStorageRecipes(consumer, AtmosphericConditions.APPLE_CRATE, RecipeCategory.FOOD, AtmosphericItems.BLOOD_ORANGE.get(), RecipeCategory.BUILDING_BLOCKS, BLOOD_ORANGE_CRATE.get());
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DOLERITE.get(), 2).requires(AtmosphericItemTags.TRAVERTINE).requires(Blocks.COBBLESTONE).unlockedBy("has_travertine", has(AtmosphericItemTags.TRAVERTINE)).save(consumer);
-		generateRecipes(consumer, AtmosphericBlockFamilies.DOLERITE_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.DOLERITE_FAMILY);
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, DOLERITE_SLAB.get(), DOLERITE.get(), 2);
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, DOLERITE_STAIRS.get(), DOLERITE.get());
 		stonecutterRecipe(consumer, RecipeCategory.DECORATIONS, DOLERITE_WALL.get(), DOLERITE.get());
@@ -84,13 +83,13 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, POLISHED_DOLERITE_SLAB.get(), DOLERITE.get(), 2);
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, POLISHED_DOLERITE_STAIRS.get(), DOLERITE.get());
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, POLISHED_DOLERITE.get(), 4).define('#', DOLERITE.get()).pattern("##").pattern("##").unlockedBy("has_dolerite", has(DOLERITE.get())).save(consumer);
-		generateRecipes(consumer, AtmosphericBlockFamilies.POLISHED_DOLERITE_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.POLISHED_DOLERITE_FAMILY);
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, POLISHED_DOLERITE_SLAB.get(), POLISHED_DOLERITE.get(), 2);
 		stonecutterRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, POLISHED_DOLERITE_STAIRS.get(), POLISHED_DOLERITE.get());
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, GRIMWEB.get()).requires(AtmosphericItemTags.GRIMWOOD_LOGS).requires(Items.COBWEB).unlockedBy("has_grimwood", has(AtmosphericItemTags.GRIMWOOD_LOGS)).save(consumer);
 
-		generateRecipes(consumer, AtmosphericBlockFamilies.ROSEWOOD_PLANKS_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.ROSEWOOD_PLANKS_FAMILY);
 		planksFromLogs(consumer, ROSEWOOD_PLANKS.get(), AtmosphericItemTags.ROSEWOOD_LOGS, 4);
 		woodFromLogs(consumer, ROSEWOOD.get(), ROSEWOOD_LOG.get());
 		woodFromLogs(consumer, STRIPPED_ROSEWOOD.get(), STRIPPED_ROSEWOOD_LOG.get());
@@ -103,7 +102,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		conditionalStorageRecipes(consumer, AtmosphericConditions.APPLE_CRATE, RecipeCategory.FOOD, AtmosphericItems.PASSION_FRUIT.get(), RecipeCategory.BUILDING_BLOCKS, PASSION_FRUIT_CRATE.get());
 		conditionalStorageRecipesWithCustomUnpacking(consumer, AtmosphericConditions.GOLDEN_APPLE_CRATE, RecipeCategory.FOOD, AtmosphericItems.SHIMMERING_PASSION_FRUIT.get(), RecipeCategory.BUILDING_BLOCKS, SHIMMERING_PASSION_FRUIT_CRATE.get(), "shimmering_passion_fruit_from_shimmering_passion_fruit_crate", "shimmering_passion_fruit");
 
-		generateRecipes(consumer, AtmosphericBlockFamilies.MORADO_PLANKS_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.MORADO_PLANKS_FAMILY);
 		planksFromLogs(consumer, MORADO_PLANKS.get(), AtmosphericItemTags.MORADO_LOGS, 4);
 		woodFromLogs(consumer, MORADO_WOOD.get(), MORADO_LOG.get());
 		woodFromLogs(consumer, STRIPPED_MORADO_WOOD.get(), STRIPPED_MORADO_LOG.get());
@@ -114,7 +113,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		WoodworksRecipeProvider.conditionalLeafPileRecipes(consumer, MORADO_LEAVES.get(), MORADO_LEAF_PILE.get(), Atmospheric.MOD_ID);
 		WoodworksRecipeProvider.conditionalLeafPileRecipes(consumer, FLOWERING_MORADO_LEAVES.get(), FLOWERING_MORADO_LEAF_PILE.get(), Atmospheric.MOD_ID);
 
-		generateRecipes(consumer, AtmosphericBlockFamilies.YUCCA_PLANKS_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.YUCCA_PLANKS_FAMILY);
 		planksFromLogs(consumer, YUCCA_PLANKS.get(), AtmosphericItemTags.YUCCA_LOGS, 4);
 		woodFromLogs(consumer, YUCCA_WOOD.get(), YUCCA_LOG.get());
 		woodFromLogs(consumer, STRIPPED_YUCCA_WOOD.get(), STRIPPED_YUCCA_LOG.get());
@@ -127,7 +126,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		conditionalStorageRecipes(consumer, AtmosphericConditions.APPLE_CRATE, RecipeCategory.FOOD, AtmosphericItems.YUCCA_FRUIT.get(), RecipeCategory.BUILDING_BLOCKS, YUCCA_CASK.get());
 		conditionalStorageRecipesWithCustomUnpacking(consumer, AtmosphericConditions.APPLE_CRATE, RecipeCategory.FOOD, AtmosphericItems.ROASTED_YUCCA_FRUIT.get(), RecipeCategory.BUILDING_BLOCKS, ROASTED_YUCCA_CASK.get(), "roasted_yucca_fruit_from_roasted_yucca_cask", "roasted_yucca_fruit");
 
-		generateRecipes(consumer, AtmosphericBlockFamilies.ASPEN_PLANKS_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.ASPEN_PLANKS_FAMILY);
 		planksFromLogs(consumer, ASPEN_PLANKS.get(), AtmosphericItemTags.ASPEN_LOGS, 4);
 		woodFromLogs(consumer, ASPEN_WOOD.get(), ASPEN_LOG.get());
 		woodFromLogs(consumer, STRIPPED_ASPEN_WOOD.get(), STRIPPED_ASPEN_LOG.get());
@@ -140,7 +139,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		WoodworksRecipeProvider.conditionalLeafPileRecipes(consumer, ASPEN_LEAVES.get(), ASPEN_LEAF_PILE.get(), Atmospheric.MOD_ID);
 		WoodworksRecipeProvider.conditionalLeafPileRecipes(consumer, GREEN_ASPEN_LEAVES.get(), GREEN_ASPEN_LEAF_PILE.get(), Atmospheric.MOD_ID);
 
-		generateRecipes(consumer, AtmosphericBlockFamilies.LAUREL_PLANKS_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.LAUREL_PLANKS_FAMILY);
 		planksFromLogs(consumer, LAUREL_PLANKS.get(), AtmosphericItemTags.LAUREL_LOGS, 4);
 		woodFromLogs(consumer, LAUREL_WOOD.get(), LAUREL_LOG.get());
 		woodFromLogs(consumer, STRIPPED_LAUREL_WOOD.get(), STRIPPED_LAUREL_LOG.get());
@@ -151,7 +150,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		WoodworksRecipeProvider.conditionalLeafPileRecipes(consumer, LAUREL_LEAVES.get(), LAUREL_LEAF_PILE.get(), Atmospheric.MOD_ID);
 		WoodworksRecipeProvider.conditionalLeafPileRecipes(consumer, DRY_LAUREL_LEAVES.get(), DRY_LAUREL_LEAF_PILE.get(), Atmospheric.MOD_ID);
 
-		generateRecipes(consumer, AtmosphericBlockFamilies.KOUSA_PLANKS_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.KOUSA_PLANKS_FAMILY);
 		planksFromLogs(consumer, KOUSA_PLANKS.get(), AtmosphericItemTags.KOUSA_LOGS, 4);
 		woodFromLogs(consumer, KOUSA_WOOD.get(), KOUSA_LOG.get());
 		woodFromLogs(consumer, STRIPPED_KOUSA_WOOD.get(), STRIPPED_KOUSA_LOG.get());
@@ -163,7 +162,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 
 		WoodworksRecipeProvider.conditionalLeafPileRecipes(consumer, CURRANT_LEAVES.get(), CURRANT_LEAF_PILE.get(), Atmospheric.MOD_ID);
 
-		generateRecipes(consumer, AtmosphericBlockFamilies.GRIMWOOD_PLANKS_FAMILY, FeatureFlags.REGISTRY.allFlags());
+		generateRecipes(consumer, AtmosphericBlockFamilies.GRIMWOOD_PLANKS_FAMILY);
 		planksFromLogs(consumer, GRIMWOOD_PLANKS.get(), AtmosphericItemTags.GRIMWOOD_LOGS, 4);
 		woodFromLogs(consumer, GRIMWOOD.get(), GRIMWOOD_LOG.get());
 		woodFromLogs(consumer, STRIPPED_GRIMWOOD.get(), STRIPPED_GRIMWOOD_LOG.get());
