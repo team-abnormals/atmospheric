@@ -6,12 +6,12 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CactusBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.ForgeHooks;
+import net.neoforged.neoforge.common.CommonHooks;
 
 public class SnowyCactusBlock extends CactusBlock {
 
@@ -29,7 +29,7 @@ public class SnowyCactusBlock extends CactusBlock {
 
 			if (i < 3) {
 				int j = state.getValue(AGE);
-				if (ForgeHooks.onCropsGrowPre(level, abovePos, state, true)) {
+				if (CommonHooks.canCropGrow(level, abovePos, state, true)) {
 					if (j == 15) {
 						level.setBlockAndUpdate(abovePos, this.defaultBlockState());
 						BlockState newState = Blocks.CACTUS.defaultBlockState().setValue(AGE, 0);
@@ -38,14 +38,14 @@ public class SnowyCactusBlock extends CactusBlock {
 					} else {
 						level.setBlock(pos, state.setValue(AGE, j + 1), 4);
 					}
-					ForgeHooks.onCropsGrowPost(level, pos, state);
+					CommonHooks.fireCropGrowPost(level, pos, state);
 				}
 			}
 		}
 	}
 
 	@Override
-	public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+	public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
 		return new ItemStack(Blocks.CACTUS);
 	}
 
@@ -57,10 +57,5 @@ public class SnowyCactusBlock extends CactusBlock {
 		}
 
 		return super.updateShape(state, direction, offsetState, level, pos, offsetPos);
-	}
-
-	@Override
-	public BlockState getPlant(BlockGetter world, BlockPos pos) {
-		return Blocks.CACTUS.defaultBlockState();
 	}
 }

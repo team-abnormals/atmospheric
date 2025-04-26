@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "leaf_piles"
+        }
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "leaf_pile",
+  "ingredients": [
+    {
+      "item": "atmospheric:dry_laurel_leaves"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "atmospheric:dry_laurel_leaf_pile"
+  }
+}

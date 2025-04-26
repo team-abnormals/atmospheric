@@ -1,0 +1,208 @@
+{
+  "values": {
+    "atmospheric:agave": {
+      "chance": 0.65
+    },
+    "atmospheric:aloe_bundle": {
+      "chance": 1.0
+    },
+    "atmospheric:aloe_kernels": {
+      "chance": 0.3
+    },
+    "atmospheric:aloe_leaves": {
+      "chance": 0.65
+    },
+    "atmospheric:arid_sprouts": {
+      "chance": 0.3
+    },
+    "atmospheric:aspen_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:aspen_sapling": {
+      "chance": 0.3
+    },
+    "atmospheric:barrel_cactus": {
+      "chance": 0.5
+    },
+    "atmospheric:barrel_cactus_batch": {
+      "chance": 1.0
+    },
+    "atmospheric:blood_orange": {
+      "chance": 0.65
+    },
+    "atmospheric:blood_orange_crate": {
+      "chance": 1.0
+    },
+    "atmospheric:candied_orange_slices": {
+      "chance": 0.65
+    },
+    "atmospheric:currant": {
+      "chance": 0.3
+    },
+    "atmospheric:currant_crate": {
+      "chance": 1.0
+    },
+    "atmospheric:currant_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:currant_muffin": {
+      "chance": 0.65
+    },
+    "atmospheric:currant_seedling": {
+      "chance": 0.3
+    },
+    "atmospheric:currant_stalk": {
+      "chance": 0.65
+    },
+    "atmospheric:currant_stalk_bundle": {
+      "chance": 1.0
+    },
+    "atmospheric:dragon_fruit": {
+      "chance": 0.65
+    },
+    "atmospheric:dragon_fruit_crate": {
+      "chance": 1.0
+    },
+    "atmospheric:dragon_roots": {
+      "chance": 0.65
+    },
+    "atmospheric:dry_laurel_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:dry_laurel_sapling": {
+      "chance": 0.3
+    },
+    "atmospheric:firethorn": {
+      "chance": 0.65
+    },
+    "atmospheric:flowering_morado_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:forsythia": {
+      "chance": 0.65
+    },
+    "atmospheric:gilia": {
+      "chance": 0.65
+    },
+    "atmospheric:golden_growths": {
+      "chance": 0.3
+    },
+    "atmospheric:green_aspen_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:green_aspen_sapling": {
+      "chance": 0.3
+    },
+    "atmospheric:grimwood_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:grimwood_sapling": {
+      "chance": 0.3
+    },
+    "atmospheric:hanging_currant": {
+      "chance": 0.3
+    },
+    "atmospheric:hot_monkey_brush": {
+      "chance": 0.65
+    },
+    "atmospheric:kousa_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:kousa_sapling": {
+      "chance": 0.3
+    },
+    "atmospheric:laurel_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:laurel_sapling": {
+      "chance": 0.3
+    },
+    "atmospheric:morado_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:morado_sapling": {
+      "chance": 0.3
+    },
+    "atmospheric:orange": {
+      "chance": 0.65
+    },
+    "atmospheric:orange_crate": {
+      "chance": 1.0
+    },
+    "atmospheric:orange_pudding": {
+      "chance": 1.0
+    },
+    "atmospheric:passion_fruit": {
+      "chance": 0.65
+    },
+    "atmospheric:passion_fruit_crate": {
+      "chance": 1.0
+    },
+    "atmospheric:passion_fruit_tart": {
+      "chance": 0.85
+    },
+    "atmospheric:passion_vine": {
+      "chance": 0.3
+    },
+    "atmospheric:passion_vine_bundle": {
+      "chance": 1.0
+    },
+    "atmospheric:passion_vine_coil": {
+      "chance": 0.85
+    },
+    "atmospheric:roasted_yucca_bundle": {
+      "chance": 0.85
+    },
+    "atmospheric:roasted_yucca_cask": {
+      "chance": 1.0
+    },
+    "atmospheric:roasted_yucca_fruit": {
+      "chance": 0.65
+    },
+    "atmospheric:rosewood_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:rosewood_sapling": {
+      "chance": 0.3
+    },
+    "atmospheric:scalding_monkey_brush": {
+      "chance": 0.65
+    },
+    "atmospheric:tall_yucca_flower": {
+      "chance": 0.65
+    },
+    "atmospheric:warm_monkey_brush": {
+      "chance": 0.65
+    },
+    "atmospheric:water_hyacinth": {
+      "chance": 0.65
+    },
+    "atmospheric:yellow_blossoms": {
+      "chance": 0.3
+    },
+    "atmospheric:yucca_branch": {
+      "chance": 0.65
+    },
+    "atmospheric:yucca_bundle": {
+      "chance": 0.85
+    },
+    "atmospheric:yucca_cask": {
+      "chance": 1.0
+    },
+    "atmospheric:yucca_flower": {
+      "chance": 0.65
+    },
+    "atmospheric:yucca_fruit": {
+      "chance": 0.65
+    },
+    "atmospheric:yucca_gateau": {
+      "chance": 1.0
+    },
+    "atmospheric:yucca_leaves": {
+      "chance": 0.3
+    },
+    "atmospheric:yucca_sapling": {
+      "chance": 0.3
+    }
+  }
+}

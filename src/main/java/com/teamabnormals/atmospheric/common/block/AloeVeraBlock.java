@@ -1,10 +1,11 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
+import com.mojang.serialization.MapCodec;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
-import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericDamageTypes;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericDamageTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -12,7 +13,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -32,13 +33,13 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.common.PlantType;
+import net.neoforged.neoforge.common.CommonHooks;
+import net.neoforged.neoforge.common.Tags;
 
 import javax.annotation.Nullable;
 
@@ -55,6 +56,11 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 	}
 
 	@Override
+	protected MapCodec<? extends BushBlock> codec() {
+		return null;
+	}
+
+	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(AGE);
 	}
@@ -68,21 +74,24 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
-		int i = state.getValue(AGE);
-
-		if (i == 5 && player.getItemInHand(handIn).getItem() == Items.SHEARS) {
-			RandomSource rand = RandomSource.create();
-			player.getItemInHand(handIn).hurtAndBreak(1, player, (onBroken) -> onBroken.broadcastBreakEvent(handIn));
-			worldIn.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
-			worldIn.playSound(null, pos, SoundEvents.SLIME_BLOCK_BREAK, SoundSource.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
-			worldIn.setBlockAndUpdate(pos, state.setValue(AGE, 2));
-
-			popResource(worldIn, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), rand.nextInt(5) + 3));
-
-			return InteractionResult.SUCCESS;
+	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+		if (stack.is(Items.BONE_MEAL)) {
+			return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
 		} else {
-			return super.use(state, worldIn, pos, player, handIn, hit);
+			int i = state.getValue(AGE);
+			if (i == 5 && stack.is(Tags.Items.TOOLS_SHEAR)) {
+				RandomSource rand = player.getRandom();
+				stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+				level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+				level.playSound(null, pos, SoundEvents.SLIME_BLOCK_BREAK, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+				level.setBlockAndUpdate(pos, state.setValue(AGE, 2));
+
+				popResource(level, pos, new ItemStack(AtmosphericItems.ALOE_LEAVES.get(), rand.nextInt(5) + 3));
+
+				return ItemInteractionResult.sidedSuccess(level.isClientSide);
+			} else {
+				return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
+			}
 		}
 	}
 
@@ -100,7 +109,7 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 				entityIn.hurt(AtmosphericDamageTypes.aloeLeaves(level), 1.0F);
 				if (entityIn instanceof ServerPlayer serverPlayer) {
 					if (!entityIn.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative()) {
-						AtmosphericCriteriaTriggers.ALOE_VERA_PRICK.trigger(serverPlayer);
+						AtmosphericCriteriaTriggers.ALOE_VERA_PRICK.get().trigger(serverPlayer);
 					}
 				}
 			}
@@ -114,18 +123,13 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 	}
 
 	@Override
-	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
-		return PlantType.DESERT;
-	}
-
-	@Override
-	public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
-		return level.getBlockState(pos.below()).is(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON) || state.getValue(AGE) < 5;
+	public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+		return true;
 	}
 
 	@Override
 	public boolean isBonemealSuccess(Level level, RandomSource rand, BlockPos pos, BlockState state) {
-		return level.getBlockState(pos.below()).is(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON) || state.getValue(AGE) < 5;
+		return true;
 	}
 
 	@Override
@@ -141,7 +145,7 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 	public void randomTick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
 		boolean flag = worldIn.getBlockState(pos.below()).is(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON);
 		int chance = flag ? 7 : 5;
-		if (worldIn.getRawBrightness(pos.above(), 0) >= 12 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(chance) == 0)) {
+		if (worldIn.getRawBrightness(pos.above(), 0) >= 12 && CommonHooks.canCropGrow(worldIn, pos, state, random.nextInt(chance) == 0)) {
 			if (state.getValue(AGE) < 5) {
 				worldIn.setBlockAndUpdate(pos, state.setValue(AGE, state.getValue(AGE) + 1));
 			} else if (flag) {
@@ -149,14 +153,14 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 					AloeVeraTallBlock.placeAt(worldIn, AtmosphericBlocks.TALL_ALOE_VERA.get().defaultBlockState(), pos, 2);
 				}
 			}
-			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			CommonHooks.fireCropGrowPost(worldIn, pos, state);
 		}
 	}
 
 	@Nullable
 	@Override
-	public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
-		return BlockPathTypes.DAMAGE_OTHER;
+	public PathType getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+		return PathType.DAMAGE_OTHER;
 	}
 
 	public void placeAt(LevelAccessor world, BlockPos pos, int flags) {

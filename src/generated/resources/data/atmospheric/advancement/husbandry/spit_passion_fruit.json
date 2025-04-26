@@ -1,0 +1,41 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "spit_passion_fruit": {
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "atmospheric:passion_fruit_seed"
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:is_projectile"
+              }
+            ]
+          }
+        }
+      },
+      "trigger": "minecraft:player_hurt_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.atmospheric.husbandry.spit_passion_fruit.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "atmospheric:passion_fruit"
+    },
+    "title": {
+      "translate": "advancements.atmospheric.husbandry.spit_passion_fruit.title"
+    }
+  },
+  "requirements": [
+    [
+      "spit_passion_fruit"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -3,18 +3,19 @@ package com.teamabnormals.atmospheric.common.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
 
 import javax.annotation.Nullable;
 
@@ -44,7 +45,8 @@ public class CurrantStalkBundleBlock extends RotatedPillarBlock {
 
 	@Override
 	public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
-		if (player.getMainHandItem().is(Tags.Items.SHEARS) || EnchantmentHelper.getTagEnchantmentLevel(Enchantments.SILK_TOUCH, player.getMainHandItem()) != 0 || player.isCreative()) {
+		ItemStack stack = player.getMainHandItem();
+		if (stack.is(Tags.Items.TOOLS_SHEAR) || EnchantmentHelper.hasTag(stack, EnchantmentTags.PREVENTS_BEE_SPAWNS_WHEN_MINING) || player.hasInfiniteMaterials()) {
 			this.playerWillDestroy(level, pos, state, player);
 			level.setBlock(pos, fluid.createLegacyBlock(), level.isClientSide ? 11 : 3);
 			if (!player.isCreative()) {

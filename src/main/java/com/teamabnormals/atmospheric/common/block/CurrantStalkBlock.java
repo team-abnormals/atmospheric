@@ -60,7 +60,7 @@ public class CurrantStalkBlock extends CurrantStalkBundleBlock implements Simple
 	}
 
 	@Override
-	public boolean isPathfindable(BlockState p_48906_, BlockGetter p_48907_, BlockPos p_48908_, PathComputationType p_48909_) {
+	public boolean isPathfindable(BlockState p_48906_, PathComputationType p_48909_) {
 		return false;
 	}
 

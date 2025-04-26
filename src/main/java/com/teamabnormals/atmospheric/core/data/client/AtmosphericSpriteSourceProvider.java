@@ -1,22 +1,25 @@
 package com.teamabnormals.atmospheric.core.data.client;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericTrimMaterials;
-import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericTrimPatterns;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericTrimMaterials;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericTrimPatterns;
 import com.teamabnormals.blueprint.core.api.BlueprintTrims;
 import com.teamabnormals.clayworks.core.api.ClayworksTrims;
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.SpriteSourceProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.SpriteSourceProvider;
+
+import java.util.concurrent.CompletableFuture;
 
 public final class AtmosphericSpriteSourceProvider extends SpriteSourceProvider {
 
-	public AtmosphericSpriteSourceProvider(PackOutput output, ExistingFileHelper helper) {
-		super(output, helper, Atmospheric.MOD_ID);
+	public AtmosphericSpriteSourceProvider(PackOutput output, CompletableFuture<Provider> provider, ExistingFileHelper helper) {
+		super(output, provider, Atmospheric.MOD_ID, helper);
 	}
 
 	@Override
-	protected void addSources() {
+	protected void gather() {
 		this.atlas(BlueprintTrims.ARMOR_TRIMS_ATLAS)
 				.addSource(BlueprintTrims.materialPatternPermutations(AtmosphericTrimMaterials.CARMINE))
 				.addSource(BlueprintTrims.patternPermutationsOfVanillaMaterials(

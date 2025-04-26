@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
+import com.mojang.serialization.MapCodec;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,7 +11,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -83,6 +84,11 @@ public class YuccaGateauBlock extends HorizontalDirectionalBlock {
 	}
 
 	@Override
+	protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+		return null;
+	}
+
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		switch (state.getValue(FACING)) {
 			case NORTH:
@@ -98,37 +104,38 @@ public class YuccaGateauBlock extends HorizontalDirectionalBlock {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult p_225533_6_) {
-		if (worldIn.isClientSide) {
-			ItemStack itemstack = player.getItemInHand(handIn);
-			if (this.eatCake(worldIn, pos, state, player) == InteractionResult.SUCCESS) {
+	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+		if (level.isClientSide) {
+			if (eat(level, pos, state, player).consumesAction()) {
 				return InteractionResult.SUCCESS;
 			}
-			if (itemstack.isEmpty()) {
+			if (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
 				return InteractionResult.CONSUME;
 			}
 		}
-		return this.eatCake(worldIn, pos, state, player);
+		return eat(level, pos, state, player);
 	}
 
-	private InteractionResult eatCake(LevelAccessor worldIn, BlockPos pos, BlockState state, Player player) {
+	private static InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
 		if (!player.canEat(false)) {
 			return InteractionResult.PASS;
 		} else {
 			player.awardStat(Stats.EAT_CAKE_SLICE);
 			player.getFoodData().eat(1, 0.0F);
-			player.addEffect(new MobEffectInstance(AtmosphericMobEffects.PERSISTENCE.get(), 320, 0, true, false, true));
+			player.addEffect(new MobEffectInstance(AtmosphericMobEffects.PERSISTENCE, 320, 0, true, false, true));
 			player.clearFire();
 			int i = state.getValue(BITES);
+			level.gameEvent(player, GameEvent.EAT, pos);
 			if (i < 9) {
-				worldIn.setBlock(pos, state.setValue(BITES, i + 1), 3);
+				level.setBlock(pos, state.setValue(BITES, i + 1), 3);
 			} else {
 				if (player instanceof ServerPlayer serverplayerentity) {
 					if (!player.getCommandSenderWorld().isClientSide()) {
-						AtmosphericCriteriaTriggers.FINISH_GATEAU.trigger(serverplayerentity);
+						AtmosphericCriteriaTriggers.FINISH_GATEAU.get().trigger(serverplayerentity);
 					}
 				}
-				worldIn.removeBlock(pos, false);
+				level.removeBlock(pos, false);
+				level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
 			}
 			return InteractionResult.SUCCESS;
 		}
@@ -160,7 +167,7 @@ public class YuccaGateauBlock extends HorizontalDirectionalBlock {
 	}
 
 	@Override
-	public boolean isPathfindable(BlockState state, BlockGetter worldIn, BlockPos pos, PathComputationType type) {
+	public boolean isPathfindable(BlockState state, PathComputationType type) {
 		return false;
 	}
 

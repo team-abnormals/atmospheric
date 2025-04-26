@@ -10,8 +10,8 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class TetraRenderer extends MobRenderer<Tetra, TetraModel<Tetra>> {
@@ -22,17 +22,17 @@ public class TetraRenderer extends MobRenderer<Tetra, TetraModel<Tetra>> {
 
 	@Override
 	public ResourceLocation getTextureLocation(Tetra tetra) {
-		return tetra.getVariant().texture().withPrefix("textures/").withSuffix(".png");
+		return tetra.getVariant().value().assetId().withPrefix("textures/").withSuffix(".png");
 	}
 
 	@Override
-	protected void setupRotations(Tetra tetra, PoseStack stack, float p_116228_, float p_116229_, float p_116230_) {
-		super.setupRotations(tetra, stack, p_116228_, p_116229_, p_116230_);
-		float f = 4.3F * Mth.sin(0.6F * p_116228_);
-		stack.mulPose(Axis.YP.rotationDegrees(f));
+	protected void setupRotations(Tetra tetra, PoseStack poseStack, float bob, float yBodyRot, float partialTick, float scale) {
+		super.setupRotations(tetra, poseStack, bob, yBodyRot, partialTick, scale);
+		float f = 4.3F * Mth.sin(0.6F * bob);
+		poseStack.mulPose(Axis.YP.rotationDegrees(f));
 		if (!tetra.isInWater()) {
-			stack.translate(0.2F, 0.1F, 0.0F);
-			stack.mulPose(Axis.ZP.rotationDegrees(90.0F));
+			poseStack.translate(0.2F, 0.1F, 0.0F);
+			poseStack.mulPose(Axis.ZP.rotationDegrees(90.0F));
 		}
 	}
 

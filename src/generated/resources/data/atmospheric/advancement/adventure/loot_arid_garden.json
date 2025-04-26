@@ -1,0 +1,26 @@
+{
+  "parent": "atmospheric:adventure/dunes_pricks",
+  "criteria": {
+    "loot_arid_garden": {
+      "trigger": "atmospheric:loot_arid_garden"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.atmospheric.adventure.loot_arid_garden.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "atmospheric:barrel_cactus"
+    },
+    "title": {
+      "translate": "advancements.atmospheric.adventure.loot_arid_garden.title"
+    }
+  },
+  "requirements": [
+    [
+      "loot_arid_garden"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

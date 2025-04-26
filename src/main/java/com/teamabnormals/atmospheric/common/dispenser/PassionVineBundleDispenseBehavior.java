@@ -3,8 +3,8 @@ package com.teamabnormals.atmospheric.common.dispenser;
 import com.teamabnormals.atmospheric.common.block.PassionVineBlock;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.BlockSource;
 import net.minecraft.core.Direction;
+import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.OptionalDispenseItemBehavior;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -20,9 +20,9 @@ public class PassionVineBundleDispenseBehavior extends OptionalDispenseItemBehav
 	protected ItemStack execute(BlockSource source, ItemStack stack) {
 		Item item = stack.getItem();
 		if (item instanceof BlockItem) {
-			Direction direction = source.getBlockState().getValue(DispenserBlock.FACING);
-			Level worldIn = source.getLevel().getLevel();
-			BlockPos pos = source.getPos().relative(direction);
+			Direction direction = source.state().getValue(DispenserBlock.FACING);
+			Level worldIn = source.level().getLevel();
+			BlockPos pos = source.pos().relative(direction);
 
 			BlockPos nextPos = pos.relative(Direction.DOWN);
 			BlockState nextBlock = worldIn.getBlockState(nextPos);

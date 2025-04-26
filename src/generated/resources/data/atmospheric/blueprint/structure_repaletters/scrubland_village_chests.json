@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:and",
+      "values": [
+        {
+          "type": "woodworks:config",
+          "value": "wooden_chests"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "wooden_chests_in_villages"
+        }
+      ]
+    }
+  ],
+  "repaletter": {
+    "type": "blueprint:weighted",
+    "replaces": "minecraft:chest",
+    "replaces_with": [
+      {
+        "data": "atmospheric:laurel_chest",
+        "weight": 1
+      },
+      {
+        "data": "atmospheric:morado_chest",
+        "weight": 1
+      }
+    ]
+  },
+  "structures": "atmospheric:village_scrubland"
+}

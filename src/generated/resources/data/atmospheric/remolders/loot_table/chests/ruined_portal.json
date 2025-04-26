@@ -1,0 +1,35 @@
+{
+  "molding": "json",
+  "remolder": [
+    {
+      "type": "add",
+      "target": "pools[0].entries[]",
+      "value": {
+        "type": "minecraft:item",
+        "functions": [
+          {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 9.0,
+              "min": 3.0
+            },
+            "function": "minecraft:set_count"
+          }
+        ],
+        "name": "atmospheric:shimmering_passion_fruit",
+        "weight": 5
+      }
+    },
+    {
+      "type": "add",
+      "target": "pools[0].entries[]",
+      "value": {
+        "type": "minecraft:item",
+        "name": "atmospheric:golden_dragon_fruit",
+        "weight": 15
+      }
+    }
+  ],
+  "selector": "minecraft:loot_table/chests/ruined_portal"
+}

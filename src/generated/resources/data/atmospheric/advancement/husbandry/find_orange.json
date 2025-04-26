@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "find_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:orange"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.atmospheric.husbandry.find_orange.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "atmospheric:orange"
+    },
+    "title": {
+      "translate": "advancements.atmospheric.husbandry.find_orange.title"
+    }
+  },
+  "requirements": [
+    [
+      "find_orange"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,8 +1,9 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.mojang.serialization.MapCodec;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericDamageTypes;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericDamageTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceKey;
@@ -11,14 +12,14 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -33,7 +34,8 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
+import net.neoforged.neoforge.common.CommonHooks;
+import net.neoforged.neoforge.common.Tags;
 
 public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, YuccaPlant {
 	protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 16.0D, 11.0D);
@@ -43,6 +45,11 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 	public YuccaBranchBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.defaultBlockState().setValue(SNAPPED, true));
+	}
+
+	@Override
+	protected MapCodec<? extends BushBlock> codec() {
+		return null;
 	}
 
 	@Override
@@ -72,7 +79,7 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
 		return state.getValue(SNAPPED) && worldIn.getBlockState(pos.below()).isAir();
 	}
 
@@ -83,10 +90,10 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 
 	@Override
 	public void performBonemeal(ServerLevel worldIn, RandomSource rand, BlockPos pos, BlockState state) {
-		if (state.getValue(SNAPPED) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(6) == 0) && worldIn.getBlockState(pos.below()).isAir()) {
+		if (state.getValue(SNAPPED) && net.neoforged.neoforge.common.CommonHooks.canCropGrow(worldIn, pos, state, rand.nextInt(6) == 0) && worldIn.getBlockState(pos.below()).isAir()) {
 			worldIn.setBlockAndUpdate(pos, state.setValue(SNAPPED, false));
 			worldIn.setBlockAndUpdate(pos.below(), AtmosphericBlocks.YUCCA_BUNDLE.get().defaultBlockState());
-			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			CommonHooks.fireCropGrowPost(worldIn, pos, state);
 		}
 	}
 
@@ -95,25 +102,23 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 		if (!state.canSurvive(worldIn, pos)) {
 			worldIn.destroyBlock(pos, true);
 		} else {
-			if (state.getValue(SNAPPED) && ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(5) == 0) && worldIn.getBlockState(pos.below()).isAir()) {
+			if (state.getValue(SNAPPED) && CommonHooks.canCropGrow(worldIn, pos, state, random.nextInt(5) == 0) && worldIn.getBlockState(pos.below()).isAir()) {
 				worldIn.setBlockAndUpdate(pos, state.setValue(SNAPPED, false));
 				worldIn.setBlockAndUpdate(pos.below(), AtmosphericBlocks.YUCCA_BUNDLE.get().defaultBlockState());
 			}
-			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			CommonHooks.fireCropGrowPost(worldIn, pos, state);
 		}
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
-		if (!state.getValue(SNAPPED) && (player.getItemInHand(handIn).getItem() == Items.SHEARS)) {
-			player.getItemInHand(handIn).hurtAndBreak(1, player, (p_213442_1_) -> {
-				p_213442_1_.broadcastBreakEvent(handIn);
-			});
-			worldIn.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
-			worldIn.setBlock(pos, state.setValue(SNAPPED, true), 2);
-			return InteractionResult.SUCCESS;
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+		if (!state.getValue(SNAPPED) && stack.is(Tags.Items.TOOLS_SHEAR)) {
+			stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(handIn));
+			level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+			level.setBlock(pos, state.setValue(SNAPPED, true), 2);
+			return ItemInteractionResult.SUCCESS;
 		} else {
-			return super.use(state, worldIn, pos, player, handIn, hit);
+			return super.useItemOn(stack, state, level, pos, player, handIn, hit);
 		}
 	}
 

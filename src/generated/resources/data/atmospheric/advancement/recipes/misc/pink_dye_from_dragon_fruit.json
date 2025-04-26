@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dragon_fruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:dragon_fruit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:pink_dye_from_dragon_fruit"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dragon_fruit"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:pink_dye_from_dragon_fruit"
+    ]
+  }
+}

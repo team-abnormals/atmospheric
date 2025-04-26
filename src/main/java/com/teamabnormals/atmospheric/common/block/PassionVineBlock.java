@@ -13,7 +13,8 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -34,8 +35,8 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.CommonHooks;
+import net.neoforged.neoforge.common.Tags;
 
 import javax.annotation.Nullable;
 
@@ -105,18 +106,18 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		Direction direction = state.getValue(FACING);
 		BlockState hanging = level.getBlockState(pos.relative(direction.getOpposite()));
 
-		if (ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(7) == 0)) {
+		if (CommonHooks.canCropGrow(level, pos, state, random.nextInt(7) == 0)) {
 			boolean isHanging = hanging.is(AtmosphericBlockTags.PASSION_VINE_GROWABLE_ON);
 			if ((isHanging && i < 4) || (!isHanging && i < 1)) {
 				level.setBlock(pos, state.setValue(AGE, i + 1), 2);
-				ForgeHooks.onCropsGrowPost(level, pos, state);
+				CommonHooks.fireCropGrowPost(level, pos, state);
 			}
 		}
 
 	}
 
 	public void attemptGrowDown(BlockState state, Level level, BlockPos pos, RandomSource random) {
-		if (ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(7) == 0)) {
+		if (CommonHooks.canCropGrow(level, pos, state, random.nextInt(7) == 0)) {
 			if (level.getBlockState(pos.below()).isAir()) {
 				level.setBlockAndUpdate(pos.below(), this.determineState(AtmosphericBlocks.PASSION_VINE.get().defaultBlockState(), level, pos.below()).setValue(AGE, 0).setValue(FACING, state.getValue(FACING)));
 			}
@@ -124,28 +125,33 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-		int i = state.getValue(AGE);
-		boolean flag = i == 4;
-		if (!flag && player.getItemInHand(hand).getItem() == Items.BONE_MEAL) {
-			return InteractionResult.PASS;
-		} else if (flag) {
+	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+		int age = state.getValue(AGE);
+		if (age != 4 && stack.is(Items.BONE_MEAL)) {
+			return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
+		} else if (age == 1 && (stack.is(Tags.Items.TOOLS_SHEAR))) {
+			Direction direction = hitResult.getDirection();
+			Direction direction1 = direction.getAxis() == Direction.Axis.Y ? player.getDirection().getOpposite() : direction;
+			popResourceFromFace(level, pos, direction1, new ItemStack(Items.WHITE_DYE));
+			stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+			level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+			level.setBlock(pos, state.setValue(AGE, 0), 2);
+			return ItemInteractionResult.sidedSuccess(level.isClientSide);
+		} else {
+			return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
+		}
+	}
+
+	@Override
+	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+		int age = state.getValue(AGE);
+		if (age == 4) {
 			popResource(level, pos, new ItemStack(AtmosphericItems.PASSION_FRUIT.get(), 1 + level.random.nextInt(2) + level.random.nextInt(2) + level.random.nextInt(3)));
 			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
 			level.setBlock(pos, state.setValue(AGE, 1), 2);
-			return InteractionResult.SUCCESS;
-		} else if (i == 1 && (player.getItemInHand(hand).is(Tags.Items.SHEARS))) {
-			Direction direction = hit.getDirection();
-			Direction direction1 = direction.getAxis() == Direction.Axis.Y ? player.getDirection().getOpposite() : direction;
-			ItemEntity itementity = new ItemEntity(level, (double) pos.getX() + 0.5D + (double) direction1.getStepX() * 0.65D, (double) pos.getY() + 0.1D, (double) pos.getZ() + 0.5D + (double) direction1.getStepZ() * 0.65D, new ItemStack(Items.WHITE_DYE, 1));
-			itementity.setDeltaMovement(0.05D * (double) direction1.getStepX() + level.random.nextDouble() * 0.02D, 0.05D, 0.05D * (double) direction1.getStepZ() + level.random.nextDouble() * 0.02D);
-			level.addFreshEntity(itementity);
-			player.getItemInHand(hand).hurtAndBreak(1, player, (p_213442_1_) -> p_213442_1_.broadcastBreakEvent(hand));
-			level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
-			level.setBlock(pos, state.setValue(AGE, 0), 2);
-			return InteractionResult.SUCCESS;
+			return InteractionResult.sidedSuccess(level.isClientSide);
 		} else {
-			return super.use(state, level, pos, player, hand, hit);
+			return super.useWithoutItem(state, level, pos, player, hit);
 		}
 	}
 
@@ -200,7 +206,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
 		return state.getValue(AGE) < 4;
 	}
 

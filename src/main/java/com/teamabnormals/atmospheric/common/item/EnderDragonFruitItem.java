@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.item;
 
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.network.chat.Component;
@@ -70,18 +71,19 @@ public class EnderDragonFruitItem extends Item {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-		for (MobEffect effect : new MobEffect[]{MobEffects.ABSORPTION, MobEffects.REGENERATION, MobEffects.DAMAGE_RESISTANCE}) {
+	public void appendHoverText(ItemStack stack, @Nullable TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+		for (Holder<MobEffect> holder : new Holder[]{MobEffects.ABSORPTION, MobEffects.REGENERATION, MobEffects.DAMAGE_RESISTANCE}) {
+			MobEffect effect = holder.value();
 			MutableComponent component = Component.translatable(effect.getDescriptionId());
-			MobEffectInstance instance = new MobEffectInstance(effect, 12000, 9);
+			MobEffectInstance instance = new MobEffectInstance(holder, 12000, 9);
 			component = Component.translatable("potion.withAmplifier", component, Component.translatable("potion.potency." + instance.getAmplifier()));
-			component = Component.translatable("potion.withDuration", component, MobEffectUtil.formatDuration(instance, 1));
+			component = Component.translatable("potion.withDuration", component, MobEffectUtil.formatDuration(instance, 1, context.level().tickRateManager().tickrate()));
 			tooltip.add(component.withStyle(effect.getCategory().getTooltipFormatting()));
 		}
 	}
 
 	@Override
-	public int getUseDuration(ItemStack stack) {
+	public int getUseDuration(ItemStack stack, LivingEntity entity) {
 		return 6000;
 	}
 }

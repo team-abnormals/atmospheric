@@ -1,5 +1,6 @@
 {
   "asset_id": "atmospheric:apostle",
+  "decal": false,
   "description": {
     "translate": "trim_pattern.atmospheric.apostle"
   },

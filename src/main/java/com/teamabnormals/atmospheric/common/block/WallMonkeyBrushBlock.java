@@ -26,11 +26,10 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.IPlantable;
 
 import java.util.Map;
 
-public class WallMonkeyBrushBlock extends FlowerBlock implements BonemealableBlock, IPlantable {
+public class WallMonkeyBrushBlock extends FlowerBlock implements BonemealableBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
 
@@ -38,7 +37,7 @@ public class WallMonkeyBrushBlock extends FlowerBlock implements BonemealableBlo
 	private static final Map<Direction, VoxelShape> SHAPES = Maps.newEnumMap(ImmutableMap.of(Direction.NORTH, Block.box(5.5D, 3.0D, 11.0D, 10.5D, 13.0D, 16.0D), Direction.SOUTH, Block.box(5.5D, 3.0D, 0.0D, 10.5D, 13.0D, 5.0D), Direction.WEST, Block.box(11.0D, 3.0D, 5.5D, 16.0D, 13.0D, 10.5D), Direction.EAST, Block.box(0.0D, 3.0D, 5.5D, 5.0D, 13.0D, 10.5D)));
 
 	public WallMonkeyBrushBlock(Properties properties) {
-		super(AtmosphericMobEffects.RELIEF::get, 120, properties);
+		super(AtmosphericMobEffects.RELIEF, 120, properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
@@ -87,7 +86,7 @@ public class WallMonkeyBrushBlock extends FlowerBlock implements BonemealableBlo
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
 		return worldIn.getBlockState(pos.above()).isAir();
 	}
 

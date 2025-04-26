@@ -21,9 +21,8 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.IPlantable;
 
-public class MonkeyBrushBlock extends FlowerBlock implements BonemealableBlock, IPlantable {
+public class MonkeyBrushBlock extends FlowerBlock implements BonemealableBlock {
 	public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.VERTICAL);
 
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
@@ -67,7 +66,7 @@ public class MonkeyBrushBlock extends FlowerBlock implements BonemealableBlock, 
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
 		return worldIn.getBlockState(pos.above()).isAir();
 	}
 

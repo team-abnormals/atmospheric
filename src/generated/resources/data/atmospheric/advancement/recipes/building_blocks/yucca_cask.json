@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:yucca_cask"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yucca_fruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:yucca_fruit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yucca_fruit"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:yucca_cask"
+    ]
+  }
+}

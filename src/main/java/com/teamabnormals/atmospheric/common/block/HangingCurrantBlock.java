@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.mojang.serialization.MapCodec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
@@ -8,7 +9,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
@@ -27,13 +27,18 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
 
 public class HangingCurrantBlock extends BushBlock implements Fallable {
 	protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 16.0D, 11.0D);
 
 	public HangingCurrantBlock(Properties properties) {
 		super(properties);
+	}
+
+	@Override
+	protected MapCodec<? extends BushBlock> codec() {
+		return null;
 	}
 
 	@Override
@@ -63,7 +68,7 @@ public class HangingCurrantBlock extends BushBlock implements Fallable {
 
 	@Override
 	public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
-		if (player.getMainHandItem().is(Tags.Items.SHEARS)) {
+		if (player.getMainHandItem().is(Tags.Items.TOOLS_SHEAR)) {
 			this.playerWillDestroy(level, pos, state, player);
 			level.setBlock(pos, fluid.createLegacyBlock(), level.isClientSide ? 11 : 3);
 			if (!player.isCreative()) {
@@ -86,8 +91,9 @@ public class HangingCurrantBlock extends BushBlock implements Fallable {
 	@Override
 	public void onBrokenAfterFall(Level level, BlockPos pos, FallingBlockEntity entity) {
 		BlockState state = level.getBlockState(pos);
-		if ((state.isAir() || state.is(BlockTags.REPLACEABLE)) && AtmosphericBlocks.CURRANT_SEEDLING.get().canSurvive(state, level, pos)) {
-			level.setBlockAndUpdate(pos, AtmosphericBlocks.CURRANT_SEEDLING.get().defaultBlockState());
+		BlockState newState = AtmosphericBlocks.CURRANT_SEEDLING.get().defaultBlockState();
+		if ((state.isAir() || state.is(BlockTags.REPLACEABLE)) && newState.canSurvive(level, pos)) {
+			level.setBlockAndUpdate(pos, newState);
 		} else {
 			for (int i = 0; i < 2 + level.random.nextInt(3); i++) {
 				popResource(level, pos, new ItemStack(AtmosphericItems.CURRANT.get()));
@@ -96,12 +102,11 @@ public class HangingCurrantBlock extends BushBlock implements Fallable {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult result) {
 		popResource(level, pos, new ItemStack(AtmosphericItems.CURRANT.get(), 2 + level.random.nextInt(3)));
 		level.playSound(null, pos, AtmosphericSoundEvents.HANGING_CURRANT_PICK_CURRANT.get(), SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
-		BlockState newState = Blocks.AIR.defaultBlockState();
 		level.removeBlock(pos, true);
-		level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newState));
+		level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, Blocks.AIR.defaultBlockState()));
 		return InteractionResult.sidedSuccess(level.isClientSide);
 	}
 }

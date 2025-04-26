@@ -3,8 +3,6 @@ package com.teamabnormals.atmospheric.common.entity;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -13,7 +11,6 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraftforge.network.NetworkHooks;
 
 import java.util.List;
 
@@ -34,9 +31,9 @@ public class OrangeVaporCloud extends Entity {
 		this.setPos(x, y, z);
 	}
 
-	protected void defineSynchedData() {
-		this.getEntityData().define(DATA_RADIUS, 0.5F);
-		this.getEntityData().define(IS_BLOOD_ORANGE, false);
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		builder.define(DATA_RADIUS, 0.5F);
+		builder.define(IS_BLOOD_ORANGE, false);
 	}
 
 	public void setRadius(float radius) {
@@ -162,10 +159,6 @@ public class OrangeVaporCloud extends Entity {
 
 	public PushReaction getPistonPushReaction() {
 		return PushReaction.IGNORE;
-	}
-
-	public Packet<ClientGamePacketListener> getAddEntityPacket() {
-		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	public float getHeight() {

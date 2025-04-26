@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:fruits/orange"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:milk"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "atmospheric:orange_pudding"
+  }
+}

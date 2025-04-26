@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "sawmill"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "wooden_ladders"
+        }
+      ]
+    }
+  ],
+  "type": "woodworks:sawmill",
+  "ingredient": {
+    "tag": "atmospheric:aspen_logs"
+  },
+  "result": {
+    "count": 4,
+    "id": "atmospheric:aspen_ladder"
+  }
+}

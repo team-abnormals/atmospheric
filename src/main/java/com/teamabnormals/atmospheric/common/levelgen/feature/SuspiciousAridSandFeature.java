@@ -2,10 +2,10 @@ package com.teamabnormals.atmospheric.common.levelgen.feature;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
-import com.teamabnormals.atmospheric.core.data.server.AtmosphericLootTableProvider.AtmosphericArchaeologyLoot;
+import com.teamabnormals.atmospheric.core.other.AtmosphericLootTables;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.world.level.storage.loot.LootTable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -63,12 +64,12 @@ public class SuspiciousAridSandFeature extends Feature<NoneFeatureConfiguration>
 			for (int j = 0; j < attempts; j++) {
 				BlockPos newPos = layer1.get(j);
 
-				ResourceLocation lootTable;
+				ResourceKey<LootTable> lootTable;
 				if (rare > 0) {
-					lootTable = AtmosphericArchaeologyLoot.ARID_GARDEN_RARE;
+					lootTable = AtmosphericLootTables.ARID_GARDEN_ARCHAEOLOGY_RARE;
 					rare--;
 				} else {
-					lootTable = AtmosphericArchaeologyLoot.ARID_GARDEN_COMMON;
+					lootTable = AtmosphericLootTables.ARID_GARDEN_ARCHAEOLOGY_COMMON;
 				}
 
 				level.setBlock(newPos, convertToSuspicious(level.getBlockState(newPos)).get().defaultBlockState(), 2);

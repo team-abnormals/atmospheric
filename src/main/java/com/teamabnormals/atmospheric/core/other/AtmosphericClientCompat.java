@@ -3,53 +3,45 @@ package com.teamabnormals.atmospheric.core.other;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
-import com.teamabnormals.blueprint.core.util.DataUtil;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.FoliageColor;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.TickEvent.PlayerTickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
-import java.util.Arrays;
-import java.util.List;
-
-@EventBusSubscriber(modid = Atmospheric.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class AtmosphericClientCompat {
 
 	public static void registerCompat() {
-		registerBlockColors();
+		AtmosphericItems.setupTabEditors();
+		AtmosphericBlocks.setupTabEditors();
+		AtmosphericClientEvents.registerItemProperties();
 		registerRenderLayers();
-		registerItemProperties();
 	}
 
-	private static void registerBlockColors() {
-		BlockColors blockColors = Minecraft.getInstance().getBlockColors();
-		ItemColors itemColors = Minecraft.getInstance().getItemColors();
+	@SubscribeEvent
+	public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+		event.register((x, level, pos, u) -> level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.get(0.5D, 1.0D),
+				AtmosphericBlocks.ROSEWOOD_LEAVES.get(), AtmosphericBlocks.ROSEWOOD_LEAF_PILE.get(),
+				AtmosphericBlocks.MORADO_LEAVES.get(), AtmosphericBlocks.MORADO_LEAF_PILE.get(),
+				AtmosphericBlocks.FLOWERING_MORADO_LEAVES.get(), AtmosphericBlocks.FLOWERING_MORADO_LEAF_PILE.get(),
+				AtmosphericBlocks.YUCCA_LEAVES.get(), AtmosphericBlocks.YUCCA_LEAF_PILE.get(),
+				AtmosphericBlocks.GREEN_ASPEN_LEAVES.get(), AtmosphericBlocks.GREEN_ASPEN_LEAF_PILE.get()
+		);
+	}
 
-		List<RegistryObject<Block>> foliageColors = Arrays.asList(
+	@SubscribeEvent
+	public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+		event.register((color, items) -> FoliageColor.get(0.5D, 1.0D),
 				AtmosphericBlocks.ROSEWOOD_LEAVES, AtmosphericBlocks.ROSEWOOD_LEAF_PILE,
 				AtmosphericBlocks.MORADO_LEAVES, AtmosphericBlocks.MORADO_LEAF_PILE,
 				AtmosphericBlocks.FLOWERING_MORADO_LEAVES, AtmosphericBlocks.FLOWERING_MORADO_LEAF_PILE,
 				AtmosphericBlocks.YUCCA_LEAVES, AtmosphericBlocks.YUCCA_LEAF_PILE,
 				AtmosphericBlocks.GREEN_ASPEN_LEAVES, AtmosphericBlocks.GREEN_ASPEN_LEAF_PILE
 		);
-
-		DataUtil.registerBlockColor(blockColors, (x, world, pos, u) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.get(0.5D, 1.0D), foliageColors);
-		DataUtil.registerBlockItemColor(itemColors, (color, items) -> items > 0 ? -1 : FoliageColor.get(0.5D, 1.0D), foliageColors);
 	}
 
 	private static void registerRenderLayers() {
@@ -146,27 +138,5 @@ public class AtmosphericClientCompat {
 
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ARID_GLASS.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ARID_GLASS_PANE.get(), RenderType.cutout());
-	}
-
-	private static void registerItemProperties() {
-		ItemProperties.register(AtmosphericItems.ORANGE.get(), new ResourceLocation(Atmospheric.MOD_ID, "hey_apple"), (stack, level, entity, hash) -> AtmosphericEvents.isAprilFools() ? 1.0F : 0.0F);
-	}
-
-	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent event) {
-		if (AtmosphericEvents.isAprilFools()) {
-			Player player = event.player;
-			RandomSource random = player.getRandom();
-			if (random.nextInt(401) == 0 && player.getInventory().contains(AtmosphericItems.ORANGE.get().getDefaultInstance())) {
-				player.displayClientMessage(Component.literal(getMessage(random)).withStyle(ChatFormatting.GOLD), true);
-			}
-		}
-	}
-
-	public static final String[] COMMON = {"Hey!", "Hey! Hey!", "Hey Apple!", "Apple!"};
-	public static final String[] RARE = {"Knife!", "Orange you glad I didn't say apple again?", "Can you do ten push-ups in ten seconds?", "Blah blah blah!", "Hey Pear!"};
-
-	public static String getMessage(RandomSource random) {
-		return random.nextInt(4) == 0 ? RARE[random.nextInt(RARE.length - 1)] : COMMON[random.nextInt(COMMON.length - 1)];
 	}
 }

@@ -7,9 +7,7 @@
           "atmospheric:aloe_gel_bottle": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:aloe_gel_bottle"
-                ]
+                "items": "atmospheric:aloe_gel_bottle"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -17,9 +15,7 @@
           "atmospheric:aloe_leaves": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:aloe_leaves"
-                ]
+                "items": "atmospheric:aloe_leaves"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -27,9 +23,7 @@
           "atmospheric:blood_orange": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:blood_orange"
-                ]
+                "items": "atmospheric:blood_orange"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -37,9 +31,7 @@
           "atmospheric:candied_orange_slices": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:candied_orange_slices"
-                ]
+                "items": "atmospheric:candied_orange_slices"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -47,9 +39,7 @@
           "atmospheric:currant": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:currant"
-                ]
+                "items": "atmospheric:currant"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -57,9 +47,7 @@
           "atmospheric:currant_muffin": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:currant_muffin"
-                ]
+                "items": "atmospheric:currant_muffin"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -67,9 +55,7 @@
           "atmospheric:dragon_fruit": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:dragon_fruit"
-                ]
+                "items": "atmospheric:dragon_fruit"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -77,9 +63,7 @@
           "atmospheric:golden_dragon_fruit": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:golden_dragon_fruit"
-                ]
+                "items": "atmospheric:golden_dragon_fruit"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -87,9 +71,7 @@
           "atmospheric:orange": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:orange"
-                ]
+                "items": "atmospheric:orange"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -97,9 +79,7 @@
           "atmospheric:orange_pudding": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:orange_pudding"
-                ]
+                "items": "atmospheric:orange_pudding"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -107,9 +87,7 @@
           "atmospheric:orange_sorbet": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:orange_sorbet"
-                ]
+                "items": "atmospheric:orange_sorbet"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -117,9 +95,7 @@
           "atmospheric:passion_fruit": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:passion_fruit"
-                ]
+                "items": "atmospheric:passion_fruit"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -127,9 +103,7 @@
           "atmospheric:passion_fruit_sorbet": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:passion_fruit_sorbet"
-                ]
+                "items": "atmospheric:passion_fruit_sorbet"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -137,9 +111,7 @@
           "atmospheric:passion_fruit_tart": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:passion_fruit_tart"
-                ]
+                "items": "atmospheric:passion_fruit_tart"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -147,9 +119,7 @@
           "atmospheric:roasted_yucca_fruit": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:roasted_yucca_fruit"
-                ]
+                "items": "atmospheric:roasted_yucca_fruit"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -157,9 +127,7 @@
           "atmospheric:shimmering_passion_fruit": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:shimmering_passion_fruit"
-                ]
+                "items": "atmospheric:shimmering_passion_fruit"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -167,14 +135,13 @@
           "atmospheric:yucca_fruit": {
             "conditions": {
               "item": {
-                "items": [
-                  "atmospheric:yucca_fruit"
-                ]
+                "items": "atmospheric:yucca_fruit"
               }
             },
             "trigger": "minecraft:consume_item"
           }
         },
+        "indexed_requirements": [],
         "requirements": [
           [
             "atmospheric:passion_fruit"

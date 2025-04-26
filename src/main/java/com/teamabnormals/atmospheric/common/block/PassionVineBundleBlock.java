@@ -3,18 +3,18 @@ package com.teamabnormals.atmospheric.common.block;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.common.Tags;
 
 import javax.annotation.Nullable;
 
@@ -33,7 +33,7 @@ public class PassionVineBundleBlock extends Block {
 	@Override
 	public void playerDestroy(Level worldIn, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity te, ItemStack stack) {
 		super.playerDestroy(worldIn, player, pos, state, te, stack);
-		if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, stack) != 0 || stack.getItem() == Items.SHEARS) {
+		if (EnchantmentHelper.hasTag(stack, EnchantmentTags.PREVENTS_BEE_SPAWNS_WHEN_MINING) || stack.is(Tags.Items.TOOLS_SHEAR)) {
 			worldIn.removeBlock(pos, false);
 			return;
 		}
@@ -65,15 +65,7 @@ public class PassionVineBundleBlock extends Block {
 		} else {
 			int k1 = 0;
 			while (k1 < 3) {
-				if (direction == Direction.NORTH) {
-					direction = Direction.EAST;
-				} else if (direction == Direction.EAST) {
-					direction = Direction.SOUTH;
-				} else if (direction == Direction.SOUTH) {
-					direction = Direction.WEST;
-				} else if (direction == Direction.WEST) {
-					direction = Direction.NORTH;
-				}
+				direction = direction.getClockWise();
 				k1 = k1 + 1;
 				if (!worldIn.getBlockState(pos.relative(direction)).isAir()
 						&& AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction.getOpposite()).canSurvive(worldIn, pos)

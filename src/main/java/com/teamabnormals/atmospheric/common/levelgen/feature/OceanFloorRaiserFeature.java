@@ -1,7 +1,7 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature;
 
 import com.mojang.serialization.Codec;
-import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericNoiseParameters;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericNoiseParameters;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
@@ -17,7 +17,7 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
 
 import java.util.ArrayList;
 
@@ -103,7 +103,7 @@ public class OceanFloorRaiserFeature extends Feature<NoneFeatureConfiguration> {
 	}
 
 	private static boolean canReplace(BlockState state) {
-		return state.is(Tags.Blocks.GRAVEL) || state.is(BlockTags.DIRT) || state.is(BlockTags.SAND) || state.is(Blocks.CLAY) || state.is(BlockTags.BASE_STONE_OVERWORLD);
+		return state.is(Tags.Blocks.GRAVELS) || state.is(BlockTags.DIRT) || state.is(BlockTags.SAND) || state.is(Blocks.CLAY) || state.is(BlockTags.BASE_STONE_OVERWORLD);
 	}
 
 	private static final class Raise {

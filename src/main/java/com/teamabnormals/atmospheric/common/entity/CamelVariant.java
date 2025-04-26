@@ -18,10 +18,10 @@ public enum CamelVariant implements StringRepresentable {
 	public static final Codec<CamelVariant> CODEC = StringRepresentable.fromEnum(CamelVariant::values);
 	private final int id;
 	private final ResourceLocation location;
-	private final LazyLoadedValue<ResourceLocation> texture = new LazyLoadedValue<>(() -> new ResourceLocation(this.location().getNamespace(), "textures/entity/camel/" + this.location().getPath() + ".png"));
+	private final LazyLoadedValue<ResourceLocation> texture = new LazyLoadedValue<>(() -> ResourceLocation.fromNamespaceAndPath(this.location().getNamespace(), "textures/entity/camel/" + this.location().getPath() + ".png"));
 
 	CamelVariant(int id, String modid, String name) {
-		this(id, new ResourceLocation(modid, name));
+		this(id, ResourceLocation.fromNamespaceAndPath(modid, name));
 	}
 
 	CamelVariant(int id, ResourceLocation location) {

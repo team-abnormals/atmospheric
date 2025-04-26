@@ -18,8 +18,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 public class PassionVineCoil extends ThrowableItemProjectile {
 
@@ -34,8 +34,8 @@ public class PassionVineCoil extends ThrowableItemProjectile {
 
 	@OnlyIn(Dist.CLIENT)
 	private ParticleOptions makeParticle() {
-		ItemStack itemstack = this.getItemRaw();
-		return itemstack.isEmpty() ? ParticleTypes.ITEM_SNOWBALL : new ItemParticleOption(ParticleTypes.ITEM, itemstack);
+		ItemStack stack = this.getItem();
+		return stack.isEmpty() ? ParticleTypes.ITEM_SNOWBALL : new ItemParticleOption(ParticleTypes.ITEM, stack);
 	}
 
 	@Override
@@ -108,15 +108,7 @@ public class PassionVineCoil extends ThrowableItemProjectile {
 		} else {
 			int k1 = 0;
 			while (true) {
-				if (direction == Direction.NORTH) {
-					direction = Direction.EAST;
-				} else if (direction == Direction.EAST) {
-					direction = Direction.SOUTH;
-				} else if (direction == Direction.SOUTH) {
-					direction = Direction.WEST;
-				} else if (direction == Direction.WEST) {
-					direction = Direction.NORTH;
-				}
+				direction = direction.getClockWise();
 				k1 = k1 + 1;
 				if (AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction.getOpposite()).canSurvive(worldIn, pos)) {
 					BlockState vine = AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction.getOpposite());

@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_currant": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:currant"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:currant_crate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_currant"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:currant_crate"
+    ]
+  }
+}

@@ -9,13 +9,12 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class FloweringDragonFruitLayer<T extends DragonFruit> extends RenderLayer<T, DragonFruitModel<T>> {
-	private static final RenderType FLOWERING_DRAGON_FRUIT = RenderType.entityTranslucentEmissive(new ResourceLocation(Atmospheric.MOD_ID, "textures/block/flowering_dragon_fruit_emissive.png"));
+	private static final RenderType FLOWERING_DRAGON_FRUIT = RenderType.entityTranslucentEmissive(Atmospheric.location("textures/block/flowering_dragon_fruit_emissive.png"));
 
 	public FloweringDragonFruitLayer(RenderLayerParent<T, DragonFruitModel<T>> parent) {
 		super(parent);
@@ -23,7 +22,7 @@ public class FloweringDragonFruitLayer<T extends DragonFruit> extends RenderLaye
 
 	public void render(PoseStack stack, MultiBufferSource buffer, int p_116985_, T fruit, float p_116987_, float p_116988_, float p_116989_, float p_116990_, float p_116991_, float p_116992_) {
 		if (fruit.isFlowering()) {
-			this.getParentModel().renderToBuffer(stack, buffer.getBuffer(FLOWERING_DRAGON_FRUIT), 15728640, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+			this.getParentModel().renderToBuffer(stack, buffer.getBuffer(FLOWERING_DRAGON_FRUIT), 15728640, OverlayTexture.NO_OVERLAY);
 		}
 	}
 }

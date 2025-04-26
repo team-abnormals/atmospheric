@@ -1,0 +1,10 @@
+{
+  "values": {
+    "atmospheric:currant_stalk": {
+      "burn_time": 50
+    },
+    "atmospheric:currant_stalk_bundle": {
+      "burn_time": 200
+    }
+  }
+}

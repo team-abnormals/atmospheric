@@ -1,11 +1,11 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericEntityTypeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
-import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericDamageTypes;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericDamageTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Plane;
@@ -30,17 +30,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.PlantType;
+import net.neoforged.neoforge.common.CommonHooks;
 
 import javax.annotation.Nullable;
 
-public class BarrelCactusBlock extends Block implements IPlantable, BonemealableBlock {
+public class BarrelCactusBlock extends Block implements BonemealableBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 
 	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
@@ -77,16 +75,16 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	}
 
 	@Override
-	public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+	public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
 		return new ItemStack(AtmosphericItems.BARREL_CACTUS.get());
 	}
 
 	@Override
 	public void performBonemeal(ServerLevel worldIn, RandomSource rand, BlockPos pos, BlockState state) {
 		int i = state.getValue(AGE);
-		if (i < 3 && ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(3) == 0)) {
+		if (i < 3 && CommonHooks.canCropGrow(worldIn, pos, state, rand.nextInt(3) == 0)) {
 			worldIn.setBlockAndUpdate(pos, state.setValue(AGE, i + 1));
-			ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+			CommonHooks.fireCropGrowPost(worldIn, pos, state);
 		}
 	}
 
@@ -133,7 +131,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
 		if (!entity.getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE) && state.getValue(AGE) > 0) {
 			if (entity instanceof LivingEntity living && state.getValue(AGE) != 0) {
-				living.addEffect(new MobEffectInstance(AtmosphericMobEffects.WORSENING.get(), ((state.getValue(AGE) + 1) * 40)));
+				living.addEffect(new MobEffectInstance(AtmosphericMobEffects.WORSENING, ((state.getValue(AGE) + 1) * 40)));
 			}
 
 			if (level.getGameTime() % 20 == 0) {
@@ -145,7 +143,7 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 				entity.hurt(AtmosphericDamageTypes.barrelCactus(level), damage);
 				if (entity instanceof ServerPlayer serverPlayer) {
 					if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative()) {
-						AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.trigger(serverPlayer);
+						AtmosphericCriteriaTriggers.BARREL_CACTUS_PRICK.get().trigger(serverPlayer);
 					}
 				}
 			}
@@ -158,28 +156,18 @@ public class BarrelCactusBlock extends Block implements IPlantable, Bonemealable
 	}
 
 	@Override
-	public boolean isPathfindable(BlockState state, BlockGetter worldIn, BlockPos pos, PathComputationType type) {
+	public boolean isPathfindable(BlockState state, PathComputationType type) {
 		return false;
-	}
-
-	@Override
-	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
-		return PlantType.DESERT;
-	}
-
-	@Override
-	public BlockState getPlant(BlockGetter world, BlockPos pos) {
-		return defaultBlockState();
 	}
 
 	@Nullable
 	@Override
-	public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
-		return entity != null && entity.getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE) ? null : BlockPathTypes.DAMAGE_OTHER;
+	public PathType getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+		return entity != null && entity.getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE) ? null : PathType.DAMAGE_OTHER;
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state) {
 		return state.getValue(AGE) < 3;
 	}
 

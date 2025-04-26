@@ -1,7 +1,7 @@
 package com.teamabnormals.atmospheric.common.item;
 
-import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
-import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericDamageTypes;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericDamageTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -25,7 +25,7 @@ public class AloeLeavesItem extends Item {
 
 		if (entity.getRemainingFireTicks() > 0 && entity instanceof ServerPlayer serverPlayer) {
 			if (!entity.getCommandSenderWorld().isClientSide()) {
-				AtmosphericCriteriaTriggers.PUT_OUT_FIRE.trigger(serverPlayer);
+				AtmosphericCriteriaTriggers.PUT_OUT_FIRE.get().trigger(serverPlayer);
 			}
 		}
 

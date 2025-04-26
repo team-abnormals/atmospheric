@@ -2,6 +2,7 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+import com.mojang.serialization.MapCodec;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
 import com.teamabnormals.atmospheric.common.entity.projectile.DragonFruit;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
@@ -14,7 +15,9 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -35,7 +38,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
+import net.neoforged.neoforge.common.CommonHooks;
 
 import java.util.Map;
 
@@ -65,6 +68,11 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 	public DragonRootsBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(TOP_STAGE, DragonRootsStage.ROOTS).setValue(BOTTOM_STAGE, DragonRootsStage.ROOTS));
+	}
+
+	@Override
+	protected MapCodec<? extends BushBlock> codec() {
+		return null;
 	}
 
 	@Override
@@ -111,10 +119,13 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (!hasMaxFruit(state) && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
-			return InteractionResult.PASS;
-		} else if (hasFruit(state)) {
+	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+		return !hasMaxFruit(state) && stack.is(Items.BONE_MEAL) ? ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION : super.useItemOn(stack, state, level, pos, player, hand, hitResult);
+	}
+
+	@Override
+	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+		if (hasFruit(state)) {
 			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
 			BlockState newState = state;
 
@@ -132,7 +143,7 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 
 			return InteractionResult.sidedSuccess(level.isClientSide);
 		} else {
-			return super.use(state, level, pos, player, hand, result);
+			return super.useWithoutItem(state, level, pos, player, hitResult);
 		}
 	}
 
@@ -213,12 +224,12 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 		boolean floweringConditions = level.getRawBrightness(pos, 0) <= 3 || (level.getRawBrightness(pos, 15) <= 3 && level.isNight());
 		boolean cropGrew = false;
 
-		if (state.getValue(TOP_STAGE) == DragonRootsStage.ROOTS && fruitingConditions && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(10) == 0)) {
+		if (state.getValue(TOP_STAGE) == DragonRootsStage.ROOTS && fruitingConditions && CommonHooks.canCropGrow(level, pos, state, random.nextInt(10) == 0)) {
 			newState = state.setValue(TOP_STAGE, getFruitStage(level));
 			cropGrew = true;
 		}
 
-		if (state.getValue(BOTTOM_STAGE) == DragonRootsStage.ROOTS && fruitingConditions && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(10) == 0)) {
+		if (state.getValue(BOTTOM_STAGE) == DragonRootsStage.ROOTS && fruitingConditions && CommonHooks.canCropGrow(level, pos, state, random.nextInt(10) == 0)) {
 			newState = state.setValue(BOTTOM_STAGE, getFruitStage(level));
 			cropGrew = true;
 		}
@@ -235,7 +246,7 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 			level.setBlock(pos, newState, 2);
 			level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(newState));
 			if (cropGrew) {
-				ForgeHooks.onCropsGrowPost(level, pos, state);
+				CommonHooks.fireCropGrowPost(level, pos, state);
 			}
 		}
 	}
@@ -248,7 +259,7 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
 		return !hasMaxFruit(state);
 	}
 
@@ -269,7 +280,7 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 	}
 
 	public static DragonRootsStage getFruitStage(ServerLevel level) {
-		return level.dimensionTypeId().equals(BuiltinDimensionTypes.END) ? DragonRootsStage.ENDER : DragonRootsStage.FRUIT;
+		return level.dimensionTypeRegistration().is(BuiltinDimensionTypes.END) ? DragonRootsStage.ENDER : DragonRootsStage.FRUIT;
 	}
 
 	public static DragonRootsStage switchFruitAndFlowering(DragonRootsStage stage) {
@@ -277,6 +288,6 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 	}
 
 	public static DragonRootsStage getFloweringStage(ServerLevel level) {
-		return level.dimensionTypeId().equals(BuiltinDimensionTypes.END) ? DragonRootsStage.FLOWERING_ENDER : DragonRootsStage.FLOWERING;
+		return level.dimensionTypeRegistration().is(BuiltinDimensionTypes.END) ? DragonRootsStage.FLOWERING_ENDER : DragonRootsStage.FLOWERING;
 	}
 }

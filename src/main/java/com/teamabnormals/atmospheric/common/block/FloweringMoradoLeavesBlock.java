@@ -9,36 +9,34 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.common.Tags;
 
 public class FloweringMoradoLeavesBlock extends LeavesBlock {
+
 	public FloweringMoradoLeavesBlock(Properties properties) {
 		super(properties);
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
-		RandomSource rand = RandomSource.create();
-		if (player.getItemInHand(handIn).getItem() == Items.SHEARS) {
-			player.getItemInHand(handIn).hurtAndBreak(1, player, (onBroken) -> {
-				onBroken.broadcastBreakEvent(handIn);
-			});
-			worldIn.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
-			worldIn.setBlockAndUpdate(pos, BlockUtil.transferAllBlockStates(state, AtmosphericBlocks.MORADO_LEAVES.get().defaultBlockState()));
-			popResource(worldIn, pos, new ItemStack(AtmosphericItems.YELLOW_BLOSSOMS.get(), 1 + rand.nextInt(3)));
-
-			return InteractionResult.SUCCESS;
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+		if (stack.is(Tags.Items.TOOLS_SHEAR)) {
+			stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+			level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+			level.setBlockAndUpdate(pos, BlockUtil.transferAllBlockStates(state, AtmosphericBlocks.MORADO_LEAVES.get().defaultBlockState()));
+			popResource(level, pos, new ItemStack(AtmosphericItems.YELLOW_BLOSSOMS.get(), 1 + player.getRandom().nextInt(3)));
+			return ItemInteractionResult.SUCCESS;
 		} else {
-			return super.use(state, worldIn, pos, player, handIn, hit);
+			return super.useItemOn(stack, state, level, pos, player, hand, hit);
 		}
 	}
 

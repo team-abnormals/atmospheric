@@ -25,8 +25,8 @@ public class CrustoseLogBlock extends LogBlock implements BonemealableBlock, Cru
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
-		return this.isCrustoseValidBonemealTarget(level, pos, state, isClient);
+	public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+		return this.isCrustoseValidBonemealTarget(level, pos, state);
 	}
 
 	@Override

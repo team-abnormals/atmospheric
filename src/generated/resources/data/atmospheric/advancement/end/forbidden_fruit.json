@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:end/root",
+  "criteria": {
+    "forbidden_fruit": {
+      "conditions": {
+        "item": {
+          "items": "atmospheric:ender_dragon_fruit"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.atmospheric.end.forbidden_fruit.description"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "atmospheric:ender_dragon_fruit"
+    },
+    "title": {
+      "translate": "advancements.atmospheric.end.forbidden_fruit.title"
+    }
+  },
+  "requirements": [
+    [
+      "forbidden_fruit"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

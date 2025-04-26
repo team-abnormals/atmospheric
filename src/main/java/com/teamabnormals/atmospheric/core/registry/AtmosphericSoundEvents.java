@@ -3,99 +3,97 @@ package com.teamabnormals.atmospheric.core.registry;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.blueprint.core.util.registry.SoundSubRegistryHelper;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraftforge.common.util.ForgeSoundType;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.util.DeferredSoundType;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
-@EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class AtmosphericSoundEvents {
-	public static final SoundSubRegistryHelper HELPER = Atmospheric.REGISTRY_HELPER.getSoundSubHelper();
+	public static final SoundSubRegistryHelper SOUND_EVENTS = Atmospheric.REGISTRY_HELPER.getSoundSubHelper();
 
-	public static final RegistryObject<SoundEvent> ARID_SAND_BREAK = HELPER.createSoundEvent("block.arid_sand.break");
-	public static final RegistryObject<SoundEvent> ARID_SAND_FALL = HELPER.createSoundEvent("block.arid_sand.fall");
-	public static final RegistryObject<SoundEvent> ARID_SAND_HIT = HELPER.createSoundEvent("block.arid_sand.hit");
-	public static final RegistryObject<SoundEvent> ARID_SAND_PLACE = HELPER.createSoundEvent("block.arid_sand.place");
-	public static final RegistryObject<SoundEvent> ARID_SAND_STEP = HELPER.createSoundEvent("block.arid_sand.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_BREAK = SOUND_EVENTS.createSoundEvent("block.arid_sand.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_FALL = SOUND_EVENTS.createSoundEvent("block.arid_sand.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_HIT = SOUND_EVENTS.createSoundEvent("block.arid_sand.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_PLACE = SOUND_EVENTS.createSoundEvent("block.arid_sand.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_STEP = SOUND_EVENTS.createSoundEvent("block.arid_sand.step");
 
-	public static final RegistryObject<SoundEvent> ARID_SANDSTONE_BREAK = HELPER.createSoundEvent("block.arid_sandstone.break");
-	public static final RegistryObject<SoundEvent> ARID_SANDSTONE_FALL = HELPER.createSoundEvent("block.arid_sandstone.fall");
-	public static final RegistryObject<SoundEvent> ARID_SANDSTONE_HIT = HELPER.createSoundEvent("block.arid_sandstone.hit");
-	public static final RegistryObject<SoundEvent> ARID_SANDSTONE_PLACE = HELPER.createSoundEvent("block.arid_sandstone.place");
-	public static final RegistryObject<SoundEvent> ARID_SANDSTONE_STEP = HELPER.createSoundEvent("block.arid_sandstone.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SANDSTONE_BREAK = SOUND_EVENTS.createSoundEvent("block.arid_sandstone.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SANDSTONE_FALL = SOUND_EVENTS.createSoundEvent("block.arid_sandstone.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SANDSTONE_HIT = SOUND_EVENTS.createSoundEvent("block.arid_sandstone.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SANDSTONE_PLACE = SOUND_EVENTS.createSoundEvent("block.arid_sandstone.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SANDSTONE_STEP = SOUND_EVENTS.createSoundEvent("block.arid_sandstone.step");
 
-	public static final RegistryObject<SoundEvent> SUSPICIOUS_ARID_SAND_BREAK = HELPER.createSoundEvent("block.suspicious_arid_sand.break");
-	public static final RegistryObject<SoundEvent> SUSPICIOUS_ARID_SAND_FALL = HELPER.createSoundEvent("block.suspicious_arid_sand.fall");
-	public static final RegistryObject<SoundEvent> SUSPICIOUS_ARID_SAND_HIT = HELPER.createSoundEvent("block.suspicious_arid_sand.hit");
-	public static final RegistryObject<SoundEvent> SUSPICIOUS_ARID_SAND_PLACE = HELPER.createSoundEvent("block.suspicious_arid_sand.place");
-	public static final RegistryObject<SoundEvent> SUSPICIOUS_ARID_SAND_STEP = HELPER.createSoundEvent("block.suspicious_arid_sand.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> SUSPICIOUS_ARID_SAND_BREAK = SOUND_EVENTS.createSoundEvent("block.suspicious_arid_sand.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> SUSPICIOUS_ARID_SAND_FALL = SOUND_EVENTS.createSoundEvent("block.suspicious_arid_sand.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> SUSPICIOUS_ARID_SAND_HIT = SOUND_EVENTS.createSoundEvent("block.suspicious_arid_sand.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> SUSPICIOUS_ARID_SAND_PLACE = SOUND_EVENTS.createSoundEvent("block.suspicious_arid_sand.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> SUSPICIOUS_ARID_SAND_STEP = SOUND_EVENTS.createSoundEvent("block.suspicious_arid_sand.step");
 
-	public static final RegistryObject<SoundEvent> ARID_GLASS_BREAK = HELPER.createSoundEvent("block.arid_glass.break");
-	public static final RegistryObject<SoundEvent> ARID_GLASS_FALL = HELPER.createSoundEvent("block.arid_glass.fall");
-	public static final RegistryObject<SoundEvent> ARID_GLASS_HIT = HELPER.createSoundEvent("block.arid_glass.hit");
-	public static final RegistryObject<SoundEvent> ARID_GLASS_PLACE = HELPER.createSoundEvent("block.arid_glass.place");
-	public static final RegistryObject<SoundEvent> ARID_GLASS_STEP = HELPER.createSoundEvent("block.arid_glass.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_GLASS_BREAK = SOUND_EVENTS.createSoundEvent("block.arid_glass.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_GLASS_FALL = SOUND_EVENTS.createSoundEvent("block.arid_glass.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_GLASS_HIT = SOUND_EVENTS.createSoundEvent("block.arid_glass.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_GLASS_PLACE = SOUND_EVENTS.createSoundEvent("block.arid_glass.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_GLASS_STEP = SOUND_EVENTS.createSoundEvent("block.arid_glass.step");
 
-	public static final RegistryObject<SoundEvent> ARID_SPROUTS_BREAK = HELPER.createSoundEvent("block.arid_sprouts.break");
-	public static final RegistryObject<SoundEvent> ARID_SPROUTS_FALL = HELPER.createSoundEvent("block.arid_sprouts.fall");
-	public static final RegistryObject<SoundEvent> ARID_SPROUTS_HIT = HELPER.createSoundEvent("block.arid_sprouts.hit");
-	public static final RegistryObject<SoundEvent> ARID_SPROUTS_PLACE = HELPER.createSoundEvent("block.arid_sprouts.place");
-	public static final RegistryObject<SoundEvent> ARID_SPROUTS_STEP = HELPER.createSoundEvent("block.arid_sprouts.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SPROUTS_BREAK = SOUND_EVENTS.createSoundEvent("block.arid_sprouts.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SPROUTS_FALL = SOUND_EVENTS.createSoundEvent("block.arid_sprouts.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SPROUTS_HIT = SOUND_EVENTS.createSoundEvent("block.arid_sprouts.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SPROUTS_PLACE = SOUND_EVENTS.createSoundEvent("block.arid_sprouts.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SPROUTS_STEP = SOUND_EVENTS.createSoundEvent("block.arid_sprouts.step");
 
-	public static final RegistryObject<SoundEvent> CARMINE_BREAK = HELPER.createSoundEvent("block.carmine.break");
-	public static final RegistryObject<SoundEvent> CARMINE_FALL = HELPER.createSoundEvent("block.carmine.fall");
-	public static final RegistryObject<SoundEvent> CARMINE_HIT = HELPER.createSoundEvent("block.carmine.hit");
-	public static final RegistryObject<SoundEvent> CARMINE_PLACE = HELPER.createSoundEvent("block.carmine.place");
-	public static final RegistryObject<SoundEvent> CARMINE_STEP = HELPER.createSoundEvent("block.carmine.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_BREAK = SOUND_EVENTS.createSoundEvent("block.carmine.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_FALL = SOUND_EVENTS.createSoundEvent("block.carmine.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_HIT = SOUND_EVENTS.createSoundEvent("block.carmine.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_PLACE = SOUND_EVENTS.createSoundEvent("block.carmine.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_STEP = SOUND_EVENTS.createSoundEvent("block.carmine.step");
 
-	public static final RegistryObject<SoundEvent> MONKEY_BRUSH_BREAK = HELPER.createSoundEvent("block.monkey_brush.break");
-	public static final RegistryObject<SoundEvent> MONKEY_BRUSH_FALL = HELPER.createSoundEvent("block.monkey_brush.fall");
-	public static final RegistryObject<SoundEvent> MONKEY_BRUSH_HIT = HELPER.createSoundEvent("block.monkey_brush.hit");
-	public static final RegistryObject<SoundEvent> MONKEY_BRUSH_PLACE = HELPER.createSoundEvent("block.monkey_brush.place");
-	public static final RegistryObject<SoundEvent> MONKEY_BRUSH_STEP = HELPER.createSoundEvent("block.monkey_brush.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_BREAK = SOUND_EVENTS.createSoundEvent("block.monkey_brush.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_FALL = SOUND_EVENTS.createSoundEvent("block.monkey_brush.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_HIT = SOUND_EVENTS.createSoundEvent("block.monkey_brush.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_PLACE = SOUND_EVENTS.createSoundEvent("block.monkey_brush.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_STEP = SOUND_EVENTS.createSoundEvent("block.monkey_brush.step");
 
-	public static final RegistryObject<SoundEvent> WATER_HYACINTH_BREAK = HELPER.createSoundEvent("block.water_hyacinth.break");
-	public static final RegistryObject<SoundEvent> WATER_HYACINTH_FALL = HELPER.createSoundEvent("block.water_hyacinth.fall");
-	public static final RegistryObject<SoundEvent> WATER_HYACINTH_HIT = HELPER.createSoundEvent("block.water_hyacinth.hit");
-	public static final RegistryObject<SoundEvent> WATER_HYACINTH_PLACE = HELPER.createSoundEvent("block.water_hyacinth.place");
-	public static final RegistryObject<SoundEvent> WATER_HYACINTH_STEP = HELPER.createSoundEvent("block.water_hyacinth.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_BREAK = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_FALL = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_HIT = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_PLACE = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_STEP = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.step");
 
-	public static final RegistryObject<SoundEvent> CURRANT_STALK_BREAK = HELPER.createSoundEvent("block.currant_stalk.break");
-	public static final RegistryObject<SoundEvent> CURRANT_STALK_FALL = HELPER.createSoundEvent("block.currant_stalk.fall");
-	public static final RegistryObject<SoundEvent> CURRANT_STALK_HIT = HELPER.createSoundEvent("block.currant_stalk.hit");
-	public static final RegistryObject<SoundEvent> CURRANT_STALK_PLACE = HELPER.createSoundEvent("block.currant_stalk.place");
-	public static final RegistryObject<SoundEvent> CURRANT_STALK_STEP = HELPER.createSoundEvent("block.currant_stalk.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_STALK_BREAK = SOUND_EVENTS.createSoundEvent("block.currant_stalk.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_STALK_FALL = SOUND_EVENTS.createSoundEvent("block.currant_stalk.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_STALK_HIT = SOUND_EVENTS.createSoundEvent("block.currant_stalk.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_STALK_PLACE = SOUND_EVENTS.createSoundEvent("block.currant_stalk.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_STALK_STEP = SOUND_EVENTS.createSoundEvent("block.currant_stalk.step");
 
-	public static final RegistryObject<SoundEvent> CURRANT_LEAVES_BREAK = HELPER.createSoundEvent("block.currant_leaves.break");
-	public static final RegistryObject<SoundEvent> CURRANT_LEAVES_FALL = HELPER.createSoundEvent("block.currant_leaves.fall");
-	public static final RegistryObject<SoundEvent> CURRANT_LEAVES_HIT = HELPER.createSoundEvent("block.currant_leaves.hit");
-	public static final RegistryObject<SoundEvent> CURRANT_LEAVES_PLACE = HELPER.createSoundEvent("block.currant_leaves.place");
-	public static final RegistryObject<SoundEvent> CURRANT_LEAVES_STEP = HELPER.createSoundEvent("block.currant_leaves.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_LEAVES_BREAK = SOUND_EVENTS.createSoundEvent("block.currant_leaves.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_LEAVES_FALL = SOUND_EVENTS.createSoundEvent("block.currant_leaves.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_LEAVES_HIT = SOUND_EVENTS.createSoundEvent("block.currant_leaves.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_LEAVES_PLACE = SOUND_EVENTS.createSoundEvent("block.currant_leaves.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_LEAVES_STEP = SOUND_EVENTS.createSoundEvent("block.currant_leaves.step");
 
-	public static final RegistryObject<SoundEvent> HANGING_CURRANT_PICK_CURRANT = HELPER.createSoundEvent("block.hanging_currant.pick_currant");
+	public static final DeferredHolder<SoundEvent, SoundEvent> HANGING_CURRANT_PICK_CURRANT = SOUND_EVENTS.createSoundEvent("block.hanging_currant.pick_currant");
 
-	public static final RegistryObject<SoundEvent> COCHINEAL_DEATH = HELPER.createSoundEvent("entity.cochineal.death");
-	public static final RegistryObject<SoundEvent> COCHINEAL_HURT = HELPER.createSoundEvent("entity.cochineal.hurt");
-	public static final RegistryObject<SoundEvent> COCHINEAL_SUCKLE = HELPER.createSoundEvent("entity.cochineal.suckle");
-	public static final RegistryObject<SoundEvent> COCHINEAL_BOUNCE = HELPER.createSoundEvent("entity.cochineal.bounce");
-	public static final RegistryObject<SoundEvent> COCHINEAL_GRAB = HELPER.createSoundEvent("entity.cochineal.grab");
+	public static final DeferredHolder<SoundEvent, SoundEvent> COCHINEAL_DEATH = SOUND_EVENTS.createSoundEvent("entity.cochineal.death");
+	public static final DeferredHolder<SoundEvent, SoundEvent> COCHINEAL_HURT = SOUND_EVENTS.createSoundEvent("entity.cochineal.hurt");
+	public static final DeferredHolder<SoundEvent, SoundEvent> COCHINEAL_SUCKLE = SOUND_EVENTS.createSoundEvent("entity.cochineal.suckle");
+	public static final DeferredHolder<SoundEvent, SoundEvent> COCHINEAL_BOUNCE = SOUND_EVENTS.createSoundEvent("entity.cochineal.bounce");
+	public static final DeferredHolder<SoundEvent, SoundEvent> COCHINEAL_GRAB = SOUND_EVENTS.createSoundEvent("entity.cochineal.grab");
 
-	public static final RegistryObject<SoundEvent> TETRA_AMBIENT = HELPER.createSoundEvent("entity.tetra.ambient");
-	public static final RegistryObject<SoundEvent> TETRA_DEATH = HELPER.createSoundEvent("entity.tetra.death");
-	public static final RegistryObject<SoundEvent> TETRA_FLOP = HELPER.createSoundEvent("entity.tetra.flop");
-	public static final RegistryObject<SoundEvent> TETRA_HURT = HELPER.createSoundEvent("entity.tetra.hurt");
+	public static final DeferredHolder<SoundEvent, SoundEvent> TETRA_AMBIENT = SOUND_EVENTS.createSoundEvent("entity.tetra.ambient");
+	public static final DeferredHolder<SoundEvent, SoundEvent> TETRA_DEATH = SOUND_EVENTS.createSoundEvent("entity.tetra.death");
+	public static final DeferredHolder<SoundEvent, SoundEvent> TETRA_FLOP = SOUND_EVENTS.createSoundEvent("entity.tetra.flop");
+	public static final DeferredHolder<SoundEvent, SoundEvent> TETRA_HURT = SOUND_EVENTS.createSoundEvent("entity.tetra.hurt");
 
-	public static final RegistryObject<SoundEvent> PASSION_FRUIT_SEED_SPIT = HELPER.createSoundEvent("entity.passion_fruit_seed.spit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_FRUIT_SEED_SPIT = SOUND_EVENTS.createSoundEvent("entity.passion_fruit_seed.spit");
 
 	public static class AtmosphericSoundTypes {
-		public static final ForgeSoundType ARID_SAND = new ForgeSoundType(1.0F, 1.0F, ARID_SAND_BREAK, ARID_SAND_STEP, ARID_SAND_PLACE, ARID_SAND_HIT, ARID_SAND_FALL);
-		public static final ForgeSoundType ARID_SANDSTONE = new ForgeSoundType(1.0F, 1.0F, ARID_SANDSTONE_BREAK, ARID_SANDSTONE_STEP, ARID_SANDSTONE_PLACE, ARID_SANDSTONE_HIT, ARID_SANDSTONE_FALL);
-		public static final ForgeSoundType SUSPICIOUS_ARID_SAND = new ForgeSoundType(1.0F, 1.0F, SUSPICIOUS_ARID_SAND_BREAK, SUSPICIOUS_ARID_SAND_STEP, SUSPICIOUS_ARID_SAND_PLACE, SUSPICIOUS_ARID_SAND_HIT, SUSPICIOUS_ARID_SAND_FALL);
-		public static final ForgeSoundType ARID_GLASS = new ForgeSoundType(1.0F, 1.0F, ARID_GLASS_BREAK, ARID_GLASS_STEP, ARID_GLASS_PLACE, ARID_GLASS_HIT, ARID_GLASS_FALL);
-		public static final ForgeSoundType ARID_SPROUTS = new ForgeSoundType(1.0F, 1.0F, ARID_SPROUTS_BREAK, ARID_SPROUTS_STEP, ARID_SPROUTS_PLACE, ARID_SPROUTS_HIT, ARID_SPROUTS_FALL);
-		public static final ForgeSoundType CARMINE = new ForgeSoundType(1.0F, 1.0F, CARMINE_BREAK, CARMINE_STEP, CARMINE_PLACE, CARMINE_HIT, CARMINE_FALL);
-		public static final ForgeSoundType MONKEY_BRUSH = new ForgeSoundType(1.0F, 1.0F, MONKEY_BRUSH_BREAK, MONKEY_BRUSH_STEP, MONKEY_BRUSH_PLACE, MONKEY_BRUSH_HIT, MONKEY_BRUSH_FALL);
-		public static final ForgeSoundType CURRANT_LEAVES = new ForgeSoundType(1.0F, 1.0F, CURRANT_LEAVES_BREAK, CURRANT_LEAVES_STEP, CURRANT_LEAVES_PLACE, CURRANT_LEAVES_HIT, CURRANT_LEAVES_FALL);
-		public static final ForgeSoundType CURRANT_STALK = new ForgeSoundType(1.0F, 1.0F, CURRANT_STALK_BREAK, CURRANT_STALK_STEP, CURRANT_STALK_PLACE, CURRANT_STALK_HIT, CURRANT_STALK_FALL);
-		public static final ForgeSoundType WATER_HYACINTH = new ForgeSoundType(1.0F, 1.0F, WATER_HYACINTH_BREAK, WATER_HYACINTH_STEP, WATER_HYACINTH_PLACE, WATER_HYACINTH_HIT, WATER_HYACINTH_FALL);
+		public static final DeferredSoundType ARID_SAND = new DeferredSoundType(1.0F, 1.0F, ARID_SAND_BREAK, ARID_SAND_STEP, ARID_SAND_PLACE, ARID_SAND_HIT, ARID_SAND_FALL);
+		public static final DeferredSoundType ARID_SANDSTONE = new DeferredSoundType(1.0F, 1.0F, ARID_SANDSTONE_BREAK, ARID_SANDSTONE_STEP, ARID_SANDSTONE_PLACE, ARID_SANDSTONE_HIT, ARID_SANDSTONE_FALL);
+		public static final DeferredSoundType SUSPICIOUS_ARID_SAND = new DeferredSoundType(1.0F, 1.0F, SUSPICIOUS_ARID_SAND_BREAK, SUSPICIOUS_ARID_SAND_STEP, SUSPICIOUS_ARID_SAND_PLACE, SUSPICIOUS_ARID_SAND_HIT, SUSPICIOUS_ARID_SAND_FALL);
+		public static final DeferredSoundType ARID_GLASS = new DeferredSoundType(1.0F, 1.0F, ARID_GLASS_BREAK, ARID_GLASS_STEP, ARID_GLASS_PLACE, ARID_GLASS_HIT, ARID_GLASS_FALL);
+		public static final DeferredSoundType ARID_SPROUTS = new DeferredSoundType(1.0F, 1.0F, ARID_SPROUTS_BREAK, ARID_SPROUTS_STEP, ARID_SPROUTS_PLACE, ARID_SPROUTS_HIT, ARID_SPROUTS_FALL);
+		public static final DeferredSoundType CARMINE = new DeferredSoundType(1.0F, 1.0F, CARMINE_BREAK, CARMINE_STEP, CARMINE_PLACE, CARMINE_HIT, CARMINE_FALL);
+		public static final DeferredSoundType MONKEY_BRUSH = new DeferredSoundType(1.0F, 1.0F, MONKEY_BRUSH_BREAK, MONKEY_BRUSH_STEP, MONKEY_BRUSH_PLACE, MONKEY_BRUSH_HIT, MONKEY_BRUSH_FALL);
+		public static final DeferredSoundType CURRANT_LEAVES = new DeferredSoundType(1.0F, 1.0F, CURRANT_LEAVES_BREAK, CURRANT_LEAVES_STEP, CURRANT_LEAVES_PLACE, CURRANT_LEAVES_HIT, CURRANT_LEAVES_FALL);
+		public static final DeferredSoundType CURRANT_STALK = new DeferredSoundType(1.0F, 1.0F, CURRANT_STALK_BREAK, CURRANT_STALK_STEP, CURRANT_STALK_PLACE, CURRANT_STALK_HIT, CURRANT_STALK_FALL);
+		public static final DeferredSoundType WATER_HYACINTH = new DeferredSoundType(1.0F, 1.0F, WATER_HYACINTH_BREAK, WATER_HYACINTH_STEP, WATER_HYACINTH_PLACE, WATER_HYACINTH_HIT, WATER_HYACINTH_FALL);
 	}
 }

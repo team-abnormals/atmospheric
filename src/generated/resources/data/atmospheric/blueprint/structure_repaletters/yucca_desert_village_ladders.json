@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "atmospheric:config",
+          "value": "yucca_desert_villages"
+        },
+        {
+          "type": "neoforge:and",
+          "values": [
+            {
+              "type": "woodworks:config",
+              "value": "wooden_ladders"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "wooden_ladders_in_villages"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "priority": 200,
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces": "minecraft:ladder",
+    "replaces_with": "atmospheric:yucca_ladder"
+  },
+  "structures": "minecraft:village_desert"
+}

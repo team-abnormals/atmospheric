@@ -2,7 +2,6 @@ package com.teamabnormals.atmospheric.core.data.server.tags;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBiomeTags;
-import com.teamabnormals.blueprint.core.other.tags.BlueprintBiomeTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
@@ -10,11 +9,12 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
-import static com.teamabnormals.atmospheric.core.registry.AtmosphericBiomes.*;
+import static com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericBiomes.*;
 
 public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 
@@ -30,7 +30,7 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 		this.tag(BiomeTags.HAS_TRAIL_RUINS).add(RAINFOREST, ASPEN_PARKLAND, KOUSA_JUNGLE);
 
 		this.tag(BiomeTags.IS_FOREST).addTag(AtmosphericBiomeTags.IS_RAINFOREST).add(LAUREL_FOREST, GRIMWOODS);
-		this.tag(BlueprintBiomeTags.IS_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET);
+		this.tag(Tags.Biomes.IS_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET);
 		this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(ASPEN_PARKLAND, KOUSA_JUNGLE, GRIMWOODS);
 		this.tag(BiomeTags.HAS_RUINED_PORTAL_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET);
 		this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(SCRUBLAND);

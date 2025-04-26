@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:windswept_savanna",
+  "features": "atmospheric:windswept_savanna_yucca_trees",
+  "step": "vegetal_decoration"
+}

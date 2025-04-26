@@ -5,20 +5,19 @@ import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 import java.util.function.Supplier;
 
 public class AtmosphericBlockSubRegistryHelper extends BlockSubRegistryHelper {
 
 	public AtmosphericBlockSubRegistryHelper(RegistryHelper parent) {
-		super(parent, parent.getItemSubHelper().getDeferredRegister(), parent.getBlockSubHelper().getDeferredRegister());
+		super(parent);
 	}
 
-	public <B extends Block> RegistryObject<B> createWallOrVerticalBlock(String name, String wallName, Supplier<? extends B> supplier, Supplier<? extends B> wallSupplier) {
-		RegistryObject<B> block = this.deferredRegister.register(wallName, wallSupplier);
-		parent.getSubHelper(ForgeRegistries.ITEMS).getDeferredRegister().register(name, () -> new MonkeyBrushItem(supplier.get(), block.get(), new Item.Properties()));
+	public <B extends Block> DeferredBlock<B> createWallOrVerticalBlock(String name, String wallName, Supplier<? extends B> supplier, Supplier<? extends B> wallSupplier) {
+		DeferredBlock<B> block = this.deferredRegister.register(wallName, wallSupplier);
+		this.itemRegister.register(name, () -> new MonkeyBrushItem(supplier.get(), block.get(), new Item.Properties()));
 		return block;
 	}
 }

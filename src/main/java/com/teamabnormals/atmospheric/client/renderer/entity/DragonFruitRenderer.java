@@ -15,15 +15,15 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class DragonFruitRenderer<T extends DragonFruit> extends EntityRenderer<T> implements RenderLayerParent<T, DragonFruitModel<T>> {
-	private static final ResourceLocation DRAGON_FRUIT = new ResourceLocation(Atmospheric.MOD_ID, "textures/block/dragon_fruit.png");
-	private static final ResourceLocation DRAGON_FRUIT_FLOWERING = new ResourceLocation(Atmospheric.MOD_ID, "textures/block/flowering_dragon_fruit.png");
-	private static final ResourceLocation ENDER_DRAGON_FRUIT = new ResourceLocation(Atmospheric.MOD_ID, "textures/block/ender_dragon_fruit.png");
-	private static final ResourceLocation ENDER_DRAGON_FRUIT_FLOWERING = new ResourceLocation(Atmospheric.MOD_ID, "textures/block/flowering_ender_dragon_fruit.png");
+	private static final ResourceLocation DRAGON_FRUIT = Atmospheric.location("textures/block/dragon_fruit.png");
+	private static final ResourceLocation DRAGON_FRUIT_FLOWERING = Atmospheric.location("textures/block/flowering_dragon_fruit.png");
+	private static final ResourceLocation ENDER_DRAGON_FRUIT = Atmospheric.location("textures/block/ender_dragon_fruit.png");
+	private static final ResourceLocation ENDER_DRAGON_FRUIT_FLOWERING = Atmospheric.location("textures/block/flowering_ender_dragon_fruit.png");
 
 	private final DragonFruitModel<T> model;
 	protected final RenderLayer<T, DragonFruitModel<T>> layer = new FloweringDragonFruitLayer<>(this);
@@ -42,7 +42,7 @@ public class DragonFruitRenderer<T extends DragonFruit> extends EntityRenderer<T
 
 		VertexConsumer vertexConsumer = buffer.getBuffer(this.model.renderType(this.getTextureLocation(entity)));
 
-		this.getModel().renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+		this.getModel().renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
 		this.layer.render(poseStack, buffer, packedLight, entity, 0.0F, 0.0F, partialTicks, 0.0F, 0.0F, 0.0F);
 
 		super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);

@@ -6,9 +6,9 @@ import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -125,7 +125,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(MONKEY_BRUSH_PLACEABLE).addTag(BlockTags.DIRT).addTag(BlockTags.LOGS_THAT_BURN);
 		this.tag(PASSION_VINE_GROWABLE_ON).add(ROSEWOOD_LEAVES.get()).addTag(ROSEWOOD_LOGS);
 		this.tag(ALOE_PLACEABLE).addTag(BlockTags.SAND);
-		this.tag(TALL_ALOE_GROWABLE_ON).addTag(Tags.Blocks.SAND_COLORLESS);
+		this.tag(TALL_ALOE_GROWABLE_ON).addTag(Tags.Blocks.SANDS_COLORLESS);
 		this.tag(DESERT_PLANT_PLACEABLE).addTag(BlockTags.SAND).addTag(BlockTags.DIRT);
 		this.tag(YUCCA_FLOWER_PLACEABLE).add(Blocks.CACTUS, YUCCA_LEAVES.get()).addTag(DESERT_PLANT_PLACEABLE);
 		this.tag(BARREL_CACTUS_PLACEABLE).addTag(BlockTags.SAND);
@@ -143,10 +143,10 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(BlueprintBlockTags.WOODEN_BOARDS).add(ROSEWOOD_BOARDS.get(), MORADO_BOARDS.get(), YUCCA_BOARDS.get(), KOUSA_BOARDS.get(), ASPEN_BOARDS.get(), GRIMWOOD_BOARDS.get(), LAUREL_BOARDS.get());
 		this.tag(BlueprintBlockTags.LEAF_PILES).add(ROSEWOOD_LEAF_PILE.get(), MORADO_LEAF_PILE.get(), FLOWERING_MORADO_LEAF_PILE.get(), YUCCA_LEAF_PILE.get(), KOUSA_LEAF_PILE.get(), ASPEN_LEAF_PILE.get(), GREEN_ASPEN_LEAF_PILE.get(), GRIMWOOD_LEAF_PILE.get(), LAUREL_LEAF_PILE.get(), DRY_LAUREL_LEAF_PILE.get(), CURRANT_LEAF_PILE.get());
 
-		this.tag(Tags.Blocks.SAND_COLORLESS).add(ARID_SAND.get());
-		this.tag(Tags.Blocks.SAND_RED).add(RED_ARID_SAND.get());
-		this.tag(Tags.Blocks.SANDSTONE).add(ARID_SANDSTONE.get(), CUT_ARID_SANDSTONE.get(), CHISELED_ARID_SANDSTONE.get(), SMOOTH_ARID_SANDSTONE.get(), RED_ARID_SANDSTONE.get(), CUT_RED_ARID_SANDSTONE.get(), CHISELED_RED_ARID_SANDSTONE.get(), SMOOTH_RED_ARID_SANDSTONE.get());
-		this.tag(Tags.Blocks.GLASS_COLORLESS).add(ARID_GLASS.get());
+		this.tag(Tags.Blocks.SANDS_COLORLESS).add(ARID_SAND.get());
+		this.tag(Tags.Blocks.SANDS_RED).add(RED_ARID_SAND.get());
+		this.tag(Tags.Blocks.SANDSTONE_BLOCKS).add(ARID_SANDSTONE.get(), CUT_ARID_SANDSTONE.get(), CHISELED_ARID_SANDSTONE.get(), SMOOTH_ARID_SANDSTONE.get(), RED_ARID_SANDSTONE.get(), CUT_RED_ARID_SANDSTONE.get(), CHISELED_RED_ARID_SANDSTONE.get(), SMOOTH_RED_ARID_SANDSTONE.get());
+		this.tag(Tags.Blocks.GLASS_BLOCKS_COLORLESS).add(ARID_GLASS.get());
 		this.tag(Tags.Blocks.GLASS_PANES_COLORLESS).add(ARID_GLASS_PANE.get());
 	}
 }

@@ -4,6 +4,7 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericStructureProcessor
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,7 +18,7 @@ public class StructureTemplateMixin {
 	@Inject(method = "placeInWorld(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructurePlaceSettings;Lnet/minecraft/util/RandomSource;I)Z", at = @At(value = "HEAD"))
 	private void preventWaterloggingSpread(ServerLevelAccessor level, BlockPos pos1, BlockPos pos2, StructurePlaceSettings settings, RandomSource random, int flag, CallbackInfoReturnable<Boolean> cir) {
 		if (settings.getProcessors().stream().anyMatch(processor -> ((StructureProcessorAccessor) processor).callGetType() == AtmosphericStructureProcessors.PREVENT_WATERLOGGING_SPREAD.get())) {
-			settings.setKeepLiquids(false);
+			settings.setLiquidSettings(LiquidSettings.IGNORE_WATERLOGGING);
 		}
 	}
 }

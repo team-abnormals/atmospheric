@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.teamabnormals.atmospheric.common.block.OrangeBlock;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures;
@@ -16,7 +17,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class OrangesDecorator extends TreeDecorator {
-	public static final Codec<OrangesDecorator> CODEC = RecordCodecBuilder.create(codec -> codec.group(
+	public static final MapCodec<OrangesDecorator> CODEC = RecordCodecBuilder.mapCodec(codec -> codec.group(
 			Codec.floatRange(0.0F, 1.0F).fieldOf("probability").forGetter(instance -> instance.probability),
 			BlockStateProvider.CODEC.fieldOf("block_provider").forGetter(instance -> instance.blockProvider),
 			Codec.floatRange(0.0F, 1.0F).fieldOf("orange_probability").forGetter(instance -> instance.orangeProbability),

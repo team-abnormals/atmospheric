@@ -1,0 +1,44 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+issueTrackerURL = "https://github.com/team-abnormals/atmospheric/issues"
+license = "https://github.com/team-abnormals/atmospheric/blob/main/LICENSE.txt"
+
+[[mixins]]
+    config = "atmospheric.mixins.json"
+
+[[mods]]
+    modId = "atmospheric"
+    version = "${mod_version}"
+    logoFile = "logo.png"
+    itemIcon = "atmospheric:passion_fruit"
+    configBackground = "atmospheric:textures/block/arid_sand.png"
+    authors = "Team Abnormals"
+    credits = "bageldotjpg, five"
+    displayURL = "https://www.teamabnormals.com/mods/atmospheric"
+    displayName = "Atmospheric"
+    description = '''
+    Adds two unique biome types with several variants.
+    Also introduces several new types of blocks, foliage, and plants!
+    There will continue to be more biomes over time!
+    '''
+
+[[dependencies.atmospheric]]
+    modId = "minecraft"
+    type = "required"
+    versionRange = "[${mc_version}]"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.atmospheric]]
+    modId = "neoforge"
+    type = "required"
+    versionRange = "[${neoforge},)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.atmospheric]]
+    modId = "blueprint"
+    type = "required"
+    versionRange = "[${blueprint},)"
+    ordering = "AFTER"
+    side = "BOTH"

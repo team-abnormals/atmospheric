@@ -12,7 +12,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:aspen_parkland"
+                      "biomes": "atmospheric:aspen_parkland"
                     }
                   }
                 }
@@ -28,7 +28,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:dunes"
+                      "biomes": "atmospheric:dunes"
                     }
                   }
                 }
@@ -44,7 +44,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:flourishing_dunes"
+                      "biomes": "atmospheric:flourishing_dunes"
                     }
                   }
                 }
@@ -60,7 +60,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:kousa_jungle"
+                      "biomes": "atmospheric:kousa_jungle"
                     }
                   }
                 }
@@ -76,7 +76,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:laurel_forest"
+                      "biomes": "atmospheric:laurel_forest"
                     }
                   }
                 }
@@ -92,7 +92,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:petrified_dunes"
+                      "biomes": "atmospheric:petrified_dunes"
                     }
                   }
                 }
@@ -108,7 +108,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:rainforest"
+                      "biomes": "atmospheric:rainforest"
                     }
                   }
                 }
@@ -124,7 +124,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:rainforest_basin"
+                      "biomes": "atmospheric:rainforest_basin"
                     }
                   }
                 }
@@ -140,7 +140,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:rocky_dunes"
+                      "biomes": "atmospheric:rocky_dunes"
                     }
                   }
                 }
@@ -156,7 +156,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:scrubland"
+                      "biomes": "atmospheric:scrubland"
                     }
                   }
                 }
@@ -172,7 +172,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:snowy_scrubland"
+                      "biomes": "atmospheric:snowy_scrubland"
                     }
                   }
                 }
@@ -188,7 +188,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:sparse_rainforest"
+                      "biomes": "atmospheric:sparse_rainforest"
                     }
                   }
                 }
@@ -204,7 +204,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:sparse_rainforest_basin"
+                      "biomes": "atmospheric:sparse_rainforest_basin"
                     }
                   }
                 }
@@ -220,7 +220,7 @@
                   "entity": "this",
                   "predicate": {
                     "location": {
-                      "biome": "atmospheric:spiny_thicket"
+                      "biomes": "atmospheric:spiny_thicket"
                     }
                   }
                 }
@@ -229,6 +229,7 @@
             "trigger": "minecraft:location"
           }
         },
+        "indexed_requirements": [],
         "requirements": [
           [
             "atmospheric:atmospheric:rainforest"

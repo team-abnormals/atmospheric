@@ -1,6 +1,6 @@
 package com.teamabnormals.atmospheric.common.levelgen.structure.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericStructureProcessors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.WorldGenRegion;
@@ -14,7 +14,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 public class PreventWaterloggingSpreadProcessor extends StructureProcessor {
-	public static final Codec<PreventWaterloggingSpreadProcessor> CODEC = Codec.unit(PreventWaterloggingSpreadProcessor::new);
+	public static final MapCodec<PreventWaterloggingSpreadProcessor> CODEC = MapCodec.unit(PreventWaterloggingSpreadProcessor::new);
 
 	public PreventWaterloggingSpreadProcessor() {
 	}

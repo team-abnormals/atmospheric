@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.SynchedEntityData.Builder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
@@ -35,8 +36,8 @@ public class CamelMixin extends AbstractHorse implements VariantHolder<CamelVari
 	}
 
 	@Inject(method = "defineSynchedData", at = @At("TAIL"))
-	private void defineSynchedData(CallbackInfo ci) {
-		this.entityData.define(DATA_TYPE_ID, CamelVariant.DESERT.id());
+	private void defineSynchedData(Builder builder, CallbackInfo ci) {
+		builder.define(DATA_TYPE_ID, CamelVariant.DESERT.id());
 	}
 
 	@Inject(method = "readAdditionalSaveData", at = @At("TAIL"))
@@ -45,7 +46,7 @@ public class CamelMixin extends AbstractHorse implements VariantHolder<CamelVari
 	}
 
 	@Inject(method = "finalizeSpawn", at = @At("HEAD"))
-	private void readAdditionalSaveData(ServerLevelAccessor level, DifficultyInstance p_251264_, MobSpawnType p_250254_, SpawnGroupData p_249259_, CompoundTag p_251838_, CallbackInfoReturnable<SpawnGroupData> cir) {
+	private void readAdditionalSaveData(ServerLevelAccessor level, DifficultyInstance p_251264_, MobSpawnType p_250254_, SpawnGroupData p_249259_, CallbackInfoReturnable<SpawnGroupData> cir) {
 		if (level.getBiome(this.blockPosition()).is(AtmosphericBiomeTags.SPAWNS_ARID_CAMELS)) {
 			this.setVariant(CamelVariant.ARID);
 		}

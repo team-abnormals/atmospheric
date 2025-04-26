@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "atmospheric:passion_fruit_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "atmospheric:passion_fruit"
+  }
+}

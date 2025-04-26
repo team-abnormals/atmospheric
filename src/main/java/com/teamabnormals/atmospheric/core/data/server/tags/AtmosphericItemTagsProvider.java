@@ -11,8 +11,8 @@ import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -31,6 +31,9 @@ public class AtmosphericItemTagsProvider extends BlueprintItemTagsProvider {
 
 		this.tag(COCHINEAL_FOOD).add(AtmosphericItems.DRAGON_FRUIT.get()).addTag(COCHINEAL_SUPER_LOVE_FOOD);
 		this.tag(COCHINEAL_SUPER_LOVE_FOOD).add(AtmosphericItems.GOLDEN_DRAGON_FRUIT.get());
+
+		this.tag(ItemTags.CHICKEN_FOOD).add(AtmosphericItems.ALOE_KERNELS.get());
+		this.tag(ItemTags.PARROT_FOOD).add(AtmosphericItems.ALOE_KERNELS.get());
 
 		this.copy(AtmosphericBlockTags.ROSEWOOD_LOGS, ROSEWOOD_LOGS);
 		this.copy(AtmosphericBlockTags.MORADO_LOGS, MORADO_LOGS);
@@ -53,8 +56,8 @@ public class AtmosphericItemTagsProvider extends BlueprintItemTagsProvider {
 		this.copy(BlockTags.STANDING_SIGNS, ItemTags.SIGNS);
 		this.copy(BlockTags.DIRT, ItemTags.DIRT);
 		this.tag(ItemTags.FLOWERS).add(AtmosphericItems.YELLOW_BLOSSOMS.get());
-		this.tag(ItemTags.BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.getFirst().get(), AtmosphericItems.MORADO_BOAT.getFirst().get(), AtmosphericItems.YUCCA_BOAT.getFirst().get(), AtmosphericItems.KOUSA_BOAT.getFirst().get(), AtmosphericItems.ASPEN_BOAT.getFirst().get(), AtmosphericItems.GRIMWOOD_BOAT.getFirst().get(), AtmosphericItems.LAUREL_BOAT.getFirst().get());
-		this.tag(ItemTags.CHEST_BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.getSecond().get(), AtmosphericItems.MORADO_BOAT.getSecond().get(), AtmosphericItems.YUCCA_BOAT.getSecond().get(), AtmosphericItems.KOUSA_BOAT.getSecond().get(), AtmosphericItems.ASPEN_BOAT.getSecond().get(), AtmosphericItems.GRIMWOOD_BOAT.getSecond().get(), AtmosphericItems.LAUREL_BOAT.getSecond().get());
+		this.tag(ItemTags.BOATS).add(AtmosphericItems.ROSEWOOD_BOAT.get(), AtmosphericItems.MORADO_BOAT.get(), AtmosphericItems.YUCCA_BOAT.get(), AtmosphericItems.KOUSA_BOAT.get(), AtmosphericItems.ASPEN_BOAT.get(), AtmosphericItems.GRIMWOOD_BOAT.get(), AtmosphericItems.LAUREL_BOAT.get());
+		this.tag(ItemTags.CHEST_BOATS).add(AtmosphericItems.ROSEWOOD_CHEST_BOAT.get(), AtmosphericItems.MORADO_CHEST_BOAT.get(), AtmosphericItems.YUCCA_CHEST_BOAT.get(), AtmosphericItems.KOUSA_CHEST_BOAT.get(), AtmosphericItems.ASPEN_CHEST_BOAT.get(), AtmosphericItems.GRIMWOOD_CHEST_BOAT.get(), AtmosphericItems.LAUREL_CHEST_BOAT.get());
 		this.tag(BlueprintItemTags.FURNACE_BOATS).add(AtmosphericItems.ROSEWOOD_FURNACE_BOAT.get(), AtmosphericItems.MORADO_FURNACE_BOAT.get(), AtmosphericItems.YUCCA_FURNACE_BOAT.get(), AtmosphericItems.KOUSA_FURNACE_BOAT.get(), AtmosphericItems.ASPEN_FURNACE_BOAT.get(), AtmosphericItems.GRIMWOOD_FURNACE_BOAT.get(), AtmosphericItems.LAUREL_FURNACE_BOAT.get());
 		this.tag(BlueprintItemTags.LARGE_BOATS).add(AtmosphericItems.LARGE_ROSEWOOD_BOAT.get(), AtmosphericItems.LARGE_MORADO_BOAT.get(), AtmosphericItems.LARGE_YUCCA_BOAT.get(), AtmosphericItems.LARGE_KOUSA_BOAT.get(), AtmosphericItems.LARGE_ASPEN_BOAT.get(), AtmosphericItems.LARGE_GRIMWOOD_BOAT.get(), AtmosphericItems.LARGE_LAUREL_BOAT.get());
 		this.tag(ItemTags.PIGLIN_LOVED).add(AtmosphericItems.SHIMMERING_PASSION_FRUIT.get(), SHIMMERING_PASSION_FRUIT_CRATE.get().asItem(), AtmosphericItems.GOLDEN_DRAGON_FRUIT.get(), GOLDEN_DRAGON_FRUIT_CRATE.get().asItem());
@@ -64,10 +67,10 @@ public class AtmosphericItemTagsProvider extends BlueprintItemTagsProvider {
 		this.tag(ItemTags.TRIM_TEMPLATES).add(AtmosphericItems.APOSTLE_ARMOR_TRIM_SMITHING_TEMPLATE.get(), AtmosphericItems.DRUID_ARMOR_TRIM_SMITHING_TEMPLATE.get(), AtmosphericItems.PETRIFIED_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 		this.tag(ItemTags.TRIM_MATERIALS).add(AtmosphericItems.CARMINE_HUSK.get());
 
-		this.copy(Tags.Blocks.SAND_COLORLESS, Tags.Items.SAND_COLORLESS);
-		this.copy(Tags.Blocks.SAND_RED, Tags.Items.SAND_RED);
-		this.copy(Tags.Blocks.SANDSTONE, Tags.Items.SANDSTONE);
-		this.copy(Tags.Blocks.GLASS_COLORLESS, Tags.Items.GLASS_COLORLESS);
+		this.copy(Tags.Blocks.SANDS_COLORLESS, Tags.Items.SANDS_COLORLESS);
+		this.copy(Tags.Blocks.SANDS_RED, Tags.Items.SANDS_RED);
+		this.copy(Tags.Blocks.SANDSTONE_BLOCKS, Tags.Items.SANDSTONE_BLOCKS);
+		this.copy(Tags.Blocks.GLASS_BLOCKS_COLORLESS, Tags.Items.GLASS_BLOCKS_COLORLESS);
 		this.copy(Tags.Blocks.GLASS_PANES_COLORLESS, Tags.Items.GLASS_PANES_COLORLESS);
 		this.tag(Tags.Items.BOOKSHELVES).add(ROSEWOOD_BOOKSHELF.get().asItem(), MORADO_BOOKSHELF.get().asItem(), YUCCA_BOOKSHELF.get().asItem(), KOUSA_BOOKSHELF.get().asItem(), ASPEN_BOOKSHELF.get().asItem(), GRIMWOOD_BOOKSHELF.get().asItem(), LAUREL_BOOKSHELF.get().asItem());
 		this.tag(FRUITS).addTags(FRUITS_PASSION_FRUIT, FRUITS_CURRANT, FRUITS_DRAGON_FRUIT, FRUITS_ORANGE);

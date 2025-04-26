@@ -2,21 +2,17 @@ package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.PlantType;
-import net.minecraftforge.common.ToolAction;
-import net.minecraftforge.common.ToolActions;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 
 public class CrustoseBlock extends Block implements BonemealableBlock, Crustose {
 
@@ -25,18 +21,11 @@ public class CrustoseBlock extends Block implements BonemealableBlock, Crustose 
 	}
 
 	@Override
-	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
-		if (toolAction == ToolActions.SHOVEL_FLATTEN) {
+	public BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility toolAction, boolean simulate) {
+		if (toolAction == ItemAbilities.SHOVEL_FLATTEN) {
 			return AtmosphericBlocks.CRUSTOSE_PATH.get().defaultBlockState();
 		}
 		return super.getToolModifiedState(state, context, toolAction, simulate);
-	}
-
-	@Override
-	public boolean canSustainPlant(BlockState state, BlockGetter level, BlockPos pos, Direction direction, IPlantable plantable) {
-		final BlockPos plantPos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
-		final PlantType plantType = plantable.getPlantType(level, plantPos);
-		return plantType == PlantType.PLAINS;
 	}
 
 	@Override
@@ -46,8 +35,8 @@ public class CrustoseBlock extends Block implements BonemealableBlock, Crustose 
 
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
-		return this.isCrustoseValidBonemealTarget(level, pos, state, isClient);
+	public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+		return this.isCrustoseValidBonemealTarget(level, pos, state);
 	}
 
 	@Override

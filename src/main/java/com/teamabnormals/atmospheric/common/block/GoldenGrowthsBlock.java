@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.mojang.serialization.MapCodec;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
@@ -14,6 +15,11 @@ public class GoldenGrowthsBlock extends BushBlock {
 
 	public GoldenGrowthsBlock(Properties properties) {
 		super(properties);
+	}
+
+	@Override
+	protected MapCodec<? extends BushBlock> codec() {
+		return null;
 	}
 
 	@Override

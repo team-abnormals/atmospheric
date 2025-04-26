@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "aloe_vera": {
+      "trigger": "atmospheric:aloe_vera_prick"
+    },
+    "barrel_cactus": {
+      "trigger": "atmospheric:barrel_cactus_prick"
+    },
+    "yucca_flower": {
+      "trigger": "atmospheric:yucca_prick"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.atmospheric.adventure.dunes_pricks.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "atmospheric:yucca_flower"
+    },
+    "title": {
+      "translate": "advancements.atmospheric.adventure.dunes_pricks.title"
+    }
+  },
+  "requirements": [
+    [
+      "yucca_flower"
+    ],
+    [
+      "aloe_vera"
+    ],
+    [
+      "barrel_cactus"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

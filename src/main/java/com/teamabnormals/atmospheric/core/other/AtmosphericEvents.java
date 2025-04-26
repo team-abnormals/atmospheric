@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.core.other;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericEntityTypeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.core.BlockPos;
@@ -17,13 +18,13 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.event.entity.ProjectileImpactEvent;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
 
 import java.util.Calendar;
 
@@ -50,50 +51,51 @@ public class AtmosphericEvents {
 
 
 	@SubscribeEvent
-	public static void onLivingAttack(LivingAttackEvent event) {
+	public static void onLivingAttack(LivingIncomingDamageEvent event) {
 		if (event.getEntity().getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE) && event.getSource().is(DamageTypes.CACTUS)) {
 			event.setCanceled(true);
 		}
 	}
 
 	@SubscribeEvent
-	public static void livingHurt(LivingHurtEvent event) {
+	public static void livingHurt(LivingDamageEvent.Pre event) {
 		LivingEntity entity = event.getEntity();
 
 		boolean undead = entity.isInvertedHealAndHarm();
-		boolean hasRelief = entity.hasEffect(AtmosphericMobEffects.RELIEF.get());
-		boolean hasWorsening = entity.hasEffect(AtmosphericMobEffects.WORSENING.get());
-
-		if ((!undead && hasRelief) || (undead && hasWorsening)) {
-			int amplifier = entity.getEffect(!undead ? AtmosphericMobEffects.RELIEF.get() : AtmosphericMobEffects.WORSENING.get()).getAmplifier();
-			entity.getPersistentData().putInt("PotionHealAmplifier", amplifier);
-			entity.getPersistentData().putFloat("IncomingDamage", event.getAmount());
-			entity.getPersistentData().putBoolean("Heal", true);
-		}
+		boolean hasRelief = entity.hasEffect(AtmosphericMobEffects.RELIEF);
+		boolean hasWorsening = entity.hasEffect(AtmosphericMobEffects.WORSENING);
 
 		if ((!undead && hasWorsening) || (undead && hasRelief)) {
-			int amplifier = entity.getEffect(!undead ? AtmosphericMobEffects.WORSENING.get() : AtmosphericMobEffects.RELIEF.get()).getAmplifier();
-			if (event.getAmount() >= (amplifier + 1)) {
-				event.setAmount(event.getAmount() + (amplifier + 1));
+			int amplifier = entity.getEffect(!undead ? AtmosphericMobEffects.WORSENING : AtmosphericMobEffects.RELIEF).getAmplifier();
+			if (event.getOriginalDamage() >= (amplifier + 1)) {
+				event.setNewDamage(event.getOriginalDamage() + (amplifier + 1));
 			}
+		}
+
+		if ((!undead && hasRelief) || (undead && hasWorsening)) {
+			int amplifier = entity.getEffect(!undead ? AtmosphericMobEffects.RELIEF : AtmosphericMobEffects.WORSENING).getAmplifier();
+			entity.getPersistentData().putInt("PotionHealAmplifier", amplifier);
+			entity.getPersistentData().putFloat("IncomingDamage", event.getNewDamage());
+			entity.getPersistentData().putBoolean("Heal", true);
 		}
 	}
 
 	@SubscribeEvent
-	public static void livingTick(LivingTickEvent event) {
-		LivingEntity entity = event.getEntity();
-		float damage = entity.getPersistentData().getFloat("IncomingDamage");
-		int amplifierHeal = entity.getPersistentData().getInt("PotionHealAmplifier");
-		if (entity.getPersistentData().getBoolean("Heal")) {
-			if (damage >= (amplifierHeal + 1)) {
-				entity.heal((amplifierHeal + 1));
-				entity.getPersistentData().putBoolean("Heal", false);
+	public static void livingTick(EntityTickEvent.Pre event) {
+		if (event.getEntity() instanceof LivingEntity entity) {
+			float damage = entity.getPersistentData().getFloat("IncomingDamage");
+			int amplifierHeal = entity.getPersistentData().getInt("PotionHealAmplifier");
+			if (entity.getPersistentData().getBoolean("Heal")) {
+				if (damage >= (amplifierHeal + 1)) {
+					entity.heal((amplifierHeal + 1));
+					entity.getPersistentData().putBoolean("Heal", false);
+				}
 			}
-		}
 
-		if (event.getEntity() instanceof ServerPlayer player && !player.getCommandSenderWorld().isClientSide()) {
-			if (player.hasEffect(AtmosphericMobEffects.PERSISTENCE.get()) && player.getFoodData().getFoodLevel() <= 6.0F) {
-				AtmosphericCriteriaTriggers.PERSISTENCE_WHILE_STARVING.trigger(player);
+			if (event.getEntity() instanceof ServerPlayer player && !player.getCommandSenderWorld().isClientSide()) {
+				if (player.hasEffect(AtmosphericMobEffects.PERSISTENCE) && player.getFoodData().getFoodLevel() <= 6.0F) {
+					AtmosphericCriteriaTriggers.PERSISTENCE_WHILE_STARVING.get().trigger(player);
+				}
 			}
 		}
 	}
@@ -103,9 +105,9 @@ public class AtmosphericEvents {
 		if (event.getEntity() instanceof ServerPlayer player) {
 			BlockPos pos = event.getPos();
 			Level level = event.getLevel();
-			if (level.getBlockEntity(pos) instanceof RandomizableContainerBlockEntity container && container.serializeNBT().getString("LootTable").equals(Atmospheric.location("chests/arid_garden").toString())) {
+			if (level.getBlockEntity(pos) instanceof RandomizableContainerBlockEntity container && container.getLootTable() == AtmosphericLootTables.ARID_GARDEN) {
 				if (player.getItemBySlot(EquipmentSlot.HEAD).is(AtmosphericItems.BARREL_CACTUS.get()) && !player.getCommandSenderWorld().isClientSide()) {
-					AtmosphericCriteriaTriggers.LOOT_ARID_GARDEN.trigger(player);
+					AtmosphericCriteriaTriggers.LOOT_ARID_GARDEN.get().trigger(player);
 				}
 			}
 		}

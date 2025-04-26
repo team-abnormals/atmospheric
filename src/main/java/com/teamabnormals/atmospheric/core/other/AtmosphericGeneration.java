@@ -7,11 +7,10 @@ import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.fml.common.EventBusSubscriber;
 
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericPlacedFeatures.*;
 
-@EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericGeneration {
 
 	public static void rainforest(BiomeGenerationSettings.Builder generation, boolean basin, boolean sparse) {

@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "clayworks"
+        },
+        {
+          "type": "clayworks:config",
+          "value": "kiln"
+        }
+      ]
+    }
+  ],
+  "type": "clayworks:baking",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "atmospheric:red_arid_sandstone"
+  },
+  "result": {
+    "count": 1,
+    "id": "atmospheric:smooth_red_arid_sandstone"
+  }
+}

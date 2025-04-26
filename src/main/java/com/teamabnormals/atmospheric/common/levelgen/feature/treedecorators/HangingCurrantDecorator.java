@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures;
 import net.minecraft.core.BlockPos;
@@ -8,7 +9,7 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
 public class HangingCurrantDecorator extends TreeDecorator {
-	public static final Codec<HangingCurrantDecorator> CODEC = Codec.floatRange(0.0F, 1.0F).fieldOf("probability").xmap(HangingCurrantDecorator::new, (decorator) -> decorator.probability).codec();
+	public static final MapCodec<HangingCurrantDecorator> CODEC = Codec.floatRange(0.0F, 1.0F).fieldOf("probability").xmap(HangingCurrantDecorator::new, (decorator) -> decorator.probability);
 	private final float probability;
 
 	public HangingCurrantDecorator(float probability) {

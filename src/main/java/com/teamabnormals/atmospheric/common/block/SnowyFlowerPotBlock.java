@@ -14,7 +14,7 @@ public class SnowyFlowerPotBlock extends FlowerPotBlock {
 	}
 
 	@Override
-	public Block getContent() {
+	public Block getPotted() {
 		return actualContent.get();
 	}
 }

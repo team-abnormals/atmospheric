@@ -1,16 +1,15 @@
 package com.teamabnormals.atmospheric.core.data.server.tags;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericPaintingVariants;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.tags.PaintingVariantTags;
-import net.minecraft.world.entity.decoration.PaintingVariant;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
+
+import static com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericPaintingVariants.*;
 
 public class AtmosphericPaintingVariantTagsProvider extends PaintingVariantTagsProvider {
 
@@ -20,9 +19,6 @@ public class AtmosphericPaintingVariantTagsProvider extends PaintingVariantTagsP
 
 	@Override
 	public void addTags(Provider provider) {
-		TagAppender<PaintingVariant> appender = this.tag(PaintingVariantTags.PLACEABLE);
-		for (RegistryObject<PaintingVariant> variant : AtmosphericPaintingVariants.PAINTING_VARIANTS.getEntries()) {
-			appender.add(variant.getKey());
-		}
+		this.tag(PaintingVariantTags.PLACEABLE).add(FATEFUL_OUTING, MONSOON, NOT_SO_STILL_LIFE, WAYWARD, CANYON, LOST);
 	}
 }

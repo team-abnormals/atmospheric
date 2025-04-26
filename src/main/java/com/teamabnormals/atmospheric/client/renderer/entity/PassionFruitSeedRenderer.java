@@ -12,8 +12,8 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class PassionFruitSeedRenderer extends EntityRenderer<PassionFruitSeed> {
@@ -33,7 +33,7 @@ public class PassionFruitSeedRenderer extends EntityRenderer<PassionFruitSeed> {
 			poseStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entityIn.yRotO, entityIn.getYRot()) - 90.0F));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot())));
 			this.model.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
-			this.model.renderToBuffer(poseStack, buffer.getBuffer(this.model.renderType(PASSION_FRUIT_SEED_TEXTURE)), packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+			this.model.renderToBuffer(poseStack, buffer.getBuffer(this.model.renderType(PASSION_FRUIT_SEED_TEXTURE)), packedLight, OverlayTexture.NO_OVERLAY);
 			poseStack.popPose();
 			super.render(entityIn, entityYaw, partialTicks, poseStack, buffer, packedLight);
 		}

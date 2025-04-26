@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "leaf_piles"
+        }
+      ]
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:yucca_leaf_pile"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yucca_leaves": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:yucca_leaves"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yucca_leaves"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:yucca_leaf_pile"
+    ]
+  }
+}

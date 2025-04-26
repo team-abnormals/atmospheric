@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
@@ -12,6 +13,11 @@ public class CarmineBlock extends DirectionalBlock {
 	public CarmineBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.UP));
+	}
+
+	@Override
+	protected MapCodec<? extends DirectionalBlock> codec() {
+		return null;
 	}
 
 	@Override

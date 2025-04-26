@@ -20,7 +20,7 @@ import java.util.Calendar;
 @Mixin(LevelRenderer.class)
 public class LevelRendererMixin {
 	@Unique
-	private static final ResourceLocation TWIN_SUNS_LOCATION = new ResourceLocation(Atmospheric.MOD_ID, "textures/environment/twin_suns.png");
+	private static final ResourceLocation TWIN_SUNS_LOCATION = Atmospheric.location("textures/environment/twin_suns.png");
 
 	@Shadow
 	@Final

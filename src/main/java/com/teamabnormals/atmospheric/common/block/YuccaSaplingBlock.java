@@ -1,7 +1,7 @@
 package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
-import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericDamageTypes;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericDamageTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
@@ -11,27 +11,21 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.PlantType;
+import net.minecraft.world.level.pathfinder.PathType;
 
 import javax.annotation.Nullable;
 
-public class YuccaSaplingBlock extends SaplingBlock implements IPlantable, YuccaPlant {
-	public YuccaSaplingBlock(AbstractTreeGrower tree, Properties properties) {
+public class YuccaSaplingBlock extends SaplingBlock implements YuccaPlant {
+
+	public YuccaSaplingBlock(TreeGrower tree, Properties properties) {
 		super(tree, properties);
 	}
 
 	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return state.is(AtmosphericBlockTags.DESERT_PLANT_PLACEABLE) || state.is(Blocks.FARMLAND);
-	}
-
-	@Override
-	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
-		return PlantType.DESERT;
 	}
 
 	@Override
@@ -46,7 +40,7 @@ public class YuccaSaplingBlock extends SaplingBlock implements IPlantable, Yucca
 
 	@Nullable
 	@Override
-	public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+	public PathType getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
 		return this.getYuccaPathType(entity);
 	}
 

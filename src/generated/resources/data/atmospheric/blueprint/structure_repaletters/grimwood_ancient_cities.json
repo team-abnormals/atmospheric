@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "atmospheric:config",
+      "value": "grimwood_ancient_cities"
+    }
+  ],
+  "repaletter": [
+    {
+      "type": "blueprint:simple",
+      "replaces": "minecraft:dark_oak_log",
+      "replaces_with": "atmospheric:grimwood_log"
+    },
+    {
+      "type": "blueprint:simple",
+      "replaces": "minecraft:dark_oak_fence",
+      "replaces_with": "atmospheric:grimwood_fence"
+    },
+    {
+      "type": "blueprint:simple",
+      "replaces": "minecraft:dark_oak_planks",
+      "replaces_with": "atmospheric:grimwood_planks"
+    }
+  ],
+  "structures": "minecraft:ancient_city"
+}

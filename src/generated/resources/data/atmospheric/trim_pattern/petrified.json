@@ -1,5 +1,6 @@
 {
   "asset_id": "atmospheric:petrified",
+  "decal": false,
   "description": {
     "translate": "trim_pattern.atmospheric.petrified"
   },

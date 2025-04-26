@@ -1,10 +1,10 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.google.common.base.Supplier;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.atmospheric.core.registry.builtin.AtmosphericDamageTypes;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericDamageTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -20,13 +20,13 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathType;
 
 import javax.annotation.Nullable;
 
 public class YuccaFlowerBlock extends FlowerBlock implements BonemealableBlock, YuccaPlant {
 
-	public YuccaFlowerBlock(Supplier<MobEffect> effect, int effectDuration, Properties properties) {
+	public YuccaFlowerBlock(Holder<MobEffect> effect, int effectDuration, Properties properties) {
 		super(effect, effectDuration, properties);
 	}
 
@@ -44,7 +44,7 @@ public class YuccaFlowerBlock extends FlowerBlock implements BonemealableBlock, 
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state) {
 		return true;
 	}
 
@@ -60,7 +60,7 @@ public class YuccaFlowerBlock extends FlowerBlock implements BonemealableBlock, 
 
 	@Nullable
 	@Override
-	public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+	public PathType getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
 		return this.getYuccaPathType(entity);
 	}
 

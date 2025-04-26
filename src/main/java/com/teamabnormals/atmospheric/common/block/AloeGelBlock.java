@@ -1,8 +1,8 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -14,17 +14,15 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HalfTransparentBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 
@@ -58,20 +56,8 @@ public class AloeGelBlock extends HalfTransparentBlock {
 	}
 
 	@Override
-	public boolean isSlimeBlock(BlockState state) {
-		return !state.getValue(WET);
-	}
-
-	@Override
 	public boolean canStickTo(BlockState state, BlockState other) {
-		if (other.getBlock() == Blocks.SLIME_BLOCK) return false;
-		if (other.getBlock() == Blocks.HONEY_BLOCK) return false;
-		if (other.getBlock() == ForgeRegistries.BLOCKS.getValue(new ResourceLocation("autumnity", "snail_goo_block")))
-			return false;
-		if (other.getBlock() == ForgeRegistries.BLOCKS.getValue(new ResourceLocation("upgrade_aquatic", "mulberry_jam_block")))
-			return false;
-
-		return super.canStickTo(state, other);
+		return (other.is(this) || !other.is(BlueprintBlockTags.ATTACHES_BLOCKS_TO_PISTONS)) && super.canStickTo(state, other);
 	}
 
 	@Override
@@ -90,8 +76,8 @@ public class AloeGelBlock extends HalfTransparentBlock {
 
 	@Nullable
 	@Override
-	public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
-		return BlockPathTypes.DAMAGE_OTHER;
+	public PathType getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+		return PathType.DAMAGE_OTHER;
 	}
 
 	@Override

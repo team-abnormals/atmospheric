@@ -1,6 +1,6 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
 public class YuccaFlowerPatchDecorator extends TreeDecorator {
-	public static final Codec<YuccaFlowerPatchDecorator> CODEC = RecordCodecBuilder.create(codec -> codec.group(
+	public static final MapCodec<YuccaFlowerPatchDecorator> CODEC = RecordCodecBuilder.mapCodec(codec -> codec.group(
 			BlockStateProvider.CODEC.fieldOf("block_provider").forGetter(instance -> instance.blockProvider)
 	).apply(codec, YuccaFlowerPatchDecorator::new));
 

@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "put_out_fire": {
+      "trigger": "atmospheric:put_out_fire"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.atmospheric.husbandry.put_out_fire.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "atmospheric:aloe_leaves"
+    },
+    "title": {
+      "translate": "advancements.atmospheric.husbandry.put_out_fire.title"
+    }
+  },
+  "requirements": [
+    [
+      "put_out_fire"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

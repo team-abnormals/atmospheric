@@ -1,6 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.common.block.grower.CurrantTreeGrower;
+import com.teamabnormals.atmospheric.core.other.AtmosphericTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -15,7 +15,7 @@ public class CurrantSeedlingBlock extends SaplingBlock {
 	protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 8.0D, 11.0D);
 
 	public CurrantSeedlingBlock(Properties properties) {
-		super(new CurrantTreeGrower(), properties);
+		super(AtmosphericTreeGrowers.CURRANT, properties);
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class CurrantSeedlingBlock extends SaplingBlock {
 
 	@Override
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-		int speed = level.getBiome(pos).get().coldEnoughToSnow(pos) ? 2 : 4;
+		int speed = level.getBiome(pos).value().coldEnoughToSnow(pos) ? 2 : 4;
 		if (level.getMaxLocalRawBrightness(pos.above()) >= 9 && random.nextInt(speed) == 0) {
 			if (!level.isAreaLoaded(pos, 1)) return;
 			this.advanceTree(level, pos, state, random);

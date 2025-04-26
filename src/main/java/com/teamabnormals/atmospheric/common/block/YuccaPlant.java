@@ -1,6 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.core.other.AtmosphericCriteriaTriggers;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericEntityTypeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.core.BlockPos;
@@ -15,7 +15,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -27,7 +27,7 @@ public interface YuccaPlant {
 	ResourceKey<DamageType> getDamageTypeKey();
 
 	default void onYuccaCollision(BlockState state, Level level, BlockPos pos, Entity entity) {
-		VoxelShape collision = state.getBlock().getShape(state, level, pos, CollisionContext.empty()).move(pos.getX(), pos.getY(), pos.getZ());
+		VoxelShape collision = state.getShape(level, pos, CollisionContext.empty()).move(pos.getX(), pos.getY(), pos.getZ());
 		boolean colliding = entity.getBoundingBox().intersects(collision.bounds().inflate(1.0E-7D));
 
 		if (colliding && entity instanceof LivingEntity living && !entity.getType().is(AtmosphericEntityTypeTags.YUCCA_IMMUNE)) {
@@ -48,7 +48,7 @@ public interface YuccaPlant {
 
 					if (entity instanceof ServerPlayer serverPlayer) {
 						if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative()) {
-							AtmosphericCriteriaTriggers.YUCCA_PRICK.trigger(serverPlayer);
+							AtmosphericCriteriaTriggers.YUCCA_PRICK.get().trigger(serverPlayer);
 						}
 					}
 				}
@@ -56,7 +56,7 @@ public interface YuccaPlant {
 		}
 	}
 
-	default BlockPathTypes getYuccaPathType(@Nullable Mob entity) {
-		return entity != null && entity.getType().is(AtmosphericEntityTypeTags.YUCCA_IMMUNE) ? null : BlockPathTypes.DAMAGE_OTHER;
+	default PathType getYuccaPathType(@Nullable Mob entity) {
+		return entity != null && entity.getType().is(AtmosphericEntityTypeTags.YUCCA_IMMUNE) ? null : PathType.DAMAGE_OTHER;
 	}
 }

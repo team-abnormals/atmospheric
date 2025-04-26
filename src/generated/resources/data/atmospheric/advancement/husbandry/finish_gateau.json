@@ -1,0 +1,26 @@
+{
+  "parent": "atmospheric:husbandry/persistence_while_starving",
+  "criteria": {
+    "finish_gateau": {
+      "trigger": "atmospheric:finish_gateau"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.atmospheric.husbandry.finish_gateau.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "atmospheric:yucca_gateau"
+    },
+    "title": {
+      "translate": "advancements.atmospheric.husbandry.finish_gateau.title"
+    }
+  },
+  "requirements": [
+    [
+      "finish_gateau"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

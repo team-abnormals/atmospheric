@@ -1,0 +1,16 @@
+{
+  "values": {
+    "#atmospheric:is_dunes": {
+      "villager_type": "atmospheric:scrubland"
+    },
+    "#atmospheric:is_rainforest": {
+      "villager_type": "minecraft:jungle"
+    },
+    "#atmospheric:is_scrubland": {
+      "villager_type": "atmospheric:scrubland"
+    },
+    "atmospheric:spiny_thicket": {
+      "villager_type": "atmospheric:scrubland"
+    }
+  }
+}

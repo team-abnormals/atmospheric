@@ -50,7 +50,7 @@ public class CoarseDirtPatchFeature extends Feature<LargeDiskConfiguration> {
 												worldIn.setBlock(blockpos.above(), Blocks.TALL_GRASS.defaultBlockState().setValue(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER), 2);
 												worldIn.setBlock(blockpos.above(2), Blocks.TALL_GRASS.defaultBlockState().setValue(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER), 2);
 											} else {
-												worldIn.setBlock(blockpos.above(), Blocks.GRASS.defaultBlockState(), 2);
+												worldIn.setBlock(blockpos.above(), Blocks.SHORT_GRASS.defaultBlockState(), 2);
 											}
 										}
 									}

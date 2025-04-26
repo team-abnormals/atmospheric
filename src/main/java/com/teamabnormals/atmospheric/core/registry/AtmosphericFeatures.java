@@ -16,7 +16,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Plane;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.ProcessorLists;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -53,63 +53,60 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.List;
 
-@EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class AtmosphericFeatures {
-	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, Atmospheric.MOD_ID);
-	public static final DeferredRegister<TreeDecoratorType<?>> TREE_DECORATOR_TYPES = DeferredRegister.create(ForgeRegistries.TREE_DECORATOR_TYPES, Atmospheric.MOD_ID);
+	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(Registries.FEATURE, Atmospheric.MOD_ID);
+	public static final DeferredRegister<TreeDecoratorType<?>> TREE_DECORATOR_TYPES = DeferredRegister.create(Registries.TREE_DECORATOR_TYPE, Atmospheric.MOD_ID);
 
-	public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> PODZOL = FEATURES.register("podzol", () -> new PodzolFeature(ProbabilityFeatureConfiguration.CODEC));
-	public static final RegistryObject<SurfaceFossilFeature> SURFACE_FOSSIL = FEATURES.register("surface_fossil", () -> new SurfaceFossilFeature(FossilFeatureConfiguration.CODEC));
-	public static final RegistryObject<Feature<LargeDiskConfiguration>> COARSE_DIRT_PATCH = FEATURES.register("coarse_dirt_patch", () -> new CoarseDirtPatchFeature(LargeDiskConfiguration.CODEC));
-	public static final RegistryObject<Feature<BlockStateConfiguration>> DUNE_ROCK = FEATURES.register("dune_rock", () -> new DuneRocksFeature(BlockStateConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<ProbabilityFeatureConfiguration>> PODZOL = FEATURES.register("podzol", () -> new PodzolFeature(ProbabilityFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, SurfaceFossilFeature> SURFACE_FOSSIL = FEATURES.register("surface_fossil", () -> new SurfaceFossilFeature(FossilFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<LargeDiskConfiguration>> COARSE_DIRT_PATCH = FEATURES.register("coarse_dirt_patch", () -> new CoarseDirtPatchFeature(LargeDiskConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<BlockStateConfiguration>> DUNE_ROCK = FEATURES.register("dune_rock", () -> new DuneRocksFeature(BlockStateConfiguration.CODEC));
 
-	public static final RegistryObject<Feature<NoneFeatureConfiguration>> WARM_MONKEY_BRUSH = FEATURES.register("warm_monkey_brush", () -> new MonkeyBrushFeature(NoneFeatureConfiguration.CODEC, 1));
-	public static final RegistryObject<Feature<NoneFeatureConfiguration>> HOT_MONKEY_BRUSH = FEATURES.register("hot_monkey_brush", () -> new MonkeyBrushFeature(NoneFeatureConfiguration.CODEC, 2));
-	public static final RegistryObject<Feature<NoneFeatureConfiguration>> SCALDING_MONKEY_BRUSH = FEATURES.register("scalding_monkey_brush", () -> new MonkeyBrushFeature(NoneFeatureConfiguration.CODEC, 3));
-	public static final RegistryObject<Feature<NoneFeatureConfiguration>> WATER_HYACINTH_PATCH = FEATURES.register("water_hyacinth_patch", () -> new WaterHyacinthPatchFeature(NoneFeatureConfiguration.CODEC));
-	public static final RegistryObject<Feature<NoneFeatureConfiguration>> PASSION_VINE = FEATURES.register("passion_vine", () -> new PassionVineFeature(NoneFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> WARM_MONKEY_BRUSH = FEATURES.register("warm_monkey_brush", () -> new MonkeyBrushFeature(NoneFeatureConfiguration.CODEC, 1));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> HOT_MONKEY_BRUSH = FEATURES.register("hot_monkey_brush", () -> new MonkeyBrushFeature(NoneFeatureConfiguration.CODEC, 2));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> SCALDING_MONKEY_BRUSH = FEATURES.register("scalding_monkey_brush", () -> new MonkeyBrushFeature(NoneFeatureConfiguration.CODEC, 3));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> WATER_HYACINTH_PATCH = FEATURES.register("water_hyacinth_patch", () -> new WaterHyacinthPatchFeature(NoneFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> PASSION_VINE = FEATURES.register("passion_vine", () -> new PassionVineFeature(NoneFeatureConfiguration.CODEC));
 
-	public static final RegistryObject<Feature<NoneFeatureConfiguration>> DRAGON_ROOTS = FEATURES.register("dragon_roots", () -> new DragonRootsFeature(NoneFeatureConfiguration.CODEC));
-	public static final RegistryObject<Feature<NoneFeatureConfiguration>> SUSPICIOUS_ARID_SAND = FEATURES.register("suspicious_arid_sand", () -> new SuspiciousAridSandFeature(NoneFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> DRAGON_ROOTS = FEATURES.register("dragon_roots", () -> new DragonRootsFeature(NoneFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> SUSPICIOUS_ARID_SAND = FEATURES.register("suspicious_arid_sand", () -> new SuspiciousAridSandFeature(NoneFeatureConfiguration.CODEC));
 
-	public static final RegistryObject<Feature<TreeConfiguration>> ROSEWOOD_TREE = FEATURES.register("rosewood_tree", () -> new RainforestTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> YUCCA_TREE = FEATURES.register("yucca_tree", () -> new YuccaTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> BABY_YUCCA_TREE = FEATURES.register("baby_yucca_tree", () -> new BabyYuccaTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> ASPEN_TREE = FEATURES.register("aspen_tree", () -> new AspenTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> KOUSA_TREE = FEATURES.register("kousa_tree", () -> new KousaTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> BABY_KOUSA_TREE = FEATURES.register("baby_kousa_tree", () -> new BabyKousaTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> GRIMWOOD_TREE = FEATURES.register("grimwood_tree", () -> new GrimwoodTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> LAUREL_TREE = FEATURES.register("laurel_tree", () -> new LaurelTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> LARGE_LAUREL_TREE = FEATURES.register("large_laurel_tree", () -> new LargeLaurelTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> GIANT_LAUREL_TREE = FEATURES.register("giant_laurel_tree", () -> new GiantLaurelTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> CURRANT_TREE = FEATURES.register("currant_tree", () -> new CurrantTreeFeature(TreeConfiguration.CODEC));
-	public static final RegistryObject<Feature<TreeConfiguration>> SMALL_BUSH = FEATURES.register("small_bush", () -> new SmallBushFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> ROSEWOOD_TREE = FEATURES.register("rosewood_tree", () -> new RainforestTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> YUCCA_TREE = FEATURES.register("yucca_tree", () -> new YuccaTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> BABY_YUCCA_TREE = FEATURES.register("baby_yucca_tree", () -> new BabyYuccaTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> ASPEN_TREE = FEATURES.register("aspen_tree", () -> new AspenTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> KOUSA_TREE = FEATURES.register("kousa_tree", () -> new KousaTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> BABY_KOUSA_TREE = FEATURES.register("baby_kousa_tree", () -> new BabyKousaTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> GRIMWOOD_TREE = FEATURES.register("grimwood_tree", () -> new GrimwoodTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> LAUREL_TREE = FEATURES.register("laurel_tree", () -> new LaurelTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> LARGE_LAUREL_TREE = FEATURES.register("large_laurel_tree", () -> new LargeLaurelTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> GIANT_LAUREL_TREE = FEATURES.register("giant_laurel_tree", () -> new GiantLaurelTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> CURRANT_TREE = FEATURES.register("currant_tree", () -> new CurrantTreeFeature(TreeConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<TreeConfiguration>> SMALL_BUSH = FEATURES.register("small_bush", () -> new SmallBushFeature(TreeConfiguration.CODEC));
 
-	public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> CRUSTOSE = FEATURES.register("crustose", () -> new CrustoseFeature(ProbabilityFeatureConfiguration.CODEC));
-	public static final RegistryObject<Feature<SimpleBlockConfiguration>> FALLEN_LOG = FEATURES.register("fallen_log", () -> new FallenLogFeature(SimpleBlockConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<ProbabilityFeatureConfiguration>> CRUSTOSE = FEATURES.register("crustose", () -> new CrustoseFeature(ProbabilityFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<SimpleBlockConfiguration>> FALLEN_LOG = FEATURES.register("fallen_log", () -> new FallenLogFeature(SimpleBlockConfiguration.CODEC));
 
-	public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> SNOWY_BAMBOO = FEATURES.register("snowy_bamboo", () -> new SnowyBambooFeature(ProbabilityFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<ProbabilityFeatureConfiguration>> SNOWY_BAMBOO = FEATURES.register("snowy_bamboo", () -> new SnowyBambooFeature(ProbabilityFeatureConfiguration.CODEC));
 
-	public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> COARSE_DIRT = FEATURES.register("coarse_dirt", () -> new CoarseDirtFeature(ProbabilityFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<ProbabilityFeatureConfiguration>> COARSE_DIRT = FEATURES.register("coarse_dirt", () -> new CoarseDirtFeature(ProbabilityFeatureConfiguration.CODEC));
 
-	public static final RegistryObject<Feature<NoneFeatureConfiguration>> OCEAN_FLOOR_RAISER = FEATURES.register("ocean_floor_raiser", () -> new OceanFloorRaiserFeature(NoneFeatureConfiguration.CODEC));
+	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> OCEAN_FLOOR_RAISER = FEATURES.register("ocean_floor_raiser", () -> new OceanFloorRaiserFeature(NoneFeatureConfiguration.CODEC));
 
-	public static final RegistryObject<TreeDecoratorType<?>> MONKEY_BRUSH = TREE_DECORATOR_TYPES.register("monkey_brush", () -> new TreeDecoratorType<>(MonkeyBrushDecorator.CODEC));
-	public static final RegistryObject<TreeDecoratorType<?>> HANGING_CURRANT = TREE_DECORATOR_TYPES.register("hanging_currant", () -> new TreeDecoratorType<>(HangingCurrantDecorator.CODEC));
-	public static final RegistryObject<TreeDecoratorType<?>> COBWEB = TREE_DECORATOR_TYPES.register("cobweb", () -> new TreeDecoratorType<>(CobwebDecorator.CODEC));
-	public static final RegistryObject<TreeDecoratorType<?>> ORANGES = TREE_DECORATOR_TYPES.register("oranges", () -> new TreeDecoratorType<>(OrangesDecorator.CODEC));
-	public static final RegistryObject<TreeDecoratorType<?>> YUCCA_BUNDLE = TREE_DECORATOR_TYPES.register("yucca_bundle", () -> new TreeDecoratorType<>(YuccaBundleDecorator.CODEC));
-	public static final RegistryObject<TreeDecoratorType<?>> YUCCA_FLOWERS = TREE_DECORATOR_TYPES.register("yucca_flowers", () -> new TreeDecoratorType<>(YuccaFlowersDecorator.CODEC));
-	public static final RegistryObject<TreeDecoratorType<?>> YUCCA_FLOWER_PATCH = TREE_DECORATOR_TYPES.register("yucca_flower_patch", () -> new TreeDecoratorType<>(YuccaFlowerPatchDecorator.CODEC));
-	public static final RegistryObject<TreeDecoratorType<?>> ROASTED_YUCCA_BUNDLE = TREE_DECORATOR_TYPES.register("roasted_yucca_bundle", () -> new TreeDecoratorType<>(RoastedYuccaBundleDecorator.CODEC));
-	public static final RegistryObject<TreeDecoratorType<?>> EXTEND_PETRIFIED_YUCCA_TREE = TREE_DECORATOR_TYPES.register("extend_petrified_yucca_tree", () -> new TreeDecoratorType<>(ExtendPetrifiedYuccaTreeDecorator.CODEC));
+	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> MONKEY_BRUSH = TREE_DECORATOR_TYPES.register("monkey_brush", () -> new TreeDecoratorType<>(MonkeyBrushDecorator.CODEC));
+	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> HANGING_CURRANT = TREE_DECORATOR_TYPES.register("hanging_currant", () -> new TreeDecoratorType<>(HangingCurrantDecorator.CODEC));
+	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> COBWEB = TREE_DECORATOR_TYPES.register("cobweb", () -> new TreeDecoratorType<>(CobwebDecorator.CODEC));
+	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> ORANGES = TREE_DECORATOR_TYPES.register("oranges", () -> new TreeDecoratorType<>(OrangesDecorator.CODEC));
+	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> YUCCA_BUNDLE = TREE_DECORATOR_TYPES.register("yucca_bundle", () -> new TreeDecoratorType<>(YuccaBundleDecorator.CODEC));
+	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> YUCCA_FLOWERS = TREE_DECORATOR_TYPES.register("yucca_flowers", () -> new TreeDecoratorType<>(YuccaFlowersDecorator.CODEC));
+	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> YUCCA_FLOWER_PATCH = TREE_DECORATOR_TYPES.register("yucca_flower_patch", () -> new TreeDecoratorType<>(YuccaFlowerPatchDecorator.CODEC));
+	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> ROASTED_YUCCA_BUNDLE = TREE_DECORATOR_TYPES.register("roasted_yucca_bundle", () -> new TreeDecoratorType<>(RoastedYuccaBundleDecorator.CODEC));
+	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> EXTEND_PETRIFIED_YUCCA_TREE = TREE_DECORATOR_TYPES.register("extend_petrified_yucca_tree", () -> new TreeDecoratorType<>(ExtendPetrifiedYuccaTreeDecorator.CODEC));
 
 	public static final class Configs {
 		private static final MonkeyBrushDecorator MONKEY_BRUSH = new MonkeyBrushDecorator(0.004F);
@@ -403,10 +400,10 @@ public class AtmosphericFeatures {
 		public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_CACTUS_TALL = createKey("patch_cactus_tall");
 		public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_CACTUS_VERY_TALL = createKey("patch_cactus_very_tall");
 
-		private static final List<ResourceLocation> FOSSIL_STRUCTURES = List.of(new ResourceLocation("fossil/spine_1"), new ResourceLocation("fossil/spine_2"), new ResourceLocation("fossil/spine_3"), new ResourceLocation("fossil/spine_4"), new ResourceLocation("fossil/skull_1"), new ResourceLocation("fossil/skull_2"), new ResourceLocation("fossil/skull_3"), new ResourceLocation("fossil/skull_4"));
-		private static final List<ResourceLocation> FOSSIL_COAL_STRUCTURES = List.of(new ResourceLocation("fossil/spine_1_coal"), new ResourceLocation("fossil/spine_2_coal"), new ResourceLocation("fossil/spine_3_coal"), new ResourceLocation("fossil/spine_4_coal"), new ResourceLocation("fossil/skull_1_coal"), new ResourceLocation("fossil/skull_2_coal"), new ResourceLocation("fossil/skull_3_coal"), new ResourceLocation("fossil/skull_4_coal"));
+		private static final List<ResourceLocation> FOSSIL_STRUCTURES = List.of(ResourceLocation.withDefaultNamespace("fossil/spine_1"), ResourceLocation.withDefaultNamespace("fossil/spine_2"), ResourceLocation.withDefaultNamespace("fossil/spine_3"), ResourceLocation.withDefaultNamespace("fossil/spine_4"), ResourceLocation.withDefaultNamespace("fossil/skull_1"), ResourceLocation.withDefaultNamespace("fossil/skull_2"), ResourceLocation.withDefaultNamespace("fossil/skull_3"), ResourceLocation.withDefaultNamespace("fossil/skull_4"));
+		private static final List<ResourceLocation> FOSSIL_COAL_STRUCTURES = List.of(ResourceLocation.withDefaultNamespace("fossil/spine_1_coal"), ResourceLocation.withDefaultNamespace("fossil/spine_2_coal"), ResourceLocation.withDefaultNamespace("fossil/spine_3_coal"), ResourceLocation.withDefaultNamespace("fossil/spine_4_coal"), ResourceLocation.withDefaultNamespace("fossil/skull_1_coal"), ResourceLocation.withDefaultNamespace("fossil/skull_2_coal"), ResourceLocation.withDefaultNamespace("fossil/skull_3_coal"), ResourceLocation.withDefaultNamespace("fossil/skull_4_coal"));
 
-		public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+		public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 			HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 			HolderGetter<StructureProcessorList> processors = context.lookup(Registries.PROCESSOR_LIST);
 
@@ -535,7 +532,7 @@ public class AtmosphericFeatures {
 			register(context, TREES_LAUREL_FOREST, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.DRY_LAUREL_WITH_VINES), 0.05F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.DRY_LAUREL), 0.05F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.LAUREL_WITH_VINES), 0.45F)), placedFeatures.getOrThrow(AtmosphericPlacedFeatures.LAUREL)));
 			register(context, TREES_LAUREL_FOREST_LARGE, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.LARGE_DRY_LAUREL_WITH_VINES), 0.05F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.LARGE_DRY_LAUREL), 0.05F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.LARGE_LAUREL_WITH_VINES), 0.45F)), placedFeatures.getOrThrow(AtmosphericPlacedFeatures.LARGE_LAUREL)));
 			register(context, TREES_LAUREL_FOREST_GIANT, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.GIANT_DRY_LAUREL_WITH_VINES), 0.05F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.GIANT_DRY_LAUREL), 0.05F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.GIANT_LAUREL_WITH_VINES), 0.45F)), placedFeatures.getOrThrow(AtmosphericPlacedFeatures.GIANT_LAUREL)));
-			register(context, PATCH_GRASS_LAUREL_FOREST, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS.defaultBlockState(), 1).add(Blocks.FERN.defaultBlockState(), 6)), 32));
+			register(context, PATCH_GRASS_LAUREL_FOREST, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.SHORT_GRASS.defaultBlockState(), 1).add(Blocks.FERN.defaultBlockState(), 6)), 32));
 
 			// Kousa Jungle
 
@@ -580,10 +577,10 @@ public class AtmosphericFeatures {
 		}
 
 		public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
-			return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Atmospheric.MOD_ID, name));
+			return ResourceKey.create(Registries.CONFIGURED_FEATURE, Atmospheric.location(name));
 		}
 
-		public static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC config) {
+		public static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC config) {
 			context.register(key, new ConfiguredFeature<>(feature, config));
 		}
 	}
@@ -737,7 +734,7 @@ public class AtmosphericFeatures {
 
 		public static final ResourceKey<PlacedFeature> HOT_SPRINGS_ROCK = createKey("hot_springs_rock");
 
-		public static void bootstrap(BootstapContext<PlacedFeature> context) {
+		public static void bootstrap(BootstrapContext<PlacedFeature> context) {
 			register(context, ROSEWOOD_BEES_0002, AtmosphericConfiguredFeatures.ROSEWOOD_BEES_0002, List.of());
 			register(context, MORADO_BEES_0002, AtmosphericConfiguredFeatures.MORADO_BEES_0002, List.of());
 			register(context, YUCCA, AtmosphericConfiguredFeatures.YUCCA, List.of());
@@ -892,14 +889,14 @@ public class AtmosphericFeatures {
 		}
 
 		public static ResourceKey<PlacedFeature> createKey(String name) {
-			return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Atmospheric.MOD_ID, name));
+			return ResourceKey.create(Registries.PLACED_FEATURE, Atmospheric.location(name));
 		}
 
-		public static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, ResourceKey<ConfiguredFeature<?, ?>> feature, List<PlacementModifier> modifiers) {
+		public static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, ResourceKey<ConfiguredFeature<?, ?>> feature, List<PlacementModifier> modifiers) {
 			context.register(key, new PlacedFeature(context.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(feature), modifiers));
 		}
 
-		public static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, ResourceKey<ConfiguredFeature<?, ?>> feature, PlacementModifier... modifiers) {
+		public static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, ResourceKey<ConfiguredFeature<?, ?>> feature, PlacementModifier... modifiers) {
 			register(context, key, feature, List.of(modifiers));
 		}
 

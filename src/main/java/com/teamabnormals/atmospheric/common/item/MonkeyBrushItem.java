@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 
 import javax.annotation.Nullable;
-import java.util.Map;
 
 public class MonkeyBrushItem extends BlockItem {
 	protected final Block wallBlock;
@@ -38,17 +37,5 @@ public class MonkeyBrushItem extends BlockItem {
 		}
 
 		return blockstate1 != null && iworldreader.isUnobstructed(blockstate1, blockpos, CollisionContext.empty()) ? blockstate1 : null;
-	}
-
-	@Override
-	public void registerBlocks(Map<Block, Item> blockToItemMap, Item itemIn) {
-		super.registerBlocks(blockToItemMap, itemIn);
-		blockToItemMap.put(this.wallBlock, itemIn);
-	}
-
-	@Override
-	public void removeFromBlockToItemMap(Map<Block, Item> blockToItemMap, Item itemIn) {
-		super.removeFromBlockToItemMap(blockToItemMap, itemIn);
-		blockToItemMap.remove(this.wallBlock);
 	}
 }

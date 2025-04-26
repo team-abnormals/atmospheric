@@ -7,6 +7,7 @@ import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericParticleTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
+import com.teamabnormals.blueprint.common.network.particle.SpawnParticlesPayload.ParticleInstance;
 import com.teamabnormals.blueprint.core.util.NetworkUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -49,11 +50,10 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.network.PlayMessages;
+import net.neoforged.neoforge.common.CommonHooks;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Optional;
 
 public class Cochineal extends Animal implements Saddleable {
@@ -84,10 +84,6 @@ public class Cochineal extends Animal implements Saddleable {
 		this.moveControl = new CochinealMoveControl(this);
 	}
 
-	public Cochineal(PlayMessages.SpawnEntity message, Level level) {
-		this(AtmosphericEntityTypes.COCHINEAL.get(), level);
-	}
-
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
 		this.goalSelector.addGoal(1, new CochinealPanicGoal(this));
@@ -102,17 +98,12 @@ public class Cochineal extends Animal implements Saddleable {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).add(ForgeMod.ENTITY_GRAVITY.get(), 0.04D);
+		return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).add(Attributes.GRAVITY, 0.04D);
 	}
 
 	@Override
 	public boolean isFood(ItemStack stack) {
 		return stack.is(AtmosphericItemTags.COCHINEAL_FOOD);
-	}
-
-	@Override
-	public MobType getMobType() {
-		return MobType.ARTHROPOD;
 	}
 
 	@Override
@@ -135,13 +126,13 @@ public class Cochineal extends Animal implements Saddleable {
 	}
 
 	@Override
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.entityData.define(IS_SADDLED, false);
-		this.entityData.define(IS_LEAPING, false);
-		this.entityData.define(CACTUS_POS, Optional.empty());
-		this.entityData.define(CACTUS_SIDE, Direction.SOUTH);
-		this.entityData.define(EATING_STACK, ItemStack.EMPTY);
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(IS_SADDLED, false);
+		builder.define(IS_LEAPING, false);
+		builder.define(CACTUS_POS, Optional.empty());
+		builder.define(CACTUS_SIDE, Direction.SOUTH);
+		builder.define(EATING_STACK, ItemStack.EMPTY);
 	}
 
 	@Override
@@ -165,12 +156,12 @@ public class Cochineal extends Animal implements Saddleable {
 		this.superInLove = tag.getBoolean("SuperInLove");
 		this.setSaddle(tag.getBoolean("Saddle"));
 		if (tag.contains("CactusPos")) {
-			this.setCactusPos(NbtUtils.readBlockPos(tag.getCompound("CactusPos")));
+			this.setCactusPos(NbtUtils.readBlockPos(tag, "CactusPos").orElse(null));
 			this.setCactusSide(Direction.byName(tag.getString("CactusSide")));
 			this.suckleHealTicks = 120;
 		}
 		if (tag.contains("LastHabitatBiomePos")) {
-			this.lastHabitatBiomePos = NbtUtils.readBlockPos(tag.getCompound("LastHabitatBiomePos"));
+			this.lastHabitatBiomePos = NbtUtils.readBlockPos(tag, "LastHabitatBiomePos").orElse(null);
 			this.forgetHabitatBiomePosCounter = tag.getInt("ForgetHabitatBiomePosCounter");
 		}
 	}
@@ -363,7 +354,7 @@ public class Cochineal extends Animal implements Saddleable {
 	}
 
 	@Override
-	public void equipSaddle(@Nullable SoundSource source) {
+	public void equipSaddle(ItemStack stack, @Nullable SoundSource source) {
 		this.entityData.set(IS_SADDLED, true);
 		if (source != null) {
 			this.level().playSound(null, this, SoundEvents.PIG_SADDLE, source, 0.5F, 1.0F);
@@ -439,11 +430,11 @@ public class Cochineal extends Animal implements Saddleable {
 					double d0 = this.random.nextGaussian() * 0.02D;
 					double d1 = this.random.nextGaussian() * 0.02D;
 					double d2 = this.random.nextGaussian() * 0.02D;
-					NetworkUtil.spawnParticle("minecraft:heart", this.getRandomX(1.0D), this.getRandomY(), this.getRandomZ(1.0D), d0, d1, d2);
+					NetworkUtil.spawnParticle((ServerLevel) this.level(), ParticleTypes.HEART, List.of(new ParticleInstance(this.getRandomX(1.0D), this.getRandomY(), this.getRandomZ(1.0D), d0, d1, d2)));
 				}
 			} else {
 				if (this.isLeaping() || this.hurtTime > 0) {
-					boolean cold = this.level().getBiome(this.blockPosition()).get().coldEnoughToSnow(this.blockPosition());
+					boolean cold = this.level().getBiome(this.blockPosition()).value().coldEnoughToSnow(this.blockPosition());
 					for (int i = 0; i < 3; i++) {
 						double x = -this.getLookAngle().x * 0.7D + (this.random.nextDouble() - 0.5D) * 0.6D;
 						double y = 0.6D + (this.random.nextDouble() - 0.5D) * 0.6D;
@@ -508,7 +499,7 @@ public class Cochineal extends Animal implements Saddleable {
 
 		this.hasImpulse = true;
 		this.playSound(AtmosphericSoundEvents.COCHINEAL_BOUNCE.get(), 2.5F, 0.8F / (this.getRandom().nextFloat() * 0.2F + 0.8F));
-		ForgeHooks.onLivingJump(this);
+		CommonHooks.onLivingJump(this);
 	}
 
 	public boolean canLeap() {
@@ -535,7 +526,7 @@ public class Cochineal extends Animal implements Saddleable {
 	}
 
 	@Override
-	public EntityDimensions getDimensions(Pose pose) {
+	public EntityDimensions getDefaultDimensions(Pose pose) {
 		if (this.isAttachedToCactus()) {
 			return SUCKLING_DIMENSIONS.scale(this.getScale());
 		} else {
@@ -598,13 +589,13 @@ public class Cochineal extends Animal implements Saddleable {
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData groupData, @Nullable CompoundTag tag) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData groupData) {
 		BlockPos blockpos = this.blockPosition();
 		if (this.level().getBiome(blockpos).is(AtmosphericBiomeTags.IS_COCHINEAL_HABITAT)) {
 			this.lastHabitatBiomePos = blockpos;
 			this.forgetHabitatBiomePosCounter = 100;
 		}
-		return super.finalizeSpawn(level, difficulty, spawnType, groupData, tag);
+		return super.finalizeSpawn(level, difficulty, spawnType, groupData);
 	}
 
 	@Override
@@ -722,7 +713,7 @@ public class Cochineal extends Animal implements Saddleable {
 		}
 
 		private double calculateJumpSpeed(double distance, double height, double jumpPower) {
-			double gravity = -this.cochineal.getAttributeValue(ForgeMod.ENTITY_GRAVITY.get());
+			double gravity = -this.cochineal.getAttributeValue(Attributes.GRAVITY);
 
 			if (height == 0) {
 				return -gravity * distance / Math.abs(jumpPower) / 2.0D;

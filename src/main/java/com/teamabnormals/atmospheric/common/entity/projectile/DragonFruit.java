@@ -3,7 +3,6 @@ package com.teamabnormals.atmospheric.common.entity.projectile;
 import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -11,8 +10,6 @@ import net.minecraft.core.Vec3i;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -31,8 +28,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.network.PlayMessages;
 
 public class DragonFruit extends Entity {
 	private static final EntityDataAccessor<Boolean> IS_FLOWERING = SynchedEntityData.defineId(DragonFruit.class, EntityDataSerializers.BOOLEAN);
@@ -44,10 +39,6 @@ public class DragonFruit extends Entity {
 	public DragonFruit(EntityType<?> entityType, Level level) {
 		super(entityType, level);
 		this.blocksBuilding = true;
-	}
-
-	public DragonFruit(PlayMessages.SpawnEntity message, Level level) {
-		this(AtmosphericEntityTypes.DRAGON_FRUIT.get(), level);
 	}
 
 	public boolean isPickable() {
@@ -67,9 +58,9 @@ public class DragonFruit extends Entity {
 	}
 
 	@Override
-	protected void defineSynchedData() {
-		this.entityData.define(IS_ENDER, false);
-		this.entityData.define(IS_FLOWERING, false);
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		builder.define(IS_ENDER, false);
+		builder.define(IS_FLOWERING, false);
 	}
 
 	@Override
@@ -266,10 +257,5 @@ public class DragonFruit extends Entity {
 
 	private void playBrokenSound() {
 		this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.SWEET_BERRY_BUSH_BREAK, this.getSoundSource(), 1.0F, 1.0F);
-	}
-
-	@Override
-	public Packet<ClientGamePacketListener> getAddEntityPacket() {
-		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 }

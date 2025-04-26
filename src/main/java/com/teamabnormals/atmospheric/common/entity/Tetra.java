@@ -1,20 +1,18 @@
 package com.teamabnormals.atmospheric.common.entity;
 
-import com.google.common.collect.Lists;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBiomeTags;
-import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericDataSerializers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
-import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.FluidTags;
@@ -31,6 +29,7 @@ import net.minecraft.world.entity.animal.AbstractSchoolingFish;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -38,39 +37,38 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.network.PlayMessages;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraVariant> {
-	public static final String BUCKET_VARIANT_TAG = "TetraVariant";
-	private static final EntityDataAccessor<String> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Tetra.class, EntityDataSerializers.STRING);
+public class Tetra extends AbstractSchoolingFish implements VariantHolder<Holder<TetraVariant>> {
+	public static final String BUCKET_VARIANT_TAG = "BucketVariantTag";
+	private static final EntityDataAccessor<Holder<TetraVariant>> VARIANT = SynchedEntityData.defineId(Tetra.class, AtmosphericDataSerializers.TETRA_VARIANT.get());
 
 	public Tetra(EntityType<? extends Tetra> p_30015_, Level p_30016_) {
 		super(p_30015_, p_30016_);
 	}
 
-	public Tetra(PlayMessages.SpawnEntity message, Level level) {
-		this(AtmosphericEntityTypes.TETRA.get(), level);
-	}
-
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.entityData.define(DATA_ID_TYPE_VARIANT, TetraVariant.NEON.location().toString());
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		Registry<TetraVariant> registry = this.registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT);
+		builder.define(VARIANT, registry.getHolder(TetraVariant.DEFAULT).or(registry::getAny).orElseThrow());
 	}
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
-		tag.putString("Variant", this.getStringVariant());
+		this.getVariant().unwrapKey().ifPresent(variant -> tag.putString(BUCKET_VARIANT_TAG, variant.location().toString()));
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
-		this.setStringVariant(tag.getString("Variant"));
+		Optional.ofNullable(ResourceLocation.tryParse(tag.getString(BUCKET_VARIANT_TAG)))
+				.map(loc -> ResourceKey.create(AtmosphericRegistries.TETRA_VARIANT, loc))
+				.flatMap(key -> this.registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT).getHolder(key))
+				.ifPresent(this::setVariant);
 	}
 
 	@Override
@@ -81,32 +79,30 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 		this.goalSelector.addGoal(5, new FollowFlockLeaderGoal(this));
 	}
 
-	public String getStringVariant() {
-		return !this.entityData.get(DATA_ID_TYPE_VARIANT).isEmpty() ? this.entityData.get(DATA_ID_TYPE_VARIANT) : TetraVariant.NEON.location().toString();
-	}
-
-	private void setStringVariant(String var) {
-		this.entityData.set(DATA_ID_TYPE_VARIANT, var);
+	@Override
+	public void setVariant(Holder<TetraVariant> variant) {
+		this.entityData.set(VARIANT, variant);
 	}
 
 	@Override
-	public void setVariant(TetraVariant variant) {
-		this.setVariant(this.level().registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT).getKey(variant));
-	}
-
-	@Override
-	public TetraVariant getVariant() {
-		return this.level().registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT).get(new ResourceLocation(this.getStringVariant()));
-	}
-
-	public void setVariant(ResourceLocation variant) {
-		this.setStringVariant(variant.toString());
+	public Holder<TetraVariant> getVariant() {
+		return this.entityData.get(VARIANT);
 	}
 
 	public void saveToBucketTag(ItemStack stack) {
 		super.saveToBucketTag(stack);
-		CompoundTag tag = stack.getOrCreateTag();
-		tag.putString(BUCKET_VARIANT_TAG, this.getStringVariant());
+		CustomData.update(DataComponents.BUCKET_ENTITY_DATA, stack, tag -> {
+			this.getVariant().unwrapKey().ifPresent(variant -> tag.putString(BUCKET_VARIANT_TAG, variant.location().toString()));
+		});
+	}
+
+	@Override
+	public void loadFromBucketTag(CompoundTag tag) {
+		super.loadFromBucketTag(tag);
+		Optional.ofNullable(ResourceLocation.tryParse(BUCKET_VARIANT_TAG))
+				.map(loc -> ResourceKey.create(AtmosphericRegistries.TETRA_VARIANT, loc))
+				.flatMap(key -> this.registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT).getHolder(key))
+				.ifPresent(this::setVariant);
 	}
 
 	public ItemStack getBucketItemStack() {
@@ -189,31 +185,20 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 	}
 
 	@Nullable
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData data, @Nullable CompoundTag tag) {
-		data = super.finalizeSpawn(level, difficulty, spawnType, data, tag);
-		if (spawnType == MobSpawnType.BUCKET && tag != null && tag.contains(BUCKET_VARIANT_TAG, Tag.TAG_STRING)) {
-			this.setStringVariant(tag.getString(BUCKET_VARIANT_TAG));
-			return data;
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData data) {
+		data = super.finalizeSpawn(level, difficulty, spawnType, data);
+
+		RandomSource random = level.getRandom();
+		Holder<TetraVariant> tetraVariant;
+		if (data instanceof TetraGroupData tetraData) {
+			tetraVariant = tetraData.variant;
 		} else {
-			RandomSource random = level.getRandom();
-			TetraVariant tetraVariant;
-			if (data instanceof TetraGroupData tetraData) {
-				tetraVariant = tetraData.variant;
-			} else {
-				Registry<TetraVariant> registry = level.registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT);
-				ArrayList<TetraVariant> weightedVariants = Lists.newArrayList();
-				for (TetraVariant variant : registry.stream().toList()) {
-					for (int i = 0; i < variant.weight(); i++)
-						weightedVariants.add(variant);
-				}
-
-				tetraVariant = Util.getRandom(weightedVariants, random);
-				data = new TetraGroupData(this, tetraVariant);
-			}
-
-			this.setVariant(tetraVariant);
-			return data;
+			tetraVariant = TetraVariant.getSpawnVariant(level.registryAccess(), random);
+			data = new TetraGroupData(this, tetraVariant);
 		}
+
+		this.setVariant(tetraVariant);
+		return data;
 	}
 
 	public static boolean checkTetraSpawnRules(EntityType<Tetra> tetra, LevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource random) {
@@ -221,9 +206,9 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 	}
 
 	static class TetraGroupData extends AbstractSchoolingFish.SchoolSpawnGroupData {
-		final TetraVariant variant;
+		final Holder<TetraVariant> variant;
 
-		TetraGroupData(Tetra leader, TetraVariant variant) {
+		TetraGroupData(Tetra leader, Holder<TetraVariant> variant) {
 			super(leader);
 			this.variant = variant;
 		}
@@ -250,7 +235,7 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<TetraV
 		public static Vec3 getRandomSwimmablePos(PathfinderMob mob, int xz, int y) {
 			Vec3 vec3 = getPos(mob, xz, y);
 
-			for (int i = 0; vec3 != null && !mob.level().getBlockState(BlockPos.containing(vec3)).isPathfindable(mob.level(), BlockPos.containing(vec3), PathComputationType.WATER) && i++ < 10; vec3 = getPos(mob, xz, y)) {
+			for (int i = 0; vec3 != null && !mob.level().getBlockState(BlockPos.containing(vec3)).isPathfindable(PathComputationType.WATER) && i++ < 10; vec3 = getPos(mob, xz, y)) {
 			}
 
 			return vec3;

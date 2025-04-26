@@ -1,5 +1,6 @@
 {
   "asset_id": "atmospheric:druid",
+  "decal": false,
   "description": {
     "translate": "trim_pattern.atmospheric.druid"
   },

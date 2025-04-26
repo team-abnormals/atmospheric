@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "atmospheric:carmine_pavement"
-  },
-  "result": "atmospheric:carmine_pavement_slab"
-}

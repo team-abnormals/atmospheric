@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:wooded_badlands",
+  "features": [
+    "atmospheric:badlands_yucca_trees",
+    "atmospheric:patch_agave_wooded_badlands"
+  ],
+  "step": "vegetal_decoration"
+}

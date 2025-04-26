@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "atmospheric:config",
+          "value": "grimwood_ancient_cities"
+        },
+        {
+          "type": "neoforge:and",
+          "values": [
+            {
+              "type": "woodworks:config",
+              "value": "wooden_chests"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "wooden_chests_in_villages"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "priority": 200,
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces": "minecraft:chest",
+    "replaces_with": "atmospheric:grimwood_chest"
+  },
+  "structures": "minecraft:ancient_city"
+}

@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "minecraft:desert",
-  "features": "atmospheric:desert_yucca_trees",
-  "step": "vegetal_decoration"
-}

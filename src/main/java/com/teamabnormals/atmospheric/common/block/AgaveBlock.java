@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
@@ -18,6 +19,11 @@ public class AgaveBlock extends BushBlock {
 
 	public AgaveBlock(Properties properties) {
 		super(properties);
+	}
+
+	@Override
+	protected MapCodec<? extends BushBlock> codec() {
+		return null;
 	}
 
 	@Override

@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "blueprint:and",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "wooden_boards"
+        }
+      ]
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:yucca_boards"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yucca_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:yucca_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yucca_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:yucca_boards"
+    ]
+  }
+}

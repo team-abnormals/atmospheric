@@ -3,11 +3,12 @@ package com.teamabnormals.atmospheric.core.data.client;
 import com.teamabnormals.atmospheric.common.entity.TetraVariant;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.data.client.BlueprintItemModelProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -23,13 +24,13 @@ public class AtmosphericItemModelProvider extends BlueprintItemModelProvider {
 	@Override
 	protected void registerModels() {
 		this.generatedItem(
-				ROSEWOOD_BOAT.getFirst(), ROSEWOOD_BOAT.getSecond(), ROSEWOOD_FURNACE_BOAT, LARGE_ROSEWOOD_BOAT,
-				MORADO_BOAT.getFirst(), MORADO_BOAT.getSecond(), MORADO_FURNACE_BOAT, LARGE_MORADO_BOAT,
-				YUCCA_BOAT.getFirst(), YUCCA_BOAT.getSecond(), YUCCA_FURNACE_BOAT, LARGE_YUCCA_BOAT,
-				ASPEN_BOAT.getFirst(), ASPEN_BOAT.getSecond(), ASPEN_FURNACE_BOAT, LARGE_ASPEN_BOAT,
-				LAUREL_BOAT.getFirst(), LAUREL_BOAT.getSecond(), LAUREL_FURNACE_BOAT, LARGE_LAUREL_BOAT,
-				KOUSA_BOAT.getFirst(), KOUSA_BOAT.getSecond(), KOUSA_FURNACE_BOAT, LARGE_KOUSA_BOAT,
-				GRIMWOOD_BOAT.getFirst(), GRIMWOOD_BOAT.getSecond(), GRIMWOOD_FURNACE_BOAT, LARGE_GRIMWOOD_BOAT
+				AtmosphericItems.ROSEWOOD_BOAT, AtmosphericItems.ROSEWOOD_CHEST_BOAT, ROSEWOOD_FURNACE_BOAT, LARGE_ROSEWOOD_BOAT,
+				MORADO_BOAT, MORADO_CHEST_BOAT, MORADO_FURNACE_BOAT, LARGE_MORADO_BOAT,
+				YUCCA_BOAT, YUCCA_CHEST_BOAT, YUCCA_FURNACE_BOAT, LARGE_YUCCA_BOAT,
+				ASPEN_BOAT, ASPEN_CHEST_BOAT, ASPEN_FURNACE_BOAT, LARGE_ASPEN_BOAT,
+				LAUREL_BOAT, LAUREL_CHEST_BOAT, LAUREL_FURNACE_BOAT, LARGE_LAUREL_BOAT,
+				KOUSA_BOAT, KOUSA_CHEST_BOAT, KOUSA_FURNACE_BOAT, LARGE_KOUSA_BOAT,
+				GRIMWOOD_BOAT, GRIMWOOD_CHEST_BOAT, GRIMWOOD_FURNACE_BOAT, LARGE_GRIMWOOD_BOAT
 		);
 
 		this.generatedItem(AtmosphericBlocks.YUCCA_GATEAU);
@@ -46,7 +47,7 @@ public class AtmosphericItemModelProvider extends BlueprintItemModelProvider {
 
 		this.spawnEggItem(TETRA_SPAWN_EGG, COCHINEAL_SPAWN_EGG);
 
-		this.item(ORANGE, "generated").override().model(this.item(new ResourceLocation(Atmospheric.MOD_ID, "annoying_orange"), "generated")).predicate(new ResourceLocation(Atmospheric.MOD_ID, "hey_apple"), 1.0F);
+		this.item(ORANGE, "generated").override().model(this.item(Atmospheric.location("annoying_orange"), "generated")).predicate(Atmospheric.location("hey_apple"), 1.0F);
 
 		this.getBuilder(name(TETRA_BUCKET.get()));
 		Arrays.stream(TetraVariant.class.getDeclaredFields()).forEach(field -> {

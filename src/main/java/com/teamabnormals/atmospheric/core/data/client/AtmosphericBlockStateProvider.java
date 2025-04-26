@@ -16,10 +16,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraftforge.client.model.generators.*;
-import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.*;
+import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.*;
 
@@ -39,7 +39,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_ROSEWOOD_LOG, STRIPPED_ROSEWOOD);
 		this.leavesBlock(ROSEWOOD_LEAVES);
 		this.crossBlockWithPot(ROSEWOOD_SAPLING, POTTED_ROSEWOOD_SAPLING);
-		this.hangingSignBlocks(STRIPPED_ROSEWOOD_LOG, ROSEWOOD_HANGING_SIGNS);
+		this.hangingSignBlocks(STRIPPED_ROSEWOOD_LOG, ROSEWOOD_HANGING_SIGNS.getFirst(), ROSEWOOD_HANGING_SIGNS.getSecond());
 		this.woodworksBlocks(ROSEWOOD_PLANKS, ROSEWOOD_BOARDS, ROSEWOOD_LADDER, ROSEWOOD_BOOKSHELF, ROSEWOOD_BEEHIVE, ROSEWOOD_CHEST, TRAPPED_ROSEWOOD_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_ROSEWOOD_BOOKSHELF, DEFAULT_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(ROSEWOOD_LEAVES, ROSEWOOD_LEAF_PILE);
@@ -52,7 +52,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_MORADO_LOG, STRIPPED_MORADO_WOOD);
 		this.leavesBlock(MORADO_LEAVES);
 		this.crossBlockWithPot(MORADO_SAPLING, POTTED_MORADO_SAPLING);
-		this.hangingSignBlocks(STRIPPED_MORADO_LOG, MORADO_HANGING_SIGNS);
+		this.hangingSignBlocks(STRIPPED_MORADO_LOG, MORADO_HANGING_SIGNS.getFirst(), MORADO_HANGING_SIGNS.getSecond());
 		this.woodworksBlocks(MORADO_PLANKS, MORADO_BOARDS, MORADO_LADDER, MORADO_BOOKSHELF, MORADO_BEEHIVE, MORADO_CHEST, TRAPPED_MORADO_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_MORADO_BOOKSHELF, ALTERNATE_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(MORADO_LEAVES, MORADO_LEAF_PILE);
@@ -62,7 +62,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_YUCCA_LOG, STRIPPED_YUCCA_WOOD);
 		this.leavesBlock(YUCCA_LEAVES);
 		this.crossBlockWithPot(YUCCA_SAPLING, POTTED_YUCCA_SAPLING);
-		this.hangingSignBlocks(STRIPPED_YUCCA_LOG, YUCCA_HANGING_SIGNS);
+		this.hangingSignBlocks(STRIPPED_YUCCA_LOG, YUCCA_HANGING_SIGNS.getFirst(), YUCCA_HANGING_SIGNS.getSecond());
 		this.woodworksBlocks(YUCCA_PLANKS, YUCCA_BOARDS, YUCCA_LADDER, YUCCA_BOOKSHELF, YUCCA_BEEHIVE, YUCCA_CHEST, TRAPPED_YUCCA_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_YUCCA_BOOKSHELF, DEFAULT_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(YUCCA_LEAVES, YUCCA_LEAF_PILE);
@@ -90,7 +90,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.watchfulAspenLogBlocks(ASPEN_LOG, WATCHFUL_ASPEN_LOG, WATCHFUL_ASPEN_WOOD);
 		this.leavesBlock(ASPEN_LEAVES);
 		this.crossBlockWithPot(ASPEN_SAPLING, POTTED_ASPEN_SAPLING);
-		this.hangingSignBlocks(STRIPPED_ASPEN_LOG, ASPEN_HANGING_SIGNS);
+		this.hangingSignBlocks(STRIPPED_ASPEN_LOG, ASPEN_HANGING_SIGNS.getFirst(), ASPEN_HANGING_SIGNS.getSecond());
 		this.woodworksBlocks(ASPEN_PLANKS, ASPEN_BOARDS, ASPEN_LADDER, ASPEN_BOOKSHELF, ASPEN_BEEHIVE, ASPEN_CHEST, TRAPPED_ASPEN_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_ASPEN_BOOKSHELF, ALTERNATE_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(ASPEN_LEAVES, ASPEN_LEAF_PILE);
@@ -106,7 +106,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_LAUREL_LOG, STRIPPED_LAUREL_WOOD);
 		this.leavesBlock(LAUREL_LEAVES);
 		this.crossBlockWithPot(LAUREL_SAPLING, POTTED_LAUREL_SAPLING);
-		this.hangingSignBlocks(STRIPPED_LAUREL_LOG, LAUREL_HANGING_SIGNS);
+		this.hangingSignBlocks(STRIPPED_LAUREL_LOG, LAUREL_HANGING_SIGNS.getFirst(), LAUREL_HANGING_SIGNS.getSecond());
 		this.woodworksBlocks(LAUREL_PLANKS, LAUREL_BOARDS, LAUREL_LADDER, LAUREL_BOOKSHELF, LAUREL_BEEHIVE, LAUREL_CHEST, TRAPPED_LAUREL_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_LAUREL_BOOKSHELF);
 		this.leafPileBlock(LAUREL_LEAVES, LAUREL_LEAF_PILE);
@@ -124,7 +124,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_KOUSA_LOG, STRIPPED_KOUSA_WOOD);
 		this.leavesBlock(KOUSA_LEAVES);
 		this.crossBlockWithPot(KOUSA_SAPLING, POTTED_KOUSA_SAPLING);
-		this.hangingSignBlocks(STRIPPED_KOUSA_LOG, KOUSA_HANGING_SIGNS);
+		this.hangingSignBlocks(STRIPPED_KOUSA_LOG, KOUSA_HANGING_SIGNS.getFirst(), KOUSA_HANGING_SIGNS.getSecond());
 		this.woodworksBlocks(KOUSA_PLANKS, KOUSA_BOARDS, KOUSA_LADDER, KOUSA_BOOKSHELF, KOUSA_BEEHIVE, KOUSA_CHEST, TRAPPED_KOUSA_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_KOUSA_BOOKSHELF, DEFAULT_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(KOUSA_LEAVES, KOUSA_LEAF_PILE);
@@ -141,7 +141,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.logBlocks(STRIPPED_GRIMWOOD_LOG, STRIPPED_GRIMWOOD);
 		this.leavesBlock(GRIMWOOD_LEAVES);
 		this.crossBlockWithPot(GRIMWOOD_SAPLING, POTTED_GRIMWOOD_SAPLING);
-		this.hangingSignBlocks(STRIPPED_GRIMWOOD_LOG, GRIMWOOD_HANGING_SIGNS);
+		this.hangingSignBlocks(STRIPPED_GRIMWOOD_LOG, GRIMWOOD_HANGING_SIGNS.getFirst(), GRIMWOOD_HANGING_SIGNS.getSecond());
 		this.woodworksBlocks(GRIMWOOD_PLANKS, GRIMWOOD_BOARDS, GRIMWOOD_LADDER, GRIMWOOD_BOOKSHELF, GRIMWOOD_BEEHIVE, GRIMWOOD_CHEST, TRAPPED_GRIMWOOD_CHEST);
 		this.chiseledBookshelfBlock(CHISELED_GRIMWOOD_BOOKSHELF, ALTERNATE_BOOKSHELF_POSITIONS);
 		this.leafPileBlock(GRIMWOOD_LEAVES, GRIMWOOD_LEAF_PILE);
@@ -162,12 +162,12 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.glassPaneBlock(ARID_GLASS_PANE, ARID_GLASS);
 	}
 
-	public void watchfulAspenLogBlocks(RegistryObject<Block> aspenLog, RegistryObject<Block> log, RegistryObject<Block> wood) {
+	public void watchfulAspenLogBlocks(DeferredBlock<Block> aspenLog, DeferredBlock<Block> log, DeferredBlock<Block> wood) {
 		this.logBlock(log, blockTexture(log.get()), suffix(blockTexture(aspenLog.get()), "_top"));
 		this.woodBlock(wood, log);
 	}
 
-	public void orange(RegistryObject<Block> block) {
+	public void orange(DeferredBlock<Block> block) {
 		this.getVariantBuilder(block.get()).forAllStatesExcept(state -> {
 			boolean horizontal = Plane.HORIZONTAL.test(state.getValue(BlockStateProperties.FACING));
 			String addition = (state.getValue(OrangeBlock.ORANGES) == 2 ? "_double" : "") + (horizontal ? "_wall" : state.getValue(OrangeBlock.FACING) == Direction.DOWN ? "_ceiling" : "");
@@ -178,7 +178,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		}, BlockStateProperties.WATERLOGGED);
 	}
 
-	public void dragonRoots(RegistryObject<Block> block) {
+	public void dragonRoots(DeferredBlock<Block> block) {
 		MultiPartBlockStateBuilder builder = this.getMultipartBuilder(block.get());
 		DragonRootsBlock.FACING.getPossibleValues().forEach(dir -> {
 			int yRot = (((int) dir.toYRot()) + 180) % 360;
@@ -213,7 +213,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		});
 	}
 
-	public void glassPaneBlock(RegistryObject<Block> pane, RegistryObject<Block> glass) {
+	public void glassPaneBlock(DeferredBlock<Block> pane, DeferredBlock<Block> glass) {
 		Block block = pane.get();
 		String name = name(block);
 
@@ -241,7 +241,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 	}
 
 	public BlockModelBuilder glassPaneBlock(String name, String suffix) {
-		return models().getBuilder(name + "_" + suffix).parent(new UncheckedModelFile(new ResourceLocation("block/template_glass_pane_" + suffix)));
+		return models().getBuilder(name + "_" + suffix).parent(new UncheckedModelFile(ResourceLocation.withDefaultNamespace("block/template_glass_pane_" + suffix)));
 	}
 
 	@Override
@@ -256,11 +256,11 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		}
 	}
 
-	public void flowerPotBlock(RegistryObject<Block> flowerPot, ResourceLocation potTexture) {
-		this.simpleBlock(flowerPot.get(), models().singleTexture(name(flowerPot.get()), new ResourceLocation("block/flower_pot_cross"), "plant", potTexture));
+	public void flowerPotBlock(DeferredBlock<Block> flowerPot, ResourceLocation potTexture) {
+		this.simpleBlock(flowerPot.get(), models().singleTexture(name(flowerPot.get()), ResourceLocation.withDefaultNamespace("block/flower_pot_cross"), "plant", potTexture));
 	}
 
-	public void flowerPotBlock(RegistryObject<Block> flowerPot) {
+	public void flowerPotBlock(DeferredBlock<Block> flowerPot) {
 		this.flowerPotBlock(flowerPot, blockTexture(flowerPot.get()));
 	}
 }

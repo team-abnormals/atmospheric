@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.mojang.serialization.MapCodec;
 import com.teamabnormals.atmospheric.common.entity.OrangeVaporCloud;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
@@ -49,6 +50,11 @@ public class OrangeBlock extends DirectionalBlock implements SimpleWaterloggedBl
 	public OrangeBlock(BlockBehaviour.Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(ORANGES, 1).setValue(WATERLOGGED, false));
+	}
+
+	@Override
+	protected MapCodec<? extends DirectionalBlock> codec() {
+		return null;
 	}
 
 	@Override

@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "roasted_yucca_fruit",
+  "ingredients": [
+    {
+      "item": "atmospheric:roasted_yucca_cask"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "atmospheric:roasted_yucca_fruit"
+  }
+}

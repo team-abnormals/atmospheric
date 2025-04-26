@@ -1,24 +1,19 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.core.registry.AtmosphericBiomes;
+import com.mojang.serialization.MapCodec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericBiomes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.PlantType;
 
 
 public class AridSandBlock extends FallingBlock implements BonemealableBlock {
@@ -30,36 +25,17 @@ public class AridSandBlock extends FallingBlock implements BonemealableBlock {
 	}
 
 	@Override
+	protected MapCodec<? extends FallingBlock> codec() {
+		return null;
+	}
+
+	@Override
 	public int getDustColor(BlockState state, BlockGetter reader, BlockPos pos) {
 		return this.color;
 	}
 
 	@Override
-	public boolean canSustainPlant(BlockState state, BlockGetter level, BlockPos pos, Direction facing, IPlantable plantable) {
-		BlockState plant = plantable.getPlant(level, pos.relative(facing));
-		PlantType type = plantable.getPlantType(level, pos.relative(facing));
-
-		if (plant.getBlock() == Blocks.CACTUS)
-			return true;
-		if (PlantType.DESERT.equals(type)) {
-			return true;
-		} else if (PlantType.BEACH.equals(type)) {
-			boolean hasWater = false;
-			for (Direction face : Direction.Plane.HORIZONTAL) {
-				BlockState blockState = level.getBlockState(pos.relative(face));
-				FluidState fluidState = level.getFluidState(pos.relative(face));
-				hasWater |= blockState.is(Blocks.FROSTED_ICE);
-				hasWater |= fluidState.is(FluidTags.WATER);
-				if (hasWater) {
-					return true;
-				}
-			}
-		}
-		return super.canSustainPlant(state, level, pos, facing, plantable);
-	}
-
-	@Override
-	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
 		return worldIn.getBlockState(pos.above()).isAir();
 	}
 

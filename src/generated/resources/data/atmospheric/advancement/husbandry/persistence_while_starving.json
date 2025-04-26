@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "persistence_while_starving": {
+      "trigger": "atmospheric:persistence_while_starving"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.atmospheric.husbandry.persistence_while_starving.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "atmospheric:roasted_yucca_fruit"
+    },
+    "title": {
+      "translate": "advancements.atmospheric.husbandry.persistence_while_starving.title"
+    }
+  },
+  "requirements": [
+    [
+      "persistence_while_starving"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

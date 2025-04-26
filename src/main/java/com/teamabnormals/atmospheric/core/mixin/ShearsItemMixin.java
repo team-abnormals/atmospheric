@@ -1,6 +1,5 @@
 package com.teamabnormals.atmospheric.core.mixin;
 
-import com.teamabnormals.atmospheric.common.block.YuccaBundleBlock;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
@@ -23,14 +22,15 @@ public abstract class ShearsItemMixin {
 		}
 	}
 
-	@Inject(method = "getDestroySpeed", at = @At("RETURN"), cancellable = true)
-	private void getDestroySpeed(ItemStack stack, BlockState state, CallbackInfoReturnable<Float> cir) {
-		if (state.is(AtmosphericBlocks.PASSION_VINE_BUNDLE.get()) || state.is(AtmosphericBlocks.YUCCA_FLOWER.get()) || state.is(AtmosphericBlocks.TALL_YUCCA_FLOWER.get()) || state.is(AtmosphericBlocks.DRAGON_ROOTS.get())) {
-			cir.setReturnValue(15.0F);
-		}
-
-		if (state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get()) || state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get()) || state.getBlock() instanceof YuccaBundleBlock) {
-			cir.setReturnValue(5.0F);
-		}
-	}
+	//TODO: Rawr
+//	@Inject(method = "getDestroySpeed", at = @At("RETURN"), cancellable = true)
+//	private void getDestroySpeed(ItemStack stack, BlockState state, CallbackInfoReturnable<Float> cir) {
+//		if (state.is(AtmosphericBlocks.PASSION_VINE_BUNDLE.get()) || state.is(AtmosphericBlocks.YUCCA_FLOWER.get()) || state.is(AtmosphericBlocks.TALL_YUCCA_FLOWER.get()) || state.is(AtmosphericBlocks.DRAGON_ROOTS.get())) {
+//			cir.setReturnValue(15.0F);
+//		}
+//
+//		if (state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get()) || state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get()) || state.getBlock() instanceof YuccaBundleBlock) {
+//			cir.setReturnValue(5.0F);
+//		}
+//	}
 }

@@ -57,7 +57,7 @@ public interface Crustose {
 		}
 	}
 
-	default boolean isCrustoseValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState state, boolean isClient) {
+	default boolean isCrustoseValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState state) {
 		return level.getBlockState(pos.above()).isAir();
 	}
 

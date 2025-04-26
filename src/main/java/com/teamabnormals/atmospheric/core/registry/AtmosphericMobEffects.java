@@ -4,43 +4,47 @@ import com.teamabnormals.atmospheric.common.effect.PersistenceEffect;
 import com.teamabnormals.atmospheric.common.effect.SpittingEffect;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.blueprint.common.effect.BlueprintMobEffect;
-import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
-@EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericMobEffects {
-	public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Atmospheric.MOD_ID);
-	public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(ForgeRegistries.POTIONS, Atmospheric.MOD_ID);
+	public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, Atmospheric.MOD_ID);
+	public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(Registries.POTION, Atmospheric.MOD_ID);
 
-	public static final RegistryObject<MobEffect> RELIEF = EFFECTS.register("relief", () -> new BlueprintMobEffect(MobEffectCategory.BENEFICIAL, 15494786));
-	public static final RegistryObject<MobEffect> WORSENING = EFFECTS.register("worsening", () -> new BlueprintMobEffect(MobEffectCategory.HARMFUL, 3110759));
-	public static final RegistryObject<MobEffect> SPITTING = EFFECTS.register("spitting", SpittingEffect::new);
-	public static final RegistryObject<MobEffect> PERSISTENCE = EFFECTS.register("persistence", () -> new PersistenceEffect().addAttributeModifier(Attributes.MOVEMENT_SPEED, "7A8BEE59-3D67-4D88-8223-81A15A706AE9", 0.0F, AttributeModifier.Operation.MULTIPLY_TOTAL));
+	public static final DeferredHolder<MobEffect, MobEffect> RELIEF = EFFECTS.register("relief", () -> new BlueprintMobEffect(MobEffectCategory.BENEFICIAL, 15494786));
+	public static final DeferredHolder<MobEffect, MobEffect> WORSENING = EFFECTS.register("worsening", () -> new BlueprintMobEffect(MobEffectCategory.HARMFUL, 3110759));
+	public static final DeferredHolder<MobEffect, MobEffect> SPITTING = EFFECTS.register("spitting", SpittingEffect::new);
+	public static final DeferredHolder<MobEffect, MobEffect> PERSISTENCE = EFFECTS.register("persistence", () -> new PersistenceEffect().addAttributeModifier(Attributes.MOVEMENT_SPEED, Atmospheric.location("persistence_speed_boost"), 0.0F, Operation.ADD_MULTIPLIED_TOTAL));
 
-	public static final RegistryObject<Potion> RELIEF_NORMAL = POTIONS.register("relief", () -> new Potion(new MobEffectInstance(RELIEF.get(), 3600)));
-	public static final RegistryObject<Potion> RELIEF_STRONG = POTIONS.register("relief_strong", () -> new Potion(new MobEffectInstance(RELIEF.get(), 1800, 1)));
-	public static final RegistryObject<Potion> RELIEF_LONG = POTIONS.register("relief_long", () -> new Potion(new MobEffectInstance(RELIEF.get(), 9600)));
-	public static final RegistryObject<Potion> WORSENING_NORMAL = POTIONS.register("worsening", () -> new Potion(new MobEffectInstance(WORSENING.get(), 3600)));
-	public static final RegistryObject<Potion> WORSENING_STRONG = POTIONS.register("worsening_strong", () -> new Potion(new MobEffectInstance(WORSENING.get(), 1800, 1)));
-	public static final RegistryObject<Potion> WORSENING_LONG = POTIONS.register("worsening_long", () -> new Potion(new MobEffectInstance(WORSENING.get(), 9600)));
+	public static final DeferredHolder<Potion, Potion> RELIEF_NORMAL = POTIONS.register("relief", () -> new Potion(new MobEffectInstance(RELIEF, 3600)));
+	public static final DeferredHolder<Potion, Potion> RELIEF_STRONG = POTIONS.register("relief_strong", () -> new Potion(new MobEffectInstance(RELIEF, 1800, 1)));
+	public static final DeferredHolder<Potion, Potion> RELIEF_LONG = POTIONS.register("relief_long", () -> new Potion(new MobEffectInstance(RELIEF, 9600)));
+	public static final DeferredHolder<Potion, Potion> WORSENING_NORMAL = POTIONS.register("worsening", () -> new Potion(new MobEffectInstance(WORSENING, 3600)));
+	public static final DeferredHolder<Potion, Potion> WORSENING_STRONG = POTIONS.register("worsening_strong", () -> new Potion(new MobEffectInstance(WORSENING, 1800, 1)));
+	public static final DeferredHolder<Potion, Potion> WORSENING_LONG = POTIONS.register("worsening_long", () -> new Potion(new MobEffectInstance(WORSENING, 9600)));
 
-	public static void registerBrewingRecipes() {
-		DataUtil.addMix(Potions.AWKWARD, AtmosphericItems.ALOE_LEAVES.get(), RELIEF_NORMAL.get());
-		DataUtil.addMix(RELIEF_NORMAL.get(), Items.GLOWSTONE_DUST, RELIEF_STRONG.get());
-		DataUtil.addMix(RELIEF_NORMAL.get(), Items.REDSTONE, RELIEF_LONG.get());
-		DataUtil.addMix(RELIEF_NORMAL.get(), Items.FERMENTED_SPIDER_EYE, WORSENING_NORMAL.get());
-		DataUtil.addMix(WORSENING_NORMAL.get(), Items.GLOWSTONE_DUST, WORSENING_STRONG.get());
-		DataUtil.addMix(WORSENING_NORMAL.get(), Items.REDSTONE, WORSENING_LONG.get());
+	@SubscribeEvent
+	public static void registerBrewingRecipes(RegisterBrewingRecipesEvent event) {
+		PotionBrewing.Builder builder = event.getBuilder();
+		builder.addMix(Potions.AWKWARD, AtmosphericItems.ALOE_LEAVES.get(), RELIEF_NORMAL);
+		builder.addMix(RELIEF_NORMAL, Items.GLOWSTONE_DUST, RELIEF_STRONG);
+		builder.addMix(RELIEF_NORMAL, Items.REDSTONE, RELIEF_LONG);
+		builder.addMix(RELIEF_NORMAL, Items.FERMENTED_SPIDER_EYE, WORSENING_NORMAL);
+		builder.addMix(WORSENING_NORMAL, Items.GLOWSTONE_DUST, WORSENING_STRONG);
+		builder.addMix(WORSENING_NORMAL, Items.REDSTONE, WORSENING_LONG);
 	}
 }

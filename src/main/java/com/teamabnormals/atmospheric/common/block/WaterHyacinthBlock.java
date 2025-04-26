@@ -28,8 +28,8 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 
@@ -67,13 +67,10 @@ public class WaterHyacinthBlock extends FlowerBlock implements SimpleWaterlogged
 	@Override
 	@Nullable
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		BlockPos blockpos = context.getClickedPos();
-		return blockpos.getY() < 255 && context.getLevel().getBlockState(blockpos.above()).canBeReplaced(context) ? super.getStateForPlacement(context) : null;
-	}
-
-	@Override
-	public void setPlacedBy(Level worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
-		worldIn.setBlock(pos.below(), this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER), 3);
+		BlockPos pos = context.getClickedPos();
+		BlockPos belowPos = pos.below();
+		Level level = context.getLevel();
+		return context.getLevel().getBlockState(belowPos).canBeReplaced(context) && level.getWorldBorder().isWithinBounds(belowPos) ? super.getStateForPlacement(context) : null;
 	}
 
 	@Override
@@ -88,13 +85,24 @@ public class WaterHyacinthBlock extends FlowerBlock implements SimpleWaterlogged
 		}
 	}
 
+	@Override
+	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+		super.setPlacedBy(level, pos, state, placer, stack);
+		if (!level.isClientSide()) {
+			BlockPos belowPos = pos.below();
+			level.setBlock(belowPos, state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(WATERLOGGED, true), 3);
+			level.blockUpdated(pos, Blocks.AIR);
+			state.updateNeighbourShapes(level, pos, 3);
+		}
+	}
+
 	public void placeAt(LevelAccessor worldIn, BlockPos pos, int flags) {
 		worldIn.setBlock(pos.below(), this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, true), flags);
 		worldIn.setBlock(pos, this.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER), flags);
 	}
 
 	@Override
-	public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
 		if (!level.isClientSide) {
 			if (player.isCreative()) {
 				preventCreativeDropFromBottomPart(level, pos, state, player);
@@ -103,7 +111,7 @@ public class WaterHyacinthBlock extends FlowerBlock implements SimpleWaterlogged
 			}
 		}
 
-		super.playerWillDestroy(level, pos, state, player);
+		return super.playerWillDestroy(level, pos, state, player);
 	}
 
 	@Override

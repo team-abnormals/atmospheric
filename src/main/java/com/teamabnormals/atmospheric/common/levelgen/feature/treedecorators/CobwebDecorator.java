@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures;
 import net.minecraft.core.BlockPos;
@@ -12,7 +13,7 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorTy
 import java.util.List;
 
 public class CobwebDecorator extends TreeDecorator {
-	public static final Codec<CobwebDecorator> CODEC = Codec.floatRange(0.0F, 1.0F).fieldOf("probability").xmap(CobwebDecorator::new, (decorator) -> decorator.probability).codec();
+	public static final MapCodec<CobwebDecorator> CODEC = Codec.floatRange(0.0F, 1.0F).fieldOf("probability").xmap(CobwebDecorator::new, (decorator) -> decorator.probability);
 	private final float probability;
 
 	public CobwebDecorator(float probability) {

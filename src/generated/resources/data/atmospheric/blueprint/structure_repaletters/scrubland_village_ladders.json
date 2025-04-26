@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:and",
+      "values": [
+        {
+          "type": "woodworks:config",
+          "value": "wooden_ladders"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "wooden_ladders_in_villages"
+        }
+      ]
+    }
+  ],
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces": "minecraft:ladder",
+    "replaces_with": "atmospheric:laurel_ladder"
+  },
+  "structures": "atmospheric:village_scrubland"
+}
