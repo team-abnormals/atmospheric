@@ -530,7 +530,7 @@ public class Cochineal extends Animal implements Saddleable {
 		if (this.isAttachedToCactus()) {
 			return SUCKLING_DIMENSIONS.scale(this.getScale());
 		} else {
-			return super.getDimensions(pose);
+			return super.getDefaultDimensions(pose);
 		}
 	}
 
