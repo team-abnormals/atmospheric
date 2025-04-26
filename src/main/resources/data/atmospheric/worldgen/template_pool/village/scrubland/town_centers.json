@@ -5,7 +5,9 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "atmospheric:village/scrubland/town_centers/scrubland_meeting_point_1",
-        "processors": "atmospheric:prevent_waterlogging_spread",
+        "processors": {
+          "processors": []
+        },
         "projection": "rigid"
       },
       "weight": 98
@@ -14,7 +16,9 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "atmospheric:village/scrubland/town_centers/scrubland_meeting_point_2",
-        "processors": "atmospheric:prevent_waterlogging_spread",
+        "processors": {
+          "processors": []
+        },
         "projection": "rigid"
       },
       "weight": 98
@@ -23,7 +27,9 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "atmospheric:village/scrubland/town_centers/scrubland_meeting_point_3",
-        "processors": "atmospheric:prevent_waterlogging_spread",
+        "processors": {
+          "processors": []
+        },
         "projection": "rigid"
       },
       "weight": 49

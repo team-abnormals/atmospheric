@@ -52,7 +52,6 @@ public class Atmospheric {
 		AtmosphericMobEffects.EFFECTS.register(bus);
 		AtmosphericMobEffects.POTIONS.register(bus);
 		AtmosphericConditionSerializers.CONDITION_SERIALIZERS.register(bus);
-		AtmosphericStructureProcessors.STRUCTURE_PROCESSORS.register(bus);
 		AtmosphericDecoratedPotPatterns.DECORATED_POT_PATTERNS.register(bus);
 		AtmosphericVillagerTypes.VILLAGER_TYPES.register(bus);
 		AtmosphericDataSerializers.SERIALIZERS.register(bus);

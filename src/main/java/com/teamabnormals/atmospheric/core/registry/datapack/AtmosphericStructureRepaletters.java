@@ -31,7 +31,6 @@ public final class AtmosphericStructureRepaletters {
 	public static final ResourceKey<StructureRepaletterEntry> GRIMWOOD_ANCIENT_CITY_LADDERS = create("grimwood_ancient_city_ladders");
 	public static final ResourceKey<StructureRepaletterEntry> GRIMWOOD_ANCIENT_CITY_CHESTS = create("grimwood_ancient_city_chests");
 
-	public static final ResourceKey<Structure> VILLAGE_SCRUBLAND = createStructureKey("village_scrubland");
 	public static final ResourceKey<StructureRepaletterEntry> SCRUBLAND_VILLAGE_LADDERS = create("scrubland_village_ladders");
 	public static final ResourceKey<StructureRepaletterEntry> SCRUBLAND_VILLAGE_BOOKSHELVES = create("scrubland_village_bookshelves");
 	public static final ResourceKey<StructureRepaletterEntry> SCRUBLAND_VILLAGE_CHESTS = create("scrubland_village_chests");
@@ -64,7 +63,7 @@ public final class AtmosphericStructureRepaletters {
 		context.register(GRIMWOOD_ANCIENT_CITY_LADDERS, repalette().priority(50).repaletters(simple(Blocks.LADDER, AtmosphericBlocks.GRIMWOOD_LADDER.get())).select(ancientCity));
 		context.register(GRIMWOOD_ANCIENT_CITY_CHESTS, repalette().priority(50).repaletters(simple(Blocks.CHEST, AtmosphericBlocks.GRIMWOOD_CHEST.get())).select(ancientCity));
 
-		HolderSet<Structure> scrublandVillage = holder(structures, VILLAGE_SCRUBLAND);
+		HolderSet<Structure> scrublandVillage = holder(structures, AtmosphericStructures.VILLAGE_SCRUBLAND);
 
 		context.register(SCRUBLAND_VILLAGE_LADDERS, repalette().repaletters(simple(Blocks.LADDER, AtmosphericBlocks.LAUREL_LADDER.get())).select(scrublandVillage));
 		context.register(SCRUBLAND_VILLAGE_BOOKSHELVES, repalette().repaletters(simple(Blocks.BOOKSHELF, AtmosphericBlocks.LAUREL_BOOKSHELF.get())).select(scrublandVillage));

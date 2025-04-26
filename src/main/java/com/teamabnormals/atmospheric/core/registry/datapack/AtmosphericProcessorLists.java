@@ -1,7 +1,6 @@
 package com.teamabnormals.atmospheric.core.registry.datapack;
 
 import com.google.common.collect.ImmutableList;
-import com.teamabnormals.atmospheric.common.levelgen.structure.processor.PreventWaterloggingSpreadProcessor;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericLootTables;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
@@ -18,7 +17,6 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import java.util.List;
 
 public class AtmosphericProcessorLists {
-	public static final ResourceKey<StructureProcessorList> PREVENT_WATERLOGGING_SPREAD = createKey("prevent_waterlogging_spread");
 	public static final ResourceKey<StructureProcessorList> ZOMBIE_SCRUBLAND = createKey("zombie_scrubland");
 	public static final ResourceKey<StructureProcessorList> FARM_SCRUBLAND = createKey("farm_scrubland");
 
@@ -34,7 +32,6 @@ public class AtmosphericProcessorLists {
 	}
 
 	public static void bootstrap(BootstrapContext<StructureProcessorList> context) {
-		register(context, PREVENT_WATERLOGGING_SPREAD, ImmutableList.of(new PreventWaterloggingSpreadProcessor()));
 
 		register(context, ZOMBIE_SCRUBLAND, ImmutableList.of(
 				new RuleProcessor(ImmutableList.of(
@@ -46,13 +43,11 @@ public class AtmosphericProcessorLists {
 						new ProcessorRule(new RandomBlockMatchTest(AtmosphericBlocks.CARMINE_SHINGLES.get(), 0.1F), AlwaysTrueTest.INSTANCE, Blocks.COBWEB.defaultBlockState()),
 						new ProcessorRule(new RandomBlockMatchTest(AtmosphericBlocks.CARMINE_SHINGLE_STAIRS.get(), 0.1F), AlwaysTrueTest.INSTANCE, Blocks.COBWEB.defaultBlockState()),
 						new ProcessorRule(new RandomBlockMatchTest(Blocks.WHEAT, 0.8F), AlwaysTrueTest.INSTANCE, Blocks.BEETROOTS.defaultBlockState())
-				)),
-				new PreventWaterloggingSpreadProcessor()
+				))
 		));
 
 		register(context, FARM_SCRUBLAND, ImmutableList.of(
-				new RuleProcessor(ImmutableList.of(new ProcessorRule(new RandomBlockMatchTest(Blocks.WHEAT, 0.8F), AlwaysTrueTest.INSTANCE, Blocks.BEETROOTS.defaultBlockState()))),
-				new PreventWaterloggingSpreadProcessor()
+				new RuleProcessor(ImmutableList.of(new ProcessorRule(new RandomBlockMatchTest(Blocks.WHEAT, 0.8F), AlwaysTrueTest.INSTANCE, Blocks.BEETROOTS.defaultBlockState())))
 		));
 
 		register(context, PETRIFIED_ARID_GARDEN, ImmutableList.of(
