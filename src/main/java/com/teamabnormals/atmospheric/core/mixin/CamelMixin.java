@@ -1,12 +1,18 @@
 package com.teamabnormals.atmospheric.core.mixin;
 
 import com.teamabnormals.atmospheric.common.entity.CamelVariant;
-import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBiomeTags;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericDataSerializers;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericCamelVariants;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.SynchedEntityData.Builder;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
@@ -21,10 +27,12 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.Optional;
+
 @Mixin(Camel.class)
-public class CamelMixin extends AbstractHorse implements VariantHolder<CamelVariant> {
+public class CamelMixin extends AbstractHorse implements VariantHolder<Holder<CamelVariant>> {
 	@Unique
-	private static final EntityDataAccessor<Integer> DATA_TYPE_ID = SynchedEntityData.defineId(Camel.class, EntityDataSerializers.INT);
+	private static final EntityDataAccessor<Holder<CamelVariant>> DATA_VARIANT_ID = SynchedEntityData.defineId(Camel.class, AtmosphericDataSerializers.CAMEL_VARIANT.get());
 
 	protected CamelMixin(EntityType<? extends AbstractHorse> entity, Level level) {
 		super(entity, level);
@@ -32,24 +40,27 @@ public class CamelMixin extends AbstractHorse implements VariantHolder<CamelVari
 
 	@Inject(method = "addAdditionalSaveData", at = @At("TAIL"))
 	private void addAdditionalSaveData(CompoundTag tag, CallbackInfo ci) {
-		tag.putInt("CamelType", this.getVariant().id());
+		this.getVariant().unwrapKey().ifPresent(key -> tag.putString("variant", key.location().toString()));
 	}
 
 	@Inject(method = "defineSynchedData", at = @At("TAIL"))
 	private void defineSynchedData(Builder builder, CallbackInfo ci) {
-		builder.define(DATA_TYPE_ID, CamelVariant.DESERT.id());
+		RegistryAccess access = this.registryAccess();
+		Registry<CamelVariant> registry = access.registryOrThrow(AtmosphericRegistries.CAMEL_VARIANT);
+		builder.define(DATA_VARIANT_ID, registry.getHolder(AtmosphericCamelVariants.DEFAULT).or(registry::getAny).orElseThrow());
 	}
 
 	@Inject(method = "readAdditionalSaveData", at = @At("TAIL"))
 	private void readAdditionalSaveData(CompoundTag tag, CallbackInfo ci) {
-		this.setVariant(CamelVariant.byId(tag.getInt("CamelType")));
+		Optional.ofNullable(ResourceLocation.tryParse(tag.getString("variant")))
+				.map(location -> ResourceKey.create(AtmosphericRegistries.CAMEL_VARIANT, location))
+				.flatMap(key -> this.registryAccess().registryOrThrow(AtmosphericRegistries.CAMEL_VARIANT).getHolder(key))
+				.ifPresent(this::setVariant);
 	}
 
 	@Inject(method = "finalizeSpawn", at = @At("HEAD"))
-	private void readAdditionalSaveData(ServerLevelAccessor level, DifficultyInstance p_251264_, MobSpawnType p_250254_, SpawnGroupData p_249259_, CallbackInfoReturnable<SpawnGroupData> cir) {
-		if (level.getBiome(this.blockPosition()).is(AtmosphericBiomeTags.SPAWNS_ARID_CAMELS)) {
-			this.setVariant(CamelVariant.ARID);
-		}
+	private void finalizeSpawn(ServerLevelAccessor level, DifficultyInstance p_251264_, MobSpawnType p_250254_, SpawnGroupData spawnGroupData, CallbackInfoReturnable<SpawnGroupData> cir) {
+		this.setVariant(CamelVariant.getSpawnVariant(this.registryAccess(), level.getBiome(this.blockPosition())));
 	}
 
 	@Inject(method = "getBreedOffspring(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/AgeableMob;)Lnet/minecraft/world/entity/AgeableMob;", at = @At("RETURN"), cancellable = true)
@@ -57,16 +68,14 @@ public class CamelMixin extends AbstractHorse implements VariantHolder<CamelVari
 		Camel camel = cir.getReturnValue();
 
 		if (ageableMob instanceof Camel camelParent) {
-			VariantHolder<CamelVariant> child = ((VariantHolder<CamelVariant>) camel);
-			VariantHolder<CamelVariant> parent = ((VariantHolder<CamelVariant>) camelParent);
+			VariantHolder<Holder<CamelVariant>> child = ((VariantHolder<Holder<CamelVariant>>) camel);
+			VariantHolder<Holder<CamelVariant>> parent = ((VariantHolder<Holder<CamelVariant>>) camelParent);
 
-			CamelVariant variant = this.getVariant();
-			CamelVariant parentVariant = parent.getVariant();
+			Holder<CamelVariant> variant = this.getVariant();
+			Holder<CamelVariant> parentVariant = parent.getVariant();
 
-			if (variant == parentVariant) {
-				child.setVariant(variant);
-			} else if (variant.id() + parentVariant.id() == 1) {
-				child.setVariant(CamelVariant.HYBRID);
+			if ((variant.is(AtmosphericCamelVariants.DESERT) && parentVariant.is(AtmosphericCamelVariants.ARID)) || (variant.is(AtmosphericCamelVariants.ARID) && parentVariant.is(AtmosphericCamelVariants.DESERT))) {
+				this.registryAccess().registryOrThrow(AtmosphericRegistries.CAMEL_VARIANT).getHolder(AtmosphericCamelVariants.HYBRID).ifPresent(child::setVariant);
 			} else {
 				child.setVariant(this.random.nextBoolean() ? variant : parentVariant);
 			}
@@ -76,12 +85,12 @@ public class CamelMixin extends AbstractHorse implements VariantHolder<CamelVari
 	}
 
 	@Override
-	public void setVariant(CamelVariant variant) {
-		this.entityData.set(DATA_TYPE_ID, variant.id());
+	public void setVariant(Holder<CamelVariant> variant) {
+		this.entityData.set(DATA_VARIANT_ID, variant);
 	}
 
 	@Override
-	public CamelVariant getVariant() {
-		return CamelVariant.byId(this.entityData.get(DATA_TYPE_ID));
+	public Holder<CamelVariant> getVariant() {
+		return this.entityData.get(DATA_VARIANT_ID);
 	}
 }

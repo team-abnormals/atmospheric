@@ -4,6 +4,7 @@ import com.teamabnormals.atmospheric.common.entity.TetraVariant;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericTetraVariants;
 import com.teamabnormals.blueprint.core.data.client.BlueprintItemModelProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -50,7 +51,7 @@ public class AtmosphericItemModelProvider extends BlueprintItemModelProvider {
 		this.item(ORANGE, "generated").override().model(this.item(Atmospheric.location("annoying_orange"), "generated")).predicate(Atmospheric.location("hey_apple"), 1.0F);
 
 		this.getBuilder(name(TETRA_BUCKET.get()));
-		Arrays.stream(TetraVariant.class.getDeclaredFields()).forEach(field -> {
+		Arrays.stream(AtmosphericTetraVariants.class.getDeclaredFields()).forEach(field -> {
 			if (Modifier.isStatic(field.getModifiers()) && ResourceKey.class.isAssignableFrom(field.getType())) {
 				try {
 					ResourceLocation location = ((ResourceKey<?>) field.get(null)).location().withPath(s -> "item/tetra_bucket/" + s);

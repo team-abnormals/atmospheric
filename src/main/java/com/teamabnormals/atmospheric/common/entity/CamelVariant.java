@@ -1,52 +1,41 @@
 package com.teamabnormals.atmospheric.common.entity;
 
 import com.mojang.serialization.Codec;
-import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericCamelVariants;
+import net.minecraft.core.*;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.resources.RegistryFileCodec;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.ByIdMap;
-import net.minecraft.util.LazyLoadedValue;
-import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.level.biome.Biome;
 
-import java.util.function.IntFunction;
+public record CamelVariant(ResourceLocation assetId, HolderSet<Biome> biomes) {
 
-public enum CamelVariant implements StringRepresentable {
-	DESERT(0, "minecraft", "camel"),
-	ARID(1, Atmospheric.MOD_ID, "camel_arid"),
-	HYBRID(2, Atmospheric.MOD_ID, "camel_hybrid");
+	public static final Codec<CamelVariant> DIRECT_CODEC = RecordCodecBuilder.create(instance -> instance.group(
+					ResourceLocation.CODEC.fieldOf("asset_id").forGetter(CamelVariant::assetId),
+					RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biomes").forGetter(CamelVariant::biomes))
+			.apply(instance, CamelVariant::new));
 
-	private static final IntFunction<CamelVariant> BY_ID = ByIdMap.sparse(CamelVariant::id, values(), DESERT);
-	public static final Codec<CamelVariant> CODEC = StringRepresentable.fromEnum(CamelVariant::values);
-	private final int id;
-	private final ResourceLocation location;
-	private final LazyLoadedValue<ResourceLocation> texture = new LazyLoadedValue<>(() -> ResourceLocation.fromNamespaceAndPath(this.location().getNamespace(), "textures/entity/camel/" + this.location().getPath() + ".png"));
+	public static final StreamCodec<RegistryFriendlyByteBuf, CamelVariant> DIRECT_STREAM_CODEC = StreamCodec.composite(
+			ResourceLocation.STREAM_CODEC, CamelVariant::assetId,
+			ByteBufCodecs.holderSet(Registries.BIOME), CamelVariant::biomes,
+			CamelVariant::new
+	);
 
-	CamelVariant(int id, String modid, String name) {
-		this(id, ResourceLocation.fromNamespaceAndPath(modid, name));
-	}
+	public static final Codec<Holder<CamelVariant>> CODEC = RegistryFileCodec.create(AtmosphericRegistries.CAMEL_VARIANT, DIRECT_CODEC);
+	public static final StreamCodec<RegistryFriendlyByteBuf, Holder<CamelVariant>> STREAM_CODEC = ByteBufCodecs.holder(AtmosphericRegistries.CAMEL_VARIANT, DIRECT_STREAM_CODEC);
 
-	CamelVariant(int id, ResourceLocation location) {
-		this.id = id;
-		this.location = location;
-	}
-
-	@Override
-	public String getSerializedName() {
-		return this.location.toString();
-	}
-
-	public int id() {
-		return this.id;
-	}
-
-	public ResourceLocation location() {
-		return this.location;
-	}
-
-	public ResourceLocation texture() {
-		return this.texture.get();
-	}
-
-	public static CamelVariant byId(int id) {
-		return BY_ID.apply(id);
+	public static Holder<CamelVariant> getSpawnVariant(RegistryAccess registryAccess, Holder<Biome> biome) {
+		Registry<CamelVariant> registry = registryAccess.registryOrThrow(AtmosphericRegistries.CAMEL_VARIANT);
+		return registry.holders()
+				.filter(holder -> holder.value().biomes().contains(biome))
+				.findFirst()
+				.or(() -> registry.getHolder(AtmosphericCamelVariants.DEFAULT))
+				.or(registry::getAny)
+				.orElseThrow();
 	}
 }
