@@ -5,6 +5,7 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericDataSerializers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericTetraVariants;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -53,7 +54,7 @@ public class Tetra extends AbstractSchoolingFish implements VariantHolder<Holder
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
 		Registry<TetraVariant> registry = this.registryAccess().registryOrThrow(AtmosphericRegistries.TETRA_VARIANT);
-		builder.define(VARIANT, registry.getHolder(TetraVariant.DEFAULT).or(registry::getAny).orElseThrow());
+		builder.define(VARIANT, registry.getHolder(AtmosphericTetraVariants.DEFAULT).or(registry::getAny).orElseThrow());
 	}
 
 	@Override

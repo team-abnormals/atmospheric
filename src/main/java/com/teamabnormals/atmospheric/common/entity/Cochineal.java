@@ -521,7 +521,7 @@ public class Cochineal extends Animal implements Saddleable {
 	}
 
 	@Override
-	public float getScale() {
+	public float getAgeScale() {
 		return this.isBaby() ? 0.4F : 1.0F;
 	}
 

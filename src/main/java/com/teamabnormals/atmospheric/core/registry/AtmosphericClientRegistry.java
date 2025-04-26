@@ -8,9 +8,9 @@ import com.teamabnormals.atmospheric.client.renderer.entity.CochinealRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.DragonFruitRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.PassionFruitSeedRenderer;
 import com.teamabnormals.atmospheric.client.renderer.entity.TetraRenderer;
-import com.teamabnormals.atmospheric.common.entity.TetraVariant;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericModelLayers;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericTetraVariants;
 import com.teamabnormals.blueprint.client.model.DynamicItemModel;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.renderer.entity.NoopRenderer;
@@ -33,7 +33,7 @@ public class AtmosphericClientRegistry {
 
 	@SubscribeEvent
 	public static void modifyBakingResult(ModelEvent.ModifyBakingResult event) {
-		DynamicItemModel.bake(event, AtmosphericItems.TETRA_BUCKET.getId(), "tetra_bucket", ModelResourceLocation.standalone(TetraVariant.NEON.location().withPrefix("item/tetra_bucket/")), DynamicItemModel.fishBucket());
+		DynamicItemModel.bake(event, AtmosphericItems.TETRA_BUCKET.getId(), "tetra_bucket", ModelResourceLocation.standalone(AtmosphericTetraVariants.NEON.location().withPrefix("item/tetra_bucket/")), DynamicItemModel.fishBucket());
 	}
 
 	@SubscribeEvent

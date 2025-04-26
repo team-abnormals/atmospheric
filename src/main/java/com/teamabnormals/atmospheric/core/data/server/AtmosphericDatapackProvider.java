@@ -34,7 +34,7 @@ public class AtmosphericDatapackProvider extends DatapackBuiltinEntriesProvider 
 			.add(Keys.BIOME_MODIFIERS, AtmosphericBiomeModifiers::bootstrap)
 			.add(BlueprintDataPackRegistries.STRUCTURE_REPALETTERS, AtmosphericStructureRepaletters::bootstrap)
 			.add(BlueprintDataPackRegistries.MODDED_BIOME_SLICES, AtmosphericBiomeSlices::bootstrap)
-			.add(AtmosphericRegistries.TETRA_VARIANT, TetraVariant::bootstrap);
+			.add(AtmosphericRegistries.TETRA_VARIANT, AtmosphericTetraVariants::bootstrap);
 
 	public AtmosphericDatapackProvider(PackOutput output, CompletableFuture<Provider> provider) {
 		super(output, provider, BUILDER, AtmosphericStructureRepaletters::applyConditions, Set.of(Atmospheric.MOD_ID));
