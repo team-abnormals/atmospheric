@@ -23,7 +23,7 @@
       ]
     }
   ],
-  "priority": 200,
+  "priority": 50,
   "repaletter": {
     "type": "blueprint:simple",
     "replaces": "minecraft:bookshelf",

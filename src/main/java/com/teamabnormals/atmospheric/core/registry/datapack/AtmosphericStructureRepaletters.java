@@ -50,9 +50,9 @@ public final class AtmosphericStructureRepaletters {
 				new SimpleStructureRepaletter(Blocks.JUNGLE_TRAPDOOR, AtmosphericBlocks.YUCCA_TRAPDOOR.get())
 		).select(desertVillage));
 
-		context.register(YUCCA_DESERT_VILLAGE_LADDERS, StructureRepaletterEntry.repalette().priority(200).repaletters(new SimpleStructureRepaletter(Blocks.LADDER, AtmosphericBlocks.YUCCA_LADDER.get())).select(desertVillage));
-		context.register(YUCCA_DESERT_VILLAGE_BOOKSHELVES, StructureRepaletterEntry.repalette().priority(200).repaletters(new SimpleStructureRepaletter(Blocks.BOOKSHELF, AtmosphericBlocks.YUCCA_BOOKSHELF.get())).select(desertVillage));
-		context.register(YUCCA_DESERT_VILLAGE_CHESTS, StructureRepaletterEntry.repalette().priority(200).repaletters(new SimpleStructureRepaletter(Blocks.CHEST, AtmosphericBlocks.YUCCA_CHEST.get())).select(desertVillage));
+		context.register(YUCCA_DESERT_VILLAGE_LADDERS, StructureRepaletterEntry.repalette().priority(50).repaletters(new SimpleStructureRepaletter(Blocks.LADDER, AtmosphericBlocks.YUCCA_LADDER.get())).select(desertVillage));
+		context.register(YUCCA_DESERT_VILLAGE_BOOKSHELVES, StructureRepaletterEntry.repalette().priority(50).repaletters(new SimpleStructureRepaletter(Blocks.BOOKSHELF, AtmosphericBlocks.YUCCA_BOOKSHELF.get())).select(desertVillage));
+		context.register(YUCCA_DESERT_VILLAGE_CHESTS, StructureRepaletterEntry.repalette().priority(50).repaletters(new SimpleStructureRepaletter(Blocks.CHEST, AtmosphericBlocks.YUCCA_CHEST.get())).select(desertVillage));
 
 		HolderSet<Structure> ancientCity = holder(BuiltinStructures.ANCIENT_CITY, structures);
 
@@ -62,8 +62,8 @@ public final class AtmosphericStructureRepaletters {
 				new SimpleStructureRepaletter(Blocks.DARK_OAK_PLANKS, AtmosphericBlocks.GRIMWOOD_PLANKS.get())
 		).select(ancientCity));
 
-		context.register(GRIMWOOD_ANCIENT_CITY_LADDERS, StructureRepaletterEntry.repalette().priority(200).repaletters(new SimpleStructureRepaletter(Blocks.LADDER, AtmosphericBlocks.GRIMWOOD_LADDER.get())).select(ancientCity));
-		context.register(GRIMWOOD_ANCIENT_CITY_CHESTS, StructureRepaletterEntry.repalette().priority(200).repaletters(new SimpleStructureRepaletter(Blocks.CHEST, AtmosphericBlocks.GRIMWOOD_CHEST.get())).select(ancientCity));
+		context.register(GRIMWOOD_ANCIENT_CITY_LADDERS, StructureRepaletterEntry.repalette().priority(50).repaletters(new SimpleStructureRepaletter(Blocks.LADDER, AtmosphericBlocks.GRIMWOOD_LADDER.get())).select(ancientCity));
+		context.register(GRIMWOOD_ANCIENT_CITY_CHESTS, StructureRepaletterEntry.repalette().priority(50).repaletters(new SimpleStructureRepaletter(Blocks.CHEST, AtmosphericBlocks.GRIMWOOD_CHEST.get())).select(ancientCity));
 
 		HolderSet<Structure> scrublandVillage = holder(VILLAGE_SCRUBLAND, structures);
 
