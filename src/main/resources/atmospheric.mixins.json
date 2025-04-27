@@ -13,9 +13,8 @@
     "PandaBreedGoalMixin",
     "PistonBaseBlockMixin",
     "ServerLevelMixin",
-    "ShearsItemMixin",
     "SnowAndFreezeFeatureMixin",
-    "SwordItemMixin"
+    "ItemMixin"
   ],
   "client": [
     "client.CamelRendererMixin",
