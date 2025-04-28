@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_passion_fruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:passion_fruit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:shimmering_passion_fruit"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_passion_fruit"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:shimmering_passion_fruit"
+    ]
+  }
+}

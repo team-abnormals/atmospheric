@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gilia": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:gilia"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:magenta_dye_from_gilia"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gilia"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:magenta_dye_from_gilia"
+    ]
+  }
+}

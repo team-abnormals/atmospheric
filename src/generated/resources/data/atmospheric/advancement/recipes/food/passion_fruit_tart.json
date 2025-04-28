@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_passion_fruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:fruits/passion_fruit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:passion_fruit_tart"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_passion_fruit"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:passion_fruit_tart"
+    ]
+  }
+}

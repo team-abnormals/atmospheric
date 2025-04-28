@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_scalding_monkey_brush": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:scalding_monkey_brush"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:red_dye_from_scalding_monkey_brush"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_scalding_monkey_brush"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:red_dye_from_scalding_monkey_brush"
+    ]
+  }
+}

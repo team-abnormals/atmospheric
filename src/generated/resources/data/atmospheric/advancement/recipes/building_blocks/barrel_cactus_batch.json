@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_barrel_cactus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:barrel_cactus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:barrel_cactus_batch"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_barrel_cactus"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:barrel_cactus_batch"
+    ]
+  }
+}

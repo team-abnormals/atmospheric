@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_saffron_travertine": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:saffron_travertine"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:saffron_travertine_slab_from_saffron_travertine_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_saffron_travertine"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:saffron_travertine_slab_from_saffron_travertine_stonecutting"
+    ]
+  }
+}

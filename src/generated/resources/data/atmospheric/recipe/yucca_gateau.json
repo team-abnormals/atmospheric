@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "R": {
+      "item": "atmospheric:roasted_yucca_fruit"
+    },
+    "X": {
+      "item": "atmospheric:yucca_flower"
+    },
+    "Y": {
+      "item": "atmospheric:aloe_gel_bottle"
+    }
+  },
+  "pattern": [
+    "RYR",
+    "#X#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "atmospheric:yucca_gateau"
+  }
+}

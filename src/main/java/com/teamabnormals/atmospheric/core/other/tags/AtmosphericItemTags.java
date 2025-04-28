@@ -23,6 +23,7 @@ public class AtmosphericItemTags {
 	public static final TagKey<Item> FRUITS_DRAGON_FRUIT = TagUtil.itemTag("c", "fruits/dragon_fruit");
 	public static final TagKey<Item> FRUITS_ORANGE = TagUtil.itemTag("c", "fruits/orange");
 	public static final TagKey<Item> SEEDS_ALOE_VERA = TagUtil.itemTag("c", "seeds/aloe_vera");
+	public static final TagKey<Item> ICE_CUBES = TagUtil.itemTag("c", "ice_cubes");
 
 	public static final TagKey<Item> COCHINEAL_FOOD = itemTag("cochineal_food");
 	public static final TagKey<Item> COCHINEAL_SUPER_LOVE_FOOD = itemTag("cochineal_super_love_food");

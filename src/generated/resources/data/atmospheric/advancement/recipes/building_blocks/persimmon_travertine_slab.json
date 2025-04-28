@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cut_persimmon_travertine": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:cut_persimmon_travertine"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:persimmon_travertine_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cut_persimmon_travertine"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:persimmon_travertine_slab"
+    ]
+  }
+}

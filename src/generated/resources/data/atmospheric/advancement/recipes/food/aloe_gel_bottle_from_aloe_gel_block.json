@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_aloe_gel_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:aloe_gel_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:aloe_gel_bottle_from_aloe_gel_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_aloe_gel_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:aloe_gel_bottle_from_aloe_gel_block"
+    ]
+  }
+}

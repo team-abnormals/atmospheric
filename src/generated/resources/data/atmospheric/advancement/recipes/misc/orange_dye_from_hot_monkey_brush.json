@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hot_monkey_brush": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:hot_monkey_brush"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:orange_dye_from_hot_monkey_brush"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hot_monkey_brush"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:orange_dye_from_hot_monkey_brush"
+    ]
+  }
+}

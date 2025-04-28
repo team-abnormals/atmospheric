@@ -82,5 +82,6 @@ public class AtmosphericItemTagsProvider extends BlueprintItemTagsProvider {
 		this.tag(FRUITS_ORANGE).add(AtmosphericItems.ORANGE.get());
 		this.tag(Tags.Items.SEEDS).addTag(SEEDS_ALOE_VERA);
 		this.tag(SEEDS_ALOE_VERA).add(AtmosphericItems.ALOE_KERNELS.get());
+		this.tag(ICE_CUBES);
 	}
 }

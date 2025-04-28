@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_agave": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:agave"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:cyan_dye_from_agave"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_agave"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:cyan_dye_from_agave"
+    ]
+  }
+}

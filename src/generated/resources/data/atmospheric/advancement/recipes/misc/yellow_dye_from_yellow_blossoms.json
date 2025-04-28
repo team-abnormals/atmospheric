@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:yellow_dye_from_yellow_blossoms"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yellow_blossoms": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:yellow_blossoms"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yellow_blossoms"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:yellow_dye_from_yellow_blossoms"
+    ]
+  }
+}

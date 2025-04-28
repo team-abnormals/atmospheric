@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ivory_travertine": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:ivory_travertine"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:ivory_travertine_stairs_from_ivory_travertine_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ivory_travertine"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:ivory_travertine_stairs_from_ivory_travertine_stonecutting"
+    ]
+  }
+}

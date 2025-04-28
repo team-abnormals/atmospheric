@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_barrel_cactus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:barrel_cactus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:orange_dye_from_barrel_cactus"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_barrel_cactus"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:orange_dye_from_barrel_cactus"
+    ]
+  }
+}

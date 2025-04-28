@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_peach_travertine": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:peach_travertine"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:peach_travertine_slab_from_peach_travertine_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_peach_travertine"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:peach_travertine_slab_from_peach_travertine_stonecutting"
+    ]
+  }
+}

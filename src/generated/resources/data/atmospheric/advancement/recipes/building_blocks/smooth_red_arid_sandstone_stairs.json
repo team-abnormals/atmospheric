@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_smooth_red_arid_sandstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:smooth_red_arid_sandstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:smooth_red_arid_sandstone_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_smooth_red_arid_sandstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:smooth_red_arid_sandstone_stairs"
+    ]
+  }
+}

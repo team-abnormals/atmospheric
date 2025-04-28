@@ -15,8 +15,7 @@ public class AtmosphericConditions {
 	public static final ModLoadedCondition NEAPOLITAN_LOADED = new ModLoadedCondition("neapolitan");
 	public static final NotCondition NEAPOLITAN_NOT_LOADED = new NotCondition(NEAPOLITAN_LOADED);
 
-	public static final ModLoadedCondition APPLE_CRATE = new ModLoadedCondition("quark");
-	public static final ModLoadedCondition GOLDEN_APPLE_CRATE = new ModLoadedCondition("quark");
+	public static final ModLoadedCondition QUARK_LOADED = new ModLoadedCondition("quark");
 
 	public static final ConfigValueCondition GRIMWOOD_ANCIENT_CITIES = config(COMMON.grimwoodAncientCities, "grimwood_ancient_cities");
 	public static final ConfigValueCondition YUCCA_DESERT_VILLAGES = config(COMMON.yuccaDesertVillages, "yucca_desert_villages");
