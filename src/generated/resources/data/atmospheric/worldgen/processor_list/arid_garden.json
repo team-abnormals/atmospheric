@@ -52,7 +52,7 @@
             "predicate_type": "minecraft:always_true"
           },
           "output_state": {
-            "Name": "atmospheric:potted_gilia"
+            "Name": "atmospheric:potted_yucca_sapling"
           }
         },
         {
@@ -65,7 +65,7 @@
             "predicate_type": "minecraft:always_true"
           },
           "output_state": {
-            "Name": "atmospheric:potted_yucca_sapling"
+            "Name": "atmospheric:potted_gilia"
           }
         },
         {
@@ -93,8 +93,8 @@
               "loot_table": "atmospheric:archaeology/arid_garden_common"
             },
             "input_predicate": {
-              "predicate_type": "minecraft:block_match",
-              "block": "atmospheric:arid_sand"
+              "block": "atmospheric:arid_sand",
+              "predicate_type": "minecraft:block_match"
             },
             "location_predicate": {
               "predicate_type": "minecraft:always_true"

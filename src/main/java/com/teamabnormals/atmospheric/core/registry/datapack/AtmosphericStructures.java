@@ -33,12 +33,12 @@ public class AtmosphericStructures {
 
 		context.register(ARID_GARDEN, new JigsawStructure(
 				new Structure.StructureSettings.Builder(biomes.getOrThrow(AtmosphericBiomeTags.HAS_ARID_GARDEN)).terrainAdapation(TerrainAdjustment.BEARD_THIN).build(),
-				templatePools.getOrThrow(AtmosphericTemplatePools.ARID_GARDEN), 6, ConstantHeight.of(VerticalAnchor.absolute(0)), false
+				templatePools.getOrThrow(AtmosphericTemplatePools.ARID_GARDEN), 6, ConstantHeight.of(VerticalAnchor.absolute(0)), false, Heightmap.Types.WORLD_SURFACE_WG
 		));
 
 		context.register(KOUSA_SANCTUM, new JigsawStructure(
 				new Structure.StructureSettings.Builder(biomes.getOrThrow(AtmosphericBiomeTags.HAS_KOUSA_SANCTUM)).terrainAdapation(TerrainAdjustment.BEARD_THIN).build(),
-				templatePools.getOrThrow(AtmosphericTemplatePools.KOUSA_SANCTUM), 2, ConstantHeight.of(VerticalAnchor.absolute(0)), false
+				templatePools.getOrThrow(AtmosphericTemplatePools.KOUSA_SANCTUM), 2, ConstantHeight.of(VerticalAnchor.absolute(0)), false, Heightmap.Types.WORLD_SURFACE_WG
 		));
 
 		context.register(VILLAGE_SCRUBLAND, new JigsawStructure(

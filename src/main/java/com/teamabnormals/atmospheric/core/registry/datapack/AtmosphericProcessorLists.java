@@ -20,6 +20,7 @@ public class AtmosphericProcessorLists {
 	public static final ResourceKey<StructureProcessorList> ZOMBIE_SCRUBLAND = createKey("zombie_scrubland");
 	public static final ResourceKey<StructureProcessorList> FARM_SCRUBLAND = createKey("farm_scrubland");
 
+	public static final ResourceKey<StructureProcessorList> ARID_GARDEN = createKey("arid_garden");
 	public static final ResourceKey<StructureProcessorList> PETRIFIED_ARID_GARDEN = createKey("petrified_arid_garden");
 	public static final ResourceKey<StructureProcessorList> ARID_GARDEN_SAND_ARCHAEOLOGY = createKey("arid_garden_sand_archaeology");
 
@@ -48,6 +49,19 @@ public class AtmosphericProcessorLists {
 
 		register(context, FARM_SCRUBLAND, ImmutableList.of(
 				new RuleProcessor(ImmutableList.of(new ProcessorRule(new RandomBlockMatchTest(Blocks.WHEAT, 0.8F), AlwaysTrueTest.INSTANCE, Blocks.BEETROOTS.defaultBlockState())))
+		));
+
+		RandomBlockMatchTest flowerPot = new RandomBlockMatchTest(Blocks.FLOWER_POT, 0.2F);
+		register(context, ARID_GARDEN, ImmutableList.of(
+				new RuleProcessor(List.of(
+						new ProcessorRule(flowerPot, AlwaysTrueTest.INSTANCE, Blocks.POTTED_DEAD_BUSH.defaultBlockState()),
+						new ProcessorRule(flowerPot, AlwaysTrueTest.INSTANCE, AtmosphericBlocks.POTTED_AGAVE.get().defaultBlockState()),
+						new ProcessorRule(flowerPot, AlwaysTrueTest.INSTANCE, AtmosphericBlocks.POTTED_YUCCA_FLOWER.get().defaultBlockState()),
+						new ProcessorRule(flowerPot, AlwaysTrueTest.INSTANCE, AtmosphericBlocks.POTTED_YUCCA_SAPLING.get().defaultBlockState()),
+						new ProcessorRule(flowerPot, AlwaysTrueTest.INSTANCE, AtmosphericBlocks.POTTED_GILIA.get().defaultBlockState()),
+						new ProcessorRule(flowerPot, AlwaysTrueTest.INSTANCE, AtmosphericBlocks.POTTED_BARREL_CACTUS.get().defaultBlockState())
+				)),
+				aridGardenArchyLootProcessor(AtmosphericLootTables.ARID_GARDEN_ARCHAEOLOGY_COMMON, 2)
 		));
 
 		register(context, PETRIFIED_ARID_GARDEN, ImmutableList.of(
