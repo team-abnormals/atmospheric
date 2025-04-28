@@ -1,6 +1,5 @@
 package com.teamabnormals.atmospheric.core.data.client;
 
-import com.teamabnormals.atmospheric.common.entity.TetraVariant;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
