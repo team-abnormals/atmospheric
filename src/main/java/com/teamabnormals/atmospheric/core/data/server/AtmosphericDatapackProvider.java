@@ -5,6 +5,7 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.Atmospher
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericPlacedFeatures;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
 import com.teamabnormals.atmospheric.core.registry.datapack.*;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericStructures.AtmosphericStructureSets;
 import com.teamabnormals.blueprint.core.registry.BlueprintDataPackRegistries;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.RegistrySetBuilder;
@@ -28,6 +29,7 @@ public class AtmosphericDatapackProvider extends DatapackBuiltinEntriesProvider 
 			.add(Registries.DAMAGE_TYPE, AtmosphericDamageTypes::bootstrap)
 			.add(Registries.TRIM_PATTERN, AtmosphericTrimPatterns::bootstrap)
 			.add(Registries.STRUCTURE, AtmosphericStructures::bootstrap)
+			.add(Registries.STRUCTURE_SET, AtmosphericStructureSets::bootstrap)
 			.add(Registries.PROCESSOR_LIST, AtmosphericProcessorLists::bootstrap)
 			.add(Registries.TEMPLATE_POOL, AtmosphericTemplatePools::bootstrap)
 			.add(Registries.TRIM_MATERIAL, AtmosphericTrimMaterials::bootstrap)

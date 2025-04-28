@@ -11,7 +11,10 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructureSet;
 import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
+import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
+import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
@@ -48,5 +51,26 @@ public class AtmosphericStructures {
 
 	private static ResourceKey<Structure> create(String name) {
 		return ResourceKey.create(Registries.STRUCTURE, Atmospheric.location(name));
+	}
+
+	public static class AtmosphericStructureSets {
+		public static final ResourceKey<StructureSet> ARID_GARDENS = create("arid_gardens");
+		public static final ResourceKey<StructureSet> KOUSA_SANCTUMS = create("kousa_sanctums");
+
+		public static void bootstrap(BootstrapContext<StructureSet> context) {
+			HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
+
+			context.register(ARID_GARDENS, new StructureSet(structures.getOrThrow(ARID_GARDEN),
+					new RandomSpreadStructurePlacement(24, 6, RandomSpreadType.LINEAR, 304972539)
+			));
+
+			context.register(KOUSA_SANCTUMS, new StructureSet(structures.getOrThrow(KOUSA_SANCTUM),
+					new RandomSpreadStructurePlacement(32, 8, RandomSpreadType.LINEAR, 502973253)
+			));
+		}
+
+		private static ResourceKey<StructureSet> create(String name) {
+			return ResourceKey.create(Registries.STRUCTURE_SET, Atmospheric.location(name));
+		}
 	}
 }

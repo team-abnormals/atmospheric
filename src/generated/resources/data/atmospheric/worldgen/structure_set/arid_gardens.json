@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 304972539,
+    "separation": 6,
+    "spacing": 24
+  },
+  "structures": [
+    {
+      "structure": "atmospheric:arid_garden",
+      "weight": 1
+    }
+  ]
+}
