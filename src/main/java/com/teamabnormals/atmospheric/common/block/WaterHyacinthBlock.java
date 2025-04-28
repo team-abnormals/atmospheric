@@ -51,14 +51,14 @@ public class WaterHyacinthBlock extends FlowerBlock implements SimpleWaterlogged
 	}
 
 	@Override
-	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
-		if (stateIn.getValue(WATERLOGGED)) {
-			worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+		if (state.getValue(WATERLOGGED)) {
+			level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
 		}
 
-		DoubleBlockHalf doubleblockhalf = stateIn.getValue(HALF);
-		if (facing.getAxis() != Direction.Axis.Y || doubleblockhalf == DoubleBlockHalf.LOWER != (facing == Direction.UP) || facingState.is(this) && facingState.getValue(HALF) != doubleblockhalf) {
-			return doubleblockhalf == DoubleBlockHalf.LOWER && facing == Direction.DOWN && !stateIn.canSurvive(worldIn, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		DoubleBlockHalf half = state.getValue(HALF);
+		if (facing.getAxis() != Direction.Axis.Y || half == DoubleBlockHalf.LOWER != (facing == Direction.UP) || facingState.is(this) && facingState.getValue(HALF) != half) {
+			return half == DoubleBlockHalf.LOWER && facing == Direction.DOWN && !state.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
 		} else {
 			return Blocks.AIR.defaultBlockState();
 		}
@@ -74,14 +74,15 @@ public class WaterHyacinthBlock extends FlowerBlock implements SimpleWaterlogged
 	}
 
 	@Override
-	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
+	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
 		if (state.getValue(HALF) != DoubleBlockHalf.UPPER) {
 			return state.getValue(WATERLOGGED);
 		} else {
-			BlockState blockstate = worldIn.getBlockState(pos.below());
-			if (state.getBlock() != this)
-				return super.canSurvive(state, worldIn, pos);
-			return blockstate.is(this) && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER && blockstate.getValue(WATERLOGGED);
+			BlockState belowState = level.getBlockState(pos.below());
+			if (belowState.getBlock() != this) {
+				return level.getFluidState(pos.below()).is(Fluids.WATER);
+			}
+			return belowState.is(this) && belowState.getValue(HALF) == DoubleBlockHalf.LOWER && belowState.getValue(WATERLOGGED);
 		}
 	}
 
@@ -90,7 +91,7 @@ public class WaterHyacinthBlock extends FlowerBlock implements SimpleWaterlogged
 		super.setPlacedBy(level, pos, state, placer, stack);
 		if (!level.isClientSide()) {
 			BlockPos belowPos = pos.below();
-			level.setBlock(belowPos, state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(WATERLOGGED, true), 3);
+			level.setBlock(belowPos, state.setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, true), 3);
 			level.blockUpdated(pos, Blocks.AIR);
 			state.updateNeighbourShapes(level, pos, 3);
 		}

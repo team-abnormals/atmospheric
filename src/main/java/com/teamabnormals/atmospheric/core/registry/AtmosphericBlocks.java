@@ -106,7 +106,7 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> PASSION_VINE = BLOCKS.createBlock("passion_vine", () -> new PassionVineBlock(Block.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.VINE).pushReaction(PushReaction.DESTROY)));
 	public static final DeferredBlock<Block> PASSION_VINE_BUNDLE = BLOCKS.createBlock("passion_vine_bundle", () -> new PassionVineBundleBlock(Block.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F, 2.5F).sound(SoundType.GRASS)));
 
-	public static final DeferredBlock<Block> WATER_HYACINTH = BLOCKS.createBlockNoItem("water_hyacinth", () -> new WaterHyacinthBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.WATER_HYACINTH).pushReaction(PushReaction.DESTROY)));
+	public static final DeferredBlock<Block> WATER_HYACINTH = BLOCKS.createBlockNoItem("water_hyacinth", () -> new WaterHyacinthBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.WATER_HYACINTH)));
 
 	public static final DeferredBlock<Block> WARM_MONKEY_BRUSH = BLOCKS.createBlockNoItem("warm_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.MONKEY_BRUSH)));
 	public static final DeferredBlock<Block> HOT_MONKEY_BRUSH = BLOCKS.createBlockNoItem("hot_monkey_brush", () -> new MonkeyBrushBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.MONKEY_BRUSH)));
