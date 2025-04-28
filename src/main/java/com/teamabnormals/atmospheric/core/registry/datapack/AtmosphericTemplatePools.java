@@ -19,7 +19,10 @@ import java.util.List;
 import java.util.function.Function;
 
 public class AtmosphericTemplatePools {
-	public static final ResourceKey<StructureTemplatePool> PETRIFIED_GARDEN = createKey("arid_garden/petrified_garden");
+	public static final ResourceKey<StructureTemplatePool> KOUSA_SANCTUM = create("kousa_sanctum");
+	public static final ResourceKey<StructureTemplatePool> ARID_GARDEN = create("arid_garden/arid_garden");
+	public static final ResourceKey<StructureTemplatePool> PETRIFIED_GARDEN = create("arid_garden/petrified_garden");
+	public static final ResourceKey<StructureTemplatePool> VILLAGE_SCRUBLAND_TOWN_CENTERS = create("village/scrubland/town_centers");
 
 	public static void bootstrap(BootstrapContext<StructureTemplatePool> context) {
 		HolderGetter<StructureProcessorList> processorLists = context.lookup(Registries.PROCESSOR_LIST);
@@ -44,7 +47,7 @@ public class AtmosphericTemplatePools {
 		return Pair.of(StructurePoolElement.single(Atmospheric.location(name).toString(), holderGetter), 1);
 	}
 
-	public static ResourceKey<StructureTemplatePool> createKey(String name) {
+	public static ResourceKey<StructureTemplatePool> create(String name) {
 		return ResourceKey.create(Registries.TEMPLATE_POOL, Atmospheric.location(name));
 	}
 }

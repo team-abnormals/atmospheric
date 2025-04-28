@@ -1,6 +1,5 @@
 package com.teamabnormals.atmospheric.core.data.server;
 
-import com.teamabnormals.atmospheric.common.entity.TetraVariant;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericConfiguredFeatures;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures.AtmosphericPlacedFeatures;
@@ -28,6 +27,7 @@ public class AtmosphericDatapackProvider extends DatapackBuiltinEntriesProvider 
 			.add(Registries.BIOME, AtmosphericBiomes::bootstrap)
 			.add(Registries.DAMAGE_TYPE, AtmosphericDamageTypes::bootstrap)
 			.add(Registries.TRIM_PATTERN, AtmosphericTrimPatterns::bootstrap)
+			.add(Registries.STRUCTURE, AtmosphericStructures::bootstrap)
 			.add(Registries.PROCESSOR_LIST, AtmosphericProcessorLists::bootstrap)
 			.add(Registries.TEMPLATE_POOL, AtmosphericTemplatePools::bootstrap)
 			.add(Registries.TRIM_MATERIAL, AtmosphericTrimMaterials::bootstrap)
