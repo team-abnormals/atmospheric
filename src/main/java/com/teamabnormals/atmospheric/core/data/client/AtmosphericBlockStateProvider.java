@@ -20,6 +20,7 @@ import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.*;
 
@@ -160,6 +161,12 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 
 		this.block(ARID_GLASS);
 		this.glassPaneBlock(ARID_GLASS_PANE, ARID_GLASS);
+	}
+
+	@Override
+	public void leavesBlock(DeferredHolder<Block, ?> leaves) {
+		this.simpleBlock(leaves.get(), models().getBuilder(name(leaves.get())).parent(new ModelFile.UncheckedModelFile(ResourceLocation.withDefaultNamespace("block/leaves"))).texture("all", blockTexture(leaves.get())));
+		this.blockItem(leaves);
 	}
 
 	public void watchfulAspenLogBlocks(DeferredBlock<Block> aspenLog, DeferredBlock<Block> log, DeferredBlock<Block> wood) {
