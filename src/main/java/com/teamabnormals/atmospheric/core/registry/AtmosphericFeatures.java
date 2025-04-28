@@ -67,9 +67,7 @@ public class AtmosphericFeatures {
 	public static final DeferredHolder<Feature<?>, Feature<LargeDiskConfiguration>> COARSE_DIRT_PATCH = FEATURES.register("coarse_dirt_patch", () -> new CoarseDirtPatchFeature(LargeDiskConfiguration.CODEC));
 	public static final DeferredHolder<Feature<?>, Feature<BlockStateConfiguration>> DUNE_ROCK = FEATURES.register("dune_rock", () -> new DuneRocksFeature(BlockStateConfiguration.CODEC));
 
-	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> WARM_MONKEY_BRUSH = FEATURES.register("warm_monkey_brush", () -> new MonkeyBrushFeature(NoneFeatureConfiguration.CODEC, 1));
-	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> HOT_MONKEY_BRUSH = FEATURES.register("hot_monkey_brush", () -> new MonkeyBrushFeature(NoneFeatureConfiguration.CODEC, 2));
-	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> SCALDING_MONKEY_BRUSH = FEATURES.register("scalding_monkey_brush", () -> new MonkeyBrushFeature(NoneFeatureConfiguration.CODEC, 3));
+	public static final DeferredHolder<Feature<?>, Feature<SimpleBlockConfiguration>> MONKEY_BRUSH = FEATURES.register("monkey_brush", () -> new MonkeyBrushFeature(SimpleBlockConfiguration.CODEC));
 	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> WATER_HYACINTH_PATCH = FEATURES.register("water_hyacinth_patch", () -> new WaterHyacinthPatchFeature(NoneFeatureConfiguration.CODEC));
 	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> PASSION_VINE = FEATURES.register("passion_vine", () -> new PassionVineFeature(NoneFeatureConfiguration.CODEC));
 
@@ -98,7 +96,7 @@ public class AtmosphericFeatures {
 
 	public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> OCEAN_FLOOR_RAISER = FEATURES.register("ocean_floor_raiser", () -> new OceanFloorRaiserFeature(NoneFeatureConfiguration.CODEC));
 
-	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> MONKEY_BRUSH = TREE_DECORATOR_TYPES.register("monkey_brush", () -> new TreeDecoratorType<>(MonkeyBrushDecorator.CODEC));
+	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> MONKEY_BRUSH_DECORATOR = TREE_DECORATOR_TYPES.register("monkey_brush", () -> new TreeDecoratorType<>(MonkeyBrushDecorator.CODEC));
 	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> HANGING_CURRANT = TREE_DECORATOR_TYPES.register("hanging_currant", () -> new TreeDecoratorType<>(HangingCurrantDecorator.CODEC));
 	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> COBWEB = TREE_DECORATOR_TYPES.register("cobweb", () -> new TreeDecoratorType<>(CobwebDecorator.CODEC));
 	public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<?>> ORANGES = TREE_DECORATOR_TYPES.register("oranges", () -> new TreeDecoratorType<>(OrangesDecorator.CODEC));
@@ -489,9 +487,9 @@ public class AtmosphericFeatures {
 			register(context, PATCH_WATER_HYACINTH, AtmosphericFeatures.WATER_HYACINTH_PATCH.get(), NoneFeatureConfiguration.INSTANCE);
 			register(context, PATCH_WATERLILY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.LILY_PAD)))));
 
-			register(context, WARM_MONKEY_BRUSH, AtmosphericFeatures.WARM_MONKEY_BRUSH.get(), NoneFeatureConfiguration.INSTANCE);
-			register(context, HOT_MONKEY_BRUSH, AtmosphericFeatures.HOT_MONKEY_BRUSH.get(), NoneFeatureConfiguration.INSTANCE);
-			register(context, SCALDING_MONKEY_BRUSH, AtmosphericFeatures.SCALDING_MONKEY_BRUSH.get(), NoneFeatureConfiguration.INSTANCE);
+			register(context, WARM_MONKEY_BRUSH, AtmosphericFeatures.MONKEY_BRUSH.get(), new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.WARM_MONKEY_BRUSH.get())));
+			register(context, HOT_MONKEY_BRUSH, AtmosphericFeatures.MONKEY_BRUSH.get(), new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.HOT_MONKEY_BRUSH.get())));
+			register(context, SCALDING_MONKEY_BRUSH, AtmosphericFeatures.MONKEY_BRUSH.get(), new SimpleBlockConfiguration(BlockStateProvider.simple(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get())));
 			register(context, MONKEY_BRUSH, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.SCALDING_MONKEY_BRUSH), 0.166666667F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.HOT_MONKEY_BRUSH), 0.333333334F)), placedFeatures.getOrThrow(AtmosphericPlacedFeatures.WARM_MONKEY_BRUSH)));
 
 			register(context, OCEAN_FLOOR_RAISER, AtmosphericFeatures.OCEAN_FLOOR_RAISER.get(), NoneFeatureConfiguration.INSTANCE);

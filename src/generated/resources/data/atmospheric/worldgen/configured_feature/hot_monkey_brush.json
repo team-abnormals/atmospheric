@@ -1,4 +1,14 @@
 {
-  "type": "atmospheric:hot_monkey_brush",
-  "config": {}
+  "type": "atmospheric:monkey_brush",
+  "config": {
+    "to_place": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "atmospheric:hot_monkey_brush",
+        "Properties": {
+          "facing": "up"
+        }
+      }
+    }
+  }
 }

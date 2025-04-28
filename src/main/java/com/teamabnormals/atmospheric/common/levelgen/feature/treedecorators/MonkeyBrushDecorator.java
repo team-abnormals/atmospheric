@@ -2,7 +2,7 @@ package com.teamabnormals.atmospheric.common.levelgen.feature.treedecorators;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
-import com.teamabnormals.atmospheric.common.levelgen.feature.MonkeyBrushFeature;
+import com.teamabnormals.atmospheric.common.block.MonkeyBrushBlock;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericFeatures;
 import net.minecraft.core.BlockPos;
@@ -36,7 +36,7 @@ public class MonkeyBrushDecorator extends TreeDecorator {
 					for (Direction direction : Direction.values()) {
 						BlockPos offsetPos = pos.relative(direction);
 						if (random.nextInt(3) == 0 && context.isAir(offsetPos)) {
-							context.setBlock(offsetPos, MonkeyBrushFeature.monkeyBrushState(brushes.get(random.nextInt(brushes.size())).defaultBlockState(), direction));
+							context.setBlock(offsetPos, MonkeyBrushBlock.monkeyBrushState(brushes.get(random.nextInt(brushes.size())).defaultBlockState(), direction));
 						}
 					}
 				}
@@ -46,6 +46,6 @@ public class MonkeyBrushDecorator extends TreeDecorator {
 
 	@Override
 	protected TreeDecoratorType<?> type() {
-		return AtmosphericFeatures.MONKEY_BRUSH.get();
+		return AtmosphericFeatures.MONKEY_BRUSH_DECORATOR.get();
 	}
 }

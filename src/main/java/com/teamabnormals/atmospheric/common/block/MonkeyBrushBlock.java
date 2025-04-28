@@ -1,7 +1,8 @@
 package com.teamabnormals.atmospheric.common.block;
 
-import com.teamabnormals.atmospheric.common.levelgen.feature.MonkeyBrushFeature;
+import com.google.common.collect.Lists;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,6 +11,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
@@ -22,6 +24,9 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class MonkeyBrushBlock extends FlowerBlock implements BonemealableBlock {
 	public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.VERTICAL);
 
@@ -29,19 +34,20 @@ public class MonkeyBrushBlock extends FlowerBlock implements BonemealableBlock {
 
 	public MonkeyBrushBlock(Properties properties) {
 		super(AtmosphericMobEffects.RELIEF, 6, properties);
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.UP));
+		if (!(this instanceof WallMonkeyBrushBlock)) {
+			this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.UP));
+		}
 	}
 
 	@Override
-	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
+	protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
 		return state.is(AtmosphericBlockTags.MONKEY_BRUSH_PLACEABLE);
 	}
 
 	@Override
-	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
-		Direction direction = state.getValue(FACING);
-		BlockPos blockpos = pos.relative(direction.getOpposite());
-		return this.mayPlaceOn(worldIn.getBlockState(blockpos), worldIn, blockpos);
+	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+		BlockPos offsetPos = pos.relative(state.getValue(FACING).getOpposite());
+		return this.mayPlaceOn(level.getBlockState(offsetPos), level, offsetPos);
 	}
 
 	@Override
@@ -60,14 +66,14 @@ public class MonkeyBrushBlock extends FlowerBlock implements BonemealableBlock {
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-		Vec3 vec3d = state.getOffset(worldIn, pos);
+	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+		Vec3 vec3d = state.getOffset(level, pos);
 		return SHAPE.move(vec3d.x, vec3d.y, vec3d.z);
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
-		return worldIn.getBlockState(pos.above()).isAir();
+	public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+		return true;
 	}
 
 	@Override
@@ -76,19 +82,47 @@ public class MonkeyBrushBlock extends FlowerBlock implements BonemealableBlock {
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel world, RandomSource random, BlockPos blockPos, BlockState state) {
-		for (int x = 0; x < 64; ++x) {
-			for (int y = 0; y < x / 16; ++y) {
-				blockPos = blockPos.offset(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
-				if (state.canSurvive(world, blockPos) && world.isEmptyBlock(blockPos)) {
-					Direction randomD = Direction.getRandom(random);
-					while (!MonkeyBrushFeature.monkeyBrushState(state, randomD).canSurvive(world, blockPos)) {
-						randomD = Direction.getRandom(random);
-					}
-					world.setBlock(blockPos, MonkeyBrushFeature.monkeyBrushState(state, randomD), 2);
-					return;
+	public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
+		for (int i = 0; i < 64; ++i) {
+			BlockPos newPos = pos.offset(random.nextInt(5) - 2, (random.nextInt(5) - 2), random.nextInt(5) - 2);
+			if (attemptBrush(level, newPos, state)) {
+				return;
+			}
+		}
+	}
+
+	public static boolean attemptBrush(LevelAccessor level, BlockPos pos, BlockState state) {
+		if (level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight()) {
+			ArrayList<Direction> directions = Lists.newArrayList(Direction.values());
+			Collections.shuffle(directions);
+			for (Direction direction : directions) {
+				BlockState newState = monkeyBrushState(state, direction);
+				if (newState.canSurvive(level, pos)) {
+					level.setBlock(pos, newState, 2);
+					return true;
 				}
 			}
+		}
+
+		return false;
+	}
+
+	public static BlockState monkeyBrushState(BlockState state, Direction direction) {
+		boolean isWarm = state.is(AtmosphericBlocks.WARM_MONKEY_BRUSH) || state.is(AtmosphericBlocks.WARM_WALL_MONKEY_BRUSH);
+		boolean isHot = state.is(AtmosphericBlocks.HOT_MONKEY_BRUSH) || state.is(AtmosphericBlocks.HOT_WALL_MONKEY_BRUSH);
+		boolean isScalding = state.is(AtmosphericBlocks.SCALDING_MONKEY_BRUSH) || state.is(AtmosphericBlocks.SCALDING_WALL_MONKEY_BRUSH);
+
+		if (isWarm) state = AtmosphericBlocks.WARM_MONKEY_BRUSH.get().defaultBlockState();
+		if (isHot) state = AtmosphericBlocks.HOT_MONKEY_BRUSH.get().defaultBlockState();
+		if (isScalding) state = AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get().defaultBlockState();
+
+		if (direction.getAxis().isVertical() && !(state.getBlock() instanceof WallMonkeyBrushBlock)) {
+			return state.setValue(MonkeyBrushBlock.FACING, direction);
+		} else {
+			if (isWarm) state = AtmosphericBlocks.WARM_WALL_MONKEY_BRUSH.get().defaultBlockState();
+			if (isHot) state = AtmosphericBlocks.HOT_WALL_MONKEY_BRUSH.get().defaultBlockState();
+			if (isScalding) state = AtmosphericBlocks.SCALDING_WALL_MONKEY_BRUSH.get().defaultBlockState();
+			return state.setValue(WallMonkeyBrushBlock.FACING, direction);
 		}
 	}
 }

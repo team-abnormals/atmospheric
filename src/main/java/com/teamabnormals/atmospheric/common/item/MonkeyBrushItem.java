@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 
 import javax.annotation.Nullable;
+import java.util.Map;
 
 public class MonkeyBrushItem extends BlockItem {
 	protected final Block wallBlock;
@@ -23,19 +24,25 @@ public class MonkeyBrushItem extends BlockItem {
 	@Override
 	@Nullable
 	protected BlockState getPlacementState(BlockPlaceContext context) {
-		BlockState blockstate = this.wallBlock.getStateForPlacement(context);
-		BlockState blockstate1 = null;
-		LevelReader iworldreader = context.getLevel();
-		BlockPos blockpos = context.getClickedPos();
+		BlockState wallState = this.wallBlock.getStateForPlacement(context);
+		BlockState state = null;
+		LevelReader level = context.getLevel();
+		BlockPos pos = context.getClickedPos();
 
 		for (Direction direction : context.getNearestLookingDirections()) {
-			BlockState blockstate2 = direction.getAxis().isVertical() ? this.getBlock().getStateForPlacement(context) : blockstate;
-			if (blockstate2 != null && blockstate2.canSurvive(iworldreader, blockpos)) {
-				blockstate1 = blockstate2;
+			BlockState dirState = direction.getAxis().isVertical() ? this.getBlock().getStateForPlacement(context) : wallState;
+			if (dirState != null && dirState.canSurvive(level, pos)) {
+				state = dirState;
 				break;
 			}
 		}
 
-		return blockstate1 != null && iworldreader.isUnobstructed(blockstate1, blockpos, CollisionContext.empty()) ? blockstate1 : null;
+		return state != null && level.isUnobstructed(state, pos, CollisionContext.empty()) ? state : null;
+	}
+
+	@Override
+	public void registerBlocks(Map<Block, Item> blockToItemMap, Item item) {
+		super.registerBlocks(blockToItemMap, item);
+		blockToItemMap.put(this.wallBlock, item);
 	}
 }
