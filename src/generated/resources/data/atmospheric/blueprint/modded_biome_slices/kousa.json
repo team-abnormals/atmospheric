@@ -103743,7 +103743,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -103770,7 +103770,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104229,7 +104229,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104256,7 +104256,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104445,7 +104445,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104472,7 +104472,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -105309,7 +105309,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -105336,7 +105336,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -105417,7 +105417,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -105444,7 +105444,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -105471,7 +105471,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -105498,7 +105498,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -105579,7 +105579,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -105606,7 +105606,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -105633,7 +105633,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -105660,7 +105660,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -105687,7 +105687,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -105714,7 +105714,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -105741,7 +105741,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -105768,7 +105768,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -105849,7 +105849,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -105876,7 +105876,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110439,7 +110439,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110466,7 +110466,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110493,7 +110493,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110520,7 +110520,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110547,7 +110547,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110574,7 +110574,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110601,7 +110601,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110628,7 +110628,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110709,7 +110709,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110736,7 +110736,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110763,7 +110763,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -110790,7 +110790,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -110817,7 +110817,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110844,7 +110844,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110871,7 +110871,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110898,7 +110898,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112599,7 +112599,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112626,7 +112626,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112653,7 +112653,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112680,7 +112680,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112707,7 +112707,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112734,7 +112734,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112761,7 +112761,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112788,7 +112788,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112869,7 +112869,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112896,7 +112896,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -113031,7 +113031,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -113058,7 +113058,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -119457,7 +119457,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -119484,7 +119484,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -119511,7 +119511,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -119538,7 +119538,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -119565,7 +119565,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -119592,7 +119592,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -119619,7 +119619,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -119646,7 +119646,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -119673,7 +119673,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -119700,7 +119700,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -119727,7 +119727,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -119754,7 +119754,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -119781,7 +119781,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -119808,7 +119808,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -119835,7 +119835,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -119862,7 +119862,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -119943,7 +119943,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -119970,7 +119970,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -119997,7 +119997,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -120024,7 +120024,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125937,7 +125937,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125964,7 +125964,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125991,7 +125991,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126018,7 +126018,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126045,7 +126045,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -126072,7 +126072,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -126099,7 +126099,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -126126,7 +126126,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -126153,7 +126153,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126180,7 +126180,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126207,7 +126207,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126234,7 +126234,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126261,7 +126261,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -126288,7 +126288,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -126315,7 +126315,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126342,7 +126342,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126369,7 +126369,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126396,7 +126396,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126423,7 +126423,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -126450,7 +126450,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -126531,7 +126531,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126558,7 +126558,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -128097,7 +128097,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128124,7 +128124,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128259,7 +128259,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128286,7 +128286,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128745,7 +128745,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -128772,7 +128772,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -128799,7 +128799,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128826,7 +128826,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128853,7 +128853,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -128880,7 +128880,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -128907,7 +128907,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -128934,7 +128934,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -128961,7 +128961,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128988,7 +128988,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -129015,7 +129015,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -129042,7 +129042,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -129069,7 +129069,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -129096,7 +129096,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -129123,7 +129123,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -129150,7 +129150,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -129339,7 +129339,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -129366,7 +129366,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -137115,7 +137115,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -137142,7 +137142,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -137385,7 +137385,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -137412,7 +137412,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -137439,7 +137439,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -137466,7 +137466,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -137493,7 +137493,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -137520,7 +137520,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -137547,7 +137547,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -137574,7 +137574,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -137601,7 +137601,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -137628,7 +137628,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -137655,7 +137655,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -137682,7 +137682,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -137763,7 +137763,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -137790,7 +137790,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143433,7 +143433,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143460,7 +143460,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143595,7 +143595,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -143622,7 +143622,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -143703,7 +143703,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143730,7 +143730,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143757,7 +143757,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143784,7 +143784,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143811,7 +143811,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143838,7 +143838,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143865,7 +143865,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -143892,7 +143892,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -143919,7 +143919,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143946,7 +143946,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143973,7 +143973,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -144000,7 +144000,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -144081,7 +144081,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -144108,7 +144108,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -145863,7 +145863,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -145890,7 +145890,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -145971,7 +145971,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -145998,7 +145998,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -146241,7 +146241,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146268,7 +146268,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146403,7 +146403,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -146430,7 +146430,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -146511,7 +146511,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146538,7 +146538,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146565,7 +146565,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -146592,7 +146592,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -146619,7 +146619,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -146646,7 +146646,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -146673,7 +146673,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -146700,7 +146700,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -146727,7 +146727,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146754,7 +146754,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146889,7 +146889,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146916,7 +146916,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -154827,7 +154827,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -154854,7 +154854,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -154881,7 +154881,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -154908,7 +154908,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -154935,7 +154935,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -154962,7 +154962,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -154989,7 +154989,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -155016,7 +155016,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -155043,7 +155043,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -155070,7 +155070,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -155205,7 +155205,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -155232,7 +155232,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160065,7 +160065,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160092,7 +160092,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160173,7 +160173,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160200,7 +160200,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160227,7 +160227,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -160254,7 +160254,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -160281,7 +160281,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -160308,7 +160308,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -160335,7 +160335,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -160362,7 +160362,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -160389,7 +160389,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160416,7 +160416,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160551,7 +160551,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160578,7 +160578,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162009,7 +162009,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -162036,7 +162036,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -162117,7 +162117,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -162144,7 +162144,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -162441,7 +162441,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162468,7 +162468,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162549,7 +162549,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162576,7 +162576,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162603,7 +162603,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -162630,7 +162630,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -162657,7 +162657,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -162684,7 +162684,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -162711,7 +162711,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -162738,7 +162738,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -162765,7 +162765,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162792,7 +162792,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162927,7 +162927,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162954,7 +162954,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -169515,7 +169515,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -169542,7 +169542,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -169785,7 +169785,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -169812,7 +169812,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -169839,7 +169839,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -169866,7 +169866,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -169893,7 +169893,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -169920,7 +169920,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -169947,7 +169947,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -169974,7 +169974,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -170001,7 +170001,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -170028,7 +170028,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -170055,7 +170055,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -170082,7 +170082,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -170163,7 +170163,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -170190,7 +170190,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175833,7 +175833,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175860,7 +175860,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175995,7 +175995,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -176022,7 +176022,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -176103,7 +176103,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176130,7 +176130,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176157,7 +176157,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -176184,7 +176184,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -176211,7 +176211,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -176238,7 +176238,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -176265,7 +176265,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -176292,7 +176292,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -176319,7 +176319,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176346,7 +176346,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176373,7 +176373,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176400,7 +176400,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176481,7 +176481,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176508,7 +176508,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178263,7 +178263,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -178290,7 +178290,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -178371,7 +178371,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -178398,7 +178398,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -178641,7 +178641,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178668,7 +178668,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178803,7 +178803,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -178830,7 +178830,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -178911,7 +178911,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178938,7 +178938,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178965,7 +178965,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -178992,7 +178992,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -179019,7 +179019,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -179046,7 +179046,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -179073,7 +179073,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -179100,7 +179100,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -179127,7 +179127,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -179154,7 +179154,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -179289,7 +179289,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -179316,7 +179316,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -187443,7 +187443,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -187470,7 +187470,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -187497,7 +187497,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -187524,7 +187524,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -187551,7 +187551,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -187578,7 +187578,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -187605,7 +187605,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -187632,7 +187632,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -187659,7 +187659,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -187686,7 +187686,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -187713,7 +187713,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -187740,7 +187740,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -187767,7 +187767,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -187794,7 +187794,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -187821,7 +187821,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -187848,7 +187848,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -187929,7 +187929,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -187956,7 +187956,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -187983,7 +187983,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -188010,7 +188010,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:snowy_scrubland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193923,7 +193923,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193950,7 +193950,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193977,7 +193977,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194004,7 +194004,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194031,7 +194031,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -194058,7 +194058,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -194085,7 +194085,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -194112,7 +194112,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -194139,7 +194139,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194166,7 +194166,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194193,7 +194193,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194220,7 +194220,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194247,7 +194247,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -194274,7 +194274,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -194301,7 +194301,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194328,7 +194328,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194355,7 +194355,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194382,7 +194382,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194409,7 +194409,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -194436,7 +194436,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -194517,7 +194517,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194544,7 +194544,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:aspen_parkland_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -196083,7 +196083,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196110,7 +196110,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196245,7 +196245,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196272,7 +196272,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196731,7 +196731,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -196758,7 +196758,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -196785,7 +196785,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196812,7 +196812,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196839,7 +196839,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -196866,7 +196866,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -196893,7 +196893,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -196920,7 +196920,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -196947,7 +196947,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196974,7 +196974,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.3,
@@ -197001,7 +197001,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -197028,7 +197028,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -197055,7 +197055,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -197082,7 +197082,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             0.03,
@@ -197109,7 +197109,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -197136,7 +197136,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -197325,7 +197325,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -197352,7 +197352,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "atmospheric:laurel_forest_area",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -205163,5 +205163,5 @@
     ],
     "only_map_from_areas": true
   },
-  "weight": 8
+  "weight": 15
 }

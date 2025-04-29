@@ -64,13 +64,13 @@ public final class AtmosphericBiomeSlices {
 		context.register(SPINY_THICKET_SLICE, new ModdedBiomeSlice(25, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
 				.area(SPINY_THICKET_AREA, SPINY_THICKET).build(), LevelStem.OVERWORLD));
 
-		context.register(ASPEN_SLICE, new ModdedBiomeSlice(5, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+		context.register(ASPEN_SLICE, new ModdedBiomeSlice(15, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
 				.area(ASPEN_PARKLAND_AREA, ASPEN_PARKLAND).build(), LevelStem.OVERWORLD));
 
 		context.register(LAUREL_SLICE, new ModdedBiomeSlice(15, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
 				.area(LAUREL_FOREST_AREA, LAUREL_FOREST).build(), LevelStem.OVERWORLD));
 
-		context.register(KOUSA_SLICE, new ModdedBiomeSlice(8, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+		context.register(KOUSA_SLICE, new ModdedBiomeSlice(15, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
 				.area(KOUSA_JUNGLE_AREA, KOUSA_JUNGLE).build(), LevelStem.OVERWORLD));
 	}
 
@@ -98,10 +98,10 @@ public final class AtmosphericBiomeSlices {
 				{VANILLA, VANILLA, VANILLA, RAINFOREST_AREA, RAINFOREST_AREA},
 				{SCRUBLAND_AREA, SCRUBLAND_AREA, SCRUBLAND_AREA, DUNES_AREA, FLOURISHING_DUNES_AREA}};
 		private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
-				{VANILLA, null, VANILLA, null, null},
-				{null, null, null, null, VANILLA},
-				{VANILLA, null, null, VANILLA, null},
-				{null, null, VANILLA, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
 				{null, null, null, null, null}};
 		private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
 				{SNOWY_SCRUBLAND_AREA, VANILLA, KOUSA_JUNGLE_AREA, KOUSA_JUNGLE_AREA, KOUSA_JUNGLE_AREA},
@@ -110,9 +110,9 @@ public final class AtmosphericBiomeSlices {
 				{VANILLA, VANILLA, VANILLA, RAINFOREST_AREA, RAINFOREST_AREA},
 				{SCRUBLAND_AREA, SCRUBLAND_AREA, ROCKY_DUNES_AREA, ROCKY_DUNES_AREA, ROCKY_DUNES_AREA}};
 		private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
-				{VANILLA, null, null, null, null},
-				{null, null, VANILLA, null, VANILLA},
-				{null, null, VANILLA, VANILLA, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
 				{null, null, null, null, SPARSE_RAINFOREST_AREA},
 				{SCRUBLAND_AREA, SCRUBLAND_AREA, PETRIFIED_DUNES_AREA, null, null}};
 		private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
