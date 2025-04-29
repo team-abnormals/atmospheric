@@ -33,6 +33,7 @@ public class AtmosphericDatapackProvider extends DatapackBuiltinEntriesProvider 
 			.add(Registries.PROCESSOR_LIST, AtmosphericProcessorLists::bootstrap)
 			.add(Registries.TEMPLATE_POOL, AtmosphericTemplatePools::bootstrap)
 			.add(Registries.TRIM_MATERIAL, AtmosphericTrimMaterials::bootstrap)
+			.add(Registries.WOLF_VARIANT, AtmosphericWolfVariants::bootstrap)
 			.add(Keys.BIOME_MODIFIERS, AtmosphericBiomeModifiers::bootstrap)
 			.add(BlueprintDataPackRegistries.STRUCTURE_REPALETTERS, AtmosphericStructureRepaletters::bootstrap)
 			.add(BlueprintDataPackRegistries.MODDED_BIOME_SLICES, AtmosphericBiomeSlices::bootstrap)

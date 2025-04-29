@@ -24,6 +24,7 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 
 	@Override
 	public void addTags(Provider provider) {
+
 		this.tag(BiomeTags.HAS_MINESHAFT).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND, KOUSA_JUNGLE, SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET, LAUREL_FOREST, GRIMWOODS);
 		this.tag(BiomeTags.IS_OVERWORLD).addTag(AtmosphericBiomeTags.IS_RAINFOREST).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND, KOUSA_JUNGLE, SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET, LAUREL_FOREST, GRIMWOODS);
 		this.tag(BiomeTags.STRONGHOLD_BIASED_TO).addTag(AtmosphericBiomeTags.IS_RAINFOREST).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND, KOUSA_JUNGLE, SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET, LAUREL_FOREST, GRIMWOODS);
