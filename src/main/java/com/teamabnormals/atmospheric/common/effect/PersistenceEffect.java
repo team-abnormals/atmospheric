@@ -6,6 +6,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -30,6 +31,15 @@ public class PersistenceEffect extends MobEffect {
 			return true;
 		}
 		return false;
+	}
+
+
+	@Override
+	public void removeAttributeModifiers(AttributeMap attributeMap) {
+		AttributeInstance instance = attributeMap.getInstance(Attributes.MOVEMENT_SPEED);
+		if (instance != null) {
+			instance.removeModifier(PERSISTENCE_MODIFIER);
+		}
 	}
 
 	@Override
