@@ -28,7 +28,7 @@ public class AtmosphericMobEffects {
 	public static final DeferredHolder<MobEffect, MobEffect> RELIEF = EFFECTS.register("relief", () -> new BlueprintMobEffect(MobEffectCategory.BENEFICIAL, 15494786));
 	public static final DeferredHolder<MobEffect, MobEffect> WORSENING = EFFECTS.register("worsening", () -> new BlueprintMobEffect(MobEffectCategory.HARMFUL, 3110759));
 	public static final DeferredHolder<MobEffect, MobEffect> SPITTING = EFFECTS.register("spitting", SpittingEffect::new);
-	public static final DeferredHolder<MobEffect, MobEffect> PERSISTENCE = EFFECTS.register("persistence", () -> new PersistenceEffect().addAttributeModifier(Attributes.MOVEMENT_SPEED, Atmospheric.location("persistence_speed_boost"), 0.0F, Operation.ADD_MULTIPLIED_TOTAL));
+	public static final DeferredHolder<MobEffect, MobEffect> PERSISTENCE = EFFECTS.register("persistence", PersistenceEffect::new);
 
 	public static final DeferredHolder<Potion, Potion> RELIEF_NORMAL = POTIONS.register("relief", () -> new Potion(new MobEffectInstance(RELIEF, 3600)));
 	public static final DeferredHolder<Potion, Potion> RELIEF_STRONG = POTIONS.register("relief_strong", () -> new Potion(new MobEffectInstance(RELIEF, 1800, 1)));
