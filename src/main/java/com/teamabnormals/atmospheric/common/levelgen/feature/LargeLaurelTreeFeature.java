@@ -37,7 +37,11 @@ public class LargeLaurelTreeFeature extends LaurelTreeFeature {
 					}
 				}
 				for (int j = 0; j < trunkHeight; j++) {
-					this.addLog(origin.offset(i, j, k));
+					BlockPos offset = origin.offset(i, j, k);
+					this.addLog(offset);
+					if (j == 0) {
+						setDirtAt(context.level(), random, offset.below(), config);
+					}
 				}
 			}
 		}

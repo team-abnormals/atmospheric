@@ -31,7 +31,11 @@ public class GrimwoodTreeFeature extends BlueprintTreeFeature {
 		for (int i = 0; i < 2; i++) {
 			for (int j = 0; j < trunkHeight; j++) {
 				for (int k = 0; k < 2; k++) {
-					this.addLog(origin.offset(i, j, k));
+					BlockPos offset = origin.offset(i, j, k);
+					this.addLog(offset);
+					if (j == 0) {
+						setDirtAt(context.level(), random, offset.below(), config);
+					}
 				}
 			}
 		}

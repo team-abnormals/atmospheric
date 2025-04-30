@@ -30,6 +30,7 @@ public class GiantLaurelTreeFeature extends LargeLaurelTreeFeature {
 			BlockPos rootPos = pos.relative(direction, i + 1);
 			if (isGrassOrDirt(context.level(), rootPos.below())) {
 				this.addLog(rootPos);
+				setDirtAt(context.level(), random, rootPos.below(), context.config());
 			} else {
 				break;
 			}
@@ -38,7 +39,9 @@ public class GiantLaurelTreeFeature extends LargeLaurelTreeFeature {
 		pos.set(origin.offset(xAxis ? positive ? 1 : 0 : random.nextInt(2), 0, !xAxis ? positive ? 1 : 0 : random.nextInt(2)));
 		length = random.nextInt(2);
 		for (int i = 0; i < length; i++) {
-			this.addLog(pos.relative(direction, i + 1));
+			BlockPos relativePos = pos.relative(direction, i + 1);
+			this.addLog(relativePos);
+			setDirtAt(context.level(), random, relativePos.below(), context.config());
 		}
 	}
 
