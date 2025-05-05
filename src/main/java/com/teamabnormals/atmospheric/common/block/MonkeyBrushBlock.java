@@ -83,8 +83,7 @@ public class MonkeyBrushBlock extends FlowerBlock implements BonemealableBlock {
 
 	@Override
 	public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-		for (int i = 0; i < 64; ++i) {
-			BlockPos newPos = pos.offset(random.nextInt(5) - 2, (random.nextInt(5) - 2), random.nextInt(5) - 2);
+		for (BlockPos newPos : BlockPos.randomInCube(random, 64, pos, 2)) {
 			if (attemptBrush(level, newPos, state)) {
 				return;
 			}

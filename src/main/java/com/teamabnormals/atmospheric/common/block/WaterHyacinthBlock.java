@@ -162,7 +162,7 @@ public class WaterHyacinthBlock extends FlowerBlock implements SimpleWaterlogged
 	public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
 		for (BlockPos newPos : BlockPos.randomInCube(random, 32, pos, 2)) {
 			if (level.getBlockState(newPos).isAir() && level.getBlockState(newPos.below()).is(Blocks.WATER)) {
-				placeAt(level, newPos, 3);
+				placeAt(level, newPos, 2);
 				return;
 			}
 		}
