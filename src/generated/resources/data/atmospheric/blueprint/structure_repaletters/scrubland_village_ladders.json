@@ -1,15 +1,24 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:and",
+      "type": "blueprint:and",
       "values": [
         {
-          "type": "woodworks:config",
-          "value": "wooden_ladders"
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
         },
         {
-          "type": "woodworks:config",
-          "value": "wooden_ladders_in_villages"
+          "type": "neoforge:and",
+          "values": [
+            {
+              "type": "woodworks:config",
+              "value": "wooden_ladders"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "wooden_ladders_in_villages"
+            }
+          ]
         }
       ]
     }

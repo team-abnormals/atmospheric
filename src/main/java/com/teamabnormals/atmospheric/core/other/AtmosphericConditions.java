@@ -27,12 +27,4 @@ public class AtmosphericConditions {
 	public static ConfigValueCondition config(ModConfigSpec.ConfigValue<?> value, String key) {
 		return config(value, key, false);
 	}
-
-	public static ICondition yuccaDesertVillages(ICondition condition) {
-		return new BlueprintAndCondition(YUCCA_DESERT_VILLAGES, condition);
-	}
-
-	public static ICondition grimwoodAncientCities(ICondition condition) {
-		return new BlueprintAndCondition(GRIMWOOD_ANCIENT_CITIES, condition);
-	}
 }

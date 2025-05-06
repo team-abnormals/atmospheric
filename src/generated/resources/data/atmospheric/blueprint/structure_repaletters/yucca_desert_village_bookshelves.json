@@ -4,6 +4,10 @@
       "type": "blueprint:and",
       "values": [
         {
+          "type": "neoforge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
           "type": "atmospheric:config",
           "value": "yucca_desert_villages"
         },

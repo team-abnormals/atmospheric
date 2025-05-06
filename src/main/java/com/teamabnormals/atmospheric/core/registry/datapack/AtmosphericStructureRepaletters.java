@@ -5,7 +5,6 @@ import com.teamabnormals.atmospheric.core.other.AtmosphericConditions;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.common.world.modification.structure.StructureRepaletterEntry;
 import com.teamabnormals.blueprint.core.registry.BlueprintDataPackRegistries;
-import com.teamabnormals.woodworks.core.other.WoodworksConditions;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -20,6 +19,7 @@ import net.neoforged.neoforge.common.conditions.ICondition;
 import java.util.function.BiConsumer;
 
 import static com.teamabnormals.blueprint.common.world.modification.structure.StructureRepaletterEntry.*;
+import static com.teamabnormals.woodworks.core.other.WoodworksConditions.*;
 
 public final class AtmosphericStructureRepaletters {
 	public static final ResourceKey<StructureRepaletterEntry> YUCCA_DESERT_VILLAGES = create("yucca_desert_villages");
@@ -75,24 +75,20 @@ public final class AtmosphericStructureRepaletters {
 
 	public static void applyConditions(BiConsumer<ResourceKey<?>, ICondition> builder) {
 		builder.accept(YUCCA_DESERT_VILLAGES, AtmosphericConditions.YUCCA_DESERT_VILLAGES);
-		builder.accept(YUCCA_DESERT_VILLAGE_LADDERS, AtmosphericConditions.yuccaDesertVillages(WoodworksConditions.WOODEN_LADDERS_IN_VILLAGES));
-		builder.accept(YUCCA_DESERT_VILLAGE_BOOKSHELVES, AtmosphericConditions.yuccaDesertVillages(WoodworksConditions.WOODEN_BOOKSHELVES_IN_VILLAGES));
-		builder.accept(YUCCA_DESERT_VILLAGE_CHESTS, AtmosphericConditions.yuccaDesertVillages(WoodworksConditions.WOODEN_CHESTS_IN_VILLAGES));
+		builder.accept(YUCCA_DESERT_VILLAGE_LADDERS, compat(AtmosphericConditions.YUCCA_DESERT_VILLAGES, WOODEN_LADDERS_IN_VILLAGES));
+		builder.accept(YUCCA_DESERT_VILLAGE_BOOKSHELVES, compat(AtmosphericConditions.YUCCA_DESERT_VILLAGES, WOODEN_BOOKSHELVES_IN_VILLAGES));
+		builder.accept(YUCCA_DESERT_VILLAGE_CHESTS, compat(AtmosphericConditions.YUCCA_DESERT_VILLAGES, WOODEN_CHESTS_IN_VILLAGES));
 
 		builder.accept(GRIMWOOD_ANCIENT_CITIES, AtmosphericConditions.GRIMWOOD_ANCIENT_CITIES);
-		builder.accept(GRIMWOOD_ANCIENT_CITY_LADDERS, AtmosphericConditions.grimwoodAncientCities(WoodworksConditions.WOODEN_LADDERS_IN_VILLAGES));
-		builder.accept(GRIMWOOD_ANCIENT_CITY_CHESTS, AtmosphericConditions.grimwoodAncientCities(WoodworksConditions.WOODEN_CHESTS_IN_VILLAGES));
+		builder.accept(GRIMWOOD_ANCIENT_CITY_LADDERS, compat(AtmosphericConditions.GRIMWOOD_ANCIENT_CITIES, WOODEN_LADDERS_IN_VILLAGES));
+		builder.accept(GRIMWOOD_ANCIENT_CITY_CHESTS, compat(AtmosphericConditions.GRIMWOOD_ANCIENT_CITIES, WOODEN_CHESTS_IN_VILLAGES));
 
-		builder.accept(SCRUBLAND_VILLAGE_LADDERS, WoodworksConditions.WOODEN_LADDERS_IN_VILLAGES);
-		builder.accept(SCRUBLAND_VILLAGE_BOOKSHELVES, WoodworksConditions.WOODEN_BOOKSHELVES_IN_VILLAGES);
-		builder.accept(SCRUBLAND_VILLAGE_CHESTS, WoodworksConditions.WOODEN_CHESTS_IN_VILLAGES);
+		builder.accept(SCRUBLAND_VILLAGE_LADDERS, compat(WOODEN_LADDERS_IN_VILLAGES));
+		builder.accept(SCRUBLAND_VILLAGE_BOOKSHELVES, compat(WOODEN_BOOKSHELVES_IN_VILLAGES));
+		builder.accept(SCRUBLAND_VILLAGE_CHESTS, compat(WOODEN_CHESTS_IN_VILLAGES));
 	}
 
 	private static ResourceKey<StructureRepaletterEntry> create(String name) {
 		return ResourceKey.create(BlueprintDataPackRegistries.STRUCTURE_REPALETTERS, Atmospheric.location(name));
-	}
-
-	private static ResourceKey<Structure> createStructureKey(String name) {
-		return ResourceKey.create(Registries.STRUCTURE, Atmospheric.location(name));
 	}
 }
