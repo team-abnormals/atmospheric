@@ -17,7 +17,7 @@ public class GiantLaurelTreeFeature extends LargeLaurelTreeFeature {
 	}
 
 	@Override
-	public void addRoots(FeaturePlaceContext<TreeConfiguration> context, Direction direction, MutableBlockPos pos) {
+	public void addRoots(FeaturePlaceContext<TreeConfiguration> context, TreeInfo info, Direction direction, MutableBlockPos pos) {
 		BlockPos origin = context.origin();
 		RandomSource random = context.random();
 
@@ -29,7 +29,7 @@ public class GiantLaurelTreeFeature extends LargeLaurelTreeFeature {
 		for (int i = 0; i < length; i++) {
 			BlockPos rootPos = pos.relative(direction, i + 1);
 			if (isGrassOrDirt(context.level(), rootPos.below())) {
-				this.addLog(rootPos);
+				info.addLog(rootPos);
 				setDirtAt(context.level(), random, rootPos.below(), context.config());
 			} else {
 				break;
@@ -40,7 +40,7 @@ public class GiantLaurelTreeFeature extends LargeLaurelTreeFeature {
 		length = random.nextInt(2);
 		for (int i = 0; i < length; i++) {
 			BlockPos relativePos = pos.relative(direction, i + 1);
-			this.addLog(relativePos);
+			info.addLog(relativePos);
 			setDirtAt(context.level(), random, relativePos.below(), context.config());
 		}
 	}

@@ -21,7 +21,7 @@ public class AspenTreeFeature extends BlueprintTreeFeature {
 	}
 
 	@Override
-	public void doPlace(FeaturePlaceContext<TreeConfiguration> context) {
+	public void doPlace(FeaturePlaceContext<TreeConfiguration> context, TreeInfo info) {
 		TreeConfiguration config = context.config();
 		RandomSource random = context.random();
 		BlockPos origin = context.origin();
@@ -33,14 +33,14 @@ public class AspenTreeFeature extends BlueprintTreeFeature {
 
 		for (int y = 0; y < trunkHeight; y++) {
 			BlockPos pos = origin.above(y);
-			this.addLog(pos);
+			info.addLog(pos);
 
 			if (y >= leafHeight) {
 				for (Direction direction : Plane.HORIZONTAL) {
-					this.addFoliage(pos.relative(direction));
+					info.addFoliage(pos.relative(direction));
 					BlockPos offsetPos = pos.relative(direction).relative(direction.getClockWise());
-					if (y > leafHeight && y < trunkHeight - 1 && (random.nextInt(4) != 0 || !this.foliagePositions.contains(offsetPos.below()))) {
-						this.addFoliage(offsetPos);
+					if (y > leafHeight && y < trunkHeight - 1 && (random.nextInt(4) != 0 || !info.foliageMap().containsKey(offsetPos.below()))) {
+						info.addFoliage(offsetPos);
 					}
 				}
 
@@ -48,7 +48,7 @@ public class AspenTreeFeature extends BlueprintTreeFeature {
 					for (int i = -2; i <= 2; ++i) {
 						for (int k = -2; k <= 2; ++k) {
 							if ((Math.abs(i) != 2 || Math.abs(k) != 2) && random.nextBoolean()) {
-								this.addFoliage(pos.offset(i, 0, k));
+								info.addFoliage(pos.offset(i, 0, k));
 							}
 						}
 					}
@@ -64,12 +64,12 @@ public class AspenTreeFeature extends BlueprintTreeFeature {
 						usedDirections.add(randomDirection);
 				}
 				for (Direction direction : usedDirections) {
-					this.addFoliage(pos.relative(direction));
+					info.addFoliage(pos.relative(direction));
 				}
 			}
 		}
 
-		this.addFoliage(origin.above(trunkHeight));
+		info.addFoliage(origin.above(trunkHeight));
 	}
 
 	@Override

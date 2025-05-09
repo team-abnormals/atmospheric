@@ -11,7 +11,6 @@ import net.minecraft.core.Direction.AxisDirection;
 import net.minecraft.core.Direction.Plane;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
@@ -22,7 +21,7 @@ public class GrimwoodTreeFeature extends BlueprintTreeFeature {
 	}
 
 	@Override
-	public void doPlace(FeaturePlaceContext<TreeConfiguration> context) {
+	public void doPlace(FeaturePlaceContext<TreeConfiguration> context, TreeInfo info) {
 		TreeConfiguration config = context.config();
 		RandomSource random = context.random();
 		BlockPos origin = context.origin();
@@ -32,7 +31,7 @@ public class GrimwoodTreeFeature extends BlueprintTreeFeature {
 			for (int j = 0; j < trunkHeight; j++) {
 				for (int k = 0; k < 2; k++) {
 					BlockPos offset = origin.offset(i, j, k);
-					this.addLog(offset);
+					info.addLog(offset);
 					if (j == 0) {
 						setDirtAt(context.level(), random, offset.below(), config);
 					}
@@ -47,23 +46,23 @@ public class GrimwoodTreeFeature extends BlueprintTreeFeature {
 		MutableBlockPos pos = new MutableBlockPos();
 		pos.set(origin.offset(xAxis ? positive ? 1 : 0 : random.nextInt(2), trunkHeight, !xAxis ? positive ? 1 : 0 : random.nextInt(2)));
 
-		this.addLog(pos);
+		info.addLog(pos);
 
-		this.createBranch(2 + random.nextInt(2), 3 + random.nextInt(2), pos, direction, random, config);
+		this.createBranch(info, 2 + random.nextInt(2), 3 + random.nextInt(2), pos, direction);
 		if (random.nextInt(3) != 0) {
-			this.createBranch(2 + random.nextInt(3), 3 + random.nextInt(2), pos, direction.getOpposite(), random, config);
-			this.createBranch(1 + random.nextInt(2), 2 + random.nextInt(2), pos, direction, random, config);
+			this.createBranch(info, 2 + random.nextInt(3), 3 + random.nextInt(2), pos, direction.getOpposite());
+			this.createBranch(info, 1 + random.nextInt(2), 2 + random.nextInt(2), pos, direction);
 		}
 
 		int height = 5 + random.nextInt(5) + random.nextInt(3);
-		this.createBranch(1 + random.nextInt(3), height, pos, direction.getOpposite(), random, config);
-		this.addFoliage(pos.above());
-		this.createLeafLayer(pos, 1, true);
+		this.createBranch(info, 1 + random.nextInt(3), height, pos, direction.getOpposite());
+		info.addFoliage(pos.above());
+		this.createLeafLayer(info, pos, 1, true);
 		boolean big = false;
 		for (int i = 0; i < height - 2 - random.nextInt(2); i++) {
 			if (!big) big = i > 3 && random.nextBoolean();
 			if (i % 2 == 0) {
-				this.createLeafLayer(pos.set(pos.below(2)), big ? 3 : 2, false);
+				this.createLeafLayer(info, pos.set(pos.below(2)), big ? 3 : 2, false);
 			}
 		}
 	}
@@ -73,26 +72,26 @@ public class GrimwoodTreeFeature extends BlueprintTreeFeature {
 		return AtmosphericBlocks.GRIMWOOD_SAPLING.get().defaultBlockState();
 	}
 
-	private void createBranch(int depth, int height, MutableBlockPos pos, Direction direction, RandomSource random, TreeConfiguration config) {
+	private void createBranch(TreeInfo info, int depth, int height, MutableBlockPos pos, Direction direction) {
 		for (int j = 0; j < depth; j++) {
-			this.addSpecialLog(pos.set(pos.relative(direction)), config.trunkProvider.getState(random, pos).setValue(BlockStateProperties.AXIS, direction.getAxis()));
+			info.addAxisLog(pos.set(pos.relative(direction)), direction);
 		}
 
 		for (int j = 0; j < height; j++) {
-			this.addLog(pos.set(pos.above()));
+			info.addLog(pos.set(pos.above()));
 		}
 	}
 
-	private void createLeafLayer(BlockPos pos, int leafSize, boolean square) {
+	private void createLeafLayer(TreeInfo info, BlockPos pos, int leafSize, boolean square) {
 		for (int i = -leafSize; i <= leafSize; ++i) {
 			for (int k = -leafSize; k <= leafSize; ++k) {
 				if (square) {
-					this.addFoliage(pos.offset(i, 0, k));
+					info.addFoliage(pos.offset(i, 0, k));
 				} else {
 					int xDis = Math.abs(i);
 					int zDis = Math.abs(k);
 					if ((xDis != leafSize || zDis != leafSize) && (leafSize <= 2 || ((xDis != leafSize || zDis != leafSize - 1) && (xDis != leafSize - 1 || zDis != leafSize)))) {
-						this.addFoliage(pos.offset(i, 0, k));
+						info.addFoliage(pos.offset(i, 0, k));
 					}
 				}
 			}

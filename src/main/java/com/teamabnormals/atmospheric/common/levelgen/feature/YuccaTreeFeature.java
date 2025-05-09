@@ -18,21 +18,21 @@ public class YuccaTreeFeature extends BlueprintTreeFeature {
 	}
 
 	@Override
-	public void doPlace(FeaturePlaceContext<TreeConfiguration> context) {
+	public void doPlace(FeaturePlaceContext<TreeConfiguration> context, TreeInfo info) {
 		TreeConfiguration config = context.config();
 		RandomSource random = context.random();
 		BlockPos origin = context.origin();
 
 		int trunkHeight = config.trunkPlacer.getTreeHeight(random);
 		for (int y = 0; y < trunkHeight; ++y) {
-			this.addLog(origin.above(y));
+			info.addLog(origin.above(y));
 		}
 
 		for (Direction direction : Plane.HORIZONTAL) {
-			BlockPos pos = this.createYuccaBranch(origin.above(trunkHeight - 1), direction, random);
-			this.createLeafLayer(pos.above(), random, false);
-			this.createLeafLayer(pos, random, true);
-			this.createLeafLayer(pos.below(), random, false);
+			BlockPos pos = this.createYuccaBranch(info, origin.above(trunkHeight - 1), direction, random);
+			this.createLeafLayer(info, pos.above(), random, false);
+			this.createLeafLayer(info, pos, random, true);
+			this.createLeafLayer(info, pos.below(), random, false);
 		}
 	}
 
@@ -41,10 +41,10 @@ public class YuccaTreeFeature extends BlueprintTreeFeature {
 		return AtmosphericBlocks.YUCCA_SAPLING.get().defaultBlockState();
 	}
 
-	public BlockPos createYuccaBranch(BlockPos pos, Direction direction, RandomSource rand) {
+	public BlockPos createYuccaBranch(TreeInfo info, BlockPos pos, Direction direction, RandomSource rand) {
 		int length = 4 + rand.nextInt(2);
 		for (int i = 0; i < length; i++) {
-			this.addLog(pos.relative(direction));
+			info.addLog(pos.relative(direction));
 			if (i != length - 1) {
 				pos = pos.above().relative(direction, rand.nextInt(2));
 			}
@@ -53,16 +53,16 @@ public class YuccaTreeFeature extends BlueprintTreeFeature {
 		return pos.relative(direction);
 	}
 
-	public void createLeafLayer(BlockPos newPos, RandomSource random, boolean square) {
+	public void createLeafLayer(TreeInfo info, BlockPos newPos, RandomSource random, boolean square) {
 		for (int i = -1; i <= 1; ++i) {
 			for (int k = -1; k <= 1; ++k) {
 				if (square) {
-					this.addFoliage(newPos.offset(i, 0, k));
+					info.addFoliage(newPos.offset(i, 0, k));
 				} else {
 					if ((Math.abs(i) != 1 || Math.abs(k) != 1)) {
-						this.addFoliage(newPos.offset(i, 0, k));
+						info.addFoliage(newPos.offset(i, 0, k));
 					} else if (random.nextInt(4) == 0) {
-						this.addFoliage(newPos.offset(i, 0, k));
+						info.addFoliage(newPos.offset(i, 0, k));
 					}
 				}
 			}

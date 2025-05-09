@@ -23,19 +23,19 @@ public class LaurelTreeFeature extends BlueprintTreeFeature {
 	}
 
 	@Override
-	public void doPlace(FeaturePlaceContext<TreeConfiguration> context) {
+	public void doPlace(FeaturePlaceContext<TreeConfiguration> context, TreeInfo info) {
 		TreeConfiguration config = context.config();
 		RandomSource random = context.random();
 		BlockPos origin = context.origin();
 
 		int trunkHeight = config.trunkPlacer.getTreeHeight(random);
 		for (int y = 0; y < trunkHeight; y++) {
-			this.addLog(origin.above(y));
+			info.addLog(origin.above(y));
 		}
 
 		Axis axis = Plane.HORIZONTAL.getRandomAxis(random);
 		Plane.HORIZONTAL.stream().filter(direction -> direction.getAxis() == axis).forEach(direction -> {
-			this.createBranch(origin.above(trunkHeight), direction, random);
+			this.createBranch(info, origin.above(trunkHeight), direction, random);
 		});
 	}
 
@@ -44,51 +44,51 @@ public class LaurelTreeFeature extends BlueprintTreeFeature {
 		return AtmosphericBlocks.LAUREL_SAPLING.get().defaultBlockState();
 	}
 
-	private void createBranch(BlockPos pos, Direction direction, RandomSource random) {
+	private void createBranch(TreeInfo info, BlockPos pos, Direction direction, RandomSource random) {
 		MutableBlockPos mutablePos = new MutableBlockPos();
 		mutablePos.set(pos.relative(direction));
 
 		int firstHeight = 1 + random.nextInt(2);
 		mutablePos.set(mutablePos.below(random.nextInt(2)));
 		for (int i = 0; i < firstHeight; i++) {
-			this.addLog(mutablePos.above(i));
+			info.addLog(mutablePos.above(i));
 		}
 
 		int secondHeight = 1 + random.nextInt(2);
 		mutablePos.set(mutablePos.relative(direction).above(firstHeight - random.nextInt(2)));
 		for (int i = 0; i < secondHeight; i++) {
-			this.addLog(mutablePos.above(i));
+			info.addLog(mutablePos.above(i));
 		}
 
 		mutablePos.set(mutablePos.above(secondHeight - 1));
-		this.createLeafChunk(mutablePos, direction, random);
+		this.createLeafChunk(info, mutablePos, direction, random);
 	}
 
-	public void createLeafChunk(BlockPos pos, Direction direction, RandomSource random) {
-		this.createLeafLayer(pos.above(), false, random);
-		this.createLeafLayer(pos, true, random);
-		this.createLeafLayer(pos.below(), false, random);
-		this.createVines(pos.below().immutable(), direction, random);
+	public void createLeafChunk(TreeInfo info, BlockPos pos, Direction direction, RandomSource random) {
+		this.createLeafLayer(info, pos.above(), false, random);
+		this.createLeafLayer(info, pos, true, random);
+		this.createLeafLayer(info, pos.below(), false, random);
+		this.createVines(info, pos.below().immutable(), direction, random);
 	}
 
-	private void createLeafLayer(BlockPos pos, boolean square, RandomSource random) {
+	private void createLeafLayer(TreeInfo info, BlockPos pos, boolean square, RandomSource random) {
 		int leafSize = 1;
 		for (int i = -leafSize; i <= leafSize; ++i) {
 			for (int k = -leafSize; k <= leafSize; ++k) {
 				if (square) {
-					this.addFoliage(pos.offset(i, 0, k));
+					info.addFoliage(pos.offset(i, 0, k));
 				} else {
 					if ((Math.abs(i) != leafSize || Math.abs(k) != leafSize)) {
-						this.addFoliage(pos.offset(i, 0, k));
+						info.addFoliage(pos.offset(i, 0, k));
 					} else if (random.nextInt(4) == 0) {
-						this.addFoliage(pos.offset(i, 0, k));
+						info.addFoliage(pos.offset(i, 0, k));
 					}
 				}
 			}
 		}
 	}
 
-	private void createVines(BlockPos pos, Direction direction, RandomSource random) {
+	private void createVines(TreeInfo info, BlockPos pos, Direction direction, RandomSource random) {
 		Set<BlockPos> vinePositions = Sets.newHashSet();
 		int vineCount = 2 + random.nextInt(2) + random.nextInt(2);
 		int placedVines = 0;
@@ -116,7 +116,7 @@ public class LaurelTreeFeature extends BlueprintTreeFeature {
 			if (canGen) {
 				int length = 2 + random.nextInt(2);
 				for (int i = 0; i < length; i++) {
-					this.addFoliage(vinePos.below(i));
+					info.addFoliage(vinePos.below(i));
 				}
 
 				placedVines++;

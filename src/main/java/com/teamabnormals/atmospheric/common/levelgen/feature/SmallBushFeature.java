@@ -16,32 +16,32 @@ public class SmallBushFeature extends BlueprintTreeFeature {
 	}
 
 	@Override
-	public void doPlace(FeaturePlaceContext<TreeConfiguration> context) {
+	public void doPlace(FeaturePlaceContext<TreeConfiguration> context, TreeInfo info) {
 		TreeConfiguration config = context.config();
 		RandomSource random = context.random();
 		BlockPos origin = context.origin();
 
 		int trunkHeight = config.trunkPlacer.getTreeHeight(random);
 		for (int y = 0; y < trunkHeight; y++) {
-			this.addLog(origin.above(y));
+			info.addLog(origin.above(y));
 		}
 
-		this.createLeafLayer(origin, true, random);
-		this.createLeafLayer(origin.above(trunkHeight), false, random);
+		this.createLeafLayer(info, origin, true, random);
+		this.createLeafLayer(info, origin.above(trunkHeight), false, random);
 	}
 
-	private void createLeafLayer(BlockPos pos, boolean square, RandomSource random) {
+	private void createLeafLayer(TreeInfo info, BlockPos pos, boolean square, RandomSource random) {
 		int leafSize = 1;
 		for (int i = -leafSize; i <= leafSize; ++i) {
 			for (int k = -leafSize; k <= leafSize; ++k) {
 				boolean corner = (Math.abs(i) == leafSize && Math.abs(k) == leafSize);
 				if (square) {
 					if (!corner || random.nextInt(3) != 0) {
-						this.addFoliage(pos.offset(i, 0, k));
+						info.addFoliage(pos.offset(i, 0, k));
 					}
 				} else {
 					if (!corner && (random.nextInt(3) != 0 || i == k)) {
-						this.addFoliage(pos.offset(i, 0, k));
+						info.addFoliage(pos.offset(i, 0, k));
 					}
 				}
 			}

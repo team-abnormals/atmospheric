@@ -12,7 +12,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
@@ -25,7 +24,7 @@ public class RainforestTreeFeature extends BlueprintTreeFeature {
 	}
 
 	@Override
-	public void doPlace(FeaturePlaceContext<TreeConfiguration> context) {
+	public void doPlace(FeaturePlaceContext<TreeConfiguration> context, TreeInfo info) {
 		TreeConfiguration config = context.config();
 		RandomSource random = context.random();
 		BlockPos origin = context.origin();
@@ -43,9 +42,9 @@ public class RainforestTreeFeature extends BlueprintTreeFeature {
 		boolean canopy = false;
 		for (int y = 0; y < trunkHeight; ++y) {
 			BlockPos pos = origin.above(y);
-			this.addLog(pos);
+			info.addLog(pos);
 			if (random.nextInt(6) == 0 && y > (!tall ? 3 : 8) && !canopy) {
-				this.createLeafLayer(pos, 1 + random.nextInt(2));
+				this.createLeafLayer(info, pos, 1 + random.nextInt(2));
 				canopy = true;
 			}
 		}
@@ -65,40 +64,39 @@ public class RainforestTreeFeature extends BlueprintTreeFeature {
 			for (int k4 = 0; k4 < turns; ++k4) {
 				int branchLength = tall ? 2 + random.nextInt(2) : !morado ? 1 + random.nextInt(2) + random.nextInt(2) : 1 + random.nextInt(2);
 				int branchHeight = tall ? 2 + random.nextInt(2) + random.nextInt(2) : !morado ? 1 + random.nextInt(3) + random.nextInt(2) : 1 + random.nextInt(2);
-				this.createHorizontalLog(branchLength, pos, direction, random, config);
-				this.createVerticalLog(branchHeight, pos, random);
+				this.createHorizontalLog(info, branchLength, pos, direction);
+				this.createVerticalLog(info, branchHeight, pos, random);
 			}
 
 			int leafSize = 2 + random.nextInt(2);
-			this.createLeafLayer(pos, leafSize);
-			this.createLeafLayer(pos.above(), Math.max(leafSize - 1, 1));
+			this.createLeafLayer(info, pos, leafSize);
+			this.createLeafLayer(info, pos.above(), Math.max(leafSize - 1, 1));
 		}
 	}
 
-	public void createLeafLayer(BlockPos pos, int leafSize) {
+	public void createLeafLayer(TreeInfo info, BlockPos pos, int leafSize) {
 		for (int i = -leafSize; i <= leafSize; ++i) {
 			for (int k = -leafSize; k <= leafSize; ++k) {
 				if ((Math.abs(i) != leafSize || Math.abs(k) != leafSize)) {
-					this.addFoliage(pos.offset(i, 0, k));
+					info.addFoliage(pos.offset(i, 0, k));
 				}
 			}
 		}
 	}
 
-	private void createHorizontalLog(int branchLength, MutableBlockPos pos, Direction direction, RandomSource random, TreeConfiguration config) {
+	private void createHorizontalLog(TreeInfo info, int branchLength, MutableBlockPos pos, Direction direction) {
 		for (int i = 0; i < branchLength; ++i) {
-			pos.setWithOffset(pos, direction);
-			this.addSpecialLog(pos, config.trunkProvider.getState(random, pos).setValue(BlockStateProperties.AXIS, direction.getAxis()));
+			info.addAxisLog(pos.setWithOffset(pos, direction), direction);
 		}
 	}
 
-	private void createVerticalLog(int branchHeight, MutableBlockPos pos, RandomSource random) {
+	private void createVerticalLog(TreeInfo info, int branchHeight, MutableBlockPos pos, RandomSource random) {
 		boolean canopy = false;
 		for (int i = 0; i < branchHeight; ++i) {
 			pos.set(pos.above());
-			this.addLog(pos);
+			info.addLog(pos);
 			if (random.nextInt(6) == 0 && !canopy) {
-				this.createLeafLayer(pos, 1 + random.nextInt(2));
+				this.createLeafLayer(info, pos, 1 + random.nextInt(2));
 				canopy = true;
 			}
 		}
