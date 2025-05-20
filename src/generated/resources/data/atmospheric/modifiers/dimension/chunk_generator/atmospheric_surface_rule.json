@@ -577,6 +577,18 @@
                       {
                         "type": "minecraft:condition",
                         "if_true": {
+                          "type": "minecraft:steep"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "atmospheric:arid_sandstone"
+                          }
+                        }
+                      },
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
                           "type": "minecraft:stone_depth",
                           "add_surface_depth": false,
                           "offset": 0,
@@ -704,6 +716,18 @@
                       {
                         "type": "minecraft:condition",
                         "if_true": {
+                          "type": "minecraft:steep"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "atmospheric:arid_sandstone"
+                          }
+                        }
+                      },
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
                           "type": "minecraft:stone_depth",
                           "add_surface_depth": false,
                           "offset": 0,
@@ -820,6 +844,18 @@
                 {
                   "type": "minecraft:sequence",
                   "sequence": [
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:steep"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "minecraft:sandstone"
+                        }
+                      }
+                    },
                     {
                       "type": "minecraft:condition",
                       "if_true": {

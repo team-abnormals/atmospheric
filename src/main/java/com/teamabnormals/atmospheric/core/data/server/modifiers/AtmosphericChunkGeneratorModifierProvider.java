@@ -50,19 +50,30 @@ public final class AtmosphericChunkGeneratorModifierProvider extends ChunkGenera
 		RuleSource aridSandRuleSource = sandRuleSource(aridSand, aridSandstone);
 		RuleSource redAridSandRuleSource = sandRuleSource(redAridSand, redAridSandstone);
 
+		RuleSource sandRuleSourceCliffs = sandRuleSourceCliffs(sand, sandstone);
+		RuleSource aridSandRuleSourceCliffs = sandRuleSourceCliffs(aridSand, aridSandstone);
+
 		RuleSource hotSpringsRuleSource = ifTrue(ON_FLOOR, sequence(ifTrue(noiseRange(0.9F, 1.9F), saffronTravertine), ifTrue(noiseRange(0.4F, 2.4F), persimmonTravertine), ifTrue(noiseRange(-0.2F, 3.0F), peachTravertine), ivoryTravertine));
 		RuleSource hotSpringsRuleSource2 = ifTrue(UNDER_FLOOR, sequence(ifTrue(noiseRange(0.9F, 1.9F), saffronTravertine), ifTrue(noiseRange(0.4F, 2.4F), persimmonTravertine), ifTrue(noiseRange(-0.2F, 3.0F), peachTravertine), ivoryTravertine));
 
 		this.entry("atmospheric_surface_rule").selects("minecraft:overworld")
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isDunes, sequence(ifTrue(noiseRange(0.3F, 2.5F), redAridSandRuleSource), aridSandRuleSource))), false))
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isSpinyThicket, sequence(ifTrue(noiseRange(0.1F, 2.5F), redAridSandRuleSource), redSandRuleSource))), false))
-				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isScrubland, sequence(ifTrue(noiseRange(-2.0F, -0.5F), aridSandRuleSource), ifTrue(noiseRange(1.0F, 2.5F), aridSandRuleSource), sandRuleSource))), false))
+				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isScrubland, sequence(ifTrue(noiseRange(-2.0F, -0.5F), aridSandRuleSourceCliffs), ifTrue(noiseRange(1.0F, 2.5F), aridSandRuleSourceCliffs), sandRuleSourceCliffs))), false))
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isBiome(AtmosphericBiomes.ASPEN_PARKLAND), ifTrue(ON_FLOOR, ifTrue(waterBlockCheck(-1, 0), sequence(ifTrue(waterBlockCheck(0, 0), coarseDirt), dirt))))), false))
 				.addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isHotSprings, ifTrue(not(yBlockCheck(VerticalAnchor.absolute(93), 0)), sequence(hotSpringsRuleSource, hotSpringsRuleSource2)))), false));
 	}
 
 	private RuleSource sandRuleSource(RuleSource sand, RuleSource sandstone) {
 		return sequence(
+				ifTrue(ON_FLOOR, ifTrue(waterBlockCheck(-1, 0), sequence(ifTrue(ON_CEILING, sandstone), sand))),
+				ifTrue(waterStartCheck(-6, -1), sequence(ifTrue(UNDER_FLOOR, sequence(ifTrue(ON_CEILING, sandstone), sand)), ifTrue(VERY_DEEP_UNDER_FLOOR, sandstone)))
+		);
+	}
+
+	private RuleSource sandRuleSourceCliffs(RuleSource sand, RuleSource sandstone) {
+		return sequence(
+				ifTrue(steep(), sandstone),
 				ifTrue(ON_FLOOR, ifTrue(waterBlockCheck(-1, 0), sequence(ifTrue(ON_CEILING, sandstone), sand))),
 				ifTrue(waterStartCheck(-6, -1), sequence(ifTrue(UNDER_FLOOR, sequence(ifTrue(ON_CEILING, sandstone), sand)), ifTrue(VERY_DEEP_UNDER_FLOOR, sandstone)))
 		);
