@@ -15,6 +15,8 @@ public class AtmosphericBiomeTags {
 	public static final TagKey<Biome> HAS_VILLAGE_SCRUBLAND = biomeTag("has_structure/village_scrubland");
 	public static final TagKey<Biome> SPAWNS_YELLOW_RABBITS = biomeTag("spawns_yellow_rabbits");
 	public static final TagKey<Biome> SPAWNS_ARID_CAMELS = biomeTag("spawns_arid_camels");
+	public static final TagKey<Biome> SPAWNS_BUSH_WOLVES = biomeTag("spawns_bush_wolves");
+	public static final TagKey<Biome> SPAWNS_MANED_WOLVES = biomeTag("spawns_maned_wolves");
 
 	private static TagKey<Biome> biomeTag(String name) {
 		return TagUtil.biomeTag(Atmospheric.MOD_ID, name);

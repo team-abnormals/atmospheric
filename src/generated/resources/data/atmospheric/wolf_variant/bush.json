@@ -1,0 +1,6 @@
+{
+  "angry_texture": "atmospheric:entity/wolf/wolf_bush_angry",
+  "biomes": "atmospheric:rainforest",
+  "tame_texture": "atmospheric:entity/wolf/wolf_bush_tame",
+  "wild_texture": "atmospheric:entity/wolf/wolf_bush"
+}

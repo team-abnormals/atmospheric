@@ -1,0 +1,6 @@
+{
+  "angry_texture": "atmospheric:entity/wolf/wolf_cream_angry",
+  "biomes": "atmospheric:laurel_forest",
+  "tame_texture": "atmospheric:entity/wolf/wolf_cream_tame",
+  "wild_texture": "atmospheric:entity/wolf/wolf_cream"
+}

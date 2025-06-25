@@ -24,7 +24,6 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 
 	@Override
 	public void addTags(Provider provider) {
-
 		this.tag(BiomeTags.HAS_MINESHAFT).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND, KOUSA_JUNGLE, SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET, LAUREL_FOREST, GRIMWOODS);
 		this.tag(BiomeTags.IS_OVERWORLD).addTag(AtmosphericBiomeTags.IS_RAINFOREST).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND, KOUSA_JUNGLE, SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET, LAUREL_FOREST, GRIMWOODS);
 		this.tag(BiomeTags.STRONGHOLD_BIASED_TO).addTag(AtmosphericBiomeTags.IS_RAINFOREST).addTag(AtmosphericBiomeTags.IS_DUNES).add(ASPEN_PARKLAND, KOUSA_JUNGLE, SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET, LAUREL_FOREST, GRIMWOODS);
@@ -53,6 +52,8 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 		this.tag(AtmosphericBiomeTags.HAS_KOUSA_SANCTUM).add(KOUSA_JUNGLE);
 		this.tag(AtmosphericBiomeTags.SPAWNS_YELLOW_RABBITS).add(ASPEN_PARKLAND);
 		this.tag(AtmosphericBiomeTags.SPAWNS_ARID_CAMELS).addTag(AtmosphericBiomeTags.IS_DUNES).addTag(AtmosphericBiomeTags.IS_SCRUBLAND).add(SPINY_THICKET);
+		this.tag(AtmosphericBiomeTags.SPAWNS_BUSH_WOLVES).add(RAINFOREST, RAINFOREST_BASIN);
+		this.tag(AtmosphericBiomeTags.SPAWNS_MANED_WOLVES).add(SPARSE_RAINFOREST, SPARSE_RAINFOREST_BASIN);
 	}
 
 	@SafeVarargs

@@ -11,12 +11,18 @@ import net.minecraft.world.entity.animal.WolfVariant;
 import net.minecraft.world.level.biome.Biome;
 
 public class AtmosphericWolfVariants {
-	public static final ResourceKey<WolfVariant> MASKED = create("masked");
+	public static final ResourceKey<WolfVariant> BUSH = create("bush");
+	public static final ResourceKey<WolfVariant> CREAM = create("cream");
 	public static final ResourceKey<WolfVariant> GOLDEN = create("golden");
+	public static final ResourceKey<WolfVariant> MANED = create("maned");
+	public static final ResourceKey<WolfVariant> MASKED = create("masked");
 
 	public static void bootstrap(BootstrapContext<WolfVariant> context) {
-		register(context, MASKED, "wolf_masked", AtmosphericBiomes.KOUSA_JUNGLE);
+		register(context, BUSH, "wolf_bush", AtmosphericBiomes.RAINFOREST);
+		register(context, CREAM, "wolf_cream", AtmosphericBiomes.LAUREL_FOREST);
 		register(context, GOLDEN, "wolf_golden", AtmosphericBiomes.ASPEN_PARKLAND);
+		register(context, MANED, "wolf_maned", AtmosphericBiomes.SPARSE_RAINFOREST);
+		register(context, MASKED, "wolf_masked", AtmosphericBiomes.KOUSA_JUNGLE);
 	}
 
 	private static ResourceKey<WolfVariant> create(String name) {

@@ -1,0 +1,6 @@
+{
+  "angry_texture": "atmospheric:entity/wolf/wolf_maned_angry",
+  "biomes": "atmospheric:sparse_rainforest",
+  "tame_texture": "atmospheric:entity/wolf/wolf_maned_tame",
+  "wild_texture": "atmospheric:entity/wolf/wolf_maned"
+}
