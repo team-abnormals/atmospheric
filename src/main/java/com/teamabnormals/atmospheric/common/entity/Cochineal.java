@@ -527,15 +527,11 @@ public class Cochineal extends Animal implements Saddleable {
 
 	@Override
 	public EntityDimensions getDefaultDimensions(Pose pose) {
-		if (this.isAttachedToCactus()) {
-			return SUCKLING_DIMENSIONS.scale(this.getScale());
-		} else {
-			return super.getDefaultDimensions(pose);
-		}
+		return this.isAttachedToCactus() ? SUCKLING_DIMENSIONS.scale(this.getAgeScale()) : super.getDefaultDimensions(pose);
 	}
 
 	@Override
-	protected SoundEvent getHurtSound(DamageSource p_29502_) {
+	protected SoundEvent getHurtSound(DamageSource damageSource) {
 		return AtmosphericSoundEvents.COCHINEAL_HURT.get();
 	}
 
@@ -545,7 +541,7 @@ public class Cochineal extends Animal implements Saddleable {
 	}
 
 	@Override
-	protected void playStepSound(BlockPos p_29492_, BlockState p_29493_) {
+	protected void playStepSound(BlockPos pos, BlockState state) {
 	}
 
 	@Override
