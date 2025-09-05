@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.core.data.server.tags;
 
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.other.AtmosphericConstants;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -135,6 +136,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(GOLDEN_GROWTHS_PLACEABLE).add(CRUSTOSE.get(), CRUSTOSE_LOG.get(), CRUSTOSE_WOOD.get()).addTag(BlockTags.DIRT);
 		this.tag(ORANGES).add(ORANGE.get(), BLOOD_ORANGE.get());
 		this.tag(COCHINEALS_CAN_FEED_ON).add(Blocks.CACTUS, SNOWY_CACTUS.get());
+		this.tag(CRUSTOSE_CANNOT_SPREAD_UNDER).addOptional(AtmosphericConstants.ADZUKI_SPROUTS);
 
 		this.tag(BlueprintBlockTags.WOODEN_CHESTS).add(ROSEWOOD_CHEST.get(), MORADO_CHEST.get(), YUCCA_CHEST.get(), KOUSA_CHEST.get(), ASPEN_CHEST.get(), GRIMWOOD_CHEST.get(), LAUREL_CHEST.get());
 		this.tag(BlueprintBlockTags.WOODEN_TRAPPED_CHESTS).add(TRAPPED_ROSEWOOD_CHEST.get(), TRAPPED_MORADO_CHEST.get(), TRAPPED_YUCCA_CHEST.get(), TRAPPED_KOUSA_CHEST.get(), TRAPPED_ASPEN_CHEST.get(), TRAPPED_GRIMWOOD_CHEST.get(), TRAPPED_LAUREL_CHEST.get());

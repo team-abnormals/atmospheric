@@ -1,5 +1,6 @@
 package com.teamabnormals.atmospheric.common.block;
 
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.core.util.BlockUtil;
 import net.minecraft.core.BlockPos;
@@ -29,9 +30,9 @@ public interface Crustose {
 		}
 	}
 
-	static boolean canPropagate(BlockState state, LevelReader world, BlockPos pos) {
+	static boolean canPropagate(BlockState state, LevelReader level, BlockPos pos) {
 		BlockPos blockpos = pos.above();
-		return canBeGrass(state, world, pos) && !world.getFluidState(blockpos).is(FluidTags.WATER);
+		return canBeGrass(state, level, pos) && !level.getFluidState(blockpos).is(FluidTags.WATER) && !level.getBlockState(blockpos).is(AtmosphericBlockTags.CRUSTOSE_CANNOT_SPREAD_UNDER);
 	}
 
 	default void randomCrustoseTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
