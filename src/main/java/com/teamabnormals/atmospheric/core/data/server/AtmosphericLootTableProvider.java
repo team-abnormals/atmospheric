@@ -92,6 +92,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			return this.hasShearsOrSilkTouch().invert();
 		}
 
+		private static final float[] GRIMWOOD_LEAVES_SAPLING_CHANCES = new float[]{0.075F, 0.09375F, 0.125F, 0.15F};
 		private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
 		private static final float[] CURRANT_LEAVES_STALK_CHANCES = new float[]{0.04F, 0.044444446F, 0.05F, 0.066666670F, 0.2F};
 
@@ -456,7 +457,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.add(TRAPPED_GRIMWOOD_CHEST.get(), this::createNameableBlockEntityTable);
 			this.add(GRIMWOOD_BOOKSHELF.get(), (block) -> createSingleItemTableWithSilkTouch(block, Items.BOOK, ConstantValue.exactly(3.0F)));
 			this.dropWhenSilkTouch(CHISELED_GRIMWOOD_BOOKSHELF.get());
-			this.add(GRIMWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, GRIMWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+			this.add(GRIMWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, GRIMWOOD_SAPLING.get(), GRIMWOOD_LEAVES_SAPLING_CHANCES));
 		}
 
 		protected LootTable.Builder createDragonRootsDrops(Block block) {
