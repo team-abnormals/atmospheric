@@ -59,7 +59,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		trimRecipes(output, AtmosphericItems.DRUID_ARMOR_TRIM_SMITHING_TEMPLATE, RED_ARID_SANDSTONE);
 		trimRecipes(output, AtmosphericItems.PETRIFIED_ARMOR_TRIM_SMITHING_TEMPLATE, ARID_SANDSTONE);
 
-		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.CURRANT_MUFFIN).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(AtmosphericItemTags.FRUITS_CURRANT).requires(Items.SUGAR).requires(Tags.Items.EGGS).unlockedBy("has_currant", has(AtmosphericItemTags.FRUITS_CURRANT)).save(output);
+		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.CURRANT_MUFFIN).requires(AtmosphericItemTags.FOODS_CURRANT).requires(AtmosphericItemTags.FOODS_CURRANT).requires(AtmosphericItemTags.FOODS_CURRANT).requires(Items.SUGAR).requires(Tags.Items.EGGS).unlockedBy("has_currant", has(AtmosphericItemTags.FOODS_CURRANT)).save(output);
 		conditionalStorageRecipes(output, AtmosphericConditions.QUARK_LOADED, FOOD, AtmosphericItems.CURRANT, BUILDING_BLOCKS, CURRANT_CRATE);
 
 		storageRecipes(output, MISC, AtmosphericItems.CARMINE_HUSK, BUILDING_BLOCKS, CARMINE_BLOCK);
@@ -85,16 +85,16 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		ShapedRecipeBuilder.shaped(FOOD, AtmosphericItems.GOLDEN_DRAGON_FRUIT).define('#', Items.GOLD_INGOT).define('X', AtmosphericItems.DRAGON_FRUIT).pattern("###").pattern("#X#").pattern("###").unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT)).save(output);
 		conditionalStorageRecipes(output, AtmosphericConditions.QUARK_LOADED, FOOD, AtmosphericItems.DRAGON_FRUIT, BUILDING_BLOCKS, DRAGON_FRUIT_CRATE);
 		conditionalStorageRecipesWithCustomUnpacking(output, AtmosphericConditions.QUARK_LOADED, FOOD, AtmosphericItems.GOLDEN_DRAGON_FRUIT, BUILDING_BLOCKS, GOLDEN_DRAGON_FRUIT_CRATE, "golden_dragon_fruit_from_golden_dragon_fruit_crate", "golden_dragon_fruit");
-		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.CANDIED_ORANGE_SLICES).requires(AtmosphericItemTags.FRUITS_ORANGE).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FRUITS_ORANGE)).save(output);
-		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.ORANGE_PUDDING).requires(AtmosphericItemTags.FRUITS_ORANGE).requires(Items.SWEET_BERRIES).requires(Items.COCOA_BEANS).requires(Tags.Items.EGGS).requires(BlueprintItemTags.MILK).unlockedBy("has_orange", has(AtmosphericItemTags.FRUITS_ORANGE)).save(output);
+		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.CANDIED_ORANGE_SLICES).requires(AtmosphericItemTags.FOODS_ORANGE).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FOODS_ORANGE)).save(output);
+		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.ORANGE_PUDDING).requires(AtmosphericItemTags.FOODS_ORANGE).requires(Items.SWEET_BERRIES).requires(Items.COCOA_BEANS).requires(Tags.Items.EGGS).requires(BlueprintItemTags.MILK).unlockedBy("has_orange", has(AtmosphericItemTags.FOODS_ORANGE)).save(output);
 		conditionalStorageRecipes(output, AtmosphericConditions.QUARK_LOADED, FOOD, AtmosphericItems.ORANGE, BUILDING_BLOCKS, ORANGE_CRATE);
 		conditionalStorageRecipes(output, AtmosphericConditions.QUARK_LOADED, FOOD, AtmosphericItems.BLOOD_ORANGE, BUILDING_BLOCKS, BLOOD_ORANGE_CRATE);
 
-		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.ORANGE_SORBET).requires(Items.BOWL).requires(AtmosphericItemTags.FRUITS_ORANGE).requires(Blocks.ICE).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FRUITS_ORANGE)).save(output.withConditions(AtmosphericConditions.NEAPOLITAN_NOT_LOADED));
-		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.ORANGE_SORBET).requires(Items.BOWL).requires(AtmosphericItemTags.FRUITS_ORANGE).requires(AtmosphericItemTags.ICE_CUBES).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FRUITS_ORANGE)).save(output.withConditions(AtmosphericConditions.NEAPOLITAN_LOADED), Atmospheric.location("orange_sorbet_from_ice_cubes"));
+		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.ORANGE_SORBET).requires(Items.BOWL).requires(AtmosphericItemTags.FOODS_ORANGE).requires(Blocks.ICE).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FOODS_ORANGE)).save(output.withConditions(AtmosphericConditions.NEAPOLITAN_NOT_LOADED));
+		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.ORANGE_SORBET).requires(Items.BOWL).requires(AtmosphericItemTags.FOODS_ORANGE).requires(AtmosphericItemTags.ICE_CUBES).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FOODS_ORANGE)).save(output.withConditions(AtmosphericConditions.NEAPOLITAN_LOADED), Atmospheric.location("orange_sorbet_from_ice_cubes"));
 
-		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.PASSION_FRUIT_SORBET).requires(Items.BOWL).requires(AtmosphericItemTags.FRUITS_PASSION_FRUIT).requires(Blocks.ICE).requires(Items.SUGAR).unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FRUITS_PASSION_FRUIT)).save(output.withConditions(AtmosphericConditions.NEAPOLITAN_NOT_LOADED));
-		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.PASSION_FRUIT_SORBET).requires(Items.BOWL).requires(AtmosphericItemTags.FRUITS_PASSION_FRUIT).requires(AtmosphericItemTags.ICE_CUBES).requires(Items.SUGAR).unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FRUITS_PASSION_FRUIT)).save(output.withConditions(AtmosphericConditions.NEAPOLITAN_LOADED), Atmospheric.location("passion_fruit_sorbet_from_ice_cubes"));
+		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.PASSION_FRUIT_SORBET).requires(Items.BOWL).requires(AtmosphericItemTags.FOODS_PASSION_FRUIT).requires(Blocks.ICE).requires(Items.SUGAR).unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FOODS_PASSION_FRUIT)).save(output.withConditions(AtmosphericConditions.NEAPOLITAN_NOT_LOADED));
+		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.PASSION_FRUIT_SORBET).requires(Items.BOWL).requires(AtmosphericItemTags.FOODS_PASSION_FRUIT).requires(AtmosphericItemTags.ICE_CUBES).requires(Items.SUGAR).unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FOODS_PASSION_FRUIT)).save(output.withConditions(AtmosphericConditions.NEAPOLITAN_LOADED), Atmospheric.location("passion_fruit_sorbet_from_ice_cubes"));
 
 		twoByTwoPacker(output, BUILDING_BLOCKS, CUT_IVORY_TRAVERTINE, IVORY_TRAVERTINE);
 		generateRecipes(output, AtmosphericBlockFamilies.CUT_IVORY_TRAVERTINE_FAMILY);
@@ -250,7 +250,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		ShapelessRecipeBuilder.shapeless(MISC, PASSION_VINE, 9).requires(PASSION_VINE_BUNDLE).unlockedBy("has_passion_vine_bundle", has(PASSION_VINE_BUNDLE)).save(output);
 		ShapedRecipeBuilder.shaped(DECORATIONS, AtmosphericItems.PASSION_VINE_COIL).define('#', PASSION_VINE).pattern("###").pattern("# #").pattern("###").unlockedBy("has_passion_vine", has(PASSION_VINE)).save(output);
 		ShapelessRecipeBuilder.shapeless(MISC, PASSION_VINE, 8).requires(AtmosphericItems.PASSION_VINE_COIL).unlockedBy("has_passion_vine_coil", has(AtmosphericItems.PASSION_VINE_COIL)).save(output, getModConversionRecipeName(PASSION_VINE, AtmosphericItems.PASSION_VINE_COIL));
-		ShapedRecipeBuilder.shaped(FOOD, AtmosphericItems.PASSION_FRUIT_TART).define('#', AtmosphericItemTags.FRUITS_PASSION_FRUIT).define('X', Tags.Items.EGGS).pattern("###").pattern("#X#").pattern("###").unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FRUITS_PASSION_FRUIT)).save(output);
+		ShapedRecipeBuilder.shaped(FOOD, AtmosphericItems.PASSION_FRUIT_TART).define('#', AtmosphericItemTags.FOODS_PASSION_FRUIT).define('X', Tags.Items.EGGS).pattern("###").pattern("#X#").pattern("###").unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FOODS_PASSION_FRUIT)).save(output);
 
 		generateRecipes(output, AtmosphericBlockFamilies.GRIMWOOD_PLANKS_FAMILY);
 		planksFromLogs(output, GRIMWOOD_PLANKS, AtmosphericItemTags.GRIMWOOD_LOGS, 4);

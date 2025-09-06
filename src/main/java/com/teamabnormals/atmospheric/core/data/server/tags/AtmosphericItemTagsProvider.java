@@ -75,11 +75,11 @@ public class AtmosphericItemTagsProvider extends BlueprintItemTagsProvider {
 		this.copy(Tags.Blocks.GLASS_BLOCKS_COLORLESS, Tags.Items.GLASS_BLOCKS_COLORLESS);
 		this.copy(Tags.Blocks.GLASS_PANES_COLORLESS, Tags.Items.GLASS_PANES_COLORLESS);
 		this.tag(Tags.Items.BOOKSHELVES).add(ROSEWOOD_BOOKSHELF.get().asItem(), MORADO_BOOKSHELF.get().asItem(), YUCCA_BOOKSHELF.get().asItem(), KOUSA_BOOKSHELF.get().asItem(), ASPEN_BOOKSHELF.get().asItem(), GRIMWOOD_BOOKSHELF.get().asItem(), LAUREL_BOOKSHELF.get().asItem());
-		this.tag(FRUITS).addTags(FRUITS_PASSION_FRUIT, FRUITS_CURRANT, FRUITS_DRAGON_FRUIT, FRUITS_ORANGE);
-		this.tag(FRUITS_PASSION_FRUIT).add(AtmosphericItems.PASSION_FRUIT.get());
-		this.tag(FRUITS_CURRANT).add(AtmosphericItems.CURRANT.get());
-		this.tag(FRUITS_DRAGON_FRUIT).add(AtmosphericItems.DRAGON_FRUIT.get());
-		this.tag(FRUITS_ORANGE).add(AtmosphericItems.ORANGE.get());
+		this.tag(Tags.Items.FOODS_FRUIT).addTags(FOODS_PASSION_FRUIT, FOODS_CURRANT, FOODS_DRAGON_FRUIT, FOODS_ORANGE);
+		this.tag(FOODS_PASSION_FRUIT).add(AtmosphericItems.PASSION_FRUIT.get());
+		this.tag(FOODS_CURRANT).add(AtmosphericItems.CURRANT.get());
+		this.tag(FOODS_DRAGON_FRUIT).add(AtmosphericItems.DRAGON_FRUIT.get());
+		this.tag(FOODS_ORANGE).add(AtmosphericItems.ORANGE.get());
 		this.tag(Tags.Items.SEEDS).addTag(SEEDS_ALOE_VERA);
 		this.tag(SEEDS_ALOE_VERA).add(AtmosphericItems.ALOE_KERNELS.get());
 		this.tag(ICE_CUBES);

@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "c:fruits/orange"
+      "tag": "c:foods/orange"
     },
     {
       "item": "minecraft:sweet_berries"

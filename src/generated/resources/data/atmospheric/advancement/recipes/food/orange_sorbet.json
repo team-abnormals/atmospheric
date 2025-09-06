@@ -14,7 +14,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#c:fruits/orange"
+            "items": "#c:foods/orange"
           }
         ]
       },

@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#c:fruits/passion_fruit"
+            "items": "#c:foods/passion_fruit"
           }
         ]
       },

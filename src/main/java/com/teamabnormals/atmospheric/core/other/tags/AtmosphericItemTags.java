@@ -17,11 +17,10 @@ public class AtmosphericItemTags {
 
 	public static final TagKey<Item> MONKEY_BRUSH = itemTag("monkey_brush");
 	public static final TagKey<Item> TRAVERTINE = itemTag("travertine");
-	public static final TagKey<Item> FRUITS = TagUtil.itemTag("c", "fruits");
-	public static final TagKey<Item> FRUITS_PASSION_FRUIT = TagUtil.itemTag("c", "fruits/passion_fruit");
-	public static final TagKey<Item> FRUITS_CURRANT = TagUtil.itemTag("c", "fruits/currant");
-	public static final TagKey<Item> FRUITS_DRAGON_FRUIT = TagUtil.itemTag("c", "fruits/dragon_fruit");
-	public static final TagKey<Item> FRUITS_ORANGE = TagUtil.itemTag("c", "fruits/orange");
+	public static final TagKey<Item> FOODS_PASSION_FRUIT = TagUtil.itemTag("c", "foods/passion_fruit");
+	public static final TagKey<Item> FOODS_CURRANT = TagUtil.itemTag("c", "foods/currant");
+	public static final TagKey<Item> FOODS_DRAGON_FRUIT = TagUtil.itemTag("c", "foods/dragon_fruit");
+	public static final TagKey<Item> FOODS_ORANGE = TagUtil.itemTag("c", "foods/orange");
 	public static final TagKey<Item> SEEDS_ALOE_VERA = TagUtil.itemTag("c", "seeds/aloe_vera");
 	public static final TagKey<Item> ICE_CUBES = TagUtil.itemTag("c", "ice_cubes");
 
