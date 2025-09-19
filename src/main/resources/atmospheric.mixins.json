@@ -6,15 +6,14 @@
   "refmap": "atmospheric.refmap.json",
   "mixins": [
     "BambooBlockMixin",
+    "BiomeMixin",
     "BlockMixin",
     "CamelMixin",
     "EntityMixin",
     "FollowFlockLeaderGoalMixin",
+    "ItemMixin",
     "PandaBreedGoalMixin",
-    "PistonBaseBlockMixin",
-    "ServerLevelMixin",
-    "SnowAndFreezeFeatureMixin",
-    "ItemMixin"
+    "PistonBaseBlockMixin"
   ],
   "client": [
     "client.CamelRendererMixin",
