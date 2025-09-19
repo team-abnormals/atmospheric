@@ -1,8 +1,11 @@
 {
   "values": [
     "#c:foods/passion_fruit",
-    "#c:foods/currant",
     "#c:foods/dragon_fruit",
-    "#c:foods/orange"
+    "#c:foods/orange",
+    "atmospheric:yucca_fruit",
+    "atmospheric:roasted_yucca_fruit",
+    "atmospheric:shimmering_passion_fruit",
+    "atmospheric:golden_dragon_fruit"
   ]
 }
