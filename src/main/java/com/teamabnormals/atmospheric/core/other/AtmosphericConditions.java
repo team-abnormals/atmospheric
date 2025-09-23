@@ -2,10 +2,8 @@ package com.teamabnormals.atmospheric.core.other;
 
 import com.google.common.collect.Maps;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericConditionSerializers;
-import com.teamabnormals.blueprint.core.api.conditions.BlueprintAndCondition;
 import com.teamabnormals.blueprint.core.api.conditions.ConfigValueCondition;
 import net.neoforged.neoforge.common.ModConfigSpec;
-import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.conditions.NotCondition;
 

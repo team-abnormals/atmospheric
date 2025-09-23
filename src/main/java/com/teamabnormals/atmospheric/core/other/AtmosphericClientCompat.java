@@ -3,13 +3,17 @@ package com.teamabnormals.atmospheric.core.other;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericTetraVariants;
+import com.teamabnormals.blueprint.client.model.DynamicItemModel;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.world.level.FoliageColor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
 @EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -20,6 +24,16 @@ public class AtmosphericClientCompat {
 		AtmosphericBlocks.setupTabEditors();
 		AtmosphericClientEvents.registerItemProperties();
 		registerRenderLayers();
+	}
+
+	@SubscribeEvent
+	public static void registerAdditional(ModelEvent.RegisterAdditional event) {
+		DynamicItemModel.register(event, "tetra_bucket");
+	}
+
+	@SubscribeEvent
+	public static void modifyBakingResult(ModelEvent.ModifyBakingResult event) {
+		DynamicItemModel.bake(event, AtmosphericItems.TETRA_BUCKET.getId(), "tetra_bucket", ModelResourceLocation.standalone(AtmosphericTetraVariants.NEON.location().withPrefix("item/tetra_bucket/")), DynamicItemModel.fishBucket());
 	}
 
 	@SubscribeEvent
