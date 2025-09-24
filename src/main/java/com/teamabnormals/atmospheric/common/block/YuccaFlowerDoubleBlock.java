@@ -45,6 +45,12 @@ public class YuccaFlowerDoubleBlock extends TallFlowerBlock implements YuccaPlan
 		return this.getYuccaPathType(entity);
 	}
 
+	@Nullable
+	@Override
+	public PathType getAdjacentBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity, PathType originalType) {
+		return this.getYuccaAdjacentPathType(entity);
+	}
+
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		Vec3 vec3d = state.getOffset(worldIn, pos);

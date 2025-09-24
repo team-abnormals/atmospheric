@@ -166,6 +166,12 @@ public class BarrelCactusBlock extends Block implements BonemealableBlock {
 		return entity != null && entity.getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE) ? null : PathType.DAMAGE_OTHER;
 	}
 
+	@Nullable
+	@Override
+	public PathType getAdjacentBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity, PathType originalType) {
+		return entity != null && entity.getType().is(AtmosphericEntityTypeTags.CACTUS_IMMUNE) ? null : PathType.DANGER_OTHER;
+	}
+
 	@Override
 	public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state) {
 		return state.getValue(AGE) < 3;

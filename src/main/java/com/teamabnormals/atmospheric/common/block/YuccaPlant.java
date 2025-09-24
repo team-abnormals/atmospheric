@@ -59,4 +59,8 @@ public interface YuccaPlant {
 	default PathType getYuccaPathType(@Nullable Mob entity) {
 		return entity != null && entity.getType().is(AtmosphericEntityTypeTags.YUCCA_IMMUNE) ? null : PathType.DAMAGE_OTHER;
 	}
+
+	default PathType getYuccaAdjacentPathType(@Nullable Mob entity) {
+		return entity != null && entity.getType().is(AtmosphericEntityTypeTags.YUCCA_IMMUNE) ? null : PathType.DANGER_OTHER;
+	}
 }

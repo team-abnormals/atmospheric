@@ -16,6 +16,7 @@ import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -31,11 +32,14 @@ import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.common.Tags;
+
+import javax.annotation.Nullable;
 
 public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, YuccaPlant {
 	protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 16.0D, 11.0D);
@@ -130,6 +134,18 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 		} else if (entityIn instanceof Projectile && !state.getValue(SNAPPED)) {
 			level.setBlockAndUpdate(pos, state.setValue(SNAPPED, true));
 		}
+	}
+
+	@Nullable
+	@Override
+	public PathType getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+		return this.getYuccaPathType(entity);
+	}
+
+	@Nullable
+	@Override
+	public PathType getAdjacentBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity, PathType originalType) {
+		return this.getYuccaAdjacentPathType(entity);
 	}
 
 	@Override

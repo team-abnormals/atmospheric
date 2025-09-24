@@ -44,6 +44,12 @@ public class YuccaSaplingBlock extends SaplingBlock implements YuccaPlant {
 		return this.getYuccaPathType(entity);
 	}
 
+	@Nullable
+	@Override
+	public PathType getAdjacentBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity, PathType originalType) {
+		return this.getYuccaAdjacentPathType(entity);
+	}
+
 	@Override
 	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
 		this.onYuccaCollision(state, worldIn, pos, entityIn);

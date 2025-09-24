@@ -163,6 +163,12 @@ public class AloeVeraBlock extends BushBlock implements BonemealableBlock {
 		return PathType.DAMAGE_OTHER;
 	}
 
+	@Nullable
+	@Override
+	public PathType getAdjacentBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity, PathType originalType) {
+		return PathType.DANGER_OTHER;
+	}
+
 	public void placeAt(LevelAccessor world, BlockPos pos, int flags) {
 		world.setBlock(pos, AtmosphericBlocks.TALL_ALOE_VERA.get().defaultBlockState().setValue(AloeVeraTallBlock.HALF, DoubleBlockHalf.LOWER), flags);
 		world.setBlock(pos.above(), AtmosphericBlocks.TALL_ALOE_VERA.get().defaultBlockState().setValue(AloeVeraTallBlock.HALF, DoubleBlockHalf.UPPER), flags);

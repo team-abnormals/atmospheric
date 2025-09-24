@@ -64,6 +64,12 @@ public class YuccaFlowerBlock extends FlowerBlock implements BonemealableBlock, 
 		return this.getYuccaPathType(entity);
 	}
 
+	@Nullable
+	@Override
+	public PathType getAdjacentBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity, PathType originalType) {
+		return this.getYuccaAdjacentPathType(entity);
+	}
+
 	@Override
 	public float getKnockbackForce() {
 		return 0.5F;

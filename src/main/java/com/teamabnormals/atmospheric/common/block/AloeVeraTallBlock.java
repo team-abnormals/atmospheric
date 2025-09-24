@@ -194,6 +194,12 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 		return PathType.DAMAGE_OTHER;
 	}
 
+	@Nullable
+	@Override
+	public PathType getAdjacentBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity, PathType originalType) {
+		return PathType.DANGER_OTHER;
+	}
+
 	@Override
 	public void randomTick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
 		if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
