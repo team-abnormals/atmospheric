@@ -20,10 +20,10 @@ public class SpittingEffect extends MobEffect {
 		RandomSource random = entity.getRandom();
 		Level level = entity.level();
 		if (!level.isClientSide && entity.getHealth() > 0) {
-				level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), AtmosphericSoundEvents.PASSION_FRUIT_SEED_SPIT.get(), SoundSource.NEUTRAL, 0.5F, 0.4F + (random.nextFloat() - random.nextFloat()) * 0.2F);
-				PassionFruitSeed seed = new PassionFruitSeed(level, entity, amplifier);
-				seed.shootFromRotation(entity, entity.getXRot(), entity.getYRot(), 0.0F, amplifier + 1, 1.0F);
-				level.addFreshEntity(seed);
+			level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), AtmosphericSoundEvents.PASSION_FRUIT_SEED_SPIT.get(), SoundSource.NEUTRAL, 0.5F, 0.4F + (random.nextFloat() - random.nextFloat()) * 0.2F);
+			PassionFruitSeed seed = new PassionFruitSeed(level, entity, amplifier);
+			seed.shootFromRotation(entity, entity.getXRot(), entity.getYRot(), 0.0F, amplifier + 1, 1.0F);
+			level.addFreshEntity(seed);
 		}
 		return true;
 	}
