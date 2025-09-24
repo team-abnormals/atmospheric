@@ -40,7 +40,7 @@ public abstract class ItemMixin {
 					cir.setReturnValue(15.0F);
 				}
 
-				if (state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get()) || state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get()) || state.getBlock() instanceof YuccaBundleBlock) {
+				if (state.is(AtmosphericBlocks.CURRANT_STALK.get()) || state.is(AtmosphericBlocks.CURRANT_STALK_BUNDLE.get()) || state.getBlock() instanceof YuccaBundleBlock) {
 					cir.setReturnValue(5.0F);
 				}
 			}
