@@ -1,0 +1,6 @@
+{
+  "remove": [
+    "#atmospheric:is_rainforest"
+  ],
+  "values": []
+}

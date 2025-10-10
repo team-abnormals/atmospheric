@@ -48,7 +48,7 @@ public class TetraBucketItem extends MobBucketItem {
 			RegistryLookup<TetraVariant> registry = context.registries().lookupOrThrow(AtmosphericRegistries.TETRA_VARIANT);
 
 			Optional<Holder<TetraVariant>> tetra = TYPE_CACHE.computeIfAbsent(tag.getString(Tetra.BUCKET_VARIANT_TAG), s ->
-					Optional.ofNullable(ResourceLocation.tryParse(tag.getString(Tetra.BUCKET_VARIANT_TAG)))
+					Optional.ofNullable(ResourceLocation.tryParse(s))
 							.map(loc -> ResourceKey.create(AtmosphericRegistries.TETRA_VARIANT, loc))
 							.flatMap(registry::get));
 

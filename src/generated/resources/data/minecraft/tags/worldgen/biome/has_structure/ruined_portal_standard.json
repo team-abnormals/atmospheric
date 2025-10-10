@@ -1,5 +1,6 @@
 {
   "values": [
+    "#atmospheric:is_rainforest",
     "atmospheric:aspen_parkland",
     "atmospheric:kousa_jungle",
     "atmospheric:grimwoods"
