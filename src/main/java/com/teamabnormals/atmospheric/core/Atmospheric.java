@@ -64,6 +64,8 @@ public class Atmospheric {
 		bus.addListener(this::dataSetup);
 
 		container.registerConfig(ModConfig.Type.COMMON, AtmosphericConfig.COMMON_SPEC);
+
+		AtmosphericCompat.setupDates();
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {

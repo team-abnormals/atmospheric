@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.core.registry;
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.item.*;
 import com.teamabnormals.atmospheric.core.Atmospheric;
+import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericEvents;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBannerPatternTags;
 import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericTrimPatterns;
@@ -55,7 +56,7 @@ public class AtmosphericItems {
 	public static final DeferredItem<Item> GOLDEN_DRAGON_FRUIT = ITEMS.createItem("golden_dragon_fruit", () -> new Item(new Item.Properties().food(AtmosphericFoods.GOLDEN_DRAGON_FRUIT)));
 	public static final DeferredItem<Item> ENDER_DRAGON_FRUIT = ITEMS.createItem("ender_dragon_fruit", () -> new EnderDragonFruitItem(new Item.Properties().food(AtmosphericFoods.ENDER_DRAGON_FRUIT).rarity(Rarity.EPIC).stacksTo(1)));
 
-	public static final DeferredItem<Item> ORANGE = ITEMS.createItem("orange", () -> new OrangeBlockItem(AtmosphericBlocks.ORANGE.get(), new Item.Properties().food(AtmosphericFoods.ORANGE).stacksTo(AtmosphericEvents.isAprilFools() ? 1 : 64)));
+	public static final DeferredItem<Item> ORANGE = ITEMS.createItem("orange", () -> new OrangeBlockItem(AtmosphericBlocks.ORANGE.get(), new Item.Properties().food(AtmosphericFoods.ORANGE).stacksTo(AtmosphericCompat.isAprilFools() ? 1 : 64)));
 	public static final DeferredItem<Item> ORANGE_PUDDING = ITEMS.createItem("orange_pudding", () -> new Item(new Item.Properties().food(AtmosphericFoods.ORANGE_PUDDING)));
 	public static final DeferredItem<Item> ORANGE_SORBET = ITEMS.createItem("orange_sorbet", () -> new Item(new Item.Properties().food(AtmosphericFoods.ORANGE_SORBET).stacksTo(1).craftRemainder(Items.BOWL)));
 	public static final DeferredItem<Item> CANDIED_ORANGE_SLICES = ITEMS.createItem("candied_orange_slices", () -> new Item(new Item.Properties().food(AtmosphericFoods.CANDIED_ORANGE_SLICES)));

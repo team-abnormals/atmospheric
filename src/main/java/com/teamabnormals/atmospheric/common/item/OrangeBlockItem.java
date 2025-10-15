@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.item;
 
 import com.teamabnormals.atmospheric.common.block.OrangeBlock;
+import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericEvents;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.network.chat.Component;
@@ -27,6 +28,6 @@ public class OrangeBlockItem extends BlockItem {
 
 	@Override
 	public Component getName(ItemStack stack) {
-		return AtmosphericEvents.isAprilFools() && this == AtmosphericItems.ORANGE.get() ? Component.literal("Annoying Orange") : super.getName(stack);
+		return AtmosphericCompat.isAprilFools() && this == AtmosphericItems.ORANGE.get() ? Component.literal("Annoying Orange") : super.getName(stack);
 	}
 }

@@ -6,11 +6,14 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.core.util.DataUtil;
 import net.minecraft.world.level.block.DispenserBlock;
 
+import java.util.Calendar;
+
 public class AtmosphericCompat {
 
 	public static void registerCompat() {
 		registerDispenserBehaviors();
 		registerFlammables();
+		setupDates();
 	}
 
 	public static void registerDispenserBehaviors() {
@@ -163,5 +166,26 @@ public class AtmosphericCompat {
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_BEEHIVE.get(), 5, 20);
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_LEAF_PILE.get(), 30, 60);
 		DataUtil.registerFlammable(AtmosphericBlocks.GRIMWOOD_BOARDS.get(), 5, 20);
+	}
+
+	public static boolean IS_APRIL_FOOLS;
+	public static boolean IS_STAR_WARS_DAY;
+
+	public static void setupDates() {
+		IS_APRIL_FOOLS = setDate(10, 15);
+		IS_STAR_WARS_DAY = setDate(5, 4);
+	}
+
+	public static boolean setDate(int month, int day) {
+		Calendar calendar = Calendar.getInstance();
+		return calendar.get(Calendar.MONTH) + 1 == month && calendar.get(Calendar.DATE) == day;
+	}
+
+	public static boolean isAprilFools() {
+		return IS_APRIL_FOOLS;
+	}
+
+	public static boolean isStarWarsDay() {
+		return IS_STAR_WARS_DAY;
 	}
 }

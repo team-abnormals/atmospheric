@@ -28,8 +28,6 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent.BlockToolModificationEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 
-import java.util.Calendar;
-
 @EventBusSubscriber(modid = Atmospheric.MOD_ID)
 public class AtmosphericEvents {
 
@@ -120,26 +118,5 @@ public class AtmosphericEvents {
 		if (event.getItemAbility() == ItemAbilities.HOE_TILL && event.getFinalState().is(AtmosphericBlocks.CRUSTOSE_PATH)) {
 			event.setFinalState(Blocks.FARMLAND.defaultBlockState());
 		}
-	}
-
-	public static boolean IS_APRIL_FOOLS = setAprilFools();
-	public static boolean IS_STAR_WARS_DAY = setStarWarsDay();
-
-	public static boolean setAprilFools() {
-		Calendar calendar = Calendar.getInstance();
-		return calendar.get(Calendar.MONTH) + 1 == 4 && calendar.get(Calendar.DATE) == 1;
-	}
-
-	public static boolean setStarWarsDay() {
-		Calendar calendar = Calendar.getInstance();
-		return calendar.get(Calendar.MONTH) + 1 == 5 && calendar.get(Calendar.DATE) == 4;
-	}
-
-	public static boolean isAprilFools() {
-		return IS_APRIL_FOOLS;
-	}
-
-	public static boolean isStarWarsDay() {
-		return IS_STAR_WARS_DAY;
 	}
 }

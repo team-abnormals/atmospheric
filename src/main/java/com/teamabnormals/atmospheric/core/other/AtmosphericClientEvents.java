@@ -38,7 +38,7 @@ public class AtmosphericClientEvents {
 
 	@SubscribeEvent
 	public static void onPlayerTick(PlayerTickEvent.Pre event) {
-		if (AtmosphericEvents.isAprilFools()) {
+		if (AtmosphericCompat.isAprilFools()) {
 			Player player = event.getEntity();
 			RandomSource random = player.getRandom();
 			if (random.nextInt(401) == 0 && player.getInventory().contains(AtmosphericItems.ORANGE.get().getDefaultInstance())) {
@@ -51,7 +51,7 @@ public class AtmosphericClientEvents {
 	public static final String[] RARE = {"Knife!", "Orange you glad I didn't say apple again?", "Can you do ten push-ups in ten seconds?", "Blah blah blah!", "Hey Pear!"};
 
 	public static void registerItemProperties() {
-		ItemProperties.register(AtmosphericItems.ORANGE.get(), Atmospheric.location("hey_apple"), (stack, level, entity, hash) -> AtmosphericEvents.isAprilFools() ? 1.0F : 0.0F);
+		ItemProperties.register(AtmosphericItems.ORANGE.get(), Atmospheric.location("hey_apple"), (stack, level, entity, hash) -> AtmosphericCompat.isAprilFools() ? 1.0F : 0.0F);
 	}
 
 	public static String getMessage(RandomSource random) {
