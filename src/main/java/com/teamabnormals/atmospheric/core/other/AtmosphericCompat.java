@@ -172,7 +172,7 @@ public class AtmosphericCompat {
 	public static boolean IS_STAR_WARS_DAY;
 
 	public static void setupDates() {
-		IS_APRIL_FOOLS = setDate(10, 15);
+		IS_APRIL_FOOLS = setDate(4, 1);
 		IS_STAR_WARS_DAY = setDate(5, 4);
 	}
 
