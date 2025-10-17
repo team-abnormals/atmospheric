@@ -163,12 +163,6 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		this.glassPaneBlock(ARID_GLASS_PANE, ARID_GLASS);
 	}
 
-	@Override
-	public void leavesBlock(DeferredHolder<Block, ?> leaves) {
-		this.simpleBlock(leaves.get(), models().getBuilder(name(leaves.get())).parent(new ModelFile.UncheckedModelFile(ResourceLocation.withDefaultNamespace("block/leaves"))).texture("all", blockTexture(leaves.get())));
-		this.blockItem(leaves);
-	}
-
 	public void watchfulAspenLogBlocks(DeferredBlock<Block> aspenLog, DeferredBlock<Block> log, DeferredBlock<Block> wood) {
 		this.logBlock(log, blockTexture(log.get()), suffix(blockTexture(aspenLog.get()), "_top"));
 		this.woodBlock(wood, log);
