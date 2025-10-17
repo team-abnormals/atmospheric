@@ -64,10 +64,10 @@ public final class AtmosphericBiomeSlices {
 		context.register(SPINY_THICKET_SLICE, new ModdedBiomeSlice(30, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
 				.area(SPINY_THICKET_AREA, SPINY_THICKET).build(), LevelStem.OVERWORLD));
 
-		context.register(ASPEN_SLICE, new ModdedBiomeSlice(30, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+		context.register(ASPEN_SLICE, new ModdedBiomeSlice(25, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
 				.area(ASPEN_PARKLAND_AREA, ASPEN_PARKLAND).build(), LevelStem.OVERWORLD));
 
-		context.register(LAUREL_SLICE, new ModdedBiomeSlice(30, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+		context.register(LAUREL_SLICE, new ModdedBiomeSlice(25, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
 				.area(LAUREL_FOREST_AREA, LAUREL_FOREST).build(), LevelStem.OVERWORLD));
 
 		context.register(KOUSA_SLICE, new ModdedBiomeSlice(30, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
