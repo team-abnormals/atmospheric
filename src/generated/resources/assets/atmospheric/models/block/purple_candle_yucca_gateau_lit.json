@@ -1,0 +1,6 @@
+{
+  "parent": "atmospheric:block/template_yucca_gateau_with_candle",
+  "textures": {
+    "candle": "minecraft:block/purple_candle_lit"
+  }
+}

@@ -14,6 +14,9 @@ public class AtmosphericBlockTags {
 	public static final TagKey<Block> GRIMWOOD_LOGS = blockTag("grimwood_logs");
 	public static final TagKey<Block> LAUREL_LOGS = blockTag("laurel_logs");
 
+	public static final TagKey<Block> CANDLE_YUCCA_GATEAUS = blockTag("candle_yucca_gateaus");
+	public static final TagKey<Block> DROPS_YUCCA_GATEAU_SLICE = TagUtil.blockTag("abnormals_delight", "drops_yucca_gateau_slice");
+
 	public static final TagKey<Block> TRAVERTINE = blockTag("travertine");
 	public static final TagKey<Block> MONKEY_BRUSH_PLACEABLE = blockTag("monkey_brush_placeable");
 	public static final TagKey<Block> PASSION_VINE_GROWABLE_ON = blockTag("passion_vine_growable_on");

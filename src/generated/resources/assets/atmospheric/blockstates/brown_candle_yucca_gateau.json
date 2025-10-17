@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,lit=false": {
+      "model": "atmospheric:block/brown_candle_yucca_gateau",
+      "y": 90
+    },
+    "facing=east,lit=true": {
+      "model": "atmospheric:block/brown_candle_yucca_gateau_lit",
+      "y": 90
+    },
+    "facing=north,lit=false": {
+      "model": "atmospheric:block/brown_candle_yucca_gateau"
+    },
+    "facing=north,lit=true": {
+      "model": "atmospheric:block/brown_candle_yucca_gateau_lit"
+    },
+    "facing=south,lit=false": {
+      "model": "atmospheric:block/brown_candle_yucca_gateau",
+      "y": 180
+    },
+    "facing=south,lit=true": {
+      "model": "atmospheric:block/brown_candle_yucca_gateau_lit",
+      "y": 180
+    },
+    "facing=west,lit=false": {
+      "model": "atmospheric:block/brown_candle_yucca_gateau",
+      "y": 270
+    },
+    "facing=west,lit=true": {
+      "model": "atmospheric:block/brown_candle_yucca_gateau_lit",
+      "y": 270
+    }
+  }
+}

@@ -1,7 +1,6 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
-		"3": "atmospheric:block/yucca_gateau_inside",
+		"inside": "atmospheric:block/yucca_gateau_inside",
 		"bottom": "atmospheric:block/yucca_gateau_bottom",
 		"particle": "atmospheric:block/yucca_gateau_side",
 		"side": "atmospheric:block/yucca_gateau_side",
@@ -9,14 +8,13 @@
 	},
 	"elements": [
 		{
-			"name": "yucca_gateau",
 			"from": [4, 0, 3],
 			"to": [13, 6, 13],
 			"faces": {
 				"north": {"uv": [3, 10, 12, 16], "texture": "#side"},
 				"east": {"uv": [3, 10, 13, 16], "texture": "#side"},
 				"south": {"uv": [4, 10, 13, 16], "texture": "#side"},
-				"west": {"uv": [3, 10, 13, 16], "texture": "#3"},
+				"west": {"uv": [3, 10, 13, 16], "texture": "#inside"},
 				"up": {"uv": [3, 3, 12, 13], "rotation": 180, "texture": "#top"},
 				"down": {"uv": [3, 3, 12, 13], "rotation": 180, "texture": "#bottom"}
 			}

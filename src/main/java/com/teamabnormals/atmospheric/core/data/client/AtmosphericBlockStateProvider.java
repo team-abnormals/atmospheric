@@ -1,7 +1,9 @@
 package com.teamabnormals.atmospheric.core.data.client;
 
+import com.teamabnormals.atmospheric.common.block.CandleGateauBlock;
 import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.common.block.OrangeBlock;
+import com.teamabnormals.atmospheric.common.block.YuccaGateauBlock;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericBlockFamilies;
@@ -15,12 +17,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
+
+import java.util.function.Function;
 
 import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.*;
 
@@ -161,6 +165,8 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 
 		this.block(ARID_GLASS);
 		this.glassPaneBlock(ARID_GLASS_PANE, ARID_GLASS);
+
+		CandleGateauBlock.getCandleGateaus().forEach((this::candleCake));
 	}
 
 	public void watchfulAspenLogBlocks(DeferredBlock<Block> aspenLog, DeferredBlock<Block> log, DeferredBlock<Block> wood) {
@@ -255,6 +261,19 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 		} else {
 			super.slabBlock(block, slab);
 		}
+	}
+
+	public void candleCake(CandleGateauBlock block) {
+		Block candle = block.getCandle();
+		ModelFile candleCake = models().withExistingParent(name(block), "atmospheric:block/template_yucca_gateau_with_candle").texture("candle", blockTexture(candle));
+		ModelFile candleCakeLit = models().withExistingParent(name(block) + "_lit", "atmospheric:block/template_yucca_gateau_with_candle").texture("candle", suffix(blockTexture(candle), "_lit"));
+		this.candleCakeBlock(block, (state -> state.getValue(BlockStateProperties.LIT) ? candleCakeLit : candleCake));
+	}
+
+	public void candleCakeBlock(Block block, Function<BlockState, ModelFile> modelFunc) {
+		this.getVariantBuilder(block).forAllStates(state -> {
+			return ConfiguredModel.builder().modelFile(modelFunc.apply(state)).rotationY((int) ((state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)).build();
+		});
 	}
 
 	public void flowerPotBlock(DeferredBlock<Block> flowerPot, ResourceLocation potTexture) {

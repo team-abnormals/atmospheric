@@ -10,11 +10,15 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.OffsetType;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+
+import java.util.function.ToIntFunction;
 
 public class AtmosphericProperties {
 	public static final BlockSetType ROSEWOOD_BLOCK_SET = blockSetType("rosewood");
@@ -88,6 +92,13 @@ public class AtmosphericProperties {
 
 	public static final Properties ALOE_VERA = Properties.of().noCollission().instabreak().randomTicks().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY);
 	public static final Properties ORANGE = Properties.of().mapColor(MapColor.COLOR_ORANGE).instabreak().sound(SoundType.HONEY_BLOCK).pushReaction(PushReaction.DESTROY);
+
+	public static final BlockBehaviour.Properties YUCCA_GATEAU = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY);
+	public static final BlockBehaviour.Properties CANDLE_YUCCA_GATEAU = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).lightLevel(litBlockEmission(3));
+
+	private static ToIntFunction<BlockState> litBlockEmission(int level) {
+		return (state) -> state.getValue(BlockStateProperties.LIT) ? level : 0;
+	}
 
 	public static BlockSetType blockSetType(String name) {
 		return BlockSetTypeRegistryHelper.register(new BlockSetType(Atmospheric.MOD_ID + ":" + name));

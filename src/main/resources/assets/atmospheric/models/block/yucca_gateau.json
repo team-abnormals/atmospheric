@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
 		"bottom": "atmospheric:block/yucca_gateau_bottom",
 		"particle": "atmospheric:block/yucca_gateau_side",
@@ -8,7 +7,6 @@
 	},
 	"elements": [
 		{
-			"name": "yucca_gateau",
 			"from": [3, 0, 3],
 			"to": [13, 6, 13],
 			"faces": {

@@ -1,0 +1,53 @@
+{
+	"textures": {
+		"bottom": "atmospheric:block/yucca_gateau_bottom",
+		"particle": "atmospheric:block/yucca_gateau_side",
+		"side": "atmospheric:block/yucca_gateau_side",
+		"top": "atmospheric:block/yucca_gateau_top"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 3],
+			"to": [13, 6, 13],
+			"faces": {
+				"north": {"uv": [3, 10, 13, 16], "texture": "#side"},
+				"east": {"uv": [3, 10, 13, 16], "texture": "#side"},
+				"south": {"uv": [3, 10, 13, 16], "texture": "#side"},
+				"west": {"uv": [3, 10, 13, 16], "texture": "#side"},
+				"up": {"uv": [3, 3, 13, 13], "rotation": 180, "texture": "#top"},
+				"down": {"uv": [3, 3, 13, 13], "rotation": 180, "texture": "#bottom"}
+			}
+		},
+		{
+			"from": [9, 6, 5],
+			"to": [11, 12, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, -2, -2]},
+			"faces": {
+				"north": {"uv": [0, 8, 2, 14], "texture": "#candle"},
+				"east": {"uv": [0, 8, 2, 14], "texture": "#candle"},
+				"south": {"uv": [0, 8, 2, 14], "texture": "#candle"},
+				"west": {"uv": [0, 8, 2, 14], "texture": "#candle"},
+				"up": {"uv": [0, 6, 2, 8], "texture": "#candle"},
+				"down": {"uv": [0, 14, 2, 16], "texture": "#candle", "cullface": "down"}
+			}
+		},
+		{
+			"from": [9.5, 12, 6],
+			"to": [10.5, 13, 6],
+			"rotation": {"angle": -45, "axis": "y", "origin": [10, 12, 6]},
+			"faces": {
+				"north": {"uv": [0, 5, 1, 6], "texture": "#candle"},
+				"south": {"uv": [0, 5, 1, 6], "texture": "#candle"}
+			}
+		},
+		{
+			"from": [9.5, 12, 6],
+			"to": [10.5, 13, 6],
+			"rotation": {"angle": 45, "axis": "y", "origin": [10, 12, 6]},
+			"faces": {
+				"north": {"uv": [0, 5, 1, 6], "texture": "#candle"},
+				"south": {"uv": [0, 5, 1, 6], "texture": "#candle"}
+			}
+		}
+	]
+}

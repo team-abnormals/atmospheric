@@ -230,10 +230,28 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> YUCCA_BUNDLE = BLOCKS.createBlock("yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).randomTicks()));
 	public static final DeferredBlock<Block> ROASTED_YUCCA_BUNDLE = BLOCKS.createBlock("roasted_yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).randomTicks()));
 
-	public static final DeferredBlock<Block> YUCCA_GATEAU = BLOCKS.createBlockNoItem("yucca_gateau", () -> new YuccaGateauBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
+	public static final DeferredBlock<Block> YUCCA_GATEAU = BLOCKS.createBlockNoItem("yucca_gateau", () -> new YuccaGateauBlock(AtmosphericProperties.YUCCA_GATEAU));
 	public static final DeferredBlock<Block> YUCCA_FLOWER = BLOCKS.createBlock("yucca_flower", () -> new YuccaFlowerBlock(AtmosphericMobEffects.PERSISTENCE, 15, AtmosphericProperties.YUCCA_FLOWER));
 	public static final DeferredBlock<Block> POTTED_YUCCA_FLOWER = BLOCKS.createBlockNoItem("potted_yucca_flower", () -> new FlowerPotBlock(YUCCA_FLOWER.get(), PropertyUtil.flowerPot()));
 	public static final DeferredBlock<Block> TALL_YUCCA_FLOWER = BLOCKS.createBlock("tall_yucca_flower", () -> new YuccaFlowerDoubleBlock(AtmosphericProperties.YUCCA_FLOWER));
+
+	public static final DeferredBlock<Block> CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> WHITE_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("white_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.WHITE_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> ORANGE_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("orange_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.ORANGE_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> MAGENTA_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("magenta_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.MAGENTA_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> LIGHT_BLUE_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("light_blue_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.LIGHT_BLUE_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> YELLOW_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("yellow_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.YELLOW_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> LIME_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("lime_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.LIME_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> PINK_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("pink_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.PINK_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> GRAY_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("gray_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.GRAY_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> LIGHT_GRAY_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("light_gray_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.LIGHT_GRAY_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> CYAN_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("cyan_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.CYAN_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> PURPLE_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("purple_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.PURPLE_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> BLUE_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("blue_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.BLUE_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> BROWN_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("brown_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.BROWN_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> GREEN_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("green_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.GREEN_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> RED_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("red_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.RED_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
+	public static final DeferredBlock<Block> BLACK_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("black_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.BLACK_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
 
 	public static final DeferredBlock<Block> GILIA = BLOCKS.createBlock("gilia", () -> new DesertFlowerBlock(MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()));
 	public static final DeferredBlock<Block> POTTED_GILIA = BLOCKS.createBlockNoItem("potted_gilia", () -> new FlowerPotBlock(GILIA.get(), PropertyUtil.flowerPot()));
