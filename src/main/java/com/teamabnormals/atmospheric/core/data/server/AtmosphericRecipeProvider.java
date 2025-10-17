@@ -7,7 +7,6 @@ import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.atmospheric.integration.boatload.AtmosphericBoatTypes;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
-import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
 import com.teamabnormals.clayworks.core.data.server.ClayworksRecipeProvider;
 import com.teamabnormals.woodworks.core.data.server.WoodworksRecipeProvider;
@@ -86,7 +85,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		conditionalStorageRecipes(output, AtmosphericConditions.QUARK_LOADED, FOOD, AtmosphericItems.DRAGON_FRUIT, BUILDING_BLOCKS, DRAGON_FRUIT_CRATE);
 		conditionalStorageRecipesWithCustomUnpacking(output, AtmosphericConditions.QUARK_LOADED, FOOD, AtmosphericItems.GOLDEN_DRAGON_FRUIT, BUILDING_BLOCKS, GOLDEN_DRAGON_FRUIT_CRATE, "golden_dragon_fruit_from_golden_dragon_fruit_crate", "golden_dragon_fruit");
 		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.CANDIED_ORANGE_SLICES).requires(AtmosphericItemTags.FOODS_ORANGE).requires(Items.SUGAR).unlockedBy("has_orange", has(AtmosphericItemTags.FOODS_ORANGE)).save(output);
-		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.ORANGE_PUDDING).requires(AtmosphericItemTags.FOODS_ORANGE).requires(Items.SWEET_BERRIES).requires(Items.COCOA_BEANS).requires(Tags.Items.EGGS).requires(BlueprintItemTags.MILK).unlockedBy("has_orange", has(AtmosphericItemTags.FOODS_ORANGE)).save(output);
+		ShapelessRecipeBuilder.shapeless(FOOD, AtmosphericItems.ORANGE_PUDDING).requires(AtmosphericItemTags.FOODS_ORANGE).requires(Items.SWEET_BERRIES).requires(Items.COCOA_BEANS).requires(Tags.Items.EGGS).requires(Tags.Items.DRINKS_MILK).unlockedBy("has_orange", has(AtmosphericItemTags.FOODS_ORANGE)).save(output);
 		conditionalStorageRecipes(output, AtmosphericConditions.QUARK_LOADED, FOOD, AtmosphericItems.ORANGE, BUILDING_BLOCKS, ORANGE_CRATE);
 		conditionalStorageRecipes(output, AtmosphericConditions.QUARK_LOADED, FOOD, AtmosphericItems.BLOOD_ORANGE, BUILDING_BLOCKS, BLOOD_ORANGE_CRATE);
 
