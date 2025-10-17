@@ -15,6 +15,9 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.registries.DeferredBlock;
+
+import static com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks.*;
 
 @EventBusSubscriber(modid = Atmospheric.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class AtmosphericClientCompat {
@@ -39,118 +42,54 @@ public class AtmosphericClientCompat {
 	@SubscribeEvent
 	public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
 		event.register((x, level, pos, u) -> level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.get(0.5D, 1.0D),
-				AtmosphericBlocks.ROSEWOOD_LEAVES.get(), AtmosphericBlocks.ROSEWOOD_LEAF_PILE.get(),
-				AtmosphericBlocks.MORADO_LEAVES.get(), AtmosphericBlocks.MORADO_LEAF_PILE.get(),
-				AtmosphericBlocks.FLOWERING_MORADO_LEAVES.get(), AtmosphericBlocks.FLOWERING_MORADO_LEAF_PILE.get(),
-				AtmosphericBlocks.YUCCA_LEAVES.get(), AtmosphericBlocks.YUCCA_LEAF_PILE.get(),
-				AtmosphericBlocks.GREEN_ASPEN_LEAVES.get(), AtmosphericBlocks.GREEN_ASPEN_LEAF_PILE.get()
+				ROSEWOOD_LEAVES.get(), ROSEWOOD_LEAF_PILE.get(),
+				MORADO_LEAVES.get(), MORADO_LEAF_PILE.get(),
+				FLOWERING_MORADO_LEAVES.get(), FLOWERING_MORADO_LEAF_PILE.get(),
+				YUCCA_LEAVES.get(), YUCCA_LEAF_PILE.get(),
+				GREEN_ASPEN_LEAVES.get(), GREEN_ASPEN_LEAF_PILE.get()
 		);
 	}
 
 	@SubscribeEvent
 	public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
 		event.register((color, items) -> items > 0 ? -1 : FoliageColor.get(0.5D, 1.0D),
-				AtmosphericBlocks.ROSEWOOD_LEAVES, AtmosphericBlocks.ROSEWOOD_LEAF_PILE,
-				AtmosphericBlocks.MORADO_LEAVES, AtmosphericBlocks.MORADO_LEAF_PILE,
-				AtmosphericBlocks.FLOWERING_MORADO_LEAVES, AtmosphericBlocks.FLOWERING_MORADO_LEAF_PILE,
-				AtmosphericBlocks.YUCCA_LEAVES, AtmosphericBlocks.YUCCA_LEAF_PILE,
-				AtmosphericBlocks.GREEN_ASPEN_LEAVES, AtmosphericBlocks.GREEN_ASPEN_LEAF_PILE
+				ROSEWOOD_LEAVES, ROSEWOOD_LEAF_PILE,
+				MORADO_LEAVES, MORADO_LEAF_PILE,
+				FLOWERING_MORADO_LEAVES, FLOWERING_MORADO_LEAF_PILE,
+				YUCCA_LEAVES, YUCCA_LEAF_PILE,
+				GREEN_ASPEN_LEAVES, GREEN_ASPEN_LEAF_PILE
 		);
 	}
 
 	private static void registerRenderLayers() {
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ROSEWOOD_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_ROSEWOOD_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ROSEWOOD_DOOR.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ROSEWOOD_TRAPDOOR.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ALOE_GEL_BLOCK.get(), RenderType.translucent());
+		for (DeferredBlock<?> block : new DeferredBlock[]{
+				ROSEWOOD_SAPLING, POTTED_ROSEWOOD_SAPLING, ROSEWOOD_DOOR, ROSEWOOD_TRAPDOOR,
+				MORADO_SAPLING, POTTED_MORADO_SAPLING, MORADO_DOOR, MORADO_TRAPDOOR,
+				WARM_MONKEY_BRUSH, WARM_WALL_MONKEY_BRUSH, POTTED_WARM_MONKEY_BRUSH,
+				HOT_MONKEY_BRUSH, HOT_WALL_MONKEY_BRUSH, POTTED_HOT_MONKEY_BRUSH,
+				SCALDING_MONKEY_BRUSH, SCALDING_WALL_MONKEY_BRUSH, POTTED_SCALDING_MONKEY_BRUSH,
+				PASSION_VINE, WATER_HYACINTH, POTTED_WATER_HYACINTH,
 
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.MORADO_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_MORADO_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.MORADO_DOOR.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.MORADO_TRAPDOOR.get(), RenderType.cutout());
+				YUCCA_SAPLING, POTTED_YUCCA_SAPLING, YUCCA_DOOR, YUCCA_TRAPDOOR,
+				ARID_SPROUTS, YUCCA_FLOWER, TALL_YUCCA_FLOWER, POTTED_YUCCA_FLOWER, YUCCA_BRANCH,
+				GILIA, POTTED_GILIA, FIRETHORN, POTTED_FIRETHORN, FORSYTHIA, POTTED_FORSYTHIA,
+				ALOE_VERA, TALL_ALOE_VERA, POTTED_ALOE_VERA,
+				ARID_GLASS, ARID_GLASS_PANE,
 
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.YUCCA_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.YUCCA_DOOR.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.YUCCA_TRAPDOOR.get(), RenderType.cutout());
+				KOUSA_SAPLING, POTTED_KOUSA_SAPLING, KOUSA_DOOR, KOUSA_TRAPDOOR,
+				SNOWY_BAMBOO_SAPLING, SNOWY_BAMBOO, POTTED_SNOWY_BAMBOO, SNOWY_CACTUS, POTTED_SNOWY_CACTUS,
+				HANGING_CURRANT, CURRANT_SEEDLING, POTTED_CURRANT_SEEDLING,
 
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_KOUSA_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_DOOR.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.KOUSA_TRAPDOOR.get(), RenderType.cutout());
+				ASPEN_SAPLING, POTTED_ASPEN_SAPLING, GREEN_ASPEN_SAPLING, POTTED_GREEN_ASPEN_SAPLING, ASPEN_DOOR, ASPEN_TRAPDOOR,
+				AGAVE, POTTED_AGAVE, GOLDEN_GROWTHS, POTTED_GOLDEN_GROWTHS,
 
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.SNOWY_BAMBOO_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.SNOWY_BAMBOO.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_SNOWY_BAMBOO.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.SNOWY_CACTUS.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_SNOWY_CACTUS.get(), RenderType.cutout());
+				LAUREL_SAPLING, POTTED_LAUREL_SAPLING, DRY_LAUREL_SAPLING, POTTED_DRY_LAUREL_SAPLING, LAUREL_DOOR, LAUREL_TRAPDOOR,
+				ORANGE, BLOOD_ORANGE,
 
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.HANGING_CURRANT.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.CURRANT_SEEDLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_CURRANT_SEEDLING.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GRIMWEB.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ASPEN_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_ASPEN_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ASPEN_DOOR.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ASPEN_TRAPDOOR.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GREEN_ASPEN_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_GREEN_ASPEN_SAPLING.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_LAUREL_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.DRY_LAUREL_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_DRY_LAUREL_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_DOOR.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.LAUREL_TRAPDOOR.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ORANGE.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.BLOOD_ORANGE.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GRIMWOOD_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_GRIMWOOD_SAPLING.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GRIMWOOD_DOOR.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GRIMWOOD_TRAPDOOR.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.WARM_MONKEY_BRUSH.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.HOT_MONKEY_BRUSH.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.SCALDING_MONKEY_BRUSH.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.WARM_WALL_MONKEY_BRUSH.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.HOT_WALL_MONKEY_BRUSH.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.SCALDING_WALL_MONKEY_BRUSH.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ARID_SPROUTS.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GILIA.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.PASSION_VINE.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.WATER_HYACINTH.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.YUCCA_FLOWER.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.TALL_YUCCA_FLOWER.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.YUCCA_BRANCH.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.FIRETHORN.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.FORSYTHIA.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ALOE_VERA.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.TALL_ALOE_VERA.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ALOE_GEL_BLOCK.get(), RenderType.translucent());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_ALOE_VERA.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_WARM_MONKEY_BRUSH.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_HOT_MONKEY_BRUSH.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_SCALDING_MONKEY_BRUSH.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_YUCCA_FLOWER.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_GILIA.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_WATER_HYACINTH.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_FIRETHORN.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_FORSYTHIA.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.AGAVE.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_AGAVE.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.GOLDEN_GROWTHS.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.POTTED_GOLDEN_GROWTHS.get(), RenderType.cutout());
-
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ARID_GLASS.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(AtmosphericBlocks.ARID_GLASS_PANE.get(), RenderType.cutout());
+				GRIMWOOD_SAPLING, POTTED_GRIMWOOD_SAPLING, GRIMWOOD_DOOR, GRIMWOOD_TRAPDOOR, GRIMWEB
+		}) {
+			ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout());
+		}
 	}
 }
