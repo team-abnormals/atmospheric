@@ -1,6 +1,7 @@
 package com.teamabnormals.atmospheric.common.block;
 
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericEntityTypeTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericCriteriaTriggers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
@@ -17,7 +18,6 @@ import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -55,8 +55,8 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-		Vec3 vec3d = state.getOffset(worldIn, pos);
+	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+		Vec3 vec3d = state.getOffset(level, pos);
 		VoxelShape shape = state.getValue(HALF) == DoubleBlockHalf.UPPER ? SHAPE_TOP : SHAPE;
 		return shape.move(vec3d.x, vec3d.y, vec3d.z);
 	}
@@ -67,8 +67,8 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	}
 
 	@Override
-	protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		BlockState downState = worldIn.getBlockState(pos.below());
+	protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+		BlockState downState = level.getBlockState(pos.below());
 		if (state.getBlock() instanceof AloeVeraTallBlock) {
 			DoubleBlockHalf half = state.getValue(HALF);
 			if (half == DoubleBlockHalf.UPPER) {
@@ -77,34 +77,35 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 				return downState.is(AtmosphericBlockTags.ALOE_PLACEABLE);
 			}
 		}
-		return super.mayPlaceOn(state, worldIn, pos);
+		return super.mayPlaceOn(state, level, pos);
 	}
 
 	@Override
-	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entityIn) {
-		if (entityIn instanceof LivingEntity) {
-			if (!(entityIn instanceof Bee))
-				entityIn.makeStuckInBlock(state, new Vec3(0.8F, 0.75D, 0.8F));
-			RandomSource rand = RandomSource.create();
+	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+		if (entity instanceof LivingEntity) {
+			if (!entity.getType().is(AtmosphericEntityTypeTags.ALOE_IMMUNE)) {
+				entity.makeStuckInBlock(state, new Vec3(0.8F, 0.75D, 0.8F));
+			}
 
+			RandomSource random = entity.getRandom();
 			for (int i = 0; i < 3; i++) {
-				double offsetX = rand.nextFloat() * 0.6F;
-				double offsetZ = rand.nextFloat() * 0.45F;
+				double offsetX = random.nextFloat() * 0.6F;
+				double offsetZ = random.nextFloat() * 0.45F;
 
 				double x = pos.getX() + 0.5D + offsetX;
-				double y = pos.getY() + 0.5D + (rand.nextFloat() * 0.05F);
+				double y = pos.getY() + 0.5D + (random.nextFloat() * 0.05F);
 				double z = pos.getZ() + 0.65D + offsetZ;
 
 				if (state.getValue(HALF) == DoubleBlockHalf.UPPER && level.isClientSide && level.getGameTime() % (9 / (state.getValue(AGE) - 5)) == 0)
 					level.addParticle(AtmosphericParticleTypes.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
 			}
 
-			if (!level.isClientSide && state.getValue(AGE) > 3 && Math.random() <= 0.4 && state.getValue(HALF) == DoubleBlockHalf.LOWER && !(entityIn instanceof Bee)) {
-				entityIn.makeStuckInBlock(state, new Vec3(0.2F, 0.2D, 0.2F));
-				entityIn.hurt(AtmosphericDamageTypes.aloeLeaves(level), 1.0F);
-				if (entityIn instanceof ServerPlayer serverplayerentity) {
-					if (!entityIn.getCommandSenderWorld().isClientSide() && !serverplayerentity.isCreative()) {
-						AtmosphericCriteriaTriggers.ALOE_VERA_PRICK.get().trigger(serverplayerentity);
+			if (!level.isClientSide && state.getValue(AGE) > 3 && random.nextFloat() <= 0.4 && state.getValue(HALF) == DoubleBlockHalf.LOWER && !entity.getType().is(AtmosphericEntityTypeTags.ALOE_IMMUNE)) {
+				entity.makeStuckInBlock(state, new Vec3(0.2F, 0.2D, 0.2F));
+				entity.hurt(AtmosphericDamageTypes.aloeLeaves(level), 1.0F);
+				if (entity instanceof ServerPlayer serverPlayer) {
+					if (!entity.getCommandSenderWorld().isClientSide() && !serverPlayer.isCreative()) {
+						AtmosphericCriteriaTriggers.ALOE_VERA_PRICK.get().trigger(serverPlayer);
 					}
 				}
 			}
@@ -112,13 +113,13 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	}
 
 	@Override
-	public ItemStack getCloneItemStack(LevelReader worldIn, BlockPos pos, BlockState state) {
+	public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
 		return new ItemStack(AtmosphericItems.ALOE_KERNELS.get());
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	public void animateTick(BlockState state, Level worldIn, BlockPos pos, RandomSource rand) {
+	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
 		double offsetX = rand.nextFloat() * 0.6F;
 		double offsetZ = rand.nextFloat() * 0.45F;
 
@@ -126,8 +127,8 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 		double y = pos.getY() + 0.5D + (rand.nextFloat() * 0.05F);
 		double z = pos.getZ() + 0.65D + offsetZ;
 
-		if (state.getValue(HALF) == DoubleBlockHalf.UPPER && worldIn.isClientSide && worldIn.getGameTime() % (6 / (state.getValue(AGE) - 5)) == 0)
-			worldIn.addParticle(AtmosphericParticleTypes.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
+		if (state.getValue(HALF) == DoubleBlockHalf.UPPER && level.isClientSide && level.getGameTime() % (6 / (state.getValue(AGE) - 5)) == 0)
+			level.addParticle(AtmosphericParticleTypes.ALOE_BLOSSOM.get(), x, y, z, 0.03D, 0.0D, 0.03D);
 	}
 
 	@Override
@@ -174,17 +175,17 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	}
 
 	@Override
-	public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
-		return this.mayPlaceOn(state, worldIn, pos);
+	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+		return this.mayPlaceOn(state, level, pos);
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
+	public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
 		return state.getValue(AGE) < 8;
 	}
 
 	@Override
-	public boolean isBonemealSuccess(Level worldIn, RandomSource rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(Level level, RandomSource rand, BlockPos pos, BlockState state) {
 		return true;
 	}
 
@@ -201,28 +202,28 @@ public class AloeVeraTallBlock extends DoublePlantBlock implements BonemealableB
 	}
 
 	@Override
-	public void randomTick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
+	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 		if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
-			boolean flag = worldIn.getBlockState(pos.below()).is(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON);
-			if (flag && state.getValue(AGE) < 8 && worldIn.getRawBrightness(pos.above(), 0) >= 12 && CommonHooks.canCropGrow(worldIn, pos, state, random.nextInt(7) == 0)) {
-				worldIn.setBlockAndUpdate(pos, state.setValue(AGE, state.getValue(AGE) + 1));
-				worldIn.setBlockAndUpdate(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(AGE, state.getValue(AGE) + 1));
-				CommonHooks.fireCropGrowPost(worldIn, pos, state);
+			boolean flag = level.getBlockState(pos.below()).is(AtmosphericBlockTags.TALL_ALOE_GROWABLE_ON);
+			if (flag && state.getValue(AGE) < 8 && level.getRawBrightness(pos.above(), 0) >= 12 && CommonHooks.canCropGrow(level, pos, state, random.nextInt(7) == 0)) {
+				level.setBlockAndUpdate(pos, state.setValue(AGE, state.getValue(AGE) + 1));
+				level.setBlockAndUpdate(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(AGE, state.getValue(AGE) + 1));
+				CommonHooks.fireCropGrowPost(level, pos, state);
 			}
 		}
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel world, RandomSource rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel level, RandomSource rand, BlockPos pos, BlockState state) {
 		int age = state.getValue(AGE);
 		DoubleBlockHalf half = state.getValue(HALF);
 		if (age < 8) {
 			if (half == DoubleBlockHalf.LOWER) {
-				world.setBlockAndUpdate(pos, state.setValue(AGE, age + 1));
-				world.setBlockAndUpdate(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(AGE, age + 1));
+				level.setBlockAndUpdate(pos, state.setValue(AGE, age + 1));
+				level.setBlockAndUpdate(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(AGE, age + 1));
 			} else if (half == DoubleBlockHalf.UPPER) {
-				world.setBlockAndUpdate(pos, state.setValue(AGE, age + 1));
-				world.setBlockAndUpdate(pos.below(), state.setValue(HALF, DoubleBlockHalf.LOWER).setValue(AGE, age + 1));
+				level.setBlockAndUpdate(pos, state.setValue(AGE, age + 1));
+				level.setBlockAndUpdate(pos.below(), state.setValue(HALF, DoubleBlockHalf.LOWER).setValue(AGE, age + 1));
 			}
 		}
 	}

@@ -26,6 +26,7 @@ public class AtmosphericEntityTypeTagsProvider extends EntityTypeTagsProvider {
 		this.tag(EntityTypeTags.AXOLOTL_HUNT_TARGETS).add(TETRA.get());
 		this.tag(EntityTypeTags.NOT_SCARY_FOR_PUFFERFISH).add(TETRA.get());
 		this.tag(EntityTypeTags.AQUATIC).add(TETRA.get());
+		this.tag(AtmosphericEntityTypeTags.ALOE_IMMUNE).add(EntityType.BEE, EntityType.HUSK, EntityType.CAMEL, COCHINEAL.get());
 		this.tag(AtmosphericEntityTypeTags.YUCCA_IMMUNE).add(EntityType.BEE, EntityType.HUSK, EntityType.CAMEL, COCHINEAL.get());
 		this.tag(AtmosphericEntityTypeTags.CACTUS_IMMUNE).add(EntityType.HUSK, EntityType.CAMEL, COCHINEAL.get());
 		this.tag(EntityTypeTags.IMPACT_PROJECTILES).add(PASSION_FRUIT_SEED.get());
