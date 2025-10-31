@@ -5,6 +5,7 @@ import com.teamabnormals.atmospheric.common.entity.OrangeVaporCloud;
 import com.teamabnormals.atmospheric.common.entity.Tetra;
 import com.teamabnormals.atmospheric.common.entity.projectile.DragonFruit;
 import com.teamabnormals.atmospheric.common.entity.projectile.PassionFruitSeed;
+import com.teamabnormals.atmospheric.common.entity.projectile.ThrownPassionVineCoil;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.blueprint.core.util.registry.EntitySubRegistryHelper;
 import net.minecraft.world.entity.EntityType;
@@ -23,11 +24,18 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 public class AtmosphericEntityTypes {
 	public static final EntitySubRegistryHelper ENTITY_TYPES = Atmospheric.REGISTRY_HELPER.getEntitySubHelper();
 
-	public static final DeferredHolder<EntityType<?>, EntityType<Tetra>> TETRA = ENTITY_TYPES.createEntity("tetra", Tetra::new, MobCategory.WATER_AMBIENT, 0.3F, 0.2F);
-	public static final DeferredHolder<EntityType<?>, EntityType<Cochineal>> COCHINEAL = ENTITY_TYPES.createEntity("cochineal", Cochineal::new, MobCategory.CREATURE, 1.3F, 1.1F);
-	public static final DeferredHolder<EntityType<?>, EntityType<PassionFruitSeed>> PASSION_FRUIT_SEED = ENTITY_TYPES.createEntity("passion_fruit_seed", PassionFruitSeed::new, MobCategory.MISC, 0.25F, 0.25F);
-	public static final DeferredHolder<EntityType<?>, EntityType<DragonFruit>> DRAGON_FRUIT = ENTITY_TYPES.createEntity("dragon_fruit", DragonFruit::new, MobCategory.MISC, 0.375F, 0.375F);
-	public static final DeferredHolder<EntityType<?>, EntityType<OrangeVaporCloud>> ORANGE_VAPOR_CLOUD = ENTITY_TYPES.getDeferredRegister().register("orange_vapor_cloud", () -> EntityType.Builder.<OrangeVaporCloud>of(OrangeVaporCloud::new, MobCategory.MISC).fireImmune().sized(3.0F, 3.0F).clientTrackingRange(10).updateInterval(Integer.MAX_VALUE).build("atmospheric:orange_vapor_cloud"));
+	public static final DeferredHolder<EntityType<?>, EntityType<Tetra>> TETRA = ENTITY_TYPES.createEntity("tetra", Tetra::new, MobCategory.WATER_AMBIENT, builder ->
+			builder.sized(0.3F, 0.2F).eyeHeight(0.195F).clientTrackingRange(4));
+	public static final DeferredHolder<EntityType<?>, EntityType<Cochineal>> COCHINEAL = ENTITY_TYPES.createEntity("cochineal", Cochineal::new, MobCategory.CREATURE, builder ->
+			builder.sized(1.3F, 1.1F).eyeHeight(0.935F).passengerAttachments(1.1F).clientTrackingRange(10));
+	public static final DeferredHolder<EntityType<?>, EntityType<PassionFruitSeed>> PASSION_FRUIT_SEED = ENTITY_TYPES.createEntity("passion_fruit_seed", PassionFruitSeed::new, MobCategory.MISC, builder ->
+			builder.sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10));
+	public static final DeferredHolder<EntityType<?>, EntityType<ThrownPassionVineCoil>> PASSION_VINE_COIL = ENTITY_TYPES.createEntity("passion_vine_coil", ThrownPassionVineCoil::new, MobCategory.MISC, builder ->
+			builder.sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10));
+	public static final DeferredHolder<EntityType<?>, EntityType<DragonFruit>> DRAGON_FRUIT = ENTITY_TYPES.createEntity("dragon_fruit", DragonFruit::new, MobCategory.MISC, builder ->
+			builder.sized(0.375F, 0.375F).clientTrackingRange(4).updateInterval(10));
+	public static final DeferredHolder<EntityType<?>, EntityType<OrangeVaporCloud>> ORANGE_VAPOR_CLOUD = ENTITY_TYPES.createEntity("orange_vapor_cloud", OrangeVaporCloud::new, MobCategory.MISC, builder ->
+			builder.fireImmune().sized(3.0F, 3.0F).clientTrackingRange(10).updateInterval(Integer.MAX_VALUE));
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {

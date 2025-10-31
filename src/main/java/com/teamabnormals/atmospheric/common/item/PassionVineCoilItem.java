@@ -1,6 +1,6 @@
 package com.teamabnormals.atmospheric.common.item;
 
-import com.teamabnormals.atmospheric.common.entity.projectile.PassionVineCoil;
+import com.teamabnormals.atmospheric.common.entity.projectile.ThrownPassionVineCoil;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -22,7 +22,7 @@ public class PassionVineCoilItem extends Item {
 		ItemStack itemstack = playerIn.getItemInHand(handIn);
 		worldIn.playSound(null, playerIn.getX(), playerIn.getY(), playerIn.getZ(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (worldIn.getRandom().nextFloat() * 0.4F + 0.8F));
 		if (!worldIn.isClientSide) {
-			PassionVineCoil coil = new PassionVineCoil(worldIn, playerIn);
+			ThrownPassionVineCoil coil = new ThrownPassionVineCoil(worldIn, playerIn);
 			coil.setItem(itemstack);
 			coil.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot(), 0.0F, 1.5F, 1.0F);
 			worldIn.addFreshEntity(coil);
