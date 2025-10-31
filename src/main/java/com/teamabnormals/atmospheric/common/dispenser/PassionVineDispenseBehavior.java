@@ -12,7 +12,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.block.state.BlockState;
 
 public class PassionVineDispenseBehavior extends OptionalDispenseItemBehavior {
 
@@ -21,16 +20,14 @@ public class PassionVineDispenseBehavior extends OptionalDispenseItemBehavior {
 		Item item = stack.getItem();
 		if (item instanceof BlockItem) {
 			Direction direction = source.state().getValue(DispenserBlock.FACING);
-			Level worldIn = source.level();
+			Level level = source.level();
 			BlockPos pos = source.pos().relative(direction);
 
-			if (direction != Direction.UP && direction != Direction.DOWN && worldIn.getBlockState(pos).isAir()) {
-				BlockState vine = AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction);
-				worldIn.setBlockAndUpdate(pos, vine);
+			if (direction != Direction.UP && direction != Direction.DOWN && level.getBlockState(pos).isAir()) {
+				level.setBlockAndUpdate(pos, AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction));
 			} else {
 				Position position = DispenserBlock.getDispensePosition(source);
-				ItemStack itemstack = stack.split(1);
-				spawnItem(source.level(), itemstack, 6, direction, position);
+				spawnItem(source.level(), stack.split(1), 6, direction, position);
 			}
 			stack.shrink(1);
 		}

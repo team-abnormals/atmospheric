@@ -3,7 +3,16 @@ package com.teamabnormals.atmospheric.core.other;
 import com.teamabnormals.atmospheric.common.dispenser.PassionVineBundleDispenseBehavior;
 import com.teamabnormals.atmospheric.common.dispenser.PassionVineDispenseBehavior;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.dispenser.BlockSource;
+import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
+import net.minecraft.core.dispenser.DispenseItemBehavior;
+import net.minecraft.world.item.DispensibleContainerItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 
 import java.util.Calendar;
@@ -16,9 +25,28 @@ public class AtmosphericCompat {
 		setupDates();
 	}
 
+	public static DispenseItemBehavior EMPTY_FISH_BUCKET_BEHAVIOR = new DefaultDispenseItemBehavior() {
+		private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
+
+		@Override
+		public ItemStack execute(BlockSource source, ItemStack stack) {
+			DispensibleContainerItem item = (DispensibleContainerItem) stack.getItem();
+			BlockPos pos = source.pos().relative(source.state().getValue(DispenserBlock.FACING));
+			Level level = source.level();
+			if (item.emptyContents(null, level, pos, null, stack)) {
+				item.checkExtraContent(null, level, stack, pos);
+				return this.consumeWithRemainder(source, stack, new ItemStack(Items.BUCKET));
+			} else {
+				return this.defaultDispenseItemBehavior.dispense(source, stack);
+			}
+		}
+	};
+
 	public static void registerDispenserBehaviors() {
 		DispenserBlock.registerBehavior(AtmosphericBlocks.PASSION_VINE_BUNDLE.get().asItem(), new PassionVineBundleDispenseBehavior());
 		DispenserBlock.registerBehavior(AtmosphericBlocks.PASSION_VINE.get().asItem(), new PassionVineDispenseBehavior());
+		DispenserBlock.registerBehavior(AtmosphericItems.TETRA_BUCKET.get(), EMPTY_FISH_BUCKET_BEHAVIOR);
+		DispenserBlock.registerProjectileBehavior(AtmosphericItems.PASSION_VINE_COIL.get());
 	}
 
 	public static void registerFlammables() {

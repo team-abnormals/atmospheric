@@ -13,6 +13,7 @@ import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.renderer.entity.NoopRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -40,6 +41,7 @@ public class AtmosphericModelLayers {
 		event.registerEntityRenderer(AtmosphericEntityTypes.TETRA.get(), TetraRenderer::new);
 		event.registerEntityRenderer(AtmosphericEntityTypes.COCHINEAL.get(), CochinealRenderer::new);
 		event.registerEntityRenderer(AtmosphericEntityTypes.PASSION_FRUIT_SEED.get(), PassionFruitSeedRenderer::new);
+		event.registerEntityRenderer(AtmosphericEntityTypes.PASSION_VINE_COIL.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(AtmosphericEntityTypes.DRAGON_FRUIT.get(), DragonFruitRenderer::new);
 		event.registerEntityRenderer(AtmosphericEntityTypes.ORANGE_VAPOR_CLOUD.get(), NoopRenderer::new);
 	}

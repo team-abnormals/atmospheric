@@ -21,30 +21,21 @@ public class PassionVineBundleDispenseBehavior extends OptionalDispenseItemBehav
 		Item item = stack.getItem();
 		if (item instanceof BlockItem) {
 			Direction direction = source.state().getValue(DispenserBlock.FACING);
-			Level worldIn = source.level().getLevel();
+			Level level = source.level().getLevel();
 			BlockPos pos = source.pos().relative(direction);
-
-			BlockPos nextPos = pos.relative(Direction.DOWN);
-			BlockState nextBlock = worldIn.getBlockState(nextPos);
-			int counter = 9;
-			if (direction != Direction.UP && direction != Direction.DOWN && worldIn.getBlockState(pos).isAir()) {
+			if (direction != Direction.UP && direction != Direction.DOWN && level.getBlockState(pos).isAir()) {
 				BlockState vine = AtmosphericBlocks.PASSION_VINE.get().defaultBlockState().setValue(PassionVineBlock.FACING, direction);
-				worldIn.setBlockAndUpdate(pos, vine);
-				counter = 8;
-				while (counter > 0) {
-					if (nextBlock.isAir()) {
-						worldIn.setBlockAndUpdate(nextPos, vine);
-						counter = counter - 1;
-						nextPos = nextPos.relative(Direction.DOWN);
-						nextBlock = worldIn.getBlockState(nextPos);
-					} else {
-						break;
-					}
-
+				int counter = 0;
+				while (counter < 9 && level.isEmptyBlock(pos)) {
+					level.setBlockAndUpdate(pos, vine);
+					pos = pos.below();
+					counter++;
 				}
+				if (counter < 9) {
+					Block.popResource(level, pos.relative(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), 9 - counter));
+				}
+				stack.shrink(1);
 			}
-			Block.popResource(worldIn, nextPos.relative(Direction.UP), new ItemStack(AtmosphericBlocks.PASSION_VINE.get(), counter));
-			stack.shrink(1);
 		}
 		return stack;
 	}

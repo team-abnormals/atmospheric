@@ -31,6 +31,10 @@ public class ThrownPassionVineCoil extends ThrowableItemProjectile {
 		super(type, level);
 	}
 
+	public ThrownPassionVineCoil(Level level, double x, double y, double z) {
+		super(AtmosphericEntityTypes.PASSION_VINE_COIL.get(), x, y, z, level);
+	}
+
 	@Override
 	protected Item getDefaultItem() {
 		return AtmosphericItems.PASSION_VINE_COIL.get();
@@ -51,7 +55,7 @@ public class ThrownPassionVineCoil extends ThrowableItemProjectile {
 	protected void onHitBlock(BlockHitResult result) {
 		Level level = this.level();
 		BlockPos pos = result.getBlockPos();
-		Direction direction = result.getDirection().getAxis().isHorizontal() ? result.getDirection() : this.getOwner().getDirection().getOpposite();
+		Direction direction = result.getDirection().getAxis().isHorizontal() ? result.getDirection() : this.getOwner() != null ? this.getOwner().getDirection().getOpposite() : Direction.NORTH;
 		BlockPos offsetPos = pos.relative(direction);
 
 		while (level.getBlockState(offsetPos).is(AtmosphericBlocks.PASSION_VINE.get())) {
