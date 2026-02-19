@@ -597,5 +597,10 @@
   "trim_material.atmospheric.carmine": "Carmine Material",
   "trim_pattern.atmospheric.apostle": "Apostle Armor Trim",
   "trim_pattern.atmospheric.druid": "Druid Armor Trim",
-  "trim_pattern.atmospheric.petrified": "Petrified Armor Trim"
+  "trim_pattern.atmospheric.petrified": "Petrified Armor Trim",
+  "wolf_variant.atmospheric.bush": "Bush",
+  "wolf_variant.atmospheric.cream": "Cream",
+  "wolf_variant.atmospheric.golden": "Golden",
+  "wolf_variant.atmospheric.maned": "Maned",
+  "wolf_variant.atmospheric.masked": "Masked"
 }
