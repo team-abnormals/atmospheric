@@ -4,7 +4,7 @@
       "type": "criteria",
       "config": {
         "criteria": {
-          "atmospheric:atmospheric:bush": {
+          "atmospheric:bush": {
             "conditions": {
               "entity": [
                 {
@@ -21,7 +21,7 @@
             },
             "trigger": "minecraft:tame_animal"
           },
-          "atmospheric:atmospheric:cream": {
+          "atmospheric:cream": {
             "conditions": {
               "entity": [
                 {
@@ -38,7 +38,7 @@
             },
             "trigger": "minecraft:tame_animal"
           },
-          "atmospheric:atmospheric:golden": {
+          "atmospheric:golden": {
             "conditions": {
               "entity": [
                 {
@@ -55,7 +55,7 @@
             },
             "trigger": "minecraft:tame_animal"
           },
-          "atmospheric:atmospheric:maned": {
+          "atmospheric:maned": {
             "conditions": {
               "entity": [
                 {
@@ -72,7 +72,7 @@
             },
             "trigger": "minecraft:tame_animal"
           },
-          "atmospheric:atmospheric:masked": {
+          "atmospheric:masked": {
             "conditions": {
               "entity": [
                 {
@@ -93,19 +93,19 @@
         "indexed_requirements": [],
         "requirements": [
           [
-            "atmospheric:atmospheric:bush"
+            "atmospheric:bush"
           ],
           [
-            "atmospheric:atmospheric:cream"
+            "atmospheric:cream"
           ],
           [
-            "atmospheric:atmospheric:golden"
+            "atmospheric:golden"
           ],
           [
-            "atmospheric:atmospheric:maned"
+            "atmospheric:maned"
           ],
           [
-            "atmospheric:atmospheric:masked"
+            "atmospheric:masked"
           ]
         ],
         "should_replace_requirements": false
