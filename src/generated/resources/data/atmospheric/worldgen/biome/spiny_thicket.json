@@ -9,6 +9,8 @@
   "downfall": 0.85,
   "effects": {
     "fog_color": 14988944,
+    "foliage_color": 7913283,
+    "grass_color": 6868029,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -16,8 +18,8 @@
       "tick_delay": 6000
     },
     "sky_color": 7254527,
-    "water_color": 4159204,
-    "water_fog_color": 329011
+    "water_color": 13225643,
+    "water_fog_color": 12760710
   },
   "features": [
     [],
