@@ -253,7 +253,7 @@ public class AtmosphericBlockStateProvider extends BlueprintBlockStateProvider {
 
 	@Override
 	public void slabBlock(Block block, Block slab) {
-		if (slab instanceof SlabBlock slabBlock && slabBlock == POLISHED_DOLERITE_SLAB.get()) {
+		if (slab instanceof SlabBlock slabBlock && (slabBlock == POLISHED_DOLERITE_SLAB.get() || slabBlock == ARID_SANDSTONE_SLAB.get() || slabBlock == RED_ARID_SANDSTONE_SLAB.get() || slabBlock == CUT_ARID_SANDSTONE_SLAB.get() || slabBlock == CUT_RED_ARID_SANDSTONE_SLAB.get())) {
 			ResourceLocation side = blockTexture(slab);
 			ResourceLocation full = blockTexture(block);
 			this.slabBlock(slabBlock, models().slab(name(slab), side, full, full), models().slabTop(name(slab) + "_top", side, full, full), models().cubeColumn(name(slab) + "_double", side, full));
