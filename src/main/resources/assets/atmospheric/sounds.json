@@ -278,6 +278,50 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "block.barrel_cactus.break": {
+    "sounds": [
+      "atmospheric:block/barrel_cactus/break1",
+      "atmospheric:block/barrel_cactus/break2",
+      "atmospheric:block/barrel_cactus/break3",
+      "atmospheric:block/barrel_cactus/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.barrel_cactus.fall": {
+    "sounds": [
+      "atmospheric:block/barrel_cactus/step1",
+      "atmospheric:block/barrel_cactus/step2",
+      "atmospheric:block/barrel_cactus/step3",
+      "atmospheric:block/barrel_cactus/step4"
+    ]
+  },
+  "block.barrel_cactus.hit": {
+    "sounds": [
+      "atmospheric:block/barrel_cactus/step1",
+      "atmospheric:block/barrel_cactus/step2",
+      "atmospheric:block/barrel_cactus/step3",
+      "atmospheric:block/barrel_cactus/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.barrel_cactus.place": {
+    "sounds": [
+      "atmospheric:block/barrel_cactus/break1",
+      "atmospheric:block/barrel_cactus/break2",
+      "atmospheric:block/barrel_cactus/break3",
+      "atmospheric:block/barrel_cactus/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.barrel_cactus.step": {
+    "sounds": [
+      "atmospheric:block/barrel_cactus/step1",
+      "atmospheric:block/barrel_cactus/step2",
+      "atmospheric:block/barrel_cactus/step3",
+      "atmospheric:block/barrel_cactus/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.carmine.break": {
     "sounds": [
       "atmospheric:block/carmine/break1",

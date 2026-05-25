@@ -262,9 +262,9 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> ALOE_BUNDLE = BLOCKS.createBlock("aloe_bundle", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.DRIED_KELP_BLOCK)));
 	public static final DeferredBlock<Block> ALOE_GEL_BLOCK = BLOCKS.createBlock("aloe_gel_block", () -> new AloeGelBlock(Block.Properties.ofFullCopy(Blocks.SLIME_BLOCK).isSuffocating(PropertyUtil::never)));
 	public static final DeferredBlock<Block> POTTED_ALOE_VERA = BLOCKS.createBlockNoItem("potted_aloe_vera", () -> new FlowerPotBlock(ALOE_VERA.get(), PropertyUtil.flowerPot()));
-	public static final DeferredBlock<Block> BARREL_CACTUS = BLOCKS.createBlockNoItem("barrel_cactus", () -> new BarrelCactusBlock(Block.Properties.ofFullCopy(Blocks.CACTUS)));
+	public static final DeferredBlock<Block> BARREL_CACTUS = BLOCKS.createBlockNoItem("barrel_cactus", () -> new BarrelCactusBlock(Block.Properties.ofFullCopy(Blocks.CACTUS).sound(AtmosphericSoundTypes.BARREL_CACTUS)));
 	public static final DeferredBlock<Block> POTTED_BARREL_CACTUS = BLOCKS.createBlockNoItem("potted_barrel_cactus", () -> new FlowerPotBlock(BARREL_CACTUS.get(), Block.Properties.ofFullCopy(Blocks.POTTED_CACTUS)));
-	public static final DeferredBlock<Block> SNOWY_BARREL_CACTUS = BLOCKS.createBlockNoItem("snowy_barrel_cactus", () -> new BarrelCactusBlock(Block.Properties.ofFullCopy(Blocks.CACTUS)));
+	public static final DeferredBlock<Block> SNOWY_BARREL_CACTUS = BLOCKS.createBlockNoItem("snowy_barrel_cactus", () -> new BarrelCactusBlock(Block.Properties.ofFullCopy(Blocks.CACTUS).sound(AtmosphericSoundTypes.BARREL_CACTUS)));
 	public static final DeferredBlock<Block> POTTED_SNOWY_BARREL_CACTUS = BLOCKS.createBlockNoItem("potted_snowy_barrel_cactus", () -> new SnowyFlowerPotBlock(SNOWY_BARREL_CACTUS.get(), () -> BARREL_CACTUS.get(), Block.Properties.ofFullCopy(Blocks.POTTED_CACTUS)));
 	public static final DeferredBlock<Block> SNOWY_CACTUS = BLOCKS.createBlockNoItem("snowy_cactus", () -> new SnowyCactusBlock(Block.Properties.ofFullCopy(Blocks.CACTUS)));
 	public static final DeferredBlock<Block> POTTED_SNOWY_CACTUS = BLOCKS.createBlockNoItem("potted_snowy_cactus", () -> new SnowyFlowerPotBlock(SNOWY_CACTUS.get(), () -> Blocks.CACTUS, Block.Properties.ofFullCopy(Blocks.POTTED_CACTUS)));

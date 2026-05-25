@@ -56,6 +56,12 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_HIT = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_PLACE = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_STEP = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.step");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_BREAK = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_FALL = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_HIT = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_PLACE = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_STEP = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_STALK_BREAK = SOUND_EVENTS.createSoundEvent("block.currant_stalk.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_STALK_FALL = SOUND_EVENTS.createSoundEvent("block.currant_stalk.fall");
@@ -90,6 +96,7 @@ public class AtmosphericSoundEvents {
 		public static final DeferredSoundType SUSPICIOUS_ARID_SAND = new DeferredSoundType(1.0F, 1.0F, SUSPICIOUS_ARID_SAND_BREAK, SUSPICIOUS_ARID_SAND_STEP, SUSPICIOUS_ARID_SAND_PLACE, SUSPICIOUS_ARID_SAND_HIT, SUSPICIOUS_ARID_SAND_FALL);
 		public static final DeferredSoundType ARID_GLASS = new DeferredSoundType(1.0F, 1.0F, ARID_GLASS_BREAK, ARID_GLASS_STEP, ARID_GLASS_PLACE, ARID_GLASS_HIT, ARID_GLASS_FALL);
 		public static final DeferredSoundType ARID_SPROUTS = new DeferredSoundType(1.0F, 1.0F, ARID_SPROUTS_BREAK, ARID_SPROUTS_STEP, ARID_SPROUTS_PLACE, ARID_SPROUTS_HIT, ARID_SPROUTS_FALL);
+		public static final DeferredSoundType BARREL_CACTUS = new DeferredSoundType(1.0F, 1.0F, BARREL_CACTUS_BREAK, BARREL_CACTUS_STEP, BARREL_CACTUS_PLACE, BARREL_CACTUS_HIT, BARREL_CACTUS_FALL);
 		public static final DeferredSoundType CARMINE = new DeferredSoundType(1.0F, 1.0F, CARMINE_BREAK, CARMINE_STEP, CARMINE_PLACE, CARMINE_HIT, CARMINE_FALL);
 		public static final DeferredSoundType MONKEY_BRUSH = new DeferredSoundType(1.0F, 1.0F, MONKEY_BRUSH_BREAK, MONKEY_BRUSH_STEP, MONKEY_BRUSH_PLACE, MONKEY_BRUSH_HIT, MONKEY_BRUSH_FALL);
 		public static final DeferredSoundType CURRANT_LEAVES = new DeferredSoundType(1.0F, 1.0F, CURRANT_LEAVES_BREAK, CURRANT_LEAVES_STEP, CURRANT_LEAVES_PLACE, CURRANT_LEAVES_HIT, CURRANT_LEAVES_FALL);
