@@ -44,6 +44,12 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_HIT = SOUND_EVENTS.createSoundEvent("block.carmine.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_PLACE = SOUND_EVENTS.createSoundEvent("block.carmine.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_STEP = SOUND_EVENTS.createSoundEvent("block.carmine.step");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_BREAK = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_FALL = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_HIT = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_PLACE = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_STEP = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_BREAK = SOUND_EVENTS.createSoundEvent("block.monkey_brush.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_FALL = SOUND_EVENTS.createSoundEvent("block.monkey_brush.fall");
@@ -99,6 +105,7 @@ public class AtmosphericSoundEvents {
 		public static final DeferredSoundType BARREL_CACTUS = new DeferredSoundType(1.0F, 1.0F, BARREL_CACTUS_BREAK, BARREL_CACTUS_STEP, BARREL_CACTUS_PLACE, BARREL_CACTUS_HIT, BARREL_CACTUS_FALL);
 		public static final DeferredSoundType CARMINE = new DeferredSoundType(1.0F, 1.0F, CARMINE_BREAK, CARMINE_STEP, CARMINE_PLACE, CARMINE_HIT, CARMINE_FALL);
 		public static final DeferredSoundType MONKEY_BRUSH = new DeferredSoundType(1.0F, 1.0F, MONKEY_BRUSH_BREAK, MONKEY_BRUSH_STEP, MONKEY_BRUSH_PLACE, MONKEY_BRUSH_HIT, MONKEY_BRUSH_FALL);
+		public static final DeferredSoundType YUCCA_LEAVES = new DeferredSoundType(1.0F, 1.0F, YUCCA_LEAVES_BREAK, YUCCA_LEAVES_STEP, YUCCA_LEAVES_PLACE, YUCCA_LEAVES_HIT, YUCCA_LEAVES_FALL);
 		public static final DeferredSoundType CURRANT_LEAVES = new DeferredSoundType(1.0F, 1.0F, CURRANT_LEAVES_BREAK, CURRANT_LEAVES_STEP, CURRANT_LEAVES_PLACE, CURRANT_LEAVES_HIT, CURRANT_LEAVES_FALL);
 		public static final DeferredSoundType CURRANT_STALK = new DeferredSoundType(1.0F, 1.0F, CURRANT_STALK_BREAK, CURRANT_STALK_STEP, CURRANT_STALK_PLACE, CURRANT_STALK_HIT, CURRANT_STALK_FALL);
 		public static final DeferredSoundType WATER_HYACINTH = new DeferredSoundType(1.0F, 1.0F, WATER_HYACINTH_BREAK, WATER_HYACINTH_STEP, WATER_HYACINTH_PLACE, WATER_HYACINTH_HIT, WATER_HYACINTH_FALL);

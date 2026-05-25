@@ -39,7 +39,7 @@ public class AtmosphericProperties {
 
 	public static final WoodSetProperties ROSEWOOD = WoodSetProperties.builder(MapColor.TERRACOTTA_MAGENTA).build();
 	public static final WoodSetProperties MORADO = WoodSetProperties.builder(MapColor.COLOR_RED).build();
-	public static final WoodSetProperties YUCCA = WoodSetProperties.builder(MapColor.COLOR_ORANGE).build();
+	public static final WoodSetProperties YUCCA = WoodSetProperties.builder(MapColor.COLOR_ORANGE).leavesSound(AtmosphericSoundTypes.YUCCA_LEAVES).build();
 	public static final WoodSetProperties ASPEN = WoodSetProperties.builder(MapColor.GOLD).leavesColor(MapColor.GOLD).build();
 	public static final WoodSetProperties GREEN_ASPEN = WoodSetProperties.builder(MapColor.GOLD).leavesColor(MapColor.TERRACOTTA_LIGHT_GREEN).build();
 	public static final WoodSetProperties LAUREL = WoodSetProperties.builder(MapColor.TERRACOTTA_YELLOW).leavesColor(MapColor.TERRACOTTA_LIGHT_GREEN).build();
@@ -50,7 +50,7 @@ public class AtmosphericProperties {
 
 	public static final Properties ARID_SAND = Properties.of().mapColor(MapColor.SAND).strength(0.5F).sound(AtmosphericSoundTypes.ARID_SAND);
 	public static final Properties RED_ARID_SAND = Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).strength(0.5F).sound(AtmosphericSoundTypes.ARID_SAND);
-	public static final Properties YUCCA_FLOWER = Properties.of().noCollission().strength(0.5F).sound(SoundType.GRASS).offsetType(OffsetType.XZ).pushReaction(PushReaction.DESTROY);
+	public static final Properties YUCCA_FLOWER = Properties.of().noCollission().strength(0.5F).sound(AtmosphericSoundTypes.YUCCA_LEAVES).offsetType(OffsetType.XZ).pushReaction(PushReaction.DESTROY);
 	public static final Properties ARID_SPROUTS = Properties.of().mapColor(MapColor.SAND).replaceable().noCollission().instabreak().sound(AtmosphericSoundTypes.ARID_SPROUTS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
 
 	public static Properties aridSandstone() {

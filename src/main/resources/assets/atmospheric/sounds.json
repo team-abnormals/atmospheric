@@ -262,10 +262,10 @@
   },
   "block.arid_glass.place": {
     "sounds": [
-      "atmospheric:block/arid_glass/place1",
-      "atmospheric:block/arid_glass/place2",
-      "atmospheric:block/arid_glass/place3",
-      "atmospheric:block/arid_glass/place4"
+      "atmospheric:block/arid_glass/step1",
+      "atmospheric:block/arid_glass/step2",
+      "atmospheric:block/arid_glass/step3",
+      "atmospheric:block/arid_glass/step4"
     ],
     "subtitle": "subtitles.block.generic.place"
   },
@@ -591,5 +591,49 @@
       "atmospheric:block/currant_leaves/step4"
     ],
     "subtitle": "subtitles.atmospheric.block.hanging_currant.pick_currant"
+  },
+  "block.yucca_leaves.break": {
+    "sounds": [
+      "atmospheric:block/yucca_leaves/break1",
+      "atmospheric:block/yucca_leaves/break2",
+      "atmospheric:block/yucca_leaves/break3",
+      "atmospheric:block/yucca_leaves/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.yucca_leaves.fall": {
+    "sounds": [
+      "atmospheric:block/yucca_leaves/step1",
+      "atmospheric:block/yucca_leaves/step2",
+      "atmospheric:block/yucca_leaves/step3",
+      "atmospheric:block/yucca_leaves/step4"
+    ]
+  },
+  "block.yucca_leaves.hit": {
+    "sounds": [
+      "atmospheric:block/yucca_leaves/step1",
+      "atmospheric:block/yucca_leaves/step2",
+      "atmospheric:block/yucca_leaves/step3",
+      "atmospheric:block/yucca_leaves/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.yucca_leaves.place": {
+    "sounds": [
+      "atmospheric:block/yucca_leaves/break1",
+      "atmospheric:block/yucca_leaves/break2",
+      "atmospheric:block/yucca_leaves/break3",
+      "atmospheric:block/yucca_leaves/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.yucca_leaves.step": {
+    "sounds": [
+      "atmospheric:block/yucca_leaves/step1",
+      "atmospheric:block/yucca_leaves/step2",
+      "atmospheric:block/yucca_leaves/step3",
+      "atmospheric:block/yucca_leaves/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
   }
 }
