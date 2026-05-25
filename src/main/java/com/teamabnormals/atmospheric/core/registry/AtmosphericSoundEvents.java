@@ -63,6 +63,12 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_PLACE = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_STEP = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.step");
 	
+	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_BREAK = SOUND_EVENTS.createSoundEvent("block.golden_growths.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_FALL = SOUND_EVENTS.createSoundEvent("block.golden_growths.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_HIT = SOUND_EVENTS.createSoundEvent("block.golden_growths.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_PLACE = SOUND_EVENTS.createSoundEvent("block.golden_growths.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_STEP = SOUND_EVENTS.createSoundEvent("block.golden_growths.step");
+	
 	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_BREAK = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_FALL = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_HIT = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.hit");
@@ -109,5 +115,6 @@ public class AtmosphericSoundEvents {
 		public static final DeferredSoundType CURRANT_LEAVES = new DeferredSoundType(1.0F, 1.0F, CURRANT_LEAVES_BREAK, CURRANT_LEAVES_STEP, CURRANT_LEAVES_PLACE, CURRANT_LEAVES_HIT, CURRANT_LEAVES_FALL);
 		public static final DeferredSoundType CURRANT_STALK = new DeferredSoundType(1.0F, 1.0F, CURRANT_STALK_BREAK, CURRANT_STALK_STEP, CURRANT_STALK_PLACE, CURRANT_STALK_HIT, CURRANT_STALK_FALL);
 		public static final DeferredSoundType WATER_HYACINTH = new DeferredSoundType(1.0F, 1.0F, WATER_HYACINTH_BREAK, WATER_HYACINTH_STEP, WATER_HYACINTH_PLACE, WATER_HYACINTH_HIT, WATER_HYACINTH_FALL);
+		public static final DeferredSoundType GOLDEN_GROWTHS = new DeferredSoundType(1.0F, 1.0F, GOLDEN_GROWTHS_BREAK, GOLDEN_GROWTHS_STEP, GOLDEN_GROWTHS_PLACE, GOLDEN_GROWTHS_HIT, GOLDEN_GROWTHS_FALL);
 	}
 }

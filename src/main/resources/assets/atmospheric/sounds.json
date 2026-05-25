@@ -451,6 +451,50 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "block.golden_growths.break": {
+    "sounds": [
+      "atmospheric:block/golden_growths/break1",
+      "atmospheric:block/golden_growths/break2",
+      "atmospheric:block/golden_growths/break3",
+      "atmospheric:block/golden_growths/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.golden_growths.fall": {
+    "sounds": [
+      "atmospheric:block/golden_growths/step1",
+      "atmospheric:block/golden_growths/step2",
+      "atmospheric:block/golden_growths/step3",
+      "atmospheric:block/golden_growths/step4"
+    ]
+  },
+  "block.golden_growths.hit": {
+    "sounds": [
+      "atmospheric:block/golden_growths/step1",
+      "atmospheric:block/golden_growths/step2",
+      "atmospheric:block/golden_growths/step3",
+      "atmospheric:block/golden_growths/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.golden_growths.place": {
+    "sounds": [
+      "atmospheric:block/golden_growths/break1",
+      "atmospheric:block/golden_growths/break2",
+      "atmospheric:block/golden_growths/break3",
+      "atmospheric:block/golden_growths/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.golden_growths.step": {
+    "sounds": [
+      "atmospheric:block/golden_growths/step1",
+      "atmospheric:block/golden_growths/step2",
+      "atmospheric:block/golden_growths/step3",
+      "atmospheric:block/golden_growths/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.arid_sprouts.break": {
     "sounds": [
       "atmospheric:block/arid_sprouts/place1",
