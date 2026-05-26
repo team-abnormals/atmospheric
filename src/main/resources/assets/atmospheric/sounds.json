@@ -462,18 +462,42 @@
   },
   "block.golden_growths.fall": {
     "sounds": [
-      "atmospheric:block/golden_growths/step1",
-      "atmospheric:block/golden_growths/step2",
-      "atmospheric:block/golden_growths/step3",
-      "atmospheric:block/golden_growths/step4"
+      {
+        "name": "atmospheric:block/golden_growths/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/golden_growths/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/golden_growths/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/golden_growths/step4",
+        "volume": 1.5
+      }
     ]
   },
   "block.golden_growths.hit": {
     "sounds": [
-      "atmospheric:block/golden_growths/step1",
-      "atmospheric:block/golden_growths/step2",
-      "atmospheric:block/golden_growths/step3",
-      "atmospheric:block/golden_growths/step4"
+      {
+        "name": "atmospheric:block/golden_growths/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/golden_growths/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/golden_growths/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/golden_growths/step4",
+        "volume": 1.5
+      }
     ],
     "subtitle": "subtitles.block.generic.hit"
   },
@@ -488,10 +512,22 @@
   },
   "block.golden_growths.step": {
     "sounds": [
-      "atmospheric:block/golden_growths/step1",
-      "atmospheric:block/golden_growths/step2",
-      "atmospheric:block/golden_growths/step3",
-      "atmospheric:block/golden_growths/step4"
+      {
+        "name": "atmospheric:block/golden_growths/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/golden_growths/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/golden_growths/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/golden_growths/step4",
+        "volume": 1.5
+      }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
