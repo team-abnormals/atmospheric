@@ -110,7 +110,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(BlockTags.WOLVES_SPAWNABLE_ON).add(CRUSTOSE.get());
 		this.tag(BlockTags.FALL_DAMAGE_RESETTING).add(GRIMWEB.get());
 		this.tag(BlockTags.IMPERMEABLE).add(ARID_GLASS.get());
-		this.tag(BlockTags.INSIDE_STEP_SOUND_BLOCKS).add(GOLDEN_GROWTHS.get(), ARID_SPROUTS.get(), WATER_HYACINTH.get(), DRAGON_ROOTS.get());
+		this.tag(BlockTags.COMBINATION_STEP_SOUND_BLOCKS).addTag(MONKEY_BRUSH).add(GOLDEN_GROWTHS.get(), ALOE_VERA.get(), TALL_ALOE_VERA.get(), ARID_SPROUTS.get(), WATER_HYACINTH.get(), DRAGON_ROOTS.get());
 		this.tag(Tags.Blocks.STRIPPED_LOGS).add(STRIPPED_ROSEWOOD_LOG.get(), STRIPPED_MORADO_LOG.get(), STRIPPED_YUCCA_LOG.get(), STRIPPED_ASPEN_LOG.get(), STRIPPED_KOUSA_LOG.get(), STRIPPED_LAUREL_LOG.get(), STRIPPED_GRIMWOOD_LOG.get());
 		this.tag(Tags.Blocks.STRIPPED_WOODS).add(STRIPPED_ROSEWOOD.get(), STRIPPED_MORADO_WOOD.get(), STRIPPED_YUCCA_WOOD.get(), STRIPPED_ASPEN_WOOD.get(), STRIPPED_KOUSA_WOOD.get(), STRIPPED_LAUREL_WOOD.get(), STRIPPED_GRIMWOOD.get());
 
