@@ -715,5 +715,85 @@
       "atmospheric:block/yucca_leaves/step4"
     ],
     "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.dragon_roots.break": {
+    "sounds": [
+      "atmospheric:block/dragon_roots/break1",
+      "atmospheric:block/dragon_roots/break2",
+      "atmospheric:block/dragon_roots/break3",
+      "atmospheric:block/dragon_roots/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.dragon_roots.fall": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/dragon_roots/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/step4",
+        "volume": 1.5
+      }
+    ]
+  },
+  "block.dragon_roots.hit": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/dragon_roots/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/step4",
+        "volume": 1.5
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.dragon_roots.place": {
+    "sounds": [
+      "atmospheric:block/dragon_roots/place1",
+      "atmospheric:block/dragon_roots/place2",
+      "atmospheric:block/dragon_roots/place3",
+      "atmospheric:block/dragon_roots/place4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.dragon_roots.step": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/dragon_roots/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/step4",
+        "volume": 1.5
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
   }
 }

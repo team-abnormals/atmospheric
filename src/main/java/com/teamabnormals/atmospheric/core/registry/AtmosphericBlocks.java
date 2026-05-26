@@ -449,7 +449,7 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> CARMINE_PAVEMENT_SLAB = BLOCKS.createBlock("carmine_pavement_slab", () -> new SlabBlock(AtmosphericProperties.CARMINE_BLOCK));
 	public static final DeferredBlock<Block> CARMINE_PAVEMENT_WALL = BLOCKS.createBlock("carmine_pavement_wall", () -> new WallBlock(AtmosphericProperties.CARMINE_BLOCK));
 
-	public static final DeferredBlock<Block> DRAGON_ROOTS = BLOCKS.createBlock("dragon_roots", () -> new DragonRootsBlock(Block.Properties.of().mapColor(MapColor.TERRACOTTA_MAGENTA).strength(1.5F).randomTicks().noCollission().sound(SoundType.AZALEA_LEAVES).pushReaction(PushReaction.DESTROY)));
+	public static final DeferredBlock<Block> DRAGON_ROOTS = BLOCKS.createBlock("dragon_roots", () -> new DragonRootsBlock(Block.Properties.of().mapColor(MapColor.TERRACOTTA_MAGENTA).strength(1.5F).randomTicks().noCollission().sound(AtmosphericSoundTypes.DRAGON_ROOTS).pushReaction(PushReaction.DESTROY)));
 
 	public static final DeferredBlock<Block> FIRETHORN = BLOCKS.createBlock("firethorn", () -> new DesertFlowerBlock(MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()));
 	public static final DeferredBlock<Block> POTTED_FIRETHORN = BLOCKS.createBlockNoItem("potted_firethorn", () -> new FlowerPotBlock(FIRETHORN.get(), PropertyUtil.flowerPot()));
