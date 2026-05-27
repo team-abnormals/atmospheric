@@ -39,7 +39,7 @@ public class AtmosphericProperties {
 
 	public static final WoodSetProperties ROSEWOOD = WoodSetProperties.builder(MapColor.TERRACOTTA_MAGENTA).build();
 	public static final WoodSetProperties MORADO = WoodSetProperties.builder(MapColor.COLOR_RED).build();
-	public static final WoodSetProperties YUCCA = WoodSetProperties.builder(MapColor.COLOR_ORANGE).build();
+	public static final WoodSetProperties YUCCA = WoodSetProperties.builder(MapColor.COLOR_ORANGE).leavesSound(AtmosphericSoundTypes.YUCCA_LEAVES).build();
 	public static final WoodSetProperties ASPEN = WoodSetProperties.builder(MapColor.GOLD).leavesColor(MapColor.GOLD).build();
 	public static final WoodSetProperties GREEN_ASPEN = WoodSetProperties.builder(MapColor.GOLD).leavesColor(MapColor.TERRACOTTA_LIGHT_GREEN).build();
 	public static final WoodSetProperties LAUREL = WoodSetProperties.builder(MapColor.TERRACOTTA_YELLOW).leavesColor(MapColor.TERRACOTTA_LIGHT_GREEN).build();
@@ -50,7 +50,7 @@ public class AtmosphericProperties {
 
 	public static final Properties ARID_SAND = Properties.of().mapColor(MapColor.SAND).strength(0.5F).sound(AtmosphericSoundTypes.ARID_SAND);
 	public static final Properties RED_ARID_SAND = Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).strength(0.5F).sound(AtmosphericSoundTypes.ARID_SAND);
-	public static final Properties YUCCA_FLOWER = Properties.of().noCollission().strength(0.5F).sound(SoundType.GRASS).offsetType(OffsetType.XZ).pushReaction(PushReaction.DESTROY);
+	public static final Properties YUCCA_FLOWER = Properties.of().noCollission().strength(0.5F).sound(AtmosphericSoundTypes.YUCCA_LEAVES).offsetType(OffsetType.XZ).pushReaction(PushReaction.DESTROY);
 	public static final Properties ARID_SPROUTS = Properties.of().mapColor(MapColor.SAND).replaceable().noCollission().instabreak().sound(AtmosphericSoundTypes.ARID_SPROUTS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
 
 	public static Properties aridSandstone() {
@@ -78,7 +78,7 @@ public class AtmosphericProperties {
 	}
 
 	public static final Properties AGAVE = Properties.of().mapColor(MapColor.TERRACOTTA_CYAN).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
-	public static final Properties GOLDEN_GROWTHS = Properties.of().mapColor(MapColor.GOLD).replaceable().noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
+	public static final Properties GOLDEN_GROWTHS = Properties.of().mapColor(MapColor.GOLD).replaceable().noCollission().instabreak().sound(AtmosphericSoundTypes.GOLDEN_GROWTHS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
 	public static final Properties CRUSTOSE = BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).randomTicks().strength(0.6F).sound(SoundType.GRASS);
 	public static final Properties CRUSTOSE_PATH = Properties.of().mapColor(MapColor.GOLD).strength(0.65F).sound(SoundType.GRASS).isViewBlocking(PropertyUtil::always).isSuffocating(PropertyUtil::always);
 
@@ -86,7 +86,7 @@ public class AtmosphericProperties {
 	public static final Properties PEACH_TRAVERTINE = Properties.of().mapColor(MapColor.TERRACOTTA_PINK).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
 	public static final Properties PERSIMMON_TRAVERTINE = Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
 	public static final Properties SAFFRON_TRAVERTINE = Properties.of().mapColor(MapColor.COLOR_RED).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
-	public static final Properties DOLERITE = Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
+	public static final Properties DOLERITE = Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(AtmosphericSoundTypes.DOLERITE).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
 
 	public static final Properties CARMINE_BLOCK = Properties.of().mapColor(MapColor.COLOR_RED).sound(AtmosphericSoundTypes.CARMINE).strength(0.5F);
 
