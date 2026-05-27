@@ -831,6 +831,50 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "block.yucca_branch.break": {
+    "sounds": [
+      "atmospheric:block/yucca_branch/break1",
+      "atmospheric:block/yucca_branch/break2",
+      "atmospheric:block/yucca_branch/break3",
+      "atmospheric:block/yucca_branch/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.yucca_branch.fall": {
+    "sounds": [
+      "atmospheric:block/yucca_branch/step1",
+      "atmospheric:block/yucca_branch/step2",
+      "atmospheric:block/yucca_branch/step3",
+      "atmospheric:block/yucca_branch/step4"
+    ]
+  },
+  "block.yucca_branch.hit": {
+    "sounds": [
+      "atmospheric:block/yucca_branch/step1",
+      "atmospheric:block/yucca_branch/step2",
+      "atmospheric:block/yucca_branch/step3",
+      "atmospheric:block/yucca_branch/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.yucca_branch.place": {
+    "sounds": [
+      "atmospheric:block/yucca_branch/break1",
+      "atmospheric:block/yucca_branch/break2",
+      "atmospheric:block/yucca_branch/break3",
+      "atmospheric:block/yucca_branch/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.yucca_branch.step": {
+    "sounds": [
+      "atmospheric:block/yucca_branch/step1",
+      "atmospheric:block/yucca_branch/step2",
+      "atmospheric:block/yucca_branch/step3",
+      "atmospheric:block/yucca_branch/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.dragon_roots.break": {
     "sounds": [
       "atmospheric:block/dragon_roots/break1",

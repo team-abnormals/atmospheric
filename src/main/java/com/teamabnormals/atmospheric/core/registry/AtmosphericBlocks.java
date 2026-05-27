@@ -227,7 +227,7 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<BlueprintChestBlock> YUCCA_CHEST = BLOCKS.createChestBlock("yucca", AtmosphericProperties.YUCCA.chest());
 	public static final DeferredBlock<BlueprintTrappedChestBlock> TRAPPED_YUCCA_CHEST = BLOCKS.createTrappedChestBlock("yucca", AtmosphericProperties.YUCCA.chest());
 
-	public static final DeferredBlock<Block> YUCCA_BRANCH = BLOCKS.createBlock("yucca_branch", () -> new YuccaBranchBlock(Block.Properties.ofFullCopy(Blocks.MELON_STEM).sound(SoundType.CROP).randomTicks()));
+	public static final DeferredBlock<Block> YUCCA_BRANCH = BLOCKS.createBlock("yucca_branch", () -> new YuccaBranchBlock(Block.Properties.ofFullCopy(Blocks.MELON_STEM).sound(AtmosphericSoundTypes.YUCCA_BRANCH).randomTicks()));
 	public static final DeferredBlock<Block> YUCCA_BUNDLE = BLOCKS.createBlock("yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).randomTicks()));
 	public static final DeferredBlock<Block> ROASTED_YUCCA_BUNDLE = BLOCKS.createBlock("roasted_yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).randomTicks()));
 
