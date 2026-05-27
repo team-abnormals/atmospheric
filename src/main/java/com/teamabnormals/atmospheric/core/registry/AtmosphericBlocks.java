@@ -160,9 +160,10 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> DOLERITE_STAIRS = BLOCKS.createBlock("dolerite_stairs", () -> new StairBlock(DOLERITE.get().defaultBlockState(), AtmosphericProperties.DOLERITE));
 	public static final DeferredBlock<Block> DOLERITE_SLAB = BLOCKS.createBlock("dolerite_slab", () -> new SlabBlock(AtmosphericProperties.DOLERITE));
 	public static final DeferredBlock<Block> DOLERITE_WALL = BLOCKS.createBlock("dolerite_wall", () -> new WallBlock(AtmosphericProperties.DOLERITE));
-	public static final DeferredBlock<Block> POLISHED_DOLERITE = BLOCKS.createBlock("polished_dolerite", () -> new Block(AtmosphericProperties.DOLERITE));
-	public static final DeferredBlock<Block> POLISHED_DOLERITE_STAIRS = BLOCKS.createBlock("polished_dolerite_stairs", () -> new StairBlock(POLISHED_DOLERITE.get().defaultBlockState(), AtmosphericProperties.DOLERITE));
-	public static final DeferredBlock<Block> POLISHED_DOLERITE_SLAB = BLOCKS.createBlock("polished_dolerite_slab", () -> new SlabBlock(AtmosphericProperties.DOLERITE));
+	public static final DeferredBlock<Block> POLISHED_DOLERITE = BLOCKS.createBlock("polished_dolerite", () -> new Block(AtmosphericProperties.POLISHED_DOLERITE));
+	public static final DeferredBlock<Block> POLISHED_DOLERITE_STAIRS = BLOCKS.createBlock("polished_dolerite_stairs", () -> new StairBlock(POLISHED_DOLERITE.get().defaultBlockState(), AtmosphericProperties.POLISHED_DOLERITE));
+	public static final DeferredBlock<Block> POLISHED_DOLERITE_SLAB = BLOCKS.createBlock("polished_dolerite_slab", () -> new SlabBlock(AtmosphericProperties.POLISHED_DOLERITE));
+	public static final DeferredBlock<Block> POLISHED_DOLERITE_WALL = BLOCKS.createBlock("polished_dolerite_wall", () -> new WallBlock(AtmosphericProperties.POLISHED_DOLERITE));
 
 	/// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -506,7 +507,7 @@ public class AtmosphericBlocks {
 						PEACH_TRAVERTINE, CHISELED_PEACH_TRAVERTINE, CUT_PEACH_TRAVERTINE, PEACH_TRAVERTINE_STAIRS, PEACH_TRAVERTINE_SLAB, PEACH_TRAVERTINE_WALL,
 						PERSIMMON_TRAVERTINE, CHISELED_PERSIMMON_TRAVERTINE, CUT_PERSIMMON_TRAVERTINE, PERSIMMON_TRAVERTINE_STAIRS, PERSIMMON_TRAVERTINE_SLAB, PERSIMMON_TRAVERTINE_WALL,
 						SAFFRON_TRAVERTINE, CHISELED_SAFFRON_TRAVERTINE, CUT_SAFFRON_TRAVERTINE, SAFFRON_TRAVERTINE_STAIRS, SAFFRON_TRAVERTINE_SLAB, SAFFRON_TRAVERTINE_WALL,
-						DOLERITE, DOLERITE_STAIRS, DOLERITE_SLAB, DOLERITE_WALL, POLISHED_DOLERITE, POLISHED_DOLERITE_STAIRS, POLISHED_DOLERITE_SLAB
+						DOLERITE, DOLERITE_STAIRS, DOLERITE_SLAB, DOLERITE_WALL, POLISHED_DOLERITE, POLISHED_DOLERITE_STAIRS, POLISHED_DOLERITE_SLAB, POLISHED_DOLERITE_WALL
 				)
 				.tab(FUNCTIONAL_BLOCKS)
 				.addItemsBefore(of(Blocks.BAMBOO_SIGN),

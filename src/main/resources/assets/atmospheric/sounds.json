@@ -410,6 +410,50 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "block.polished_dolerite.break": {
+    "sounds": [
+      "atmospheric:block/polished_dolerite/break1",
+      "atmospheric:block/polished_dolerite/break2",
+      "atmospheric:block/polished_dolerite/break3",
+      "atmospheric:block/polished_dolerite/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.polished_dolerite.fall": {
+    "sounds": [
+      "atmospheric:block/polished_dolerite/step1",
+      "atmospheric:block/polished_dolerite/step2",
+      "atmospheric:block/polished_dolerite/step3",
+      "atmospheric:block/polished_dolerite/step4"
+    ]
+  },
+  "block.polished_dolerite.hit": {
+    "sounds": [
+      "atmospheric:block/polished_dolerite/step1",
+      "atmospheric:block/polished_dolerite/step2",
+      "atmospheric:block/polished_dolerite/step3",
+      "atmospheric:block/polished_dolerite/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.polished_dolerite.place": {
+    "sounds": [
+      "atmospheric:block/polished_dolerite/break1",
+      "atmospheric:block/polished_dolerite/break2",
+      "atmospheric:block/polished_dolerite/break3",
+      "atmospheric:block/polished_dolerite/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.polished_dolerite.step": {
+    "sounds": [
+      "atmospheric:block/polished_dolerite/step1",
+      "atmospheric:block/polished_dolerite/step2",
+      "atmospheric:block/polished_dolerite/step3",
+      "atmospheric:block/polished_dolerite/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.monkey_brush.break": {
     "sounds": [
       "atmospheric:block/monkey_brush/break1",

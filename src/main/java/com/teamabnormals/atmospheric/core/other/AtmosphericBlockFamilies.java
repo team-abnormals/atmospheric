@@ -19,7 +19,7 @@ public class AtmosphericBlockFamilies {
 	public static final BlockFamily CUT_SAFFRON_TRAVERTINE_FAMILY = new BlockFamily.Builder(CUT_SAFFRON_TRAVERTINE.get()).slab(SAFFRON_TRAVERTINE_SLAB.get()).stairs(SAFFRON_TRAVERTINE_STAIRS.get()).wall(SAFFRON_TRAVERTINE_WALL.get()).chiseled(CHISELED_SAFFRON_TRAVERTINE.get()).getFamily();
 
 	public static final BlockFamily DOLERITE_FAMILY = new BlockFamily.Builder(DOLERITE.get()).slab(DOLERITE_SLAB.get()).stairs(DOLERITE_STAIRS.get()).wall(DOLERITE_WALL.get()).getFamily();
-	public static final BlockFamily POLISHED_DOLERITE_FAMILY = new BlockFamily.Builder(POLISHED_DOLERITE.get()).slab(POLISHED_DOLERITE_SLAB.get()).stairs(POLISHED_DOLERITE_STAIRS.get()).getFamily();
+	public static final BlockFamily POLISHED_DOLERITE_FAMILY = new BlockFamily.Builder(POLISHED_DOLERITE.get()).slab(POLISHED_DOLERITE_SLAB.get()).stairs(POLISHED_DOLERITE_STAIRS.get()).wall(POLISHED_DOLERITE_WALL.get()).getFamily();
 
 	public static final BlockFamily ARID_SANDSTONE_FAMILY = new BlockFamily.Builder(ARID_SANDSTONE.get()).wall(ARID_SANDSTONE_WALL.get()).stairs(ARID_SANDSTONE_STAIRS.get()).slab(ARID_SANDSTONE_SLAB.get()).chiseled(CHISELED_ARID_SANDSTONE.get()).cut(CUT_ARID_SANDSTONE.get()).dontGenerateRecipe().getFamily();
 	public static final BlockFamily CUT_ARID_SANDSTONE_FAMILY = new BlockFamily.Builder(CUT_ARID_SANDSTONE.get()).slab(CUT_ARID_SANDSTONE_SLAB.get()).getFamily();

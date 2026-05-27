@@ -51,6 +51,12 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> DOLERITE_PLACE = SOUND_EVENTS.createSoundEvent("block.dolerite.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DOLERITE_STEP = SOUND_EVENTS.createSoundEvent("block.dolerite.step");
 	
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_BREAK = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_FALL = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_HIT = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_PLACE = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_STEP = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.step");
+	
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_BREAK = SOUND_EVENTS.createSoundEvent("block.dragon_roots.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_FALL = SOUND_EVENTS.createSoundEvent("block.dragon_roots.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_HIT = SOUND_EVENTS.createSoundEvent("block.dragon_roots.hit");
@@ -123,6 +129,7 @@ public class AtmosphericSoundEvents {
 		public static final DeferredSoundType BARREL_CACTUS = new DeferredSoundType(1.0F, 1.0F, BARREL_CACTUS_BREAK, BARREL_CACTUS_STEP, BARREL_CACTUS_PLACE, BARREL_CACTUS_HIT, BARREL_CACTUS_FALL);
 		public static final DeferredSoundType CARMINE = new DeferredSoundType(1.0F, 1.0F, CARMINE_BREAK, CARMINE_STEP, CARMINE_PLACE, CARMINE_HIT, CARMINE_FALL);
 		public static final DeferredSoundType DOLERITE = new DeferredSoundType(1.0F, 1.0F, DOLERITE_BREAK, DOLERITE_STEP, DOLERITE_PLACE, DOLERITE_HIT, DOLERITE_FALL);
+		public static final DeferredSoundType POLISHED_DOLERITE = new DeferredSoundType(1.0F, 1.0F, POLISHED_DOLERITE_BREAK, POLISHED_DOLERITE_STEP, POLISHED_DOLERITE_PLACE, POLISHED_DOLERITE_HIT, POLISHED_DOLERITE_FALL);
 		public static final DeferredSoundType DRAGON_ROOTS = new DeferredSoundType(1.0F, 1.0F, DRAGON_ROOTS_BREAK, DRAGON_ROOTS_STEP, DRAGON_ROOTS_PLACE, DRAGON_ROOTS_HIT, DRAGON_ROOTS_FALL);
 		public static final DeferredSoundType MONKEY_BRUSH = new DeferredSoundType(1.0F, 1.0F, MONKEY_BRUSH_BREAK, MONKEY_BRUSH_STEP, MONKEY_BRUSH_PLACE, MONKEY_BRUSH_HIT, MONKEY_BRUSH_FALL);
 		public static final DeferredSoundType YUCCA_LEAVES = new DeferredSoundType(1.0F, 1.0F, YUCCA_LEAVES_BREAK, YUCCA_LEAVES_STEP, YUCCA_LEAVES_PLACE, YUCCA_LEAVES_HIT, YUCCA_LEAVES_FALL);

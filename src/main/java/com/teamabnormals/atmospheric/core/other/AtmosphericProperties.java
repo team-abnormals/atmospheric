@@ -87,6 +87,7 @@ public class AtmosphericProperties {
 	public static final Properties PERSIMMON_TRAVERTINE = Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
 	public static final Properties SAFFRON_TRAVERTINE = Properties.of().mapColor(MapColor.COLOR_RED).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
 	public static final Properties DOLERITE = Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(AtmosphericSoundTypes.DOLERITE).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
+	public static final Properties POLISHED_DOLERITE = Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(AtmosphericSoundTypes.POLISHED_DOLERITE).requiresCorrectToolForDrops().strength(3.5F, 6.0F);
 
 	public static final Properties CARMINE_BLOCK = Properties.of().mapColor(MapColor.COLOR_RED).sound(AtmosphericSoundTypes.CARMINE).strength(0.5F);
 
