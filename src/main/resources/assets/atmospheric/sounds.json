@@ -787,6 +787,52 @@
     ],
     "subtitle": "subtitles.atmospheric.block.hanging_currant.pick_currant"
   },
+  "block.aloe_gel.break": {
+    "sounds": [
+      "atmospheric:block/aloe_gel/break1",
+      "atmospheric:block/aloe_gel/break2",
+      "atmospheric:block/aloe_gel/break3",
+      "atmospheric:block/aloe_gel/break4",
+      "atmospheric:block/aloe_gel/break5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.aloe_gel.fall": {
+    "sounds": [
+      "atmospheric:block/aloe_gel/step1",
+      "atmospheric:block/aloe_gel/step2",
+      "atmospheric:block/aloe_gel/step3",
+      "atmospheric:block/aloe_gel/step4"
+    ]
+  },
+  "block.aloe_gel.hit": {
+    "sounds": [
+      "atmospheric:block/aloe_gel/step1",
+      "atmospheric:block/aloe_gel/step2",
+      "atmospheric:block/aloe_gel/step3",
+      "atmospheric:block/aloe_gel/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.aloe_gel.place": {
+    "sounds": [
+      "atmospheric:block/aloe_gel/break1",
+      "atmospheric:block/aloe_gel/break2",
+      "atmospheric:block/aloe_gel/break3",
+      "atmospheric:block/aloe_gel/break4",
+      "atmospheric:block/aloe_gel/break5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.aloe_gel.step": {
+    "sounds": [
+      "atmospheric:block/aloe_gel/step1",
+      "atmospheric:block/aloe_gel/step2",
+      "atmospheric:block/aloe_gel/step3",
+      "atmospheric:block/aloe_gel/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.yucca_leaves.break": {
     "sounds": [
       "atmospheric:block/yucca_leaves/break1",

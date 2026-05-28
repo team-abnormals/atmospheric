@@ -8,6 +8,12 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class AtmosphericSoundEvents {
 	public static final SoundSubRegistryHelper SOUND_EVENTS = Atmospheric.REGISTRY_HELPER.getSoundSubHelper();
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_BREAK = SOUND_EVENTS.createSoundEvent("block.aloe_gel.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_FALL = SOUND_EVENTS.createSoundEvent("block.aloe_gel.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_HIT = SOUND_EVENTS.createSoundEvent("block.aloe_gel.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_PLACE = SOUND_EVENTS.createSoundEvent("block.aloe_gel.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_STEP = SOUND_EVENTS.createSoundEvent("block.aloe_gel.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_BREAK = SOUND_EVENTS.createSoundEvent("block.arid_sand.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_FALL = SOUND_EVENTS.createSoundEvent("block.arid_sand.fall");
@@ -133,6 +139,7 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_FRUIT_SEED_SPIT = SOUND_EVENTS.createSoundEvent("entity.passion_fruit_seed.spit");
 
 	public static class AtmosphericSoundTypes {
+		public static final DeferredSoundType ALOE_GEL = new DeferredSoundType(1.0F, 1.0F, ALOE_GEL_BREAK, ALOE_GEL_STEP, ALOE_GEL_PLACE, ALOE_GEL_HIT, ALOE_GEL_FALL);
 		public static final DeferredSoundType ARID_SAND = new DeferredSoundType(1.0F, 1.0F, ARID_SAND_BREAK, ARID_SAND_STEP, ARID_SAND_PLACE, ARID_SAND_HIT, ARID_SAND_FALL);
 		public static final DeferredSoundType ARID_SANDSTONE = new DeferredSoundType(1.0F, 1.0F, ARID_SANDSTONE_BREAK, ARID_SANDSTONE_STEP, ARID_SANDSTONE_PLACE, ARID_SANDSTONE_HIT, ARID_SANDSTONE_FALL);
 		public static final DeferredSoundType SUSPICIOUS_ARID_SAND = new DeferredSoundType(1.0F, 1.0F, SUSPICIOUS_ARID_SAND_BREAK, SUSPICIOUS_ARID_SAND_STEP, SUSPICIOUS_ARID_SAND_PLACE, SUSPICIOUS_ARID_SAND_HIT, SUSPICIOUS_ARID_SAND_FALL);
