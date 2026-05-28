@@ -6,6 +6,10 @@
     "atmospheric:tall_aloe_vera",
     "atmospheric:arid_sprouts",
     "atmospheric:water_hyacinth",
-    "atmospheric:dragon_roots"
+    "atmospheric:dragon_roots",
+    "atmospheric:yucca_flower",
+    "atmospheric:tall_yucca_flower",
+    "atmospheric:yucca_sapling",
+    "atmospheric:yucca_branch"
   ]
 }

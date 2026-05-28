@@ -410,6 +410,50 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "block.polished_dolerite.break": {
+    "sounds": [
+      "atmospheric:block/polished_dolerite/break1",
+      "atmospheric:block/polished_dolerite/break2",
+      "atmospheric:block/polished_dolerite/break3",
+      "atmospheric:block/polished_dolerite/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.polished_dolerite.fall": {
+    "sounds": [
+      "atmospheric:block/polished_dolerite/step1",
+      "atmospheric:block/polished_dolerite/step2",
+      "atmospheric:block/polished_dolerite/step3",
+      "atmospheric:block/polished_dolerite/step4"
+    ]
+  },
+  "block.polished_dolerite.hit": {
+    "sounds": [
+      "atmospheric:block/polished_dolerite/step1",
+      "atmospheric:block/polished_dolerite/step2",
+      "atmospheric:block/polished_dolerite/step3",
+      "atmospheric:block/polished_dolerite/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.polished_dolerite.place": {
+    "sounds": [
+      "atmospheric:block/polished_dolerite/break1",
+      "atmospheric:block/polished_dolerite/break2",
+      "atmospheric:block/polished_dolerite/break3",
+      "atmospheric:block/polished_dolerite/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.polished_dolerite.step": {
+    "sounds": [
+      "atmospheric:block/polished_dolerite/step1",
+      "atmospheric:block/polished_dolerite/step2",
+      "atmospheric:block/polished_dolerite/step3",
+      "atmospheric:block/polished_dolerite/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.monkey_brush.break": {
     "sounds": [
       "atmospheric:block/monkey_brush/break1",
@@ -743,6 +787,52 @@
     ],
     "subtitle": "subtitles.atmospheric.block.hanging_currant.pick_currant"
   },
+  "block.aloe_gel.break": {
+    "sounds": [
+      "atmospheric:block/aloe_gel/break1",
+      "atmospheric:block/aloe_gel/break2",
+      "atmospheric:block/aloe_gel/break3",
+      "atmospheric:block/aloe_gel/break4",
+      "atmospheric:block/aloe_gel/break5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.aloe_gel.fall": {
+    "sounds": [
+      "atmospheric:block/aloe_gel/step1",
+      "atmospheric:block/aloe_gel/step2",
+      "atmospheric:block/aloe_gel/step3",
+      "atmospheric:block/aloe_gel/step4"
+    ]
+  },
+  "block.aloe_gel.hit": {
+    "sounds": [
+      "atmospheric:block/aloe_gel/step1",
+      "atmospheric:block/aloe_gel/step2",
+      "atmospheric:block/aloe_gel/step3",
+      "atmospheric:block/aloe_gel/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.aloe_gel.place": {
+    "sounds": [
+      "atmospheric:block/aloe_gel/break1",
+      "atmospheric:block/aloe_gel/break2",
+      "atmospheric:block/aloe_gel/break3",
+      "atmospheric:block/aloe_gel/break4",
+      "atmospheric:block/aloe_gel/break5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.aloe_gel.step": {
+    "sounds": [
+      "atmospheric:block/aloe_gel/step1",
+      "atmospheric:block/aloe_gel/step2",
+      "atmospheric:block/aloe_gel/step3",
+      "atmospheric:block/aloe_gel/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.yucca_leaves.break": {
     "sounds": [
       "atmospheric:block/yucca_leaves/break1",
@@ -787,12 +877,152 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "block.yucca_branch.break": {
+    "sounds": [
+      "atmospheric:block/yucca_branch/break1",
+      "atmospheric:block/yucca_branch/break2",
+      "atmospheric:block/yucca_branch/break3",
+      "atmospheric:block/yucca_branch/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.yucca_branch.fall": {
+    "sounds": [
+      "atmospheric:block/yucca_branch/step1",
+      "atmospheric:block/yucca_branch/step2",
+      "atmospheric:block/yucca_branch/step3",
+      "atmospheric:block/yucca_branch/step4"
+    ]
+  },
+  "block.yucca_branch.hit": {
+    "sounds": [
+      "atmospheric:block/yucca_branch/step1",
+      "atmospheric:block/yucca_branch/step2",
+      "atmospheric:block/yucca_branch/step3",
+      "atmospheric:block/yucca_branch/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.yucca_branch.place": {
+    "sounds": [
+      "atmospheric:block/yucca_branch/break1",
+      "atmospheric:block/yucca_branch/break2",
+      "atmospheric:block/yucca_branch/break3",
+      "atmospheric:block/yucca_branch/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.yucca_branch.step": {
+    "sounds": [
+      "atmospheric:block/yucca_branch/step1",
+      "atmospheric:block/yucca_branch/step2",
+      "atmospheric:block/yucca_branch/step3",
+      "atmospheric:block/yucca_branch/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.yucca_fruit.break": {
+    "sounds": [
+      "atmospheric:block/yucca_fruit/break1",
+      "atmospheric:block/yucca_fruit/break2",
+      "atmospheric:block/yucca_fruit/break3",
+      "atmospheric:block/yucca_fruit/break4",
+      "atmospheric:block/yucca_fruit/break5",
+      "atmospheric:block/yucca_fruit/break6"  
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.yucca_fruit.fall": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/yucca_fruit/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step4",
+        "volume": 1.5
+      }
+    ]
+  },
+  "block.yucca_fruit.hit": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/yucca_fruit/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step4",
+        "volume": 1.5
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.yucca_fruit.place": {
+    "sounds": [
+      "atmospheric:block/yucca_fruit/break1",
+      "atmospheric:block/yucca_fruit/break2",
+      "atmospheric:block/yucca_fruit/break3",
+      "atmospheric:block/yucca_fruit/break4",
+      "atmospheric:block/yucca_fruit/break5",
+      "atmospheric:block/yucca_fruit/break6"  
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.yucca_fruit.step": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/yucca_fruit/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step4",
+        "volume": 1.5
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.dragon_roots.break": {
     "sounds": [
-      "atmospheric:block/dragon_roots/break1",
-      "atmospheric:block/dragon_roots/break2",
-      "atmospheric:block/dragon_roots/break3",
-      "atmospheric:block/dragon_roots/break4"
+      {
+        "name": "atmospheric:block/dragon_roots/break1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/break2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/break3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/break4",
+        "volume": 1.5
+      }
     ],
     "subtitle": "subtitles.block.generic.break"
   },
@@ -839,10 +1069,22 @@
   },
   "block.dragon_roots.place": {
     "sounds": [
-      "atmospheric:block/dragon_roots/place1",
-      "atmospheric:block/dragon_roots/place2",
-      "atmospheric:block/dragon_roots/place3",
-      "atmospheric:block/dragon_roots/place4"
+      {
+        "name": "atmospheric:block/dragon_roots/place1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/place2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/place3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/dragon_roots/place4",
+        "volume": 1.5
+      }
     ],
     "subtitle": "subtitles.block.generic.place"
   },

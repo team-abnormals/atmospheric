@@ -155,6 +155,7 @@ public class AtmosphericRecipeProvider extends BlueprintRecipeProvider {
 		generateRecipes(output, AtmosphericBlockFamilies.POLISHED_DOLERITE_FAMILY);
 		stonecutterRecipe(output, BUILDING_BLOCKS, POLISHED_DOLERITE_SLAB, POLISHED_DOLERITE, 2);
 		stonecutterRecipe(output, BUILDING_BLOCKS, POLISHED_DOLERITE_STAIRS, POLISHED_DOLERITE);
+		stonecutterRecipe(output, DECORATIONS, POLISHED_DOLERITE_WALL, POLISHED_DOLERITE);
 
 		ShapelessRecipeBuilder.shapeless(DECORATIONS, GRIMWEB).requires(AtmosphericItemTags.GRIMWOOD_LOGS).requires(Items.COBWEB).unlockedBy("has_grimwood", has(AtmosphericItemTags.GRIMWOOD_LOGS)).save(output);
 

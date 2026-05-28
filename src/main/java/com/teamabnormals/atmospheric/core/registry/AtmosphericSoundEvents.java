@@ -8,6 +8,12 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class AtmosphericSoundEvents {
 	public static final SoundSubRegistryHelper SOUND_EVENTS = Atmospheric.REGISTRY_HELPER.getSoundSubHelper();
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_BREAK = SOUND_EVENTS.createSoundEvent("block.aloe_gel.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_FALL = SOUND_EVENTS.createSoundEvent("block.aloe_gel.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_HIT = SOUND_EVENTS.createSoundEvent("block.aloe_gel.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_PLACE = SOUND_EVENTS.createSoundEvent("block.aloe_gel.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_STEP = SOUND_EVENTS.createSoundEvent("block.aloe_gel.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_BREAK = SOUND_EVENTS.createSoundEvent("block.arid_sand.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_FALL = SOUND_EVENTS.createSoundEvent("block.arid_sand.fall");
@@ -51,11 +57,29 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> DOLERITE_PLACE = SOUND_EVENTS.createSoundEvent("block.dolerite.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DOLERITE_STEP = SOUND_EVENTS.createSoundEvent("block.dolerite.step");
 	
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_BREAK = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_FALL = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_HIT = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_PLACE = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_STEP = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.step");
+	
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_BREAK = SOUND_EVENTS.createSoundEvent("block.dragon_roots.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_FALL = SOUND_EVENTS.createSoundEvent("block.dragon_roots.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_HIT = SOUND_EVENTS.createSoundEvent("block.dragon_roots.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_PLACE = SOUND_EVENTS.createSoundEvent("block.dragon_roots.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_STEP = SOUND_EVENTS.createSoundEvent("block.dragon_roots.step");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_BREAK = SOUND_EVENTS.createSoundEvent("block.yucca_branch.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_FALL = SOUND_EVENTS.createSoundEvent("block.yucca_branch.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_HIT = SOUND_EVENTS.createSoundEvent("block.yucca_branch.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_PLACE = SOUND_EVENTS.createSoundEvent("block.yucca_branch.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_STEP = SOUND_EVENTS.createSoundEvent("block.yucca_branch.step");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_FRUIT_BREAK = SOUND_EVENTS.createSoundEvent("block.yucca_fruit.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_FRUIT_FALL = SOUND_EVENTS.createSoundEvent("block.yucca_fruit.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_FRUIT_HIT = SOUND_EVENTS.createSoundEvent("block.yucca_fruit.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_FRUIT_PLACE = SOUND_EVENTS.createSoundEvent("block.yucca_fruit.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_FRUIT_STEP = SOUND_EVENTS.createSoundEvent("block.yucca_fruit.step");
 	
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_BREAK = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_FALL = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.fall");
@@ -115,6 +139,7 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_FRUIT_SEED_SPIT = SOUND_EVENTS.createSoundEvent("entity.passion_fruit_seed.spit");
 
 	public static class AtmosphericSoundTypes {
+		public static final DeferredSoundType ALOE_GEL = new DeferredSoundType(1.0F, 1.0F, ALOE_GEL_BREAK, ALOE_GEL_STEP, ALOE_GEL_PLACE, ALOE_GEL_HIT, ALOE_GEL_FALL);
 		public static final DeferredSoundType ARID_SAND = new DeferredSoundType(1.0F, 1.0F, ARID_SAND_BREAK, ARID_SAND_STEP, ARID_SAND_PLACE, ARID_SAND_HIT, ARID_SAND_FALL);
 		public static final DeferredSoundType ARID_SANDSTONE = new DeferredSoundType(1.0F, 1.0F, ARID_SANDSTONE_BREAK, ARID_SANDSTONE_STEP, ARID_SANDSTONE_PLACE, ARID_SANDSTONE_HIT, ARID_SANDSTONE_FALL);
 		public static final DeferredSoundType SUSPICIOUS_ARID_SAND = new DeferredSoundType(1.0F, 1.0F, SUSPICIOUS_ARID_SAND_BREAK, SUSPICIOUS_ARID_SAND_STEP, SUSPICIOUS_ARID_SAND_PLACE, SUSPICIOUS_ARID_SAND_HIT, SUSPICIOUS_ARID_SAND_FALL);
@@ -123,9 +148,12 @@ public class AtmosphericSoundEvents {
 		public static final DeferredSoundType BARREL_CACTUS = new DeferredSoundType(1.0F, 1.0F, BARREL_CACTUS_BREAK, BARREL_CACTUS_STEP, BARREL_CACTUS_PLACE, BARREL_CACTUS_HIT, BARREL_CACTUS_FALL);
 		public static final DeferredSoundType CARMINE = new DeferredSoundType(1.0F, 1.0F, CARMINE_BREAK, CARMINE_STEP, CARMINE_PLACE, CARMINE_HIT, CARMINE_FALL);
 		public static final DeferredSoundType DOLERITE = new DeferredSoundType(1.0F, 1.0F, DOLERITE_BREAK, DOLERITE_STEP, DOLERITE_PLACE, DOLERITE_HIT, DOLERITE_FALL);
+		public static final DeferredSoundType POLISHED_DOLERITE = new DeferredSoundType(1.0F, 1.0F, POLISHED_DOLERITE_BREAK, POLISHED_DOLERITE_STEP, POLISHED_DOLERITE_PLACE, POLISHED_DOLERITE_HIT, POLISHED_DOLERITE_FALL);
 		public static final DeferredSoundType DRAGON_ROOTS = new DeferredSoundType(1.0F, 1.0F, DRAGON_ROOTS_BREAK, DRAGON_ROOTS_STEP, DRAGON_ROOTS_PLACE, DRAGON_ROOTS_HIT, DRAGON_ROOTS_FALL);
 		public static final DeferredSoundType MONKEY_BRUSH = new DeferredSoundType(1.0F, 1.0F, MONKEY_BRUSH_BREAK, MONKEY_BRUSH_STEP, MONKEY_BRUSH_PLACE, MONKEY_BRUSH_HIT, MONKEY_BRUSH_FALL);
 		public static final DeferredSoundType YUCCA_LEAVES = new DeferredSoundType(1.0F, 1.0F, YUCCA_LEAVES_BREAK, YUCCA_LEAVES_STEP, YUCCA_LEAVES_PLACE, YUCCA_LEAVES_HIT, YUCCA_LEAVES_FALL);
+		public static final DeferredSoundType YUCCA_FRUIT = new DeferredSoundType(1.0F, 1.0F, YUCCA_FRUIT_BREAK, YUCCA_FRUIT_STEP, YUCCA_FRUIT_PLACE, YUCCA_FRUIT_HIT, YUCCA_FRUIT_FALL);
+		public static final DeferredSoundType YUCCA_BRANCH = new DeferredSoundType(1.0F, 1.0F, YUCCA_BRANCH_BREAK, YUCCA_BRANCH_STEP, YUCCA_BRANCH_PLACE, YUCCA_BRANCH_HIT, YUCCA_BRANCH_FALL);
 		public static final DeferredSoundType CURRANT_LEAVES = new DeferredSoundType(1.0F, 1.0F, CURRANT_LEAVES_BREAK, CURRANT_LEAVES_STEP, CURRANT_LEAVES_PLACE, CURRANT_LEAVES_HIT, CURRANT_LEAVES_FALL);
 		public static final DeferredSoundType CURRANT_STALK = new DeferredSoundType(1.0F, 1.0F, CURRANT_STALK_BREAK, CURRANT_STALK_STEP, CURRANT_STALK_PLACE, CURRANT_STALK_HIT, CURRANT_STALK_FALL);
 		public static final DeferredSoundType WATER_HYACINTH = new DeferredSoundType(1.0F, 1.0F, WATER_HYACINTH_BREAK, WATER_HYACINTH_STEP, WATER_HYACINTH_PLACE, WATER_HYACINTH_HIT, WATER_HYACINTH_FALL);

@@ -251,6 +251,7 @@ public class AtmosphericLootTableProvider extends LootTableProvider {
 			this.dropSelf(POLISHED_DOLERITE.get());
 			this.dropSelf(POLISHED_DOLERITE_STAIRS.get());
 			this.add(POLISHED_DOLERITE_SLAB.get(), this::createSlabItemTable);
+			this.dropSelf(POLISHED_DOLERITE_WALL.get());
 
 			this.dropSelf(ROSEWOOD_PLANKS.get());
 			this.dropSelf(ROSEWOOD_LOG.get());

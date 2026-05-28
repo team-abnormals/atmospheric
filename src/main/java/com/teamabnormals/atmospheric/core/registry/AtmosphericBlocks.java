@@ -160,9 +160,10 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> DOLERITE_STAIRS = BLOCKS.createBlock("dolerite_stairs", () -> new StairBlock(DOLERITE.get().defaultBlockState(), AtmosphericProperties.DOLERITE));
 	public static final DeferredBlock<Block> DOLERITE_SLAB = BLOCKS.createBlock("dolerite_slab", () -> new SlabBlock(AtmosphericProperties.DOLERITE));
 	public static final DeferredBlock<Block> DOLERITE_WALL = BLOCKS.createBlock("dolerite_wall", () -> new WallBlock(AtmosphericProperties.DOLERITE));
-	public static final DeferredBlock<Block> POLISHED_DOLERITE = BLOCKS.createBlock("polished_dolerite", () -> new Block(AtmosphericProperties.DOLERITE));
-	public static final DeferredBlock<Block> POLISHED_DOLERITE_STAIRS = BLOCKS.createBlock("polished_dolerite_stairs", () -> new StairBlock(POLISHED_DOLERITE.get().defaultBlockState(), AtmosphericProperties.DOLERITE));
-	public static final DeferredBlock<Block> POLISHED_DOLERITE_SLAB = BLOCKS.createBlock("polished_dolerite_slab", () -> new SlabBlock(AtmosphericProperties.DOLERITE));
+	public static final DeferredBlock<Block> POLISHED_DOLERITE = BLOCKS.createBlock("polished_dolerite", () -> new Block(AtmosphericProperties.POLISHED_DOLERITE));
+	public static final DeferredBlock<Block> POLISHED_DOLERITE_STAIRS = BLOCKS.createBlock("polished_dolerite_stairs", () -> new StairBlock(POLISHED_DOLERITE.get().defaultBlockState(), AtmosphericProperties.POLISHED_DOLERITE));
+	public static final DeferredBlock<Block> POLISHED_DOLERITE_SLAB = BLOCKS.createBlock("polished_dolerite_slab", () -> new SlabBlock(AtmosphericProperties.POLISHED_DOLERITE));
+	public static final DeferredBlock<Block> POLISHED_DOLERITE_WALL = BLOCKS.createBlock("polished_dolerite_wall", () -> new WallBlock(AtmosphericProperties.POLISHED_DOLERITE));
 
 	/// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -203,7 +204,7 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> YUCCA_LOG = BLOCKS.createBlock("yucca_log", () -> new LogBlock(STRIPPED_YUCCA_LOG, AtmosphericProperties.YUCCA.log()));
 	public static final DeferredBlock<Block> YUCCA_WOOD = BLOCKS.createBlock("yucca_wood", () -> new LogBlock(STRIPPED_YUCCA_WOOD, AtmosphericProperties.YUCCA.log()));
 	public static final DeferredBlock<Block> YUCCA_LEAVES = BLOCKS.createBlock("yucca_leaves", () -> new YuccaLeavesBlock(AtmosphericProperties.YUCCA.leaves()));
-	public static final DeferredBlock<Block> YUCCA_SAPLING = BLOCKS.createBlock("yucca_sapling", () -> new YuccaSaplingBlock(AtmosphericTreeGrowers.YUCCA, AtmosphericProperties.YUCCA.sapling()));
+	public static final DeferredBlock<Block> YUCCA_SAPLING = BLOCKS.createBlock("yucca_sapling", () -> new YuccaSaplingBlock(AtmosphericTreeGrowers.YUCCA, AtmosphericProperties.YUCCA.sapling().sound(AtmosphericSoundTypes.YUCCA_BRANCH)));
 	public static final DeferredBlock<Block> POTTED_YUCCA_SAPLING = BLOCKS.createBlockNoItem("potted_yucca_sapling", () -> new FlowerPotBlock(YUCCA_SAPLING.get(), PropertyUtil.flowerPot()));
 	public static final DeferredBlock<Block> YUCCA_PLANKS = BLOCKS.createBlock("yucca_planks", () -> new Block(AtmosphericProperties.YUCCA.planks()));
 	public static final DeferredBlock<Block> YUCCA_STAIRS = BLOCKS.createBlock("yucca_stairs", () -> new StairBlock(YUCCA_PLANKS.get().defaultBlockState(), AtmosphericProperties.YUCCA.planks()));
@@ -226,9 +227,9 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<BlueprintChestBlock> YUCCA_CHEST = BLOCKS.createChestBlock("yucca", AtmosphericProperties.YUCCA.chest());
 	public static final DeferredBlock<BlueprintTrappedChestBlock> TRAPPED_YUCCA_CHEST = BLOCKS.createTrappedChestBlock("yucca", AtmosphericProperties.YUCCA.chest());
 
-	public static final DeferredBlock<Block> YUCCA_BRANCH = BLOCKS.createBlock("yucca_branch", () -> new YuccaBranchBlock(Block.Properties.ofFullCopy(Blocks.MELON_STEM).sound(SoundType.CROP).randomTicks()));
-	public static final DeferredBlock<Block> YUCCA_BUNDLE = BLOCKS.createBlock("yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).randomTicks()));
-	public static final DeferredBlock<Block> ROASTED_YUCCA_BUNDLE = BLOCKS.createBlock("roasted_yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).randomTicks()));
+	public static final DeferredBlock<Block> YUCCA_BRANCH = BLOCKS.createBlock("yucca_branch", () -> new YuccaBranchBlock(Block.Properties.ofFullCopy(Blocks.MELON_STEM).sound(AtmosphericSoundTypes.YUCCA_BRANCH).randomTicks()));
+	public static final DeferredBlock<Block> YUCCA_BUNDLE = BLOCKS.createBlock("yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).sound(AtmosphericSoundTypes.YUCCA_FRUIT).randomTicks()));
+	public static final DeferredBlock<Block> ROASTED_YUCCA_BUNDLE = BLOCKS.createBlock("roasted_yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).sound(AtmosphericSoundTypes.YUCCA_FRUIT).randomTicks()));
 
 	public static final DeferredBlock<Block> YUCCA_GATEAU = BLOCKS.createBlockNoItem("yucca_gateau", () -> new YuccaGateauBlock(AtmosphericProperties.YUCCA_GATEAU));
 	public static final DeferredBlock<Block> YUCCA_FLOWER = BLOCKS.createBlock("yucca_flower", () -> new YuccaFlowerBlock(AtmosphericMobEffects.PERSISTENCE, 15, AtmosphericProperties.YUCCA_FLOWER));
@@ -260,7 +261,7 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> ALOE_VERA = BLOCKS.createBlockNoItem("aloe_vera", () -> new AloeVeraBlock(AtmosphericProperties.ALOE_VERA));
 	public static final DeferredBlock<Block> TALL_ALOE_VERA = BLOCKS.createBlockNoItem("tall_aloe_vera", () -> new AloeVeraTallBlock(AtmosphericProperties.ALOE_VERA));
 	public static final DeferredBlock<Block> ALOE_BUNDLE = BLOCKS.createBlock("aloe_bundle", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.DRIED_KELP_BLOCK)));
-	public static final DeferredBlock<Block> ALOE_GEL_BLOCK = BLOCKS.createBlock("aloe_gel_block", () -> new AloeGelBlock(Block.Properties.ofFullCopy(Blocks.SLIME_BLOCK).isSuffocating(PropertyUtil::never)));
+	public static final DeferredBlock<Block> ALOE_GEL_BLOCK = BLOCKS.createBlock("aloe_gel_block", () -> new AloeGelBlock(Block.Properties.ofFullCopy(Blocks.SLIME_BLOCK).sound(AtmosphericSoundTypes.ALOE_GEL).isSuffocating(PropertyUtil::never)));
 	public static final DeferredBlock<Block> POTTED_ALOE_VERA = BLOCKS.createBlockNoItem("potted_aloe_vera", () -> new FlowerPotBlock(ALOE_VERA.get(), PropertyUtil.flowerPot()));
 	public static final DeferredBlock<Block> BARREL_CACTUS = BLOCKS.createBlockNoItem("barrel_cactus", () -> new BarrelCactusBlock(Block.Properties.ofFullCopy(Blocks.CACTUS).sound(AtmosphericSoundTypes.BARREL_CACTUS)));
 	public static final DeferredBlock<Block> POTTED_BARREL_CACTUS = BLOCKS.createBlockNoItem("potted_barrel_cactus", () -> new FlowerPotBlock(BARREL_CACTUS.get(), Block.Properties.ofFullCopy(Blocks.POTTED_CACTUS)));
@@ -506,7 +507,7 @@ public class AtmosphericBlocks {
 						PEACH_TRAVERTINE, CHISELED_PEACH_TRAVERTINE, CUT_PEACH_TRAVERTINE, PEACH_TRAVERTINE_STAIRS, PEACH_TRAVERTINE_SLAB, PEACH_TRAVERTINE_WALL,
 						PERSIMMON_TRAVERTINE, CHISELED_PERSIMMON_TRAVERTINE, CUT_PERSIMMON_TRAVERTINE, PERSIMMON_TRAVERTINE_STAIRS, PERSIMMON_TRAVERTINE_SLAB, PERSIMMON_TRAVERTINE_WALL,
 						SAFFRON_TRAVERTINE, CHISELED_SAFFRON_TRAVERTINE, CUT_SAFFRON_TRAVERTINE, SAFFRON_TRAVERTINE_STAIRS, SAFFRON_TRAVERTINE_SLAB, SAFFRON_TRAVERTINE_WALL,
-						DOLERITE, DOLERITE_STAIRS, DOLERITE_SLAB, DOLERITE_WALL, POLISHED_DOLERITE, POLISHED_DOLERITE_STAIRS, POLISHED_DOLERITE_SLAB
+						DOLERITE, DOLERITE_STAIRS, DOLERITE_SLAB, DOLERITE_WALL, POLISHED_DOLERITE, POLISHED_DOLERITE_STAIRS, POLISHED_DOLERITE_SLAB, POLISHED_DOLERITE_WALL
 				)
 				.tab(FUNCTIONAL_BLOCKS)
 				.addItemsBefore(of(Blocks.BAMBOO_SIGN),
