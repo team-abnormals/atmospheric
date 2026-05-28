@@ -204,7 +204,7 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> YUCCA_LOG = BLOCKS.createBlock("yucca_log", () -> new LogBlock(STRIPPED_YUCCA_LOG, AtmosphericProperties.YUCCA.log()));
 	public static final DeferredBlock<Block> YUCCA_WOOD = BLOCKS.createBlock("yucca_wood", () -> new LogBlock(STRIPPED_YUCCA_WOOD, AtmosphericProperties.YUCCA.log()));
 	public static final DeferredBlock<Block> YUCCA_LEAVES = BLOCKS.createBlock("yucca_leaves", () -> new YuccaLeavesBlock(AtmosphericProperties.YUCCA.leaves()));
-	public static final DeferredBlock<Block> YUCCA_SAPLING = BLOCKS.createBlock("yucca_sapling", () -> new YuccaSaplingBlock(AtmosphericTreeGrowers.YUCCA, AtmosphericProperties.YUCCA.sapling()));
+	public static final DeferredBlock<Block> YUCCA_SAPLING = BLOCKS.createBlock("yucca_sapling", () -> new YuccaSaplingBlock(AtmosphericTreeGrowers.YUCCA, AtmosphericProperties.YUCCA.sapling().sound(AtmosphericSoundTypes.YUCCA_BRANCH)));
 	public static final DeferredBlock<Block> POTTED_YUCCA_SAPLING = BLOCKS.createBlockNoItem("potted_yucca_sapling", () -> new FlowerPotBlock(YUCCA_SAPLING.get(), PropertyUtil.flowerPot()));
 	public static final DeferredBlock<Block> YUCCA_PLANKS = BLOCKS.createBlock("yucca_planks", () -> new Block(AtmosphericProperties.YUCCA.planks()));
 	public static final DeferredBlock<Block> YUCCA_STAIRS = BLOCKS.createBlock("yucca_stairs", () -> new StairBlock(YUCCA_PLANKS.get().defaultBlockState(), AtmosphericProperties.YUCCA.planks()));
@@ -228,8 +228,8 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<BlueprintTrappedChestBlock> TRAPPED_YUCCA_CHEST = BLOCKS.createTrappedChestBlock("yucca", AtmosphericProperties.YUCCA.chest());
 
 	public static final DeferredBlock<Block> YUCCA_BRANCH = BLOCKS.createBlock("yucca_branch", () -> new YuccaBranchBlock(Block.Properties.ofFullCopy(Blocks.MELON_STEM).sound(AtmosphericSoundTypes.YUCCA_BRANCH).randomTicks()));
-	public static final DeferredBlock<Block> YUCCA_BUNDLE = BLOCKS.createBlock("yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).randomTicks()));
-	public static final DeferredBlock<Block> ROASTED_YUCCA_BUNDLE = BLOCKS.createBlock("roasted_yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).randomTicks()));
+	public static final DeferredBlock<Block> YUCCA_BUNDLE = BLOCKS.createBlock("yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).sound(AtmosphericSoundTypes.YUCCA_FRUIT).randomTicks()));
+	public static final DeferredBlock<Block> ROASTED_YUCCA_BUNDLE = BLOCKS.createBlock("roasted_yucca_bundle", () -> new YuccaBundleBlock(Block.Properties.ofFullCopy(Blocks.MELON).sound(AtmosphericSoundTypes.YUCCA_FRUIT).randomTicks()));
 
 	public static final DeferredBlock<Block> YUCCA_GATEAU = BLOCKS.createBlockNoItem("yucca_gateau", () -> new YuccaGateauBlock(AtmosphericProperties.YUCCA_GATEAU));
 	public static final DeferredBlock<Block> YUCCA_FLOWER = BLOCKS.createBlock("yucca_flower", () -> new YuccaFlowerBlock(AtmosphericMobEffects.PERSISTENCE, 15, AtmosphericProperties.YUCCA_FLOWER));
