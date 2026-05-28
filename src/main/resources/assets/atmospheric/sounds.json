@@ -888,18 +888,42 @@
   },
   "block.yucca_fruit.fall": {
     "sounds": [
-      "atmospheric:block/yucca_fruit/step1",
-      "atmospheric:block/yucca_fruit/step2",
-      "atmospheric:block/yucca_fruit/step3",
-      "atmospheric:block/yucca_fruit/step4"
+      {
+        "name": "atmospheric:block/yucca_fruit/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step4",
+        "volume": 1.5
+      }
     ]
   },
   "block.yucca_fruit.hit": {
     "sounds": [
-      "atmospheric:block/yucca_fruit/step1",
-      "atmospheric:block/yucca_fruit/step2",
-      "atmospheric:block/yucca_fruit/step3",
-      "atmospheric:block/yucca_fruit/step4"
+      {
+        "name": "atmospheric:block/yucca_fruit/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step4",
+        "volume": 1.5
+      }
     ],
     "subtitle": "subtitles.block.generic.hit"
   },
@@ -916,10 +940,22 @@
   },
   "block.yucca_fruit.step": {
     "sounds": [
-      "atmospheric:block/yucca_fruit/step1",
-      "atmospheric:block/yucca_fruit/step2",
-      "atmospheric:block/yucca_fruit/step3",
-      "atmospheric:block/yucca_fruit/step4"
+      {
+        "name": "atmospheric:block/yucca_fruit/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/yucca_fruit/step4",
+        "volume": 1.5
+      }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
