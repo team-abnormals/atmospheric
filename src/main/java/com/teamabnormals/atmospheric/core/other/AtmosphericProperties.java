@@ -91,7 +91,7 @@ public class AtmosphericProperties {
 
 	public static final Properties CARMINE_BLOCK = Properties.of().mapColor(MapColor.COLOR_RED).sound(AtmosphericSoundTypes.CARMINE).strength(0.5F);
 
-	public static final Properties ALOE_VERA = Properties.of().noCollission().instabreak().randomTicks().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY);
+	public static final Properties ALOE_VERA = Properties.of().noCollission().instabreak().randomTicks().sound(AtmosphericSoundTypes.ALOE_VERA).pushReaction(PushReaction.DESTROY);
 	public static final Properties ORANGE = Properties.of().mapColor(MapColor.COLOR_ORANGE).instabreak().sound(SoundType.HONEY_BLOCK).pushReaction(PushReaction.DESTROY);
 
 	public static final BlockBehaviour.Properties YUCCA_GATEAU = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY);
