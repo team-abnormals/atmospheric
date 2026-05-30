@@ -6,6 +6,7 @@ import com.mojang.serialization.MapCodec;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
 import com.teamabnormals.atmospheric.common.entity.projectile.DragonFruit;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericEntityTypes;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.AxisDirection;
@@ -126,7 +127,7 @@ public class DragonRootsBlock extends BushBlock implements BonemealableBlock {
 	@Override
 	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
 		if (hasFruit(state)) {
-			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+			level.playSound(null, pos, AtmosphericSoundEvents.DRAGON_ROOTS_PICK.get(), SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
 			BlockState newState = state;
 
 			if (hasFruit(TOP_STAGE, state)) {

@@ -4,6 +4,7 @@ import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
@@ -188,6 +189,11 @@ public class DragonFruit extends Entity {
 	public boolean isAlwaysTicking() {
 		return true;
 	}
+	
+	@Override
+	protected void playStepSound(BlockPos pos, BlockState state) {
+		this.playSound(AtmosphericSoundEvents.DRAGON_FRUIT_ROLL.get(), 1.0F, 1.0F);
+	}
 
 	public Direction getRollingDirection() {
 		Direction dir = this.rollingDirection;
@@ -256,6 +262,6 @@ public class DragonFruit extends Entity {
 
 
 	private void playBrokenSound() {
-		this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.SWEET_BERRY_BUSH_BREAK, this.getSoundSource(), 1.0F, 1.0F);
+		this.level().playSound(null, this.getX(), this.getY(), this.getZ(), AtmosphericSoundEvents.DRAGON_FRUIT_BREAK.get(), this.getSoundSource(), 1.0F, 1.0F);
 	}
 }

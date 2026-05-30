@@ -74,6 +74,7 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_HIT = SOUND_EVENTS.createSoundEvent("block.dragon_roots.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_PLACE = SOUND_EVENTS.createSoundEvent("block.dragon_roots.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_STEP = SOUND_EVENTS.createSoundEvent("block.dragon_roots.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_PICK = SOUND_EVENTS.createSoundEvent("block.dragon_roots.pick");
 	
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_BREAK = SOUND_EVENTS.createSoundEvent("block.yucca_branch.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_FALL = SOUND_EVENTS.createSoundEvent("block.yucca_branch.fall");
@@ -130,6 +131,9 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_LEAVES_STEP = SOUND_EVENTS.createSoundEvent("block.currant_leaves.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> HANGING_CURRANT_PICK_CURRANT = SOUND_EVENTS.createSoundEvent("block.hanging_currant.pick_currant");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_FRUIT_BREAK = SOUND_EVENTS.createSoundEvent("entity.dragon_fruit.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_FRUIT_ROLL = SOUND_EVENTS.createSoundEvent("entity.dragon_fruit.roll");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> COCHINEAL_DEATH = SOUND_EVENTS.createSoundEvent("entity.cochineal.death");
 	public static final DeferredHolder<SoundEvent, SoundEvent> COCHINEAL_HURT = SOUND_EVENTS.createSoundEvent("entity.cochineal.hurt");
