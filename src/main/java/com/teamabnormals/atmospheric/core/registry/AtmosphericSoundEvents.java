@@ -14,6 +14,12 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_HIT = SOUND_EVENTS.createSoundEvent("block.aloe_gel.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_PLACE = SOUND_EVENTS.createSoundEvent("block.aloe_gel.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_STEP = SOUND_EVENTS.createSoundEvent("block.aloe_gel.step");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_VERA_BREAK = SOUND_EVENTS.createSoundEvent("block.aloe_vera.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_VERA_FALL = SOUND_EVENTS.createSoundEvent("block.aloe_vera.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_VERA_HIT = SOUND_EVENTS.createSoundEvent("block.aloe_vera.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_VERA_PLACE = SOUND_EVENTS.createSoundEvent("block.aloe_vera.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_VERA_STEP = SOUND_EVENTS.createSoundEvent("block.aloe_vera.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_BREAK = SOUND_EVENTS.createSoundEvent("block.arid_sand.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SAND_FALL = SOUND_EVENTS.createSoundEvent("block.arid_sand.fall");
@@ -68,6 +74,7 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_HIT = SOUND_EVENTS.createSoundEvent("block.dragon_roots.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_PLACE = SOUND_EVENTS.createSoundEvent("block.dragon_roots.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_STEP = SOUND_EVENTS.createSoundEvent("block.dragon_roots.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_PICK = SOUND_EVENTS.createSoundEvent("block.dragon_roots.pick");
 	
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_BREAK = SOUND_EVENTS.createSoundEvent("block.yucca_branch.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_FALL = SOUND_EVENTS.createSoundEvent("block.yucca_branch.fall");
@@ -124,6 +131,9 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_LEAVES_STEP = SOUND_EVENTS.createSoundEvent("block.currant_leaves.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> HANGING_CURRANT_PICK_CURRANT = SOUND_EVENTS.createSoundEvent("block.hanging_currant.pick_currant");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_FRUIT_BREAK = SOUND_EVENTS.createSoundEvent("entity.dragon_fruit.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_FRUIT_ROLL = SOUND_EVENTS.createSoundEvent("entity.dragon_fruit.roll");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> COCHINEAL_DEATH = SOUND_EVENTS.createSoundEvent("entity.cochineal.death");
 	public static final DeferredHolder<SoundEvent, SoundEvent> COCHINEAL_HURT = SOUND_EVENTS.createSoundEvent("entity.cochineal.hurt");
@@ -140,6 +150,7 @@ public class AtmosphericSoundEvents {
 
 	public static class AtmosphericSoundTypes {
 		public static final DeferredSoundType ALOE_GEL = new DeferredSoundType(1.0F, 1.0F, ALOE_GEL_BREAK, ALOE_GEL_STEP, ALOE_GEL_PLACE, ALOE_GEL_HIT, ALOE_GEL_FALL);
+		public static final DeferredSoundType ALOE_VERA = new DeferredSoundType(1.0F, 1.0F, ALOE_VERA_BREAK, ALOE_VERA_STEP, ALOE_VERA_PLACE, ALOE_VERA_HIT, ALOE_VERA_FALL);
 		public static final DeferredSoundType ARID_SAND = new DeferredSoundType(1.0F, 1.0F, ARID_SAND_BREAK, ARID_SAND_STEP, ARID_SAND_PLACE, ARID_SAND_HIT, ARID_SAND_FALL);
 		public static final DeferredSoundType ARID_SANDSTONE = new DeferredSoundType(1.0F, 1.0F, ARID_SANDSTONE_BREAK, ARID_SANDSTONE_STEP, ARID_SANDSTONE_PLACE, ARID_SANDSTONE_HIT, ARID_SANDSTONE_FALL);
 		public static final DeferredSoundType SUSPICIOUS_ARID_SAND = new DeferredSoundType(1.0F, 1.0F, SUSPICIOUS_ARID_SAND_BREAK, SUSPICIOUS_ARID_SAND_STEP, SUSPICIOUS_ARID_SAND_PLACE, SUSPICIOUS_ARID_SAND_HIT, SUSPICIOUS_ARID_SAND_FALL);

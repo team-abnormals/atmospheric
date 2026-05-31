@@ -36,6 +36,30 @@
     ],
     "subtitle": "subtitles.atmospheric.entity.cochineal.grab"
   },
+  "entity.dragon_fruit.roll": {
+    "sounds": [
+      {
+        "name": "atmospheric:entity/dragon_fruit/roll1",
+        "volume": 0.5
+      },
+      {
+        "name": "atmospheric:entity/dragon_fruit/roll2",
+        "volume": 0.5
+      },
+      {
+        "name": "atmospheric:entity/dragon_fruit/roll3",
+        "volume": 0.5
+      }
+    ],
+    "subtitle": "subtitles.atmospheric.entity.dragon_fruit.roll"
+  },
+  "entity.dragon_fruit.break": {
+    "sounds": [
+      "atmospheric:entity/dragon_fruit/break1",
+      "atmospheric:entity/dragon_fruit/break2"
+    ],
+    "subtitle": "subtitles.atmospheric.entity.dragon_fruit.break"
+  },
   "entity.tetra.ambient": {
     "sounds": []
   },
@@ -833,6 +857,50 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "block.aloe_vera.break": {
+    "sounds": [
+      "atmospheric:block/aloe_vera/break1",
+      "atmospheric:block/aloe_vera/break2",
+      "atmospheric:block/aloe_vera/break3",
+      "atmospheric:block/aloe_vera/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.aloe_vera.fall": {
+    "sounds": [
+      "atmospheric:block/aloe_vera/step1",
+      "atmospheric:block/aloe_vera/step2",
+      "atmospheric:block/aloe_vera/step3",
+      "atmospheric:block/aloe_vera/step4"
+    ]
+  },
+  "block.aloe_vera.hit": {
+    "sounds": [
+      "atmospheric:block/aloe_vera/step1",
+      "atmospheric:block/aloe_vera/step2",
+      "atmospheric:block/aloe_vera/step3",
+      "atmospheric:block/aloe_vera/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.aloe_vera.place": {
+    "sounds": [
+      "atmospheric:block/aloe_vera/place1",
+      "atmospheric:block/aloe_vera/place2",
+      "atmospheric:block/aloe_vera/place3",
+      "atmospheric:block/aloe_vera/place4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.aloe_vera.step": {
+    "sounds": [
+      "atmospheric:block/aloe_vera/step1",
+      "atmospheric:block/aloe_vera/step2",
+      "atmospheric:block/aloe_vera/step3",
+      "atmospheric:block/aloe_vera/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.yucca_leaves.break": {
     "sounds": [
       "atmospheric:block/yucca_leaves/break1",
@@ -1004,6 +1072,13 @@
       }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.dragon_roots.pick": {
+    "sounds": [
+      "atmospheric:block/dragon_roots/pick1",
+      "atmospheric:block/dragon_roots/pick2"
+    ],
+    "subtitle": "subtitles.atmospheric.block.dragon_roots.pick"
   },
   "block.dragon_roots.break": {
     "sounds": [

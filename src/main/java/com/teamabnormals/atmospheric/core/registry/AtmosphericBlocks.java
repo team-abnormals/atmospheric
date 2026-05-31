@@ -260,7 +260,7 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> ARID_SPROUTS = BLOCKS.createBlock("arid_sprouts", () -> new AridSproutsBlock(AtmosphericProperties.ARID_SPROUTS));
 	public static final DeferredBlock<Block> ALOE_VERA = BLOCKS.createBlockNoItem("aloe_vera", () -> new AloeVeraBlock(AtmosphericProperties.ALOE_VERA));
 	public static final DeferredBlock<Block> TALL_ALOE_VERA = BLOCKS.createBlockNoItem("tall_aloe_vera", () -> new AloeVeraTallBlock(AtmosphericProperties.ALOE_VERA));
-	public static final DeferredBlock<Block> ALOE_BUNDLE = BLOCKS.createBlock("aloe_bundle", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.DRIED_KELP_BLOCK)));
+	public static final DeferredBlock<Block> ALOE_BUNDLE = BLOCKS.createBlock("aloe_bundle", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.DRIED_KELP_BLOCK).sound(AtmosphericSoundTypes.ALOE_VERA)));
 	public static final DeferredBlock<Block> ALOE_GEL_BLOCK = BLOCKS.createBlock("aloe_gel_block", () -> new AloeGelBlock(Block.Properties.ofFullCopy(Blocks.SLIME_BLOCK).sound(AtmosphericSoundTypes.ALOE_GEL).isSuffocating(PropertyUtil::never)));
 	public static final DeferredBlock<Block> POTTED_ALOE_VERA = BLOCKS.createBlockNoItem("potted_aloe_vera", () -> new FlowerPotBlock(ALOE_VERA.get(), PropertyUtil.flowerPot()));
 	public static final DeferredBlock<Block> BARREL_CACTUS = BLOCKS.createBlockNoItem("barrel_cactus", () -> new BarrelCactusBlock(Block.Properties.ofFullCopy(Blocks.CACTUS).sound(AtmosphericSoundTypes.BARREL_CACTUS)));
