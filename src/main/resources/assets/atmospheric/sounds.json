@@ -733,10 +733,22 @@
   },
   "block.currant_stalk.hit": {
     "sounds": [
-      "atmospheric:block/currant_stalk/step1",
-      "atmospheric:block/currant_stalk/step2",
-      "atmospheric:block/currant_stalk/step3",
-      "atmospheric:block/currant_stalk/step4"
+      {
+        "name": "atmospheric:block/currant_stalk/hit1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/currant_stalk/hit2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/currant_stalk/hit3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/currant_stalk/hit4",
+        "volume": 1.5
+      }
     ],
     "subtitle": "subtitles.block.generic.hit"
   },
@@ -777,10 +789,10 @@
   },
   "block.currant_leaves.hit": {
     "sounds": [
-      "atmospheric:block/currant_leaves/step1",
-      "atmospheric:block/currant_leaves/step2",
-      "atmospheric:block/currant_leaves/step3",
-      "atmospheric:block/currant_leaves/step4"
+      "atmospheric:block/currant_leaves/break1",
+      "atmospheric:block/currant_leaves/break2",
+      "atmospheric:block/currant_leaves/break3",
+      "atmospheric:block/currant_leaves/break4"
     ],
     "subtitle": "subtitles.block.generic.hit"
   },
@@ -804,10 +816,10 @@
   },
   "block.hanging_currant.pick_currant": {
     "sounds": [
-      "atmospheric:block/currant_leaves/step1",
-      "atmospheric:block/currant_leaves/step2",
-      "atmospheric:block/currant_leaves/step3",
-      "atmospheric:block/currant_leaves/step4"
+      "atmospheric:block/currant_leaves/pluck1",
+      "atmospheric:block/currant_leaves/pluck2",
+      "atmospheric:block/currant_leaves/pluck3",
+      "atmospheric:block/currant_leaves/pluck4"  
     ],
     "subtitle": "subtitles.atmospheric.block.hanging_currant.pick_currant"
   },
