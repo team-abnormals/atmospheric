@@ -1084,19 +1084,19 @@
     "sounds": [
       {
         "name": "atmospheric:block/dragon_roots/break1",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/break2",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/break3",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/break4",
-        "volume": 1.5
+        "volume": 2.5
       }
     ],
     "subtitle": "subtitles.block.generic.break"
@@ -1105,19 +1105,19 @@
     "sounds": [
       {
         "name": "atmospheric:block/dragon_roots/step1",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/step2",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/step3",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/step4",
-        "volume": 1.5
+        "volume": 2.5
       }
     ]
   },
@@ -1125,19 +1125,19 @@
     "sounds": [
       {
         "name": "atmospheric:block/dragon_roots/step1",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/step2",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/step3",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/step4",
-        "volume": 1.5
+        "volume": 2.5
       }
     ],
     "subtitle": "subtitles.block.generic.hit"
@@ -1146,19 +1146,19 @@
     "sounds": [
       {
         "name": "atmospheric:block/dragon_roots/place1",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/place2",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/place3",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/place4",
-        "volume": 1.5
+        "volume": 2.5
       }
     ],
     "subtitle": "subtitles.block.generic.place"
@@ -1167,19 +1167,19 @@
     "sounds": [
       {
         "name": "atmospheric:block/dragon_roots/step1",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/step2",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/step3",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/dragon_roots/step4",
-        "volume": 1.5
+        "volume": 2.5
       }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
