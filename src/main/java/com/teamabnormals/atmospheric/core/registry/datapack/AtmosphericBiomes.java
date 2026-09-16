@@ -132,7 +132,7 @@ public class AtmosphericBiomes {
 			spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.STRAY, 80, 4, 4));
 		}
 
-		return biome(snowy, !snowy ? 2.0F : 0.0F, 0.0F,!snowy ? 8499188 : 9611217,!snowy ? 5275555 : 8625351, 13021599, spawns, generation, null);
+		return biome(snowy, !snowy ? 2.0F : 0.0F, 0.0F, !snowy ? 8499188 : 9611217, !snowy ? 5275555 : 8625351, 13021599, spawns, generation, null);
 	}
 
 	private static Biome aspenParkland(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
