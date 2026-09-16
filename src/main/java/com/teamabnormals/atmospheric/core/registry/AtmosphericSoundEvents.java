@@ -8,13 +8,13 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class AtmosphericSoundEvents {
 	public static final SoundSubRegistryHelper SOUND_EVENTS = Atmospheric.REGISTRY_HELPER.getSoundSubHelper();
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_BREAK = SOUND_EVENTS.createSoundEvent("block.aloe_gel.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_FALL = SOUND_EVENTS.createSoundEvent("block.aloe_gel.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_HIT = SOUND_EVENTS.createSoundEvent("block.aloe_gel.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_PLACE = SOUND_EVENTS.createSoundEvent("block.aloe_gel.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_GEL_STEP = SOUND_EVENTS.createSoundEvent("block.aloe_gel.step");
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_VERA_BREAK = SOUND_EVENTS.createSoundEvent("block.aloe_vera.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_VERA_FALL = SOUND_EVENTS.createSoundEvent("block.aloe_vera.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALOE_VERA_HIT = SOUND_EVENTS.createSoundEvent("block.aloe_vera.hit");
@@ -56,38 +56,38 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_HIT = SOUND_EVENTS.createSoundEvent("block.carmine.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_PLACE = SOUND_EVENTS.createSoundEvent("block.carmine.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_STEP = SOUND_EVENTS.createSoundEvent("block.carmine.step");
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> DOLERITE_BREAK = SOUND_EVENTS.createSoundEvent("block.dolerite.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DOLERITE_FALL = SOUND_EVENTS.createSoundEvent("block.dolerite.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DOLERITE_HIT = SOUND_EVENTS.createSoundEvent("block.dolerite.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DOLERITE_PLACE = SOUND_EVENTS.createSoundEvent("block.dolerite.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DOLERITE_STEP = SOUND_EVENTS.createSoundEvent("block.dolerite.step");
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_BREAK = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_FALL = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_HIT = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_PLACE = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> POLISHED_DOLERITE_STEP = SOUND_EVENTS.createSoundEvent("block.polished_dolerite.step");
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_BREAK = SOUND_EVENTS.createSoundEvent("block.dragon_roots.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_FALL = SOUND_EVENTS.createSoundEvent("block.dragon_roots.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_HIT = SOUND_EVENTS.createSoundEvent("block.dragon_roots.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_PLACE = SOUND_EVENTS.createSoundEvent("block.dragon_roots.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_STEP = SOUND_EVENTS.createSoundEvent("block.dragon_roots.step");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_PICK = SOUND_EVENTS.createSoundEvent("block.dragon_roots.pick");
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_BREAK = SOUND_EVENTS.createSoundEvent("block.yucca_branch.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_FALL = SOUND_EVENTS.createSoundEvent("block.yucca_branch.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_HIT = SOUND_EVENTS.createSoundEvent("block.yucca_branch.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_PLACE = SOUND_EVENTS.createSoundEvent("block.yucca_branch.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_STEP = SOUND_EVENTS.createSoundEvent("block.yucca_branch.step");
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_FRUIT_BREAK = SOUND_EVENTS.createSoundEvent("block.yucca_fruit.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_FRUIT_FALL = SOUND_EVENTS.createSoundEvent("block.yucca_fruit.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_FRUIT_HIT = SOUND_EVENTS.createSoundEvent("block.yucca_fruit.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_FRUIT_PLACE = SOUND_EVENTS.createSoundEvent("block.yucca_fruit.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_FRUIT_STEP = SOUND_EVENTS.createSoundEvent("block.yucca_fruit.step");
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_BREAK = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_FALL = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_HIT = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.hit");
@@ -105,13 +105,13 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_HIT = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_PLACE = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_STEP = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.step");
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_BREAK = SOUND_EVENTS.createSoundEvent("block.golden_growths.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_FALL = SOUND_EVENTS.createSoundEvent("block.golden_growths.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_HIT = SOUND_EVENTS.createSoundEvent("block.golden_growths.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_PLACE = SOUND_EVENTS.createSoundEvent("block.golden_growths.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_STEP = SOUND_EVENTS.createSoundEvent("block.golden_growths.step");
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_BREAK = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_FALL = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.fall");
 	public static final DeferredHolder<SoundEvent, SoundEvent> BARREL_CACTUS_HIT = SOUND_EVENTS.createSoundEvent("block.barrel_cactus.hit");
@@ -131,7 +131,7 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> CURRANT_LEAVES_STEP = SOUND_EVENTS.createSoundEvent("block.currant_leaves.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> HANGING_CURRANT_PICK_CURRANT = SOUND_EVENTS.createSoundEvent("block.hanging_currant.pick_currant");
-	
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_FRUIT_BREAK = SOUND_EVENTS.createSoundEvent("entity.dragon_fruit.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_FRUIT_ROLL = SOUND_EVENTS.createSoundEvent("entity.dragon_fruit.roll");
 

@@ -4,7 +4,6 @@ import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.atmospheric.common.item.*;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
-import com.teamabnormals.atmospheric.core.other.AtmosphericEvents;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBannerPatternTags;
 import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericTrimPatterns;
 import com.teamabnormals.atmospheric.integration.boatload.AtmosphericBoatTypes;

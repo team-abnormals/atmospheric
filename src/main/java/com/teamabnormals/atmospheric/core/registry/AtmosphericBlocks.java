@@ -8,7 +8,6 @@ import com.teamabnormals.atmospheric.core.other.AtmosphericProperties;
 import com.teamabnormals.atmospheric.core.other.AtmosphericTreeGrowers;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents.AtmosphericSoundTypes;
 import com.teamabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
-import com.teamabnormals.blueprint.common.block.*;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintCeilingHangingSignBlock;

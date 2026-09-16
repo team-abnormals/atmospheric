@@ -133,8 +133,8 @@ public class AtmosphericBiomes {
 		}
 
 		return biome(snowy, !snowy ? 2.0F : 0.0F, 0.0F, 8499188, 5275555, 13021599, spawns, generation, null);
-	} 
- // snowy water : 9611217, 8625351
+	}
+	// snowy water : 9611217, 8625351
 
 	private static Biome aspenParkland(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
 		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);

@@ -2,7 +2,6 @@ package com.teamabnormals.atmospheric.common.item;
 
 import com.teamabnormals.atmospheric.common.block.OrangeBlock;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
-import com.teamabnormals.atmospheric.core.other.AtmosphericEvents;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;

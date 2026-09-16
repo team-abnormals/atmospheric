@@ -3,7 +3,6 @@ package com.teamabnormals.atmospheric.core.data.client;
 import com.teamabnormals.atmospheric.common.block.CandleGateauBlock;
 import com.teamabnormals.atmospheric.common.block.DragonRootsBlock;
 import com.teamabnormals.atmospheric.common.block.OrangeBlock;
-import com.teamabnormals.atmospheric.common.block.YuccaGateauBlock;
 import com.teamabnormals.atmospheric.common.block.state.properties.DragonRootsStage;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericBlockFamilies;

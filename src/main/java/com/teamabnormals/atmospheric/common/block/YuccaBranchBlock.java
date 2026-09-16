@@ -101,17 +101,21 @@ public class YuccaBranchBlock extends BushBlock implements BonemealableBlock, Yu
 		}
 	}
 
+
 	@Override
-	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
-		if (!state.canSurvive(worldIn, pos)) {
-			worldIn.destroyBlock(pos, true);
-		} else {
-			if (state.getValue(SNAPPED) && CommonHooks.canCropGrow(worldIn, pos, state, random.nextInt(5) == 0) && worldIn.getBlockState(pos.below()).isAir()) {
-				worldIn.setBlockAndUpdate(pos, state.setValue(SNAPPED, false));
-				worldIn.setBlockAndUpdate(pos.below(), AtmosphericBlocks.YUCCA_BUNDLE.get().defaultBlockState());
-			}
-			CommonHooks.fireCropGrowPost(worldIn, pos, state);
+	protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+		if (!state.canSurvive(level, pos)) {
+			level.destroyBlock(pos, true);
 		}
+	}
+
+	@Override
+	public void randomTick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
+		if (state.getValue(SNAPPED) && CommonHooks.canCropGrow(worldIn, pos, state, random.nextInt(5) == 0) && worldIn.getBlockState(pos.below()).isAir()) {
+			worldIn.setBlockAndUpdate(pos, state.setValue(SNAPPED, false));
+			worldIn.setBlockAndUpdate(pos.below(), AtmosphericBlocks.YUCCA_BUNDLE.get().defaultBlockState());
+		}
+		CommonHooks.fireCropGrowPost(worldIn, pos, state);
 	}
 
 	@Override

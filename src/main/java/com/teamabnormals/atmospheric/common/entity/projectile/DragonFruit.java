@@ -15,7 +15,6 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -189,7 +188,7 @@ public class DragonFruit extends Entity {
 	public boolean isAlwaysTicking() {
 		return true;
 	}
-	
+
 	@Override
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(AtmosphericSoundEvents.DRAGON_FRUIT_ROLL.get(), 1.0F, 1.0F);
