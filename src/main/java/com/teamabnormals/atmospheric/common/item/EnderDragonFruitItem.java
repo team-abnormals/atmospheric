@@ -77,7 +77,9 @@ public class EnderDragonFruitItem extends Item {
 			MutableComponent component = Component.translatable(effect.getDescriptionId());
 			MobEffectInstance instance = new MobEffectInstance(holder, 12000, 9);
 			component = Component.translatable("potion.withAmplifier", component, Component.translatable("potion.potency." + instance.getAmplifier()));
-			component = Component.translatable("potion.withDuration", component, MobEffectUtil.formatDuration(instance, 1, context.level().tickRateManager().tickrate()));
+			if (context != null) {
+				component = Component.translatable("potion.withDuration", component, MobEffectUtil.formatDuration(instance, 1, context.tickRate()));
+			}
 			tooltip.add(component.withStyle(effect.getCategory().getTooltipFormatting()));
 		}
 	}

@@ -83,7 +83,7 @@ public class AtmosphericItemTagsProvider extends BlueprintItemTagsProvider {
 		this.copy(Tags.Blocks.GLASS_PANES_COLORLESS, Tags.Items.GLASS_PANES_COLORLESS);
 		this.copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
 		this.tag(Tags.Items.BOOKSHELVES).add(ROSEWOOD_BOOKSHELF.get().asItem(), MORADO_BOOKSHELF.get().asItem(), YUCCA_BOOKSHELF.get().asItem(), KOUSA_BOOKSHELF.get().asItem(), ASPEN_BOOKSHELF.get().asItem(), GRIMWOOD_BOOKSHELF.get().asItem(), LAUREL_BOOKSHELF.get().asItem());
-		this.tag(Tags.Items.FOODS_FRUIT).addTags(FOODS_PASSION_FRUIT, FOODS_DRAGON_FRUIT, FOODS_ORANGE).add(YUCCA_FRUIT.get(), ROASTED_YUCCA_FRUIT.get(), SHIMMERING_PASSION_FRUIT.get(), GOLDEN_DRAGON_FRUIT.get());
+		this.tag(Tags.Items.FOODS_FRUIT).addTags(FOODS_PASSION_FRUIT, FOODS_DRAGON_FRUIT, FOODS_ORANGE).add(AtmosphericItems.BLOOD_ORANGE.get(), YUCCA_FRUIT.get(), ROASTED_YUCCA_FRUIT.get(), SHIMMERING_PASSION_FRUIT.get(), GOLDEN_DRAGON_FRUIT.get());
 		this.tag(Tags.Items.FOODS_BERRY).addTag(FOODS_CURRANT);
 		this.tag(Tags.Items.FOODS_GOLDEN).add(SHIMMERING_PASSION_FRUIT.get(), GOLDEN_DRAGON_FRUIT.get());
 		this.tag(Tags.Items.FOODS_VEGETABLE).add(ALOE_LEAVES.get());
