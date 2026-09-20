@@ -109,7 +109,7 @@ public class YuccaGateauBlock extends HorizontalDirectionalBlock {
 	@Override
 	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
 		Item item = stack.getItem();
-		if (stack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && Block.byItem(item) instanceof CandleBlock candleblock) {
+		if (stack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0 && Block.byItem(item) instanceof CandleBlock candleblock && CandleGateauBlock.byCandle(candleblock) != null) {
 			stack.consume(1, player);
 			level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
 			level.setBlockAndUpdate(pos, CandleGateauBlock.byCandle(candleblock).setValue(FACING, state.getValue(FACING)));

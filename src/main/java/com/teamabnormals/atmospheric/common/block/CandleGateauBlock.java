@@ -35,6 +35,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -146,8 +147,10 @@ public class CandleGateauBlock extends AbstractCandleBlock {
 		return false;
 	}
 
+	@Nullable
 	public static BlockState byCandle(CandleBlock candle) {
-		return BY_CANDLE.get(candle).defaultBlockState();
+		Block candleGateau = BY_CANDLE.get(candle);
+		return candleGateau == null ? null : candleGateau.defaultBlockState();
 	}
 
 	@Override
