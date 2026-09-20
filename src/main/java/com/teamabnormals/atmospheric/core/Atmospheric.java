@@ -12,6 +12,7 @@ import com.teamabnormals.atmospheric.core.data.server.modifiers.AtmosphericDataR
 import com.teamabnormals.atmospheric.core.data.server.tags.*;
 import com.teamabnormals.atmospheric.core.other.AtmosphericClientCompat;
 import com.teamabnormals.atmospheric.core.other.AtmosphericCompat;
+import com.teamabnormals.atmospheric.core.other.AtmosphericDataProcessors;
 import com.teamabnormals.atmospheric.core.registry.*;
 import com.teamabnormals.atmospheric.core.registry.helper.AtmosphericBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
@@ -41,6 +42,8 @@ public class Atmospheric {
 	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> helper.putSubHelper(Registries.BLOCK, new AtmosphericBlockSubRegistryHelper(helper)));
 
 	public Atmospheric(IEventBus bus, ModContainer container) {
+		AtmosphericDataProcessors.registerTrackedData();
+
 		AtmosphericBlocks.BLOCKS.register(bus);
 		AtmosphericItems.ITEMS.register(bus);
 		AtmosphericEntityTypes.ENTITY_TYPES.register(bus);
