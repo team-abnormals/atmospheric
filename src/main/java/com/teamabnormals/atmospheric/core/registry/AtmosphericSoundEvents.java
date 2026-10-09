@@ -50,6 +50,12 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SPROUTS_HIT = SOUND_EVENTS.createSoundEvent("block.arid_sprouts.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SPROUTS_PLACE = SOUND_EVENTS.createSoundEvent("block.arid_sprouts.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARID_SPROUTS_STEP = SOUND_EVENTS.createSoundEvent("block.arid_sprouts.step");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> GILIA_BREAK = SOUND_EVENTS.createSoundEvent("block.gilia.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> GILIA_FALL = SOUND_EVENTS.createSoundEvent("block.gilia.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> GILIA_HIT = SOUND_EVENTS.createSoundEvent("block.gilia.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> GILIA_PLACE = SOUND_EVENTS.createSoundEvent("block.gilia.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> GILIA_STEP = SOUND_EVENTS.createSoundEvent("block.gilia.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_BREAK = SOUND_EVENTS.createSoundEvent("block.carmine.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CARMINE_FALL = SOUND_EVENTS.createSoundEvent("block.carmine.fall");
@@ -93,6 +99,12 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_HIT = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_PLACE = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_LEAVES_STEP = SOUND_EVENTS.createSoundEvent("block.yucca_leaves.step");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> ASPEN_LEAVES_BREAK = SOUND_EVENTS.createSoundEvent("block.aspen_leaves.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ASPEN_LEAVES_FALL = SOUND_EVENTS.createSoundEvent("block.aspen_leaves.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ASPEN_LEAVES_HIT = SOUND_EVENTS.createSoundEvent("block.aspen_leaves.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ASPEN_LEAVES_PLACE = SOUND_EVENTS.createSoundEvent("block.aspen_leaves.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ASPEN_LEAVES_STEP = SOUND_EVENTS.createSoundEvent("block.aspen_leaves.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_BREAK = SOUND_EVENTS.createSoundEvent("block.monkey_brush.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_FALL = SOUND_EVENTS.createSoundEvent("block.monkey_brush.fall");
@@ -145,6 +157,8 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> TETRA_DEATH = SOUND_EVENTS.createSoundEvent("entity.tetra.death");
 	public static final DeferredHolder<SoundEvent, SoundEvent> TETRA_FLOP = SOUND_EVENTS.createSoundEvent("entity.tetra.flop");
 	public static final DeferredHolder<SoundEvent, SoundEvent> TETRA_HURT = SOUND_EVENTS.createSoundEvent("entity.tetra.hurt");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> CAMEL_STEP_ARID = SOUND_EVENTS.createSoundEvent("entity.camel.step_arid");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_FRUIT_SEED_SPIT = SOUND_EVENTS.createSoundEvent("entity.passion_fruit_seed.spit");
 
@@ -161,7 +175,9 @@ public class AtmosphericSoundEvents {
 		public static final DeferredSoundType DOLERITE = new DeferredSoundType(1.0F, 1.0F, DOLERITE_BREAK, DOLERITE_STEP, DOLERITE_PLACE, DOLERITE_HIT, DOLERITE_FALL);
 		public static final DeferredSoundType POLISHED_DOLERITE = new DeferredSoundType(1.0F, 1.0F, POLISHED_DOLERITE_BREAK, POLISHED_DOLERITE_STEP, POLISHED_DOLERITE_PLACE, POLISHED_DOLERITE_HIT, POLISHED_DOLERITE_FALL);
 		public static final DeferredSoundType DRAGON_ROOTS = new DeferredSoundType(1.0F, 1.0F, DRAGON_ROOTS_BREAK, DRAGON_ROOTS_STEP, DRAGON_ROOTS_PLACE, DRAGON_ROOTS_HIT, DRAGON_ROOTS_FALL);
+		public static final DeferredSoundType GILIA = new DeferredSoundType(1.0F, 1.0F, GILIA_BREAK, GILIA_STEP, GILIA_PLACE, GILIA_HIT, GILIA_FALL);
 		public static final DeferredSoundType MONKEY_BRUSH = new DeferredSoundType(1.0F, 1.0F, MONKEY_BRUSH_BREAK, MONKEY_BRUSH_STEP, MONKEY_BRUSH_PLACE, MONKEY_BRUSH_HIT, MONKEY_BRUSH_FALL);
+		public static final DeferredSoundType ASPEN_LEAVES = new DeferredSoundType(1.0F, 1.0F, ASPEN_LEAVES_BREAK, ASPEN_LEAVES_STEP, ASPEN_LEAVES_PLACE, ASPEN_LEAVES_HIT, ASPEN_LEAVES_FALL);
 		public static final DeferredSoundType YUCCA_LEAVES = new DeferredSoundType(1.0F, 1.0F, YUCCA_LEAVES_BREAK, YUCCA_LEAVES_STEP, YUCCA_LEAVES_PLACE, YUCCA_LEAVES_HIT, YUCCA_LEAVES_FALL);
 		public static final DeferredSoundType YUCCA_FRUIT = new DeferredSoundType(1.0F, 1.0F, YUCCA_FRUIT_BREAK, YUCCA_FRUIT_STEP, YUCCA_FRUIT_PLACE, YUCCA_FRUIT_HIT, YUCCA_FRUIT_FALL);
 		public static final DeferredSoundType YUCCA_BRANCH = new DeferredSoundType(1.0F, 1.0F, YUCCA_BRANCH_BREAK, YUCCA_BRANCH_STEP, YUCCA_BRANCH_PLACE, YUCCA_BRANCH_HIT, YUCCA_BRANCH_FALL);

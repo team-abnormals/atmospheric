@@ -254,7 +254,7 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> RED_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("red_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.RED_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
 	public static final DeferredBlock<Block> BLACK_CANDLE_YUCCA_GATEAU = BLOCKS.createBlockNoItem("black_candle_yucca_gateau", () -> new CandleGateauBlock(Blocks.BLACK_CANDLE, AtmosphericProperties.CANDLE_YUCCA_GATEAU));
 
-	public static final DeferredBlock<Block> GILIA = BLOCKS.createBlock("gilia", () -> new DesertFlowerBlock(MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()));
+	public static final DeferredBlock<Block> GILIA = BLOCKS.createBlock("gilia", () -> new DesertFlowerBlock(MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower().sound(AtmosphericSoundTypes.GILIA)));
 	public static final DeferredBlock<Block> POTTED_GILIA = BLOCKS.createBlockNoItem("potted_gilia", () -> new FlowerPotBlock(GILIA.get(), PropertyUtil.flowerPot()));
 
 	public static final DeferredBlock<Block> ARID_SPROUTS = BLOCKS.createBlock("arid_sprouts", () -> new AridSproutsBlock(AtmosphericProperties.ARID_SPROUTS));
@@ -272,7 +272,7 @@ public class AtmosphericBlocks {
 
 	public static final DeferredBlock<Block> YUCCA_CASK = BLOCKS.createBlock("yucca_cask", () -> new BlueprintDirectionalBlock(Block.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(1.5F).sound(SoundType.WOOD).ignitedByLava()));
 	public static final DeferredBlock<Block> ROASTED_YUCCA_CASK = BLOCKS.createBlock("roasted_yucca_cask", () -> new BlueprintDirectionalBlock(Block.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(1.5F).sound(SoundType.WOOD).ignitedByLava()));
-	public static final DeferredBlock<Block> BARREL_CACTUS_BATCH = BLOCKS.createBlock("barrel_cactus_batch", () -> new RotatedPillarBlock(Block.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F).sound(SoundType.WOOD).ignitedByLava()));
+	public static final DeferredBlock<Block> BARREL_CACTUS_BATCH = BLOCKS.createBlock("barrel_cactus_batch", () -> new RotatedPillarBlock(Block.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F).sound(AtmosphericSoundTypes.BARREL_CACTUS).ignitedByLava()));
 
 	/// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -283,7 +283,7 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> WATCHFUL_ASPEN_LOG = BLOCKS.createBlock("watchful_aspen_log", () -> new LogBlock(ASPEN_LOG, AtmosphericProperties.ASPEN.log()));
 	public static final DeferredBlock<Block> WATCHFUL_ASPEN_WOOD = BLOCKS.createBlock("watchful_aspen_wood", () -> new LogBlock(ASPEN_WOOD, AtmosphericProperties.ASPEN.log()));
 	public static final DeferredBlock<Block> ASPEN_LEAVES = BLOCKS.createBlock("aspen_leaves", () -> new LeavesBlock(AtmosphericProperties.ASPEN.leaves()));
-	public static final DeferredBlock<Block> ASPEN_SAPLING = BLOCKS.createBlock("aspen_sapling", () -> new SaplingBlock(AtmosphericTreeGrowers.ASPEN, AtmosphericProperties.ASPEN.sapling()));
+	public static final DeferredBlock<Block> ASPEN_SAPLING = BLOCKS.createBlock("aspen_sapling", () -> new SaplingBlock(AtmosphericTreeGrowers.ASPEN, AtmosphericProperties.ASPEN.sapling().sound(AtmosphericSoundTypes.ASPEN_LEAVES)));
 	public static final DeferredBlock<Block> POTTED_ASPEN_SAPLING = BLOCKS.createBlockNoItem("potted_aspen_sapling", () -> new FlowerPotBlock(ASPEN_SAPLING.get(), PropertyUtil.flowerPot()));
 	public static final DeferredBlock<Block> ASPEN_PLANKS = BLOCKS.createBlock("aspen_planks", () -> new Block(AtmosphericProperties.ASPEN.planks()));
 	public static final DeferredBlock<Block> ASPEN_STAIRS = BLOCKS.createBlock("aspen_stairs", () -> new StairBlock(ASPEN_PLANKS.get().defaultBlockState(), AtmosphericProperties.ASPEN.planks()));
@@ -307,7 +307,7 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<BlueprintTrappedChestBlock> TRAPPED_ASPEN_CHEST = BLOCKS.createTrappedChestBlock("aspen", AtmosphericProperties.ASPEN.chest());
 
 	public static final DeferredBlock<Block> GREEN_ASPEN_LEAVES = BLOCKS.createBlock("green_aspen_leaves", () -> new LeavesBlock(AtmosphericProperties.GREEN_ASPEN.leaves()));
-	public static final DeferredBlock<Block> GREEN_ASPEN_SAPLING = BLOCKS.createBlock("green_aspen_sapling", () -> new SaplingBlock(AtmosphericTreeGrowers.GREEN_ASPEN, AtmosphericProperties.GREEN_ASPEN.sapling()));
+	public static final DeferredBlock<Block> GREEN_ASPEN_SAPLING = BLOCKS.createBlock("green_aspen_sapling", () -> new SaplingBlock(AtmosphericTreeGrowers.GREEN_ASPEN, AtmosphericProperties.GREEN_ASPEN.sapling().sound(AtmosphericSoundTypes.ASPEN_LEAVES)));
 	public static final DeferredBlock<Block> POTTED_GREEN_ASPEN_SAPLING = BLOCKS.createBlockNoItem("potted_green_aspen_sapling", () -> new FlowerPotBlock(GREEN_ASPEN_SAPLING.get(), PropertyUtil.flowerPot()));
 	public static final DeferredBlock<Block> GREEN_ASPEN_LEAF_PILE = BLOCKS.createBlock("green_aspen_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.GREEN_ASPEN.leafPile()));
 
@@ -452,10 +452,10 @@ public class AtmosphericBlocks {
 
 	public static final DeferredBlock<Block> DRAGON_ROOTS = BLOCKS.createBlock("dragon_roots", () -> new DragonRootsBlock(Block.Properties.of().mapColor(MapColor.TERRACOTTA_MAGENTA).strength(1.5F).randomTicks().noCollission().sound(AtmosphericSoundTypes.DRAGON_ROOTS).pushReaction(PushReaction.DESTROY)));
 
-	public static final DeferredBlock<Block> FIRETHORN = BLOCKS.createBlock("firethorn", () -> new DesertFlowerBlock(MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()));
+	public static final DeferredBlock<Block> FIRETHORN = BLOCKS.createBlock("firethorn", () -> new DesertFlowerBlock(MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower().sound(AtmosphericSoundTypes.GILIA)));
 	public static final DeferredBlock<Block> POTTED_FIRETHORN = BLOCKS.createBlockNoItem("potted_firethorn", () -> new FlowerPotBlock(FIRETHORN.get(), PropertyUtil.flowerPot()));
 
-	public static final DeferredBlock<Block> FORSYTHIA = BLOCKS.createBlock("forsythia", () -> new DesertFlowerBlock(MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower()));
+	public static final DeferredBlock<Block> FORSYTHIA = BLOCKS.createBlock("forsythia", () -> new DesertFlowerBlock(MobEffects.MOVEMENT_SPEED, 9, PropertyUtil.flower().sound(AtmosphericSoundTypes.GILIA)));
 	public static final DeferredBlock<Block> POTTED_FORSYTHIA = BLOCKS.createBlockNoItem("potted_forsythia", () -> new FlowerPotBlock(FORSYTHIA.get(), PropertyUtil.flowerPot()));
 
 	public static final DeferredBlock<Block> DRAGON_FRUIT_CRATE = BLOCKS.createBlock("dragon_fruit_crate", () -> new BlueprintDirectionalBlock(Block.Properties.of().mapColor(MapColor.TERRACOTTA_MAGENTA).strength(1.5F).sound(SoundType.WOOD).ignitedByLava()));
