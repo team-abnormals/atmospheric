@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "atmospheric:oak_bush",
+    "features": [
+      {
+        "chance": 0.35,
+        "feature": "minecraft:fancy_oak_checked"
+      }
+    ]
+  }
+}

@@ -195,6 +195,7 @@ public class AtmosphericGeneration {
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_LAUREL_FOREST_GIANT);
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_LAUREL_FOREST_LARGE);
 		generation.addFeature(Decoration.VEGETAL_DECORATION, TREES_LAUREL_FOREST);
+		generation.addFeature(Decoration.VEGETAL_DECORATION, OAKS_LAUREL);
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_AGAVE_LARGE);
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_LARGE_FERN_KOUSA);
 		generation.addFeature(Decoration.VEGETAL_DECORATION, PATCH_GRASS_LAUREL_FOREST);

@@ -359,6 +359,7 @@ public class AtmosphericFeatures {
 		public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_LAUREL_FOREST = createKey("trees_laurel_forest");
 		public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_LAUREL_FOREST_LARGE = createKey("trees_laurel_forest_large");
 		public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_LAUREL_FOREST_GIANT = createKey("trees_laurel_forest_giant");
+		public static final ResourceKey<ConfiguredFeature<?, ?>> OAKS_LAUREL = createKey("oaks_laurel");
 		public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GRASS_LAUREL_FOREST = createKey("patch_grass_laurel_forest");
 
 		// Kousa Jungle
@@ -531,6 +532,7 @@ public class AtmosphericFeatures {
 			register(context, TREES_LAUREL_FOREST_LARGE, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.LARGE_DRY_LAUREL_WITH_VINES), 0.05F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.LARGE_DRY_LAUREL), 0.05F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.LARGE_LAUREL_WITH_VINES), 0.45F)), placedFeatures.getOrThrow(AtmosphericPlacedFeatures.LARGE_LAUREL)));
 			register(context, TREES_LAUREL_FOREST_GIANT, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.GIANT_DRY_LAUREL_WITH_VINES), 0.05F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.GIANT_DRY_LAUREL), 0.05F), new WeightedPlacedFeature(placedFeatures.getOrThrow(AtmosphericPlacedFeatures.GIANT_LAUREL_WITH_VINES), 0.45F)), placedFeatures.getOrThrow(AtmosphericPlacedFeatures.GIANT_LAUREL)));
 			register(context, PATCH_GRASS_LAUREL_FOREST, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.SHORT_GRASS.defaultBlockState(), 1).add(Blocks.FERN.defaultBlockState(), 6)), 32));
+			register(context, OAKS_LAUREL, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FANCY_OAK_CHECKED), 0.35F)), placedFeatures.getOrThrow(AtmosphericPlacedFeatures.OAK_BUSH)));
 
 			// Kousa Jungle
 
@@ -695,6 +697,7 @@ public class AtmosphericFeatures {
 		public static final ResourceKey<PlacedFeature> TREES_LAUREL_FOREST = createKey("trees_laurel_forest");
 		public static final ResourceKey<PlacedFeature> TREES_LAUREL_FOREST_LARGE = createKey("trees_laurel_forest_large");
 		public static final ResourceKey<PlacedFeature> TREES_LAUREL_FOREST_GIANT = createKey("trees_laurel_forest_giant");
+		public static final ResourceKey<PlacedFeature> OAKS_LAUREL = createKey("oaks_laurel");
 		public static final ResourceKey<PlacedFeature> COARSE_DIRT = createKey("coarse_dirt");
 		public static final ResourceKey<PlacedFeature> COARSE_DIRT_LAUREL_FOREST = createKey("coarse_dirt_laurel_forest");
 		public static final ResourceKey<PlacedFeature> PATCH_GRASS_LAUREL_FOREST = createKey("patch_grass_laurel_forest");
@@ -844,6 +847,7 @@ public class AtmosphericFeatures {
 			register(context, TREES_LAUREL_FOREST, AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
 			register(context, TREES_LAUREL_FOREST_LARGE, AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST_LARGE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
 			register(context, TREES_LAUREL_FOREST_GIANT, AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST_GIANT, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.5F, 1)));
+			register(context, OAKS_LAUREL, AtmosphericConfiguredFeatures.OAKS_LAUREL, VegetationPlacements.treePlacement(PlacementUtils.countExtra(6, 0.1F, 1)));
 			register(context, COARSE_DIRT, AtmosphericConfiguredFeatures.COARSE_DIRT, List.of(CountPlacement.of(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 			register(context, COARSE_DIRT_LAUREL_FOREST, AtmosphericConfiguredFeatures.COARSE_DIRT, List.of(CountPlacement.of(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 			register(context, PATCH_GRASS_LAUREL_FOREST, AtmosphericConfiguredFeatures.PATCH_GRASS_LAUREL_FOREST, List.of(CountPlacement.of(20), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));

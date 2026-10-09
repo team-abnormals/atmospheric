@@ -179,7 +179,7 @@ public class AtmosphericBiomes {
 		BiomeDefaultFeatures.farmAnimals(spawns);
 		spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
 
-		return biomeWithGrass(true, 0.85F, 0.5F, 12249691, 11392595, 9032925, 9160644, spawns, generation, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+		return biomeWithGrass(true, 0.85F, 0.5F, 9743701, 11392595, 9032925, 9160644, spawns, generation, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 	}
 
 	private static Biome hotSprings(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {

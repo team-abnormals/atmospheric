@@ -10,7 +10,7 @@
   "effects": {
     "fog_color": 12638463,
     "foliage_color": 11392595,
-    "grass_color": 12249691,
+    "grass_color": 9743701,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -92,6 +92,7 @@
       "atmospheric:trees_laurel_forest_giant",
       "atmospheric:trees_laurel_forest_large",
       "atmospheric:trees_laurel_forest",
+      "atmospheric:oaks_laurel",
       "atmospheric:patch_agave_large",
       "atmospheric:patch_large_fern_kousa",
       "atmospheric:patch_grass_laurel_forest"
