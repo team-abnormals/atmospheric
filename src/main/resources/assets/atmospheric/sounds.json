@@ -114,16 +114,16 @@
     ],
     "subtitle": "subtitles.atmospheric.entity.tetra.hurt"
   },
-  "entity.camel.step_arid": {
+  "entity.camel.step_arid_sand": {
     "sounds": [
-      "atmospheric:entity/camel/arid_step1",
-      "atmospheric:entity/camel/arid_step2",
-      "atmospheric:entity/camel/arid_step3",
-      "atmospheric:entity/camel/arid_step4",
-      "atmospheric:entity/camel/arid_step5",
-      "atmospheric:entity/camel/arid_step6"
+      "atmospheric:mob/camel/step_arid_sand1",
+      "atmospheric:mob/camel/step_arid_sand2",
+      "atmospheric:mob/camel/step_arid_sand3",
+      "atmospheric:mob/camel/step_arid_sand4",
+      "atmospheric:mob/camel/step_arid_sand5",
+      "atmospheric:mob/camel/step_arid_sand6"
     ],
-    "subtitle": "subtitles.block.generic.footsteps​"
+    "subtitle": "subtitles.block.generic.footsteps"
   },
   "entity.passion_fruit_seed.spit": {
     "sounds": [

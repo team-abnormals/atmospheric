@@ -2,9 +2,12 @@ package com.teamabnormals.atmospheric.core.mixin;
 
 import com.teamabnormals.atmospheric.common.entity.CamelVariant;
 import com.teamabnormals.atmospheric.core.other.AtmosphericDataProcessors;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericRegistries;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
 import com.teamabnormals.atmospheric.core.registry.datapack.AtmosphericCamelVariants;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
@@ -14,9 +17,11 @@ import net.minecraft.world.entity.animal.camel.Camel;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
@@ -26,6 +31,14 @@ public class CamelMixin extends AbstractHorse implements VariantHolder<Holder<Ca
 
 	protected CamelMixin(EntityType<? extends AbstractHorse> entity, Level level) {
 		super(entity, level);
+	}
+
+	@Inject(method = "playStepSound", at = @At("HEAD"), cancellable = true)
+	private void playStepSound(BlockPos pos, BlockState block, CallbackInfo ci) {
+		if (block.is(AtmosphericBlockTags.CAMEL_ARID_SAND_STEP_SOUND_BLOCKS)) {
+			this.playSound(AtmosphericSoundEvents.CAMEL_STEP_ARID_SAND.get(), 1.0F, 1.0F);
+			ci.cancel();
+		}
 	}
 
 	@Inject(method = "finalizeSpawn", at = @At("HEAD"))

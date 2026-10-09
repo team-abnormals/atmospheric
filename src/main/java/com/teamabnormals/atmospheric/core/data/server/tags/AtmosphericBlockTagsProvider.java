@@ -3,6 +3,7 @@ package com.teamabnormals.atmospheric.core.data.server.tags;
 import com.teamabnormals.atmospheric.common.block.CandleGateauBlock;
 import com.teamabnormals.atmospheric.core.Atmospheric;
 import com.teamabnormals.atmospheric.core.other.AtmosphericConstants;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -140,6 +141,7 @@ public class AtmosphericBlockTagsProvider extends BlockTagsProvider {
 		this.tag(ORANGES).add(ORANGE.get(), BLOOD_ORANGE.get());
 		this.tag(COCHINEALS_CAN_FEED_ON).add(Blocks.CACTUS, SNOWY_CACTUS.get());
 		this.tag(CRUSTOSE_CANNOT_SPREAD_UNDER).addOptional(AtmosphericConstants.ADZUKI_SPROUTS);
+		this.tag(CAMEL_ARID_SAND_STEP_SOUND_BLOCKS).add(ARID_SAND.get(), RED_ARID_SAND.get());
 
 		this.tag(DROPS_YUCCA_GATEAU_SLICE).add(YUCCA_GATEAU.get());
 		CandleGateauBlock.getCandleGateaus().forEach(block -> {

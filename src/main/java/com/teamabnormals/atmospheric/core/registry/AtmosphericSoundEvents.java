@@ -158,7 +158,7 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> TETRA_FLOP = SOUND_EVENTS.createSoundEvent("entity.tetra.flop");
 	public static final DeferredHolder<SoundEvent, SoundEvent> TETRA_HURT = SOUND_EVENTS.createSoundEvent("entity.tetra.hurt");
 	
-	public static final DeferredHolder<SoundEvent, SoundEvent> CAMEL_STEP_ARID = SOUND_EVENTS.createSoundEvent("entity.camel.step_arid");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CAMEL_STEP_ARID_SAND = SOUND_EVENTS.createSoundEvent("entity.camel.step_arid_sand");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_FRUIT_SEED_SPIT = SOUND_EVENTS.createSoundEvent("entity.passion_fruit_seed.spit");
 
