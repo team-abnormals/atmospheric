@@ -103,8 +103,8 @@ public class AtmosphericBlocks {
 	public static final DeferredBlock<Block> FLOWERING_MORADO_LEAVES = BLOCKS.createBlock("flowering_morado_leaves", () -> new FloweringMoradoLeavesBlock(AtmosphericProperties.MORADO.leaves()));
 	public static final DeferredBlock<Block> FLOWERING_MORADO_LEAF_PILE = BLOCKS.createBlock("flowering_morado_leaf_pile", () -> new LeafPileBlock(AtmosphericProperties.MORADO.leafPile()));
 
-	public static final DeferredBlock<Block> PASSION_VINE = BLOCKS.createBlock("passion_vine", () -> new PassionVineBlock(Block.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.VINE).pushReaction(PushReaction.DESTROY)));
-	public static final DeferredBlock<Block> PASSION_VINE_BUNDLE = BLOCKS.createBlock("passion_vine_bundle", () -> new PassionVineBundleBlock(Block.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F, 2.5F).sound(SoundType.GRASS)));
+	public static final DeferredBlock<Block> PASSION_VINE = BLOCKS.createBlock("passion_vine", () -> new PassionVineBlock(Block.Properties.of().noCollission().randomTicks().instabreak().sound(AtmosphericSoundTypes.PASSION_VINE).pushReaction(PushReaction.DESTROY)));
+	public static final DeferredBlock<Block> PASSION_VINE_BUNDLE = BLOCKS.createBlock("passion_vine_bundle", () -> new PassionVineBundleBlock(Block.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F, 2.5F).sound(AtmosphericSoundTypes.PASSION_VINE)));
 
 	public static final DeferredBlock<Block> WATER_HYACINTH = BLOCKS.createBlockNoItem("water_hyacinth", () -> new WaterHyacinthBlock(PropertyUtil.flower().sound(AtmosphericSoundTypes.WATER_HYACINTH)));
 

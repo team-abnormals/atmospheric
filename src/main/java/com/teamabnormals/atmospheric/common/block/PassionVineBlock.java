@@ -4,6 +4,7 @@ import com.teamabnormals.atmospheric.common.block.state.properties.PassionVineAt
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericBlockTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -147,7 +148,7 @@ public class PassionVineBlock extends Block implements BonemealableBlock {
 		int age = state.getValue(AGE);
 		if (age == 4) {
 			popResource(level, pos, new ItemStack(AtmosphericItems.PASSION_FRUIT.get(), 1 + level.random.nextInt(2) + level.random.nextInt(2) + level.random.nextInt(3)));
-			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+			level.playSound(null, pos, AtmosphericSoundEvents.PASSION_VINE_PICK.get(), SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
 			level.setBlock(pos, state.setValue(AGE, 1), 2);
 			return InteractionResult.sidedSuccess(level.isClientSide);
 		} else {

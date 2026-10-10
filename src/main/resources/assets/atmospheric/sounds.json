@@ -619,6 +619,59 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "block.passion_vine.break": {
+    "sounds": [
+      "atmospheric:block/passion_vine/break1",
+      "atmospheric:block/passion_vine/break2",
+      "atmospheric:block/passion_vine/break3",
+      "atmospheric:block/passion_vine/break4",
+      "atmospheric:block/passion_vine/break5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.passion_vine.fall": {
+    "sounds": [
+      "atmospheric:block/passion_vine/step1",
+      "atmospheric:block/passion_vine/step2",
+      "atmospheric:block/passion_vine/step3",
+      "atmospheric:block/passion_vine/step4"
+    ]
+  },
+  "block.passion_vine.hit": {
+    "sounds": [
+      "atmospheric:block/passion_vine/step1",
+      "atmospheric:block/passion_vine/step2",
+      "atmospheric:block/passion_vine/step3",
+      "atmospheric:block/passion_vine/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.passion_vine.place": {
+    "sounds": [
+      "atmospheric:block/passion_vine/break1",
+      "atmospheric:block/passion_vine/break2",
+      "atmospheric:block/passion_vine/break3",
+      "atmospheric:block/passion_vine/break4",
+      "atmospheric:block/passion_vine/break5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.passion_vine.step": {
+    "sounds": [
+      "atmospheric:block/passion_vine/step1",
+      "atmospheric:block/passion_vine/step2",
+      "atmospheric:block/passion_vine/step3",
+      "atmospheric:block/passion_vine/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.passion_vine.pick_fruit": {
+    "sounds": [
+      "atmospheric:block/passion_vine/pluck1",
+      "atmospheric:block/passion_vine/pluck2"
+    ],
+    "subtitle": "subtitles.atmospheric.block.passion_vine.pick_fruit"
+  },
   "block.golden_growths.break": {
     "sounds": [
       "atmospheric:block/golden_growths/break1",

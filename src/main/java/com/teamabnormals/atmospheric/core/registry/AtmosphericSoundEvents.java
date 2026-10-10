@@ -117,6 +117,13 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_HIT = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_PLACE = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WATER_HYACINTH_STEP = SOUND_EVENTS.createSoundEvent("block.water_hyacinth.step");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_VINE_BREAK = SOUND_EVENTS.createSoundEvent("block.passion_vine.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_VINE_FALL = SOUND_EVENTS.createSoundEvent("block.passion_vine.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_VINE_HIT = SOUND_EVENTS.createSoundEvent("block.passion_vine.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_VINE_PLACE = SOUND_EVENTS.createSoundEvent("block.passion_vine.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_VINE_STEP = SOUND_EVENTS.createSoundEvent("block.passion_vine.step");
+	public static final DeferredHolder<SoundEvent, SoundEvent> PASSION_VINE_PICK = SOUND_EVENTS.createSoundEvent("block.passion_vine.pick_fruit");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_BREAK = SOUND_EVENTS.createSoundEvent("block.golden_growths.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> GOLDEN_GROWTHS_FALL = SOUND_EVENTS.createSoundEvent("block.golden_growths.fall");
@@ -184,6 +191,7 @@ public class AtmosphericSoundEvents {
 		public static final DeferredSoundType CURRANT_LEAVES = new DeferredSoundType(1.0F, 1.0F, CURRANT_LEAVES_BREAK, CURRANT_LEAVES_STEP, CURRANT_LEAVES_PLACE, CURRANT_LEAVES_HIT, CURRANT_LEAVES_FALL);
 		public static final DeferredSoundType CURRANT_STALK = new DeferredSoundType(1.0F, 1.0F, CURRANT_STALK_BREAK, CURRANT_STALK_STEP, CURRANT_STALK_PLACE, CURRANT_STALK_HIT, CURRANT_STALK_FALL);
 		public static final DeferredSoundType WATER_HYACINTH = new DeferredSoundType(1.0F, 1.0F, WATER_HYACINTH_BREAK, WATER_HYACINTH_STEP, WATER_HYACINTH_PLACE, WATER_HYACINTH_HIT, WATER_HYACINTH_FALL);
+		public static final DeferredSoundType PASSION_VINE = new DeferredSoundType(1.0F, 1.0F, PASSION_VINE_BREAK, PASSION_VINE_STEP, PASSION_VINE_PLACE, PASSION_VINE_HIT, PASSION_VINE_FALL);
 		public static final DeferredSoundType GOLDEN_GROWTHS = new DeferredSoundType(1.0F, 1.0F, GOLDEN_GROWTHS_BREAK, GOLDEN_GROWTHS_STEP, GOLDEN_GROWTHS_PLACE, GOLDEN_GROWTHS_HIT, GOLDEN_GROWTHS_FALL);
 	}
 }
