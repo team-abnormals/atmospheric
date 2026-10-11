@@ -844,13 +844,13 @@ public class AtmosphericFeatures {
 
 			// Laurel Forest
 
-			register(context, TREES_LAUREL_FOREST, AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
+			register(context, TREES_LAUREL_FOREST, AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST, VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.1F, 1)));
 			register(context, TREES_LAUREL_FOREST_LARGE, AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST_LARGE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
-			register(context, TREES_LAUREL_FOREST_GIANT, AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST_GIANT, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.5F, 1)));
-			register(context, OAKS_LAUREL, AtmosphericConfiguredFeatures.OAKS_LAUREL, VegetationPlacements.treePlacement(PlacementUtils.countExtra(6, 0.1F, 1)));
+			register(context, TREES_LAUREL_FOREST_GIANT, AtmosphericConfiguredFeatures.TREES_LAUREL_FOREST_GIANT, VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.5F, 1)));
+			register(context, OAKS_LAUREL, AtmosphericConfiguredFeatures.OAKS_LAUREL, VegetationPlacements.treePlacement(PlacementUtils.countExtra(18, 0.1F, 1)));
 			register(context, COARSE_DIRT, AtmosphericConfiguredFeatures.COARSE_DIRT, List.of(CountPlacement.of(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
-			register(context, COARSE_DIRT_LAUREL_FOREST, AtmosphericConfiguredFeatures.COARSE_DIRT, List.of(CountPlacement.of(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
-			register(context, PATCH_GRASS_LAUREL_FOREST, AtmosphericConfiguredFeatures.PATCH_GRASS_LAUREL_FOREST, List.of(CountPlacement.of(20), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+			register(context, COARSE_DIRT_LAUREL_FOREST, AtmosphericConfiguredFeatures.COARSE_DIRT, List.of(CountPlacement.of(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+			register(context, PATCH_GRASS_LAUREL_FOREST, AtmosphericConfiguredFeatures.PATCH_GRASS_LAUREL_FOREST, List.of(CountPlacement.of(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 			register(context, PATCH_DEAD_BUSH_LAUREL_FOREST, AtmosphericConfiguredFeatures.PATCH_DEAD_BUSH, VegetationPlacements.worldSurfaceSquaredWithCount(8));
 
 			// Kousa Jungle
