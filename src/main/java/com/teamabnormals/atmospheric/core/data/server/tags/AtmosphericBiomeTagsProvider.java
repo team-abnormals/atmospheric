@@ -33,7 +33,6 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 		this.tag(BiomeTags.IS_FOREST).add(LAUREL_FOREST, GRIMWOODS);
 		this.tag(BiomeTags.IS_JUNGLE).addTag(AtmosphericBiomeTags.IS_RAINFOREST);
 		this.tag(BiomeTags.HAS_RUINED_PORTAL_JUNGLE).remove(AtmosphericBiomeTags.IS_RAINFOREST);
-		this.tag(Tags.Biomes.IS_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET);
 		this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).addTag(AtmosphericBiomeTags.IS_RAINFOREST).add(ASPEN_PARKLAND, KOUSA_JUNGLE, GRIMWOODS);
 		this.tag(BiomeTags.HAS_RUINED_PORTAL_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET);
 		this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(SCRUBLAND);
@@ -44,7 +43,18 @@ public class AtmosphericBiomeTagsProvider extends BiomeTagsProvider {
 		this.tag(BiomeTags.SPAWNS_WHITE_RABBITS).add(KOUSA_JUNGLE, SNOWY_SCRUBLAND);
 		this.tag(BiomeTags.SPAWNS_SNOW_FOXES).add(KOUSA_JUNGLE, SNOWY_SCRUBLAND);
 		this.tag(BiomeTags.SNOW_GOLEM_MELTS).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND, SPINY_THICKET);
-		this.tag(BiomeTags.INCREASED_FIRE_BURNOUT).add(RAINFOREST);
+		this.tag(BiomeTags.INCREASED_FIRE_BURNOUT).addTag(AtmosphericBiomeTags.IS_RAINFOREST);
+		this.tag(Tags.Biomes.IS_DESERT).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND, SNOWY_SCRUBLAND, SPINY_THICKET);
+		this.tag(Tags.Biomes.IS_SNOWY).add(KOUSA_JUNGLE, SNOWY_SCRUBLAND);
+		this.tag(Tags.Biomes.IS_COLD_OVERWORLD).add(KOUSA_JUNGLE, SNOWY_SCRUBLAND);
+		this.tag(Tags.Biomes.IS_TEMPERATE_OVERWORLD).add(ASPEN_PARKLAND, LAUREL_FOREST);
+		this.tag(Tags.Biomes.IS_HOT_OVERWORLD).addTag(AtmosphericBiomeTags.IS_DUNES).addTag(AtmosphericBiomeTags.IS_RAINFOREST).add(SCRUBLAND, SPINY_THICKET);
+		this.tag(Tags.Biomes.IS_SANDY).addTag(AtmosphericBiomeTags.IS_DUNES).addTag(AtmosphericBiomeTags.IS_SCRUBLAND).add(SPINY_THICKET);
+		this.tag(Tags.Biomes.IS_DECIDUOUS_TREE).add(KOUSA_JUNGLE, ASPEN_PARKLAND, LAUREL_FOREST);
+		this.tag(Tags.Biomes.IS_WET_OVERWORLD).addTag(AtmosphericBiomeTags.IS_RAINFOREST);
+		this.tag(Tags.Biomes.IS_DRY_OVERWORLD).addTag(AtmosphericBiomeTags.IS_DUNES).add(SCRUBLAND, SPINY_THICKET);
+		this.tag(Tags.Biomes.IS_DENSE_VEGETATION_OVERWORLD).add(RAINFOREST, RAINFOREST_BASIN, KOUSA_JUNGLE, LAUREL_FOREST);
+		this.tag(Tags.Biomes.IS_SPARSE_VEGETATION_OVERWORLD).addTag(AtmosphericBiomeTags.IS_DUNES).add(SPARSE_RAINFOREST, SPARSE_RAINFOREST_BASIN);
 
 		this.tag(AtmosphericBiomeTags.IS_RAINFOREST).add(RAINFOREST, SPARSE_RAINFOREST, RAINFOREST_BASIN, SPARSE_RAINFOREST_BASIN);
 		this.tag(AtmosphericBiomeTags.IS_DUNES).add(DUNES, FLOURISHING_DUNES, ROCKY_DUNES, PETRIFIED_DUNES);
