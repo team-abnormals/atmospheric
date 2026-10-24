@@ -77,7 +77,7 @@ public class AtmosphericProperties {
 		return Properties.of().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F).sound(AtmosphericSoundTypes.ARID_SANDSTONE);
 	}
 
-	public static final Properties AGAVE = Properties.of().mapColor(MapColor.TERRACOTTA_CYAN).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
+	public static final Properties AGAVE = Properties.of().mapColor(MapColor.TERRACOTTA_CYAN).replaceable().noCollission().instabreak().sound(AtmosphericSoundTypes.AGAVE).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
 	public static final Properties GOLDEN_GROWTHS = Properties.of().mapColor(MapColor.GOLD).replaceable().noCollission().instabreak().sound(AtmosphericSoundTypes.GOLDEN_GROWTHS).offsetType(OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY);
 	public static final Properties CRUSTOSE = BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).randomTicks().strength(0.6F).sound(SoundType.GRASS);
 	public static final Properties CRUSTOSE_PATH = Properties.of().mapColor(MapColor.GOLD).strength(0.65F).sound(SoundType.GRASS).isViewBlocking(PropertyUtil::always).isSuffocating(PropertyUtil::always);
