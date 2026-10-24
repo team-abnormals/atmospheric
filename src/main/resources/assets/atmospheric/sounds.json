@@ -1089,6 +1089,118 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
+  "block.kousa_leaves.break": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/kousa_leaves/break1",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/break2",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/break3",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/break4",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/break5",
+        "volume": 2.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.kousa_leaves.fall": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/kousa_leaves/step1",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/step2",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/step3",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/step4",
+        "volume": 2.8
+      }
+    ]
+  },
+  "block.kousa_leaves.hit": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/kousa_leaves/step1",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/step2",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/step3",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/step4",
+        "volume": 2.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.kousa_leaves.place": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/kousa_leaves/break1",
+        "volume": 2.3
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/break2",
+        "volume": 2.3
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/break3",
+        "volume": 2.3
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/break4",
+        "volume": 2.3
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/break5",
+        "volume": 2.3
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.kousa_leaves.step": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/kousa_leaves/step1",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/step2",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/step3",
+        "volume": 2.8
+      },
+      {
+        "name": "atmospheric:block/kousa_leaves/step4",
+        "volume": 2.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "block.yucca_leaves.break": {
     "sounds": [
       "atmospheric:block/yucca_leaves/break1",

@@ -105,6 +105,12 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> ASPEN_LEAVES_HIT = SOUND_EVENTS.createSoundEvent("block.aspen_leaves.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ASPEN_LEAVES_PLACE = SOUND_EVENTS.createSoundEvent("block.aspen_leaves.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ASPEN_LEAVES_STEP = SOUND_EVENTS.createSoundEvent("block.aspen_leaves.step");
+	
+	public static final DeferredHolder<SoundEvent, SoundEvent> KOUSA_LEAVES_BREAK = SOUND_EVENTS.createSoundEvent("block.kousa_leaves.break");
+	public static final DeferredHolder<SoundEvent, SoundEvent> KOUSA_LEAVES_FALL = SOUND_EVENTS.createSoundEvent("block.kousa_leaves.fall");
+	public static final DeferredHolder<SoundEvent, SoundEvent> KOUSA_LEAVES_HIT = SOUND_EVENTS.createSoundEvent("block.kousa_leaves.hit");
+	public static final DeferredHolder<SoundEvent, SoundEvent> KOUSA_LEAVES_PLACE = SOUND_EVENTS.createSoundEvent("block.kousa_leaves.place");
+	public static final DeferredHolder<SoundEvent, SoundEvent> KOUSA_LEAVES_STEP = SOUND_EVENTS.createSoundEvent("block.kousa_leaves.step");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_BREAK = SOUND_EVENTS.createSoundEvent("block.monkey_brush.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> MONKEY_BRUSH_FALL = SOUND_EVENTS.createSoundEvent("block.monkey_brush.fall");
@@ -185,6 +191,7 @@ public class AtmosphericSoundEvents {
 		public static final DeferredSoundType GILIA = new DeferredSoundType(1.0F, 1.0F, GILIA_BREAK, GILIA_STEP, GILIA_PLACE, GILIA_HIT, GILIA_FALL);
 		public static final DeferredSoundType MONKEY_BRUSH = new DeferredSoundType(1.0F, 1.0F, MONKEY_BRUSH_BREAK, MONKEY_BRUSH_STEP, MONKEY_BRUSH_PLACE, MONKEY_BRUSH_HIT, MONKEY_BRUSH_FALL);
 		public static final DeferredSoundType ASPEN_LEAVES = new DeferredSoundType(1.0F, 1.0F, ASPEN_LEAVES_BREAK, ASPEN_LEAVES_STEP, ASPEN_LEAVES_PLACE, ASPEN_LEAVES_HIT, ASPEN_LEAVES_FALL);
+		public static final DeferredSoundType KOUSA_LEAVES = new DeferredSoundType(1.0F, 1.0F, KOUSA_LEAVES_BREAK, KOUSA_LEAVES_STEP, KOUSA_LEAVES_PLACE, KOUSA_LEAVES_HIT, KOUSA_LEAVES_FALL);
 		public static final DeferredSoundType YUCCA_LEAVES = new DeferredSoundType(1.0F, 1.0F, YUCCA_LEAVES_BREAK, YUCCA_LEAVES_STEP, YUCCA_LEAVES_PLACE, YUCCA_LEAVES_HIT, YUCCA_LEAVES_FALL);
 		public static final DeferredSoundType YUCCA_FRUIT = new DeferredSoundType(1.0F, 1.0F, YUCCA_FRUIT_BREAK, YUCCA_FRUIT_STEP, YUCCA_FRUIT_PLACE, YUCCA_FRUIT_HIT, YUCCA_FRUIT_FALL);
 		public static final DeferredSoundType YUCCA_BRANCH = new DeferredSoundType(1.0F, 1.0F, YUCCA_BRANCH_BREAK, YUCCA_BRANCH_STEP, YUCCA_BRANCH_PLACE, YUCCA_BRANCH_HIT, YUCCA_BRANCH_FALL);
