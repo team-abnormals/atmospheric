@@ -61,11 +61,11 @@ public class AtmosphericStructures {
 			HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
 			context.register(ARID_GARDENS, new StructureSet(structures.getOrThrow(ARID_GARDEN),
-					new RandomSpreadStructurePlacement(24, 6, RandomSpreadType.LINEAR, 304972539)
+					new RandomSpreadStructurePlacement(16, 6, RandomSpreadType.LINEAR, 304972539)
 			));
 
 			context.register(KOUSA_SANCTUMS, new StructureSet(structures.getOrThrow(KOUSA_SANCTUM),
-					new RandomSpreadStructurePlacement(32, 8, RandomSpreadType.LINEAR, 502973253)
+					new RandomSpreadStructurePlacement(24, 8, RandomSpreadType.LINEAR, 502973253)
 			));
 		}
 

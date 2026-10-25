@@ -1472,6 +1472,20 @@
     ],
     "subtitle": "subtitles.atmospheric.block.dragon_roots.pick"
   },
+  "block.dragon_roots.bloom": {
+    "sounds": [
+      "atmospheric:block/dragon_roots/bloom1",
+      "atmospheric:block/dragon_roots/bloom2"
+    ],
+    "subtitle": "subtitles.atmospheric.block.dragon_roots.bloom"
+  },
+  "block.dragon_roots.wilt": {
+    "sounds": [
+      "atmospheric:block/dragon_roots/wilt1",
+      "atmospheric:block/dragon_roots/wilt2"
+    ],
+    "subtitle": "subtitles.atmospheric.block.dragon_roots.wilt"
+  },
   "block.dragon_roots.break": {
     "sounds": [
       {

@@ -4,8 +4,12 @@
     "default": "atmospheric:oak_bush",
     "features": [
       {
-        "chance": 0.35,
+        "chance": 0.25,
         "feature": "minecraft:fancy_oak_checked"
+      },
+      {
+        "chance": 0.1,
+        "feature": "minecraft:oak_checked"
       }
     ]
   }

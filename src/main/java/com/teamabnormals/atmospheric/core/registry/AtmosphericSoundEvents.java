@@ -81,6 +81,8 @@ public class AtmosphericSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_PLACE = SOUND_EVENTS.createSoundEvent("block.dragon_roots.place");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_STEP = SOUND_EVENTS.createSoundEvent("block.dragon_roots.step");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_PICK = SOUND_EVENTS.createSoundEvent("block.dragon_roots.pick");
+	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_WILT = SOUND_EVENTS.createSoundEvent("block.dragon_roots.wilt");
+	public static final DeferredHolder<SoundEvent, SoundEvent> DRAGON_ROOTS_BLOOM = SOUND_EVENTS.createSoundEvent("block.dragon_roots.bloom");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_BREAK = SOUND_EVENTS.createSoundEvent("block.yucca_branch.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> YUCCA_BRANCH_FALL = SOUND_EVENTS.createSoundEvent("block.yucca_branch.fall");
