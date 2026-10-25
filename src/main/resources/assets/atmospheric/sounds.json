@@ -756,19 +756,19 @@
     "sounds": [
       {
         "name": "atmospheric:block/agave/break1",
-        "volume": 1.5
+        "volume": 3.5
       },
       {
         "name": "atmospheric:block/agave/break2",
-        "volume": 1.5
+        "volume": 3.5
       },
       {
         "name": "atmospheric:block/agave/break3",
-        "volume": 1.5
+        "volume": 3.5
       },
       {
         "name": "atmospheric:block/agave/break4",
-        "volume": 1.5
+        "volume": 3.5
       }
     ],
     "subtitle": "subtitles.block.generic.break"
@@ -777,15 +777,15 @@
     "sounds": [
       {
         "name": "atmospheric:block/agave/step1",
-        "volume": 1.5
+        "volume": 3.5
       },
       {
         "name": "atmospheric:block/agave/step2",
-        "volume": 1.5
+        "volume": 3.5
       },
       {
         "name": "atmospheric:block/agave/step3",
-        "volume": 1.5
+        "volume": 3.5
       }
     ]
   },
@@ -793,15 +793,15 @@
     "sounds": [
       {
         "name": "atmospheric:block/agave/step1",
-        "volume": 1.5
+        "volume": 3.5
       },
       {
         "name": "atmospheric:block/agave/step2",
-        "volume": 1.5
+        "volume": 3.5
       },
       {
         "name": "atmospheric:block/agave/step3",
-        "volume": 1.5
+        "volume": 3.5
       }
     ],
     "subtitle": "subtitles.block.generic.hit"
@@ -810,19 +810,19 @@
     "sounds": [
       {
         "name": "atmospheric:block/agave/break1",
-        "volume": 1.5
+        "volume": 3.5
       },
       {
         "name": "atmospheric:block/agave/break2",
-        "volume": 1.5
+        "volume": 3.5
       },
       {
         "name": "atmospheric:block/agave/break3",
-        "volume": 1.5
+        "volume": 3.5
       },
       {
         "name": "atmospheric:block/agave/break4",
-        "volume": 1.5
+        "volume": 3.5
       }
     ],
     "subtitle": "subtitles.block.generic.place"
@@ -831,15 +831,15 @@
     "sounds": [
       {
         "name": "atmospheric:block/agave/step1",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/agave/step2",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/agave/step3",
-        "volume": 1.5
+        "volume": 2.5
       }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
@@ -1289,6 +1289,110 @@
       {
         "name": "atmospheric:block/kousa_leaves/step4",
         "volume": 2.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.laurel_leaves.break": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/laurel_leaves/break1",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/break2",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/break3",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/break4",
+        "volume": 3.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.laurel_leaves.fall": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/laurel_leaves/step1",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/step2",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/step3",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/step4",
+        "volume": 3.2
+      }
+    ]
+  },
+  "block.laurel_leaves.hit": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/laurel_leaves/step1",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/step2",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/step3",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/step4",
+        "volume": 3.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.laurel_leaves.place": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/laurel_leaves/break1",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/break2",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/break3",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/break4",
+        "volume": 3.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.laurel_leaves.step": {
+    "sounds": [
+      {
+        "name": "atmospheric:block/laurel_leaves/step1",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/step2",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/step3",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/laurel_leaves/step4",
+        "volume": 3.2
       }
     ],
     "subtitle": "subtitles.block.generic.footsteps"

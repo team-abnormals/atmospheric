@@ -42,8 +42,8 @@ public class AtmosphericProperties {
 	public static final WoodSetProperties YUCCA = WoodSetProperties.builder(MapColor.COLOR_ORANGE).leavesSound(AtmosphericSoundTypes.YUCCA_LEAVES).build();
 	public static final WoodSetProperties ASPEN = WoodSetProperties.builder(MapColor.GOLD).leavesColor(MapColor.GOLD).leavesSound(AtmosphericSoundTypes.ASPEN_LEAVES).build();
 	public static final WoodSetProperties GREEN_ASPEN = WoodSetProperties.builder(MapColor.GOLD).leavesColor(MapColor.TERRACOTTA_LIGHT_GREEN).leavesSound(AtmosphericSoundTypes.ASPEN_LEAVES).build();
-	public static final WoodSetProperties LAUREL = WoodSetProperties.builder(MapColor.TERRACOTTA_YELLOW).leavesColor(MapColor.TERRACOTTA_LIGHT_GREEN).build();
-	public static final WoodSetProperties DRY_LAUREL = WoodSetProperties.builder(MapColor.TERRACOTTA_YELLOW).leavesColor(MapColor.SAND).build();
+	public static final WoodSetProperties LAUREL = WoodSetProperties.builder(MapColor.TERRACOTTA_YELLOW).leavesColor(MapColor.TERRACOTTA_LIGHT_GREEN).leavesSound(AtmosphericSoundTypes.LAUREL_LEAVES).build();
+	public static final WoodSetProperties DRY_LAUREL = WoodSetProperties.builder(MapColor.TERRACOTTA_YELLOW).leavesColor(MapColor.SAND).leavesSound(AtmosphericSoundTypes.LAUREL_LEAVES).build();
 	public static final WoodSetProperties KOUSA = WoodSetProperties.builder(MapColor.TERRACOTTA_CYAN).leavesColor(MapColor.SNOW).leavesSound(AtmosphericSoundTypes.KOUSA_LEAVES).build();
 	public static final WoodSetProperties CURRANT = WoodSetProperties.builder(MapColor.TERRACOTTA_GRAY).logSound(AtmosphericSoundTypes.CURRANT_STALK).leavesColor(MapColor.PODZOL).leavesSound(AtmosphericSoundTypes.CURRANT_LEAVES).build();
 	public static final WoodSetProperties GRIMWOOD = WoodSetProperties.builder(MapColor.TERRACOTTA_BLACK).build();
