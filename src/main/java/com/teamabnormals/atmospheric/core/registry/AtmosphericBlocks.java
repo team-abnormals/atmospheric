@@ -318,8 +318,8 @@ public class AtmosphericBlocks {
 
 	public static final DeferredBlock<Block> CRUSTOSE = BLOCKS.createBlock("crustose", () -> new CrustoseBlock(AtmosphericProperties.CRUSTOSE));
 	public static final DeferredBlock<Block> CRUSTOSE_PATH = BLOCKS.createBlock("crustose_path", () -> new DirtPathBlock(AtmosphericProperties.CRUSTOSE_PATH));
-	public static final DeferredBlock<Block> CRUSTOSE_LOG = BLOCKS.createBlock("crustose_log", () -> new CrustoseLogBlock(ASPEN_LOG::get, AtmosphericProperties.ASPEN.log().randomTicks()));
-	public static final DeferredBlock<Block> CRUSTOSE_WOOD = BLOCKS.createBlock("crustose_wood", () -> new CrustoseLogBlock(ASPEN_WOOD::get, AtmosphericProperties.ASPEN.log().randomTicks()));
+	public static final DeferredBlock<Block> CRUSTOSE_LOG = BLOCKS.createBlock("crustose_log", () -> new CrustoseLogBlock(ASPEN_LOG::get, AtmosphericProperties.ASPEN.log().randomTicks().sound(AtmosphericSoundTypes.CRUSTOSE_WOOD)));
+	public static final DeferredBlock<Block> CRUSTOSE_WOOD = BLOCKS.createBlock("crustose_wood", () -> new CrustoseLogBlock(ASPEN_WOOD::get, AtmosphericProperties.ASPEN.log().randomTicks().sound(AtmosphericSoundTypes.CRUSTOSE_WOOD)));
 
 	/// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

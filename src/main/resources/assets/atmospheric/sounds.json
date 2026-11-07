@@ -430,24 +430,66 @@
   },
   "block.crustose.fall": {
     "sounds": [
-      "atmospheric:block/crustose/step1",
-      "atmospheric:block/crustose/step2",
-      "atmospheric:block/crustose/step3",
-      "atmospheric:block/crustose/step4",
-      "atmospheric:block/crustose/step5",
-      "atmospheric:block/crustose/step6",
-      "atmospheric:block/crustose/step7"
+      {
+        "name": "atmospheric:block/crustose/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step4",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step5",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step6",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step7",
+        "volume": 1.5
+      }
     ]
   },
   "block.crustose.hit": {
     "sounds": [
-      "atmospheric:block/crustose/step1",
-      "atmospheric:block/crustose/step2",
-      "atmospheric:block/crustose/step3",
-      "atmospheric:block/crustose/step4",
-      "atmospheric:block/crustose/step5",
-      "atmospheric:block/crustose/step6",
-      "atmospheric:block/crustose/step7"
+      {
+        "name": "atmospheric:block/crustose/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step4",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step5",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step6",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step7",
+        "volume": 1.5
+      }
     ],
     "subtitle": "subtitles.block.generic.hit"
   },
@@ -462,13 +504,78 @@
   },
   "block.crustose.step": {
     "sounds": [
-      "atmospheric:block/crustose/step1",
-      "atmospheric:block/crustose/step2",
-      "atmospheric:block/crustose/step3",
-      "atmospheric:block/crustose/step4",
-      "atmospheric:block/crustose/step5",
-      "atmospheric:block/crustose/step6",
-      "atmospheric:block/crustose/step7"
+      {
+        "name": "atmospheric:block/crustose/step1",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step2",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step3",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step4",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step5",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step6",
+        "volume": 1.5
+      },
+      {
+        "name": "atmospheric:block/crustose/step7",
+        "volume": 1.5
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.crustose_wood.break": {
+    "sounds": [
+      "atmospheric:block/crustose_wood/break1",
+      "atmospheric:block/crustose_wood/break2",
+      "atmospheric:block/crustose_wood/break3",
+      "atmospheric:block/crustose_wood/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.crustose_wood.fall": {
+    "sounds": [
+      "atmospheric:block/crustose_wood/step1",
+      "atmospheric:block/crustose_wood/step2",
+      "atmospheric:block/crustose_wood/step3",
+      "atmospheric:block/crustose_wood/step4"
+    ]
+  },
+  "block.crustose_wood.hit": {
+    "sounds": [
+      "atmospheric:block/crustose_wood/step1",
+      "atmospheric:block/crustose_wood/step2",
+      "atmospheric:block/crustose_wood/step3",
+      "atmospheric:block/crustose_wood/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.crustose_wood.place": {
+    "sounds": [
+      "atmospheric:block/crustose_wood/break1",
+      "atmospheric:block/crustose_wood/break2",
+      "atmospheric:block/crustose_wood/break3",
+      "atmospheric:block/crustose_wood/break4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.crustose_wood.step": {
+    "sounds": [
+      "atmospheric:block/crustose_wood/step1",
+      "atmospheric:block/crustose_wood/step2",
+      "atmospheric:block/crustose_wood/step3",
+      "atmospheric:block/crustose_wood/step4"
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
