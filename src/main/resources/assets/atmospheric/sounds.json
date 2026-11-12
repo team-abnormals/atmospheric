@@ -1478,19 +1478,19 @@
     "sounds": [
       {
         "name": "atmospheric:block/laurel_leaves/step1",
-        "volume": 3.2
+        "volume": 2.2
       },
       {
         "name": "atmospheric:block/laurel_leaves/step2",
-        "volume": 3.2
+        "volume": 2.2
       },
       {
         "name": "atmospheric:block/laurel_leaves/step3",
-        "volume": 3.2
+        "volume": 2.2
       },
       {
         "name": "atmospheric:block/laurel_leaves/step4",
-        "volume": 3.2
+        "volume": 2.2
       }
     ]
   },
@@ -1498,19 +1498,19 @@
     "sounds": [
       {
         "name": "atmospheric:block/laurel_leaves/step1",
-        "volume": 3.2
+        "volume": 2.2
       },
       {
         "name": "atmospheric:block/laurel_leaves/step2",
-        "volume": 3.2
+        "volume": 2.2
       },
       {
         "name": "atmospheric:block/laurel_leaves/step3",
-        "volume": 3.2
+        "volume": 2.2
       },
       {
         "name": "atmospheric:block/laurel_leaves/step4",
-        "volume": 3.2
+        "volume": 2.2
       }
     ],
     "subtitle": "subtitles.block.generic.hit"
@@ -1540,19 +1540,19 @@
     "sounds": [
       {
         "name": "atmospheric:block/laurel_leaves/step1",
-        "volume": 3.2
+        "volume": 2.2
       },
       {
         "name": "atmospheric:block/laurel_leaves/step2",
-        "volume": 3.2
+        "volume": 2.2
       },
       {
         "name": "atmospheric:block/laurel_leaves/step3",
-        "volume": 3.2
+        "volume": 2.2
       },
       {
         "name": "atmospheric:block/laurel_leaves/step4",
-        "volume": 3.2
+        "volume": 2.2
       }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
@@ -1568,18 +1568,42 @@
   },
   "block.yucca_leaves.fall": {
     "sounds": [
-      "atmospheric:block/yucca_leaves/step1",
-      "atmospheric:block/yucca_leaves/step2",
-      "atmospheric:block/yucca_leaves/step3",
-      "atmospheric:block/yucca_leaves/step4"
+      {
+        "name": "atmospheric:block/yucca_leaves/step1",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/yucca_leaves/step2",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/yucca_leaves/step3",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/yucca_leaves/step4",
+        "volume": 3.2
+      }
     ]
   },
   "block.yucca_leaves.hit": {
     "sounds": [
-      "atmospheric:block/yucca_leaves/step1",
-      "atmospheric:block/yucca_leaves/step2",
-      "atmospheric:block/yucca_leaves/step3",
-      "atmospheric:block/yucca_leaves/step4"
+      {
+        "name": "atmospheric:block/yucca_leaves/step1",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/yucca_leaves/step2",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/yucca_leaves/step3",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/yucca_leaves/step4",
+        "volume": 3.2
+      }
     ],
     "subtitle": "subtitles.block.generic.hit"
   },
@@ -1594,10 +1618,22 @@
   },
   "block.yucca_leaves.step": {
     "sounds": [
-      "atmospheric:block/yucca_leaves/step1",
-      "atmospheric:block/yucca_leaves/step2",
-      "atmospheric:block/yucca_leaves/step3",
-      "atmospheric:block/yucca_leaves/step4"
+      {
+        "name": "atmospheric:block/yucca_leaves/step1",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/yucca_leaves/step2",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/yucca_leaves/step3",
+        "volume": 3.2
+      },
+      {
+        "name": "atmospheric:block/yucca_leaves/step4",
+        "volume": 3.2
+      }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
