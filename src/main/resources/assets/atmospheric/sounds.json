@@ -432,31 +432,31 @@
     "sounds": [
       {
         "name": "atmospheric:block/crustose/step1",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step2",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step3",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step4",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step5",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step6",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step7",
-        "volume": 1.5
+        "volume": 2.5
       }
     ]
   },
@@ -464,31 +464,31 @@
     "sounds": [
       {
         "name": "atmospheric:block/crustose/step1",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step2",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step3",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step4",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step5",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step6",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step7",
-        "volume": 1.5
+        "volume": 2.5
       }
     ],
     "subtitle": "subtitles.block.generic.hit"
@@ -506,31 +506,31 @@
     "sounds": [
       {
         "name": "atmospheric:block/crustose/step1",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step2",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step3",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step4",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step5",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step6",
-        "volume": 1.5
+        "volume": 2.5
       },
       {
         "name": "atmospheric:block/crustose/step7",
-        "volume": 1.5
+        "volume": 2.5
       }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
